@@ -131,7 +131,7 @@
         <li class="nav-item dropdown ms-lg-3">
           <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="media d-flex align-items-center">
-              <img class="avatar rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg">
+            <img class="avatar rounded-circle" alt="Image placeholder" src="{{ asset('volt/assets/img/team/profile-picture-3.jpg') }}">
               <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                 <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
               </div>
@@ -156,7 +156,7 @@
             </a>
             <div role="separator" class="dropdown-divider my-1"></div>
             <a class="dropdown-item d-flex align-items-center" href="#">
-              <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>                
+              <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
               Logout
             </a>
           </div>
@@ -180,8 +180,7 @@
                 </nav>
                 <div class="d-flex justify-content-between w-100 flex-wrap">
                     <div class="mb-3 mb-lg-0">
-                        <h1 class="h4">Forms</h1>
-                        <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+                        <h1 class="h4">Riwayat Ketertelusuran</h1>
                     </div>
                     <div>
                         <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components/forms/" class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Forms Docs</a>
@@ -192,98 +191,128 @@
             <div class="row">
                 <div class="col-12 mb-4">
                     <div class="card border-0 shadow components-section">
-                        <div class="card-body">     
+                        <div class="card-body">
                             <div class="row mb-4">
                                 <div class="col-lg-4 col-sm-6">
                                     <!-- Form -->
                                     <div class="mb-4">
-                                        <label for="email">Email address</label>
-                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        <label for="firstName">Detail Ketertelusuran</label>
                                     </div>
                                     <!-- End of Form -->
                                     <!-- Form -->
                                     <div class="mb-3">
-                                        <label for="exampleInputIconLeft">Icon Left</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>  
-                                            </span>
-                                            <input type="text" class="form-control" id="exampleInputIconLeft" placeholder="Search" aria-label="Search">
+                                        <label for="exampleInputIconLeft">Kode Ketertelusuran:</label>
                                         </div>
                                     </div>
                                     <!-- End of Form -->
                                     <!-- Form -->
                                     <div class="mb-3">
-                                        <label for="exampleInputIconRight">Icon Right</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight" placeholder="Search" aria-label="Search">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>  
-                                            </span>
+                                        <label for="exampleInputIconLeft">Tanggal Keterletusuran:</label>
                                         </div>
                                     </div>
                                     <!-- End of Form -->
                                     <!-- Form -->
                                     <div class="mb-3">
-                                        <label for="exampleInputIconPassword">Password</label>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" id="exampleInputIconPassword" placeholder="Password" aria-label="Password">
-                                            <span class="input-group-text" id="basic-addon3">
-                                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                                            </span>
+                                        <label for="exampleInputIconLeft">Status:</label>
                                         </div>
                                     </div>
                                     <!-- End of Form -->
                                     <!-- Form -->
                                     <div class="mb-3">
-                                        <label for="firstName">First name</label>
-                                        <input type="text" class="form-control is-valid" id="firstName" value="Mark" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>                
+                                        <label for="exampleInputIconLeft">Status:</label>
+                                        </div>
                                     </div>
-                                    <!-- End of Form -->
                                 </div>
-                                <div class="col-lg-4 col-sm-6">
 
-                                    <!-- Form -->
-                                    <div class="my-4">
-                                        <label for="textarea">Example textarea</label>
-                                        <textarea class="form-control" placeholder="Enter your message..." id="textarea" rows="4"></textarea>
-                                    </div>
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-4">
-                                        <label for="usernameValidate">Username</label>
-                                        <input type="text" class="form-control is-invalid" id="usernameValidate" required>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>               
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="mb-3">
-                                        <label for="birthday">Birthday</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text">
-                                                <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                                            </span>
-                                            <input data-datepicker="" class="form-control" id="birthday" type="text" placeholder="dd/mm/yyyy" required>                                               
+                                <div class="card border-0 shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                    Daftar Hasil Ketertelusuran
+                        <table class="table table-centered table-nowrap mb-0 rounded">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="border-0 rounded-start">#</th>
+                                    <th class="border-0">Nama Produk</th>
+                                    <th class="border-0">Kode Produksi</th>
+                                    <th class="border-0">Kemasan</th>
+                                    <th class="border-0">Jumlah</th>
+                                    <th class="border-0">Tanggal Pengemasan</th>
+                                    <th class="border-0 rounded-end">QR CODE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Item -->
+                                <tr>
+                                    <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                                    <td class="fw-bold d-flex align-items-center">
+                                        BPS Setra Ramos
+                                    </td>
+                                    <td>
+                                        CXBA02D
+                                    </td>
+                                    <td>
+                                       High Density Polyethylene
+                                    </td>
+                                    <td>
+                                       235pcs
+                                    </td>
+                                    <td>
+                                        17 November 2023
+                                    </td>
+                                    <td>
+                                        Lihat QR Code
+                                    </td>
                                         </div>
-                                    </div>
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="disabledTextInput">Name</label>
-                                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" disabled>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="disabledSelect">Disabled select menu</label>
-                                        <select id="disabledSelect" class="form-control" disabled>
-                                        <option>Disabled select</option>
-                                        </select>
-                                    </div>
+                                    </td>
+                                </tr>
+                                <!-- End of Item -->
+
+                                <!-- Item -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="table-responsive">
+                    Daftar Hasil Pengujian
+                        <table class="table table-centered table-nowrap mb-0 rounded">
+                            <thead class="thead-light">
+                        <tr>
+                                    <th class="border-0 rounded-start">#</th>
+                                    <th class="border-0">Tanggal Pengujian</th>
+                                    <th class="border-0">Tanggal Kadaluarsa</th>
+                                    <th class="border-0">Mutu</th>
+                                    <th class="border-0">Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Item -->
+                                <tr>
+                                    <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                                    <td class="fw-bold d-flex align-items-center">
+                                        21 Oktober 2023
+                                    </td>
+                                    <td>
+                                        25 November 2025
+                                    </td>
+                                    <td>
+                                        Premium
+                                    </td>
+                                    <td>
+                                       Detail
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
                                     <!-- End of Form -->
                                     <!-- Form -->
                                     <div class="mb-4">
@@ -388,7 +417,7 @@
         </div>
         <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
             class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
-            Download 
+            Download
             <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd"></path></svg>
         </a>
         <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
