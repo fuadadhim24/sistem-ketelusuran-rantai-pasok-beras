@@ -111,7 +111,7 @@
                     <div class="col ps-0 ms-2">
                       <div class="d-flex justify-content-between align-items-center">
                           <div>
-                            <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
+                            <h4 class="h6 mb-0 text-small">Bapak Fahri</h4>
                           </div>
                           <div class="text-end">
                             <small>2 hrs ago</small>
@@ -133,7 +133,7 @@
             <div class="media d-flex align-items-center">
             <img class="avatar rounded-circle" alt="Image placeholder" src="{{ asset('volt/assets/img/team/profile-picture-3.jpg') }}">
               <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
+                <span class="mb-0 font-small fw-bold text-gray-900">Bapak Fahri</span>
               </div>
             </div>
           </a>
@@ -175,59 +175,20 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="#">Volt</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Forms</li>
+                        <li class="breadcrumb-item active" aria-current="page">Riwayat ketertelusuran</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between w-100 flex-wrap">
                     <div class="mb-3 mb-lg-0">
                         <h1 class="h4">Riwayat Ketertelusuran</h1>
                     </div>
-                    <div>
-                        <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components/forms/" class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Forms Docs</a>
-                    </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card border-0 shadow components-section">
-                        <div class="card-body">
-                            <div class="row mb-4">
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-4">
-                                        <label for="firstName">Detail Ketertelusuran</label>
-                                    </div>
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconLeft">Kode Ketertelusuran:</label>
-                                        </div>
-                                    </div>
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconLeft">Tanggal Keterletusuran:</label>
-                                        </div>
-                                    </div>
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconLeft">Status:</label>
-                                        </div>
-                                    </div>
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconLeft">Status:</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card border-0 shadow mb-4">
+            <div class="col-12 mb-4">
+              <div class="card border-0 shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                    Daftar Hasil Ketertelusuran
+                      <h2 class="h5 mb-4">Hasil Ketertelusuran</h2>
                         <table class="table table-centered table-nowrap mb-0 rounded">
                             <thead class="thead-light">
                                 <tr>
@@ -260,148 +221,211 @@
                                         17 November 2023
                                     </td>
                                     <td>
-                                        Lihat QR Code
+                                        <a><u>Lihat QR Code</a>
                                     </td>
                                         </div>
                                     </td>
                                 </tr>
-                                <!-- End of Item -->
-
-                                <!-- Item -->
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-
             </div>
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <div class="table-responsive">
-                    Daftar Hasil Pengujian
-                        <table class="table table-centered table-nowrap mb-0 rounded">
-                            <thead class="thead-light">
-                        <tr>
-                                    <th class="border-0 rounded-start">#</th>
-                                    <th class="border-0">Tanggal Pengujian</th>
-                                    <th class="border-0">Tanggal Kadaluarsa</th>
-                                    <th class="border-0">Mutu</th>
-                                    <th class="border-0">Detail</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Item -->
-                                <tr>
-                                    <td><a href="#" class="text-primary fw-bold">1</a> </td>
-                                    <td class="fw-bold d-flex align-items-center">
-                                        21 Oktober 2023
-                                    </td>
-                                    <td>
-                                        25 November 2025
-                                    </td>
-                                    <td>
-                                        Premium
-                                    </td>
-                                    <td>
-                                       Detail
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
-
-
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-4">
-                                        <label class="my-1 me-2" for="country">Country</label>
-                                        <select class="form-select" id="country" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <!-- End of Form -->
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="formFile" class="form-label">Default file input example</label>
-                                        <input class="form-control" type="file" id="formFile">
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card border-0 shadow components-section">
+                        <div class="card-body">
+                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                <h2 class="fs-5 fw-bold mb-0">Klasifikasi Mutu</h2>
+                                <a href="#" class="btn btn-sm btn-primary">Tambah Pengujian</a>
                             </div>
-                            <div class="row mb-5 mb-lg-5">
-                                <div class="col-lg-3 col-md-6">
-                                    <!-- Checkboxes -->
-                                    <div class="mb-3">
-                                        <span class="h6 fw-bold">Checkboxes Round</span>
+                            <div class="row">
+                              <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                                  <div class="card border-0 shadow">
+                                      <div class="card-body">
+                                          <div class="row d-block d-xl-flex align-items-center">
+                                              <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                                  <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+                                                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+                                                  </div>
+                                                  <div class="d-sm-none">
+                                                      <h2 class="h5">Customers</h2>
+                                                      <h3 class="fw-extrabold mb-1">345,678</h3>
+                                                  </div>
+                                              </div>
+                                              <div class="col-12 col-xl-7 px-xl-0">
+                                                  <div class="d-none d-sm-block">
+                                                      <h2 class="h6 text-gray-400 mb-0">Produksi</h2>
+                                                      <h3 class="fw-extrabold mb-2">65</h3>
+                                                  </div>
+                                                  <small class="d-flex align-items-center text-gray-500">
+                                                      Feb 1 - Apr 1
+                                                  </small> 
+                                                  <div class="small d-flex mt-1">                               
+                                                      <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">22%</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                                  <div class="card border-0 shadow">
+                                      <div class="card-body">
+                                          <div class="row d-block d-xl-flex align-items-center">
+                                              <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                                  <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                                                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
+                                                  </div>
+                                                  <div class="d-sm-none">
+                                                      <h2 class="fw-extrabold h5">Revenue</h2>
+                                                      <h3 class="mb-1">$43,594</h3>
+                                                  </div>
+                                              </div>
+                                              <div class="col-12 col-xl-7 px-xl-0">
+                                                  <div class="d-none d-sm-block">
+                                                      <h2 class="h6 text-gray-400 mb-0">Pengujian</h2>
+                                                      <h3 class="fw-extrabold mb-2">62</h3>
+                                                  </div>
+                                                  <small class="d-flex align-items-center text-gray-500">
+                                                      Feb 1 - Apr 1
+                                                  </small> 
+                                                  <div class="small d-flex mt-1">                               
+                                                      <div>Since last month <svg class="icon icon-xs text-danger" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg><span class="text-danger fw-bolder">2%</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                                  <div class="card border-0 shadow">
+                                      <div class="card-body">
+                                          <div class="row d-block d-xl-flex align-items-center">
+                                              <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                                  <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                                  </div>
+                                                  <div class="d-sm-none">
+                                                      <h2 class="fw-extrabold h5"> Bounce Rate</h2>
+                                                      <h3 class="mb-1">50.88%</h3>
+                                                  </div>
+                                              </div>
+                                              <div class="col-12 col-xl-7 px-xl-0">
+                                                  <div class="d-none d-sm-block">
+                                                      <h2 class="h6 text-gray-400 mb-0">Ketertelusuran Aktif</h2>
+                                                      <h3 class="fw-extrabold mb-2">55</h3>
+                                                  </div>
+                                                  <small class="text-gray-500">
+                                                      Feb 1 - Apr 1
+                                                  </small> 
+                                                  <div class="small d-flex mt-1">                               
+                                                      <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">4%</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                            <div class="card-body">
+                                <!-- Project 1 -->
+                                <div class="row align-items-center mb-4">
+                                    <div class="col-auto">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
-                                        <label class="form-check-label" for="defaultCheck10">
-                                          Default checkbox
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck20" disabled>
-                                        <label class="form-check-label" for="defaultCheck20">
-                                          Disabled checkbox
-                                        </label>
+                                    <div class="col">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-info">
+                                                <div class="h6 mb-0">Beras Premium</div>
+                                                <div class="small fw-bold text-gray-500"><span>20 Produksi</span></div>
+                                            </div>
+                                            <div class="progress mb-0">
+                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
-                                    <!-- Radio -->
-                                    <fieldset>
-                                        <legend class="h6">Radios</legend>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="exampleRadios1">
-                                              Default radio
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
-                                              Second default radio
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-                                            <label class="form-check-label" for="exampleRadios3">
-                                              Disabled radio
-                                            </label>
-                                          </div>
-                                        <!-- End of Radio -->
-                                    </fieldset>
+                                <!-- Project 3 -->
+                                <div class="row align-items-center mb-4">
+                                    <div class="col-auto">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-info">
+                                                <div class="h6 mb-0">Beras Medium 1</div>
+                                                <div class="small fw-bold text-gray-500"><span>13 Produksi</span></div>
+                                            </div>
+                                            <div class="progress mb-0">
+                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
-                                    <div class="mb-3">
-                                        <span class="h6 fw-bold">Switches</span>
+                                <!-- Project 4 -->
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-auto">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
                                     </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch input</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch input</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
-                                        <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch input</label>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
-                                        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch input</label>
+                                    <div class="col">
+                                        <div class="progress-wrapper">
+                                            <div class="progress-info">
+                                                <div class="h6 mb-0">beras Medium 2</div>
+                                                <div class="small fw-bold text-gray-500"><span>45 Produksi</span></div>
+                                            </div>
+                                            <div class="progress mb-0">
+                                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width: 34%;"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            </div>
+              <div class="col-12 mb-4">
+                <div class="card border-0 shadow">
+                  <div class="card-body">
+                      <div class="table-responsive">
+                        <h2 class="h5 mb-4">Daftar Hasil Pengujian</h2>
+                          <table class="table table-centered table-nowrap mb-0 rounded">
+                              <thead class="thead-light">
+                          <tr>
+                                      <th class="border-0 rounded-start">#</th>
+                                      <th class="border-0">Tanggal Pengujian</th>
+                                      <th class="border-0">Tanggal Kadaluarsa</th>
+                                      <th class="border-0">Mutu</th>
+                                      <th class="border-0">Detail</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <!-- Item -->
+                                  <tr>
+                                      <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                                      <td class="fw-bold d-flex align-items-center">
+                                          21 Oktober 2023
+                                      </td>
+                                      <td>
+                                          25 November 2025
+                                      </td>
+                                      <td>
+                                          Premium
+                                      </td>
+                                      <td>
+                                          <a href="#"><u>Selengkapnya</u></a>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
 
             <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
