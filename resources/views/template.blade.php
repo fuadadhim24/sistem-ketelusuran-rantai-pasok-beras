@@ -108,7 +108,7 @@
           <span class="sidebar-icon">
             <img src="{{ asset('volt/assets/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
           </span>
-          <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
+          <span class="mt-1 ms-1 sidebar-text">JejakTani</span>
         </a>
       </li>
       <li class="nav-item  ">
@@ -127,6 +127,16 @@
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
             </span>
             <span class="sidebar-text">Ketertelusuran</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="pengujian" class="nav-link d-flex justify-content-between">
+          <span>
+            <span class="sidebar-icon">
+              <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
+            </span>
+            <span class="sidebar-text">Pengujian</span>
           </span>
         </a>
       </li>

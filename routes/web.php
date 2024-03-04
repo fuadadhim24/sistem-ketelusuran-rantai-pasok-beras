@@ -24,4 +24,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () { return view('admin.dashboard');})->name('dashboard');
     Route::get('/ketertelusuran', function ( ) { return view('admin.ketertelusuran');})->name('ketertelusuran');
+    Route::get('/pengujian', function () { return view('admin.pengujian');})->name('pengujian');
 });
