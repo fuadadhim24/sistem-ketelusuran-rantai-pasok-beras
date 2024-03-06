@@ -197,7 +197,7 @@
                                     <div class="col-lg-4 col-sm-6">
                                         <!-- Form -->
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir kepala</label>
+                                            <label for="exampleInputIconRight">Derajat Sosoh (minimal)</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
@@ -206,7 +206,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Patah</label>
+                                            <label for="exampleInputIconRight">Kadar Air (maksimal)</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
@@ -215,7 +215,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Menir</label>
+                                            <label for="exampleInputIconRight">Beras Kepala (minimal)</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
@@ -224,7 +224,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Merah/Putih/Hitam</label>
+                                            <label for="exampleInputIconRight">Butir Patah (maksimal)</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
@@ -236,8 +236,18 @@
                                     </div>
                                     <div class="col-lg-4 col-sm-6">
                                         <!-- Form -->
+                                        
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Rusak</label>
+                                            <label for="exampleInputIconRight">Butir Gabah (maksimal)</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
+                                                <span class="input-group-text" id="basic-addon2">
+                                                    Butir/100g
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputIconRight">Benda Lain (maksimal)</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
@@ -246,7 +256,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Kapur</label>
+                                            <label for="exampleInputIconRight">Butir Menir, Merah, Kuning/Rusak, Kapur</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
@@ -254,29 +264,20 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputIconRight">Benda Asing</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
-                                                <span class="input-group-text" id="basic-addon2">
-                                                    %
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Gabah</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
-                                                <span class="input-group-text" id="basic-addon2">
-                                                    butir/100g
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <!-- End of Form -->
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <!-- Form -->
                                         <div class="mb-4">
+                                            <label class="my-1 me-2" for="country">Nama Produk</label>
+                                            <select class="form-select" id="country" aria-label="Default select example">
+                                                <option selected>Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <!-- End of Form -->
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <!-- Form -->
+                                        <div class="mb-3">
                                             <label class="my-1 me-2" for="country">Hasil Pengolahan</label>
                                             <select class="form-select" id="country" aria-label="Default select example">
                                                 <option selected>Open this select menu</option>
@@ -285,7 +286,7 @@
                                                 <option value="3">Three</option>
                                             </select>
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-5">
                                             <label for="textarea">Keterangan</label>
                                             <textarea class="form-control" placeholder="Masukkan pesan..." id="textarea" rows="4"></textarea>
                                         </div>

@@ -13,26 +13,17 @@ return new class extends Migration
     {
         Schema::create('pengujian', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned(); 
             $table->foreign('id_produk')->references('id_produk')->on('produk');
             $table->float('derajat_sosoh');
             $table->float('kadar_air');
             $table->float('beras_kepala');
-            $table->float('beras_patah');
-            $table->float('butir_menir');
-            $table->float('butir_merah');
-            $table->float('butir_kuning');
-            $table->float('benda_asing');
+            $table->float('butir_patah');
+            $table->float('butir_menir_merah_kuning_rusak_kapur');
             $table->float('butir_gabah');
-            $table->float('kadaluarsa');
-            $table->float('kandungan_nutrisi');
-            $table->float('penyakit_hama');
-            $table->float('bau');
-            $table->float('dedak_bekatul');
-            $table->float('kadmium');
-            $table->float('timbal');
+            $table->float('benda_lain');
             $table->string('keterangan');
             $table->timestamps('tanggal_uji');
-
         });
     }
 
