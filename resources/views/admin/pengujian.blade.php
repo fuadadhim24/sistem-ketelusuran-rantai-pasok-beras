@@ -1,6 +1,6 @@
 @extends('template')
 @section('main')
-            <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
+<nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
   <div class="container-fluid px-0">
     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
       <div class="d-flex align-items-center">
@@ -165,172 +165,115 @@
     </div>
   </div>
 </nav>
-
-            <div class="py-4">
-                <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
-                    <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
-                        <li class="breadcrumb-item">
-                            <a href="#">
-                                <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item"><a href="#">JejakTani</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Pengujian</li>
-                    </ol>
-                </nav>
-                <div class="d-flex justify-content-between w-100 flex-wrap">
-                    <div class="mb-3 mb-lg-0">
-                        <h1 class="h4">Pengujian</h1>
-                    </div>
+<div class="py-4">
+    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">JejakTani</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pengujian</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+        <div class="mb-3 mb-lg-0">
+            <h1 class="h4">Pengujian</h1>
+        </div>
+    </div>
+</div>
+{{-- Konten --}}
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card border-0 shadow components-section">
+            <div class="card-body">
+                <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                    <h2 class="fs-5 fw-bold mb-0">Klasifikasi Mutu</h2>
+                    <a href="pengujian/tambah-pengujian" class="btn btn-sm btn-primary">Tambah Pengujian</a>
                 </div>
-            </div>
-            {{-- Konten --}}
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card border-0 shadow components-section">
-                        <div class="card-body">
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                <h2 class="fs-5 fw-bold mb-0">Klasifikasi Mutu</h2>
-                                <a href="pengujian/tambah-pengujian" class="btn btn-sm btn-primary">Tambah Pengujian</a>
-                            </div>
-                            <div class="row">
-                              <div class="col-12 col-sm-6 col-xl-4 mb-4">
-                                  <div class="card border-0 shadow">
-                                      <div class="card-body">
-                                          <div class="row d-block d-xl-flex align-items-center">
-                                              <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
-                                                  <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
-                                                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
-                                                  </div>
-                                                  <div class="d-sm-none">
-                                                      <h2 class="h5">Customers</h2>
-                                                      <h3 class="fw-extrabold mb-1">345,678</h3>
-                                                  </div>
-                                              </div>
-                                              <div class="col-12 col-xl-7 px-xl-0">
-                                                  <div class="d-none d-sm-block">
-                                                      <h2 class="h6 text-gray-400 mb-0">Produksi</h2>
-                                                      <h3 class="fw-extrabold mb-2">65</h3>
-                                                  </div>
-                                                  <small class="d-flex align-items-center text-gray-500">
-                                                      Feb 1 - Apr 1
-                                                  </small> 
-                                                  <div class="small d-flex mt-1">                               
-                                                      <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">22%</span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-12 col-sm-6 col-xl-4 mb-4">
-                                  <div class="card border-0 shadow">
-                                      <div class="card-body">
-                                          <div class="row d-block d-xl-flex align-items-center">
-                                              <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
-                                                  <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
-                                                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
-                                                  </div>
-                                                  <div class="d-sm-none">
-                                                      <h2 class="fw-extrabold h5">Revenue</h2>
-                                                      <h3 class="mb-1">$43,594</h3>
-                                                  </div>
-                                              </div>
-                                              <div class="col-12 col-xl-7 px-xl-0">
-                                                  <div class="d-none d-sm-block">
-                                                      <h2 class="h6 text-gray-400 mb-0">Pengujian</h2>
-                                                      <h3 class="fw-extrabold mb-2">62</h3>
-                                                  </div>
-                                                  <small class="d-flex align-items-center text-gray-500">
-                                                      Feb 1 - Apr 1
-                                                  </small> 
-                                                  <div class="small d-flex mt-1">                               
-                                                      <div>Since last month <svg class="icon icon-xs text-danger" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg><span class="text-danger fw-bolder">2%</span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-12 col-sm-6 col-xl-4 mb-4">
-                                  <div class="card border-0 shadow">
-                                      <div class="card-body">
-                                          <div class="row d-block d-xl-flex align-items-center">
-                                              <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
-                                                  <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
-                                                      <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                                  </div>
-                                                  <div class="d-sm-none">
-                                                      <h2 class="fw-extrabold h5"> Bounce Rate</h2>
-                                                      <h3 class="mb-1">50.88%</h3>
-                                                  </div>
-                                              </div>
-                                              <div class="col-12 col-xl-7 px-xl-0">
-                                                  <div class="d-none d-sm-block">
-                                                      <h2 class="h6 text-gray-400 mb-0">Ketertelusuran Aktif</h2>
-                                                      <h3 class="fw-extrabold mb-2">55</h3>
-                                                  </div>
-                                                  <small class="text-gray-500">
-                                                      Feb 1 - Apr 1
-                                                  </small> 
-                                                  <div class="small d-flex mt-1">                               
-                                                      <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">4%</span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card border-0 shadow">
                             <div class="card-body">
-                                <!-- Project 1 -->
-                                <div class="row align-items-center mb-4">
-                                    <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                <div class="row d-block d-xl-flex align-items-center">
+                                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                        <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+                                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path></svg>
+                                        </div>
+                                        <div class="d-sm-none">
+                                            <h2 class="h5">Customers</h2>
+                                            <h3 class="fw-extrabold mb-1">345,678</h3>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="progress-wrapper">
-                                            <div class="progress-info">
-                                                <div class="h6 mb-0">Beras Premium</div>
-                                                <div class="small fw-bold text-gray-500"><span>20 Produksi</span></div>
-                                            </div>
-                                            <div class="progress mb-0">
-                                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                            </div>
+                                    <div class="col-12 col-xl-7 px-xl-0">
+                                        <div class="d-none d-sm-block">
+                                            <h2 class="h6 text-gray-400 mb-0">Produksi</h2>
+                                            <h3 class="fw-extrabold mb-2">65</h3>
+                                        </div>
+                                        <small class="d-flex align-items-center text-gray-500">
+                                            Feb 1 - Apr 1
+                                        </small>
+                                        <div class="small d-flex mt-1">
+                                            <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">22%</span></div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Project 3 -->
-                                <div class="row align-items-center mb-4">
-                                    <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card border-0 shadow">
+                            <div class="card-body">
+                                <div class="row d-block d-xl-flex align-items-center">
+                                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                        <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path></svg>
+                                        </div>
+                                        <div class="d-sm-none">
+                                            <h2 class="fw-extrabold h5">Revenue</h2>
+                                            <h3 class="mb-1">$43,594</h3>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="progress-wrapper">
-                                            <div class="progress-info">
-                                                <div class="h6 mb-0">Beras Medium 1</div>
-                                                <div class="small fw-bold text-gray-500"><span>13 Produksi</span></div>
-                                            </div>
-                                            <div class="progress mb-0">
-                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
-                                            </div>
+                                    <div class="col-12 col-xl-7 px-xl-0">
+                                        <div class="d-none d-sm-block">
+                                            <h2 class="h6 text-gray-400 mb-0">Pengujian</h2>
+                                            <h3 class="fw-extrabold mb-2">62</h3>
+                                        </div>
+                                        <small class="d-flex align-items-center text-gray-500">
+                                            Feb 1 - Apr 1
+                                        </small>
+                                        <div class="small d-flex mt-1">
+                                            <div>Since last month <svg class="icon icon-xs text-danger" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg><span class="text-danger fw-bolder">2%</span></div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Project 4 -->
-                                <div class="row align-items-center mb-3">
-                                    <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                        <div class="card border-0 shadow">
+                            <div class="card-body">
+                                <div class="row d-block d-xl-flex align-items-center">
+                                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                        <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                            <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        </div>
+                                        <div class="d-sm-none">
+                                            <h2 class="fw-extrabold h5"> Bounce Rate</h2>
+                                            <h3 class="mb-1">50.88%</h3>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="progress-wrapper">
-                                            <div class="progress-info">
-                                                <div class="h6 mb-0">beras Medium 2</div>
-                                                <div class="small fw-bold text-gray-500"><span>45 Produksi</span></div>
-                                            </div>
-                                            <div class="progress mb-0">
-                                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width: 34%;"></div>
-                                            </div>
+                                    <div class="col-12 col-xl-7 px-xl-0">
+                                        <div class="d-none d-sm-block">
+                                            <h2 class="h6 text-gray-400 mb-0">Ketertelusuran Aktif</h2>
+                                            <h3 class="fw-extrabold mb-2">55</h3>
+                                        </div>
+                                        <small class="text-gray-500">
+                                            Feb 1 - Apr 1
+                                        </small>
+                                        <div class="small d-flex mt-1">
+                                            <div>Since last month <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg><span class="text-success fw-bolder">4%</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -338,76 +281,131 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-              <div class="col-12 mb-4">
-                <div class="card border-0 shadow">
-                  <div class="card-body">
-                      <div class="table-responsive">
-                        <h2 class="h5 mb-4">Daftar Hasil Pengujian</h2>
-                          <table class="table table-centered table-nowrap mb-0 rounded">
-                              <thead class="thead-light">
-                          <tr>
-                                      <th class="border-0 rounded-start">#</th>
-                                      <th class="border-0">Tanggal Pengujian</th>
-                                      <th class="border-0">Tanggal Kadaluarsa</th>
-                                      <th class="border-0">Mutu</th>
-                                      <th class="border-0">Detail</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <!-- Item -->
-                                  <tr>
-                                      <td><a href="#" class="text-primary fw-bold">1</a> </td>
-                                      <td class="fw-bold d-flex align-items-center">
-                                          21 Oktober 2023
-                                      </td>
-                                      <td>
-                                          25 November 2025
-                                      </td>
-                                      <td>
-                                          Premium
-                                      </td>
-                                      <td>
-                                          <a href="#"><u>Selengkapnya</u></a>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
+                <div class="card-body">
+                    <!-- Project 1 -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col-auto">
+                            <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <div class="col">
+                            <div class="progress-wrapper">
+                                <div class="progress-info">
+                                    <div class="h6 mb-0">Beras Premium</div>
+                                    <div class="small fw-bold text-gray-500"><span>20 Produksi</span></div>
+                                </div>
+                                <div class="progress mb-0">
+                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="row align-items-center mb-4">
+                        <div class="col-auto">
+                            <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <div class="col">
+                            <div class="progress-wrapper">
+                                <div class="progress-info">
+                                    <div class="h6 mb-0">Beras Medium 1</div>
+                                    <div class="small fw-bold text-gray-500"><span>13 Produksi</span></div>
+                                </div>
+                                <div class="progress mb-0">
+                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-auto">
+                            <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <div class="col">
+                            <div class="progress-wrapper">
+                                <div class="progress-info">
+                                    <div class="h6 mb-0">beras Medium 2</div>
+                                    <div class="small fw-bold text-gray-500"><span>45 Produksi</span></div>
+                                </div>
+                                <div class="progress mb-0">
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width: 34%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            </div>
-
-            <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
-    <div class="card-body bg-gray-800 text-white pt-4">
-        <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
-            href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
-            <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
-                data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
-                data-size="large" data-show-count="true"
-                aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
-        </div>
-        <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
-            class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
-            Download
-            <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd"></path></svg>
-        </a>
-        <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
-        <div class="d-flex justify-content-center">
-            <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
-                target="_blank">
-                <img src="../../assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
-            </a>
-            <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                <img src="../../assets/img/technologies/react-logo.svg" class="image image-xs">
-            </a>
         </div>
     </div>
+</div>
+</div>
+<div class="col-12 mb-4">
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+        <h2 class="h5 mb-4">Daftar Hasil Pengujian</h2>
+            <table class="table table-centered table-nowrap mb-0 rounded">
+                <thead class="thead-light">
+            <tr>
+                        <th class="border-0 rounded-start">#</th>
+                        <th class="border-0">Tanggal Pengujian</th>
+                        <th class="border-0">Tanggal Kadaluarsa</th>
+                        <th class="border-0">Mutu</th>
+                        <th class="border-0">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Item -->
+                    <tr>
+                        <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                        <td class="fw-bold d-flex align-items-center">
+                            21 Oktober 2023
+                        </td>
+                        <td>
+                            25 November 2025
+                        </td>
+                        <td>
+                            Premium
+                        </td>
+                        <td>
+                            <a href="#"><u>Selengkapnya</u></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+<div class="card-body bg-gray-800 text-white pt-4">
+<button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
+href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
+<div class="d-flex justify-content-between align-items-center mb-3">
+<p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
+<a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
+    data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
+    data-size="large" data-show-count="true"
+    aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
+</div>
+<a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
+class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
+Download
+<svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd"></path></svg>
+</a>
+<p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
+<div class="d-flex justify-content-center">
+<a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
+    target="_blank">
+    <img src="../../assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
+</a>
+<a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
+    <img src="../../assets/img/technologies/react-logo.svg" class="image image-xs">
+</a>
+</div>
+</div>
 </div>
 
 <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">

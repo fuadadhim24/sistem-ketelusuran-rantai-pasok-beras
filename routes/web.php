@@ -27,5 +27,7 @@ Route::middleware([
 
     Route::get('/pengujian', function () { return view('admin.pengujian');})->name('pengujian');
     Route::get('/pengujian/tambah-pengujian', function() { return view('admin.klasifikasiMutu.index');})->name('tambah-pengujian');
-    Route::get('/produk', function (){ return view('admin.produk');})->name('produk');
+
+    Route::get('/varietas-padi', function (){ return view('admin.varietas-padi');})->name('varietas-padi');
+    Route::get('/varietas-padi/tambah-varietas', function (){ return view('admin.varietaspadi.index');})->name('tambah-varietas');
 });
