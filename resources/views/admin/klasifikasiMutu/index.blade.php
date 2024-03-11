@@ -236,13 +236,12 @@
                                     </div>
                                     <div class="col-lg-4 col-sm-6">
                                         <!-- Form -->
-                                        
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Gabah (maksimal)</label>
+                                            <label for="exampleInputIconRight">Butir Menir, Merah, Kuning/Rusak, Kapur</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
-                                                    Butir/100g
+                                                    %
                                                 </span>
                                             </div>
                                         </div>
@@ -256,11 +255,11 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputIconRight">Butir Menir, Merah, Kuning/Rusak, Kapur</label>
+                                            <label for="exampleInputIconRight">Butir Gabah (maksimal)</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" id="exampleInputIconRight" placeholder="" aria-label="">
                                                 <span class="input-group-text" id="basic-addon2">
-                                                    %
+                                                    Butir/100g
                                                 </span>
                                             </div>
                                         </div>
