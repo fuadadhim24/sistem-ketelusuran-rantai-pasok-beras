@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('padi', function (Blueprint $table) {
             $table->increments('id_padi');
+            $table->string('varietas');
+            $table->text('deskripsi');
             $table->string('keunggulan');
             $table->string('jenis_musim');
-            $table->text('deskripsi');
-            $table->string('varietas');
             $table->string('lama_tanam');
             $table->string('ketahanan_hama_penyakit');
             $table->timestamps();

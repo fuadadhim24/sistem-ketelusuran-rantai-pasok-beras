@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('pengujian', function (Blueprint $table) {
             $table->increments('id_pengujian');
-            $table->unsignedInteger('id_produk'); 
-            $table->foreign('id_produk')->references('id_produk')->on('produk')->onDelete('cascade');
+            $table->unsignedInteger('id_produksi')->nullable(); 
+            $table->foreign('id_produksi')->references('id_produksi')->on('produk')->onDelete('cascade');
             $table->float('kadar_air');
             $table->float('benda_asing');
             $table->float('butir_gabah');

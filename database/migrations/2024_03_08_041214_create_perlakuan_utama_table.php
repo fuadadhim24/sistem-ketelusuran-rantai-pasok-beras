@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perlakuan', function (Blueprint $table) {
+        Schema::create('perlakuan_utama', function (Blueprint $table) {
             $table->increments('id_perlakuan');
+            $table->string('nama_perlakuan_utama');
             $table->smallInteger('hari');
             $table->smallInteger('durasi');
-            $table->string('nama_perlakuan');
             $table->unsignedInteger('id_fase');
             $table->foreign('id_fase')->references('id_fase')->on('fase')->onDelete('cascade');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('perlakuan');
+        Schema::dropIfExists('perlakuan_utama');
     }
 };

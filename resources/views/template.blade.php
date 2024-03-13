@@ -121,12 +121,12 @@
       </li>
       <li class="nav-item">
         <!-- <a href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank" class="nav-link d-flex justify-content-between"> -->
-        <a href="ketertelusuran" class="nav-link d-flex justify-content-between">
+        <a href="produk" class="nav-link d-flex justify-content-between">
           <span>
             <span class="sidebar-icon">
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
             </span>
-            <span class="sidebar-text">Ketertelusuran</span>
+            <span class="sidebar-text">produk</span>
           </span>
         </a>
       </li>
@@ -151,6 +151,36 @@
         </a>
       </li>
       <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+      <li class="nav-item">
+        <a href="{{ route('fase') }}" class="nav-link d-flex justify-content-between">
+          <span>
+            <span class="sidebar-icon">
+              <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+            </span>
+            <span class="sidebar-text">Fase</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('gudang') }}" class="nav-link d-flex justify-content-between">
+          <span>
+            <span class="sidebar-icon">
+              <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd"></path></svg>
+            </span>
+            <span class="sidebar-text">Gudang</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('lahan') }}" class="nav-link d-flex justify-content-between">
+          <span>
+            <span class="sidebar-icon">
+              <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
+            </span>
+            <span class="sidebar-text">Lahan</span>
+          </span>
+        </a>
+      </li>
       <li class="nav-item ">
         <a href="{{ asset('volt/pages/settings.html') }}" class="nav-link">
           <span class="sidebar-icon">
@@ -162,7 +192,7 @@
       <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
       <li class="nav-item">
         <!-- <a href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank" class="nav-link d-flex justify-content-between"> -->
-        <a href="{{ route('ketertelusuran') }}" target="_blank" class="nav-link d-flex justify-content-between">
+        <a href="{{ route('produk') }}" target="_blank" class="nav-link d-flex justify-content-between">
           <span>
             <span class="sidebar-icon">
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>

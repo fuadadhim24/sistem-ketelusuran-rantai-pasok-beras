@@ -23,11 +23,20 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () { return view('admin.dashboard');})->name('dashboard');
-    Route::get('/ketertelusuran', function ( ) { return view('admin.ketertelusuran');})->name('ketertelusuran');
+    Route::get('/produk', function ( ) { return view('admin.produk.index');})->name('produk');
 
-    Route::get('/pengujian', function () { return view('admin.pengujian');})->name('pengujian');
-    Route::get('/pengujian/tambah-pengujian', function() { return view('admin.klasifikasiMutu.index');})->name('tambah-pengujian');
+    Route::get('/pengujian', function () { return view('admin.klasifikasiMutu.index');})->name('pengujian');
+    Route::get('/pengujian/tambah-pengujian', function() { return view('admin.klasifikasiMutu.tambah');})->name('tambah-pengujian');
 
-    Route::get('/varietas-padi', function (){ return view('admin.varietas-padi');})->name('varietas-padi');
-    Route::get('/varietas-padi/tambah-varietas', function (){ return view('admin.varietaspadi.index');})->name('tambah-varietas');
+    Route::get('/varietas-padi', function (){ return view('admin.varietasPadi.index');})->name('varietas-padi');
+    Route::get('/varietas-padi/tambah-varietas', function (){ return view('admin.varietasPadi.tambah');})->name('tambah-varietas');
+    
+    Route::get('/fase', function (){ return view('admin.fase.index');})->name('fase');
+    Route::get('/fase/tambah-fase', function (){ return view('admin.fase.tambah');})->name('tambah-fase');
+
+    Route::get('/gudang', function (){ return view('admin.gudang.index');})->name('gudang');
+    Route::get('/gudang/tambah-gudang', function (){ return view('admin.gudang.tambah');})->name('tambah-gudang');
+
+    Route::get('/lahan', function (){ return view('admin.lahan.index');})->name('lahan');
+    Route::get('/lahan/tambah-lahan', function (){ return view('admin.lahan.tambah');})->name('tambah-lahan');
 });

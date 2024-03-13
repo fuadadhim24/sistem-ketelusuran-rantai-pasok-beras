@@ -175,12 +175,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="#">Volt</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Riwayat ketertelusuran</li>
+                        <li class="breadcrumb-item active" aria-current="page">Produk</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between w-100 flex-wrap">
                     <div class="mb-3 mb-lg-0">
-                        <h1 class="h4">Riwayat Ketertelusuran</h1>
+                        <h1 class="h4">Produk</h1>
                     </div>
                 </div>
             </div>
@@ -188,7 +188,16 @@
               <div class="card border-0 shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                      <h2 class="h5 mb-4">Hasil Ketertelusuran</h2>
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                      
+                          <h2 class="h5">Daftar Produk</h2>
+                      
+                      
+                          <label>Lihat detail untuk melihat riwayat ketertelusuran berdasarkan produk <span style="color: red">*</span></label>
+                      
+                        
+                        </div>
+                      </div>
                         <table class="table table-centered table-nowrap mb-0 rounded">
                             <thead class="thead-light">
                                 <tr>

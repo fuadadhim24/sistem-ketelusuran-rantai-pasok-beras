@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nama_gudang');
             $table->string('lokasi');
             $table->string('kapasitas');
+            $table->unsignedInteger('id_produk')->nullable();
+            $table->foreign('id_produk')->references('id_produk')->on('produk')->onDelete('cascade');
             $table->timestamps();
         });
     }

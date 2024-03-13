@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('pengemasan', function (Blueprint $table) {
             $table->increments('id_pengemasan');
             $table->string('qr_code');
-            $table->unsignedInteger('id_pengujian');
+            $table->unsignedInteger('id_pengujian')->nullable();
             $table->foreign('id_pengujian')->references('id_pengujian')->on('pengujian')->onDelete('cascade');
-            $table->unsignedInteger('id_gudang');
-            $table->foreign('id_gudang')->references('id_gudang')->on('gudang')->onDelete('cascade');
             $table->timestamps();
         });
     }

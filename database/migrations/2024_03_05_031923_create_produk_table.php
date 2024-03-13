@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('foto');
             $table->string('harga');
             $table->text('deskripsi');
-            $table->unsignedInteger('id_produksi');
+            $table->unsignedInteger('id_produksi')->nullable();
             $table->foreign('id_produksi')->references('id_produksi')->on('produksi')->onDelete('cascade');
         });
     }
