@@ -21,7 +21,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
-<title>Volt - Free Bootstrap 5 Dashboard</title>
+<title>UD Tani Rejo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="title" content="Volt - Free Bootstrap 5 Dashboard">
 <meta name="author" content="Themesberg">
@@ -108,7 +108,7 @@
           <span class="sidebar-icon">
             <img src="{{ asset('volt/assets/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
           </span>
-          <span class="mt-1 ms-1 sidebar-text">JejakTani</span>
+          <span class="mt-1 ms-1 sidebar-text">UD Tani Rejo</span>
         </a>
       </li>
       <li class="nav-item  ">

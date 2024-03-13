@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\faseController;
+use App\Http\Controllers\pengujianController;
+use App\Http\Controllers\perlakuanController;
+use App\Http\Controllers\varietasPadiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,14 +29,14 @@ Route::middleware([
     Route::get('/dashboard', function () { return view('admin.dashboard');})->name('dashboard');
     Route::get('/produk', function ( ) { return view('admin.produk.index');})->name('produk');
 
-    Route::get('/pengujian', function () { return view('admin.klasifikasiMutu.index');})->name('pengujian');
-    Route::get('/pengujian/tambah-pengujian', function() { return view('admin.klasifikasiMutu.tambah');})->name('tambah-pengujian');
+    Route::get('/pengujian', [pengujianController::class,'index'])->name('pengujian');
+    Route::get('/pengujian/tambah-pengujian', [pengujianController::class,'tambahView'])->name('tambah-pengujian');
 
-    Route::get('/varietas-padi', function (){ return view('admin.varietasPadi.index');})->name('varietas-padi');
-    Route::get('/varietas-padi/tambah-varietas', function (){ return view('admin.varietasPadi.tambah');})->name('tambah-varietas');
+    Route::get('/varietas-padi', [varietasPadiController::class,'index'])->name('varietas-padi');
+    Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class,'tambahView'])->name('tambah-varietas');
     
-    Route::get('/fase', function (){ return view('admin.fase.index');})->name('fase');
-    Route::get('/fase/tambah-fase', function (){ return view('admin.fase.tambah');})->name('tambah-fase');
+    Route::get('/fase', [faseController::class,'index'])->name('fase');
+    Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
 
     Route::get('/gudang', function (){ return view('admin.gudang.index');})->name('gudang');
     Route::get('/gudang/tambah-gudang', function (){ return view('admin.gudang.tambah');})->name('tambah-gudang');
