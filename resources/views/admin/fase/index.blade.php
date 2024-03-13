@@ -184,7 +184,7 @@
                           <p class="mb-0">Setiap Fase akan memiliki perlakuan utama dan perlakuan khusus.</p>
                       </div>
                       <div>
-                          <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components/forms/" class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Forms Docs</a>
+                          <p class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Panduan Informatif</p>
                       </div>
                   </div>
               </div>
