@@ -188,116 +188,289 @@
     <div class="col-12 col-xl-8">
         <div class="row">
             <div class="col-12 mb-4">
-                <div class="card border-0 shadow">
-                    <div class="card-header">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h2 class="fs-5 fw-bold mb-0">Daftar Produk</h2>
-                                <p class="mb-0">dihasilkan setelah melalui tahap pengujian dan pengemasan<span style="color: red">*</span></p>
-                            </div>
-                            <div class="col text-end">
-                                <a href="#" class="btn btn-sm btn-primary">Lihat semua</a>
-                            </div>
+                <div class="card border-0 shadow components-section">
+                    <div class="card-header row border-bottom d-flex align-items-center justify-content-between">
+                        <div class="col">
+                            <h2 class="fs-5 fw-bold mb-0">Daftar Produk</h2>
+                            <p class="mb-0">dihasilkan setelah melalui tahap pengujian dan pengemasan<span style="color: red">*</span></p>
+                        </div>
+                        <div class="col text-end">
+                            <a href="#" class="btn btn-sm btn-primary">Lihat semua</a>
                         </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                            <tr>
-                                <th class="border-bottom" scope="col">Page name</th>
-                                <th class="border-bottom" scope="col">Page Views</th>
-                                <th class="border-bottom" scope="col">Page Value</th>
-                                <th class="border-bottom" scope="col">Bounce rate</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/index.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    3,225
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    $20
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-danger me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                        42,55%
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/forms.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    2,987
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    0
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-success me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        43,24%
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/util.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    2,844
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                294
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-success me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        32,35%
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/validation.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    2,050
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    $147
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-danger me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                        50,87%
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/modals.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    1,483
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    $19
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-success me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        26,12%
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th class="border-bottom" scope="col">Nama Produk</th>
+                                    <th class="border-bottom" scope="col">Jumlah Unit</th>
+                                    <th class="border-bottom" scope="col">Foto</th>
+                                    <th class="border-bottom" scope="col">Harga</th>
+                                    <th class="border-bottom" scope="col">Deskripsi</th>
+                                    <th class="border-bottom" scope="col">Kode Produksi</th>
+                                    <th class="border-bottom" scope="col">Aksi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th class="text-gray-900" scope="row">
+                                        nama produk konten
+                                    </th>
+                                    <td class="fw-bolder text-gray-500">
+                                        325 unit
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <!-- Button Modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-success mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">lihat</button>
+                                        <!-- Modal Content -->
+                                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="h6 modal-title">Terms of Service</h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                                                        <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+                                                            soon as possible of high-risk data breaches that could personally affect them.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary">Accept</button>
+                                                        <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End of Modal Content -->
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <div class="d-flex">
+                                            Rp. 55.000/5 kg
+                                        </div>
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        deskripsi konten
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        kode produksi konten
+                                    </td>
+                                    <td>
+                                        <!-- aria-hidden="true" -->
+                                        <button class="btn  btn-sm btn-outline-warning" type="button" hidden>tampilkan </button>
+                                        <button class="btn  btn-sm btn-outline-gray-500" type="button">sembunyikan</button>
+                                        <button class="btn  btn-sm btn-outline-tertiary" type="button">ubah</button>
+                                        <button class="btn  btn-sm btn-outline-danger" type="button">hapus</button>
+                                      </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-gray-900" scope="row">
+                                        nama produk konten
+                                    </th>
+                                    <td class="fw-bolder text-gray-500">
+                                        325 unit
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <!-- Button Modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-success mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">lihat</button>
+                                        <!-- Modal Content -->
+                                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="h6 modal-title">Terms of Service</h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                                                        <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+                                                            soon as possible of high-risk data breaches that could personally affect them.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary">Accept</button>
+                                                        <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End of Modal Content -->
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <div class="d-flex">
+                                            Rp. 55.000/5 kg
+                                        </div>
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        deskripsi konten
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        kode produksi konten
+                                    </td>
+                                    <td>
+                                        <!-- aria-hidden="true" -->
+                                        <button class="btn  btn-sm btn-outline-warning" type="button" hidden>tampilkan </button>
+                                        <button class="btn  btn-sm btn-outline-gray-500" type="button">sembunyikan</button>
+                                        <button class="btn  btn-sm btn-outline-tertiary" type="button">ubah</button>
+                                        <button class="btn  btn-sm btn-outline-danger" type="button">hapus</button>
+                                      </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-gray-900" scope="row">
+                                        nama produk konten
+                                    </th>
+                                    <td class="fw-bolder text-gray-500">
+                                        325 unit
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <!-- Button Modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-success mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">lihat</button>
+                                        <!-- Modal Content -->
+                                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="h6 modal-title">Terms of Service</h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                                                        <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+                                                            soon as possible of high-risk data breaches that could personally affect them.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary">Accept</button>
+                                                        <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End of Modal Content -->
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <div class="d-flex">
+                                            Rp. 55.000/5 kg
+                                        </div>
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        deskripsi konten
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        kode produksi konten
+                                    </td>
+                                    <td>
+                                        <!-- aria-hidden="true" -->
+                                        <button class="btn  btn-sm btn-outline-warning" type="button" hidden>tampilkan </button>
+                                        <button class="btn  btn-sm btn-outline-gray-500" type="button">sembunyikan</button>
+                                        <button class="btn  btn-sm btn-outline-tertiary" type="button">ubah</button>
+                                        <button class="btn  btn-sm btn-outline-danger" type="button">hapus</button>
+                                      </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-gray-900" scope="row">
+                                        nama produk konten
+                                    </th>
+                                    <td class="fw-bolder text-gray-500">
+                                        325 unit
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <!-- Button Modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-success mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">lihat</button>
+                                        <!-- Modal Content -->
+                                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="h6 modal-title">Terms of Service</h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                                                        <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+                                                            soon as possible of high-risk data breaches that could personally affect them.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary">Accept</button>
+                                                        <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End of Modal Content -->
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <div class="d-flex">
+                                            Rp. 55.000/5 kg
+                                        </div>
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        deskripsi konten
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        kode produksi konten
+                                    </td>
+                                    <td>
+                                        <!-- aria-hidden="true" -->
+                                        <button class="btn  btn-sm btn-outline-warning" type="button" hidden>tampilkan </button>
+                                        <button class="btn  btn-sm btn-outline-gray-500" type="button">sembunyikan</button>
+                                        <button class="btn  btn-sm btn-outline-tertiary" type="button">ubah</button>
+                                        <button class="btn  btn-sm btn-outline-danger" type="button">hapus</button>
+                                      </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-gray-900" scope="row">
+                                        nama produk konten
+                                    </th>
+                                    <td class="fw-bolder text-gray-500">
+                                        325 unit
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <!-- Button Modal -->
+                                        <button type="button" class="btn btn-sm btn-outline-success mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">lihat</button>
+                                        <!-- Modal Content -->
+                                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="h6 modal-title">Terms of Service</h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                                                        <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+                                                            soon as possible of high-risk data breaches that could personally affect them.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary">Accept</button>
+                                                        <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End of Modal Content -->
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        <div class="d-flex">
+                                            Rp. 55.000/5 kg
+                                        </div>
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        deskripsi konten
+                                    </td>
+                                    <td class="fw-bolder text-gray-500">
+                                        kode produksi konten
+                                    </td>
+                                    <td>
+                                        <!-- aria-hidden="true" -->
+                                        <button class="btn  btn-sm btn-outline-warning" type="button" hidden>tampilkan </button>
+                                        <button class="btn  btn-sm btn-outline-gray-500" type="button">sembunyikan</button>
+                                        <button class="btn  btn-sm btn-outline-tertiary" type="button">ubah</button>
+                                        <button class="btn  btn-sm btn-outline-danger" type="button">hapus</button>
+                                      </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -405,7 +578,7 @@
                                             <small style="margin-left: 1em">10/08/24</small>
                                     </h4>
                                     <div class="d-flex align-items-center">
-                                      <div class="bg-warning dot rounded-circle me-1"></div>
+                                      <div class="bg-info dot rounded-circle me-1"></div>
                                       <small>Medium I</small>
                                     </div>
                                     </div>
@@ -462,7 +635,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Project 4 -->
+                        <!-- Project 3 -->
                         <div class="row align-items-center mb-3">
                             <div class="col-auto">
                                 <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
@@ -471,6 +644,23 @@
                                 <div class="progress-wrapper">
                                     <div class="progress-info">
                                         <div class="h6 mb-0">Medium II</div>
+                                        <div class="small fw-bold text-gray-500"><span>34 %</span></div>
+                                    </div>
+                                    <div class="progress mb-0">
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width: 34%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="row align-items-center mb-3">
+                            <div class="col-auto">
+                                <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <div class="col">
+                                <div class="progress-wrapper">
+                                    <div class="progress-info">
+                                        <div class="h6 mb-0">Medium III</div>
                                         <div class="small fw-bold text-gray-500"><span>34 %</span></div>
                                     </div>
                                     <div class="progress mb-0">
@@ -509,62 +699,6 @@
                 </div>
                 <div class="card-body p-2">
                     <div class="ct-chart-ranking ct-golden-section ct-series-a"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 px-0 mb-4">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-between border-bottom pb-3">
-                        <div>
-                            <div class="h6 mb-0 d-flex align-items-center">
-                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg>
-                                Global Rank
-                            </div>
-                        </div>
-                        <div>
-                            <a href="#" class="d-flex align-items-center fw-bold">
-                                #755
-                                <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between border-bottom py-3">
-                        <div>
-                            <div class="h6 mb-0 d-flex align-items-center">
-                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"></path></svg>
-                                Country Rank
-                            </div>
-                            <div class="small card-stats">
-                                United States
-                                <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="#" class="d-flex align-items-center fw-bold">
-                                #32
-                                <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between pt-3">
-                        <div>
-                            <div class="h6 mb-0 d-flex align-items-center">
-                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z" clip-rule="evenodd"></path><path d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"></path></svg>
-                                Category Rank
-                            </div>
-                            <div class="small card-stats">
-                                Computers Electronics > Technology
-                                <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="#" class="d-flex align-items-center fw-bold">
-                                #11
-                                <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

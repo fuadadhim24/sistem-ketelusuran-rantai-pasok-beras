@@ -61,7 +61,12 @@
 <!-- Volt CSS -->
 <link type="text/css" href="{{ asset('volt/css/volt.css') }}" rel="stylesheet">
 
-<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+{{-- mapbox cdn --}}
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css' rel='stylesheet' />
+
+{{-- notify css --}}
+<link type="text/css" href="@@path/vendor/animate.css/animate.min.css" rel="stylesheet">
 
 </head>
 

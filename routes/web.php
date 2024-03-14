@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\faseController;
+use App\Http\Controllers\gudangController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\varietasPadiController;
@@ -38,7 +39,7 @@ Route::middleware([
     Route::get('/fase', [faseController::class,'index'])->name('fase');
     Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
 
-    Route::get('/gudang', function (){ return view('admin.gudang.index');})->name('gudang');
+    Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::get('/gudang/tambah-gudang', function (){ return view('admin.gudang.tambah');})->name('tambah-gudang');
 
     Route::get('/lahan', function (){ return view('admin.lahan.index');})->name('lahan');
