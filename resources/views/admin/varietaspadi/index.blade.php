@@ -188,48 +188,136 @@
 <div class="col-12 mb-4">
     <div class="card border-0 shadow">
       <div class="card-body">
-          <div class="table-responsive">
-            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                <h2 class="fs-5 fw-bold mb-0">Daftar Varietas Padi</h2>
-                <a href="varietas-padi/tambah-varietas" class="btn btn-sm btn-primary">Tambah Varietas</a>
-            </div>
-              <table class="table table-centered table-nowrap mb-0 rounded">
-                  <thead class="thead-light">
-              <tr>
-                          <th class="border-0 rounded-start">No</th>
-                          <th class="border-0">Nama</th>
-                          <th class="border-0">Deskripsi</th>
-                          <th class="border-0">Keunggulan</th>
-                          <th class="border-0">Jenis Musim</th>
-                          <th class="border-0">Lama Tanam</th>
-                          <th class="border-0">Ketahanan Hama Penyakit</th>
-
-
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <!-- Item -->
-                      <tr>
-                          <td><a href="#" class="text-primary fw-bold">1</a> </td>
-                          <td class="fw-bold d-flex align-items-center">
-                              Varietas Hibrida
-                          </td>
-                          <td>
-                            Varietas padi hibrida merupakan hasil persilangan di antara dua atau <br>
-                            lebih populasi,yang mana spesies dan genetiknya berbeda
-                          </td>
-                          <td>
-                            -mampu menghasilkan 10 – 12 ton gabah jika ditanamkan pada lahan 1 hektar,<br>
-                            -pertumbuhan padinya lebih seragam, dan <br>
-                            -padi hibrida lebih pulen dan aromanya wangi.
-                          </td>
-                          <td>
-                              <a href="#"><u>Selengkapnya</u></a>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
+        <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+          <h2 class="fs-5 fw-bold mb-0">Daftar Varietas Padi</h2>
+          <button type="button" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Tambah Varietas</button>
+        </div>
+        <!-- Modal Content -->
+        <div class="modal fade" id="modal-form-signup" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-body p-0">
+                      <div class="card p-3 p-lg-4">
+                          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <div class="card-header border-0 text-center pb-0">
+                              <h2 class="mb-1 h5">Tambah Varietas Padi</h2>
+                              <p class="mb-3">Informasi lengkap menentukan keputusan anda dalam pemilihan bibit.</p>
+                          </div>
+                          <div class="card-body p-0 pl-lg-3">
+                              <form action="#">
+                                  <!-- Form -->
+                                  <div class="form-group mb-4">
+                                      <label for="nama">Nama Varietas</label>
+                                      <div class="input-group">
+                                          <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                          <input type="nama" class="form-control" placeholder="cth: Berikan pupuk hari ini" id="nama" required>
+                                      </div>
+                                  </div>
+                                  <div class="form-group mb-4">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <textarea class="form-control" placeholder="Enter your message..." id="deskripsi" rows="4"></textarea>
+                                  </div>
+                                  <div class="form-group mb-4">
+                                    <label for="keunggulan">Keunggulan</label>
+                                    <textarea class="form-control" placeholder="cth: hasil beras unggul;tahan terhadap penyakit;padi tinggi;" id="keunggulan" rows="4"></textarea>
+                                  </div>
+                                  <div class="form-group mb-4">
+                                    <label class="my-1 me-2" for="country">Jenus Musim</label>
+                                    <select class="form-select" id="country" aria-label="Default select example">
+                                        <option value="0" selected>Hujan</option>
+                                        <option value="1">Kemarau</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group mb-4">
+                                      <label for="hari">lama Tanam</label>
+                                      <div class="input-group">
+                                          <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                          <input type="hari" class="form-control" placeholder="terhitung sejak awal persemaian hingga panen. cth: 120" id="hari" required>
+                                      </div>
+                                  </div>
+                                  <!-- End of Form -->
+                                  
+                                  <div class="d-grid">
+                                      <button type="button" class="btn btn-block btn-primary mb-3 w-100" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Simpan</button>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
+        </div>
+        <!-- End of Modal Content -->   
+        <div class="table-responsive">
+            <table class="table table-centered table-nowrap mb-0 rounded">
+                <thead class="thead-light">
+            <tr>
+                        <th class="border-0 rounded-start">No</th>
+                        <th class="border-0">Nama</th>
+                        <th class="border-0">Deskripsi</th>
+                        <th class="border-0">Keunggulan</th>
+                        <th class="border-0">Jenis Musim</th>
+                        <th class="border-0">Lama Tanam</th>
+                        <th class="border-0">Ketahanan Hama Penyakit</th>
+                        <th class="border-0">Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Item -->
+                    <tr>
+                        <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                        <td>
+                            Varietas Hibrida
+                        </td>
+                        <td>
+                          Varietas padi hibrida merupakan hasil persilangan di antara dua atau <br>
+                          lebih populasi,yang mana spesies dan genetiknya berbeda
+                        </td>
+                        <td>
+                          -mampu menghasilkan 10 – 12 ton gabah jika ditanamkan pada lahan 1 hektar<br>
+                          -pertumbuhan padinya lebih seragam<br>
+                          -padi hibrida lebih pulen dan aromanya wangi
+                        </td>
+                        <td>
+                            Musim Kemarau
+                        </td>
+                        <td>
+                          150 hari
+                        </td>
+                        <td>
+                          Rentan Terhadap Tungau, Siput
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                        <td>
+                            Varietas Hibrida
+                        </td>
+                        <td>
+                          Varietas padi hibrida merupakan hasil persilangan di antara dua atau <br>
+                          lebih populasi,yang mana spesies dan genetiknya berbeda
+                        </td>
+                        <td>
+                          -mampu menghasilkan 10 – 12 ton gabah jika ditanamkan pada lahan 1 hektar<br>
+                          -pertumbuhan padinya lebih seragam<br>
+                          -padi hibrida lebih pulen dan aromanya wangi
+                        </td>
+                        <td>
+                            Musim Kemarau
+                        </td>
+                        <td>
+                          150 hari
+                        </td>
+                        <td>
+                          Rentan Terhadap Tungau, Siput
+                        </td>
+                        <td>
+                          Lihat
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
       </div>
     </div>
 </div>

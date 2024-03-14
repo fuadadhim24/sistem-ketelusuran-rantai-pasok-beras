@@ -25,12 +25,12 @@
 <!--from-->
 
 <div class="card border-0 shadow components-section">
-<form>
+  <form>
     <div class="row mb-3">
       <label for="inputName" class="col-sm-2 col-form-label" >Nama</label>
       <div class="col-sm-7" >
         <input type="Name" class="form-control" id="inputName" >
-      </div>
+    </div>
     </div>
     <div class="row mb-3">
       <label for="inputDeskripsi" class="col-sm-2 col-form-label" >Deskripsi</label>
@@ -64,6 +64,6 @@
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</div>>
+</div>
 
 @endsection
