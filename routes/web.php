@@ -35,7 +35,7 @@ Route::middleware([
 
     Route::get('/varietas-padi', [varietasPadiController::class,'index'])->name('varietas-padi');
     Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class,'tambahView'])->name('tambah-varietas');
-    
+
     Route::get('/fase', [faseController::class,'index'])->name('fase');
     Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
 
