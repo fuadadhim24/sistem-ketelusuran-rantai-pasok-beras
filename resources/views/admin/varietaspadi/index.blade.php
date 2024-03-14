@@ -260,6 +260,7 @@
                         <th class="border-0">Lama Tanam</th>
                         <th class="border-0">Ketahanan Hama Penyakit</th>
                         <th class="border-0">Foto</th>
+                        <th class="border-0">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -287,6 +288,16 @@
                         <td>
                           Rentan Terhadap Tungau, Siput
                         </td>
+                        <td>
+                          Lihat
+                        </td>
+                        <td>
+                          <!-- aria-hidden="true" -->
+                          <button class="btn btn-outline-warning" type="button">tampilkan</button>
+                          <button class="btn btn-outline-gray-500" type="button" hidden>sembunyikan</button>
+                          <button class="btn btn-outline-tertiary" type="button">ubah</button>
+                          <button class="btn btn-outline-danger" type="button">hapus</button>
+                        </td>
                     </tr>
                     <tr>
                         <td><a href="#" class="text-primary fw-bold">1</a> </td>
@@ -313,6 +324,13 @@
                         </td>
                         <td>
                           Lihat
+                        </td>
+                        <td>
+                          <!-- aria-hidden="true" -->
+                          <button class="btn btn-outline-warning" type="button" hidden>tampilkan </button>
+                          <button class="btn btn-outline-gray-500" type="button">sembunyikan</button>
+                          <button class="btn btn-outline-tertiary" type="button">ubah</button>
+                          <button class="btn btn-outline-danger" type="button">hapus</button>
                         </td>
                     </tr>
                 </tbody>
