@@ -193,37 +193,43 @@
                 <div class="row col-12 col-xl-8">
                     <div class="mb-4">
                         <div class="card border-0 shadow components-section">
+                          <!-- Form -->
+                          <form action="{{ route('gudang-store')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
                             <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                            <h2 class="fs-5 fw-bold mb-0">Tambah Gudang</h2>
-                            <a href="#" class="btn btn-sm btn-primary">Simpan</a>
+                              <h2 class="fs-5 fw-bold mb-0">Tambah Gudang</h2>
+                              <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
                             </div>
-                            <div class="card-body">
-                                <!-- Form -->
+                            <div class="card-body">    
                                 <div class="mb-4">
-                                <label for="nama">Nama Gudang</label>
-                                <input type="text" class="form-control" id="nama" aria-describedby="namaHelp">
+                                  <label for="nama_gudang">Nama Gudang</label>
+                                  <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" aria-describedby="namaHelp">
                                 </div>
                                 <div class="row">
                                     <div class="col mb-4">
                                         <label for="luas">luas</label>
-                                        <input type="number" class="form-control" id="luas" placeholder="cth: 10x50" aria-describedby="luasHelp">
+                                        <input type="text" class="form-control" id="luas" name="luas" placeholder="cth: 10x50" aria-describedby="luasHelp">
                                         <small id="luasHepl" class="form-text text-muted">Satuan meter<sup>2</sup>.</small>
                                     </div>
                                     <div class="col mb-4">
                                         <label for="kapasitas">Kapasitas</label>
-                                        <input type="number" class="form-control" id="kapasitas" aria-describedby="kapasitasHelp">
+                                        <input type="number" class="form-control" id="kapasitas" name="kapasitas" aria-describedby="kapasitasHelp">
                                         <small id="kapasitasHelp" class="form-text text-muted">Satuan ton.</small>
                                     </div>
                                 </div>
-                            <!-- End of Form -->
+                                {{-- <div class="col mb-4">
+                                  <button class="btn btn-secondary w-100">Pilih Lokasi Gudang</button>
+                                </div> --}}
                             </div>
+                          </form>
+                          <!-- End of Form -->
                         </div>
                     </div>
                     <div>
                         <div class="card border-0 shadow components-section">
                             <div class="card-header border-bottom d-flex align-items-center justify-content-between">
                                 <h2 class="fs-5 fw-bold mb-0">Daftar Gudang</h2>
-                                <a href="#" class="btn btn-sm btn-primary">Simpan</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -238,7 +244,37 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
+                                          @foreach ($gudangRead as $gudangRead )
+                                            <tr>
+                                              <th class="text-gray-900" scope="row">
+                                                  {{ $gudangRead->nama_gudang}}
+                                              </th>
+                                              <td class="fw-bolder text-gray-500">
+                                                  {{ $gudangRead->kapasitas}}
+                                              </td>
+                                              <td class="fw-bolder text-gray-500">
+                                                  {{$gudangRead->luas}}m<sup>2</sup>
+                                              </td>
+                                              <td class="fw-bolder text-gray-500">
+                                                <div hidden>
+                                                  {{$gudangRead->lokasi}}
+                                                </div>
+                                                <!-- Button Modal -->
+                                                <button id="btnLihat{{ $loop->iteration}}" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons({{ $loop->iteration }})">lihat</button>
+                                                <button id="btnLoad{{ $loop->iteration}}" class="btn btn-outline-success" type="button" hidden disabled>
+                                                  <span class="ms-1">Loading...</span>
+                                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                </button>
+                                              </td>
+                                              <td>
+                                                <button id="btnTampilkan{{ $loop->iteration }}" class="btn btn-outline-warning" type="button" hidden onClick="toggleButtonVisibleTampilkan({{ $loop->iteration }})">tampilkan</button>
+                                                <button id="btnSembunyikan{{ $loop->iteration }}" class="btn btn-outline-gray-500" type="button" onClick="toggleButtonVisibleSembunyikan({{ $loop->iteration }})">sembunyikan</button>
+                                                <button class="btn btn-outline-tertiary" type="button">ubah</button>
+                                                <button class="btn btn-outline-danger" type="button">hapus</button>
+                                              </td>
+                                            </tr>  
+                                          @endforeach
+                                        {{-- <tr>
                                             <th class="text-gray-900" scope="row">
                                                 nama gudang konten
                                             </th>
@@ -284,7 +320,7 @@
                                               <button class="btn btn-outline-tertiary" type="button">ubah</button>
                                               <button class="btn btn-outline-danger" type="button">hapus</button>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
                                         </tbody>
                                     </table>
                                 </div>
@@ -372,7 +408,7 @@
       </div>
   </footer>
   {{-- mapbox script --}}
-  <script>
+  {{-- <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -380,25 +416,15 @@
         center: [-74.5, 40], // starting position [lng, lat]
         zoom: 9, // starting zoom
     });
-    </script>
-
-    {{-- notify example --}}
-    {{-- <script>
-      const notyf = new Notyf();
-      const successNotification = notyf.success('Lokasi gudang berhasil diidentifikasi');
-      const failNotification = notyf.error('Lokasi gudang gagal diidentifikasi');
-      // notyf.dismiss(successNotification);
-      // notyf.dismiss(failNotification);
-    </script> --}}
+  </script> --}}
 
     {{-- aksi lihat lokasi --}}
     <script>
       const notyf = new Notyf();
       
-      function toggleButtons() {
-        var button1 = document.getElementById("btnLihat");
-        var button2 = document.getElementById("btnLoad");
-        var toast = document.getElementById("toastLokasiBerhasil");
+      function toggleButtons(iteration) {
+        var button1 = document.getElementById("btnLihat"+iteration);
+        var button2 = document.getElementById("btnLoad"+iteration);
       
         // Tampilkan button 2 dan sembunyikan button 1
         button2.removeAttribute("hidden");
@@ -441,7 +467,91 @@
           });
         }, 3000);
       }
-      </script>
+    </script>
+    
+    {{-- aksi lihat lokasi --}}
+    <script>
+      
+      function toggleButtonVisibleTampilkan(iteration) {
+        var button1 = document.getElementById("btnTampilkan"+iteration);
+        var button2 = document.getElementById("btnSembunyikan"+iteration);
+      
+        // Tampilkan button 2 dan sembunyikan button 1
+        button2.removeAttribute("hidden");
+        button2.removeAttribute("disabled");
+      
+        button1.setAttribute("hidden", "true");
+        button1.setAttribute("disabled", "true");
+
+        // notify
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top',
+            },
+            types: [
+                {
+                    type: 'info',
+                    background: 'blue',
+                    icon: {
+                        className: 'fas fa-info-circle',
+                        tagName: 'span',
+                        color: '#fff'
+                    },
+                    dismissible: false
+                }
+            ]
+        });
+        notyf.success({
+          message: 'Lokasi berhasil diidentifikasi',
+          duration: 3000,
+          icon: false
+        });
+        
+      }
+    </script>
+    
+    {{-- aksi lihat lokasi --}}
+    <script>
+      
+      function toggleButtonVisibleSembunyikan(iteration) {
+        var button1 = document.getElementById("btnTampilkan"+iteration);
+        var button2 = document.getElementById("btnSembunyikan"+iteration);
+      
+        // Tampilkan button 2 dan sembunyikan button 1
+        button1.removeAttribute("hidden");
+        button1.removeAttribute("disabled");
+      
+        button2.setAttribute("hidden", "true");
+        button2.setAttribute("disabled", "true");
+
+        // notify
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top',
+            },
+            types: [
+                {
+                    type: 'info',
+                    background: 'blue',
+                    icon: {
+                        className: 'fas fa-info-circle',
+                        tagName: 'span',
+                        color: '#fff'
+                    },
+                    dismissible: false
+                }
+            ]
+        });
+        notyf.success({
+          message: 'Lokasi berhasil diidentifikasi',
+          duration: 3000,
+          icon: false
+        });
+        
+      }
+    </script>
 
       {{-- library notify --}}
       <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>

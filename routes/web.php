@@ -4,6 +4,7 @@ use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
+use App\Http\Controllers\settingsController;
 use App\Http\Controllers\varietasPadiController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,8 +41,11 @@ Route::middleware([
     Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
 
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
-    Route::get('/gudang/tambah-gudang', function (){ return view('admin.gudang.tambah');})->name('tambah-gudang');
+    Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
 
     Route::get('/lahan', function (){ return view('admin.lahan.index');})->name('lahan');
     Route::get('/lahan/tambah-lahan', function (){ return view('admin.lahan.tambah');})->name('tambah-lahan');
+
+    Route::get('/settings', [settingsController::class,'index'])->name('settings');
 });
+
