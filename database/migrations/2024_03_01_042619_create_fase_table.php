@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_fase');
             $table->float('durasi');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -30,7 +30,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Avatar -->
-                      <img alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg" class="avatar-md rounded">
+                      <img alt="Image placeholder" src="{{ asset('volt/asset/img/team/profile-picture-1.jpg') }}" class="avatar-md rounded">
                     </div>
                     <div class="col ps-0 ms-2">
                       <div class="d-flex justify-content-between align-items-center">
@@ -49,7 +49,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Avatar -->
-                      <img alt="Image placeholder" src="../../assets/img/team/profile-picture-2.jpg" class="avatar-md rounded">
+                      <img alt="Image placeholder" src="{{ asset('volt/asset/img/team/profile-picture-2.jpg') }}" class="avatar-md rounded">
                     </div>
                     <div class="col ps-0 ms-2">
                       <div class="d-flex justify-content-between align-items-center">
@@ -68,7 +68,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Avatar -->
-                      <img alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg" class="avatar-md rounded">
+                      <img alt="Image placeholder" src="{{ asset('volt/asset/img/team/profile-picture-3.jpg') }}" class="avatar-md rounded">
                     </div>
                     <div class="col ps-0 m-2">
                       <div class="d-flex justify-content-between align-items-center">
@@ -87,7 +87,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Avatar -->
-                      <img alt="Image placeholder" src="../../assets/img/team/profile-picture-4.jpg" class="avatar-md rounded">
+                      <img alt="Image placeholder" src="{{ asset('volt/asset/img/team/profile-picture-4.jpg') }}" class="avatar-md rounded">
                     </div>
                     <div class="col ps-0 ms-2">
                       <div class="d-flex justify-content-between align-items-center">
@@ -106,7 +106,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Avatar -->
-                      <img alt="Image placeholder" src="../../assets/img/team/profile-picture-5.jpg" class="avatar-md rounded">
+                      <img alt="Image placeholder" src="{{ asset('volt/asset/img/team/profile-picture-5.jpg') }}" class="avatar-md rounded">
                     </div>
                     <div class="col ps-0 ms-2">
                       <div class="d-flex justify-content-between align-items-center">
@@ -228,16 +228,13 @@
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h2 class="h6 modal-title">Terms of Service</h2>
+                                                        <h2 class="h6 modal-title">Gambar Produk</h2>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
-                                                        <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
-                                                            soon as possible of high-risk data breaches that could personally affect them.</p>
+                                                    <div class="modal-body" style="height: auto">
+                                                        <img class="w-100" src="{{ asset('asset/img/admin/produk/ciherang.jpg') }}" alt="Foto Produk">
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary">Accept</button>
                                                         <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
@@ -731,44 +728,7 @@
         </div>
     </div>
 </div>
-<div class="col-12 mb-4">
-<div class="card border-0 shadow">
-    <div class="card-body">
-        <div class="table-responsive">
-        <h2 class="h5 mb-4">Belum Dikemas</h2>
-            <table class="table table-centered table-nowrap mb-0 rounded">
-                <thead class="thead-light">
-            <tr>
-                        <th class="border-0 rounded-start">#</th>
-                        <th class="border-0">Tanggal Pengujian</th>
-                        <th class="border-0">Tanggal Kadaluarsa</th>
-                        <th class="border-0">Mutu</th>
-                        <th class="border-0">Detail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Item -->
-                    <tr>
-                        <td><a href="#" class="text-primary fw-bold">1</a> </td>
-                        <td class="fw-bold d-flex align-items-center">
-                            21 Oktober 2023
-                        </td>
-                        <td>
-                            25 November 2025
-                        </td>
-                        <td>
-                            Premium
-                        </td>
-                        <td>
-                            <a href="#"><u>Selengkapnya</u></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-</div>
+
 </div>
 </div>
 <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">

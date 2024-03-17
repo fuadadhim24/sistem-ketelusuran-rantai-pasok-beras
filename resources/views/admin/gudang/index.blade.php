@@ -274,53 +274,7 @@
                                               </td>
                                             </tr>  
                                           @endforeach
-                                        {{-- <tr>
-                                            <th class="text-gray-900" scope="row">
-                                                nama gudang konten
-                                            </th>
-                                            <td class="fw-bolder text-gray-500">
-                                                100 ton
-                                            </td>
-                                            <td class="fw-bolder text-gray-500">
-                                                20x100 m<sup>2</sup>
-                                            </td>
-                                            <td class="fw-bolder text-gray-500">
-                                              <!-- Button Modal -->
-                                              <button id="btnLihat" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons()">lihat</button>
-                                              <button id="btnLoad" class="btn btn-outline-success" type="button" hidden disabled>
-                                                <span class="ms-1">Loading...</span>
-                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                              </button>
-                                              <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-                                                <div class="toast-header">
-                                                  <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-                                                  <strong class="me-auto">UD Tani Rejo</strong>
-                                                  <small>sekarang</small>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                                </div>
-                                                <div class="toast-body text-white">
-                                                  Lokasi berhasil diidentifikasi.
-                                                </div>
-                                              </div>
-                                              <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert" aria-live="assertive" aria-atomic="true" hidden>
-                                                <div class="toast-header">
-                                                  <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-                                                  <strong class="me-auto">UD Tani Rejo</strong>
-                                                  <small>sekarang</small>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                                </div>
-                                                <div class="toast-body text-white">
-                                                  Lokasi gagal diidentifikasi.
-                                                </div>
-                                              </div>
-                                            </td>
-                                            <td>
-                                              <button class="btn btn-outline-warning" type="button" hidden>tampilkan </button>
-                                              <button class="btn btn-outline-gray-500" type="button">sembunyikan</button>
-                                              <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                                              <button class="btn btn-outline-danger" type="button">hapus</button>
-                                            </td>
-                                        </tr> --}}
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -408,7 +362,7 @@
       </div>
   </footer>
   {{-- mapbox script --}}
-  {{-- <script>
+  <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -416,7 +370,7 @@
         center: [-74.5, 40], // starting position [lng, lat]
         zoom: 9, // starting zoom
     });
-  </script> --}}
+  </script>
 
     {{-- aksi lihat lokasi --}}
     <script>

@@ -19,7 +19,7 @@ class gudangController extends Controller
         $request->validate([
             'nama_gudang'     => 'required',
             'kapasitas'   => 'required',
-            'lokasi'   => 'required',
+            // 'lokasi'   => 'required',
             'luas'   => 'required'
         ]);
 

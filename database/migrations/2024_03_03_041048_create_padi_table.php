@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('jenis_musim');
             $table->string('lama_tanam');
             $table->string('ketahanan_hama_penyakit');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

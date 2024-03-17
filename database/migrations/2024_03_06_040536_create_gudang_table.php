@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('luas')->nullable();
             $table->unsignedBigInteger('id_produk')->nullable();
             $table->foreign('id_produk')->references('id')->on('produk')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

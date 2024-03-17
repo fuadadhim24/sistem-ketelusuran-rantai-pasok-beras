@@ -22,6 +22,7 @@ return new class extends Migration
             $table->smallInteger('durasi');
             $table->unsignedBigInteger('id_fase');
             $table->foreign('id_fase')->references('id')->on('fase')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

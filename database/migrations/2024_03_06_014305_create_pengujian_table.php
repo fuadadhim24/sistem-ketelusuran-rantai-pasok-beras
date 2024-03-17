@@ -25,6 +25,7 @@ return new class extends Migration
             $table->float('butir_kuning_rusak');
             $table->float('butir_kapur');
             $table->string('keterangan');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

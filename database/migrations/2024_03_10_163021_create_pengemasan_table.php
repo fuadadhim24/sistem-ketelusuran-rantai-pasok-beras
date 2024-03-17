@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('qr_code');
             $table->unsignedBigInteger('id_pengujian')->nullable();
             $table->foreign('id_pengujian')->references('id')->on('pengujian')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
