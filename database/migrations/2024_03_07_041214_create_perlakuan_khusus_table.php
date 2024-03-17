@@ -21,7 +21,7 @@ return new class extends Migration
             $table->smallInteger('hari');
             $table->smallInteger('durasi');
             $table->unsignedBigInteger('id_fase');
-            $table->foreign('id_fase')->references('id_fase')->on('fase')->onDelete('cascade');
+            $table->foreign('id_fase')->references('id')->on('fase')->onDelete('cascade');
             $table->timestamps();
         });
     }
