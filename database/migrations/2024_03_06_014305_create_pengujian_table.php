@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pengujian', function (Blueprint $table) {
-            $table->increments('id_pengujian');
-            $table->unsignedInteger('id_produksi')->nullable(); 
+            $table->id();
+            $table->unsignedBigInteger('id_produksi')->nullable(); 
             $table->foreign('id_produksi')->references('id_produksi')->on('produk')->onDelete('cascade');
             $table->float('kadar_air');
             $table->float('benda_asing');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->float('butir_kuning_rusak');
             $table->float('butir_kapur');
             $table->string('keterangan');
-            $table->timestamps('');
+            $table->timestamps();
         });
     }
 

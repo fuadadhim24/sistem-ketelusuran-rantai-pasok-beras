@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('padi', function (Blueprint $table) {
-            $table->increments('id_padi');
+            $table->id();
             $table->string('varietas');
             $table->text('deskripsi');
             $table->string('keunggulan');
