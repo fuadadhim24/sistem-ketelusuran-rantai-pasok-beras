@@ -362,7 +362,7 @@
       </div>
   </footer>
   {{-- mapbox script --}}
-  <script>
+  {{-- <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -370,7 +370,7 @@
         center: [-74.5, 40], // starting position [lng, lat]
         zoom: 9, // starting zoom
     });
-  </script>
+  </script> --}}
 
     {{-- aksi lihat lokasi --}}
     <script>
