@@ -234,7 +234,7 @@
                                         <a href="{{ route('perlakuan') }}" class="d-flex align-items-center fw-bold me-2">
                                             <img src="{{ asset('asset/img/admin/view.png') }}" alt="View" class="icon icon-xs text-gray-500">
                                         </a>
-                                        <a href="{{ route('edit-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold me-2">
+                                        <a class="d-flex align-items-center fw-bold me-2" data-bs-toggle="modal" data-bs-target="#modal-form-signup-{{ $fase->id }}">
                                             <img src="{{ asset('asset/img/admin/note.png') }}" alt="Edit" class="icon icon-xs text-gray-500">
                                         </a>
                                         <a href="{{ route('hapus-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold">
@@ -242,6 +242,46 @@
                                         </a>
                                     </div>
                                 </div>
+                                <!-- Modal Content -->
+                                <div class="modal fade" id="modal-form-signup-{{ $fase->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <div class="card p-3 p-lg-4">
+                                                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <div class="card-header border-0 text-center pb-0">
+                                                        <h2 class="mb-2 h5">Edit Informasi Fase</h2>
+                                                    </div>
+                                                    <div class="card-body p-0 pl-lg-3">
+                                                        <form action="#">
+                                                            <!-- Form -->
+                                                            <div class="form-group mb-4">
+                                                                <label for="nama">Nama Fase</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                                                    <input type="nama" class="form-control" placeholder="cth: Berikan pupuk hari ini" value="{{$fase->nama_fase}}" id="nama" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group mb-4">
+                                                                <label for="durasi">Durasi</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                                                    <input type="durasi" class="form-control" placeholder="berlangsungnya perlakuan. cth: 10" id="durasi" value="{{$fase->durasi}}" required>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End of Form -->
+
+                                                            <div class="d-grid">
+                                                                <button type="button" class="btn btn-block btn-primary mb-3 w-100" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Modal Content -->
                                 @endforeach
                             </div>
                         </div>
