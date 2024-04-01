@@ -214,117 +214,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-xl-4">
+                <div class="col-12 col-xl-4" id="daftar-fase-container">
                     <div class="col-12 px-0 mb-4">
                         <div class="card border-0 shadow mb-2">
-                          <div class="card-header">
-                              <h2 class="fs-5 fw-bold mb-0">Daftar Fase</h2>
-                          </div>
+                            <div class="card-header">
+                                <h2 class="fs-5 fw-bold mb-0">Daftar Fase</h2>
+                            </div>
                         </div>
                         <div class="card border-0 shadow">
-                            <div class="card-body">
+                            <div class="card-body" id="daftar-fase">
+                                @foreach($fasesku as $fase)
                                 <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
                                     <div>
                                         <div class="h6 mb-0 d-flex align-items-center">
-                                          Persiapan Lahan
+                                            {{ $fase->nama_fase }}
                                         </div>
                                     </div>
-                                    <div>
-                                        <a href="{{route('perlakuan')}}" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
+                                    <div class="d-flex">
+                                        <a href="{{ route('perlakuan') }}" class="d-flex align-items-center fw-bold me-2">
+                                            <img src="{{ asset('asset/img/admin/view.png') }}" alt="View" class="icon icon-xs text-gray-500">
+                                        </a>
+                                        <a href="{{ route('edit-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold me-2">
+                                            <img src="{{ asset('asset/img/admin/note.png') }}" alt="Edit" class="icon icon-xs text-gray-500">
+                                        </a>
+                                        <a href="{{ route('hapus-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold">
+                                            <img src="{{ asset('asset/img/admin/delete.png') }}" alt="Delete" class="icon icon-xs text-gray-500">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                    <div>
-                                        <div class="h6 mb-0 d-flex align-items-center">
-                                          Pemilihan Bibit
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                    <div>
-                                        <div class="h6 mb-0 d-flex align-items-center">
-                                          Persemaian
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                    <div>
-                                        <div class="h6 mb-0 d-flex align-items-center">
-                                          Penanaman
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                    <div>
-                                        <div class="h6 mb-0 d-flex align-items-center">
-                                          Perawatan lahan
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                    <div>
-                                        <div class="h6 mb-0 d-flex align-items-center">
-                                          Pemanenan
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                    <div>
-                                        <div class="h6 mb-0 d-flex align-items-center">
-                                          Pasca Panen
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="d-flex align-items-center fw-bold">
-                                            <u>detail perlakuan
-                                            <svg class="icon icon-xs text-gray-500 ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                          </u>
-                                        </a>
-                                    </div>
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
                     </div>
+                </div>
+
                 </div>
               </div>
 
@@ -391,35 +314,42 @@
       </div>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
-          $(document).ready(function() {
-              $('#ajax-form').submit(function(e) {
-                  e.preventDefault(); // Mencegah aksi default dari form submit
+        $(document).ready(function() {
+            $('#ajax-form').submit(function(e) {
+                e.preventDefault(); // Mencegah aksi default dari form submit
 
-                  // Mengambil nilai dari input
-                  var namaFase = $('#nama_fase').val();
-                  var durasi = $('#durasi').val();
+                // Mengambil nilai dari input
+                var namaFase = $('#nama_fase').val();
+                var durasi = $('#durasi').val();
 
-                  // Kirim permintaan AJAX ke server
-                  $.ajax({
-                      url: '/fase/store', // Ganti dengan URL endpoint yang sesuai
-                      method: 'POST',
-                      data: {
-                          _token: '{{ csrf_token() }}',
-                          nama_fase: namaFase,
-                          durasi: durasi
-                      },
-                      success: function(response) {
-                          alert('Data berhasil disimpan');
-                          // Lakukan tindakan lain yang diperlukan setelah sukses
-                      },
-                      error: function(xhr, status, error) {
-                          alert('Terjadi kesalahan: ' + error);
-                          // Tambahkan kode di sini untuk menangani kesalahan
-                      }
-                  });
-              });
-          });
-      </script>
+                // Kirim permintaan AJAX ke server
+                $.ajax({
+                    url: '/fase/store', // Ganti dengan URL endpoint yang sesuai
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        nama_fase: namaFase,
+                        durasi: durasi
+                    },
+                    success: function(response) {
+                        alert('Data berhasil disimpan');
+
+                        // Tambahkan data fase baru ke tampilan
+                        $('#daftar-fase').append('<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' + namaFase + '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>');
+
+                        // Kosongkan nilai input setelah berhasil disimpan
+                        $('#nama_fase').val('');
+                        $('#durasi').val('');
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Terjadi kesalahan: ' + error);
+                        // Tambahkan kode di sini untuk menangani kesalahan
+                    }
+                });
+            });
+        });
+    </script>
+
   </footer>
 
 

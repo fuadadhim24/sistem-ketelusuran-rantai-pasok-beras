@@ -8,8 +8,13 @@ use Illuminate\View\View;
 use Illuminate\Http\JsonResponse;
 class faseController extends Controller
 {
-    function index(){
-        return view('admin.fase.index');
+    public function index()
+    {
+        // Mengambil semua data fase dari model Fase
+        $fasesku = Fase::all();
+
+        // Meneruskan data ke tampilan 'admin.fase.index'
+        return view('admin.fase.index', ['fasesku' => $fasesku]);
     }
     function tambahView(){
         return view('admin.fase.perlakuan.index');
@@ -39,5 +44,11 @@ class faseController extends Controller
     }
     function hapus(){
 
+    }
+    public function destroy($id)
+    {
+        $fase = Fase::findOrFail($id);
+        $fase->delete();
+        return redirect()->route('index-fase')->with('success', 'Fase berhasil dihapus.');
     }
 }
