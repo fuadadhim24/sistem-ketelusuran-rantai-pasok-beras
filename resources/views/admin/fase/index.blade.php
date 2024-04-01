@@ -191,32 +191,35 @@
 
               <div class="row">
                 <div class="col-12 col-xl-8">
-                      <div class="card border-0 shadow components-section">
+                    <div class="card border-0 shadow components-section">
                         <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                          <h2 class="fs-5 fw-bold mb-0">Tambah Fase</h2>
-                          <a href="#" class="btn btn-sm btn-primary">Simpan</a>
+                            <h2 class="fs-5 fw-bold mb-0">Tambah Fase</h2>
+                            <form id="ajax-form">
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-primary" id="simpan">Simpan</button>
+                            </form>
                         </div>
                         <div class="card-body">
                             <!-- Form -->
                             <div class="mb-4">
-                              <label for="email">Nama Fase</label>
-                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                <label for="nama_fase">Nama Fase</label>
+                                <input type="text" class="form-control" id="nama_fase" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-4">
-                              <label for="email">Durasi</label>
-                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                              <small id="emailHelp" class="form-text text-muted">Rentang waktu berlangsung.</small>
+                                <label for="durasi">Durasi</label>
+                                <input type="text" class="form-control" id="durasi" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">Rentang waktu berlangsung.</small>
                             </div>
-                          <!-- End of Form -->
+                            <!-- End of Form -->
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-12 col-xl-4">
                     <div class="col-12 px-0 mb-4">
                         <div class="card border-0 shadow mb-2">
                           <div class="card-header">
                               <h2 class="fs-5 fw-bold mb-0">Daftar Fase</h2>
-                          </div>                            
+                          </div>
                         </div>
                         <div class="card border-0 shadow">
                             <div class="card-body">
@@ -318,7 +321,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -333,7 +336,7 @@
               <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
               <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
                   data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
-                  data-size="large" data-show-count="true"  
+                  data-size="large" data-show-count="true"
                   aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
           </div>
           <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
@@ -386,5 +389,38 @@
               </ul>
           </div>
       </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $('#ajax-form').submit(function(e) {
+                  e.preventDefault(); // Mencegah aksi default dari form submit
+
+                  // Mengambil nilai dari input
+                  var namaFase = $('#nama_fase').val();
+                  var durasi = $('#durasi').val();
+
+                  // Kirim permintaan AJAX ke server
+                  $.ajax({
+                      url: '/fase/store', // Ganti dengan URL endpoint yang sesuai
+                      method: 'POST',
+                      data: {
+                          _token: '{{ csrf_token() }}',
+                          nama_fase: namaFase,
+                          durasi: durasi
+                      },
+                      success: function(response) {
+                          alert('Data berhasil disimpan');
+                          // Lakukan tindakan lain yang diperlukan setelah sukses
+                      },
+                      error: function(xhr, status, error) {
+                          alert('Terjadi kesalahan: ' + error);
+                          // Tambahkan kode di sini untuk menangani kesalahan
+                      }
+                  });
+              });
+          });
+      </script>
   </footer>
+
+
 @endsection

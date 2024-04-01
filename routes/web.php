@@ -39,6 +39,7 @@ Route::middleware([
 
     Route::get('/fase', [faseController::class,'index'])->name('fase');
     Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
+    Route::post('/fase/store', [FaseController::class, 'store'])->name('fase.store');
 
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
