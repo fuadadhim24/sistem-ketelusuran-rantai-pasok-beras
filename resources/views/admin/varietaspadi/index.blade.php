@@ -236,7 +236,7 @@
                                       </div>
                                   </div>
                                   <!-- End of Form -->
-                                  
+
                                   <div class="d-grid">
                                       <button type="button" class="btn btn-block btn-primary mb-3 w-100" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Simpan</button>
                                   </div>
@@ -247,12 +247,12 @@
               </div>
           </div>
         </div>
-        <!-- End of Modal Content -->   
+        <!-- End of Modal Content -->
         <div class="table-responsive">
             <table class="table table-centered table-nowrap mb-0 rounded">
                 <thead class="thead-light">
             <tr>
-                        <th class="border-0 rounded-start">No</th>
+                        <th class="border-0">No</th>
                         <th class="border-0">Nama</th>
                         <th class="border-0">Deskripsi</th>
                         <th class="border-0">Keunggulan</th>
@@ -265,32 +265,17 @@
                 </thead>
                 <tbody>
                     <!-- Item -->
+                    @foreach ($padi as $item )
                     <tr>
-                        <td><a href="#" class="text-primary fw-bold">1</a> </td>
-                        <td>
-                            Varietas Hibrida
-                        </td>
-                        <td>
-                          Varietas padi hibrida merupakan hasil persilangan di antara dua atau <br>
-                          lebih populasi,yang mana spesies dan genetiknya berbeda
-                        </td>
-                        <td>
-                          -mampu menghasilkan 10 – 12 ton gabah jika ditanamkan pada lahan 1 hektar<br>
-                          -pertumbuhan padinya lebih seragam<br>
-                          -padi hibrida lebih pulen dan aromanya wangi
-                        </td>
-                        <td>
-                            Musim Kemarau
-                        </td>
-                        <td>
-                          150 hari
-                        </td>
-                        <td>
-                          Rentan Terhadap Tungau, Siput
-                        </td>
-                        <td>
-                          Lihat
-                        </td>
+
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->varietas }}</td>
+                        <td>{{ $item->deskripsi }}</td>
+                        <td>{{ $item->keunggulan }}</td>
+                        <td>{{ $item->jenis_musim }}</td>
+                        <td>{{ $item->lama_tanam }}</td>
+                        <td>{{ $item->ketahanan_hama_penyakit }}</td>
+
                         <td>
                           <!-- aria-hidden="true" -->
                           <button class="btn btn-outline-warning" type="button">tampilkan</button>
@@ -299,40 +284,8 @@
                           <button class="btn btn-outline-danger" type="button">hapus</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td><a href="#" class="text-primary fw-bold">1</a> </td>
-                        <td>
-                            Varietas Hibrida
-                        </td>
-                        <td>
-                          Varietas padi hibrida merupakan hasil persilangan di antara dua atau <br>
-                          lebih populasi,yang mana spesies dan genetiknya berbeda
-                        </td>
-                        <td>
-                          -mampu menghasilkan 10 – 12 ton gabah jika ditanamkan pada lahan 1 hektar<br>
-                          -pertumbuhan padinya lebih seragam<br>
-                          -padi hibrida lebih pulen dan aromanya wangi
-                        </td>
-                        <td>
-                            Musim Kemarau
-                        </td>
-                        <td>
-                          150 hari
-                        </td>
-                        <td>
-                          Rentan Terhadap Tungau, Siput
-                        </td>
-                        <td>
-                          Lihat
-                        </td>
-                        <td>
-                          <!-- aria-hidden="true" -->
-                          <button class="btn btn-outline-warning" type="button" hidden>tampilkan </button>
-                          <button class="btn btn-outline-gray-500" type="button">sembunyikan</button>
-                          <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                          <button class="btn btn-outline-danger" type="button">hapus</button>
-                        </td>
-                    </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

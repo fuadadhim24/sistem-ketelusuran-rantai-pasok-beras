@@ -48,5 +48,7 @@ Route::middleware([
     Route::get('/lahan/tambah-lahan', function (){ return view('admin.lahan.tambah');})->name('tambah-lahan');
 
     Route::get('/settings', [settingsController::class,'index'])->name('settings');
+
+    Route::resource('varietasPadis', VarietasPadiController::class);
 });
 
