@@ -1,0 +1,2087 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.beranda .link-asianagri-logo-white-2-png {
+
+    background: url('../img/landingpage/divfooterOuter.png');
+    width: 100px;
+    height: 100px;
+  }
+  .beranda .link-tentang-kami-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.2px;
+    letter-spacing: -0.4px;
+    line-height: 1.164;
+    color: #FFFFFF;
+  }
+  .beranda .item-8 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .link-bisnis {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16.8px;
+    letter-spacing: -0.4px;
+    line-height: 1.192;
+    color: #FFFFFF;
+  }
+  .beranda .item-9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .link-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.6px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #FFFFFF;
+  }
+  .beranda .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .link-media-publikasi {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .beranda .item-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .link-media-publikasi-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .beranda .item-2 {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .nav-list {
+    margin: 30px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 819.8px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .link-hubungi-kami {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.6px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #FFFFFF;
+  }
+  .beranda .item-3 {
+    margin-top: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .link-id {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.6px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #FFFFFF;
+  }
+  .beranda .item-4 {
+    margin-top: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .vector-14 {
+    width: 19.9px;
+    height: 20px;
+  }
+  .beranda .link-2 {
+    opacity: 0.75;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px 0;
+    width: 19.7px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .beranda .item-5 {
+    margin-bottom: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 19.7px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .beranda .list {
+    margin: 29.5px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 185.4px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer {
+    background: rgba(0, 0, 0, 0.56);
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    margin: 0;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+  }
+  .beranda .link-media-publikasi-2 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .beranda .item-6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .link-media-publikasi-3 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .beranda .item-7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .beranda .container-19 {
+    position: relative;
+    margin: 0 70.5px 226px 70.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 181.2px;
+    box-sizing: border-box;
+  }
+  .beranda .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
+    position: relative;
+    margin: 0 340.9px 52px 0;
+    display: inline-block;
+    align-self: center;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 63.6px;
+    letter-spacing: -1px;
+    line-height: 1.194;
+    color: #FFFFFF;
+  }
+  .beranda .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer-1 {
+    background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5));
+    position: relative;
+    width: 1920px;
+    height: 180px;
+  }
+  .beranda .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
+    background: url('../img/landingpage/rsSbgPxRsSbgWrapRsSbgImage.jpeg');
+    position: relative;
+    margin: 0 0.8px 96.1px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 94px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .beranda .heading-5-tentang-kami {
+    margin: 0 1178px 5.9px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.4px;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #008031;
+  }
+  .beranda .heading-2-ud-tani-rejo-adalah-perusahaan {
+    margin: 14px 106.3px 0 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 36.1px;
+    letter-spacing: -0.7px;
+    line-height: 1.428;
+    color: #444444;
+  }
+  .beranda .ud-tani-rejo-adalah-salah-satu-perusahaan-swasta-nasional-terkemuka-di-indonesia-yang-memproduksi-minyak-sawit-mentah-melalui-perkebunan-yang-dikelola-secara-berkelanjutan {
+    position: relative;
+    margin-bottom: 141px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15.2px;
+    letter-spacing: -0.3px;
+    line-height: 1.8;
+    color: #676767;
+  }
+  .beranda .container-25 {
+    margin: 0 6.6px 1.4px 0;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .bisnis-kami-meliputi-pembibitan-penanaman-hingga-pengolahan-beras-untuk-menghasilkan-minyak-sawit-berkelanjutan-di-pabrik-yang-berteknologi-tinggi-dan-ramah-lingkungan {
+    margin: 0 0 36.2px 626.4px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15.1px;
+    letter-spacing: -0.3px;
+    line-height: 1.814;
+    color: #676767;
+  }
+  .beranda .link-1 {
+    background: #FFFFFF;
+    margin: 10px 15px 9px 0;
+    width: 25px;
+    height: 1px;
+  }
+  .beranda .link-tentang-kami {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.1px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  .beranda .heading-61 {
+    border-radius: 200px;
+    background: #588157;
+    margin: 0 0 90.6px 226.6px;
+    display: flex;
+    flex-direction: row;
+    padding: 16.1px 0 14.9px 0;
+    width: 200.1px;
+    box-sizing: border-box;
+  }
+  .beranda .div-divider-small-border-3 {
+    background: #588157;
+    margin: 0 1059.5px 12.6px 0;
+    width: 240px;
+    height: 1px;
+  }
+  .beranda .heading-5-penciptaan-nilai-bersama {
+    margin: 0 1069.3px 171.6px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.4px;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #008031;
+  }
+  .beranda .div-row-bg-overlay-2 {
+    opacity: 0.8;
+    background: linear-gradient(112.36deg, rgba(207, 235, 213, 0.5), rgba(255, 255, 255, 0.71));
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+  }
+  .beranda .div-divider-small-border-2 {
+    background: #588157;
+    position: relative;
+    margin: 0 1059.5px 12.6px 0;
+    width: 240px;
+    height: 1px;
+  }
+  .beranda .heading-5-apa-yang-kami-lakukan {
+    position: relative;
+    margin: 0 1091.7px 50.3px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.4px;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #1B1B1B;
+  }
+  .beranda .list-item-link-kemitraan-dengan-petani {
+    margin-bottom: 35.8px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18.1px;
+    letter-spacing: -0.4px;
+    line-height: 1.422;
+    color: #588157;
+  }
+  .beranda .list-item-link-penelitian-dan-pengembangan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    line-height: 1.434;
+    color: #888888;
+  }
+  .beranda .container-24 {
+    margin: 7.7px 86.6px 8.5px 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .heading-2-membangun-kemitraan-dengan-petani {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 36.5px;
+    letter-spacing: -0.7px;
+    line-height: 1.411;
+    color: #444444;
+  }
+  .beranda .container-27 {
+    position: relative;
+    margin: 0 308.9px 27.2px 0;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .list-item-link-benih-topaz {
+    margin-bottom: 35.8px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 17.8px;
+    letter-spacing: -0.4px;
+    line-height: 1.445;
+    color: #888888;
+  }
+  .beranda .list-item-link-komitmen-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18.4px;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    color: #888888;
+  }
+  .beranda .container-32 {
+    margin: 0 124.4px 234.5px 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .ud-tani-rejo-bermitra-dengan-lebih-dari-20-petani-membantu-mereka-meningkatkan-pendapatan-dan-menerapkan-praktik-praktik-berkelanjutan-dalam-kegiatan-bertani {
+    margin: 0 9.1px 37.6px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15.2px;
+    letter-spacing: -0.3px;
+    line-height: 1.8;
+    color: #676767;
+  }
+  .beranda .container {
+    margin: 0 0 45.3px 0.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15.2px;
+    letter-spacing: -0.3px;
+    line-height: 1.8;
+    color: #676767;
+  }
+  .beranda .heading-5-link-2 {
+    background: #588157;
+    margin: 10px 15px 9px 0;
+    width: 25px;
+    height: 1px;
+  }
+  .beranda .heading-5-link-pelajari-lebih-lanjut {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    text-transform: capitalize;
+    color: #588157;
+  }
+  .beranda .container-21 {
+    margin: 0 0.1px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .container-2 {
+    margin: 3.3px 61.7px 0 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .home-video-thumb-1-jpg {
+    background: url('../img/landingpage/homeVideoThumb1Jpg.jpeg') 50% / cover no-repeat;
+    position: absolute;
+    left: -11.3px;
+    top: -7.5px;
+    width: 472.3px;
+    height: 314.4px;
+  }
+  .beranda .div-inner-wrap-4 {
+    border-radius: 5px;
+    position: relative;
+    margin: 3.1px 0 19.7px 0;
+    width: 449.8px;
+    height: 299.4px;
+  }
+  .beranda .container-13 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .div-row-bg-wrap-1 {
+    background: #F9F9F9;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 127.7px 0 124.9px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .country {
+    background: url('../img/landingpage/country.png') 50% / contain no-repeat;
+    margin: 0 6.6px 15px 6.4px;
+    width: 100px;
+    height: 100px;
+  }
+  .beranda .heading-4100000 {
+    margin: 0 0 13.4px 20.6px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: -0.9px;
+    line-height: 1.6;
+    color: #588157;
+  }
+  .beranda .hektar-perkebunan-milik-perusahaan {
+    text-align: center;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14.4px;
+    letter-spacing: 0.5px;
+    line-height: 1.597;
+    text-transform: uppercase;
+    color: #676767;
+  }
+  .beranda .div-wpb-wrapper {
+    margin: 0.1px 276px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .beranda .field {
+    background: url('../img/landingpage/field.png') 50% / contain no-repeat;
+    margin: 0 0.5px 15px 0.3px;
+    width: 100px;
+    height: 100px;
+  }
+  .beranda .heading-460000 {
+    margin: 0 0 13.4px 1.9px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: -0.9px;
+    line-height: 1.6;
+    color: #588157;
+  }
+  .beranda .hektar-pertanian-milik-petani-plasma {
+    text-align: center;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14.4px;
+    letter-spacing: 0.5px;
+    line-height: 1.597;
+    text-transform: uppercase;
+    color: #676767;
+  }
+  .beranda .div-wpb-wrapper-1 {
+    margin: 0.1px 282.4px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .beranda .farmer {
+    background: url('../img/landingpage/farmer.png') 50% / contain no-repeat;
+    margin-bottom: 15.1px;
+    width: 100px;
+    height: 100px;
+  }
+  .beranda .heading-430000 {
+    margin: 0 0 13.4px 0.3px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: -0.9px;
+    line-height: 1.6;
+    color: #588157;
+  }
+  .beranda .petani {
+    margin-left: 0.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14.4px;
+    letter-spacing: 0.5px;
+    line-height: 1.597;
+    text-transform: uppercase;
+    color: #676767;
+  }
+  .beranda .div-wpb-wrapper-2 {
+    margin: 0 283px 69px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .tractor {
+    background: url('../img/landingpage/tractor.png') 50% / contain no-repeat;
+    margin-bottom: 15.1px;
+    width: 100px;
+    height: 100px;
+  }
+  .beranda .heading-422 {
+    margin: 0 0 1.9px 0.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 38px;
+    letter-spacing: -0.9px;
+    line-height: 1.853;
+    color: #588157;
+  }
+  .beranda .tempat-pengolahan {
+    margin: 0 13.1px 0 13.2px;
+    text-align: center;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14.4px;
+    letter-spacing: 0.5px;
+    line-height: 1.597;
+    text-transform: uppercase;
+    color: #676767;
+  }
+  .beranda .div-wpb-wrapper-3 {
+    margin-bottom: 34.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .beranda .frame-608 {
+    margin: 0 0 33.2px 18.5px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .div-divider-small-border-4 {
+    background: #588157;
+    margin-bottom: 12.6px;
+    width: 240px;
+    height: 1px;
+  }
+  .beranda .heading-5-bisnis-kami {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.4px;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #1B1B1B;
+  }
+  .beranda .container-26 {
+    margin: 39.2px 97.4px 83.2px 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .heading-2-petani-merupakan-bagian-yang-tak {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 36.2px;
+    letter-spacing: -0.7px;
+    line-height: 1.422;
+    color: #444444;
+  }
+  .beranda .container-23 {
+    margin: 0 420.3px 31.3px 0;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .ud-tani-rejo-mengelola-30-perkebunan-milik-perusahaan-yang-mencakup-lahan-seluas-100000-hektar-dan-sekitar-60000-hektar-perkebunan-dimiliki-oleh-petani-plasma-ud-tani-rejo-memastikan-praktik-praktik-pengembangan-berkelanjutan-diterapkan-di-seluruh-wilayah-operasionalnya-termasuk-di-kebun-kebun-yang-dimiliki-oleh-petani {
+    margin: 0 0 21.7px 304.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15.2px;
+    letter-spacing: -0.3px;
+    line-height: 1.8;
+    color: #676767;
+  }
+  .beranda .link-3 {
+    background: #FFFFFF;
+    margin: 10px 15px 9px 0;
+    width: 25px;
+    height: 1px;
+  }
+  .beranda .link-pelajari-lebih-lanjut {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  .beranda .heading-62 {
+    border-radius: 200px;
+    background: #588157;
+    margin-right: 356px;
+    display: flex;
+    flex-direction: row;
+    padding: 16.1px 0 14.9px 0;
+    width: 242.9px;
+    box-sizing: border-box;
+  }
+  .beranda .strong-lebih-dari-40-lahan-tani-ud-tani-rejo-dimiliki-oleh-petani {
+    position: absolute;
+    left: 647.6px;
+    bottom: 301.1px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 15.1px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #676767;
+  }
+  .beranda .div-inner-wrap-5 {
+    background: url('../img/landingpage/divRowBg.jpeg'), linear-gradient(#FFFFFF, #FFFFFF);
+    position: relative;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 83.5px 0 107.4px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .div-row-bg-overlay-3 {
+    background: linear-gradient(109.89deg, #141414, rgba(27, 27, 27, 0.84));
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+  }
+  .beranda .heading-2-filosofi-bisnis-kami {
+    position: relative;
+    margin: 0 979.1px 24.8px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 36.2px;
+    letter-spacing: -0.7px;
+    line-height: 1.422;
+    color: #FFFFFF;
+  }
+  .beranda .div-divider-small-border-5 {
+    background: #FAA634;
+    position: relative;
+    margin: 0 1238.9px 24.9px 0;
+    width: 60px;
+    height: 2px;
+  }
+  .beranda .ud-tani-rejo-percaya-bahwa-untuk-menjadi-bisnis-yang-berkelanjutan-semua-kegiatan-perusahaan-harus-bermanfaat-bagi-masyarakat-negara-iklim-pelanggan-dan-kemudian-baru-akan-bermanfaat-bagi-perusahaan-itu-sendiri {
+    margin-right: 40.5px;
+    width: 1118.7px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 1.829;
+    color: #FFFFFF;
+  }
+  .beranda .button-previous {
+    opacity: 0.3;
+    border-radius: 20px;
+    background: #FFFFFF;
+    position: relative;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .beranda .container-16 {
+    width: 16.8px;
+    height: 12px;
+  }
+  .beranda .container-6 {
+    border-radius: 20px;
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 14px 11.2px 14px 12px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  .beranda .container-14 {
+    margin: 36.2px 0 4.8px 0;
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .vector-22 {
+    width: 7.2px;
+    height: 12px;
+  }
+  .beranda .button-previous-svg {
+    opacity: 0.3;
+    position: absolute;
+    right: 68px;
+    bottom: 13.8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 3.6px 5px 1.2px;
+    width: 12px;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  .beranda .button-previous-1 {
+    opacity: 0.3;
+    background: #000000;
+    position: absolute;
+    right: 61px;
+    bottom: 23.8px;
+    width: 15px;
+    height: 2px;
+  }
+  .beranda .container-1 {
+    position: relative;
+    margin: 0 49.7px 44.2px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1249.2px;
+    box-sizing: border-box;
+  }
+  .beranda .before {
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
+    position: absolute;
+    left: 50%;
+    top: 45.1px;
+    translate: -50% 0;
+    width: 407.3px;
+    height: 255.5px;
+  }
+  .beranda .heading-3-masyarakat {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 28.2px;
+    letter-spacing: -0.6px;
+    line-height: 1.469;
+    color: #FFFFFF;
+  }
+  .beranda .div-box-bg {
+    background: url('../img/landingpage/divBoxBg.jpeg');
+    position: absolute;
+    right: -0.8px;
+    bottom: -0.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 167.3px;
+    width: 407.3px;
+    height: 300.6px;
+    box-sizing: border-box;
+  }
+  .beranda .div-nectar-fancy-box {
+    border-radius: 5px;
+    position: relative;
+    width: 406.5px;
+    height: 300px;
+  }
+  .beranda .div-inner-wrap-outer {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 406.5px;
+    height: 300px;
+    box-sizing: border-box;
+  }
+  .beranda .before-1 {
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
+    position: absolute;
+    left: 50%;
+    top: 45.1px;
+    translate: -50% 0;
+    width: 407.3px;
+    height: 255.5px;
+  }
+  .beranda .heading-3-negara {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 28.2px;
+    letter-spacing: -0.6px;
+    line-height: 1.469;
+    color: #FFFFFF;
+  }
+  .beranda .div-box-bg-1 {
+    background: url('../img/landingpage/divBoxBg2.jpeg');
+    position: absolute;
+    right: -0.8px;
+    bottom: -0.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 223px;
+    width: 407.3px;
+    height: 300.6px;
+    box-sizing: border-box;
+  }
+  .beranda .div-nectar-fancy-box-1 {
+    border-radius: 5px;
+    position: relative;
+    width: 406.5px;
+    height: 300px;
+  }
+  .beranda .div-inner-wrap-outer-1 {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 406.5px;
+    height: 300px;
+    box-sizing: border-box;
+  }
+  .beranda .before-2 {
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
+    position: absolute;
+    left: 50%;
+    top: 45.1px;
+    translate: -50% 0;
+    width: 407.3px;
+    height: 255.5px;
+  }
+  .beranda .heading-3-iklim {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 29.6px;
+    letter-spacing: -0.6px;
+    line-height: 1.4;
+    color: #FFFFFF;
+  }
+  .beranda .div-box-bg-2 {
+    background: url('../img/landingpage/divBoxBg1.jpeg');
+    position: absolute;
+    right: -0.8px;
+    bottom: -0.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 257.4px;
+    width: 407.3px;
+    height: 300.6px;
+    box-sizing: border-box;
+  }
+  .beranda .div-nectar-fancy-box-2 {
+    border-radius: 5px;
+    position: relative;
+    width: 406.5px;
+    height: 300px;
+  }
+  .beranda .div-inner-wrap-outer-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 406.5px;
+    height: 300px;
+    box-sizing: border-box;
+  }
+  .beranda .container-3 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 1299.5px;
+    box-sizing: border-box;
+  }
+  .beranda .div-inner-wrap-6 {
+    background: url('../img/landingpage/divRowBg1.jpeg'), linear-gradient(#004B31, #004B31);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 95.8px 0 70px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .div-column-image-bg {
+    background: url('../img/landingpage/divColumnImageBg1.jpeg');
+    width: 480px;
+    height: 406.7px;
+  }
+  .beranda .vector-1 {
+    width: 30px;
+    height: 40px;
+  }
+  .beranda .icon {
+    margin: 0 227.4px 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30px;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  .beranda .heading-4-cerita-kami {
+    margin-bottom: 68.3px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 37.3px;
+    letter-spacing: -0.8px;
+    line-height: 1.632;
+    color: #FFFFFF;
+  }
+  .beranda .heading-5-link {
+    background: #FFFFFF;
+    margin: 10px 15px 9px 0;
+    width: 25px;
+    height: 1px;
+  }
+  .beranda .heading-5-link-aa-diary {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.4px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  .beranda .container-33 {
+    margin-right: 158.8px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .container-20 {
+    background: #588157;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+  }
+  .beranda .container-29 {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: 960px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-2 {
+    position: absolute;
+    top: 0px;
+    right: -0.9px;
+    width: 40.1px;
+    height: 40px;
+  }
+  .beranda .icon-1 {
+    position: relative;
+    margin: 0 195.9px 9.9px 0;
+    width: 39.2px;
+    height: 40px;
+  }
+  .beranda .heading-4-karier-di {
+    margin-bottom: 68.2px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 38px;
+    letter-spacing: -0.8px;
+    line-height: 1.6;
+    color: #FFFFFF;
+  }
+  .beranda .heading-5-link-1 {
+    background: #FFFFFF;
+    margin: 10px 15px 9px 0;
+    width: 25px;
+    height: 1px;
+  }
+  .beranda .heading-5-link-life-at-aa {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.2px;
+    letter-spacing: -0.3px;
+    line-height: 1.422;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  .beranda .container-9 {
+    margin-right: 131.1px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .container-11 {
+    background: #1B1B1B;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+  }
+  .beranda .div-column-image-bg-1 {
+    background: url('../img/landingpage/divColumnImageBg2.jpeg') 50% / cover no-repeat;
+    width: 480px;
+    height: 462.5px;
+  }
+  .beranda .container-31 {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: 960px;
+    box-sizing: border-box;
+  }
+  .beranda .div-inner-wrap {
+    background: #18191C;
+    position: relative;
+    margin-bottom: 95.9px;
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .heading-2-berita {
+    margin: 0 1191.2px 24.6px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 36.5px;
+    letter-spacing: -0.7px;
+    line-height: 1.411;
+    color: #444444;
+  }
+  .beranda .div-divider-small-border {
+    background: #FAA634;
+    margin: 0 1239px 317.1px 0;
+    width: 60px;
+    height: 2px;
+  }
+  .beranda .link {
+    background: #FFFFFF;
+    margin: 10px 15px 9px 0;
+    width: 25px;
+    height: 1px;
+  }
+  .beranda .link-kunjungi-media-publikasi {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  .beranda .heading-6 {
+    border-radius: 200px;
+    background: #588157;
+    margin: 0 0 63.5px 0px;
+    display: flex;
+    flex-direction: row;
+    padding: 16.1px 0 14.9px 0;
+    width: 288.6px;
+    box-sizing: border-box;
+  }
+  .beranda .div-row-bg-overlay {
+    opacity: 0.95;
+    background: linear-gradient(90deg, #1B1B1B, #588157);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+  }
+  .beranda .heading-2-ayo-terlibat-bersama-kami {
+    position: relative;
+    margin-bottom: 33.7px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 36.2px;
+    letter-spacing: -0.7px;
+    line-height: 1.422;
+    color: #FFFFFF;
+  }
+  .beranda .vector-3 {
+    width: 15.8px;
+    height: 12.9px;
+  }
+  .beranda .div-nectar-icon {
+    border-radius: 100px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 18.1px 17.4px 19.1px 16.8px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-4 {
+    width: 8.7px;
+    height: 16.7px;
+  }
+  .beranda .div-nectar-icon-1 {
+    border-radius: 100px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15.5px 1.2px 17.8px 0;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-5 {
+    width: 15.4px;
+    height: 14.7px;
+  }
+  .beranda .div-nectar-icon-2 {
+    border-radius: 100px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 17px 17.1px 18.3px 17.5px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-6 {
+    width: 18px;
+    height: 12.7px;
+  }
+  .beranda .div-nectar-icon-3 {
+    border-radius: 100px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 18.2px 15.8px 19.2px 16.2px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-7 {
+    width: 15.4px;
+    height: 15.4px;
+  }
+  .beranda .div-nectar-icon-4 {
+    border-radius: 100px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 16.8px 17.1px 17.8px 17.5px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  .beranda .container-5 {
+    position: relative;
+    margin-right: 0.2px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    width: 330px;
+    box-sizing: border-box;
+  }
+  .beranda .div-row-bg-wrap {
+    background: url('../img/landingpage/divRowBg3.jpeg'), linear-gradient(#FAA634, #FAA634);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 76.6px 0 120.3px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-21 {
+    width: 1920px;
+    height: 30.3px;
+  }
+  .beranda .svg {
+    position: absolute;
+    left: 50%;
+    top: 771px;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 1920px;
+    height: 30.3px;
+    box-sizing: border-box;
+  }
+  .beranda .before-3 {
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
+    position: absolute;
+    left: 50%;
+    top: 45.1px;
+    translate: -50% 0;
+    width: 270.3px;
+    height: 255.5px;
+  }
+  .beranda .heading-3-pelanggan {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 28.7px;
+    letter-spacing: -0.6px;
+    line-height: 1.445;
+    color: #FFFFFF;
+  }
+  .beranda .div-box-bg-3 {
+    background: url('../img/landingpage/divBoxBg3.jpeg');
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 214.4px 44.8px 45.2px 0;
+    width: 270.3px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .div-nectar-fancy-box-3 {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 270.3px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .div-inner-wrap-outer-3 {
+    position: absolute;
+    right: 0px;
+    bottom: 2193px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 270.3px;
+    box-sizing: border-box;
+  }
+  .beranda .div-column-image-bg-2 {
+    background: url('../img/landingpage/divColumnImageBg.jpeg');
+    position: absolute;
+    right: 0.2px;
+    bottom: 1254.9px;
+    width: 960px;
+    height: 869px;
+  }
+  .beranda .div-row-bg-overlay-1 {
+    background: linear-gradient(180deg, rgba(27, 27, 27, 0.85), #1B1B1B);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+  }
+  .beranda .heading-2-kantor {
+    margin: 0 52px 4.5px 0;
+    display: inline-block;
+    width: 283px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 35.4px;
+    letter-spacing: -0.7px;
+    line-height: 1.457;
+    color: #FFFFFF;
+  }
+  .beranda .strong-kantor-jakarta {
+    margin-bottom: 10.5px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.6px;
+    letter-spacing: -0.3px;
+    line-height: 1.445;
+    color: #FFFFFF;
+  }
+  .beranda .jl-tempurejo-cangkring-baru-cangkring-kec-jenggawah-kabupaten-jember-jawa-timur-68171 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.8;
+    color: #FFFFFF;
+  }
+  .beranda .container {
+    margin: 3px 0px 0 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .container-17 {
+    position: relative;
+    margin-bottom: 20.2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 577.1px;
+    box-sizing: border-box;
+  }
+  .beranda .div-divider-small-border-1 {
+    background: #588157;
+    position: relative;
+    margin-right: 516.6px;
+    width: 60px;
+    height: 2px;
+  }
+  .beranda .div-inner-wrap-2 {
+    background: url('../img/landingpage/divRowBg2.jpeg'), linear-gradient(#008031, #008031);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 76.2px 0 109.1px 0;
+    box-sizing: border-box;
+  }
+  .beranda .container-1 {
+    position: absolute;
+    top: 999.8px;
+    right: 303.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 1.829;
+    color: #676767;
+  }
+  .beranda .vector-8 {
+    position: absolute;
+    top: 0px;
+    right: -1px;
+    width: 46.4px;
+    height: 39.3px;
+  }
+  .beranda .icon-2 {
+    position: relative;
+    margin: 0 2.4px 17.5px 2.4px;
+    align-self: flex-start;
+    width: 45.4px;
+    height: 39.3px;
+  }
+  .beranda .heading-4-kami-percaya-bahwa-perusahaan-harus-baik-bagi-masyarakat-baik-bagi-negara-baik-bagi {
+    margin-bottom: 4.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 19.4px;
+    letter-spacing: -0.4px;
+    line-height: 1.652;
+    color: #FFFFFF;
+  }
+  .beranda .heading-6-emphasis-rge-chairman-founder {
+    margin: 0 0.1px;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14.4px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #FFFFFF;
+  }
+  .beranda .div-column-bg-overlay-wrap {
+    opacity: 0.8;
+    border-radius: 5px;
+    background: #1B1B1B;
+    position: absolute;
+    top: 1391.7px;
+    right: 310.2px;
+    display: flex;
+    flex-direction: column;
+    padding: 63.8px 77.2px 62.9px 62.2px;
+    box-sizing: border-box;
+  }
+  .beranda .div-container-wrap {
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 315.6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .beranda .heading-4-ud-tani-rejo {
+    margin-bottom: 19.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.679;
+    color: #F9F9F9;
+  }
+  .beranda .list-item-link-visi-dan-misi {
+    margin-right: 5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .beranda .container-4 {
+    margin-top: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .beranda .heading-4-bisnis-kami {
+    margin-bottom: 19.4px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.638;
+    color: #F9F9F9;
+  }
+  .beranda .list-item-link-perkebunan {
+    margin-right: 10.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .beranda .container-15 {
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .beranda .heading-4-keberlanjutan {
+    margin-bottom: 19.4px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.6;
+    color: #F9F9F9;
+  }
+  .beranda .list-item-link-kebijakan-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .beranda .container-8 {
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .heading-4-media-publikasi {
+    margin-bottom: 14px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.613;
+    color: #F9F9F9;
+  }
+  .beranda .list-item-link-siaran-pers {
+    margin-left: 0.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 11.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.675;
+    color: #E1F9EC;
+  }
+  .beranda .div-col {
+    margin-bottom: 6.1px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .beranda .container-28 {
+    margin: 0 233.2px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1066.8px;
+    box-sizing: border-box;
+  }
+  .beranda .list-item-link-nilai-nilai-kami {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-pabrik {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-laporan-keberlanjutan {
+    margin-right: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .beranda .container-30 {
+    margin: 0 493.9px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 806.1px;
+    box-sizing: border-box;
+  }
+  .beranda .list-item-link-kemitraan-dengan-petani-1 {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-produk {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-standar-sertifikasi {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .beranda .container-18 {
+    margin: 0 514.4px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 785.6px;
+    box-sizing: border-box;
+  }
+  .beranda .list-item-link-tonggak-sejarah {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.469;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-penelitian-dan-pengembangan-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-sistem-ketertelusuran {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .beranda .container-22 {
+    margin: 0 499.1px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800.9px;
+    box-sizing: border-box;
+  }
+  .beranda .list-item-link-benih-topaz-1 {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.8px;
+    letter-spacing: -0.3px;
+    line-height: 1.422;
+    color: #E1F9EC;
+  }
+  .beranda .list-item-link-program-inisiatif {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .beranda .container-10 {
+    margin: 0 192.4px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 444.6px;
+    box-sizing: border-box;
+  }
+  .beranda .list-item-link-pengaduan {
+    margin: 0 0 149.1px 94.8px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .beranda .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
+    margin: 2.3px 11px 0 0;
+    display: inline-block;
+    width: 1148.7px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: -0.3px;
+    line-height: 1.76;
+    color: #588157;
+  }
+  .beranda .vector-9 {
+    width: 17.6px;
+    height: 14.3px;
+  }
+  .beranda .list-item-link {
+    margin: 2.9px 0 1.4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.6px;
+    height: 14.3px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-10 {
+    width: 9.6px;
+    height: 18.6px;
+  }
+  .beranda .list-item-link-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 9.6px;
+    height: 18.6px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-11 {
+    width: 17.1px;
+    height: 16.4px;
+  }
+  .beranda .list-item-link-2 {
+    margin-right: 19.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.1px;
+    height: 16.4px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-12 {
+    position: absolute;
+    top: 0px;
+    right: -0.4px;
+    width: 20px;
+    height: 14.1px;
+  }
+  .beranda .list-item-link-3 {
+    position: relative;
+    margin: 1.3px 0 1px 0;
+    width: 19.6px;
+    height: 14.1px;
+  }
+  .beranda .container-7 {
+    margin: 1.7px 0 0.5px 0;
+    display: flex;
+    flex-direction: row;
+    width: 56.4px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .vector-13 {
+    width: 17.1px;
+    height: 17.1px;
+  }
+  .beranda .list-item-link-4 {
+    margin-top: 1.4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.1px;
+    height: 17.1px;
+    box-sizing: border-box;
+  }
+  .beranda .container-12 {
+    margin-bottom: 5.8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 162.7px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .divcopyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20.5px 0 20.2px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .divfooter-outer {
+    background: url('../img/landingpage/divfooterOuter.png'), linear-gradient(#1B1B1B, #1B1B1B);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 58.8px 0 0px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .beranda .div-ocm-effect-wrap {
+    background: #FFFFFF;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .beranda .vector-15 {
+    width: 14.1px;
+    height: 11.4px;
+  }
+  .beranda .item-link {
+    margin: 2.3px 0 1.1px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 14.1px;
+    height: 11.4px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-16 {
+    width: 7.7px;
+    height: 14.9px;
+  }
+  .beranda .item-link-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 7.7px;
+    height: 14.9px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-17 {
+    width: 13.7px;
+    height: 13.1px;
+  }
+  .beranda .item-link-2 {
+    margin: 1.3px 0 0.4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.7px;
+    height: 13.1px;
+    box-sizing: border-box;
+  }
+  .beranda .vector-18 {
+    position: absolute;
+    top: 0px;
+    right: -0.3px;
+    width: 16px;
+    height: 11.3px;
+  }
+  .beranda .item-link-3 {
+    position: relative;
+    margin: 2.4px 0 1.2px 0;
+    width: 15.7px;
+    height: 11.3px;
+  }
+  .beranda .vector-19 {
+    width: 13.7px;
+    height: 13.7px;
+  }
+  .beranda .item-link-4 {
+    margin-top: 1.1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.7px;
+    height: 13.7px;
+    box-sizing: border-box;
+  }
+  .beranda .list-1 {
+    margin: 5.5px 0 1.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 186.2px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .beranda .item-link-kunjungi-ketelsuruan-produk {
+    margin-right: 11.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.6px;
+    letter-spacing: -0.3px;
+    line-height: 1.622;
+    color: #FFFFFF;
+  }
+  .beranda .vector-20 {
+    width: 13.5px;
+    height: 6px;
+  }
+  .beranda .item-link-5 {
+    margin: 9.5px 0 6.5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.5px;
+    height: 6px;
+    box-sizing: border-box;
+  }
+  .beranda .list-2 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .beranda .divheader-secondary-outer {
+    align-items: start;
+    left: 0;
+    background: #507450;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+  }
+  .beranda {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 72px 0 0 1.5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
