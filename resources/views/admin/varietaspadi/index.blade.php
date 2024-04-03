@@ -190,7 +190,7 @@
       <div class="card-body">
         <div class="card-header border-bottom d-flex align-items-center justify-content-between">
           <h2 class="fs-5 fw-bold mb-0">Daftar Varietas Padi</h2>
-          <button type="button" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Tambah Varietas</button>
+          <button  type="button" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Tambah Varietas</button>
         </div>
         <!-- Modal Content -->
         <div class="modal fade" id="modal-form-signup" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
@@ -204,7 +204,8 @@
                               <p class="mb-3">Informasi lengkap menentukan keputusan anda dalam pemilihan bibit.</p>
                           </div>
                           <div class="card-body p-0 pl-lg-3">
-                              <form action="#">
+                              <form action="{{url('varietasPadis"')}}" method="post">
+                                @csrf
                                   <!-- Form -->
                                   <div class="form-group mb-4">
                                       <label for="nama">Nama Varietas</label>
@@ -215,7 +216,7 @@
                                   </div>
                                   <div class="form-group mb-4">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea class="form-control" placeholder="Enter your message..." id="deskripsi" rows="4"></textarea>
+                                    <textarea class="form-control" placeholder="Enter your message..." id="deskripsi" rows="3"></textarea>
                                   </div>
                                   <div class="form-group mb-4">
                                     <label for="keunggulan">Keunggulan</label>
@@ -249,33 +250,32 @@
         </div>
         <!-- End of Modal Content -->
         <div class="table-responsive">
-            <table class="table table-centered table-nowrap mb-0 rounded">
-                <thead class="thead-light">
-            <tr>
-                        <th class="border-0">No</th>
-                        <th class="border-0">Nama</th>
-                        <th class="border-0">Deskripsi</th>
-                        <th class="border-0">Keunggulan</th>
-                        <th class="border-0">Jenis Musim</th>
-                        <th class="border-0">Lama Tanam</th>
-                        <th class="border-0">Ketahanan Hama Penyakit</th>
-                        <th class="border-0">Foto</th>
-                        <th class="border-0">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Item -->
-                    @foreach ($padi as $item )
-                    <tr>
 
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->varietas }}</td>
-                        <td>{{ $item->deskripsi }}</td>
-                        <td>{{ $item->keunggulan }}</td>
-                        <td>{{ $item->jenis_musim }}</td>
-                        <td>{{ $item->lama_tanam }}</td>
-                        <td>{{ $item->ketahanan_hama_penyakit }}</td>
-
+          <table class="table table-centered table-nowrap mb-0 rounded" style="width:100%">
+              <thead class="thead-light">
+                  <tr>
+                      <th class="border-0" >No</th>
+                      <th class="border-0">Nama</th>
+                      <th class="border-0" style="width:10%">Deskripsi</th>
+                      <th class="border-0" style="width:10%">Keunggulan</th>
+                      <th class="border-0">Jenis Musim</th>
+                      <th class="border-0">Lama Tanam</th>
+                      <th class="border-0">Ketahanan Hama Penyakit</th>
+                      <th class="border-0">Foto</th>
+                      <th class="border-0">Aksi</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Item -->
+                  @foreach ($padi as $item )
+                  <tr>
+                      <td>{{ $loop->iteration }}</td>
+                      <td >{{ $item->varietas }}</td>
+                      <td>{{ Str::limit($item->deskripsi, 50) }}</td>
+                      <td>{{ $item->keunggulan }}</td>
+                      <td>{{ $item->jenis_musim }}</td>
+                      <td>{{ $item->lama_tanam }}</td>
+                      <td>{{ $item->ketahanan_hama_penyakit }}</td>
                         <td>
                           <!-- aria-hidden="true" -->
                           <button class="btn btn-outline-warning" type="button">tampilkan</button>

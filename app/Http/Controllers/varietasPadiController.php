@@ -33,7 +33,16 @@ class VarietasPadiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:3',
+            'edulevel_id' => 'required',
+        ], [
+            'edulevel_id.required' => 'Jenjang Tidak Boleh Kosong',
+            'name.required' => 'Nama Jenjang Tidak Boleh Kosong',
+
+        ]);
+        VarietasPadi::create($request->all());
+        return redirect('padi')->with('status', 'Varietas Berhasil di tambah');
     }
 
     /**
