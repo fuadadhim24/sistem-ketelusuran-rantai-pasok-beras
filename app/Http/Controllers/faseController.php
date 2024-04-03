@@ -39,16 +39,26 @@ class faseController extends Controller
 
     // Metode lainnya seperti edit dan hapus dapat ditambahkan sesuai kebutuhan
 
-    function edit(){
-
+    public function edit($id)
+    {
+        $fase = Fase::findOrFail($id); // Mencari fase berdasarkan ID
+        return view('edit-fase', compact('fase')); // Mengirim fase ke view
     }
-    function hapus(){
+    public function update(Request $request, $id)
+{
+    $fase = Fase::findOrFail($id); // Mencari fase berdasarkan ID
+    $fase->nama_fase = $request->nama_fase; // Update nama fase
+    $fase->durasi = $request->durasi; // Update durasi
+    $fase->save(); // Simpan perubahan
 
-    }
+    return redirect()->route('fase')->with('success', 'Fase berhasil diperbarui');
+}
+
     public function destroy($id)
     {
-        $fase = Fase::findOrFail($id);
-        $fase->delete();
-        return redirect()->route('index-fase')->with('success', 'Fase berhasil dihapus.');
+        $fase = Fase::findOrFail($id); // Mencari fase berdasarkan ID
+        $fase->delete(); // Menghapus fase
+        return redirect()->route('fase')->with('success', 'Fase berhasil dihapus');
     }
+
 }

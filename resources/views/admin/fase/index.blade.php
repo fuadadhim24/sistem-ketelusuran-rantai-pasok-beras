@@ -253,26 +253,27 @@
                                                         <h2 class="mb-2 h5">Edit Informasi Fase</h2>
                                                     </div>
                                                     <div class="card-body p-0 pl-lg-3">
-                                                        <form action="#">
+                                                        <form method="POST" action="{{ route('update-fase', ['id' => $fase->id]) }}">
+                                                            @csrf
                                                             <!-- Form -->
                                                             <div class="form-group mb-4">
                                                                 <label for="nama">Nama Fase</label>
                                                                 <div class="input-group">
                                                                     <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                                                    <input type="nama" class="form-control" placeholder="cth: Berikan pupuk hari ini" value="{{$fase->nama_fase}}" id="nama" required>
+                                                                    <input type="text" class="form-control" placeholder="cth: Berikan pupuk hari ini" name="nama_fase" value="{{ $fase->nama_fase }}" id="nama" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group mb-4">
                                                                 <label for="durasi">Durasi</label>
                                                                 <div class="input-group">
                                                                     <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                                                    <input type="durasi" class="form-control" placeholder="berlangsungnya perlakuan. cth: 10" id="durasi" value="{{$fase->durasi}}" required>
+                                                                    <input type="text" class="form-control" placeholder="berlangsungnya perlakuan. cth: 10" name="durasi" id="durasi" value="{{ $fase->durasi }}" required>
                                                                 </div>
                                                             </div>
                                                             <!-- End of Form -->
 
                                                             <div class="d-grid">
-                                                                <button type="button" class="btn btn-block btn-primary mb-3 w-100" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Simpan</button>
+                                                                <button type="submit" class="btn btn-block btn-primary mb-3 w-100">Simpan</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -281,6 +282,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <!-- End of Modal Content -->
                                 @endforeach
                             </div>

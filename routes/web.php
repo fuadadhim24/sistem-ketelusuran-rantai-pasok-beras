@@ -42,6 +42,7 @@ Route::middleware([
     Route::post('/fase/store', [FaseController::class, 'store'])->name('fase.store');
     Route::get('/fase/{id}/edit', [FaseController::class, 'edit'])->name('edit-fase');
     Route::delete('/fase/{id}/delete', [FaseController::class, 'destroy'])->name('hapus-fase');
+    Route::post('/fase/{id}/update', [FaseController::class, 'update'])->name('update-fase');
 
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
