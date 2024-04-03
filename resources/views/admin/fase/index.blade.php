@@ -214,6 +214,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-xl-4" id="daftar-fase-container">
                     <div class="col-12 px-0 mb-4">
                         <div class="card border-0 shadow mb-2">
@@ -224,7 +225,7 @@
                         <div class="card border-0 shadow">
                             <div class="card-body" id="daftar-fase">
                                 @foreach($fasesku as $fase)
-                                <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
+                                <div id="faseItem{{ $fase->id }}" class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
                                     <div>
                                         <div class="h6 mb-0 d-flex align-items-center">
                                             {{ $fase->nama_fase }}
@@ -237,11 +238,18 @@
                                         <a class="d-flex align-items-center fw-bold me-2" data-bs-toggle="modal" data-bs-target="#modal-form-signup-{{ $fase->id }}">
                                             <img src="{{ asset('asset/img/admin/note.png') }}" alt="Edit" class="icon icon-xs text-gray-500">
                                         </a>
-                                        <a href="{{ route('hapus-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold">
+                                        <form id="deleteForm{{ $fase->id }}" action="{{ route('hapus-fase', ['id' => $fase->id]) }}" method="POST" style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-link text-danger p-0 fw-bold">Delete</button>
+                                        </form>
+                                        <a href="#" class="d-flex align-items-center fw-bold" onclick="confirmDelete({{ $fase->id }})">
                                             <img src="{{ asset('asset/img/admin/delete.png') }}" alt="Delete" class="icon icon-xs text-gray-500">
                                         </a>
                                     </div>
                                 </div>
+
+
                                 <!-- Modal Content -->
                                 <div class="modal fade" id="modal-form-signup-{{ $fase->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -354,6 +362,26 @@
               </ul>
           </div>
       </div>
+
+      <!-- Modal konfirmasi penghapusan -->
+      <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Apakah Anda yakin ingin menghapus fase ini?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
         $(document).ready(function() {
@@ -391,6 +419,18 @@
             });
         });
     </script>
+<script>
+    var deleteId;
+
+    function confirmDelete(id) {
+        deleteId = id;
+        if (confirm('Apakah Anda yakin ingin menghapus fase ini?')) {
+            $('#deleteForm' + deleteId).submit();
+        }
+    }
+</script>
+
+
 
   </footer>
 
