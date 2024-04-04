@@ -1031,6 +1031,7 @@ body{
     position: relative;
     display: flex;
     flex-direction: row;
+    margin-top: 100px;
     width: 1299.5px;
     box-sizing: border-box;
   }
@@ -1041,7 +1042,8 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 95.8px 0 70px 0;
-    width: 1920px;
+    width: 1500px;
+    left: 0px;
     box-sizing: border-box;
   }
   .beranda .div-column-image-bg {
@@ -1186,7 +1188,7 @@ body{
     margin-bottom: 95.9px;
     display: flex;
     flex-direction: column;
-    width: 1920px;
+    width: 1600px;
     box-sizing: border-box;
   }
   .beranda .heading-2-berita {
@@ -1345,7 +1347,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 76.6px 0 120.3px 0;
-    width: 1920px;
+    width: 1537px;
     box-sizing: border-box;
   }
   .beranda .vector-21 {
@@ -1417,8 +1419,9 @@ body{
     background: url('../img/landingpage/divColumnImageBg.jpeg');
     position: absolute;
     right: 0.2px;
-    bottom: 1254.9px;
-    width: 960px;
+    left: 928px;
+    bottom: 1252.9px;
+    width: 600px;
     height: 869px;
   }
   .beranda .div-row-bg-overlay-1 {
@@ -1552,7 +1555,8 @@ body{
     background: #1B1B1B;
     position: absolute;
     top: 1391.7px;
-    right: 310.2px;
+    left: 470.2px;
+    width: 930px;
     display: flex;
     flex-direction: column;
     padding: 63.8px 77.2px 62.9px 62.2px;
@@ -1946,7 +1950,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 58.8px 0 0px 0;
-    width: 1920px;
+    width: 1537px;
     box-sizing: border-box;
   }
   .beranda .div-ocm-effect-wrap {
@@ -2027,22 +2031,22 @@ body{
     box-sizing: border-box;
   }
   .beranda .list-1 {
-    margin: 5.5px 0 1.6px 0;
+    margin: 15px 0 1.5px 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 186.2px;
     height: fit-content;
     box-sizing: border-box;
+    transform: scaleY(-1);
   }
   .beranda .item-link-kunjungi-ketelsuruan-produk {
-    margin-right: 11.2px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 600;
     font-size: 13.6px;
     letter-spacing: -0.3px;
-    line-height: 1.622;
+    line-height: 3.500;
     color: #FFFFFF;
   }
   .beranda .vector-20 {
@@ -2050,12 +2054,13 @@ body{
     height: 6px;
   }
   .beranda .item-link-5 {
-    margin: 9.5px 0 6.5px 0;
+    margin: 21px 0 6.5px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 13.5px;
     height: 6px;
+    margin-right: 700px;
     box-sizing: border-box;
   }
   .beranda .list-2 {
