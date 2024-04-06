@@ -238,12 +238,7 @@
                                         <a class="d-flex align-items-center fw-bold me-2" data-bs-toggle="modal" data-bs-target="#modal-form-signup-{{ $fase->id }}">
                                             <img src="{{ asset('asset/img/admin/note.png') }}" alt="Edit" class="icon icon-xs text-gray-500">
                                         </a>
-                                        <form id="deleteForm{{ $fase->id }}" action="{{ route('hapus-fase', ['id' => $fase->id]) }}" method="POST" style="display: none;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-link text-danger p-0 fw-bold">Delete</button>
-                                        </form>
-                                        <a href="#" class="d-flex align-items-center fw-bold" onclick="confirmDelete({{ $fase->id }})">
+                                        <a href="javascript:void(0)" class="d-flex align-items-center fw-bold" onclick="confirmDelete({{ $fase->id }})">
                                             <img src="{{ asset('asset/img/admin/delete.png') }}" alt="Delete" class="icon icon-xs text-gray-500">
                                         </a>
                                     </div>
@@ -386,15 +381,11 @@
       <script>
         $(document).ready(function() {
             $('#ajax-form').submit(function(e) {
-                e.preventDefault(); // Mencegah aksi default dari form submit
-
-                // Mengambil nilai dari input
+                e.preventDefault();
                 var namaFase = $('#nama_fase').val();
                 var durasi = $('#durasi').val();
-
-                // Kirim permintaan AJAX ke server
                 $.ajax({
-                    url: '/fase/store', // Ganti dengan URL endpoint yang sesuai
+                    url: '/fase/store',
                     method: 'POST',
                     data: {
                         _token: '{{ csrf_token() }}',
@@ -403,36 +394,46 @@
                     },
                     success: function(response) {
                         alert('Data berhasil disimpan');
-
-                        // Tambahkan data fase baru ke tampilan
                         $('#daftar-fase').append('<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' + namaFase + '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>');
-
-                        // Kosongkan nilai input setelah berhasil disimpan
                         $('#nama_fase').val('');
                         $('#durasi').val('');
                     },
                     error: function(xhr, status, error) {
                         alert('Terjadi kesalahan: ' + error);
-                        // Tambahkan kode di sini untuk menangani kesalahan
                     }
                 });
             });
         });
     </script>
-<script>
-    var deleteId;
+ <script>
+  function confirmDelete(id) {
+      if (confirm("Anda yakin ingin menghapus item ini?")) {
+          $.ajax({
+              url: '/fase/' + id + '/delete',
+              type: 'DELETE',
+              headers: {
+                  'X-CSRF-TOKEN': '{{ csrf_token() }}'
+              },
+              success: function(result) {
+                  updateElement(id);
+                  alert('Item berhasil dihapus!');
+              },
+              error: function(xhr, status, error) {
+                  alert('Terjadi kesalahan saat menghapus item.');
+                  console.error(xhr.responseText);
+              }
+          });
+      }
+  }
 
-    function confirmDelete(id) {
-        deleteId = id;
-        if (confirm('Apakah Anda yakin ingin menghapus fase ini?')) {
-            $('#deleteForm' + deleteId).submit();
-        }
-    }
+  function updateElement(id) {
+      $('#faseItem' + id).remove();
+  }
 </script>
 
 
 
-  </footer>
 
+  </footer>
 
 @endsection
