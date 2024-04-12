@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Fase extends Model
 {
     use HasFactory;
-    protected $table = 'fase'; // Menyesuaikan nama tabel dengan bentuk plural
+    protected $table = 'fase'; 
     protected $fillable = [
         'nama_fase',
         'durasi'
