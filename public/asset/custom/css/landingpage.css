@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .beranda .link-asianagri-logo-white-2-png {
@@ -249,7 +250,7 @@ body{
     box-sizing: border-box;
   }
   .beranda .heading-5-tentang-kami {
-    margin: 0 11px 5.9px 0;
+    margin: 0 1150px 5.9px 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -440,13 +441,13 @@ body{
     color: #888888;
   }
   .beranda .container-32 {
-    margin: 0 124.4px 234.5px 0;
+    margin: 0 112px 234.5px 0;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
   .beranda .ud-tani-rejo-bermitra-dengan-lebih-dari-20-petani-membantu-mereka-meningkatkan-pendapatan-dan-menerapkan-praktik-praktik-berkelanjutan-dalam-kegiatan-bertani {
-    margin: 0 9.1px 37.6px 0;
+    margin: 0 0px 37.6px 20px;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -484,7 +485,7 @@ body{
     color: #588157;
   }
   .beranda .container-21 {
-    margin: 0 0.1px;
+    margin: 0 22px;
     display: flex;
     flex-direction: row;
     align-self: flex-start;
@@ -513,6 +514,7 @@ body{
     height: 299.4px;
   }
   .beranda .container-13 {
+    margin: 0px 24px 0px 0px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -526,7 +528,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 127.7px 0 124.9px 0;
-    width: 1920px;
+    width: 1537px;
     box-sizing: border-box;
   }
   .beranda .country {
@@ -566,7 +568,7 @@ body{
   }
   .beranda .field {
     background: url('../img/landingpage/field.png') 50% / contain no-repeat;
-    margin: 0 0.5px 15px 0.3px;
+    margin: 0 0px 15px 0px;
     width: 100px;
     height: 100px;
   }
@@ -601,7 +603,7 @@ body{
   }
   .beranda .farmer {
     background: url('../img/landingpage/farmer.png') 50% / contain no-repeat;
-    margin-bottom: 15.1px;
+    margin-bottom: 15px;
     width: 100px;
     height: 100px;
   }
@@ -638,12 +640,12 @@ body{
   }
   .beranda .tractor {
     background: url('../img/landingpage/tractor.png') 50% / contain no-repeat;
-    margin-bottom: 15.1px;
+    margin-bottom: 15px;
     width: 100px;
     height: 100px;
   }
   .beranda .heading-422 {
-    margin: 0 0 1.9px 0.1px;
+    margin: 0 0 13.4px 0.1px;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -720,7 +722,7 @@ body{
     box-sizing: border-box;
   }
   .beranda .ud-tani-rejo-mengelola-30-perkebunan-milik-perusahaan-yang-mencakup-lahan-seluas-100000-hektar-dan-sekitar-60000-hektar-perkebunan-dimiliki-oleh-petani-plasma-ud-tani-rejo-memastikan-praktik-praktik-pengembangan-berkelanjutan-diterapkan-di-seluruh-wilayah-operasionalnya-termasuk-di-kebun-kebun-yang-dimiliki-oleh-petani {
-    margin: 0 0 21.7px 304.1px;
+    margin: 0 0 21.7px 325px;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -749,7 +751,7 @@ body{
   .beranda .heading-62 {
     border-radius: 200px;
     background: #588157;
-    margin-right: 356px;
+    margin-right: 400px;
     display: flex;
     flex-direction: row;
     padding: 16.1px 0 14.9px 0;
@@ -758,7 +760,7 @@ body{
   }
   .beranda .strong-lebih-dari-40-lahan-tani-ud-tani-rejo-dimiliki-oleh-petani {
     position: absolute;
-    left: 647.6px;
+    left: 448px;
     bottom: 301.1px;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -776,7 +778,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 83.5px 0 107.4px 0;
-    width: 1920px;
+    width: 100%;
     box-sizing: border-box;
   }
   .beranda .div-row-bg-overlay-3 {
@@ -787,6 +789,7 @@ body{
     right: 0px;
     bottom: 0px;
     height: 100%;
+    width: 100%;
   }
   .beranda .heading-2-filosofi-bisnis-kami {
     position: relative;
@@ -937,10 +940,10 @@ body{
     background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
     position: absolute;
     left: 50%;
-    top: 45.1px;
+    top: -2px;
     translate: -50% 0;
-    width: 407.3px;
-    height: 255.5px;
+    width: 320px;
+    height: 303.5px;
   }
   .beranda .heading-3-negara {
     position: relative;
@@ -961,14 +964,14 @@ body{
     flex-direction: row;
     justify-content: center;
     padding-right: 223px;
-    width: 407.3px;
+    width: 320px;
     height: 300.6px;
     box-sizing: border-box;
   }
   .beranda .div-nectar-fancy-box-1 {
     border-radius: 5px;
     position: relative;
-    width: 406.5px;
+    width: 190px;
     height: 300px;
   }
   .beranda .div-inner-wrap-outer-1 {
@@ -983,11 +986,11 @@ body{
   .beranda .before-2 {
     background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
     position: absolute;
-    left: 50%;
-    top: 45.1px;
+    left: 12%;
+    top: 0.1px;
     translate: -50% 0;
-    width: 407.3px;
-    height: 255.5px;
+    width: 330px;
+    height: 301.5px;
   }
   .beranda .heading-3-iklim {
     position: relative;
@@ -1008,7 +1011,7 @@ body{
     flex-direction: row;
     justify-content: center;
     padding-right: 257.4px;
-    width: 407.3px;
+    width: 406px;
     height: 300.6px;
     box-sizing: border-box;
   }
@@ -1030,7 +1033,7 @@ body{
     position: relative;
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 120px;
     width: 1299.5px;
     box-sizing: border-box;
   }
@@ -1040,8 +1043,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 95.8px 0 70px 0;
-    width: 1500px;
+    padding: 95.8px 0px 70px 0;
+    width: 1800px;
     left: 0px;
     box-sizing: border-box;
   }
@@ -1333,6 +1336,7 @@ body{
   .beranda .container-5 {
     position: relative;
     margin-right: 0.2px;
+    transform: scaleY(-1);
     display: flex;
     flex-direction: row;
     column-gap: 20px;
@@ -1435,7 +1439,7 @@ body{
   .beranda .heading-2-kantor {
     margin: 0 52px 4.5px 0;
     display: inline-block;
-    width: 283px;
+    width: 451px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -1473,6 +1477,7 @@ body{
   }
   .beranda .container-17 {
     position: relative;
+    margin-right: 600px;
     margin-bottom: 20.2px;
     display: flex;
     flex-direction: row;
@@ -1483,7 +1488,7 @@ body{
   .beranda .div-divider-small-border-1 {
     background: #588157;
     position: relative;
-    margin-right: 516.6px;
+    margin-right: 1100px;
     width: 60px;
     height: 2px;
   }
@@ -1501,8 +1506,8 @@ body{
   }
   .beranda .container-1 {
     position: absolute;
-    top: 999.8px;
-    right: 303.5px;
+    top: 190px;
+    right: 250px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1568,7 +1573,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding-bottom: 315.6px;
-    width: 100%;
+    max-width: 1537px;
     box-sizing: border-box;
   }
   .beranda .heading-4-ud-tani-rejo {
@@ -1709,9 +1714,11 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
+    margin-left: -280px;
+
   }
   .beranda .list-item-link-laporan-keberlanjutan {
-    margin-right: 0px;
+    margin-right: 135px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1721,11 +1728,11 @@ body{
     color: #E1F9EC;
   }
   .beranda .container-30 {
-    margin: 0 493.9px 7.6px 0;
+    margin: 0 411px 7.6px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 806.1px;
+    width: 889.1px;
     box-sizing: border-box;
   }
   .beranda .list-item-link-kemitraan-dengan-petani-1 {
@@ -1747,6 +1754,8 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.4;
     color: #E1F9EC;
+    margin-left: -274px;
+
   }
   .beranda .list-item-link-standar-sertifikasi {
     overflow-wrap: break-word;
@@ -1756,6 +1765,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.434;
     color: #E1F9EC;
+    margin-right: 50px;
   }
   .beranda .container-18 {
     margin: 0 514.4px 7.6px 0;
@@ -1784,6 +1794,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
+    margin-left:-128px ;
   }
   .beranda .list-item-link-sistem-ketertelusuran {
     overflow-wrap: break-word;
@@ -1793,6 +1804,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
+    margin-right: 53px;
   }
   .beranda .container-22 {
     margin: 0 499.1px 7.6px 0;
@@ -1803,8 +1815,8 @@ body{
     box-sizing: border-box;
   }
   .beranda .list-item-link-benih-topaz-1 {
-    margin-right: 10px;
-    width: 321.5px;
+    margin-left: 260px;
+    width: 290.5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1821,13 +1833,14 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
+    margin-right:326px;
   }
   .beranda .container-10 {
-    margin: 0 192.4px 7.6px 0;
+    margin: 0 200.4px 7.6px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 444.6px;
+    width: 1000px;
     box-sizing: border-box;
   }
   .beranda .list-item-link-pengaduan {
@@ -1840,6 +1853,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.434;
     color: #E1F9EC;
+    margin-right: 105px;
   }
   .beranda .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
     margin: 2.3px 11px 0 0;
@@ -1901,7 +1915,7 @@ body{
   .beranda .list-item-link-3 {
     position: relative;
     margin: 1.3px 0 1px 0;
-    width: 19.6px;
+    width: 9.6px;
     height: 14.1px;
   }
   .beranda .container-7 {
@@ -1940,7 +1954,8 @@ body{
     flex-direction: row;
     justify-content: space-between;
     padding: 20.5px 0 20.2px 0;
-    width: 1920px;
+    width: 1020px;
+    transform: scaleY(-1);
     box-sizing: border-box;
   }
   .beranda .divfooter-outer {
@@ -1948,7 +1963,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 58.8px 0 0px 0;
+    padding: 58.8px 117px 0px 0;
     width: 1537px;
     box-sizing: border-box;
   }
@@ -1959,6 +1974,7 @@ body{
     top: 0px;
     right: 0px;
     bottom: 0px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

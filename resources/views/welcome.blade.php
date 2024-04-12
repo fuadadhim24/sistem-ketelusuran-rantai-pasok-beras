@@ -368,7 +368,8 @@
                             </div>
                             <div class="heading-4-karier-di">
                                 Karier di<br />
-                                Pertanian Berkelanjutan
+                                Pertanian<br />
+                                Berkelanjutan
                             </div>
                             <div class="container-9">
                                 <div class="heading-5-link-1">
