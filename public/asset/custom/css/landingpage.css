@@ -248,6 +248,7 @@ body{
     padding-top: 94px;
     width: 100%;
     box-sizing: border-box;
+    background-size: cover;
   }
   .beranda .heading-5-tentang-kami {
     margin: 0 1150px 5.9px 0;
@@ -505,6 +506,7 @@ body{
     top: -7.5px;
     width: 472.3px;
     height: 314.4px;
+    background-size: cover;
   }
   .beranda .div-inner-wrap-4 {
     border-radius: 5px;
@@ -1361,6 +1363,7 @@ body{
     padding: 76.6px 0 120.3px 0;
     width: 1537px;
     box-sizing: border-box;
+    background-size: cover;
   }
   .beranda .vector-21 {
     width: 1920px;
