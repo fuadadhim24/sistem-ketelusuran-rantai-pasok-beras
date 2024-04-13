@@ -893,12 +893,13 @@ body{
     background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
     position: absolute;
     left: 50%;
-    top: 45.1px;
+    top: 1px;
     translate: -50% 0;
-    width: 407.3px;
-    height: 255.5px;
+    width: 346px;
+    height: 300px;
   }
   .beranda .heading-3-masyarakat {
+    margin: 215px 0 0 100px ;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -917,14 +918,15 @@ body{
     flex-direction: row;
     justify-content: center;
     padding-right: 167.3px;
-    width: 407.3px;
+    width: 345px;
     height: 300.6px;
     box-sizing: border-box;
+    background-size: cover;
   }
   .beranda .div-nectar-fancy-box {
     border-radius: 5px;
     position: relative;
-    width: 406.5px;
+    width: 355px;
     height: 300px;
   }
   .beranda .div-inner-wrap-outer {
@@ -932,7 +934,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 406.5px;
+    width: 345.5px;
     height: 300px;
     box-sizing: border-box;
   }
@@ -942,10 +944,11 @@ body{
     left: 50%;
     top: -2px;
     translate: -50% 0;
-    width: 320px;
+    width: 345px;
     height: 303.5px;
   }
   .beranda .heading-3-negara {
+    margin: 215px 0 0 100px ;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -964,14 +967,15 @@ body{
     flex-direction: row;
     justify-content: center;
     padding-right: 223px;
-    width: 320px;
+    width: 345px;
     height: 300.6px;
     box-sizing: border-box;
+    background-size: cover;
   }
   .beranda .div-nectar-fancy-box-1 {
     border-radius: 5px;
     position: relative;
-    width: 190px;
+    width: 260px;
     height: 300px;
   }
   .beranda .div-inner-wrap-outer-1 {
@@ -986,13 +990,14 @@ body{
   .beranda .before-2 {
     background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
     position: absolute;
-    left: 12%;
+    left: 47%;
     top: 0.1px;
-    translate: -50% 0;
-    width: 330px;
+    translate: -47% 0;
+    width: 345px;
     height: 301.5px;
   }
   .beranda .heading-3-iklim {
+    margin: 215px 0 0 100px ;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1011,21 +1016,22 @@ body{
     flex-direction: row;
     justify-content: center;
     padding-right: 257.4px;
-    width: 406px;
+    width: 345px;
     height: 300.6px;
     box-sizing: border-box;
+    background-size: cover;
   }
   .beranda .div-nectar-fancy-box-2 {
     border-radius: 5px;
     position: relative;
-    width: 406.5px;
+    width: 254.5px;
     height: 300px;
   }
   .beranda .div-inner-wrap-outer-2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 406.5px;
+    width: 261.5px;
     height: 300px;
     box-sizing: border-box;
   }
@@ -1052,6 +1058,9 @@ body{
     background: url('../img/landingpage/divColumnImageBg1.jpeg');
     width: 480px;
     height: 406.7px;
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-position: center;
   }
   .beranda .vector-1 {
     width: 30px;
@@ -1373,10 +1382,10 @@ body{
     background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.75));
     position: absolute;
     left: 50%;
-    top: 45.1px;
+    top: 0px;
     translate: -50% 0;
-    width: 270.3px;
-    height: 255.5px;
+    width: 320px;
+    height: 301.5px;
   }
   .beranda .heading-3-pelanggan {
     position: relative;
@@ -1395,16 +1404,17 @@ body{
     flex-direction: row;
     justify-content: center;
     padding: 214.4px 44.8px 45.2px 0;
-    width: 270.3px;
+    width: 320px;
     height: fit-content;
     box-sizing: border-box;
+    background-size: cover;
   }
   .beranda .div-nectar-fancy-box-3 {
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 270.3px;
+    width: 319.3px;
     height: fit-content;
     box-sizing: border-box;
   }
@@ -1424,11 +1434,13 @@ body{
     right: 0.2px;
     left: 928px;
     bottom: 1252.9px;
-    width: 600px;
+    width: 660px;
     height: 869px;
+    background-size: cover;
+    transform: scaleX(-1);
   }
   .beranda .div-row-bg-overlay-1 {
-    background: linear-gradient(180deg, rgba(27, 27, 27, 0.85), #1B1B1B);
+    background: linear-gradient(180deg, rgb(27, 27, 27, 80%), #1B1B1B);
     position: absolute;
     left: 0px;
     top: 0px;
@@ -1588,7 +1600,6 @@ body{
     color: #F9F9F9;
   }
   .beranda .list-item-link-visi-dan-misi {
-    margin-right: 5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1688,7 +1699,7 @@ body{
     box-sizing: border-box;
   }
   .beranda .container-28 {
-    margin: 0 233.2px 7.6px 0;
+    margin: 0 233.2px 7.6px 245px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1714,7 +1725,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
-    margin-left: -280px;
+    margin-left: -288px;
 
   }
   .beranda .list-item-link-laporan-keberlanjutan {
@@ -1728,7 +1739,7 @@ body{
     color: #E1F9EC;
   }
   .beranda .container-30 {
-    margin: 0 411px 7.6px 0;
+    margin: 0 411px 7.6px 245px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1754,7 +1765,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.4;
     color: #E1F9EC;
-    margin-left: -274px;
+    margin-left: -282px;
 
   }
   .beranda .list-item-link-standar-sertifikasi {
@@ -1768,7 +1779,7 @@ body{
     margin-right: 50px;
   }
   .beranda .container-18 {
-    margin: 0 514.4px 7.6px 0;
+    margin: 0 514.4px 7.6px 245px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1794,7 +1805,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
-    margin-left:-128px ;
+    margin-left:-135px ;
   }
   .beranda .list-item-link-sistem-ketertelusuran {
     overflow-wrap: break-word;
@@ -1807,7 +1818,7 @@ body{
     margin-right: 53px;
   }
   .beranda .container-22 {
-    margin: 0 499.1px 7.6px 0;
+    margin: 0 499.1px 7.6px 245px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1833,10 +1844,10 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
-    margin-right:326px;
+    margin-right:324px;
   }
   .beranda .container-10 {
-    margin: 0 200.4px 7.6px 0;
+    margin: 0 200.4px 7.6px 242px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1853,10 +1864,10 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.434;
     color: #E1F9EC;
-    margin-right: 105px;
+    margin-right: -142px;
   }
   .beranda .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
-    margin: 2.3px 11px 0 0;
+    margin: 2.3px -100px 0 0;
     display: inline-block;
     width: 1148.7px;
     overflow-wrap: break-word;
@@ -1866,6 +1877,7 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.76;
     color: #588157;
+    transform: scaleY(-1);
   }
   .beranda .vector-9 {
     width: 17.6px;
@@ -1919,7 +1931,7 @@ body{
     height: 14.1px;
   }
   .beranda .container-7 {
-    margin: 1.7px 0 0.5px 0;
+    margin: 1.7px -14px 0.5px 0;
     display: flex;
     flex-direction: row;
     width: 56.4px;
@@ -1963,9 +1975,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 58.8px 117px 0px 0;
+    padding: 78.8px 117px 0px 0;
     width: 1537px;
     box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: right -380px top 265px ,0 0;
   }
   .beranda .div-ocm-effect-wrap {
     background: #FFFFFF;

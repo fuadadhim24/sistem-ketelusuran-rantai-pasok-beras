@@ -298,6 +298,7 @@
                                     src="{{ asset('asset/custom/vectors/container_x2.svg') }}" />
                             </div>
                         </div>
+
                         <div class="button-previous-svg">
                             <img class="vector-22" src="{{ asset('asset/custom/vectors/vector10_x2.svg ') }}" />
                         </div>
