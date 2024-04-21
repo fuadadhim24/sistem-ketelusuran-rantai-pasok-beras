@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/pengolahan', function () {
+    return view('lendingpage2');
+});
+
 
 Route::middleware([
     'auth:sanctum',

@@ -599,9 +599,9 @@
                 </div>
             </div>
             <div class="list-2">
-                <span class="item-link-kunjungi-ketelsuruan-produk">
+                <a href="/pengolahan" class="item-link-kunjungi-ketelsuruan-produk">
                     Kunjungi Ketertelusuran Produk
-                </span>
+                </a>
                 <div class="item-link-5">
                     <img class="vector-20" src="{{ asset('asset/custom/vectors/vector9_x2.svg ') }}" />
                 </div>
