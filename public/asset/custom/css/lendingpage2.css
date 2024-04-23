@@ -1,0 +1,1291 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+.container {
+    max-width: 1200px; /* Lebar maksimum konten */
+    margin: 0 auto; /* Tengahkan konten */
+    padding: 20px; /* Berikan padding agar konten tidak terlalu dekat dengan tepi layar */
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 5px;
+    }
+}
+
+
+.pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer {
+    background: rgba(88, 129, 87, 0.24);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+  }
+  .pengolahan .vector-6 {
+    width: 14.1px;
+    height: 11.4px;
+  }
+  .pengolahan .item-link {
+    margin: 2.3px 0 1.1px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 14.1px;
+    height: 11.4px;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-7 {
+    width: 7.7px;
+    height: 14.9px;
+  }
+  .pengolahan .item-link-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 7.7px;
+    height: 14.9px;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-8 {
+    width: 13.7px;
+    height: 13.1px;
+  }
+  .pengolahan .item-link-2 {
+    margin: 1.3px 0 0.4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.7px;
+    height: 13.1px;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-9 {
+    position: absolute;
+    top: 0px;
+    right: -0.3px;
+    width: 16px;
+    height: 11.3px;
+  }
+  .pengolahan .item-link-3 {
+    position: relative;
+    margin: 2.4px 0 1.2px 0;
+    width: 15.7px;
+    height: 11.3px;
+  }
+  .pengolahan .vector-10 {
+    width: 13.7px;
+    height: 13.7px;
+  }
+  .pengolahan .item-link-4 {
+    margin-top: 1.1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.7px;
+    height: 13.7px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-1 {
+    margin: 5.5px 0 1.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 186.2px;
+    height: fit-content;
+    box-sizing: border-box;
+    transform: scaleY(-1);
+
+  }
+  .pengolahan .item-link-kunjungi-ketelsuruan-produk {
+    margin-right: 10.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.6px;
+    letter-spacing: -0.3px;
+    line-height: 1.622;
+    color: #FFFFFF;
+  }
+  .pengolahan .vector-11 {
+    width: 13.5px;
+    height: 6px;
+  }
+  .pengolahan .item-link-5 {
+    margin: 9.5px 700px 6.5px -7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.5px;
+    height: 6px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-2 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .pengolahan .divheader-secondary-outer {
+    background: #507450;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 9px 0 11px 150px;
+    width: 1535px;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-asianagri-logo-white-2-png {
+    margin: 0 0px 0 193px;
+    background: url('../img/landingpage2/divfooterOuter.png');
+    margin-right: 53.1px;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+  }
+  .pengolahan .link-tentang-kami-2 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.164;
+    color: #FFFFFF;
+  }
+  .pengolahan .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-tentang-kami-3 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.164;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-bisnis {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.192;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-media-publikasi {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-4 {
+    margin: 0 -154px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-media-publikasi-1 {
+    margin: 0px -345px 0 67px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .nav-list {
+    margin: 30px 317px 50px 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 715.6px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-hubungi-kami {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-6 {
+    margin-top: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-id {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #FFFFFF;
+  }
+  .pengolahan .item-7 {
+    margin-top: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-5 {
+    width: 19.9px;
+    height: 20px;
+  }
+  .pengolahan .link {
+    transform: scaleY(-1);
+    opacity: 0.75;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px 0;
+    width: 19.7px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .pengolahan .item-8 {
+    margin-bottom: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 19.7px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list {
+    margin: 29.5px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 185.4px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .pengolahan .header {
+    margin: 0 292px 190px 1.5px;
+    display: flex;
+    flex-direction: row;
+    width: 1412.2px;
+    box-sizing: border-box;
+  }
+  .pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
+    margin: 47px 131px 59px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 55px;
+    letter-spacing: -1px;
+    line-height: 1.194;
+    color: #FFFFFF;
+  }
+  .pengolahan .camera {
+    background: url('../img/landingpage2/camera.png') 50% / contain no-repeat;
+    margin-right: 13px;
+    width: 64px;
+    height: 64px;
+  }
+  .pengolahan .link-tentang-kami {
+    margin: 22px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    line-height: 1.008;
+    text-transform: capitalize;
+    color: #FFFFFF;
+  }
+  .pengolahan .heading-6 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 200px;
+    background: #588157;
+    display: flex;
+    flex-direction: row;
+    padding: 13px 23px 9px 26px;
+    width: 417px;
+    box-sizing: border-box;
+  }
+  .pengolahan .frame-633 {
+    margin-right: 733px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 361px;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-tentang-kami-1 {
+    margin-bottom: 20.5px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    line-height: 1.344;
+    text-transform: capitalize;
+    color: #cbced7;
+  }
+  .pengolahan .back-arrow {
+    background: url('../img/landingpage2/backArrow.png') 50% / contain no-repeat;
+    margin-left: 1px;
+    width: 56px;
+    height: 56px;
+    transform: rotate(-90deg);
+  }
+  .pengolahan .container-8 {
+    background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 49.5px 771px 34px 0;
+    width: 1535px;
+    box-sizing: border-box;
+  }
+  .pengolahan .container-5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: -1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
+    background: url('../img/landingpage2/rsSbgPxRsSbgWrapRsSbgImage.jpeg');
+    position: relative;
+    margin-bottom: 81px;
+    width: 1535px;
+    height: 799px;
+    background-size: cover;
+  }
+  .pengolahan .kotak-pencarian-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .pengolahan .elemen-kotak-pencarian {
+    border-radius: 10px;
+    border: 1px solid #000000;
+    background: #507450;
+    position: relative;
+    margin-bottom: 81px;
+    padding: 10px 15px;
+    /* width: fit-content; */
+    box-sizing: border-box;
+  }
+  .masukkan-kode-produk-kemudian-klik-cari {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -1px;
+    line-height: 1.333;
+  }
+  .pengolahan .masukkan-kode-produk-kemudian-klik-cari {
+    position: relative;
+    margin: 0 23px;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -1px;
+    line-height: 5.067;
+    color: #1B1B1B;
+  }
+  .pengolahan .rectangle-212 {
+    box-shadow: 0px 4px 11.9px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
+    position: absolute;
+    left: 50%;
+    top: 107px;
+    translate: -50% 0;
+    width: 297px;
+    height: 46px;
+  }
+  .pengolahan .rectangle-213 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 123, 255, 0.25);
+    border-radius: 5px;
+    background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 107px;
+    right: -6px;
+    width: 70px;
+    height: 46px;
+  }
+  .pengolahan .vector-12 {
+    width: 20.5px;
+    height: 24.5px;
+  }
+  .pengolahan .epsearch {
+    top: 56px;
+    position: relative;
+    margin: 57.8px 10px 26.7px 231px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 24.5px;
+    height: 24.5px;
+    box-sizing: border-box;
+  }
+  .pengolahan .cari {
+    position: relative;
+    top: 60px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 8.6;
+    color: #000000;
+  }
+  .pengolahan .kotak-pencarian-2 {
+    position: absolute;
+    left: 23px;
+    right: 23px;
+    bottom: 69px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 14px;
+    box-sizing: border-box;
+  }
+  .pengolahan .kotak-pencarian {
+    height: 188px;
+    box-shadow: 0px 4px 11.9px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
+    position: relative;
+    margin: 7px 49px 9px 0;
+    display: flex;
+    flex-direction: column;
+    width: 335px;
+    box-sizing: border-box;
+  }
+  .pengolahan .rectangle-2131 {
+    border: 1px solid #3F3F3F;
+    background: #D7E1D7;
+    width: 998px;
+    height: 45px;
+  }
+  .pengolahan .container-6 {
+    border-radius: 10px;
+    border: 1px solid #3F3F3F;
+    background: #D7E1D7;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 1000px;
+    height: 45px;
+    box-sizing: border-box;
+  }
+  .pengolahan .rectangle-215 {
+    border-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(#3F3F3F, #3F3F3F);
+    border-image-slice: 1;
+    border-width: 1px;
+    border-style: solid;
+    width: 997px;
+    height: 45px;
+  }
+  .pengolahan .container-2 {
+    border-radius: 10px;
+    border: 1px solid #3F3F3F;
+    background: #EEEEEE;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 1px 47px 1px;
+    width: 1000px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .pengolahan .rectangle-214 {
+    border: 1px solid #3F3F3F;
+    background: #D7E1D7;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 8px;
+    height: 45px;
+    top: 147px;
+  }
+  .pengolahan .rectangle-204 {
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #3F3F3F;
+    background: #507450;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    right: 0px;
+    height: 52px;
+  }
+  .pengolahan .kode-produk {
+    right: 7px;
+    white-space: nowrap;
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .pengolahan .z {
+    position: absolute;
+    left: 0.4px;
+    top: 68.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 0.7;
+    color: #3F3F3F;
+  }
+  .pengolahan .z-1 {
+    position: absolute;
+    left: 0px;
+    bottom: 67px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 11.167;
+    color: #3F3F3F;
+  }
+  .pengolahan .z-2 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 13.367;
+    color: #3F3F3F;
+  }
+  .pengolahan .frame-626 {
+    position: relative;
+    margin: 2.5px 136.9px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 274.5px;
+    flex-grow: 1;
+    flex-basis: 197px;
+    box-sizing: border-box;
+  }
+  .pengolahan .bps-setra-ramos {
+    width: 200px;
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 0.7;
+    color: #3F3F3F;
+  }
+  .pengolahan .hariku {
+    position: absolute;
+    left: 0px;
+    bottom: 66px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 11.167;
+    color: #3F3F3F;
+  }
+  .pengolahan .pawon-mas {
+    position: absolute;
+    left: 0.4px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 13.367;
+    color: #3F3F3F;
+  }
+  .pengolahan .nama-produk {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .pengolahan .group-627 {
+    position: relative;
+    margin: 0 28.3px 1px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 69px 0 131px 0;
+    flex-grow: 1;
+    flex-basis: 217px;
+    box-sizing: border-box;
+  }
+  .pengolahan .agustus-2024 {
+
+    position: absolute;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 0.6;
+    color: #3F3F3F;
+  }
+  .pengolahan .agustus-20241 {
+    position: absolute;
+    left: 11px;
+    bottom: 66px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 11.167;
+    color: #3F3F3F;
+  }
+  .pengolahan .maret-2024 {
+    position: absolute;
+    left: 11px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 13.367;
+    color: #3F3F3F;
+  }
+  .pengolahan .tanggal-kadaluasa {
+    position: absolute;
+    left: 34%;
+    top: 0px;
+    translate: -50% 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .pengolahan .group-629 {
+    position: relative;
+    margin: 0 58.5px 2px 0;
+    padding: 69px 190px 131px 11px;
+    flex-grow: 1;
+    flex-basis: 236px;
+    box-sizing: border-box;
+  }
+  .pengolahan .rectangle-2141 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 62px;
+    border-radius: 5px;
+    background: #007BFF;
+    position: absolute;
+    left: 4px;
+    top: 60px;
+    right: 0px;
+    height: 30px;
+  }
+  .pengolahan .rectangle-2151 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 62px;
+    background: #007BFF;
+    position: absolute;
+    left: 4px;
+    right: 0px;
+    top: 103px;
+    height: 30px;
+  }
+  .pengolahan .rectangle-216 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 62px;
+    border-radius: 5px;
+    background: #007BFF;
+    position: absolute;
+    left: 4px;
+    right: 0px;
+    top: 150px;
+    height: 30px;
+  }
+  .pengolahan .detail {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 0.8;
+    color: #FFFFFF;
+  }
+  .pengolahan .detail-1 {
+    position: absolute;
+    left: 15.2px;
+    bottom: 66px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 11.5;
+    color: #FFFFFF;
+  }
+  .pengolahan .detail-2 {
+    position: absolute;
+    left: 15.2px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 13.8;
+    color: #FFFFFF;
+  }
+  .pengolahan .aksi {
+    position: absolute;
+    left: 15.3px;
+    top: 2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .pengolahan .group-630 {
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 69px 15.7px 131px 15.2px;
+    flex-grow: 1;
+    flex-basis: 80px;
+    box-sizing: border-box;
+  }
+  .pengolahan .frame-611 {
+    border-radius: 10px;
+    position: absolute;
+    left: 77.6px;
+    right: 112px;
+    top: 6px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .pengolahan .tabel {
+    height: 224px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 4px 0 26px 0;
+    width: 1000px;
+    box-sizing: border-box;
+  }
+  .pengolahan .container-12 {
+    margin: 0 91px 144px 130px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .pengolahan .heading-4-ud-tani-rejo {
+    margin-bottom: 19.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.679;
+    color: #F9F9F9;
+  }
+  .pengolahan .list-item-link-visi-dan-misi {
+    margin-right: 5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .pengolahan .container-7 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .pengolahan .heading-4-bisnis-kami {
+    margin-bottom: 19.4px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.638;
+    color: #F9F9F9;
+  }
+  .pengolahan .list-item-link-perkebunan {
+    margin-right: 10.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .pengolahan .container {
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 63px 0 41px;
+  }
+  .pengolahan .heading-4-keberlanjutan {
+    margin-bottom: 19.1px;
+    margin-top: 20px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.6;
+    color: #F9F9F9;
+  }
+  .pengolahan .list-item-link-kebijakan-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .pengolahan .container-11 {
+    margin-right: 106px;
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .pengolahan .heading-4-media-publikasi {
+    margin-bottom: 19.1px;
+    margin-top: 20px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.613;
+    color: #F9F9F9;
+  }
+  .pengolahan .list-item-link-siaran-pers {
+    margin-left: 0.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 11.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.675;
+    color: #E1F9EC;
+  }
+  .pengolahan .div-col {
+    margin-bottom: 6.1px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .pengolahan .container-3 {
+    margin: 0 233.2px 7.6px 161px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1066.8px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-item-link-nilai-nilai-kami {
+    margin-right: 87px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-pabrik {
+    margin-left: -381px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-laporan-keberlanjutan {
+    margin: 0 74px 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .pengolahan .container-9 {
+    margin: -22px 493.9px 7.6px 161px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 806.1px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-item-link-kemitraan-dengan-petani {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-produk {
+    margin: 0 0 0 -228px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-standar-sertifikasi {
+    margin: 0 71px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .pengolahan .container-14 {
+    margin: 0 514.4px 7.6px 161px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 785.6px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-item-link-tonggak-sejarah {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.469;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-penelitian-dan-pengembangan {
+    margin: 0 0 0 -153px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-sistem-ketertelusuran {
+    margin: 0 73px 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .pengolahan .container-4 {
+    margin: 0 499.1px 7.6px 161px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800.9px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-item-link-benih-topaz {
+    margin: 0 0 0 37px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.8px;
+    letter-spacing: -0.3px;
+    line-height: 1.422;
+    color: #E1F9EC;
+  }
+  .pengolahan .list-item-link-program-inisiatif {
+    white-space: nowrap;
+    margin: 0 -8px 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .pengolahan .container-1 {
+    margin: 0 192.4px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 444.6px;
+    box-sizing: border-box;
+  }
+  .pengolahan .list-item-link-pengaduan {
+    margin: 0 -18px 149.1px 94.8px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .pengolahan .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
+    margin: 2.3px 11px 0 -75px;
+    display: inline-block;
+    width: 1148.7px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: -0.3px;
+    line-height: 1.76;
+    color: #588157;
+    transform: scaleY(-1);
+  }
+  .pengolahan .vector {
+    width: 17.6px;
+    height: 14.3px;
+  }
+  .pengolahan .list-item-link {
+    margin: 2.9px 0 1.4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.6px;
+    height: 14.3px;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-1 {
+    width: 9.6px;
+    height: 18.6px;
+  }
+  .pengolahan .list-item-link-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 9.6px;
+    height: 18.6px;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-2 {
+    width: 17.1px;
+    height: 16.4px;
+  }
+  .pengolahan .list-item-link-2 {
+    margin-right: 19.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.1px;
+    height: 16.4px;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-3 {
+    position: absolute;
+    top: 0px;
+    right: -0.4px;
+    width: 20px;
+    height: 14.1px;
+  }
+  .pengolahan .list-item-link-3 {
+    position: relative;
+    margin: 1.3px 0 1px 0;
+    width: 19.6px;
+    height: 14.1px;
+  }
+  .pengolahan .container-10 {
+    margin: 1.7px 0 0.5px 0;
+    display: flex;
+    flex-direction: row;
+    width: 46.4px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .pengolahan .vector-4 {
+    width: 17.1px;
+    height: 17.1px;
+  }
+  .pengolahan .list-item-link-4 {
+    margin-top: 1.4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.1px;
+    height: 17.1px;
+    box-sizing: border-box;
+  }
+  .pengolahan .container-13 {
+    margin-bottom: 5.8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 162.7px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .pengolahan .divcopyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20.5px 0 20.2px 0;
+    width: 1020px;
+    transform: scaleY(-1);
+    box-sizing: border-box;
+  }
+  .pengolahan .divfooter-outer {
+    background: url('../img/landingpage2/divfooterOuter.png'), linear-gradient(#1B1B1B, #1B1B1B);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 58.8px;
+    width: 1535px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: right -380px top 265px ,0 0;
+  }
+  .pengolahan {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0.1px;
+    width: 1535px;
+    box-sizing: border-box;
+  }
