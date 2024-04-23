@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('asset/custom/css/landingpage2.css') }}" />
+    <link rel="stylesheet" href="{{ asset('asset/custom/css/lendingpage2.css') }}" />
 </head>
 <body>
     <div class="pengolahan">
@@ -20,19 +20,19 @@
             <div class="divheader-secondary-outer">
               <div class="list-1">
                 <div class="item-link">
-                  <img class="vector-6" src="../assets/vectors/vector2_x2.svg" />
+                  <img class="vector-6" src="{{ asset('asset/custom/vectors2/vector2_x2.svg') }}"/>
                 </div>
                 <div class="item-link-1">
-                  <img class="vector-7" src="../assets/vectors/vector11_x2.svg" />
+                  <img class="vector-7" src="{{ asset('asset/custom/vectors2/vector11_x2.svg') }}"/>
                 </div>
                 <div class="item-link-2">
-                  <img class="vector-8" src="../assets/vectors/vector7_x2.svg" />
+                  <img class="vector-8" src="{{ asset('asset/custom/vectors2/vector7_x2.svg') }}" />
                 </div>
                 <div class="item-link-3">
-                  <img class="vector-9" src="../assets/vectors/vector_x2.svg" />
+                  <img class="vector-9" src="{{ asset('asset/custom/vectors2/vector_x2.svg') }}" />
                 </div>
                 <div class="item-link-4">
-                  <img class="vector-10" src="../assets/vectors/vector1_x2.svg" />
+                  <img class="vector-10" src="{{ asset('asset/custom/vectors2/vector1_x2.svg') }}" />
                 </div>
               </div>
               <div class="list-2">
@@ -40,7 +40,7 @@
                   Kunjungi Ketertelusuran Produk
                 </span>
                 <div class="item-link-5">
-                  <img class="vector-11" src="../assets/vectors/vector4_x2.svg" />
+                  <img class="vector-11" src="{{ asset('asset/custom/vectors2/vector4_x2.svg') }}" />
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="item-8">
                   <div class="link">
-                    <img class="vector-5" src="../assets/vectors/vector8_x2.svg" />
+                    <img class="vector-5" src="{{ asset('asset/custom/vectors2/vector8_x2.svg') }}" />
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@
               <div class="rectangle-213">
               </div>
               <div class="epsearch">
-                <img class="vector-12" src="../assets/vectors/vector10_x2.svg" />
+                <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
               </div>
               <span class="cari">
                 Cari
@@ -194,7 +194,7 @@
                   11 Maret 2024
                 </span>
                 <span class="tanggal-kadaluasa">
-                  Tanggal Kadaluasa
+                  Tanggal Kadaluarsa
                 </span>
               </div>
               <div class="group-630">
@@ -305,21 +305,21 @@
             </div>
             <div class="container-13">
               <div class="list-item-link">
-                <img class="vector" src="../assets/vectors/vector6_x2.svg" />
+                <img class="vector" src="{{ asset('asset/custom/vectors2/vector6_x2.svg') }}" />
               </div>
               <div class="list-item-link-1">
-                <img class="vector-1" src="../assets/vectors/vector9_x2.svg" />
+                <img class="vector-1" src="{{ asset('asset/custom/vectors2/vector9_x2.svg') }}" />
               </div>
               <div class="container-10">
                 <div class="list-item-link-2">
-                  <img class="vector-2" src="../assets/vectors/vector5_x2.svg" />
+                  <img class="vector-2" src="{{ asset('asset/custom/vectors2/vector5_x2.svg') }}" />
                 </div>
                 <div class="list-item-link-3">
-                  <img class="vector-3" src="../assets/vectors/vector12_x2.svg" />
+                  <img class="vector-3" src="{{ asset('asset/custom/vectors2/vector12_x2.svg') }}" />
                 </div>
               </div>
               <div class="list-item-link-4">
-                <img class="vector-4" src="../assets/vectors/vector3_x2.svg" />
+                <img class="vector-4" src="{{ asset('asset/custom/vectors2/vector3_x2.svg') }}" />
               </div>
             </div>
           </div>
