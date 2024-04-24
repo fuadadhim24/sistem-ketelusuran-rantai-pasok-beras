@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -250,7 +250,7 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .nav-list {
-    margin: 30px 317px 50px 9px;
+    margin: 30px 339px 50px 57px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -306,6 +306,7 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .item-8 {
+    margin-right: -44px;
     margin-bottom: 0.5px;
     display: flex;
     flex-direction: row;
