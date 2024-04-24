@@ -53,11 +53,11 @@
                     Tentang Kami
                   </span>
                 </div>
-                <div class="item-1">
+                {{-- <div class="item-1">
                   <span class="link-tentang-kami-3">
                     Tentang Kami
                   </span>
-                </div>
+                </div> --}}
                 <div class="item-2">
                   <span class="link-bisnis">
                     Bisnis
@@ -198,12 +198,21 @@
                 </span>
               </div>
               <div class="group-630">
-                <div class="rectangle-2141">
-                </div>
-                <div class="rectangle-2151">
+                <a href="/detailpengolahan" class="rectangle-2141">
+                    <!-- Konten di dalam tautan -->
+                </a>
+                <a href="/detailpengolahan" class="rectangle-2151">
+                    <!-- Konten di dalam tautan -->
+                </a>
+                <a href="/detailpengolahan" class="rectangle-216">
+                    <!-- Konten di dalam tautan -->
+                </a>
+                {{-- <div class="rectangle-2141">
+                </div> --}}
+                {{-- <div class="rectangle-2151">
                 </div>
                 <div class="rectangle-216">
-                </div>
+                </div> --}}
                 <span class="detail">
                   Detail
                 </span>
