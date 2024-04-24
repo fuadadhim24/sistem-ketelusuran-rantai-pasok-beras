@@ -25,7 +25,9 @@ Route::get('/', function () {
 Route::get('/pengolahan', function () {
     return view('lendingpage2');
 });
-
+Route::get('/detailpengolahan', function () {
+    return view('hasilpengolahan');
+});
 
 Route::middleware([
     'auth:sanctum',
