@@ -1,0 +1,1668 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+
+.hasil-pengolahan .link-asianagri-logo-white-2-png {
+    background: url('../assets/images/linkAsianagriLogoWhite2Png.png');
+    width: 100px;
+    height: 100px;
+  }
+  .hasil-pengolahan .link-tentang-kami-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.2px;
+    letter-spacing: -0.4px;
+    line-height: 1.164;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .link-bisnis {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16.8px;
+    letter-spacing: -0.4px;
+    line-height: 1.192;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .link-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.6px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .link-media-publikasi {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .link-media-publikasi-1 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .nav-list {
+    margin: 30px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 819.8px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .link-hubungi-kami {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.6px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item-5 {
+    margin-top: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .link-id {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.6px;
+    letter-spacing: -0.4px;
+    line-height: 1.136;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .item-6 {
+    margin-top: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-11 {
+    width: 19.9px;
+    height: 20px;
+  }
+  .hasil-pengolahan .link {
+    opacity: 0.75;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px 0;
+    width: 19.7px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .item-7 {
+    margin-bottom: 0.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 19.7px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-2 {
+    margin: 29.5px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 185.4px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .header {
+    margin: 0 0 53px 3.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 1412.2px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
+    margin: 0 26px 120px 26px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: -1px;
+    line-height: 2.533;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rectangle-204 {
+    border: 1px solid #3F3F3F;
+    background: #507450;
+    position: relative;
+    width: 705px;
+    height: 73px;
+  }
+  .hasil-pengolahan .container-1 {
+    margin-right: 72.3px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .ciherang {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .container-3 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .kg {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .container-6 {
+    margin: 0 31px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 443.2px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rectangle-207 {
+    background: #3F3F3F;
+    width: 2px;
+    height: 434px;
+  }
+  .hasil-pengolahan .container-4 {
+    background: #D9D9D9;
+    position: absolute;
+    left: 84px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 2px;
+    height: 434px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rectangle-206 {
+    background: #3F3F3F;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    translate: -50% 0;
+    width: 2px;
+    height: 434px;
+  }
+  .hasil-pengolahan .container-2 {
+    border: 1px solid #3F3F3F;
+    background: #EEEEEE;
+    position: relative;
+    margin: 0 39px 38px 39px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding-bottom: 286px;
+    width: 705px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-4 {
+    margin-right: 38px;
+    width: 377px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-3 {
+    margin: 26px 0 12px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1.583;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-621 {
+    position: relative;
+    margin: 0 74px 189px 74px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 437.4px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rectangle-211 {
+    border-radius: 15px 15px 9px 15px;
+    border: 1px solid #3F3F3F;
+    background: #EEEEEE;
+    position: relative;
+    width: 1764px;
+    height: 271px;
+  }
+  .hasil-pengolahan .rectangle-2041 {
+    border-radius: 9px 9px 0 0;
+    border: 1px solid #3F3F3F;
+    background: #507450;
+    position: absolute;
+    left: 0px;
+    top: 2.9px;
+    right: 0px;
+    height: 73px;
+  }
+  .hasil-pengolahan .container-2 {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .container-3 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-626 {
+    position: relative;
+    margin: 2.5px 78px 0.2px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 0.4px;
+    height: 149.3px;
+    flex-grow: 1;
+    flex-basis: 16px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .nama-produk {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .bps-setra-ramos {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-627 {
+    margin-right: 82.3px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 182.7px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .kode-produksi {
+    margin-left: 0.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .cxba-02-d {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-628 {
+    margin-right: 82.9px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 157.3px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .kemasan {
+    margin: 0 4px;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .high-density-polyethylene-hdpe {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-629 {
+    margin-right: 82.2px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 354.8px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .jumlah {
+    margin-right: 5.3px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .pcs {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-630 {
+    margin-right: 82.8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 86.2px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .tanggal-pengemasan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .november-2023 {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-631 {
+    margin-right: 82.2px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 234.8px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .qr-code {
+    margin-left: 1px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .rectangle-214 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: #007BFF;
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    translate: -50% 0;
+    width: 143px;
+    height: 40px;
+  }
+  .hasil-pengolahan .lihat-qr-code {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -1px;
+    line-height: 3.8;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .group-639 {
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 9.9px 0 8.9px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .group-632 {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 143px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .frame-611 {
+    position: absolute;
+    left: 77.6px;
+    top: 0px;
+    right: 21.3px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .tabel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 4px;
+    width: 1764px;
+    height: 275px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container-1 {
+    border-radius: 13px;
+    background: #EEEEEE;
+    position: relative;
+    margin-bottom: 67px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 67px 44px 43px 26px;
+    width: 1834px;
+    height: 385px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rectangle-2111 {
+    border-radius: 9px;
+    border: 1px solid #3F3F3F;
+    background: #EEEEEE;
+    position: relative;
+    width: 1764px;
+    height: 271px;
+  }
+  .hasil-pengolahan .rectangle-2042 {
+    border-radius: 9px 9px 0 0;
+    border: 1px solid #3F3F3F;
+    background: #507450;
+    position: absolute;
+    left: 0px;
+    top: 2.9px;
+    right: 0px;
+    height: 73px;
+  }
+  .hasil-pengolahan .container-4 {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .container-5 {
+    position: absolute;
+    left: 0.4px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-6261 {
+    position: relative;
+    margin: 5.5px 0 1.5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 147px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .tanggal-pengujian {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .bps-setra-ramos-1 {
+    margin-right: 17.4px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-6271 {
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .tanggal-kadaluarsa {
+    margin-left: 4px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .desember-2023 {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-6291 {
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .mutu {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .premium {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-6301 {
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .detail {
+    margin: 0 16.4px 2px 0.4px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .rectangle-2141 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: #007BFF;
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    translate: -50% 0;
+    width: 80px;
+    height: 40px;
+  }
+  .hasil-pengolahan .detail-1 {
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -1px;
+    line-height: 3.8;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .group-638 {
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 15.5px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .frame-631 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .frame-6111 {
+    position: absolute;
+    left: 77.6px;
+    top: 0px;
+    right: 132px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .tabel-1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 4px;
+    width: 1764px;
+    height: 275px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container-16 {
+    border-radius: 13px;
+    background: #EEEEEE;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 82px 44px 28px 26px;
+    width: 1834px;
+    height: 385px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-2 {
+    position: absolute;
+    left: 31px;
+    bottom: 311px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 2.375;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1834px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container {
+    position: absolute;
+    top: 390px;
+    right: 741.4px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .varietas {
+    position: absolute;
+    top: 390px;
+    right: 582.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .kuantitas {
+    position: absolute;
+    top: 390px;
+    right: 299.9px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .rectangle-2031 {
+    border: 1px solid #3F3F3F;
+    background: #EEEEEE;
+    position: absolute;
+    top: 431px;
+    right: 88px;
+    width: 705px;
+    height: 144px;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-1 {
+    position: absolute;
+    left: 68px;
+    bottom: 881px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 2.375;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5 {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 2.375;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7 {
+    margin-right: 38px;
+    width: 377px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-624 {
+    position: relative;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 569.5px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1.583;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-635 {
+    margin-bottom: 94px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: flex-end;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .back {
+    background: url('../assets/images/back.png') 50% / contain no-repeat;
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+  }
+  .hasil-pengolahan .link-tentang-kami {
+    margin: 6px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14.1px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    text-transform: capitalize;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .group-625 {
+    position: absolute;
+    left: 15px;
+    bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .frame-609 {
+    border-radius: 12px;
+    border: 2px solid #507450;
+    background: #EEEEEE;
+    position: relative;
+    align-self: flex-start;
+    width: 136px;
+    height: 41px;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9 {
+    position: absolute;
+    top: 68px;
+    right: 246.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10 {
+    position: absolute;
+    left: 0px;
+    top: 68px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11 {
+    position: absolute;
+    top: 136px;
+    right: 301.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12 {
+    position: absolute;
+    left: 0px;
+    top: 136px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14 {
+    position: absolute;
+    left: 0px;
+    top: 204px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .frame-632 {
+    position: relative;
+    margin-right: 138px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6 {
+    margin: 0 2px 7px 2px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+  }
+  .hasil-pengolahan .container-6 {
+    position: relative;
+    margin: 0 31px;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .rectangle-2091 {
+    border-radius: 0 0 9px 9px;
+    border: 1px solid #000000;
+    background: #D7E1D7;
+    position: relative;
+    width: 705px;
+    height: 71px;
+  }
+  .hasil-pengolahan .rectangle-2043 {
+    border-radius: 9px 9px 0 0;
+    border: 1px solid #3F3F3F;
+    background: #507450;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    right: 0px;
+    height: 73px;
+  }
+  .hasil-pengolahan .rectangle-2071 {
+    background: #3F3F3F;
+    position: absolute;
+    left: 84px;
+    top: 4px;
+    width: 2px;
+    height: 143px;
+  }
+  .hasil-pengolahan .container-7 {
+    position: absolute;
+    left: 31px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .ciherang-1 {
+    position: absolute;
+    left: 115px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .kg-1 {
+    position: absolute;
+    right: 235.3px;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .varietas-1 {
+    position: absolute;
+    left: 115px;
+    top: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .kuantitas-1 {
+    position: absolute;
+    top: 0px;
+    right: 216.9px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .rectangle-2061 {
+    background: #3F3F3F;
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    translate: -50% 0;
+    width: 2px;
+    height: 143px;
+  }
+  .hasil-pengolahan .tabel-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container-15 {
+    margin-bottom: 430px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container-14 {
+    margin-left: 48px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .group-636 {
+    border-radius: 13px;
+    background: #EEEEEE;
+    position: absolute;
+    left: 42px;
+    top: 316px;
+    right: 44px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 44px 39px 26px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
+    background: rgba(88, 129, 87, 0.24);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 44px 44px 118px 42px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .heading-4-ud-tani-rejo {
+    margin-bottom: 19.1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.679;
+    color: #F9F9F9;
+  }
+  .hasil-pengolahan .list-item-link-visi-dan-misi {
+    margin-right: 5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container-11 {
+    margin-top: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .heading-4-bisnis-kami {
+    margin-bottom: 19.4px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.638;
+    color: #F9F9F9;
+  }
+  .hasil-pengolahan .list-item-link-perkebunan {
+    margin-right: 10.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container-8 {
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .heading-4-keberlanjutan {
+    margin-bottom: 19.4px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.6;
+    color: #F9F9F9;
+  }
+  .hasil-pengolahan .list-item-link-kebijakan-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container {
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .heading-4-media-publikasi {
+    margin-bottom: 14px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.613;
+    color: #F9F9F9;
+  }
+  .hasil-pengolahan .list-item-link-siaran-pers {
+    margin-left: 0.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 11.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.675;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .div-col {
+    margin-bottom: 6.1px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container-13 {
+    margin: 0 233.2px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1066.8px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-item-link-nilai-nilai-kami {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-pabrik {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-laporan-keberlanjutan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container-9 {
+    margin: 0 493.9px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 806.1px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-item-link-kemitraan-dengan-petani {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-produk {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-standar-sertifikasi {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container-7 {
+    margin: 0 514.4px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 785.6px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-item-link-tonggak-sejarah {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.3px;
+    letter-spacing: -0.3px;
+    line-height: 1.469;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-penelitian-dan-pengembangan {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-sistem-ketertelusuran {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container-10 {
+    margin: 0 499.1px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800.9px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-item-link-benih-topaz {
+    margin-right: 10px;
+    width: 321.5px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.8px;
+    letter-spacing: -0.3px;
+    line-height: 1.422;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .list-item-link-program-inisiatif {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.9px;
+    letter-spacing: -0.3px;
+    line-height: 1.411;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .container-5 {
+    margin: 0 192.4px 7.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 444.6px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-item-link-pengaduan {
+    margin: 0 0 149.1px 94.8px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+  }
+  .hasil-pengolahan .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
+    margin: 2.3px 11px 0 0;
+    display: inline-block;
+    width: 1148.7px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: -0.3px;
+    line-height: 1.76;
+    color: #588157;
+  }
+  .hasil-pengolahan .vector {
+    width: 17.6px;
+    height: 14.3px;
+  }
+  .hasil-pengolahan .list-item-link {
+    margin: 2.9px 0 1.4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.6px;
+    height: 14.3px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-1 {
+    width: 9.6px;
+    height: 18.6px;
+  }
+  .hasil-pengolahan .list-item-link-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 9.6px;
+    height: 18.6px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-2 {
+    width: 17.1px;
+    height: 16.4px;
+  }
+  .hasil-pengolahan .list-item-link-2 {
+    margin: 1.7px 19.6px 0.5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.1px;
+    height: 16.4px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-3 {
+    position: absolute;
+    top: 0px;
+    right: -0.4px;
+    width: 20px;
+    height: 14.1px;
+  }
+  .hasil-pengolahan .list-item-link-3 {
+    position: relative;
+    margin: 3px 0 1.5px 0;
+    width: 19.6px;
+    height: 14.1px;
+  }
+  .hasil-pengolahan .vector-4 {
+    width: 17.1px;
+    height: 17.1px;
+  }
+  .hasil-pengolahan .list-item-link-4 {
+    margin-top: 1.4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17.1px;
+    height: 17.1px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .container-12 {
+    margin-bottom: 5.8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 162.7px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .divcopyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20.5px 0 20.2px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .divfooter-outer {
+    background: url('../assets/images/linkAsianagriLogoWhite2Png.png'), linear-gradient(#1B1B1B, #1B1B1B);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 58.8px 0 0px 0;
+    width: 1920px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-5 {
+    width: 14.1px;
+    height: 11.4px;
+  }
+  .hasil-pengolahan .item-link {
+    margin: 2.3px 0 1.1px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 14.1px;
+    height: 11.4px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-6 {
+    width: 7.7px;
+    height: 14.9px;
+  }
+  .hasil-pengolahan .item-link-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 7.7px;
+    height: 14.9px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-7 {
+    width: 13.7px;
+    height: 13.1px;
+  }
+  .hasil-pengolahan .item-link-2 {
+    margin: 1.3px 0 0.4px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.7px;
+    height: 13.1px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .vector-8 {
+    position: absolute;
+    top: 0px;
+    right: -0.3px;
+    width: 16px;
+    height: 11.3px;
+  }
+  .hasil-pengolahan .item-link-3 {
+    position: relative;
+    margin: 2.4px 0 1.2px 0;
+    width: 15.7px;
+    height: 11.3px;
+  }
+  .hasil-pengolahan .vector-9 {
+    width: 13.7px;
+    height: 13.7px;
+  }
+  .hasil-pengolahan .item-link-4 {
+    margin-top: 1.1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.7px;
+    height: 13.7px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list {
+    margin: 5.5px 0 1.6px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 186.2px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .item-link-kunjungi-ketelsuruan-produk {
+    margin-right: 10.2px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 13.6px;
+    letter-spacing: -0.3px;
+    line-height: 1.622;
+    color: #FFFFFF;
+  }
+  .hasil-pengolahan .vector-10 {
+    width: 13.5px;
+    height: 6px;
+  }
+  .hasil-pengolahan .item-link-5 {
+    margin: 9.5px 0 6.5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 13.5px;
+    height: 6px;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .list-1 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan .divheader-secondary-outer {
+    width: 1535px;
+    background: #507450;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 9px 0 11px 0;
+    box-sizing: border-box;
+  }
+  .hasil-pengolahan {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 28px;
+    width: 1920px;
+    box-sizing: border-box;
+  }
