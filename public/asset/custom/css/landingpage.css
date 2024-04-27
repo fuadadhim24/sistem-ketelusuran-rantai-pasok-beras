@@ -212,22 +212,22 @@ body{
   }
   .beranda .container-19 {
     position: relative;
-    margin: 0 70.5px 226px 70.5px;
+    margin: 0 120px 226px 300px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 181.2px;
+    width: 130.2px;
     box-sizing: border-box;
   }
   .beranda .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
     position: relative;
-    margin: 0 340.9px 52px 0;
+    margin: -140px 340.9px 0px 0;
     display: inline-block;
     align-self: center;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 63.6px;
+    font-size: 48px;
     letter-spacing: -1px;
     line-height: 1.194;
     color: #FFFFFF;
@@ -241,6 +241,7 @@ body{
   .beranda .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
     background: url('../img/landingpage/rsSbgPxRsSbgWrapRsSbgImage.jpeg');
     position: relative;
+    height: 100vh;
     margin: 0 0.8px 96.1px 0;
     display: flex;
     flex-direction: column;
