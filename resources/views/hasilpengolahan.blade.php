@@ -57,7 +57,8 @@
               </div>
               <div class="item-7">
                 <div class="link">
-                  <img class="vector-11" src="../assets/vectors/vector8_x2.svg" />
+                    {{-- src="{{ asset('asset/custom/vectorhasilpengolahan/vector12_x2.svg ') }}" --}}
+                  <img class="vector-11" src="{{ asset('asset/custom/vectorshasilpengolahan/vector8_x2.svg')}}" />
                 </div>
               </div>
             </div>
@@ -65,7 +66,7 @@
           <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup">
             Riwayat Ketertelusuran Produk Beras
           </div>
-          <div class="container-2">
+          {{-- <div class="container-2">
             <div class="rectangle-204">
             </div>
             <div class="container-6">
@@ -87,7 +88,7 @@
             </div>
             <div class="rectangle-206">
             </div>
-          </div>
+          </div> --}}
           <div class="group-621">
             <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-4">
               Catatan
@@ -105,8 +106,8 @@
                 </div>
                 <div class="frame-611">
                   <div class="group-626">
-                    <span class="container-2">
-                      #
+                    <span class="no">
+                      No
                     </span>
                     <span class="container-3">
                       1
@@ -176,7 +177,7 @@
                 <div class="frame-6111">
                   <div class="group-6261">
                     <span class="container-4">
-                      #
+                      No
                     </span>
                     <span class="container-5">
                       1
@@ -256,11 +257,14 @@
                 <div class="group-635">
                   <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13">
                     : 1. Pemecahan Kulit<br />
-                    Separasi<br />
-                    Penyosohan<br />
-                    Grading<br />
-                    Pengemasan<br />
-                    Lainnya ( Pengeringan (60°C) - Pecah Kulit - Separasi - Penyosohan - Grading - Sortasi - Pengemasan)
+                    {{-- <span class="separasi-1">
+                        2.Separasi
+                    </span> --}}
+                    &nbsp;2. Separasi<br />
+                    3.Penyosohan<br />
+                    4.Grading<br />
+                    5.Pengemasan<br />
+                    6.Lainnya ( Pengeringan (60°C) - Pecah Kulit - Separasi - Penyosohan - Grading - Sortasi - Pengemasan)
                   </span>
                 </div>
                 <div class="frame-609">
@@ -409,19 +413,19 @@
             </div>
             <div class="container-12">
               <div class="list-item-link">
-                <img class="vector" src="../assets/vectors/vector5_x2.svg" />
+                <img class="vector" src="{{ asset('asset/custom/vectorshasilpengolahan/vector5_x2.svg')}}" />
               </div>
               <div class="list-item-link-1">
-                <img class="vector-1" src="../assets/vectors/vector9_x2.svg" />
+                <img class="vector-1" src="{{ asset('asset/custom/vectorshasilpengolahan/vector9_x2.svg')}}" />
               </div>
               <div class="list-item-link-2">
-                <img class="vector-2" src="../assets/vectors/vector4_x2.svg" />
+                <img class="vector-2" src="{{ asset('asset/custom/vectorshasilpengolahan/vector4_x2.svg')}}" />
               </div>
               <div class="list-item-link-3">
-                <img class="vector-3" src="../assets/vectors/vector11_x2.svg" />
+                <img class="vector-3" src="{{ asset('asset/custom/vectorshasilpengolahan/vector11_x2.svg')}}" />
               </div>
               <div class="list-item-link-4">
-                <img class="vector-4" src="../assets/vectors/vector2_x2.svg" />
+                <img class="vector-4" src="{{ asset('asset/custom/vectorshasilpengolahan/vector2_x2.svg')}}" />
               </div>
             </div>
           </div>
@@ -429,19 +433,19 @@
         <div class="divheader-secondary-outer">
           <div class="list">
             <div class="item-link">
-              <img class="vector-5" src="../assets/vectors/vector7_x2.svg" />
+              <img class="vector-5" src="{{ asset('asset/custom/vectorshasilpengolahan/vector7_x2.svg')}}" />
             </div>
             <div class="item-link-1">
-              <img class="vector-6" src="../assets/vectors/vector1_x2.svg" />
+              <img class="vector-6" src="{{ asset('asset/custom/vectorshasilpengolahan/vector1_x2.svg')}}" />
             </div>
             <div class="item-link-2">
-              <img class="vector-7" src="../assets/vectors/vector3_x2.svg" />
+              <img class="vector-7" src="{{ asset('asset/custom/vectorshasilpengolahan/vector3_x2.svg')}}" />
             </div>
             <div class="item-link-3">
-              <img class="vector-8" src="../assets/vectors/vector_x2.svg" />
+              <img class="vector-8" src="{{ asset('asset/custom/vectorshasilpengolahan/vector_x2.svg')}}" />
             </div>
             <div class="item-link-4">
-              <img class="vector-9" src="../assets/vectors/vector10_x2.svg" />
+              <img class="vector-9" src="{{ asset('asset/custom/vectorshasilpengolahan/vector10_x2.svg')}}" />
             </div>
           </div>
           <div class="list-1">
@@ -449,7 +453,7 @@
               Kunjungi Ketertelusuran Produk
             </span>
             <div class="item-link-5">
-              <img class="vector-10" src="../assets/vectors/vector6_x2.svg" />
+              <img class="vector-10" src="{{ asset('asset/custom/vectorshasilpengolahan/vector6_x2.svg')}}" />
             </div>
           </div>
         </div>
