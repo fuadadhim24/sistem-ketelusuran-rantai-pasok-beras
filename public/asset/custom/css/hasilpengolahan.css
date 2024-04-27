@@ -6,7 +6,10 @@ body{
 }
 
 .hasil-pengolahan .link-asianagri-logo-white-2-png {
-    background: url('../assets/images/linkAsianagriLogoWhite2Png.png');
+
+    background: url('../img/hasilpengolahan/linkAsianagriLogoWhite2Png.png');
+    margin: 0 0 0 74px;
+    background-size: cover;
     width: 100px;
     height: 100px;
   }
@@ -127,6 +130,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .vector-11 {
+    transform: scaleY(-1);
     width: 19.9px;
     height: 20px;
   }
@@ -150,7 +154,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .list-2 {
-    margin: 29.5px 0 50px 0;
+    margin: 29.5px 110px 50px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -168,13 +172,13 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
-    margin: 0 26px 120px 26px;
+    margin: 24px 0px 120px 0px;
     display: inline-block;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: -1px;
     line-height: 2.533;
     color: #1B1B1B;
@@ -191,16 +195,16 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
-    color: #3F3F3F;
+    color: #ffffff;
   }
   .hasil-pengolahan .ciherang {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -214,7 +218,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -272,7 +276,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #1B1B1B;
@@ -283,7 +287,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 1.583;
     color: #3F3F3F;
@@ -299,14 +303,17 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .rectangle-211 {
+    margin: 0 0 0 18px;
     border-radius: 15px 15px 9px 15px;
     border: 1px solid #3F3F3F;
     background: #EEEEEE;
     position: relative;
-    width: 1764px;
-    height: 271px;
+    width: 1400px;
+    height: 204px;
   }
   .hasil-pengolahan .rectangle-2041 {
+    margin: 0 0 0 18px;
+    width: 1400px;
     border-radius: 9px 9px 0 0;
     border: 1px solid #3F3F3F;
     background: #507450;
@@ -314,33 +321,35 @@ body{
     left: 0px;
     top: 2.9px;
     right: 0px;
-    height: 73px;
+    height: 50px;
   }
   .hasil-pengolahan .container-2 {
+    width: 0px;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
-    line-height: 3.167;
+    line-height: 0;
     color: #FFFFFF;
   }
   .hasil-pengolahan .container-3 {
+    margin: 0 0 0 5px;
     position: absolute;
     left: 0px;
     bottom: 0px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
-    line-height: 3.167;
+    line-height: 8.1;
     color: #3F3F3F;
   }
   .hasil-pengolahan .group-626 {
     position: relative;
-    margin: 2.5px 78px 0.2px 0;
+    margin: 3px 78px 0.2px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -351,20 +360,22 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .nama-produk {
+    margin: 3px;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .bps-setra-ramos {
+    margin: 3px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -378,21 +389,23 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .kode-produksi {
+    margin: 3px;
     margin-left: 0.2px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .cxba-02-d {
+    margin: 3px;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -406,21 +419,22 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .kemasan {
-    margin: 0 4px;
+    margin: 3px 4px;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .high-density-polyethylene-hdpe {
+    margin: 3px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -434,20 +448,22 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .jumlah {
+    margin: 3px 0 0 0;
     margin-right: 5.3px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .pcs {
+    margin: 5px 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -462,20 +478,22 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .tanggal-pengemasan {
+    margin: 3px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .november-2023 {
+    margin: 2.1px 0 0 0;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -489,11 +507,12 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .qr-code {
+    margin: 3px;
     margin-left: 1px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
@@ -506,20 +525,22 @@ body{
     left: 50%;
     top: 18px;
     translate: -50% 0;
-    width: 143px;
-    height: 40px;
+    width: 110px;
+    height: 30px;
   }
   .hasil-pengolahan .lihat-qr-code {
+    margin: 2px -25px 0 -23px;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.8;
     color: #FFFFFF;
   }
   .hasil-pengolahan .group-639 {
+    margin: -5px;
     border-radius: 5px;
     position: relative;
     display: flex;
@@ -538,8 +559,9 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .frame-611 {
+    width: 1300px;
     position: absolute;
-    left: 77.6px;
+    left: 58.6px;
     top: 0px;
     right: 21.3px;
     display: flex;
@@ -557,6 +579,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .container-1 {
+    margin: 417px 0 0 -388px;
     border-radius: 13px;
     background: #EEEEEE;
     position: relative;
@@ -565,19 +588,21 @@ body{
     flex-direction: row;
     justify-content: center;
     padding: 67px 44px 43px 26px;
-    width: 1834px;
-    height: 385px;
+    width: 1454px;
+    height: 301px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .rectangle-2111 {
+    margin: 0 0 0 0px;
     border-radius: 9px;
     border: 1px solid #3F3F3F;
     background: #EEEEEE;
     position: relative;
-    width: 1764px;
-    height: 271px;
+    width: 1400px;
+    height: 204px;
   }
   .hasil-pengolahan .rectangle-2042 {
+    width: 1400px;
     border-radius: 9px 9px 0 0;
     border: 1px solid #3F3F3F;
     background: #507450;
@@ -585,16 +610,19 @@ body{
     left: 0px;
     top: 2.9px;
     right: 0px;
-    height: 73px;
+    height: 50px;
   }
   .hasil-pengolahan .container-4 {
+    background-position: 20px 0;
+    margin: 58px 15px 0 -141px;
+    width: 0;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
-    line-height: 3.167;
+    line-height: 0;
     color: #FFFFFF;
   }
   .hasil-pengolahan .container-5 {
@@ -604,14 +632,14 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
-    line-height: 3.167;
+    line-height: 50px;
     color: #3F3F3F;
   }
   .hasil-pengolahan .group-6261 {
     position: relative;
-    margin: 5.5px 0 1.5px 0;
+    margin: -27.5px 0 1.5px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -619,20 +647,21 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .tanggal-pengujian {
+    margin: 5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .bps-setra-ramos-1 {
-    margin-right: 17.4px;
+    margin-right: 0px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -645,21 +674,23 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .tanggal-kadaluarsa {
+    margin: 5px;
     margin-left: 4px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
   }
   .hasil-pengolahan .desember-2023 {
+    margin: 0 7px;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -671,11 +702,12 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .mutu {
+    margin: 5px;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
@@ -684,7 +716,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -696,12 +728,12 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .detail {
-    margin: 0 16.4px 2px 0.4px;
+    margin: 5px 16.4px 2px 15.4px;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
@@ -714,20 +746,22 @@ body{
     left: 50%;
     top: 18px;
     translate: -50% 0;
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
   }
   .hasil-pengolahan .detail-1 {
+    margin: 2px;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: -1px;
     line-height: 3.8;
     color: #FFFFFF;
   }
   .hasil-pengolahan .group-638 {
+    margin: -6px;
     border-radius: 5px;
     position: relative;
     display: flex;
@@ -743,6 +777,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .frame-6111 {
+    width: 1218px;
     position: absolute;
     left: 77.6px;
     top: 0px;
@@ -763,6 +798,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .container-16 {
+    margin: -35px 380px 0 0;
     border-radius: 13px;
     background: #EEEEEE;
     position: relative;
@@ -770,18 +806,18 @@ body{
     flex-direction: row;
     justify-content: center;
     padding: 82px 44px 28px 26px;
-    width: 1834px;
-    height: 385px;
+    width: 1454px;
+    height: 316px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-2 {
     position: absolute;
     left: 31px;
-    bottom: 311px;
+    bottom: 241px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 32px;
+    font-size: 25px;
     letter-spacing: -1px;
     line-height: 2.375;
     color: #1B1B1B;
@@ -796,8 +832,8 @@ body{
   }
   .hasil-pengolahan .container {
     position: absolute;
-    top: 390px;
-    right: 741.4px;
+    top: 1944px;
+    right: 400.4px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
@@ -825,7 +861,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
@@ -842,11 +878,11 @@ body{
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-1 {
     position: absolute;
     left: 68px;
-    bottom: 881px;
+    bottom: 701px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 32px;
+    font-size: 25px;
     letter-spacing: -1px;
     line-height: 2.375;
     color: #1B1B1B;
@@ -867,16 +903,17 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #1B1B1B;
   }
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8 {
+    margin: 0 28px 0 0 ;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -892,10 +929,12 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13 {
+    width: 462px;
+    margin: 0 0px 0 419px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 1.583;
     color: #3F3F3F;
@@ -909,7 +948,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .back {
-    background: url('../assets/images/back.png') 50% / contain no-repeat;
+    background: url('../img/hasilpengolahan/back.png') 50% / contain no-repeat;
     margin-right: 5px;
     width: 32px;
     height: 32px;
@@ -946,11 +985,11 @@ body{
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9 {
     position: absolute;
     top: 68px;
-    right: 246.5px;
+    right: 292.5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -962,19 +1001,19 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #1B1B1B;
   }
   .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11 {
     position: absolute;
-    top: 136px;
-    right: 301.5px;
+    top: 125px;
+    right: 337.5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -986,7 +1025,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #1B1B1B;
@@ -998,7 +1037,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #1B1B1B;
@@ -1017,7 +1056,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #1B1B1B;
@@ -1035,12 +1074,13 @@ body{
     color: #FFFFFF;
   }
   .hasil-pengolahan .rectangle-2091 {
+    margin: -19px 0 0 0;
     border-radius: 0 0 9px 9px;
     border: 1px solid #000000;
     background: #D7E1D7;
     position: relative;
-    width: 705px;
-    height: 71px;
+    width: 518px;
+    height: 50px;
   }
   .hasil-pengolahan .rectangle-2043 {
     border-radius: 9px 9px 0 0;
@@ -1050,7 +1090,7 @@ body{
     left: 0px;
     top: 3px;
     right: 0px;
-    height: 73px;
+    height: 53px;
   }
   .hasil-pengolahan .rectangle-2071 {
     background: #3F3F3F;
@@ -1058,7 +1098,7 @@ body{
     left: 84px;
     top: 4px;
     width: 2px;
-    height: 143px;
+    height: 104px;
   }
   .hasil-pengolahan .container-7 {
     position: absolute;
@@ -1067,7 +1107,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -1079,19 +1119,19 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
   }
   .hasil-pengolahan .kg-1 {
     position: absolute;
-    right: 235.3px;
+    right: 161.3px;
     bottom: 0px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #3F3F3F;
@@ -1103,7 +1143,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
@@ -1111,11 +1151,11 @@ body{
   .hasil-pengolahan .kuantitas-1 {
     position: absolute;
     top: 0px;
-    right: 216.9px;
+    right: 149.9px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
@@ -1127,17 +1167,18 @@ body{
     top: 4px;
     translate: -50% 0;
     width: 2px;
-    height: 143px;
+    height: 104px;
   }
   .hasil-pengolahan .tabel-2 {
     position: relative;
     display: flex;
     flex-direction: column;
     padding-bottom: 5px;
-    width: fit-content;
+    width: 520px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .container-15 {
+    margin: 0 0 0 -196px;
     margin-bottom: 430px;
     display: flex;
     flex-direction: column;
@@ -1163,12 +1204,14 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
+    margin: 0 384px 0 0;
+    width: 1535px;
     background: rgba(88, 129, 87, 0.24);
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 44px 44px 118px 42px;
-    width: fit-content;
+    /* width: fit-content; */
     box-sizing: border-box;
   }
   .hasil-pengolahan .heading-4-ud-tani-rejo {
@@ -1211,6 +1254,7 @@ body{
     color: #F9F9F9;
   }
   .hasil-pengolahan .list-item-link-perkebunan {
+    margin: -2px 0 0 0 ;
     margin-right: 10.2px;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1221,6 +1265,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .container-8 {
+    margin: 0 0 0 -425px;
     margin-top: 0.7px;
     display: flex;
     flex-direction: column;
@@ -1249,7 +1294,8 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .container {
-    margin-top: 0.7px;
+    margin: 0 205px 0 0;
+    margin-top: 11.7px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -1283,7 +1329,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .container-13 {
-    margin: 0 233.2px 7.6px 0;
+    margin: 14px 233.2px 7.6px 161px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1291,6 +1337,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .list-item-link-nilai-nilai-kami {
+    margin: 0 0 0 80px;
     margin-right: 10px;
     width: 321.5px;
     overflow-wrap: break-word;
@@ -1302,6 +1349,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .list-item-link-pabrik {
+    margin: 0 0 0 -294px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1339,6 +1387,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .list-item-link-produk {
+    margin: 0 45px 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1348,6 +1397,8 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .list-item-link-standar-sertifikasi {
+    margin: 0 -217px 0 201px;
+    white-space: nowrap;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1357,14 +1408,15 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .container-7 {
-    margin: 0 514.4px 7.6px 0;
+    margin: 0 526.4px -1306px 167px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 785.6px;
+    width: 489.6px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .list-item-link-tonggak-sejarah {
+    margin: 22px 0 0 80px;
     margin-right: 10px;
     width: 321.5px;
     overflow-wrap: break-word;
@@ -1376,6 +1428,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .list-item-link-penelitian-dan-pengembangan {
+    margin: 23px 0 0 -142px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1385,6 +1438,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .list-item-link-sistem-ketertelusuran {
+    margin: 22px 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1402,7 +1456,8 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .list-item-link-benih-topaz {
-    margin-right: 10px;
+    white-space: nowrap;
+    margin-right: 226px;
     width: 321.5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1413,6 +1468,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .list-item-link-program-inisiatif {
+    white-space: nowrap;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1422,15 +1478,15 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .container-5 {
-    margin: 0 192.4px 7.6px 0;
+    margin: 0 192.4px -1356px 487px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 444.6px;
+    width: 50px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .list-item-link-pengaduan {
-    margin: 0 0 149.1px 94.8px;
+    margin: 21px 0 149.1px 94.8px;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1441,7 +1497,7 @@ body{
     color: #E1F9EC;
   }
   .hasil-pengolahan .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
-    margin: 2.3px 11px 0 0;
+    margin: 2.3px 11px 0 180px;
     display: inline-block;
     width: 1148.7px;
     overflow-wrap: break-word;
@@ -1482,7 +1538,7 @@ body{
     height: 16.4px;
   }
   .hasil-pengolahan .list-item-link-2 {
-    margin: 1.7px 19.6px 0.5px 0;
+    margin: 1.7px -1.4px 0.5px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1491,6 +1547,7 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .vector-3 {
+    margin: 0 -1px;
     position: absolute;
     top: 0px;
     right: -0.4px;
@@ -1517,6 +1574,8 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .container-12 {
+    margin: 0 261px 0 0 ;
+    transform: scaleY(-1);
     margin-bottom: 5.8px;
     display: flex;
     flex-direction: row;
@@ -1531,16 +1590,19 @@ body{
     flex-direction: row;
     justify-content: space-between;
     padding: 20.5px 0 20.2px 0;
-    width: 1920px;
+    width: 1535px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .divfooter-outer {
-    background: url('../assets/images/linkAsianagriLogoWhite2Png.png'), linear-gradient(#1B1B1B, #1B1B1B);
+    margin: 0 0 0 -386px;
+    background: url('../img/hasilpengolahan/linkAsianagriLogoWhite2Png.png'), linear-gradient(#1B1B1B, #1B1B1B);
+    background-repeat: no-repeat;
+    background-position: right -380px top 265px, 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 58.8px 0 0px 0;
-    width: 1920px;
+    width: 1537px;
     box-sizing: border-box;
   }
   .hasil-pengolahan .vector-5 {
@@ -1608,7 +1670,8 @@ body{
     box-sizing: border-box;
   }
   .hasil-pengolahan .list {
-    margin: 5.5px 0 1.6px 0;
+    transform: scaleY(-1);
+    margin: 5.5px 0 1.6px 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1631,7 +1694,7 @@ body{
     height: 6px;
   }
   .hasil-pengolahan .item-link-5 {
-    margin: 9.5px 0 6.5px 0;
+    margin: 9.5px 700px 6.5px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
