@@ -9,7 +9,6 @@
         
         // echo json_encode($email.' '.$password);
         
-    
         // Gunakan parameterized query untuk mencegah SQL injection
         $sql = "SELECT * FROM users WHERE email='$email'";
         $stmt = $conn->prepare($sql);
