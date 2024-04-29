@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('lahan', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lahan');
-            $table->string('lokasi');
+            $table->string('detail_lokasi');
             $table->string('luas');
+            $table->string('latitude');
+            $table->string('longtitude');
             $table->string('status');
             $table->unsignedBigInteger('id_padi')->nullable();
             $table->foreign('id_padi')->references('id')->on('padi')->onDelete('cascade');
