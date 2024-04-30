@@ -4,6 +4,7 @@ try{
     header('Access-Control-Allow-Origin: *');
 
     include "connectDb.php";
+    $id= $_POST['id'];
     $nama_lahan = $POST['nama_lahan'];
     $detail_lokasi = $POST['detail_lokasi'];
     $luas = $POST['luas'];
@@ -11,10 +12,10 @@ try{
     $longitude = $POST['longitude'];
     $status = $POST['status'];
 
-    $sql = "INSERT INTO `lahan` (`nama_lahan`,`detail_lokasi`,`luas`,`latitude`,`longitude`,`status`) VALUES ('$nama_lahan', '$detail_lokasi', '$luas','$latitude','$longitude','$status')";
+    $sql = "UPDATE `lahan` SET nama_lahan = '$nama_lahan', detail_lokasi = '$detail_lokasi', luas = '$luas', latitude = '$latitude', longitude = '$longitude', status = '$status' WHERE id = '$id'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $response['success'] = 'Lahan berhasil disimpan.';
+    $response['success'] = 'Informasi Lahan berhasil diperbarui.';
     echo json_encode($response);    
     
 }catch(PDOException $e){
