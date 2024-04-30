@@ -33,7 +33,11 @@ public function latestData()
         $varietas = VarietasPadi::findOrFail($id);
         return view('edit-varietas', compact('varietas'));
     }
-
+    public function show($id)
+{
+    $item = VarietasPadi::findOrFail($id);
+    return view('update-varietas', compact('item'));
+}
     public function update(Request $request, $id)
     {
         $varietas = VarietasPadi::findOrFail($id);
@@ -96,9 +100,12 @@ public function latestData()
         // Beri respon
         return response()->json(['success' => true, 'message' => 'Varietas Padi berhasil dihapus']);
     }
-
-    public function show(VarietasPadi $varietasPadi)
+    public function reloadContent(Request $request)
     {
-        //
+        // Ambil data terbaru dari model VarietasPadi
+        $padi = VarietasPadi::all();
+
+        // Kembalikan data dalam bentuk JSON
+        return response()->json(['padi' => $padi]);
     }
 }

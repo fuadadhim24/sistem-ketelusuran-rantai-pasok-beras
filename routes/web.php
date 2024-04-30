@@ -46,7 +46,8 @@ Route::middleware([
     Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi.destroy');
     Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/varietasPadi/{id}/edit', [VarietasPadiController::class, 'edit'])->name('edit-varietas');
-    Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class,'update']);
+    Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class,'update'])->name('update-varietas');
+    Route::get('/reloadcontentvarietas', [VarietasPadiController::class, 'reloadContent'])->name('reload-content-varietas');
 
     Route::get('/fase', [faseController::class,'index'])->name('fase');
     Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
