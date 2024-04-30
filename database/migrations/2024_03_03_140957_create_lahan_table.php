@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('detail_lokasi');
             $table->string('luas');
             $table->string('latitude');
-            $table->string('longtitude');
+            $table->string('longitude');
             $table->string('status');
             $table->unsignedBigInteger('id_padi')->nullable();
             $table->foreign('id_padi')->references('id')->on('padi')->onDelete('cascade');
