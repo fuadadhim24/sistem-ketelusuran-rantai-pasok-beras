@@ -1,6 +1,6 @@
 @extends('template')
 @section('main')
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
     <div class="container-fluid px-0">
       <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -204,44 +204,49 @@
                               <p class="mb-3">Informasi lengkap menentukan keputusan anda dalam pemilihan bibit.</p>
                           </div>
                           <div class="card-body p-0 pl-lg-3">
-                              <form action="{{url('varietasPadis"')}}" method="post">
+                            <form id="varietasForm" action="{{ route('varietasPadi.store') }}" method="POST">
                                 @csrf
-                                  <!-- Form -->
-                                  <div class="form-group mb-4">
-                                      <label for="nama">Nama Varietas</label>
-                                      <div class="input-group">
-                                          <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                          <input type="nama" class="form-control" placeholder="cth: Berikan pupuk hari ini" id="nama" required>
-                                      </div>
-                                  </div>
-                                  <div class="form-group mb-4">
+                                <!-- Form -->
+                                <div class="form-group mb-4">
+                                    <label for="nama">Nama Varietas</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                        <input type="text" name="varietas" class="form-control" placeholder="cth: Ciherang" id="varietas" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea class="form-control" placeholder="Enter your message..." id="deskripsi" rows="3"></textarea>
-                                  </div>
-                                  <div class="form-group mb-4">
+                                    <textarea name="deskripsi" class="form-control" placeholder="Enter your message..." id="deskripsi" rows="3"></textarea>
+                                </div>
+                                <div class="form-group mb-4">
                                     <label for="keunggulan">Keunggulan</label>
-                                    <textarea class="form-control" placeholder="cth: hasil beras unggul;tahan terhadap penyakit;padi tinggi;" id="keunggulan" rows="4"></textarea>
-                                  </div>
-                                  <div class="form-group mb-4">
-                                    <label class="my-1 me-2" for="country">Jenus Musim</label>
-                                    <select class="form-select" id="country" aria-label="Default select example">
+                                    <textarea name="keunggulan" class="form-control" placeholder="cth: hasil beras unggul;tahan terhadap penyakit;padi tinggi;" id="keunggulan" rows="4"></textarea>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="my-1 me-2" for="country">Jenis Musim</label>
+                                    <select name="jenis_musim" class="form-select" id="country" aria-label="Default select example">
                                         <option value="0" selected>Hujan</option>
                                         <option value="1">Kemarau</option>
                                     </select>
-                                  </div>
-                                  <div class="form-group mb-4">
-                                      <label for="hari">lama Tanam</label>
-                                      <div class="input-group">
-                                          <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                          <input type="hari" class="form-control" placeholder="terhitung sejak awal persemaian hingga panen. cth: 120" id="hari" required>
-                                      </div>
-                                  </div>
-                                  <!-- End of Form -->
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="ketahanan_hama_penyakit">Ketahanan Hama Penyakit</label>
+                                    <input type="text" name="ketahanan_hama_penyakit" class="form-control" placeholder="cth: tahan penyakit A, B, C" id="ketahanan_hama_penyakit" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="hari">Lama Tanam</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                        <input type="number" name="lama_tanam" class="form-control" placeholder="terhitung sejak awal persemaian hingga panen. cth: 120" id="hari" required>
+                                    </div>
+                                </div>
+                                <!-- End of Form -->
 
-                                  <div class="d-grid">
-                                      <button type="button" class="btn btn-block btn-primary mb-3 w-100" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Simpan</button>
-                                  </div>
-                              </form>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-block btn-primary mb-3 w-100">Simpan</button>
+                                </div>
+                            </form>
+
                           </div>
                       </div>
                   </div>
@@ -249,13 +254,77 @@
           </div>
         </div>
         <!-- End of Modal Content -->
+
+                <!-- Modal Content -->
+                <div class="modal fade" id="modal-update" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="card p-3 p-lg-4">
+                                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="card-header border-0 text-center pb-0">
+                                        <h2 class="mb-1 h5">Update Varietas Padi</h2>
+                                        <p class="mb-3">Informasi lengkap menentukan keputusan anda dalam pemilihan bibit.</p>
+                                    </div>
+                                    <div class="card-body p-0 pl-lg-3">
+                                      <form id="varietasForm" action="{{ route('varietasPadi.store') }}" method="POST">
+                                          @csrf
+                                          <!-- Form -->
+                                          <div class="form-group mb-4">
+                                              <label for="nama">Nama Varietas</label>
+                                              <div class="input-group">
+                                                  <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                                  <input type="text" name="varietas" class="form-control" placeholder="cth: Berikan pupuk hari ini" id="u-varietas" required>
+                                              </div>
+                                          </div>
+                                          <div class="form-group mb-4">
+                                              <label for="deskripsi">Deskripsi</label>
+                                              <textarea name="deskripsi" class="form-control" placeholder="Enter your message..." id="u-deskripsi" rows="3"></textarea>
+                                          </div>
+                                          <div class="form-group mb-4">
+                                              <label for="keunggulan">Keunggulan</label>
+                                              <textarea name="keunggulan" class="form-control" placeholder="cth: hasil beras unggul;tahan terhadap penyakit;padi tinggi;" id="u-keunggulan" rows="4"></textarea>
+                                          </div>
+                                          <div class="form-group mb-4">
+                                              <label class="my-1 me-2" for="country">Jenis Musim</label>
+                                              <select name="jenis_musim" class="form-select" id="u-country" aria-label="Default select example">
+                                                  <option value="0" selected>Hujan</option>
+                                                  <option value="1">Kemarau</option>
+                                              </select>
+                                          </div>
+                                          <div class="form-group mb-4">
+                                              <label for="ketahanan_hama_penyakit">Ketahanan Hama Penyakit</label>
+                                              <input type="text" name="ketahanan_hama_penyakit" class="form-control" placeholder="cth: tahan penyakit A, B, C" id="u-ketahanan_hama_penyakit" required>
+                                          </div>
+                                          <div class="form-group mb-4">
+                                              <label for="hari">Lama Tanam</label>
+                                              <div class="input-group">
+                                                  <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                                                  <input type="number" name="lama_tanam" class="form-control" placeholder="terhitung sejak awal persemaian hingga panen. cth: 120" id="u-hari" required>
+                                              </div>
+                                          </div>
+                                          <!-- End of Form -->
+
+                                          <div class="d-grid">
+                                              <button type="submit" class="btn btn-block btn-primary mb-3 w-100">Simpan</button>
+                                          </div>
+                                      </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- End of Modal Content -->
+
         <div class="table-responsive">
 
-          <table class="table table-centered table-nowrap mb-0 rounded" style="width:100%">
+            <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded" style="width:100%">
               <thead class="thead-light">
                   <tr>
                       <th class="border-0" >No</th>
-                      <th class="border-0">Nama</th>
+                      <th class="border-0">Nama Varietas</th>
                       <th class="border-0" style="width:10%">Deskripsi</th>
                       <th class="border-0" style="width:10%">Keunggulan</th>
                       <th class="border-0">Jenis Musim</th>
@@ -267,24 +336,24 @@
               </thead>
               <tbody>
                   <!-- Item -->
-                  @foreach ($padi as $item )
-                  <tr>
+                  @foreach ($padi as $item)
+                  <tr id="row-{{ $item->id }}">
                       <td>{{ $loop->iteration }}</td>
-                      <td >{{ $item->varietas }}</td>
+                      <td>{{ $item->varietas }}</td>
                       <td>{{ Str::limit($item->deskripsi, 50) }}</td>
                       <td>{{ $item->keunggulan }}</td>
                       <td>{{ $item->jenis_musim }}</td>
                       <td>{{ $item->lama_tanam }}</td>
                       <td>{{ $item->ketahanan_hama_penyakit }}</td>
-                        <td>
-                          <!-- aria-hidden="true" -->
+                      <td>
                           <button class="btn btn-outline-warning" type="button">tampilkan</button>
                           <button class="btn btn-outline-gray-500" type="button" hidden>sembunyikan</button>
-                          <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                          <button class="btn btn-outline-danger" type="button">hapus</button>
-                        </td>
-                    </tr>
-                    @endforeach
+                          <button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" onclick="showUpdateModal('{{ $item->id }}', '{{ $item->varietas }}', '{{ $item->deskripsi }}', '{{ $item->keunggulan }}', '{{ $item->jenis_musim }}', '{{ $item->lama_tanam }}', '{{ $item->ketahanan_hama_penyakit }}')">Ubah</button>
+                            <button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="{{ $item->id }}">hapus</button>
+                      </td>
+                  </tr>
+                  @endforeach
+
 
                 </tbody>
             </table>
@@ -292,5 +361,138 @@
       </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Pastikan library jQuery sudah dimuat sebelumnya -->
 
+<script>
+   $(document).ready(function () {
+    // Handle submit form untuk penambahan varietas
+    $('#varietasForm').submit(function(e) {
+    e.preventDefault(); // Menghentikan pengiriman formulir secara default
+    var form = $(this);
+    var url = form.attr('action');
+    var method = form.attr('method');
+    var formData = form.serialize(); // Mengambil data formulir
+
+    $.ajax({
+        type: method,
+        url: url,
+        data: formData,
+        success: function(response) {
+            // Tampilkan pesan sukses atau tindakan lain yang diperlukan
+            console.log(response);
+
+            // Tutup modal setelah berhasil menyimpan data
+            $('#modal-form-signup').modal('hide');
+    // Hapus semua baris tabel kecuali header
+    $.get('/latest-data', function(newData) {
+    // Mengurutkan data terbaru berdasarkan ID
+    newData.sort((a, b) => a.id - b.id);
+    // Hapus semua baris tabel kecuali header
+    $('#daftar-varietas tbody').empty();
+    // Tambahkan baris baru untuk setiap data yang diperoleh
+    newData.forEach(function(item, index) {
+        var row = '<tr>' +
+            '<td>' + (index + 1) + '</td>' + // Nomor urut
+            '<td>' + item.varietas + '</td>' +
+            '<td>' + item.deskripsi + '</td>' +
+            '<td>' + item.keunggulan + '</td>' +
+            '<td>' + item.jenis_musim + '</td>' +
+            '<td>' + item.lama_tanam + '</td>' +
+            '<td>' + item.ketahanan_hama_penyakit + '</td>' +
+            '<td><button class="btn btn-outline-warning" type="button">tampilkan</button>' +
+            '<button class="btn btn-outline-gray-500" type="button" hidden>sembunyikan</button>' +
+            '<button class="btn btn-outline-tertiary" type="button">ubah</button>' +
+            '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' + item.id + '">hapus</button></td>' +
+            '</tr>';
+        $('#daftar-varietas tbody').append(row);
+    });
+});
+        },
+        error: function(xhr, status, error) {
+            // Tangani kesalahan jika terjadi
+            console.error(xhr.responseText);
+        }
+    });
+});
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    // Handle klik tombol hapus varietas
+    $('.btn-hapus-varietas').click(function () {
+    var varietasId = $(this).data('id'); // Mengambil ID varietas dari atribut data-id
+    if (confirm('Apakah Anda yakin ingin menghapus varietas ini?')) {
+        var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Mendapatkan token CSRF
+        $.ajax({
+            type: 'DELETE', // Menggunakan method DELETE
+            url: '/hapusvarietas/' + varietasId, // URL untuk menghapus varietas
+            headers: {
+                'X-CSRF-TOKEN': csrfToken // Menambahkan token CSRF dalam header
+            },
+            success: function (response) {
+                console.log(response); // Log response dari server
+                // Implementasi untuk memperbarui tabel dengan data yang terbaru
+                $('#row-' + varietasId).remove();
+            },
+            error: function (xhr, status, error) {
+                console.error(error); // Log error jika ada
+            }
+        });
+    }
+});
+function reloadContent() {
+    $.ajax({
+        url: "/reloadcontentvarietas",
+        type: 'GET',
+        success: function(response) {
+            $('#daftar-varietas').html(response.updatedContent);
+        },
+        error: function(xhr, status, error) {
+            alert('Terjadi kesalahan: ' + xhr.responseText);
+        }
+    });
+}
+function addRowToTable(data) {
+    var table = document.getElementById("daftar-varietas");
+    var row = table.insertRow(-1); // Insert new row at the end of the table
+
+    // Insert cells into the new row
+    var cellIndex = row.insertCell(0);
+    var cellVarietas = row.insertCell(1);
+    var cellDeskripsi = row.insertCell(2);
+    var cellKeunggulan = row.insertCell(3);
+    var cellJenisMusim = row.insertCell(4);
+    var cellLamaTanam = row.insertCell(5);
+    var cellKetahananHamaPenyakit = row.insertCell(6);
+    var cellAksi = row.insertCell(7);
+
+    // Populate cells with data
+    cellIndex.innerHTML = table.rows.length - 1; // Set row number dynamically
+    cellVarietas.innerHTML = data.varietas;
+    cellDeskripsi.innerHTML = data.deskripsi;
+    cellKeunggulan.innerHTML = data.keunggulan;
+    cellJenisMusim.innerHTML = data.jenis_musim;
+    cellLamaTanam.innerHTML = data.lama_tanam;
+    cellKetahananHamaPenyakit.innerHTML = data.ketahanan_hama_penyakit;
+    cellAksi.innerHTML = '<button class="btn btn-outline-warning" type="button">tampilkan</button>' +
+                         '<button class="btn btn-outline-gray-500" type="button" hidden>sembunyikan</button>' +
+                         '<button class="btn btn-outline-tertiary" type="button">ubah</button>' +
+                         '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' + data.id + '">hapus</button>';
+}
+
+// Panggil fungsi ini setelah sukses menambahkan data baru
+addRowToTable(data);
+});
+
+function showUpdateModal(id, varietas, deskripsi, keunggulan, jenis_musim, lama_tanam, ketahanan_hama_penyakit) {
+        // Isi nilai-nilai form dengan data dari baris yang ingin diubah
+        document.getElementById('u-varietas').value = varietas;
+        document.getElementById('u-deskripsi').value = deskripsi;
+        document.getElementById('u-keunggulan').value = keunggulan;
+        document.getElementById('u-country').value = jenis_musim;
+        document.getElementById('u-ketahanan_hama_penyakit').value = ketahanan_hama_penyakit;
+        document.getElementById('u-hari').value = lama_tanam;
+
+        // Tampilkan modal
+        var modal = new bootstrap.Modal(document.getElementById('modal-update'));
+        modal.show();
+    }
+</script>
 @endsection
