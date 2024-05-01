@@ -42,13 +42,21 @@ Route::middleware([
 
     Route::get('/varietas-padi', [varietasPadiController::class,'index'])->name('varietas-padi');
     Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class,'tambahView'])->name('tambah-varietas');
+    Route::post('/varietasPadi', [VarietasPadiController::class, 'store'])->name('varietasPadi.store');
+    Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi.destroy');
+    Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
+    Route::get('/varietasPadi/{id}/edit', [VarietasPadiController::class, 'edit'])->name('edit-varietas');
+    Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class,'update'])->name('update-varietas');
+    Route::get('/reloadcontentvarietas', [VarietasPadiController::class, 'reloadContent'])->name('reload-content-varietas');
 
     Route::get('/fase', [faseController::class,'index'])->name('fase');
     Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
     Route::post('/fase/store', [FaseController::class, 'store'])->name('fase.store');
     Route::get('/fase/{id}/edit', [FaseController::class, 'edit'])->name('edit-fase');
     Route::delete('/fase/{id}/delete', [FaseController::class, 'destroy'])->name('hapus-fase');
-    Route::post('/fase/{id}/update', [FaseController::class, 'update'])->name('update-fase');
+    Route::patch('/update/{id}', [FaseController::class, 'update'])->name('update-fase');
+    Route::get('/reload-content', [FaseController::class, 'reloadContent'])->name('reload.content');
+
 
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');

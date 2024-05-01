@@ -15,9 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('quantity');
             $table->string('status');
-            $table->time('tanggal_panen');
-            $table->unsignedBigInteger('id_fase')->nullable();
-            $table->foreign('id_fase')->references('id')->on('fase')->onDelete('cascade');
+            $table->timestamp('tanggal_panen');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('id_lahan')->nullable();

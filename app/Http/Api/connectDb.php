@@ -1,8 +1,8 @@
 <?php 
-$hostname = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "sistem-ketertelusuran-rantai-pasok-beras";
+$hostname = "localhost";
+$username = "id20163157_root";
+$password = "Zenfonix191021!";
+$database = "id20163157_sistem_ketertelusuran_beras";
 
 try{
     $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
@@ -11,7 +11,8 @@ try{
 
     // echo "Koneksi Berhasil";
 }catch(PDOException $e){
-    die("Koneksi gagal\n" . $e);
+    $response['error'] = 'Koneksi gagal';
+            echo json_encode($response);
 }
 
 ?>

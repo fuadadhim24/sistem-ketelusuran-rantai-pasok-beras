@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\VarietasPadi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 use Illuminate\Support\Facades\DB;
+
 
 class VarietasPadiController extends Controller
 {
@@ -12,61 +15,78 @@ class VarietasPadiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+{
+    $padi = VarietasPadi::all();
+    return view("admin/varietasPadi/index", compact("padi"));
+}
+public function latestData()
     {
-        // $padi=VarietasPadi::all();
-        $padi=DB::table('padi')->get();
-        // $padi = VarietasPadi::with('padi')->get();
-        // return $varietas;
-        return view("admin/varietasPadi/index",compact("padi"));
+        // Ambil data terbaru dari model Varietas
+        $latestData = VarietasPadi::latest()->get();
+
+        // Kembalikan data dalam format JSON
+        return response()->json($latestData);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function edit($id)
     {
-        //
+        $varietas = VarietasPadi::findOrFail($id);
+        return view('edit-varietas', compact('varietas'));
+    }
+    public function show($id)
+{
+    $item = VarietasPadi::findOrFail($id);
+    return view('update-varietas', compact('item'));
+}
+    public function update(Request $request, $id)
+    {
+        $varietas = VarietasPadi::findOrFail($id);
+
+        $request->validate([
+            'varietas' => 'required|string',
+            'deskripsi' => 'nullable|string',
+            'keunggulan' => 'nullable|string',
+            'jenis_musim' => 'required|integer',
+            'ketahanan_hama_penyakit' => 'required|string',
+            'lama_tanam' => 'required|integer',
+        ]);
+
+        $varietas->update([
+            'varietas' => $request->varietas,
+            'deskripsi' => $request->deskripsi,
+            'keunggulan' => $request->keunggulan,
+            'jenis_musim' => $request->jenis_musim,
+            'ketahanan_hama_penyakit' => $request->ketahanan_hama_penyakit,
+            'lama_tanam' => $request->lama_tanam,
+        ]);
+
+        return response()->json(['success' => true, 'message' => 'Varietas Padi berhasil diupdate.']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|min:3',
-            'edulevel_id' => 'required',
-        ], [
-            'edulevel_id.required' => 'Jenjang Tidak Boleh Kosong',
-            'name.required' => 'Nama Jenjang Tidak Boleh Kosong',
-
+        // Lakukan validasi data yang diterima dari form
+        $validatedData = $request->validate([
+            'varietas' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'keunggulan' => 'required|string|max:255',
+            'jenis_musim' => 'required|string|max:255',
+            'lama_tanam' => 'required|integer',
+            'ketahanan_hama_penyakit' => 'required|string|max:255',
         ]);
-        VarietasPadi::create($request->all());
-        return redirect('padi')->with('status', 'Varietas Berhasil di tambah');
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(VarietasPadi $varietasPadi)
-    {
-        //
-    }
+        // Buat objek VarietasPadi baru
+        $varietasPadi = new VarietasPadi($validatedData);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(VarietasPadi $varietasPadi)
-    {
-        //
-    }
+        // Simpan objek ke dalam database
+        $varietasPadi->save();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, VarietasPadi $varietasPadi)
-    {
-        //
+        // Ambil data varietas padi yang terbaru setelah penyimpanan
+        $padi = VarietasPadi::all();
+
+        // Kembalikan data varietas padi yang terbaru dalam bentuk JSON
+        return response()->json(['padi' => $padi]);
     }
 
     /**
@@ -74,6 +94,18 @@ class VarietasPadiController extends Controller
      */
     public function destroy(VarietasPadi $varietasPadi)
     {
-        //
+        // Hapus data dari database
+        $varietasPadi->delete();
+
+        // Beri respon
+        return response()->json(['success' => true, 'message' => 'Varietas Padi berhasil dihapus']);
+    }
+    public function reloadContent(Request $request)
+    {
+        // Ambil data terbaru dari model VarietasPadi
+        $padi = VarietasPadi::all();
+
+        // Kembalikan data dalam bentuk JSON
+        return response()->json(['padi' => $padi]);
     }
 }

@@ -1,20 +1,38 @@
 <?php
-    header('Content-Type: application/json');
-    header('Access-Control-Allow-Origin: *');
+    try{
+        header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *');
+    
+        include "connectDb.php";
+        $email = $_GET['email'];
+        $password = $_GET['password'];
+        
+        // echo json_encode($email.' '.$password);
+        
+        // Gunakan parameterized query untuk mencegah SQL injection
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
-    include "connectDb.php";
+    
+        if($stmt->rowCount() > 0){
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $email = $_GET['email'];
-    $password = $_GET['password'];
-
-    $sql = "SELECT * FROM users WHERE email='$email AND password='$password'";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":email", $email);
-    $stmt->bindParam(":password", $password);
-    $stmt->execute();
-    $returnValue = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    echo json_encode($returnValue);
-
-
+            // verifikasi password
+            if(password_verify($password,$user['password'])){
+                $response['data'] = $user;
+                echo json_encode($response);
+            }else{
+                $response['error']='Password salah';
+                echo json_encode($response);
+            }
+        }else{
+            $response['error'] = 'Data tidak ditemukan';
+            echo json_encode($response);
+        }
+    
+    }catch(PDOException $e){
+        $response['error'] = 'Database error: '.$e->getMessage();
+        echo json_encode($response);
+    } 
 ?>
