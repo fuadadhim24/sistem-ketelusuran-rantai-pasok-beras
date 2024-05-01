@@ -36,9 +36,9 @@
                 </div>
               </div>
               <div class="list-2">
-                <span class="item-link-kunjungi-ketelsuruan-produk">
-                  Kunjungi Ketertelusuran Produk
-                </span>
+                <a href="/"class="item-link-kunjungi-ketelsuruan-produk">
+                    Kembali Ke Halaman Utama</a>
+
                 <div class="item-link-5">
                   <img class="vector-11" src="{{ asset('asset/custom/vectors2/vector4_x2.svg') }}" />
                 </div>
@@ -47,17 +47,17 @@
             <div class="header">
               <div class="link-asianagri-logo-white-2-png">
               </div>
-              <div class="nav-list">
+              {{-- <div class="nav-list">
                 <div class="item">
                   <span class="link-tentang-kami-2">
                     Tentang Kami
                   </span>
                 </div>
-                {{-- <div class="item-1">
+                <div class="item-1">
                   <span class="link-tentang-kami-3">
                     Tentang Kami
                   </span>
-                </div> --}}
+                </div>
                 <div class="item-2">
                   <span class="link-bisnis">
                     Bisnis
@@ -78,7 +78,7 @@
                     Hubungi Kami
                   </span>
                 </div>
-              </div>
+              </div> --}}
               <div class="list">
                 <div class="item-6">
                   <span class="link-hubungi-kami">

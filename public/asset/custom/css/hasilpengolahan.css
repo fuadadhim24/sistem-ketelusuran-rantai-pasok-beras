@@ -335,10 +335,11 @@ body{
     color: #FFFFFF;
   }
   .hasil-pengolahan .container-3 {
+    /* top: 86%; */
     margin: 0 0 0 5px;
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    bottom: -21%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -348,13 +349,13 @@ body{
     color: #3F3F3F;
   }
   .hasil-pengolahan .group-626 {
+    font-weight: 700;
     position: relative;
-    margin: 3px 78px 0.2px 0;
+    margin: 3px 78px -12.2px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-left: 0.4px;
-    height: 149.3px;
     flex-grow: 1;
     flex-basis: 16px;
     box-sizing: border-box;
@@ -1074,7 +1075,7 @@ body{
     color: #FFFFFF;
   }
   .hasil-pengolahan .rectangle-2091 {
-    margin: -19px 0 0 0;
+    margin: 11% 0 0 0;
     border-radius: 0 0 9px 9px;
     border: 1px solid #000000;
     background: #D7E1D7;
@@ -1728,4 +1729,28 @@ body{
     padding-top: 28px;
     width: 1920px;
     box-sizing: border-box;
+  }
+  .hasil-pengolahan .no-1{
+    position: absolute;
+    left: 7%;
+    bottom: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+  }
+  .hasil-pengolahan .no {
+    position: absolute;
+    left: 6%;
+    top: 0px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #FFFFFF;
   }

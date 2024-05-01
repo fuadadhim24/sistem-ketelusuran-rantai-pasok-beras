@@ -176,12 +176,16 @@
                 </div>
                 <div class="frame-6111">
                   <div class="group-6261">
-                    <span class="container-4">
-                      No
-                    </span>
-                    <span class="container-5">
-                      1
-                    </span>
+                    <span class="no" style="
+                    font-weight:700;
+                    font-size: 16px;
+                    color: white;
+                    margin: 30px 0 0px 0;">
+                        No
+                      </span>
+                      <span class="container-3">
+                        1
+                      </span>
                   </div>
                   <div class="group-6271">
                     <span class="tanggal-pengujian">
@@ -226,9 +230,7 @@
               Daftar Hasil Pengujian
             </span>
           </div>
-          <span class="container">
-            #
-          </span>
+         
           <span class="varietas">
             Varietas
           </span>
@@ -297,18 +299,19 @@
                   Daftar Bahan Ketertelusuran
                 </div>
                 <div class="tabel-2">
-                  <span class="container-6">
-                    #
-                  </span>
                   <div class="rectangle-2091">
                   </div>
                   <div class="rectangle-2043">
                   </div>
                   <div class="rectangle-2071">
                   </div>
-                  <span class="container-7">
+                  <span class="no">
+                    No
+                  </span>
+                  <span class="no-1">
                     1
                   </span>
+
                   <span class="ciherang-1">
                     Ciherang
                   </span>
