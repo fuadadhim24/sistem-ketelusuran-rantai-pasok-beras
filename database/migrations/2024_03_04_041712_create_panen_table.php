@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('pasca_panen');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('id_pembenihan')->nullable();
-            $table->foreign('id_pembenihan')->references('id')->on('pembenihan')->onDelete('cascade');
+            $table->unsignedBigInteger('id_produksi')->nullable();
+            $table->foreign('id_produksi')->references('id')->on('produksi')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

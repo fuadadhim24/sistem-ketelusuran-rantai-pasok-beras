@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('kemasan');
             $table->unsignedBigInteger('id_gudang')->nullable();
             $table->foreign('id_gudang')->references('id')->on('gudang')->onDelete('cascade');
-            $table->unsignedBigInteger('id_pembenihan')->nullable();
-            $table->foreign('id_pembenihan')->references('id')->on('pembenihan')->onDelete('cascade');
+            $table->unsignedBigInteger('id_produksi')->nullable();
+            $table->foreign('id_produksi')->references('id')->on('produksi')->onDelete('cascade');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();

@@ -14,7 +14,7 @@ try{
     $sql = "INSERT INTO `lahan` (`nama_lahan`,`detail_lokasi`,`luas`,`latitude`,`longitude`,`status`) VALUES ('$nama_lahan', '$detail_lokasi', '$luas','$latitude','$longitude','$status')";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $response['success'] = 'Pembenihan berhasil disimpan.';
+    $response['success'] = 'Lahan berhasil disimpan.';
     echo json_encode($response);    
     
 }catch(PDOException $e){
