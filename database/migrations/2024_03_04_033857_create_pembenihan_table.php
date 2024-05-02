@@ -18,7 +18,7 @@ return new class extends Migration
             $table->dateTime('tanggal_kedaluwarsa')->nullable;
             $table->float('tingkat_kemurnian')->nullable;
             $table->float('tingkat_vigor')->nullable;
-            $table->int('jumlah_benih');
+            $table->integer('jumlah_benih');
             $table->text('daftar_petani');//yang terlibat dalam sekali produksi
             $table->text('qr_code_path');//setelah pengujian input qr code path ke sini
             $table->dateTime('tanggal_tanam')->nullable;
