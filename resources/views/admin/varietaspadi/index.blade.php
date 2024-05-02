@@ -309,7 +309,9 @@
                                         <p class="mb-3">Informasi lengkap menentukan keputusan anda dalam pemilihan bibit.</p>
                                     </div>
                                     <div class="card-body p-0 pl-lg-3">
-                                        <form id="updateForm" action="{{ route('update-varietas', ['id' => $item->id]) }}" method="PUT">                                          @csrf
+                                      <form id="updateForm" action="{{ isset($item) ? route('update-varietas', ['id' => $item->id]) : '' }}" method="PUT">
+
+                                             @csrf
                                           <!-- Form -->
                                           <div class="form-group mb-4">
                                               <label for="nama">Nama Varietas</label>
