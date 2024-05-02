@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produksi', function (Blueprint $table) {
+        Schema::create('perawatan', function (Blueprint $table) {
             $table->id();
-            $table->integer('quantity');
-            $table->string('status');
-            $table->timestamp('tanggal_panen');
+            $table->string('jenis_perawatan');
+            $table->string('nama_perawatan');
+            $table->float('jumlah');
+            $table->float('kebutuhan');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('id_lahan')->nullable();
-            $table->foreign('id_lahan')->references('id')->on('lahan')->onDelete('cascade');
-            $table->softDeletes();
+            $table->unsignedBigInteger('id_pembenihan')->nullable();
+            $table->foreign('id_pembenihan')->references('id')->on('pembenihan')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produksi');
+        Schema::dropIfExists('perawatan');
     }
 };
