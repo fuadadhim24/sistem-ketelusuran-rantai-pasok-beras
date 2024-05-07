@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lahan', function (Blueprint $table) {
+        Schema::create('perawatan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_lahan');
-            $table->string('detail_lokasi');
-            $table->string('luas');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('jenis_tanah');
+            $table->string('jenis_perawatan');
+            $table->string('nama_perawatan');
+            $table->float('jumlah');
+            $table->float('kebutuhan');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->softDeletes();
+            $table->unsignedBigInteger('id_produksi')->nullable();
+            $table->foreign('id_produksi')->references('id')->on('produksi')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lahan');
+        Schema::dropIfExists('perawatan');
     }
 };
