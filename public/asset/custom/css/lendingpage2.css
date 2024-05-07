@@ -41,14 +41,16 @@ body{
     height: 11.4px;
   }
   .pengolahan .item-link {
-    margin: 2.3px 0 1.1px 0;
+    margin: 0.2% 0 0% 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 14.1px;
-    height: 11.4px;
+    width: 5%;
+    height: 8%;
     box-sizing: border-box;
-  }
+}
+
+
   .pengolahan .vector-7 {
     width: 7.7px;
     height: 14.9px;
@@ -57,8 +59,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 7.7px;
-    height: 14.9px;
+    width: 4%;
     box-sizing: border-box;
   }
   .pengolahan .vector-8 {
@@ -66,13 +67,14 @@ body{
     height: 13.1px;
   }
   .pengolahan .item-link-2 {
-    margin: 1.3px 0 0.4px 0;
+    margin: 1% 0 0% 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 13.7px;
-    height: 13.1px;
+    width: 3%;
     box-sizing: border-box;
+
+
   }
   .pengolahan .vector-9 {
     position: absolute;
@@ -83,50 +85,53 @@ body{
   }
   .pengolahan .item-link-3 {
     position: relative;
-    margin: 2.4px 0 1.2px 0;
-    width: 15.7px;
+    margin: 1% 0 0 0;
+    width: 10%;
     height: 11.3px;
-  }
+}
   .pengolahan .vector-10 {
     width: 13.7px;
     height: 13.7px;
   }
   .pengolahan .item-link-4 {
-    margin-top: 1.1px;
+    margin-top: 1%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 13.7px;
-    height: 13.7px;
+    width: 6%;
+    /* height: 13.7px; */
     box-sizing: border-box;
-  }
+}
   .pengolahan .list-1 {
-    margin: 5.5px 0 1.6px 0;
+    margin: 1.1% 0 0% 11%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 186.2px;
+    width: 14%;
     height: fit-content;
     box-sizing: border-box;
     transform: scaleY(-1);
 
   }
   .pengolahan .item-link-kunjungi-ketelsuruan-produk {
-    margin-right: 10.2px;
+
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 600;
     font-size: 13.6px;
     letter-spacing: -0.3px;
-    line-height: 1.622;
+    line-height: 6vh;
     color: #FFFFFF;
   }
   .pengolahan .vector-11 {
-    width: 13.5px;
-    height: 6px;
+    margin-right: -44%;
+    margin-top: -3%;
+    width: 100%;
+    height: 125%;
   }
   .pengolahan .item-link-5 {
-    margin: 9.5px 700px 6.5px -7px;
+
+    margin: 11.4% 0% 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -135,26 +140,26 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .list-2 {
+    margin: 0 43% 0 0;;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
   }
   .pengolahan .divheader-secondary-outer {
+    height: 6.5%;
     background: #507450;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 9px 0 11px 150px;
-    width: 1535px;
+    width: 100%;
     box-sizing: border-box;
   }
   .pengolahan .link-asianagri-logo-white-2-png {
-    margin: 0 0px 0 193px;
-    background: url('../img/landingpage2/divfooterOuter.png');
+    margin: 0 0px 0 16%;
+    background: url(../img/landingpage2/divfooterOuter.png);
     margin-right: 53.1px;
-    width: 100px;
-    height: 100px;
+    width: 7%;
+    height: 170%;
     background-size: cover;
   }
   .pengolahan .link-tentang-kami-2 {
@@ -268,7 +273,6 @@ body{
     color: #FFFFFF;
   }
   .pengolahan .item-6 {
-    margin-top: 0.5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -284,7 +288,6 @@ body{
     color: #FFFFFF;
   }
   .pengolahan .item-7 {
-    margin-top: 0.5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -306,55 +309,56 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .item-8 {
-    margin-right: -44px;
-    margin-bottom: 0.5px;
+    margin-top: -1%;
+    margin-bottom: 2%;
+    margin-right: -21%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 19.7px;
-    height: 20px;
+    width: 3%;
     box-sizing: border-box;
   }
   .pengolahan .list {
-    margin: 2.5% 0 0 64%;
+    margin: 2.5% 0 0 57%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 185.4px;
+    width: 10%;
     height: fit-content;
     box-sizing: border-box;
   }
   .pengolahan .header {
-    margin: 0 292px 190px 1.5px;
+    margin: 2% 11% 15% 0%;
     display: flex;
     flex-direction: row;
-    width: 1412.2px;
+    width: 100%;
     box-sizing: border-box;
-  }
+}
   .pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
-    margin: 47px 131px 59px 0;
+    margin: -2% 5% 10% 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 55px;
+    font-size: 53px;
     letter-spacing: -1px;
     line-height: 1.194;
     color: #FFFFFF;
   }
   .pengolahan .camera {
-    background: url('../img/landingpage2/camera.png') 50% / contain no-repeat;
-    margin-right: 13px;
-    width: 64px;
-    height: 64px;
+    margin-top: 1%;
+    background: url(../img/landingpage2/camera.png) 50% / contain no-repeat;
+    margin-right: -4%;
+    width: 15%;
+    height: 80%;
   }
   .pengolahan .link-tentang-kami {
-    margin: 22px 0;
+    margin: 7% 0% 10% 8%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -0.3px;
     line-height: 1.008;
     text-transform: capitalize;
@@ -366,20 +370,20 @@ body{
     background: #588157;
     display: flex;
     flex-direction: row;
-    padding: 13px 23px 9px 26px;
-    width: 417px;
+    padding: 2.9% 6% 0% 7%;
+    width: 97%;
     box-sizing: border-box;
   }
   .pengolahan .frame-633 {
-    margin-right: 733px;
+    margin: -5% 0 0px -43%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 361px;
+    width: 22%;
     box-sizing: border-box;
   }
   .pengolahan .link-tentang-kami-1 {
-    margin-bottom: 20.5px;
+    margin: -12% 0 1%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -391,20 +395,22 @@ body{
     color: #cbced7;
   }
   .pengolahan .back-arrow {
-    background: url('../img/landingpage2/backArrow.png') 50% / contain no-repeat;
-    margin-left: 1px;
-    width: 56px;
-    height: 56px;
+    margin: 3% 0 1% 0;
+    background: url(../img/landingpage2/backArrow.png) 50% / contain no-repeat;
+    /* margin-left: 1px; */
+    width: 100%;
+    height: 8vh;
     transform: rotate(-90deg);
-  }
+}
   .pengolahan .container-8 {
     background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5));
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 49.5px 771px 34px 0;
-    width: 1535px;
+    padding: 10.3% 42% 0% 0;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
   }
   .pengolahan .container-5 {
@@ -417,15 +423,17 @@ body{
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%;
     box-sizing: border-box;
   }
   .pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
-    background: url('../img/landingpage2/rsSbgPxRsSbgWrapRsSbgImage.jpeg');
+    background: url(../img/landingpage2/rsSbgPxRsSbgWrapRsSbgImage.jpeg);
     position: relative;
-    margin-bottom: 81px;
-    width: 1535px;
-    height: 799px;
+    margin-bottom: 4%;
+    width: 100%;
+    height: 100vh;
     background-size: cover;
+
   }
   .pengolahan .kotak-pencarian-1 {
     overflow-wrap: break-word;
@@ -455,7 +463,6 @@ body{
   }
   .pengolahan .masukkan-kode-produk-kemudian-klik-cari {
     position: relative;
-    margin: 0 23px;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -471,39 +478,39 @@ body{
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
     position: absolute;
     left: 50%;
-    top: 107px;
+    top: 78%;
     translate: -50% 0;
-    width: 297px;
-    height: 46px;
+    width: 104%;
+    height: 6vh;
   }
   .pengolahan .rectangle-213 {
     box-shadow: 0px 4px 4px 0px rgba(0, 123, 255, 0.25);
     border-radius: 5px;
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
     position: absolute;
-    top: 107px;
-    right: -6px;
-    width: 70px;
-    height: 46px;
+    top: 78%;
+    right: -2%;
+    width: 24%;
+    height: 6vh;
   }
   .pengolahan .vector-12 {
-    width: 20.5px;
-    height: 24.5px;
+    width: 300%;
+    height: 3vh;
   }
   .pengolahan .epsearch {
-    top: 56px;
     position: relative;
-    margin: 57.8px 10px 26.7px 231px;
+    margin: 19% 7% 0% 0%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 24.5px;
-    height: 24.5px;
+    width: 30px;
+    height: 3vh;
     box-sizing: border-box;
   }
   .pengolahan .cari {
-    position: relative;
-    top: 60px;
+    margin: 44px 0 0 30px;
+    height: 34px;
+    position: absolute;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -514,9 +521,9 @@ body{
   }
   .pengolahan .kotak-pencarian-2 {
     position: absolute;
-    left: 23px;
-    right: 23px;
-    bottom: 69px;
+    left: 6%;
+    right: 7%;
+    bottom: 33%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -524,22 +531,22 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .kotak-pencarian {
-    height: 188px;
+    height: 25vh;
     box-shadow: 0px 4px 11.9px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
     position: relative;
-    margin: 7px 49px 9px 0;
+    margin: 0% 3% 1% 0;
     display: flex;
     flex-direction: column;
-    width: 335px;
+    width: 21.7%;
     box-sizing: border-box;
-  }
+}
   .pengolahan .rectangle-2131 {
     border: 1px solid #3F3F3F;
     background: #D7E1D7;
-    width: 998px;
-    height: 45px;
+    width: 100%;
+    height: 6vh;
   }
   .pengolahan .container-6 {
     border-radius: 10px;
@@ -549,8 +556,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 1000px;
-    height: 45px;
+    width: 100.2%;
+    height: 5.8vh;
     box-sizing: border-box;
   }
   .pengolahan .rectangle-215 {
@@ -558,8 +565,8 @@ body{
     border-image-slice: 1;
     border-width: 1px;
     border-style: solid;
-    width: 997px;
-    height: 45px;
+    width: 100%;
+    height: 5.9vh;
   }
   .pengolahan .container-2 {
     border-radius: 10px;
@@ -569,8 +576,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 1px 47px 1px;
-    width: 1000px;
+    padding: 5.01% 0 4.7% 0;
+    width: 100%;
     height: fit-content;
     box-sizing: border-box;
   }
@@ -580,9 +587,8 @@ body{
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: 8px;
-    height: 45px;
-    top: 147px;
+    height: 6vh;
+    top: 70%;
   }
   .pengolahan .rectangle-204 {
     border-radius: 10px 10px 0 0;
@@ -590,12 +596,12 @@ body{
     background: #507450;
     position: absolute;
     left: 0px;
-    top: 3px;
+    top: 2%;
     right: 0px;
-    height: 52px;
+    height: 70%;
   }
   .pengolahan .kode-produk {
-    right: 7px;
+    right: 7%;
     white-space: nowrap;
     position: relative;
     overflow-wrap: break-word;
@@ -608,8 +614,8 @@ body{
   }
   .pengolahan .z {
     position: absolute;
-    left: 0.4px;
-    top: 68.5px;
+    left: 0.4%;
+    top: 25%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -621,7 +627,7 @@ body{
   .pengolahan .z-1 {
     position: absolute;
     left: 0px;
-    bottom: 67px;
+    bottom: 25%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -633,7 +639,7 @@ body{
   .pengolahan .z-2 {
     position: absolute;
     left: 0px;
-    bottom: 0px;
+    bottom: 2%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -644,17 +650,18 @@ body{
   }
   .pengolahan .frame-626 {
     position: relative;
-    margin: 2.5px 136.9px 0 0;
+    margin: 0 17.6% 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 274.5px;
+    height: 36vh;
     flex-grow: 1;
     flex-basis: 197px;
     box-sizing: border-box;
   }
   .pengolahan .bps-setra-ramos {
-    width: 200px;
+    margin: 6% 0 0 0;
+    width: 100%;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -667,7 +674,7 @@ body{
   .pengolahan .hariku {
     position: absolute;
     left: 0px;
-    bottom: 66px;
+    bottom: 25%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -678,8 +685,8 @@ body{
   }
   .pengolahan .pawon-mas {
     position: absolute;
-    left: 0.4px;
-    bottom: 0px;
+    left: 0.4%;
+    bottom: 2%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -701,18 +708,19 @@ body{
     color: #FFFFFF;
   }
   .pengolahan .group-627 {
+    white-space: nowrap;
     position: relative;
-    margin: 0 28.3px 1px 0;
+    margin: 0 15% 0% 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 69px 0 131px 0;
+    padding: 8% 0 0 0;
     flex-grow: 1;
     flex-basis: 217px;
     box-sizing: border-box;
   }
   .pengolahan .agustus-2024 {
-
+    left: 7%;
     position: absolute;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -724,8 +732,8 @@ body{
   }
   .pengolahan .agustus-20241 {
     position: absolute;
-    left: 11px;
-    bottom: 66px;
+    left: 7%;
+    bottom: 24%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -736,8 +744,8 @@ body{
   }
   .pengolahan .maret-2024 {
     position: absolute;
-    left: 11px;
-    bottom: 0px;
+    left: 7%;
+    bottom: 1%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -748,7 +756,7 @@ body{
   }
   .pengolahan .tanggal-kadaluasa {
     position: absolute;
-    left: 34%;
+    left: 40%;
     top: 0px;
     translate: -50% 0;
     overflow-wrap: break-word;
@@ -760,45 +768,46 @@ body{
     color: #FFFFFF;
   }
   .pengolahan .group-629 {
+    white-space: nowrap;
     position: relative;
-    margin: 0 58.5px 2px 0;
-    padding: 69px 190px 131px 11px;
+    margin: 0 5% 0 0;
+    padding: 9% 17% 0 0%;
     flex-grow: 1;
     flex-basis: 236px;
     box-sizing: border-box;
   }
   .pengolahan .rectangle-2141 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 62px;
+    width: 90%;
     border-radius: 5px;
     background: #007BFF;
     position: absolute;
-    left: 4px;
-    top: 60px;
+    left: 5%;
+    top: 21.5%;
     right: 0px;
-    height: 30px;
+    height: 4vh;
   }
   .pengolahan .rectangle-2151 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    width: 62px;
+    width: 90%;
     background: #007BFF;
     position: absolute;
-    left: 4px;
+    left: 5%;
     right: 0px;
-    top: 103px;
-    height: 30px;
+    top: 38%;
+    height: 4vh;
   }
   .pengolahan .rectangle-216 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 62px;
+    width: 90%;
     border-radius: 5px;
     background: #007BFF;
     position: absolute;
-    left: 4px;
+    left: 7%;
     right: 0px;
-    top: 150px;
-    height: 30px;
+    top: 55%;
+    height: 4vh;
   }
   .pengolahan .detail {
     position: relative;
@@ -853,7 +862,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 69px 15.7px 131px 15.2px;
+    padding: 8.5% 2% 0 2%;
     flex-grow: 1;
     flex-basis: 80px;
     box-sizing: border-box;
@@ -861,30 +870,30 @@ body{
   .pengolahan .frame-611 {
     border-radius: 10px;
     position: absolute;
-    left: 77.6px;
-    right: 112px;
-    top: 6px;
+    left: 10%;
+    right: 10%;
+    top: 4%;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
   }
   .pengolahan .tabel {
-    height: 224px;
+    height: 10vh;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 4px 0 26px 0;
-    width: 1000px;
+    padding: 0.2% 0 0 0;
+    width: 65%;
     box-sizing: border-box;
   }
   .pengolahan .container-12 {
-    margin: 0 91px 144px 130px;
+    margin: 0px -11% 6% 0%;
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: 100%;
     box-sizing: border-box;
-  }
+}
   .pengolahan .heading-4-ud-tani-rejo {
     margin-bottom: 19.1px;
     display: inline-block;
@@ -1286,7 +1295,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 0.1px;
-    width: 1535px;
+    width: 100%;
     box-sizing: border-box;
   }

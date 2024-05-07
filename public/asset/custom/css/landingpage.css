@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden;    */
 }
 
 .beranda .link-asianagri-logo-white-2-png {
@@ -212,16 +212,16 @@ body{
   }
   .beranda .container-19 {
     position: relative;
-    margin: 0 120px 226px 300px;
+    margin: 0 4% 15% 0%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 130.2px;
+    width: 10%;
     box-sizing: border-box;
   }
   .beranda .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
     position: relative;
-    margin: 0px 340.9px 0px 0;
+    margin: 0px 24% 0px 0;
     display: inline-block;
     align-self: center;
     overflow-wrap: break-word;
@@ -236,17 +236,17 @@ body{
     background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5));
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
   .beranda .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
-    background: url('../img/landingpage/rsSbgPxRsSbgWrapRsSbgImage.jpeg');
+    background: url(../img/landingpage/rsSbgPxRsSbgWrapRsSbgImage.jpeg);
     position: relative;
     height: 100vh;
-    margin: 0 0.8px 96.1px 0;
+    margin: 0 0% 6% 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-top: 94px;
+    padding-top: 5%;
     width: 100%;
     box-sizing: border-box;
     background-size: cover;
@@ -265,19 +265,21 @@ body{
     color: #008031;
   }
   .beranda .heading-2-ud-tani-rejo-adalah-perusahaan {
-    margin: 14px 106.3px 0 0;
+    width: 42%;
+    margin: 0% 9.2% 0 -9.5%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 36.1px;
+    font-size: 30.1px;
     letter-spacing: -0.7px;
     line-height: 1.428;
-    color: #444444;
+    color: #444444
   }
   .beranda .ud-tani-rejo-adalah-salah-satu-perusahaan-swasta-nasional-terkemuka-di-indonesia-yang-memproduksi-minyak-sawit-mentah-melalui-perkebunan-yang-dikelola-secara-berkelanjutan {
+    width: 90%;
     position: relative;
-    margin-bottom: 141px;
+    margin-bottom: 8%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -288,14 +290,14 @@ body{
     color: #676767;
   }
   .beranda .container-25 {
-    margin: 0 1% 0.4% 0;
+    margin: 0 -36% 0.4% 0;
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: 100%;
     box-sizing: border-box;
   }
   .beranda .bisnis-kami-meliputi-pembibitan-penanaman-hingga-pengolahan-beras-untuk-menghasilkan-minyak-sawit-berkelanjutan-di-pabrik-yang-berteknologi-tinggi-dan-ramah-lingkungan {
-    margin: 0 0 5% 38%;
+    margin: 0 0 2% 38%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -324,21 +326,21 @@ body{
   .beranda .heading-61 {
     border-radius: 200px;
     background: #588157;
-    margin: 0 0 90.6px 226.6px;
+    margin: 0 0 4% 13%;
     display: flex;
     flex-direction: row;
-    padding: 16.1px 0 14.9px 0;
-    width: 200.1px;
+    padding: 1% 0 1% 0;
+    width: 12%;
     box-sizing: border-box;
   }
   .beranda .div-divider-small-border-3 {
     background: #588157;
-    margin: 0 1059.5px 12.6px 0;
-    width: 240px;
-    height: 1px;
+    margin: 0 69% 1% 0;
+    width: 15%;
+    height: 0.01%;
   }
   .beranda .heading-5-penciptaan-nilai-bersama {
-    margin: 0 1069.3px 171.6px 0;
+    margin: 0 70% 13% 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -362,13 +364,13 @@ body{
   .beranda .div-divider-small-border-2 {
     background: #588157;
     position: relative;
-    margin: 0 1059.5px 12.6px 0;
-    width: 240px;
+    margin: 0 70% 0 0;
+    width: 14%;
     height: 1px;
   }
   .beranda .heading-5-apa-yang-kami-lakukan {
     position: relative;
-    margin: 0 1091.7px 50.3px 0;
+    margin: 0 70.1% 4% 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -380,7 +382,7 @@ body{
     color: #1B1B1B;
   }
   .beranda .list-item-link-kemitraan-dengan-petani {
-    margin-bottom: 35.8px;
+    margin-bottom: 8%;
     display: inline-block;
     align-self: flex-start;
     overflow-wrap: break-word;
@@ -401,23 +403,26 @@ body{
     color: #888888;
   }
   .beranda .container-24 {
-    margin: 7.7px 86.6px 8.5px 0;
+    width: 50%;
+    margin: 1% -3% 0% -6.4%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
   .beranda .heading-2-membangun-kemitraan-dengan-petani {
+    margin: 0 -27% 0 0;
+    width: 100%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 36.5px;
+    font-size: 30px;
     letter-spacing: -0.7px;
     line-height: 1.411;
     color: #444444;
   }
   .beranda .container-27 {
     position: relative;
-    margin: 0 308.9px 27.2px 0;
+    margin: 0 26.4% 2% 0;
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -444,13 +449,15 @@ body{
     color: #888888;
   }
   .beranda .container-32 {
-    margin: 0 112px 234.5px 0;
+    width: 50%;
+    margin: 0 6% 19% -1.5%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
   .beranda .ud-tani-rejo-bermitra-dengan-lebih-dari-20-petani-membantu-mereka-meningkatkan-pendapatan-dan-menerapkan-praktik-praktik-berkelanjutan-dalam-kegiatan-bertani {
-    margin: 0 0px 37.6px 20px;
+    width: 153%;
+    margin: 0 0% 42% 22%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -488,51 +495,55 @@ body{
     color: #588157;
   }
   .beranda .container-21 {
-    margin: 0 22px;
+    margin: 0 22%;
     display: flex;
     flex-direction: row;
     align-self: flex-start;
-    width: fit-content;
+    width: 63%;
     box-sizing: border-box;
   }
   .beranda .container-2 {
-    margin: 3.3px 61.7px 0 0;
+    margin: -0.3% 2% 0 3%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
   .beranda .home-video-thumb-1-jpg {
-    background: url('../img/landingpage/homeVideoThumb1Jpg.jpeg') 50% / cover no-repeat;
+    background: url(../img/landingpage/homeVideoThumb1Jpg.jpeg) 50% / cover no-repeat;
     position: absolute;
-    left: -11.3px;
-    top: -7.5px;
-    width: 472.3px;
-    height: 314.4px;
+    left: 90%;
+    top: -2%;
+    width: 112%;
+    height: 100%;
     background-size: cover;
+
+
   }
   .beranda .div-inner-wrap-4 {
     border-radius: 5px;
     position: relative;
-    margin: 3.1px 0 19.7px 0;
-    width: 449.8px;
-    height: 299.4px;
+    margin: 1% -35% -5% 0;
+    width: 71%;
+    height: 100%;
   }
   .beranda .container-13 {
-    margin: 0px 24px 0px 0px;
+    margin: 0px 41.4% 0px 0px;
     position: relative;
     display: flex;
     flex-direction: row;
     width: fit-content;
     box-sizing: border-box;
-  }
+}
+
+
   .beranda .div-row-bg-wrap-1 {
     background: #F9F9F9;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 127.7px 0 124.9px 0;
-    width: 1537px;
+    padding: 9% 0 10% 0;
+    width: 1536PX;
     box-sizing: border-box;
   }
   .beranda .country {
@@ -704,12 +715,13 @@ body{
     color: #1B1B1B;
   }
   .beranda .container-26 {
-    margin: 39.2px 97.4px 83.2px 0;
+    margin: 4% 13% 9% -32%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
   .beranda .heading-2-petani-merupakan-bagian-yang-tak {
+    margin: 3% 0 4% 0;
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -720,14 +732,14 @@ body{
     color: #444444;
   }
   .beranda .container-23 {
-    margin: 0 420.3px 31.3px 0;
+    margin: 0 1% 3% 0;
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: 52%;
     box-sizing: border-box;
   }
   .beranda .ud-tani-rejo-mengelola-30-perkebunan-milik-perusahaan-yang-mencakup-lahan-seluas-100000-hektar-dan-sekitar-60000-hektar-perkebunan-dimiliki-oleh-petani-plasma-ud-tani-rejo-memastikan-praktik-praktik-pengembangan-berkelanjutan-diterapkan-di-seluruh-wilayah-operasionalnya-termasuk-di-kebun-kebun-yang-dimiliki-oleh-petani {
-    margin: 0 0 21.7px 325px;
+    margin: 0 0 1% 21.9%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -765,8 +777,8 @@ body{
   }
   .beranda .strong-lebih-dari-40-lahan-tani-ud-tani-rejo-dimiliki-oleh-petani {
     position: absolute;
-    left: 448px;
-    bottom: 301.1px;
+    left: 29.5%;
+    bottom: 33%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 600;
@@ -798,7 +810,7 @@ body{
   }
   .beranda .heading-2-filosofi-bisnis-kami {
     position: relative;
-    margin: 0 979.1px 24.8px 0;
+    margin: 0 46% 0 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -809,10 +821,10 @@ body{
     color: #FFFFFF;
   }
   .beranda .div-divider-small-border-5 {
+    right: 31%;
     background: #FAA634;
     position: relative;
-    margin: 0 1238.9px 24.9px 0;
-    width: 60px;
+    width: 4%;
     height: 2px;
   }
   .beranda .ud-tani-rejo-percaya-bahwa-untuk-menjadi-bisnis-yang-berkelanjutan-semua-kegiatan-perusahaan-harus-bermanfaat-bagi-masyarakat-negara-iklim-pelanggan-dan-kemudian-baru-akan-bermanfaat-bagi-perusahaan-itu-sendiri {
@@ -852,10 +864,10 @@ body{
     box-sizing: border-box;
   }
   .beranda .container-14 {
-    margin: 36.2px 0 4.8px 0;
+    margin: 4% 0% 0.3% 0;
     display: flex;
     flex-direction: row;
-    width: 90px;
+
     height: fit-content;
     box-sizing: border-box;
   }
@@ -886,12 +898,11 @@ body{
     height: 2px;
   }
   .beranda .container-1 {
-    position: relative;
-    margin: 0 49.7px 44.2px 0;
+    margin: 0 3.4% 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1249.2px;
+    width: 81.4%;
     box-sizing: border-box;
   }
   .beranda .before {
@@ -937,7 +948,7 @@ body{
   }
   .beranda .div-inner-wrap-outer {
     margin-left: 7.5%;
-    margin-right: 40px;
+    margin-right: 3%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1000,8 +1011,8 @@ body{
     left: 47%;
     top: 0.1px;
     translate: -47% 0;
-    width: 345px;
-    height: 301.5px;
+    width: 100%;
+    height: 100%;
   }
   .beranda .heading-3-iklim {
     margin: 215px 0 0 100px ;
@@ -1015,14 +1026,14 @@ body{
     color: #FFFFFF;
   }
   .beranda .div-box-bg-2 {
-    background: url('../img/landingpage/divBoxBg1.jpeg');
+    background: url(../img/landingpage/divBoxBg1.jpeg);
     position: absolute;
     right: -30%;
-    bottom: -0.6px;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-right: 346.4px;
+    padding-right: 134%;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -1044,11 +1055,12 @@ body{
     box-sizing: border-box;
   }
   .beranda .container-3 {
+    justify-content: center;
     position: relative;
     display: flex;
     flex-direction: row;
-    margin-top: 120px;
-    width: 1299.5px;
+    margin-top: 11%;
+    width: 85%;
     box-sizing: border-box;
   }
   .beranda .div-inner-wrap-6 {
@@ -1211,7 +1223,7 @@ body{
     box-sizing: border-box;
   }
   .beranda .heading-2-berita {
-    margin: 0 1191.2px 24.6px 0;
+    margin: 0 50% 0 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1223,8 +1235,8 @@ body{
   }
   .beranda .div-divider-small-border {
     background: #FAA634;
-    margin: 0 1239px 317.1px 0;
-    width: 60px;
+    margin: 0 53% 20.7% 0;
+    width: 4%;
     height: 2px;
   }
   .beranda .link {
@@ -1361,6 +1373,7 @@ body{
     box-sizing: border-box;
   }
   .beranda .div-row-bg-wrap {
+    bottom: -3%;
     background: url('../img/landingpage/divRowBg3.jpeg'), linear-gradient(#FAA634, #FAA634);
     position: relative;
     display: flex;
@@ -1378,13 +1391,13 @@ body{
   .beranda .svg {
     position: absolute;
     left: 50%;
-    top: 771px;
+    top: 0;
     translate: -50% 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 1920px;
-    height: 30.3px;
+    width: 0;
+    /* height: 30.3px; */
     box-sizing: border-box;
   }
   .beranda .before-3 {
@@ -1394,7 +1407,7 @@ body{
     top: 0px;
     translate: -50% 0;
     width: 100%;
-    height: 301.5px;
+    height: 100%;
   }
   .beranda .heading-3-pelanggan {
     position: relative;
@@ -1430,7 +1443,7 @@ body{
   .beranda .div-inner-wrap-outer-3 {
     position: absolute;
     right: 0px;
-    bottom: 2193px;
+    bottom: 36.7%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1439,13 +1452,13 @@ body{
     box-sizing: border-box;
   }
   .beranda .div-column-image-bg-2 {
-    background: url('../img/landingpage/divColumnImageBg.jpeg');
+    background: url(../img/landingpage/divColumnImageBg.jpeg);
     position: absolute;
-    right: 0.2px;
-    left: 928px;
-    bottom: 1252.9px;
-    width: 660px;
-    height: 869px;
+    right: 0;
+    left: 960px;
+    bottom: 1333px;
+    width: 576px;
+    height: 870px;
     background-size: cover;
     transform: scaleX(-1);
   }
@@ -1515,11 +1528,12 @@ body{
     height: 2px;
   }
   .beranda .div-inner-wrap-2 {
+    /* top:94%; */
     background: url('../img/landingpage/divRowBg2.jpeg'), linear-gradient(#008031, #008031);
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: 0px;
+    bottom: -0.2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1528,8 +1542,8 @@ body{
   }
   .beranda .container-1 {
     position: absolute;
-    top: 190px;
-    right: 250px;
+    top: 26%;
+    right: 7%;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1580,21 +1594,22 @@ body{
     border-radius: 5px;
     background: #1B1B1B;
     position: absolute;
-    top: 1391.7px;
-    left: 470.2px;
-    width: 930px;
+    top: 21.4%;
+    left: 31%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     padding: 63.8px 77.2px 62.9px 62.2px;
     box-sizing: border-box;
   }
   .beranda .div-container-wrap {
+    height: 6076px;
     background: #FFFFFF;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 315.6px;
+    padding-bottom: 27.3%;
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -1987,7 +2002,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 78.8px 117px 0px 0;
-    width: 1537px;
+    width: 100%;
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-position: right -380px top 265px ,0 0;
@@ -2071,11 +2086,11 @@ body{
     box-sizing: border-box;
   }
   .beranda .list-1 {
-    margin: 15px 0 1.5px 150px;
+    margin: 1.1% 0 0% 11%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 186.2px;
+    width: 13%;
     height: fit-content;
     box-sizing: border-box;
     transform: scaleY(-1);
@@ -2090,20 +2105,19 @@ body{
     color: #FFFFFF;
   }
   .beranda .vector-20 {
-    width: 13.5px;
-    height: 6px;
+    margin-top: -3%;
+    width: 100%;
+    height: 32%;
   }
   .beranda .item-link-5 {
-    margin: 21px 0 6.5px 3px;
+    margin: 10% 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 13.5px;
-    height: 6px;
-    margin-right: 700px;
     box-sizing: border-box;
   }
   .beranda .list-2 {
+    margin: 0 43% 0 0;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
@@ -2118,7 +2132,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 42px;
+    height: 5.5%;
     box-sizing: border-box;
   }
   .beranda {
@@ -2126,7 +2140,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 72px 0 0 1.5px;
+    /* padding: 72px 0 0 1.5px; */
     width: 100%;
     box-sizing: border-box;
   }

@@ -14,7 +14,7 @@
 
 <body>
     <div class="beranda">
-        <div class="header">
+        {{-- <div class="header">
             <div class="link-asianagri-logo-white-2-png">
             </div>
             <div class="nav-list">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="div-ocm-effect-wrap">
             <div class="div-container-wrap">
                 <div class="rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide">
@@ -290,14 +290,14 @@
                             perusahaan<br />
                             itu sendiri.
                         </span>
-                        <div class="container-14">
+                        {{-- <div class="container-14">
                             <div class="button-previous">
                             </div>
                             <div class="container-6">
                                 <img class="container-16"
                                     src="{{ asset('asset/custom/vectors/container_x2.svg') }}" />
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="button-previous-svg">
                             <img class="vector-22" src="{{ asset('asset/custom/vectors/vector10_x2.svg ') }}" />
@@ -423,7 +423,7 @@
                 <div class="svg">
                     <img class="vector-21" src="{{ asset('asset/custom/vectors/vector5_x2.svg ') }}" />
                 </div>
-                <div class="div-inner-wrap-outer-3">
+                {{-- <div class="div-inner-wrap-outer-3">
                     <div class="div-nectar-fancy-box-3">
                         <div class="div-box-bg-3">
                             <div class="before-3">
@@ -433,7 +433,7 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="div-column-image-bg-2">
                 </div>
                 <div class="div-inner-wrap-2">

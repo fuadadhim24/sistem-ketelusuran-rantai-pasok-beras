@@ -17,7 +17,7 @@
           <div class="header">
             <div class="link-asianagri-logo-white-2-png">
             </div>
-            <div class="nav-list">
+            {{-- <div class="nav-list">
               <div class="item">
                 <span class="link-tentang-kami-1">
                   Tentang Kami
@@ -43,7 +43,7 @@
                   Hubungi Kami
                 </span>
               </div>
-            </div>
+            </div> --}}
             <div class="list-2">
               <div class="item-5">
                 <span class="link-hubungi-kami">
@@ -89,14 +89,14 @@
             <div class="rectangle-206">
             </div>
           </div> --}}
-          <div class="group-621">
+          {{-- <div class="group-621">
             <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-4">
               Catatan
             </span>
             <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-3">
               : -
             </div>
-          </div>
+          </div> --}}
           <div class="rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide-1">
             <div class="container-1">
               <div class="tabel">
@@ -230,7 +230,7 @@
               Daftar Hasil Pengujian
             </span>
           </div>
-         
+
           <span class="varietas">
             Varietas
           </span>
@@ -340,6 +340,15 @@
               <span class="list-item-link-visi-dan-misi">
                 Visi dan Misi
               </span>
+              <span class="list-item-link-nilai-nilai-kami">
+                Nilai-nilai Kami
+              </span>
+              <span class="list-item-link-kemitraan-dengan-petani">
+                Kemitraan Dengan Petani
+              </span>
+              <span class="list-item-link-tonggak-sejarah">
+                Tonggak Sejarah
+              </span>
             </div>
             <div class="container-8">
               <div class="heading-4-bisnis-kami">
@@ -348,14 +357,42 @@
               <span class="list-item-link-perkebunan">
                 Pertanian
               </span>
+              <span class="list-item-link-pabrik">
+                Pabrik
+              </span>
+              <span class="list-item-link-produk">
+                Produk
+              </span>
+              <span class="list-item-link-penelitian-dan-pengembangan">
+                Penelitian dan Pengembangan
+              </span>
+              <span class="list-item-link-benih-topaz">
+                Benih Padi
+              </span>
             </div>
-            <div class="container">
+
+            <div class="container-17">
               <div class="heading-4-keberlanjutan">
                 Keberlanjutan
               </div>
               <span class="list-item-link-kebijakan-keberlanjutan">
                 Kebijakan Keberlanjutan
               </span>
+              <span class="list-item-link-laporan-keberlanjutan">
+                Laporan Keberlanjutan
+              </span>
+              <span class="list-item-link-standar-sertifikasi">
+                Standar &amp; Sertifikasi
+              </span>
+              <span class="list-item-link-sistem-ketertelusuran">
+                Sistem Ketertelusuran
+              </span>
+              <span class="list-item-link-program-inisiatif">
+                Program &amp; Inisiatif
+              </span>
+            <span class="list-item-link-pengaduan">
+              Pengaduan
+            </span>
             </div>
             <div class="div-col">
               <div class="heading-4-media-publikasi">
@@ -367,49 +404,58 @@
             </div>
           </div>
           <div class="container-9">
-            <span class="list-item-link-nilai-nilai-kami">
+            {{-- <span class="list-item-link-nilai-nilai-kami">
               Nilai-nilai Kami
-            </span>
-            <span class="list-item-link-pabrik">
+            </span> --}}
+            {{-- <span class="list-item-link-kemitraan-dengan-petani">
+                Kemitraan Dengan Petani
+              </span> --}}
+              {{-- <span class="list-item-link-produk">
+                Produk
+              </span> --}}
+              {{-- <span class="list-item-link-standar-sertifikasi">
+                Standar &amp; Sertifikasi
+              </span> --}}
+            {{-- <span class="list-item-link-pabrik">
               Pabrik
-            </span>
-            <span class="list-item-link-laporan-keberlanjutan">
+            </span> --}}
+            {{-- <span class="list-item-link-laporan-keberlanjutan">
               Laporan Keberlanjutan
-            </span>
+            </span> --}}
           </div>
           <div class="container-7">
-            <span class="list-item-link-kemitraan-dengan-petani">
+            {{-- <span class="list-item-link-kemitraan-dengan-petani">
               Kemitraan Dengan Petani
-            </span>
-            <span class="list-item-link-produk">
+            </span> --}}
+            {{-- <span class="list-item-link-produk">
               Produk
             </span>
             <span class="list-item-link-standar-sertifikasi">
               Standar &amp; Sertifikasi
-            </span>
+            </span> --}}
           </div>
           <div class="container-10">
-            <span class="list-item-link-tonggak-sejarah">
+            {{-- <span class="list-item-link-tonggak-sejarah">
               Tonggak Sejarah
-            </span>
-            <span class="list-item-link-penelitian-dan-pengembangan">
+            </span> --}}
+            {{-- <span class="list-item-link-penelitian-dan-pengembangan">
               Penelitian dan Pengembangan
-            </span>
-            <span class="list-item-link-sistem-ketertelusuran">
+            </span> --}}
+            {{-- <span class="list-item-link-sistem-ketertelusuran">
               Sistem Ketertelusuran
-            </span>
+            </span> --}}
           </div>
-          <div class="container-5">
-            <span class="list-item-link-benih-topaz">
+          {{-- <div class="container-5"> --}}
+            {{-- <span class="list-item-link-benih-topaz">
               Benih Padi
-            </span>
-            <span class="list-item-link-program-inisiatif">
+            </span> --}}
+            {{-- <span class="list-item-link-program-inisiatif">
               Program &amp; Inisiatif
             </span>
           </div>
           <div class="list-item-link-pengaduan">
             Pengaduan
-          </div>
+          </div> --}}
           <div class="divcopyright">
             <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
               © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.

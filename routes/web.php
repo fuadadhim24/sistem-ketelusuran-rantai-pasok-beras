@@ -29,6 +29,7 @@ Route::get('/detailpengolahan', function () {
     return view('hasilpengolahan');
 });
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
