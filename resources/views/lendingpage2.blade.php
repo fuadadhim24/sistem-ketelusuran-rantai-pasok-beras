@@ -101,14 +101,40 @@
               Riwayat Ketertelusuran Produk Beras
             </div>
             <div class="frame-633">
-              <div class="heading-6">
-                <div class="camera">
-                </div>
-                <div class="link-tentang-kami">
-                  Scan QR Code Produk Beras
-                </div>
+                <div class="heading-6">
+                    <div class="camera" id="camera">
+                    </div>
+                    <div class="link-tentang-kami" id="link-tentang-kami">
+                      Scan QR Code Produk Beras
+                    </div>
+                  </div>
+
+                  <div class="popup" id="popup">
+                    <div class="popup-content">
+                      <span class="close" id="close">&times;</span>
+                      <div class="kamera" >
+                        Upload File
+                      </div>
+                      <div class="camera-image"></div>
+                    </div>
+                  </div>
+                  <script>
+                    document.getElementById('link-tentang-kami').addEventListener('click', function() {
+                      document.getElementById('popup').style.display = 'block';
+                    });
+
+                    document.getElementById('close').addEventListener('click', function() {
+                      document.getElementById('popup').style.display = 'none';
+                    });
+
+                    document.addEventListener('click', function(event) {
+                      if (!event.target.closest('.popup') && !event.target.closest('#link-tentang-kami')) {
+                        document.getElementById('popup').style.display = 'none';
+                      }
+                    });
+                  </script>
               </div>
-            </div>
+
             <div class="container-8">
               <div class="link-tentang-kami-1">
                 atau cari berdasarkan katalog produk
@@ -129,6 +155,17 @@
               <span class="masukkan-kode-produk-kemudian-klik-cari-sub-0"></span><span></span>
             </p>
             <div class="kotak-pencarian-2">
+                <div>
+                    <input type="text" class="cari" placeholder="Cari" />
+                </div>
+                {{-- <div class="rectangle-213"></div> --}}
+                <div class="epsearch">
+                  <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
+                </div>
+              </div>
+
+
+            {{-- <div class="kotak-pencarian-2">
               <div class="rectangle-212">
               </div>
               <div class="rectangle-213">
@@ -139,7 +176,7 @@
               <span class="cari">
                 Cari
               </span>
-            </div>
+            </div> --}}
           </div>
           <div class="tabel">
             <div class="container-2">
