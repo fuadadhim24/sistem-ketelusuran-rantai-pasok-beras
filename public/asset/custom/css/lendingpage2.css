@@ -35,6 +35,7 @@ body{
     right: 0px;
     bottom: 0px;
     height: 100%;
+    width: 100%;
   }
   .pengolahan .vector-6 {
     width: 14.1px;
@@ -103,7 +104,7 @@ body{
     box-sizing: border-box;
 }
   .pengolahan .list-1 {
-    margin: 1.1% 0 0% 11%;
+    margin: 13px 0 0% 11%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -114,7 +115,7 @@ body{
 
   }
   .pengolahan .item-link-kunjungi-ketelsuruan-produk {
-
+    margin: 0 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 600;
@@ -146,7 +147,7 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .divheader-secondary-outer {
-    height: 6.5%;
+    height: 43px;
     background: #507450;
     display: flex;
     flex-direction: row;
@@ -155,11 +156,11 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .link-asianagri-logo-white-2-png {
-    margin: 0 0px 0 16%;
+    margin: -1% 0px 0 0;
     background: url(../img/landingpage2/divfooterOuter.png);
-    margin-right: 53.1px;
-    width: 7%;
-    height: 170%;
+    /* margin-right: 53.1px; */
+    width: 106px;
+    height: 102px;
     background-size: cover;
   }
   .pengolahan .link-tentang-kami-2 {
@@ -273,6 +274,7 @@ body{
     color: #FFFFFF;
   }
   .pengolahan .item-6 {
+    margin: 0 0 0 -47px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -282,7 +284,7 @@ body{
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 16px;
+    font-size: 17.6px;
     letter-spacing: -0.4px;
     line-height: 1.136;
     color: #FFFFFF;
@@ -309,13 +311,9 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .item-8 {
-    margin-top: -1%;
-    margin-bottom: 2%;
-    margin-right: -21%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 3%;
     box-sizing: border-box;
   }
   .pengolahan .list {
@@ -328,14 +326,14 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .header {
-    margin: 2% 11% 15% 0%;
+    margin: 2% 11% 10% 0%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     box-sizing: border-box;
 }
   .pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
-    margin: -2% 5% 10% 0;
+    margin: -2% 0 7% 21%;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -375,7 +373,7 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .frame-633 {
-    margin: -5% 0 0px -43%;
+    margin: 0 0 0 21%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -402,15 +400,27 @@ body{
     height: 8vh;
     transform: rotate(-90deg);
 }
-  .pengolahan .container-8 {
-    background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5));
+.pengolahan .div-row-bg-wrap-2 {
+    height: fit-content;
+    background: #F9F9F9;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10.3% 42% 0% 0;
+    padding: 93px 0 100px 0;
     width: 100%;
-    height: 100%;
+    box-sizing: border-box;
+  }
+  .pengolahan .container-8 {
+    margin: 6% 0 0 0;
+    /* background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5)); */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7% 35% 0% 0;
+    width: 100%;
+    height: 144px;
     box-sizing: border-box;
   }
   .pengolahan .container-5 {
@@ -427,13 +437,12 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
+    display: flow-root;
     background: url(../img/landingpage2/rsSbgPxRsSbgWrapRsSbgImage.jpeg);
     position: relative;
-    margin-bottom: 4%;
     width: 100%;
     height: 100vh;
     background-size: cover;
-
   }
   .pengolahan .kotak-pencarian-1 {
     overflow-wrap: break-word;
@@ -532,7 +541,6 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .kotak-pencarian {
-    height: 25vh;
     box-shadow: 0px 4px 11.9px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
@@ -889,7 +897,7 @@ body{
     box-sizing: border-box;
   }
   .pengolahan .container-12 {
-    margin: 0px -11% 6% 0%;
+    justify-content: center;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -1280,13 +1288,22 @@ body{
     transform: scaleY(-1);
     box-sizing: border-box;
   }
+  .pengolahan .container-30 {
+    margin-top: 170px;
+    width: 100%;
+    display: flow-root;
+    flex-direction: row;
+    position: relative;
+    height: fit-content;
+    box-sizing: border-box;
+}
   .pengolahan .divfooter-outer {
     background: url('../img/landingpage2/divfooterOuter.png'), linear-gradient(#1B1B1B, #1B1B1B);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 58.8px;
-    width: 1535px;
+    width: 100%;
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-position: right -380px top 265px ,0 0;
@@ -1343,5 +1360,83 @@ body{
     margin: 77px 0 0 150px;
 
   }
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+
+  }
+
+  .product-table th, .product-table td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .product-table th {
+    height: 36px;
+    background-color: #507450; /* Mengubah warna latar belakang sel header menjadi hijau */
+    color: white; /* Mengubah warna teks menjadi putih agar lebih kontras */
+  }
+  .detail-button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px 0;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .detail-button:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  .detail-link {
+    color: blue;
+    text-decoration: none;
+  }
+
+  .detail-link:hover {
+    text-decoration: underline;
+  }
+  .pengolahan .container-19 {
+    position: relative;
+    margin: 0 0 0 72%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 10%;
+    box-sizing: border-box;
+  }
+  .pengolahan .link-media-publikasi-2 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .pengolahan .link-media-publikasi-3 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+  }
+  .pengolahan .container-25 {
+    justify-content: center;
+    margin: 16px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}
 
 
