@@ -22,11 +22,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/welcome_en', function () {
+    return view('welcome_en');
+});
 Route::get('/pengolahan', function () {
     return view('lendingpage2');
 });
+Route::get('/pengolahan_en', function () {
+    return view('pengolahan_en');
+});
 Route::get('/detailpengolahan', function () {
     return view('hasilpengolahan');
+});
+Route::get('/detailpengolahan_en', function () {
+    return view('hasilpengolahan_en');
 });
 
 
@@ -35,23 +44,25 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () { return view('admin.dashboard');})->name('dashboard');
-    Route::get('/produk', function ( ) { return view('admin.produk.index');})->name('produk');
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard'); })->name('dashboard');
+    Route::get('/produk', function () {
+        return view('admin.produk.index'); })->name('produk');
 
-    Route::get('/pengujian', [pengujianController::class,'index'])->name('pengujian');
-    Route::get('/pengujian/tambah-pengujian', [pengujianController::class,'tambahView'])->name('tambah-pengujian');
+    Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
+    Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');
 
-    Route::get('/varietas-padi', [varietasPadiController::class,'index'])->name('varietas-padi');
-    Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class,'tambahView'])->name('tambah-varietas');
+    Route::get('/varietas-padi', [varietasPadiController::class, 'index'])->name('varietas-padi');
+    Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class, 'tambahView'])->name('tambah-varietas');
     Route::post('/varietasPadi', [VarietasPadiController::class, 'store'])->name('varietasPadi.store');
     Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi.destroy');
     Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/varietasPadi/{id}/edit', [VarietasPadiController::class, 'edit'])->name('edit-varietas');
-    Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class,'update'])->name('update-varietas');
+    Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class, 'update'])->name('update-varietas');
     Route::get('/reloadcontentvarietas', [VarietasPadiController::class, 'reloadContent'])->name('reload-content-varietas');
 
-    Route::get('/fase', [faseController::class,'index'])->name('fase');
-    Route::get('/fase/perlakuan', [perlakuanController::class,'index'])->name('perlakuan');
+    Route::get('/fase', [faseController::class, 'index'])->name('fase');
+    Route::get('/fase/perlakuan', [perlakuanController::class, 'index'])->name('perlakuan');
     Route::post('/fase/store', [FaseController::class, 'store'])->name('fase.store');
     Route::get('/fase/{id}/edit', [FaseController::class, 'edit'])->name('edit-fase');
     Route::delete('/fase/{id}/delete', [FaseController::class, 'destroy'])->name('hapus-fase');
@@ -62,10 +73,12 @@ Route::middleware([
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
 
-    Route::get('/lahan', function (){ return view('admin.lahan.index');})->name('lahan');
-    Route::get('/lahan/tambah-lahan', function (){ return view('admin.lahan.tambah');})->name('tambah-lahan');
+    Route::get('/lahan', function () {
+        return view('admin.lahan.index'); })->name('lahan');
+    Route::get('/lahan/tambah-lahan', function () {
+        return view('admin.lahan.tambah'); })->name('tambah-lahan');
 
-    Route::get('/settings', [settingsController::class,'index'])->name('settings');
+    Route::get('/settings', [settingsController::class, 'index'])->name('settings');
 
     Route::resource('varietasPadis', VarietasPadiController::class);
 });
