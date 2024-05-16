@@ -1,5 +1,4 @@
-
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,9 +7,12 @@ body{
 
 
 .container {
-    max-width: 1200px; /* Lebar maksimum konten */
-    margin: 0 auto; /* Tengahkan konten */
-    padding: 20px; /* Berikan padding agar konten tidak terlalu dekat dengan tepi layar */
+    max-width: 1200px;
+    /* Lebar maksimum konten */
+    margin: 0 auto;
+    /* Tengahkan konten */
+    padding: 20px;
+    /* Berikan padding agar konten tidak terlalu dekat dengan tepi layar */
 }
 
 @media (max-width: 1200px) {
@@ -36,12 +38,14 @@ body{
     bottom: 0px;
     height: 100%;
     width: 100%;
-  }
-  .pengolahan .vector-6 {
+}
+
+.pengolahan .vector-6 {
     width: 14.1px;
     height: 11.4px;
-  }
-  .pengolahan .item-link {
+}
+
+.pengolahan .item-link {
     margin: 0.2% 0 0% 0;
     display: flex;
     flex-direction: row;
@@ -52,22 +56,25 @@ body{
 }
 
 
-  .pengolahan .vector-7 {
+.pengolahan .vector-7 {
     width: 7.7px;
     height: 14.9px;
-  }
-  .pengolahan .item-link-1 {
+}
+
+.pengolahan .item-link-1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 4%;
     box-sizing: border-box;
-  }
-  .pengolahan .vector-8 {
+}
+
+.pengolahan .vector-8 {
     width: 13.7px;
     height: 13.1px;
-  }
-  .pengolahan .item-link-2 {
+}
+
+.pengolahan .item-link-2 {
     margin: 1% 0 0% 0;
     display: flex;
     flex-direction: row;
@@ -76,25 +83,29 @@ body{
     box-sizing: border-box;
 
 
-  }
-  .pengolahan .vector-9 {
+}
+
+.pengolahan .vector-9 {
     position: absolute;
     top: 0px;
     right: -0.3px;
     width: 16px;
     height: 11.3px;
-  }
-  .pengolahan .item-link-3 {
+}
+
+.pengolahan .item-link-3 {
     position: relative;
     margin: 1% 0 0 0;
     width: 10%;
     height: 11.3px;
 }
-  .pengolahan .vector-10 {
+
+.pengolahan .vector-10 {
     width: 13.7px;
     height: 13.7px;
-  }
-  .pengolahan .item-link-4 {
+}
+
+.pengolahan .item-link-4 {
     margin-top: 1%;
     display: flex;
     flex-direction: row;
@@ -103,7 +114,8 @@ body{
     /* height: 13.7px; */
     box-sizing: border-box;
 }
-  .pengolahan .list-1 {
+
+.pengolahan .list-1 {
     margin: 13px 0 0% 11%;
     display: flex;
     flex-direction: row;
@@ -113,8 +125,10 @@ body{
     box-sizing: border-box;
     transform: scaleY(-1);
 
-  }
-  .pengolahan .item-link-kunjungi-ketelsuruan-produk {
+}
+
+.pengolahan .item-link-kunjungi-ketelsuruan-produk {
+    /* width: 100%; */
     margin: 0 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -123,47 +137,58 @@ body{
     letter-spacing: -0.3px;
     line-height: 6vh;
     color: #FFFFFF;
-  }
-  .pengolahan .vector-11 {
+}
+
+.pengolahan .vector-11 {
     margin-right: -44%;
     margin-top: -3%;
     width: 100%;
     height: 125%;
-  }
-  .pengolahan .item-link-5 {
+}
 
-    margin: 11.4% 0% 0 0;
+.pengolahan .item-link-5 {
+
+    margin: 20px 0% 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 13.5px;
     height: 6px;
     box-sizing: border-box;
-  }
-  .pengolahan .list-2 {
-    margin: 0 43% 0 0;;
+}
+
+.pengolahan .list-2 {
+    margin: 0 43% 0 0;
+    ;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-  }
-  .pengolahan .divheader-secondary-outer {
-    height: 43px;
+}
+
+.pengolahan .divheader-secondary-outer {
+    align-items: start;
+    left: 0;
     background: #507450;
+    position: absolute;
+    top: 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    height: 5.5%;
     box-sizing: border-box;
-  }
-  .pengolahan .link-asianagri-logo-white-2-png {
+}
+
+.pengolahan .link-asianagri-logo-white-2-png {
     margin: -1% 0px 0 0;
     background: url(../img/landingpage2/divfooterOuter.png);
     /* margin-right: 53.1px; */
     width: 106px;
     height: 102px;
     background-size: cover;
-  }
-  .pengolahan .link-tentang-kami-2 {
+}
+
+.pengolahan .link-tentang-kami-2 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -171,14 +196,16 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.164;
     color: #FFFFFF;
-  }
-  .pengolahan .item {
+}
+
+.pengolahan .item {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .link-tentang-kami-3 {
+}
+
+.pengolahan .link-tentang-kami-3 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -186,14 +213,16 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.164;
     color: #FFFFFF;
-  }
-  .pengolahan .item-1 {
+}
+
+.pengolahan .item-1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .link-bisnis {
+}
+
+.pengolahan .link-bisnis {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -201,14 +230,16 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.192;
     color: #FFFFFF;
-  }
-  .pengolahan .item-2 {
+}
+
+.pengolahan .item-2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .link-keberlanjutan {
+}
+
+.pengolahan .link-keberlanjutan {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -216,14 +247,16 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.136;
     color: #FFFFFF;
-  }
-  .pengolahan .item-3 {
+}
+
+.pengolahan .item-3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .link-media-publikasi {
+}
+
+.pengolahan .link-media-publikasi {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -231,15 +264,17 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.145;
     color: #FFFFFF;
-  }
-  .pengolahan .item-4 {
+}
+
+.pengolahan .item-4 {
     margin: 0 -154px 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .link-media-publikasi-1 {
+}
+
+.pengolahan .link-media-publikasi-1 {
     margin: 0px -345px 0 67px;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -248,14 +283,16 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.145;
     color: #FFFFFF;
-  }
-  .pengolahan .item-5 {
+}
+
+.pengolahan .item-5 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .nav-list {
+}
+
+.pengolahan .nav-list {
     margin: 30px 339px 50px 57px;
     display: flex;
     flex-direction: row;
@@ -263,8 +300,9 @@ body{
     width: 715.6px;
     height: fit-content;
     box-sizing: border-box;
-  }
-  .pengolahan .link-hubungi-kami {
+}
+
+.pengolahan .link-hubungi-kami {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -272,15 +310,17 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.136;
     color: #FFFFFF;
-  }
-  .pengolahan .item-6 {
+}
+
+.pengolahan .item-6 {
     margin: 0 0 0 -47px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .link-id {
+}
+
+.pengolahan .link-id {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -288,18 +328,21 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.136;
     color: #FFFFFF;
-  }
-  .pengolahan .item-7 {
+}
+
+.pengolahan .item-7 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .vector-5 {
+}
+
+.pengolahan .vector-5 {
     width: 19.9px;
     height: 20px;
-  }
-  .pengolahan .link {
+}
+
+.pengolahan .link {
     transform: scaleY(-1);
     opacity: 0.75;
     display: flex;
@@ -309,14 +352,16 @@ body{
     width: 19.7px;
     height: 20px;
     box-sizing: border-box;
-  }
-  .pengolahan .item-8 {
+}
+
+.pengolahan .item-8 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-  }
-  .pengolahan .list {
+}
+
+.pengolahan .list {
     margin: 2.5% 0 0 57%;
     display: flex;
     flex-direction: row;
@@ -324,15 +369,18 @@ body{
     width: 10%;
     height: fit-content;
     box-sizing: border-box;
-  }
-  .pengolahan .header {
-    margin: 2% 11% 10% 0%;
+}
+
+.pengolahan .header {
+    height: 100%;
+    margin: 53px 11% 0 0%;
     display: flex;
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
 }
-  .pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
+
+.pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
     margin: -2% 0 7% 21%;
     display: inline-block;
     overflow-wrap: break-word;
@@ -342,15 +390,17 @@ body{
     letter-spacing: -1px;
     line-height: 1.194;
     color: #FFFFFF;
-  }
-  .pengolahan .camera {
+}
+
+.pengolahan .camera {
     margin-top: 1%;
     background: url(../img/landingpage2/camera.png) 50% / contain no-repeat;
     margin-right: -4%;
     width: 15%;
     height: 80%;
-  }
-  .pengolahan .link-tentang-kami {
+}
+
+.pengolahan .link-tentang-kami {
     margin: 7% 0% 10% 8%;
     display: inline-block;
     overflow-wrap: break-word;
@@ -361,8 +411,9 @@ body{
     line-height: 1.008;
     text-transform: capitalize;
     color: #FFFFFF;
-  }
-  .pengolahan .heading-6 {
+}
+
+.pengolahan .heading-6 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 200px;
     background: #588157;
@@ -371,17 +422,19 @@ body{
     padding: 2.9% 6% 0% 7%;
     width: 97%;
     box-sizing: border-box;
-  }
-  .pengolahan .frame-633 {
+}
+
+.pengolahan .frame-633 {
     margin: 0 0 0 21%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 22%;
     box-sizing: border-box;
-  }
-  .pengolahan .link-tentang-kami-1 {
-    margin: -12% 0 1%;
+}
+
+.pengolahan .link-tentang-kami-1 {
+    margin: -108px 0 0 1px;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -391,8 +444,9 @@ body{
     line-height: 1.344;
     text-transform: capitalize;
     color: #cbced7;
-  }
-  .pengolahan .back-arrow {
+}
+
+.pengolahan .back-arrow {
     margin: 3% 0 1% 0;
     background: url(../img/landingpage2/backArrow.png) 50% / contain no-repeat;
     /* margin-left: 1px; */
@@ -400,6 +454,7 @@ body{
     height: 8vh;
     transform: rotate(-90deg);
 }
+
 .pengolahan .div-row-bg-wrap-2 {
     height: fit-content;
     background: #F9F9F9;
@@ -410,20 +465,19 @@ body{
     padding: 93px 0 100px 0;
     width: 100%;
     box-sizing: border-box;
-  }
-  .pengolahan .container-8 {
-    margin: 6% 0 0 0;
-    /* background: linear-gradient(180deg, rgba(0, 75, 49, 0), rgba(0, 75, 49, 0.5)); */
-    position: relative;
+}
+
+.pengolahan .container-8 {
+    width: 100%;
+    margin: 0 0 0 -280px;
+    margin-top: 164.7px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 7% 35% 0% 0;
-    width: 100%;
-    height: 144px;
     box-sizing: border-box;
-  }
-  .pengolahan .container-5 {
+}
+
+.pengolahan .container-5 {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -435,16 +489,18 @@ body{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-  }
-  .pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
+}
+
+.pengolahan .rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide {
     display: flow-root;
     background: url(../img/landingpage2/rsSbgPxRsSbgWrapRsSbgImage.jpeg);
     position: relative;
     width: 100%;
     height: 100vh;
     background-size: cover;
-  }
-  .pengolahan .kotak-pencarian-1 {
+}
+
+.pengolahan .kotak-pencarian-1 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
@@ -452,8 +508,9 @@ body{
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
-  }
-  .pengolahan .elemen-kotak-pencarian {
+}
+
+.pengolahan .elemen-kotak-pencarian {
     border-radius: 10px;
     border: 1px solid #000000;
     background: #507450;
@@ -462,15 +519,17 @@ body{
     padding: 10px 15px;
     /* width: fit-content; */
     box-sizing: border-box;
-  }
-  .masukkan-kode-produk-kemudian-klik-cari {
+}
+
+.masukkan-kode-produk-kemudian-klik-cari {
     font-family: 'Inter';
     font-weight: 600;
     font-size: 15px;
     letter-spacing: -1px;
     line-height: 1.333;
-  }
-  .pengolahan .masukkan-kode-produk-kemudian-klik-cari {
+}
+
+.pengolahan .masukkan-kode-produk-kemudian-klik-cari {
     position: relative;
     align-self: flex-start;
     overflow-wrap: break-word;
@@ -480,8 +539,9 @@ body{
     letter-spacing: -1px;
     line-height: 5.067;
     color: #1B1B1B;
-  }
-  .pengolahan .rectangle-212 {
+}
+
+.pengolahan .rectangle-212 {
     box-shadow: 0px 4px 11.9px 0px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
@@ -491,8 +551,9 @@ body{
     translate: -50% 0;
     width: 104%;
     height: 6vh;
-  }
-  .pengolahan .rectangle-213 {
+}
+
+.pengolahan .rectangle-213 {
     box-shadow: 0px 4px 4px 0px rgba(0, 123, 255, 0.25);
     border-radius: 5px;
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
@@ -501,12 +562,14 @@ body{
     right: -2%;
     width: 24%;
     height: 6vh;
-  }
-  .pengolahan .vector-12 {
+}
+
+.pengolahan .vector-12 {
     width: 300%;
     height: 3vh;
-  }
-  .pengolahan .epsearch {
+}
+
+.pengolahan .epsearch {
     position: relative;
     margin: 19% 7% 0% 0%;
     display: flex;
@@ -515,8 +578,9 @@ body{
     width: 30px;
     height: 3vh;
     box-sizing: border-box;
-  }
-  .pengolahan .cari {
+}
+
+.pengolahan .cari {
     width: 80%;
     margin: 15% 0 0 10%;
     height: 34px;
@@ -528,8 +592,9 @@ body{
     letter-spacing: -1px;
     line-height: 8.6;
     color: #000000;
-  }
-  .pengolahan .kotak-pencarian-2 {
+}
+
+.pengolahan .kotak-pencarian-2 {
     position: absolute;
     left: 6%;
     right: 7%;
@@ -539,8 +604,9 @@ body{
     justify-content: space-between;
     padding-right: 14px;
     box-sizing: border-box;
-  }
-  .pengolahan .kotak-pencarian {
+}
+
+.pengolahan .kotak-pencarian {
     box-shadow: 0px 4px 11.9px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, 0));
@@ -551,13 +617,15 @@ body{
     width: 21.7%;
     box-sizing: border-box;
 }
-  .pengolahan .rectangle-2131 {
+
+.pengolahan .rectangle-2131 {
     border: 1px solid #3F3F3F;
     background: #D7E1D7;
     width: 100%;
     height: 6vh;
-  }
-  .pengolahan .container-6 {
+}
+
+.pengolahan .container-6 {
     border-radius: 10px;
     border: 1px solid #3F3F3F;
     background: #D7E1D7;
@@ -568,16 +636,18 @@ body{
     width: 100.2%;
     height: 5.8vh;
     box-sizing: border-box;
-  }
-  .pengolahan .rectangle-215 {
+}
+
+.pengolahan .rectangle-215 {
     border-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(#3F3F3F, #3F3F3F);
     border-image-slice: 1;
     border-width: 1px;
     border-style: solid;
     width: 100%;
     height: 5.9vh;
-  }
-  .pengolahan .container-2 {
+}
+
+.pengolahan .container-2 {
     border-radius: 10px;
     border: 1px solid #3F3F3F;
     background: #EEEEEE;
@@ -589,8 +659,9 @@ body{
     width: 100%;
     height: fit-content;
     box-sizing: border-box;
-  }
-  .pengolahan .rectangle-214 {
+}
+
+.pengolahan .rectangle-214 {
     border: 1px solid #3F3F3F;
     background: #D7E1D7;
     position: absolute;
@@ -598,8 +669,9 @@ body{
     right: 0px;
     height: 6vh;
     top: 70%;
-  }
-  .pengolahan .rectangle-204 {
+}
+
+.pengolahan .rectangle-204 {
     border-radius: 10px 10px 0 0;
     border: 1px solid #3F3F3F;
     background: #507450;
@@ -608,8 +680,9 @@ body{
     top: 2%;
     right: 0px;
     height: 70%;
-  }
-  .pengolahan .kode-produk {
+}
+
+.pengolahan .kode-produk {
     right: 7%;
     white-space: nowrap;
     position: relative;
@@ -620,8 +693,9 @@ body{
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
-  }
-  .pengolahan .z {
+}
+
+.pengolahan .z {
     position: absolute;
     left: 0.4%;
     top: 25%;
@@ -632,8 +706,9 @@ body{
     letter-spacing: -1px;
     line-height: 0.7;
     color: #3F3F3F;
-  }
-  .pengolahan .z-1 {
+}
+
+.pengolahan .z-1 {
     position: absolute;
     left: 0px;
     bottom: 25%;
@@ -644,8 +719,9 @@ body{
     letter-spacing: -1px;
     line-height: 11.167;
     color: #3F3F3F;
-  }
-  .pengolahan .z-2 {
+}
+
+.pengolahan .z-2 {
     position: absolute;
     left: 0px;
     bottom: 2%;
@@ -656,8 +732,9 @@ body{
     letter-spacing: -1px;
     line-height: 13.367;
     color: #3F3F3F;
-  }
-  .pengolahan .frame-626 {
+}
+
+.pengolahan .frame-626 {
     position: relative;
     margin: 0 17.6% 0 0;
     display: flex;
@@ -667,8 +744,9 @@ body{
     flex-grow: 1;
     flex-basis: 197px;
     box-sizing: border-box;
-  }
-  .pengolahan .bps-setra-ramos {
+}
+
+.pengolahan .bps-setra-ramos {
     margin: 6% 0 0 0;
     width: 100%;
     position: relative;
@@ -679,8 +757,9 @@ body{
     letter-spacing: -1px;
     line-height: 0.7;
     color: #3F3F3F;
-  }
-  .pengolahan .hariku {
+}
+
+.pengolahan .hariku {
     position: absolute;
     left: 0px;
     bottom: 25%;
@@ -691,8 +770,9 @@ body{
     letter-spacing: -1px;
     line-height: 11.167;
     color: #3F3F3F;
-  }
-  .pengolahan .pawon-mas {
+}
+
+.pengolahan .pawon-mas {
     position: absolute;
     left: 0.4%;
     bottom: 2%;
@@ -703,8 +783,9 @@ body{
     letter-spacing: -1px;
     line-height: 13.367;
     color: #3F3F3F;
-  }
-  .pengolahan .nama-produk {
+}
+
+.pengolahan .nama-produk {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -715,8 +796,9 @@ body{
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
-  }
-  .pengolahan .group-627 {
+}
+
+.pengolahan .group-627 {
     white-space: nowrap;
     position: relative;
     margin: 0 15% 0% 0;
@@ -727,8 +809,9 @@ body{
     flex-grow: 1;
     flex-basis: 217px;
     box-sizing: border-box;
-  }
-  .pengolahan .agustus-2024 {
+}
+
+.pengolahan .agustus-2024 {
     left: 7%;
     position: absolute;
     overflow-wrap: break-word;
@@ -738,8 +821,9 @@ body{
     letter-spacing: -1px;
     line-height: 0.6;
     color: #3F3F3F;
-  }
-  .pengolahan .agustus-20241 {
+}
+
+.pengolahan .agustus-20241 {
     position: absolute;
     left: 7%;
     bottom: 24%;
@@ -750,8 +834,9 @@ body{
     letter-spacing: -1px;
     line-height: 11.167;
     color: #3F3F3F;
-  }
-  .pengolahan .maret-2024 {
+}
+
+.pengolahan .maret-2024 {
     position: absolute;
     left: 7%;
     bottom: 1%;
@@ -762,8 +847,9 @@ body{
     letter-spacing: -1px;
     line-height: 13.367;
     color: #3F3F3F;
-  }
-  .pengolahan .tanggal-kadaluasa {
+}
+
+.pengolahan .tanggal-kadaluasa {
     position: absolute;
     left: 40%;
     top: 0px;
@@ -775,8 +861,9 @@ body{
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
-  }
-  .pengolahan .group-629 {
+}
+
+.pengolahan .group-629 {
     white-space: nowrap;
     position: relative;
     margin: 0 5% 0 0;
@@ -784,8 +871,9 @@ body{
     flex-grow: 1;
     flex-basis: 236px;
     box-sizing: border-box;
-  }
-  .pengolahan .rectangle-2141 {
+}
+
+.pengolahan .rectangle-2141 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 90%;
     border-radius: 5px;
@@ -795,8 +883,9 @@ body{
     top: 21.5%;
     right: 0px;
     height: 4vh;
-  }
-  .pengolahan .rectangle-2151 {
+}
+
+.pengolahan .rectangle-2151 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     width: 90%;
@@ -806,8 +895,9 @@ body{
     right: 0px;
     top: 38%;
     height: 4vh;
-  }
-  .pengolahan .rectangle-216 {
+}
+
+.pengolahan .rectangle-216 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 90%;
     border-radius: 5px;
@@ -817,8 +907,9 @@ body{
     right: 0px;
     top: 55%;
     height: 4vh;
-  }
-  .pengolahan .detail {
+}
+
+.pengolahan .detail {
     position: relative;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -827,8 +918,9 @@ body{
     letter-spacing: -1px;
     line-height: 0.8;
     color: #FFFFFF;
-  }
-  .pengolahan .detail-1 {
+}
+
+.pengolahan .detail-1 {
     position: absolute;
     left: 15.2px;
     bottom: 66px;
@@ -839,8 +931,9 @@ body{
     letter-spacing: -1px;
     line-height: 11.5;
     color: #FFFFFF;
-  }
-  .pengolahan .detail-2 {
+}
+
+.pengolahan .detail-2 {
     position: absolute;
     left: 15.2px;
     bottom: 0px;
@@ -851,8 +944,9 @@ body{
     letter-spacing: -1px;
     line-height: 13.8;
     color: #FFFFFF;
-  }
-  .pengolahan .aksi {
+}
+
+.pengolahan .aksi {
     position: absolute;
     left: 15.3px;
     top: 2px;
@@ -863,8 +957,9 @@ body{
     letter-spacing: -1px;
     line-height: 3.167;
     color: #FFFFFF;
-  }
-  .pengolahan .group-630 {
+}
+
+.pengolahan .group-630 {
     border-radius: 5px;
     position: relative;
     margin-bottom: 1px;
@@ -875,8 +970,9 @@ body{
     flex-grow: 1;
     flex-basis: 80px;
     box-sizing: border-box;
-  }
-  .pengolahan .frame-611 {
+}
+
+.pengolahan .frame-611 {
     border-radius: 10px;
     position: absolute;
     left: 10%;
@@ -885,8 +981,9 @@ body{
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-  }
-  .pengolahan .tabel {
+}
+
+.pengolahan .tabel {
     height: 10vh;
     position: relative;
     display: flex;
@@ -895,15 +992,25 @@ body{
     padding: 0.2% 0 0 0;
     width: 65%;
     box-sizing: border-box;
-  }
-  .pengolahan .container-12 {
+}
+.pengolahan .container-15 {
+    margin: 0 99px 0 0px;
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.pengolahan .container-12 {
     justify-content: center;
     display: flex;
     flex-direction: row;
     width: 100%;
     box-sizing: border-box;
 }
-  .pengolahan .heading-4-ud-tani-rejo {
+
+.pengolahan .heading-4-ud-tani-rejo {
     margin-bottom: 19.1px;
     display: inline-block;
     overflow-wrap: break-word;
@@ -913,9 +1020,10 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.679;
     color: #F9F9F9;
-  }
-  .pengolahan .list-item-link-visi-dan-misi {
-    margin-right: 5px;
+}
+
+.pengolahan .list-item-link-visi-dan-misi {
+    margin-right: 1px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -923,15 +1031,17 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.434;
     color: #E1F9EC;
-  }
-  .pengolahan .container-7 {
+}
+
+.pengolahan .container-7 {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-  }
-  .pengolahan .heading-4-bisnis-kami {
+}
+
+.pengolahan .heading-4-bisnis-kami {
     margin-bottom: 19.4px;
     display: inline-block;
     overflow-wrap: break-word;
@@ -941,8 +1051,10 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.638;
     color: #F9F9F9;
-  }
-  .pengolahan .list-item-link-perkebunan {
+}
+
+.pengolahan .list-item-link-perkebunan {
+    margin: -2px 0 0 0;
     margin-right: 10.2px;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -951,18 +1063,19 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.4;
     color: #E1F9EC;
-  }
-  .pengolahan .container {
+}
+
+.pengolahan .container {
     margin-top: 0.7px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     margin: 0 63px 0 41px;
-  }
-  .pengolahan .heading-4-keberlanjutan {
-    margin-bottom: 19.1px;
-    margin-top: 20px;
+}
+
+.pengolahan .heading-4-keberlanjutan {
+    margin-bottom: 19.4px;
     display: inline-block;
     align-self: flex-start;
     overflow-wrap: break-word;
@@ -972,26 +1085,30 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.6;
     color: #F9F9F9;
-  }
-  .pengolahan .list-item-link-kebijakan-keberlanjutan {
+}
+
+.pengolahan .list-item-link-kebijakan-keberlanjutan {
+    white-space: nowrap;
+    margin: 0 71px 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13.7px;
     letter-spacing: -0.3px;
-    line-height: 1.4;
+    line-height: 1.434;
     color: #E1F9EC;
-  }
-  .pengolahan .container-11 {
-    margin-right: 106px;
-    margin-top: 0.7px;
+}
+
+.pengolahan .container-11 {
+    margin: 0 0 0 116px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
-  }
-  .pengolahan .heading-4-media-publikasi {
+}
+
+.pengolahan .heading-4-media-publikasi {
     margin-bottom: 19.1px;
-    margin-top: 20px;
     display: inline-block;
     align-self: flex-start;
     overflow-wrap: break-word;
@@ -1001,8 +1118,11 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.613;
     color: #F9F9F9;
-  }
-  .pengolahan .list-item-link-siaran-pers {
+}
+
+.pengolahan .list-item-link-siaran-pers {
+
+white-space: nowrap;
     margin-left: 0.5px;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1011,83 +1131,26 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.675;
     color: #E1F9EC;
-  }
-  .pengolahan .div-col {
-    margin-bottom: 6.1px;
+}
+
+.pengolahan .div-col {
+    margin: 0 285px 0 0;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-  }
-  .pengolahan .container-3 {
+}
+
+.pengolahan .container-3 {
     margin: 0 233.2px 7.6px 161px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 1066.8px;
     box-sizing: border-box;
-  }
-  .pengolahan .list-item-link-nilai-nilai-kami {
-    margin-right: 87px;
-    width: 321.5px;
-    overflow-wrap: break-word;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-    line-height: 1.4;
-    color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-pabrik {
-    margin-left: -381px;
-    overflow-wrap: break-word;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 13.9px;
-    letter-spacing: -0.3px;
-    line-height: 1.411;
-    color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-laporan-keberlanjutan {
-    margin: 0 74px 0 0;
-    overflow-wrap: break-word;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-    line-height: 1.4;
-    color: #E1F9EC;
-  }
-  .pengolahan .container-9 {
-    margin: -22px 493.9px 7.6px 161px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 806.1px;
-    box-sizing: border-box;
-  }
-  .pengolahan .list-item-link-kemitraan-dengan-petani {
-    margin-right: 10px;
-    width: 321.5px;
-    overflow-wrap: break-word;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-    line-height: 1.4;
-    color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-produk {
-    margin: 0 0 0 -228px;
-    overflow-wrap: break-word;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: -0.3px;
-    line-height: 1.4;
-    color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-standar-sertifikasi {
-    margin: 0 71px;
+}
+
+.pengolahan .list-item-link-nilai-nilai-kami {
+    margin: 8px 0 0 15px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1095,28 +1158,110 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.434;
     color: #E1F9EC;
-  }
-  .pengolahan .container-14 {
+}
+
+.pengolahan .list-item-link-pabrik {
+    margin-left: -381px;
+    margin: 8px 30px 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+}
+
+.pengolahan .list-item-link-laporan-keberlanjutan {
+    margin: 8px 77px 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+}
+
+.pengolahan .container-9 {
+    margin: -22px 493.9px 7.6px 161px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 806.1px;
+    box-sizing: border-box;
+}
+
+.pengolahan .list-item-link-kemitraan-dengan-petani {
+    white-space: nowrap;
+    margin: 8px 0 0 80px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+}
+
+.pengolahan .list-item-link-produk {
+    margin: 8px 26px 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+}
+
+.pengolahan .list-item-link-standar-sertifikasi {
+
+white-space: nowrap;
+    margin: 8px 0 0 -91px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+}
+
+.pengolahan .container-14 {
     margin: 0 514.4px 7.6px 161px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 785.6px;
     box-sizing: border-box;
-  }
-  .pengolahan .list-item-link-tonggak-sejarah {
-    margin-right: 10px;
-    width: 321.5px;
+}
+
+.pengolahan .list-item-link-tonggak-sejarah {
+    margin: 8px 0 0 29px;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 13.3px;
+    font-size: 13.7px;
     letter-spacing: -0.3px;
-    line-height: 1.469;
+    line-height: 1.434;
     color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-penelitian-dan-pengembangan {
-    margin: 0 0 0 -153px;
+}
+
+.pengolahan .list-item-link-penelitian-dan-pengembangan {
+    white-space: nowrap;
+    margin: 8px 0 0 118px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13.7px;
+    letter-spacing: -0.3px;
+    line-height: 1.434;
+    color: #E1F9EC;
+}
+
+.pengolahan .list-item-link-sistem-ketertelusuran {
+    margin: 8px 78px 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1124,39 +1269,31 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-sistem-ketertelusuran {
-    margin: 0 73px 0 0;
-    overflow-wrap: break-word;
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 13.9px;
-    letter-spacing: -0.3px;
-    line-height: 1.411;
-    color: #E1F9EC;
-  }
-  .pengolahan .container-4 {
+}
+
+.pengolahan .container-4 {
     margin: 0 499.1px 7.6px 161px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 800.9px;
     box-sizing: border-box;
-  }
-  .pengolahan .list-item-link-benih-topaz {
-    margin: 0 0 0 37px;
-    width: 321.5px;
+}
+
+.pengolahan .list-item-link-benih-topaz {
+    margin: 8px 4px 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
-    font-size: 13.8px;
+    font-size: 13.7px;
     letter-spacing: -0.3px;
-    line-height: 1.422;
+    line-height: 1.434;
     color: #E1F9EC;
-  }
-  .pengolahan .list-item-link-program-inisiatif {
+}
+
+.pengolahan .list-item-link-program-inisiatif {
     white-space: nowrap;
-    margin: 0 -8px 0 0;
+    margin: 8px 100px 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1164,17 +1301,19 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.411;
     color: #E1F9EC;
-  }
-  .pengolahan .container-1 {
+}
+
+.pengolahan .container-1 {
     margin: 0 192.4px 7.6px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 444.6px;
     box-sizing: border-box;
-  }
-  .pengolahan .list-item-link-pengaduan {
-    margin: 0 -18px 149.1px 94.8px;
+}
+
+.pengolahan .list-item-link-pengaduan {
+    margin: 8px 143px 0 0;
     display: inline-block;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1183,9 +1322,11 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.434;
     color: #E1F9EC;
-  }
-  .pengolahan .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
-    margin: 2.3px 11px 0 -75px;
+}
+
+.pengolahan .ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved {
+    transform: scaleY(-1);
+    margin: 2.3px 11px 0 180px;
     display: inline-block;
     width: 1148.7px;
     overflow-wrap: break-word;
@@ -1195,13 +1336,14 @@ body{
     letter-spacing: -0.3px;
     line-height: 1.76;
     color: #588157;
-    transform: scaleY(-1);
-  }
-  .pengolahan .vector {
+}
+
+.pengolahan .vector {
     width: 17.6px;
     height: 14.3px;
-  }
-  .pengolahan .list-item-link {
+}
+
+.pengolahan .list-item-link {
     margin: 2.9px 0 1.4px 0;
     display: flex;
     flex-direction: row;
@@ -1209,58 +1351,68 @@ body{
     width: 17.6px;
     height: 14.3px;
     box-sizing: border-box;
-  }
-  .pengolahan .vector-1 {
+}
+
+.pengolahan .vector-1 {
     width: 9.6px;
     height: 18.6px;
-  }
-  .pengolahan .list-item-link-1 {
+}
+
+.pengolahan .list-item-link-1 {
+    margin: 0 14px 0 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 9.6px;
     height: 18.6px;
     box-sizing: border-box;
-  }
-  .pengolahan .vector-2 {
+}
+
+.pengolahan .vector-2 {
     width: 17.1px;
     height: 16.4px;
-  }
-  .pengolahan .list-item-link-2 {
-    margin-right: 19.6px;
+}
+
+.pengolahan .list-item-link-2 {
+    margin-right: 11.6px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 17.1px;
     height: 16.4px;
     box-sizing: border-box;
-  }
-  .pengolahan .vector-3 {
+}
+
+.pengolahan .vector-3 {
     position: absolute;
     top: 0px;
     right: -0.4px;
     width: 20px;
     height: 14.1px;
-  }
-  .pengolahan .list-item-link-3 {
+}
+
+.pengolahan .list-item-link-3 {
     position: relative;
-    margin: 1.3px 0 1px 0;
+    margin: 1.3px 11px 1px 0;
     width: 19.6px;
     height: 14.1px;
-  }
-  .pengolahan .container-10 {
+}
+
+.pengolahan .container-10 {
     margin: 1.7px 0 0.5px 0;
     display: flex;
     flex-direction: row;
     width: 46.4px;
     height: fit-content;
     box-sizing: border-box;
-  }
-  .pengolahan .vector-4 {
+}
+
+.pengolahan .vector-4 {
     width: 17.1px;
     height: 17.1px;
-  }
-  .pengolahan .list-item-link-4 {
+}
+
+.pengolahan .list-item-link-4 {
     margin-top: 1.4px;
     display: flex;
     flex-direction: row;
@@ -1268,27 +1420,29 @@ body{
     width: 17.1px;
     height: 17.1px;
     box-sizing: border-box;
-  }
-  .pengolahan .container-13 {
-    margin-bottom: 5.8px;
+}
+
+.pengolahan .container-13 {
+    height: 53vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 162.7px;
-    height: fit-content;
+    width: 100%;
     box-sizing: border-box;
-  }
-  .pengolahan .divcopyright {
+}
+
+.pengolahan .divcopyright {
+    transform: scaleY(-1);
     border-top: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20.5px 0 20.2px 0;
-    width: 1020px;
-    transform: scaleY(-1);
+    width: 1535px;
     box-sizing: border-box;
-  }
-  .pengolahan .container-30 {
+}
+
+.pengolahan .container-30 {
     margin-top: 170px;
     width: 100%;
     display: flow-root;
@@ -1297,26 +1451,30 @@ body{
     height: fit-content;
     box-sizing: border-box;
 }
-  .pengolahan .divfooter-outer {
-    background: url('../img/landingpage2/divfooterOuter.png'), linear-gradient(#1B1B1B, #1B1B1B);
+
+.pengolahan .divfooter-outer {
+    margin: 0 0 0 0;
+    background: url(../img/hasilpengolahan/linkAsianagriLogoWhite2Png.png), linear-gradient(#1B1B1B, #1B1B1B);
+    background-repeat: no-repeat;
+    background-position: right -380px top 265px, 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 58.8px;
+    padding: 58.8px 0 0px 0;
     width: 100%;
     box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: right -380px top 265px ,0 0;
-  }
-  .pengolahan {
+}
+
+.pengolahan {
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-  }
-  .popup {
+}
+
+.popup {
     border-radius: 40px;
     height: 201px;
     width: 302px;
@@ -1329,55 +1487,63 @@ body{
     padding: 20px;
     border: 1px solid #ccc;
     z-index: 9999;
-  }
+}
 
-  .popup-content {
+.popup-content {
     text-align: center;
-  }
+}
 
-  .close {
+.close {
     margin: -93px 0 0 0;
     color: #aaa;
     float: right;
     font-size: 45px;
     font-weight: bold;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-  .camera-image {
+}
+
+.camera-image {
     width: 160px;
     height: 160px;
-    background-color: white; /* Mengubah warna background menjadi putih */
+    background-color: white;
+    /* Mengubah warna background menjadi putih */
     margin: -77px 0 0 0;
-  }
-  .pengolahan .kamera {
+}
+
+.pengolahan .kamera {
     font-size: 20px;
     margin: 77px 0 0 150px;
 
-  }
-  .product-table {
+}
+
+.product-table {
     width: 100%;
     border-collapse: collapse;
 
-  }
+}
 
-  .product-table th, .product-table td {
+.product-table th,
+.product-table td {
     border: 2px solid black;
     padding: 8px;
     text-align: center;
-  }
+}
 
-  .product-table th {
+.product-table th {
     height: 36px;
-    background-color: #507450; /* Mengubah warna latar belakang sel header menjadi hijau */
-    color: white; /* Mengubah warna teks menjadi putih agar lebih kontras */
-  }
-  .detail-button {
+    background-color: #507450;
+    /* Mengubah warna latar belakang sel header menjadi hijau */
+    color: white;
+    /* Mengubah warna teks menjadi putih agar lebih kontras */
+}
+
+.detail-button {
     display: inline-block;
     padding: 6px 12px;
     margin: 4px 0;
@@ -1389,21 +1555,23 @@ body{
     text-decoration: none;
     font-size: 14px;
     cursor: pointer;
-  }
+}
 
-  .detail-button:hover {
+.detail-button:hover {
     background-color: #0056b3;
     border-color: #004085;
-  }
-  .detail-link {
+}
+
+.detail-link {
     color: blue;
     text-decoration: none;
-  }
+}
 
-  .detail-link:hover {
+.detail-link:hover {
     text-decoration: underline;
-  }
-  .pengolahan .container-19 {
+}
+
+.pengolahan .container-19 {
     position: relative;
     margin: 0 0 0 72%;
     display: flex;
@@ -1411,8 +1579,9 @@ body{
     justify-content: space-between;
     width: 10%;
     box-sizing: border-box;
-  }
-  .pengolahan .link-media-publikasi-2 {
+}
+
+.pengolahan .link-media-publikasi-2 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -1420,8 +1589,9 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.145;
     color: #FFFFFF;
-  }
-  .pengolahan .link-media-publikasi-3 {
+}
+
+.pengolahan .link-media-publikasi-3 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;
@@ -1429,8 +1599,9 @@ body{
     letter-spacing: -0.4px;
     line-height: 1.145;
     color: #FFFFFF;
-  }
-  .pengolahan .container-25 {
+}
+
+.pengolahan .container-25 {
     justify-content: center;
     margin: 16px 0 0 0;
     display: flex;
@@ -1438,5 +1609,11 @@ body{
     width: 100%;
     box-sizing: border-box;
 }
-
-
+.pengolahan .container-17 {
+    margin: 0 200px 0 0;
+    margin-top: 0.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
