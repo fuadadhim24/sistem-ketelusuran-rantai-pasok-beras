@@ -25,11 +25,11 @@
                                 <div class="item-6">
                                     <span class="link-media-publikasi-2">
                                         <a style="color: white; text-decoration:none" href="{{ url('/dashboard') }}">
-                                            Dashboard
+                                            
                                         </a>
                                     </span>
                                 </div>
-                            @else
+
                                 <div class="item-6">
                                     <span class="link-media-publikasi-2">
                                         <a style="color: white; text-decoration:none" href="{{ route('login') }}">
