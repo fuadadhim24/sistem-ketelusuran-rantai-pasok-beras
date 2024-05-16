@@ -46,7 +46,7 @@ public function latestData()
             'varietas' => 'required|string',
             'deskripsi' => 'nullable|string',
             'keunggulan' => 'nullable|string',
-            'jenis_musim' => 'required|integer',
+            'jenis_musim' => 'required|string',
             'ketahanan_hama_penyakit' => 'required|string',
             'lama_tanam' => 'required|integer',
         ]);
