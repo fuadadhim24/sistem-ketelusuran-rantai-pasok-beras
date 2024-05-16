@@ -11,38 +11,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('asset/custom/css/lendingpage2.css') }}" />
 </head>
+
 <body>
     <div class="pengolahan">
         <div class="rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide">
-          <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer">
-          </div>
-            <div class="divheader-secondary-outer">
-              <div class="list-1">
-                <div class="item-link">
-                  <img class="vector-6" src="{{ asset('asset/custom/vectors2/vector2_x2.svg') }}"/>
-                </div>
-                <div class="item-link-1">
-                  <img class="vector-7" src="{{ asset('asset/custom/vectors2/vector11_x2.svg') }}"/>
-                </div>
-                <div class="item-link-2">
-                  <img class="vector-8" src="{{ asset('asset/custom/vectors2/vector7_x2.svg') }}" />
-                </div>
-                <div class="item-link-3">
-                  <img class="vector-9" src="{{ asset('asset/custom/vectors2/vector_x2.svg') }}" />
-                </div>
-                <div class="item-link-4">
-                  <img class="vector-10" src="{{ asset('asset/custom/vectors2/vector1_x2.svg') }}" />
-                </div>
-              </div>
-              <div class="list-2">
-                <a href="/"class="item-link-kunjungi-ketelsuruan-produk">
-                    Kembali Ke Halaman Utama</a>
-
-                <div class="item-link-5">
-                  <img class="vector-11" src="{{ asset('asset/custom/vectors2/vector4_x2.svg') }}" />
-                </div>
-              </div>
+            <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer">
             </div>
+            <div class="divheader-secondary-outer">
+                <div class="list-1">
+                    <div class="item-link">
+                        <img class="vector-6" src="{{ asset('asset/custom/vectors2/vector2_x2.svg') }}" />
+                    </div>
+                    <div class="item-link-1">
+                        <img class="vector-7" src="{{ asset('asset/custom/vectors2/vector11_x2.svg') }}" />
+                    </div>
+                    <div class="item-link-2">
+                        <img class="vector-8" src="{{ asset('asset/custom/vectors2/vector7_x2.svg') }}" />
+                    </div>
+                    <div class="item-link-3">
+                        <img class="vector-9" src="{{ asset('asset/custom/vectors2/vector_x2.svg') }}" />
+                    </div>
+                    <div class="item-link-4">
+                        <img class="vector-10" src="{{ asset('asset/custom/vectors2/vector1_x2.svg') }}" />
+                    </div>
+                </div>
+                <div class="list-2">
+                    <a href="/" class="item-link-kunjungi-ketelsuruan-produk">
+                    Kembali ke halaman utama
+                </a>
+
+                    <div class="item-link-5">
+                        <img class="vector-11" src="{{ asset('asset/custom/vectors2/vector4_x2.svg') }}" />
+                    </div>
+                </div>
+            </div>
+
+
             <div class="header">
                 <div class="container-25">
                     <div class="link-asianagri-logo-white-2-png">
@@ -77,16 +81,17 @@
                             @endauth
                         @endif
                         <div class="item-8">
-                            <span class="link-id">
-                              ID
-                            </span>
-                          </div>
+                            <a href="/pengolahan_en" class="link-id">
+                            EN
+                        </a>
+
+                        </div>
                     </div>
 
                 </div>
 
 
-              {{-- <div class="list">
+                {{-- <div class="list">
                 <div class="item-6">
                   <span class="link-hubungi-kami">
                     Masuk
@@ -107,79 +112,79 @@
             </div> --}}
 
 
-            <div class="container-30">
-                <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup">
-                    Riwayat Ketertelusuran Produk Beras
-                  </div>
-                  <div class="frame-633">
-                    <div class="heading-6">
-                        <div class="camera" id="camera">
+                <div class="container-30">
+                    <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup">
+                        Riwayat Ketertelusuran Produk Beras
+                    </div>
+                    <div class="frame-633">
+                        <div class="heading-6">
+                            <div class="camera" id="camera">
+                            </div>
+                            <div class="link-tentang-kami" id="link-tentang-kami">
+                                Scan QR Code Produk Beras
+                            </div>
                         </div>
-                        <div class="link-tentang-kami" id="link-tentang-kami">
-                          Scan QR Code Produk Beras
+
+                        <div class="popup" id="popup">
+                            <div class="popup-content">
+                                <span class="close" id="close">&times;</span>
+                                <div class="kamera">
+                                    Upload File
+                                </div>
+                                <div class="camera-image"></div>
+                            </div>
                         </div>
-                      </div>
+                        <script>
+                            document.getElementById('link-tentang-kami').addEventListener('click', function() {
+                                document.getElementById('popup').style.display = 'block';
+                            });
 
-                      <div class="popup" id="popup">
-                        <div class="popup-content">
-                          <span class="close" id="close">&times;</span>
-                          <div class="kamera" >
-                            Upload File
-                          </div>
-                          <div class="camera-image"></div>
-                        </div>
-                      </div>
-                      <script>
-                        document.getElementById('link-tentang-kami').addEventListener('click', function() {
-                          document.getElementById('popup').style.display = 'block';
-                        });
+                            document.getElementById('close').addEventListener('click', function() {
+                                document.getElementById('popup').style.display = 'none';
+                            });
 
-                        document.getElementById('close').addEventListener('click', function() {
-                          document.getElementById('popup').style.display = 'none';
-                        });
-
-                        document.addEventListener('click', function(event) {
-                          if (!event.target.closest('.popup') && !event.target.closest('#link-tentang-kami')) {
-                            document.getElementById('popup').style.display = 'none';
-                          }
-                        });
-                      </script>
-                  </div>
-
-                <div class="container-8">
-                  <div class="link-tentang-kami-1">
-                    atau cari berdasarkan katalog produk
-                  </div>
-                  <div class="back-arrow">
-                  </div>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="div-row-bg-wrap-2">
-            <div class="container-12">
-                <div class="kotak-pencarian">
-                  <div class="elemen-kotak-pencarian">
-                    <span class="kotak-pencarian-1">
-                      Kotak Pencarian
-                    </span>
-                  </div>
-                  <p class="masukkan-kode-produk-kemudian-klik-cari">
-                    <span class="masukkan-kode-produk-kemudian-klik-cari-sub-0"></span><span></span>
-                  </p>
-                  <div class="kotak-pencarian-2">
-                      <div>
-                          <input type="text" class="cari" placeholder="Cari" />
-                      </div>
-                      {{-- <div class="rectangle-213"></div> --}}
-                      <div class="epsearch">
-                        <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
-                      </div>
+                            document.addEventListener('click', function(event) {
+                                if (!event.target.closest('.popup') && !event.target.closest('#link-tentang-kami')) {
+                                    document.getElementById('popup').style.display = 'none';
+                                }
+                            });
+                        </script>
                     </div>
 
+                    <div class="container-8">
+                        <div class="link-tentang-kami-1">
+                            atau cari berdasarkan katalog produk
+                        </div>
+                        <div class="back-arrow">
+                        </div>
+                    </div>
+                </div>
 
-                  {{-- <div class="kotak-pencarian-2">
+
+            </div>
+            <div class="div-row-bg-wrap-2">
+                <div class="container-12">
+                    <div class="kotak-pencarian">
+                        <div class="elemen-kotak-pencarian">
+                            <span class="kotak-pencarian-1">
+                                Kotak Pencarian
+                            </span>
+                        </div>
+                        <p class="masukkan-kode-produk-kemudian-klik-cari">
+                            <span class="masukkan-kode-produk-kemudian-klik-cari-sub-0"></span><span></span>
+                        </p>
+                        <div class="kotak-pencarian-2">
+                            <div>
+                                <input type="text" class="cari" placeholder="Cari" />
+                            </div>
+                            {{-- <div class="rectangle-213"></div> --}}
+                            <div class="epsearch">
+                                <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
+                            </div>
+                        </div>
+
+
+                        {{-- <div class="kotak-pencarian-2">
                     <div class="rectangle-212">
                     </div>
                     <div class="rectangle-213">
@@ -191,8 +196,8 @@
                       Cari
                     </span>
                   </div> --}}
-                </div>
-                 {{-- <div class="tabel">
+                    </div>
+                    {{-- <div class="tabel">
                   <div class="container-2">
                     <div class="container-6">
                       <div class="rectangle-2131">
@@ -274,147 +279,300 @@
                     </div>
                   </div>
                 </div> --}}
-                <div class="tabel">
-                    <table class="product-table">
-                      <thead>
-                        <div>
-                            <tr>
-                          <th>Kode Produk</th>
-                          <th>Nama Produk</th>
-                          <th>Tanggal Kadaluarsa</th>
-                          <th>Aksi</th>
-                        </tr>
+                    <div class="tabel">
+                        <table class="product-table">
+                            <thead>
+                                <div>
+                                    <tr>
+                                        <th>Kode Produk</th>
+                                        <th>Nama Produk</th>
+                                        <th>Tanggal Kadaluarsa</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </div>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ABC123F</td>
+                                    <td>BPS Setra Ramos</td>
+                                    <td>27 Agustus 2024</td>
+                                    <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
+                                </tr>
+                                <tr>
+                                    <td>DSR23XA</td>
+                                    <td>Hariku</td>
+                                    <td>27 Agustus 2024</td>
+                                    <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
+                                </tr>
+                                <tr>
+                                    <td>XCA62ZA</td>
+                                    <td>Pawon Mas</td>
+                                    <td>11 Maret 2024</td>
+                                    <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="divfooter-outer">
+                <div class="container-13">
+                    <div class="container-11">
+                        <div class="heading-4-ud-tani-rejo">
+                            UD Tani Rejo
                         </div>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>ABC123F</td>
-                          <td>BPS Setra Ramos</td>
-                          <td>27 Agustus 2024</td>
-                          <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>DSR23XA</td>
-                          <td>Hariku</td>
-                          <td>27 Agustus 2024</td>
-                          <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>XCA62ZA</td>
-                          <td>Pawon Mas</td>
-                          <td>11 Maret 2024</td>
-                          <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                        <span class="list-item-link-visi-dan-misi">
+                            Visi dan Misi
+                        </span>
+                        <span class="list-item-link-nilai-nilai-kami">
+                            Nilai-nilai Kami
+                        </span>
+                        <span class="list-item-link-kemitraan-dengan-petani">
+                            Kemitraan Dengan Petani
+                        </span>
+                        <span class="list-item-link-tonggak-sejarah">
+                            Tonggak Sejarah
+                        </span>
+                    </div>
+                    <div class="container-15">
+                        <div class="heading-4-bisnis-kami">
+                            Bisnis Kami
+                        </div>
+                        <span class="list-item-link-perkebunan">
+                            Pertanian
+                        </span>
+                        <span class="list-item-link-pabrik">
+                            Pabrik
+                        </span>
+                        <span class="list-item-link-produk">
+                            Produk
+                        </span>
+                        <span class="list-item-link-penelitian-dan-pengembangan">
+                            Penelitian dan Pengembangan
+                        </span>
+                        <span class="list-item-link-benih-topaz">
+                            Benih Padi
+                        </span>
+                    </div>
 
-
-        </div>
-      </div>
-      <div class="divfooter-outer">
-        <div class="container-3">
-          <div class="container-7">
-            <div class="heading-4-ud-tani-rejo">
-              UD Tani Rejo
-            </div>
-            <span class="list-item-link-visi-dan-misi">
-              Visi dan Misi
-            </span>
-          </div>
-          <div class="container">
-            <div class="heading-4-bisnis-kami">
-              Bisnis Kami
-            </div>
-            <span class="list-item-link-perkebunan">
-              Pertanian
-            </span>
-          </div>
-          <div class="container-11">
-            <div class="heading-4-keberlanjutan">
-              Keberlanjutan
-            </div>
-            <span class="list-item-link-kebijakan-keberlanjutan">
-              Kebijakan Keberlanjutan
-            </span>
-          </div>
-          <div class="div-col">
-            <div class="heading-4-media-publikasi">
-              Lokasi
-            </div>
-            <span class="list-item-link-siaran-pers">
-              Alamat Lokasi
-            </span>
-          </div>
-        </div>
-        <div class="container-9">
-          <span class="list-item-link-nilai-nilai-kami">
-            Nilai-nilai Kami
-          </span>
-          <span class="list-item-link-pabrik">
-            Pabrik
-          </span>
-          <span class="list-item-link-laporan-keberlanjutan">
-            Laporan Keberlanjutan
-          </span>
-        </div>
-        <div class="container-14">
-          <span class="list-item-link-kemitraan-dengan-petani">
-            Kemitraan Dengan Petani
-          </span>
-          <span class="list-item-link-produk">
-            Produk
-          </span>
-          <span class="list-item-link-standar-sertifikasi">
-            Standar &amp; Sertifikasi
-          </span>
-        </div>
-        <div class="container-4">
-          <span class="list-item-link-tonggak-sejarah">
-            Tonggak Sejarah
-          </span>
-          <span class="list-item-link-penelitian-dan-pengembangan">
-            Penelitian dan Pengembangan
-          </span>
-          <span class="list-item-link-sistem-ketertelusuran">
-            Sistem Ketertelusuran
-          </span>
-        </div>
-        <div class="container-1">
-          <span class="list-item-link-benih-topaz">
-            Benih Padi
-          </span>
-          <span class="list-item-link-program-inisiatif">
-            Program &amp; Inisiatif
-          </span>
-        </div>
-        <div class="list-item-link-pengaduan">
-          Pengaduan
-        </div>
-        <div class="divcopyright">
-          <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
-            © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.
-          </div>
-          <div class="container-13">
-            <div class="list-item-link">
-              <img class="vector" src="{{ asset('asset/custom/vectors2/vector6_x2.svg') }}" />
-            </div>
-            <div class="list-item-link-1">
-              <img class="vector-1" src="{{ asset('asset/custom/vectors2/vector9_x2.svg') }}" />
-            </div>
-            <div class="container-10">
-              <div class="list-item-link-2">
-                <img class="vector-2" src="{{ asset('asset/custom/vectors2/vector5_x2.svg') }}" />
+                    <div class="container-17">
+                        <div class="heading-4-keberlanjutan">
+                            Keberlanjutan
+                        </div>
+                        <span class="list-item-link-kebijakan-keberlanjutan">
+                            Kebijakan Keberlanjutan
+                        </span>
+                        <span class="list-item-link-laporan-keberlanjutan">
+                            Laporan Keberlanjutan
+                        </span>
+                        <span class="list-item-link-standar-sertifikasi">
+                            Standar &amp; Sertifikasi
+                        </span>
+                        <span class="list-item-link-sistem-ketertelusuran">
+                            Sistem Ketertelusuran
+                        </span>
+                        <span class="list-item-link-program-inisiatif">
+                            Program &amp; Inisiatif
+                        </span>
+                        <span class="list-item-link-pengaduan">
+                            Pengaduan
+                        </span>
+                    </div>
+                    <div class="div-col">
+                        <div class="heading-4-media-publikasi">
+                            Lokasi
+                        </div>
+                        <span class="list-item-link-siaran-pers">
+                            Alamat Lokasi
+                        </span>
+                    </div>
+                </div>
+                <div class="container-9">
+                    {{-- <span class="list-item-link-nilai-nilai-kami">
+                  Nilai-nilai Kami
+                </span> --}}
+                    {{-- <span class="list-item-link-kemitraan-dengan-petani">
+                    Kemitraan Dengan Petani
+                  </span> --}}
+                    {{-- <span class="list-item-link-produk">
+                    Produk
+                  </span> --}}
+                    {{-- <span class="list-item-link-standar-sertifikasi">
+                    Standar &amp; Sertifikasi
+                  </span> --}}
+                    {{-- <span class="list-item-link-pabrik">
+                  Pabrik
+                </span> --}}
+                    {{-- <span class="list-item-link-laporan-keberlanjutan">
+                  Laporan Keberlanjutan
+                </span> --}}
+                </div>
+                <div class="container-7">
+                    {{-- <span class="list-item-link-kemitraan-dengan-petani">
+                  Kemitraan Dengan Petani
+                </span> --}}
+                    {{-- <span class="list-item-link-produk">
+                  Produk
+                </span>
+                <span class="list-item-link-standar-sertifikasi">
+                  Standar &amp; Sertifikasi
+                </span> --}}
+                </div>
+                <div class="container-10">
+                    {{-- <span class="list-item-link-tonggak-sejarah">
+                  Tonggak Sejarah
+                </span> --}}
+                    {{-- <span class="list-item-link-penelitian-dan-pengembangan">
+                  Penelitian dan Pengembangan
+                </span> --}}
+                    {{-- <span class="list-item-link-sistem-ketertelusuran">
+                  Sistem Ketertelusuran
+                </span> --}}
+                </div>
+                {{-- <div class="container-5"> --}}
+                {{-- <span class="list-item-link-benih-topaz">
+                  Benih Padi
+                </span> --}}
+                {{-- <span class="list-item-link-program-inisiatif">
+                  Program &amp; Inisiatif
+                </span>
               </div>
-              <div class="list-item-link-3">
-                <img class="vector-3" src="{{ asset('asset/custom/vectors2/vector12_x2.svg') }}" />
-              </div>
+              <div class="list-item-link-pengaduan">
+                Pengaduan
+              </div> --}}
+                <div class="divcopyright">
+                    <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
+                        © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.
+                    </div>
+                    <div class="container-12">
+                        <div class="list-item-link">
+                            <img class="vector" src="{{ asset('asset/custom/vectorshasilpengolahan/vector5_x2.svg') }}" />
+                        </div>
+                        <div class="list-item-link-1">
+                            <img class="vector-1"
+                                src="{{ asset('asset/custom/vectorshasilpengolahan/vector9_x2.svg') }}" />
+                        </div>
+                        <div class="list-item-link-2">
+                            <img class="vector-2"
+                                src="{{ asset('asset/custom/vectorshasilpengolahan/vector4_x2.svg') }}" />
+                        </div>
+                        <div class="list-item-link-3">
+                            <img class="vector-3"
+                                src="{{ asset('asset/custom/vectorshasilpengolahan/vector11_x2.svg') }}" />
+                        </div>
+                        <div class="list-item-link-4">
+                            <img class="vector-4"
+                                src="{{ asset('asset/custom/vectorshasilpengolahan/vector2_x2.svg') }}" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="list-item-link-4">
-              <img class="vector-4" src="{{ asset('asset/custom/vectors2/vector3_x2.svg') }}" />
-            </div>
-          </div>
-        </div>
-      </div>
+            {{-- <div class="divfooter-outer">
+                <div class="container-3">
+                    <div class="container-7">
+                        <div class="heading-4-ud-tani-rejo">
+                            UD Tani Rejo
+                        </div>
+                        <span class="list-item-link-visi-dan-misi">
+                            Visi dan Misi
+                        </span>
+                    </div>
+                    <div class="container">
+                        <div class="heading-4-bisnis-kami">
+                            Bisnis Kami
+                        </div>
+                        <span class="list-item-link-perkebunan">
+                            Pertanian
+                        </span>
+                    </div>
+                    <div class="container-11">
+                        <div class="heading-4-keberlanjutan">
+                            Keberlanjutan
+                        </div>
+                        <span class="list-item-link-kebijakan-keberlanjutan">
+                            Kebijakan Keberlanjutan
+                        </span>
+                    </div>
+                    <div class="div-col">
+                        <div class="heading-4-media-publikasi">
+                            Lokasi
+                        </div>
+                        <span class="list-item-link-siaran-pers">
+                            Alamat Lokasi
+                        </span>
+                    </div>
+                </div>
+                <div class="container-9">
+                    <span class="list-item-link-nilai-nilai-kami">
+                        Nilai-nilai Kami
+                    </span>
+                    <span class="list-item-link-pabrik">
+                        Pabrik
+                    </span>
+                    <span class="list-item-link-laporan-keberlanjutan">
+                        Laporan Keberlanjutan
+                    </span>
+                </div>
+                <div class="container-14">
+                    <span class="list-item-link-kemitraan-dengan-petani">
+                        Kemitraan Dengan Petani
+                    </span>
+                    <span class="list-item-link-produk">
+                        Produk
+                    </span>
+                    <span class="list-item-link-standar-sertifikasi">
+                        Standar &amp; Sertifikasi
+                    </span>
+                </div>
+                <div class="container-4">
+                    <span class="list-item-link-tonggak-sejarah">
+                        Tonggak Sejarah
+                    </span>
+                    <span class="list-item-link-penelitian-dan-pengembangan">
+                        Penelitian dan Pengembangan
+                    </span>
+                    <span class="list-item-link-sistem-ketertelusuran">
+                        Sistem Ketertelusuran
+                    </span>
+                </div>
+                <div class="container-1">
+                    <span class="list-item-link-benih-topaz">
+                        Benih Padi
+                    </span>
+                    <span class="list-item-link-program-inisiatif">
+                        Program &amp; Inisiatif
+                    </span>
+                </div>
+                <div class="list-item-link-pengaduan">
+                    Pengaduan
+                </div>
+                <div class="divcopyright">
+                    <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
+                        © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.
+                    </div>
+                    <div class="container-13">
+                        <div class="list-item-link">
+                            <img class="vector" src="{{ asset('asset/custom/vectors2/vector6_x2.svg') }}" />
+                        </div>
+                        <div class="list-item-link-1">
+                            <img class="vector-1" src="{{ asset('asset/custom/vectors2/vector9_x2.svg') }}" />
+                        </div>
+                        <div class="container-10">
+                            <div class="list-item-link-2">
+                                <img class="vector-2" src="{{ asset('asset/custom/vectors2/vector5_x2.svg') }}" />
+                            </div>
+                            <div class="list-item-link-3">
+                                <img class="vector-3" src="{{ asset('asset/custom/vectors2/vector12_x2.svg') }}" />
+                            </div>
+                        </div>
+                        <div class="list-item-link-4">
+                            <img class="vector-4" src="{{ asset('asset/custom/vectors2/vector3_x2.svg') }}" />
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
 </body>
+
 </html>
