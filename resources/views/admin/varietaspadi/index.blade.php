@@ -225,10 +225,11 @@
                                 <div class="form-group mb-4">
                                     <label class="my-1 me-2" for="country">Jenis Musim</label>
                                     <select name="jenis_musim" class="form-select" id="country" aria-label="Default select example">
-                                        <option value="0" selected>Hujan</option>
-                                        <option value="1">Kemarau</option>
+                                        <option value="Hujan" selected>Hujan</option>
+                                        <option value="Kemarau">Kemarau</option>
                                     </select>
                                 </div>
+
                                 <div class="form-group mb-4">
                                     <label for="ketahanan_hama_penyakit">Ketahanan Hama Penyakit</label>
                                     <input type="text" name="ketahanan_hama_penyakit" class="form-control" placeholder="cth: tahan penyakit A, B, C" id="ketahanan_hama_penyakit" required>
@@ -260,11 +261,11 @@
                             <tr>
                                 <th class="border-0">No</th>
                                 <th class="border-0">Nama Varietas</th>
-                                <th class="border-0" style="width:10%">Deskripsi</th>
-                                <th class="border-0" style="width:10%">Keunggulan</th>
+                                <th class="border-0" style="width:15%">Deskripsi</th>
+                                <th class="border-0" style="width:15%">Keunggulan</th>
                                 <th class="border-0">Jenis Musim</th>
                                 <th class="border-0">Lama Tanam</th>
-                                <th class="border-0">Ketahanan Hama Penyakit</th>
+                                <th class="border-0" style="width:20%">Ketahanan Hama Penyakit</th>
                                 <th class="border-0">Foto</th>
                                 <th class="border-0">Aksi</th>
                             </tr>
@@ -275,15 +276,13 @@
                             <tr id="row-{{ $item->id }}">
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->varietas }}</td>
-                                <td>{{ Str::limit($item->deskripsi, 50) }}</td>
-                                <td>{{ $item->keunggulan }}</td>
+                                <td class="text-justify text-wrap">{{ $item->deskripsi }}</td>
+                                <td class="text-justify text-wrap">{{ $item->keunggulan }}</td>
                                 <td>{{ $item->jenis_musim }}</td>
                                 <td>{{ $item->lama_tanam }}</td>
-                                <td>{{ $item->ketahanan_hama_penyakit }}</td>
+                                <td class="text-justify text-wrap">{{ $item->ketahanan_hama_penyakit }}</td>
                                 <td>Foto</td>
                                 <td>
-                                    <button class="btn btn-outline-warning" type="button">tampilkan</button>
-                                    <button class="btn btn-outline-gray-500" type="button" hidden>sembunyikan</button>
                                     <button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" data-id="{{ $item->id }}" data-varietas="{{ $item->varietas }}" data-deskripsi="{{ $item->deskripsi }}" data-keunggulan="{{ $item->keunggulan }}" data-jenis-musim="{{ $item->jenis_musim }}" data-lama-tanam="{{ $item->lama_tanam }}" data-ketahanan-hama-penyakit="{{ $item->ketahanan_hama_penyakit }}">Ubah</button>
                                     <button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="{{ $item->id }}">hapus</button>
                                 </td>
@@ -291,6 +290,24 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    <style>
+                        .text-wrap {
+                            white-space: normal;
+                            word-wrap: break-word;
+                            overflow-wrap: break-word;
+                        }
+
+                        .text-justify {
+                            text-align: justify;
+                        }
+
+                        td {
+                            max-width: 200px; /* Adjust as necessary */
+                            height: auto;
+                        }
+                    </style>
+
                 </div>
                 </div>
                 </div>
@@ -329,12 +346,12 @@
                                               <textarea name="keunggulan" class="form-control" placeholder="cth: hasil beras unggul;tahan terhadap penyakit;padi tinggi;" id="u-keunggulan" rows="4"></textarea>
                                           </div>
                                           <div class="form-group mb-4">
-                                              <label class="my-1 me-2" for="country">Jenis Musim</label>
-                                              <select name="jenis_musim" class="form-select" id="u-country" aria-label="Default select example">
-                                                  <option value="0" selected>Hujan</option>
-                                                  <option value="1">Kemarau</option>
-                                              </select>
-                                          </div>
+                                            <label class="my-1 me-2" for="country">Jenis Musim</label>
+                                            <select name="jenis_musim" class="form-select" id="country" aria-label="Default select example">
+                                                <option value="Hujan" selected>Hujan</option>
+                                                <option value="Kemarau">Kemarau</option>
+                                            </select>
+                                        </div>
                                           <div class="form-group mb-4">
                                               <label for="ketahanan_hama_penyakit">Ketahanan Hama Penyakit</label>
                                               <input type="text" name="ketahanan_hama_penyakit" class="form-control" placeholder="cth: tahan penyakit A, B, C" id="u-ketahanan_hama_penyakit" required>
@@ -363,128 +380,168 @@
 
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script>
-                $(document).ready(function() {
-    // Handle click event for "Ubah" button using event delegation
-    $(document).on('click', '.btn-ubah-varietas', function() {
-        var id = $(this).data('id');
-        var varietas = $(this).data('varietas');
-        var deskripsi = $(this).data('deskripsi');
-        var keunggulan = $(this).data('keunggulan');
-        var jenis_musim = $(this).data('jenis-musim');
-        var lama_tanam = $(this).data('lama-tanam');
-        var ketahanan_hama_penyakit = $(this).data('ketahanan-hama-penyakit');
+                    $(document).ready(function() {
+                        // Function to show notification
+                        function showNotification(message, type) {
+                            const notyf = new Notyf({
+                                position: {
+                                    x: 'right',
+                                    y: 'top',
+                                },
+                                types: [
+                                    {
+                                        type: type,
+                                        background: 'blue',
+                                        icon: {
+                                            className: 'fas fa-info-circle',
+                                            tagName: 'span',
+                                            color: '#fff'
+                                        },
+                                        dismissible: false
+                                    }
+                                ]
+                            });
+                            notyf.success({
+                                message: message,
+                                duration: 3000,
+                                icon: false
+                            });
+                        }
 
-        // Set values to modal fields
-        $('#u-varietas').val(varietas);
-        $('#u-deskripsi').val(deskripsi);
-        $('#u-keunggulan').val(keunggulan);
-        $('#u-country').val(jenis_musim);
-        $('#u-ketahanan_hama_penyakit').val(ketahanan_hama_penyakit);
-        $('#u-hari').val(lama_tanam);
+                        // Function to reset form fields
+                        function resetForm(form) {
+    form[0].reset(); // Reset the form using the built-in reset() method
+}
 
-        // Show modal
-        var modal = new bootstrap.Modal(document.getElementById('modal-update'));
-        modal.show();
-    });
+                        // Handle click event for "Ubah" button using event delegation
+                        $(document).on('click', '.btn-ubah-varietas', function() {
+                            var id = $(this).data('id');
+                            var varietas = $(this).data('varietas');
+                            var deskripsi = $(this).data('deskripsi');
+                            var keunggulan = $(this).data('keunggulan');
+                            var jenis_musim = $(this).data('jenis-musim');
+                            var lama_tanam = $(this).data('lama-tanam');
+                            var ketahanan_hama_penyakit = $(this).data('ketahanan-hama-penyakit');
 
-    // Handle click event for "Hapus" button using event delegation
-    $(document).on('click', '.btn-hapus-varietas', function() {
-        var varietasId = $(this).data('id'); // Get the variety ID from data-id attribute
-        if (confirm('Apakah Anda yakin ingin menghapus varietas ini?')) {
-            var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Get CSRF token
-            $.ajax({
-                type: 'DELETE',
-                url: '/hapusvarietas/' + varietasId,
-                headers: {
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                success: function(response) {
-                    console.log(response);
-                    $('#row-' + varietasId).remove(); // Remove the row from the table
-                },
-                error: function(xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        }
-    });
+                            // Set values to modal fields
+                            $('#u-varietas').val(varietas);
+                            $('#u-deskripsi').val(deskripsi);
+                            $('#u-keunggulan').val(keunggulan);
+                            $('#u-country').val(jenis_musim);
+                            $('#u-ketahanan_hama_penyakit').val(ketahanan_hama_penyakit);
+                            $('#u-hari').val(lama_tanam);
 
-    // Handle submit form untuk penambahan varietas
-    $('#varietasForm').submit(function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        var form = $(this);
-        var url = form.attr('action');
-        var method = form.attr('method');
-        var formData = form.serialize(); // Serialize the form data
+                            // Show modal
+                            var modal = new bootstrap.Modal(document.getElementById('modal-update'));
+                            modal.show();
+                        });
 
-        $.ajax({
-            type: method,
-            url: url,
-            data: formData,
-            success: function(response) {
-                console.log(response);
-                $('#modal-form-signup').modal('hide');
-                reloadContent(); // Reload the content after successful submission
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    });
+                        // Handle click event for "Hapus" button using event delegation
+                        $(document).on('click', '.btn-hapus-varietas', function() {
+                            var varietasId = $(this).data('id'); // Get the variety ID from data-id attribute
+                            if (confirm('Apakah Anda yakin ingin menghapus varietas ini?')) {
+                                var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Get CSRF token
+                                $.ajax({
+                                    type: 'DELETE',
+                                    url: '/hapusvarietas/' + varietasId,
+                                    headers: {
+                                        'X-CSRF-TOKEN': csrfToken
+                                    },
+                                    success: function(response) {
+                                        console.log(response);
+                                        $('#row-' + varietasId).remove(); // Remove the row from the table
+                                        // Show success notification
+                                        showNotification('Varietas berhasil dihapus', 'info');
+                                    },
+                                    error: function(xhr, status, error) {
+                                        console.error(error);
+                                    }
+                                });
+                            }
+                        });
 
-    // Handle submit form for update
-    $('#updateForm').submit(function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        var form = $(this);
-        var url = form.attr('action');
-        var method = form.attr('method');
-        var formData = form.serialize(); // Serialize the form data
+                        // Handle submit form untuk penambahan varietas
+                        $('#varietasForm').submit(function(e) {
+                            e.preventDefault(); // Prevent the default form submission
+                            var form = $(this);
+                            var url = form.attr('action');
+                            var method = form.attr('method');
+                            var formData = form.serialize(); // Serialize the form data
 
-        $.ajax({
-            type: method,
-            url: url,
-            data: formData,
-            success: function(response) {
-                console.log(response);
-                $('#modal-update').modal('hide'); // Hide the modal after successful submission
-                reloadContent(); // Reload the content if needed
-            },
-            error: function(xhr, status, error) {
-                console.error(error);
-            }
-        });
-    });
+                            $.ajax({
+                                type: method,
+                                url: url,
+                                data: formData,
+                                success: function(response) {
+                                    console.log(response);
+                                    $('#modal-form-signup').modal('hide');
+                                    resetForm(form); // Reset form fields
+                                    // Reload the content after successful submission
+                                    reloadContent();
+                                    // Show success notification
+                                    showNotification('Varietas berhasil ditambahkan', 'info');
+                                },
+                                error: function(xhr, status, error) {
+                                    console.error(xhr.responseText);
+                                }
+                            });
+                        });
 
-    // Function to reload content
-    function reloadContent() {
-        $.get("{{ route('reload-content-varietas') }}", function(data) {
-            var tableBody = $('#daftar-varietas tbody');
-            tableBody.empty(); // Clear the table body
+                        // Handle submit form for update
+                        $('#updateForm').submit(function(e) {
+                            e.preventDefault(); // Prevent the default form submission
+                            var form = $(this);
+                            var url = form.attr('action');
+                            var method = form.attr('method');
+                            var formData = form.serialize(); // Serialize the form data
 
-            $.each(data.padi, function(index, padi) {
-                tableBody.append(
-                    '<tr id="row-' + padi.id + '">' +
-                    '<td>' + (index + 1) + '</td>' +
-                    '<td>' + padi.varietas + '</td>' +
-                    '<td>' + padi.deskripsi + '</td>' +
-                    '<td>' + padi.keunggulan + '</td>' +
-                    '<td>' + padi.jenis_musim + '</td>' +
-                    '<td>' + padi.lama_tanam + '</td>' +
-                    '<td>' + padi.ketahanan_hama_penyakit + '</td>' +
-                    '<td>Foto</td>' +
-                    '<td>' +
-                        '<button class="btn btn-outline-warning" type="button">tampilkan</button>' +
-            '<button class="btn btn-outline-gray-500" type="button" hidden>sembunyikan</button>' +
-                    '<button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" data-id="' + padi.id + '" data-varietas="' + padi.varietas + '" data-deskripsi="' + padi.deskripsi + '" data-keunggulan="' + padi.keunggulan + '" data-jenis-musim="' + padi.jenis_musim + '" data-lama-tanam="' + padi.lama_tanam + '" data-ketahanan-hama-penyakit="' + padi.ketahanan_hama_penyakit + '">Ubah</button>' +
-                    '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' + padi.id + '">Hapus</button>' +
-                    '</td>' +
-                    '</tr>'
-                );
-            });
-        });
-    }
-});
+                            $.ajax({
+                                type: method,
+                                url: url,
+                                data: formData,
+                                success: function(response) {
+                                    console.log(response);
+                                    $('#modal-update').modal('hide'); // Hide the modal after successful submission
+                                    resetForm(form); // Reset form fields
+                                    // Reload the content if needed
+                                    reloadContent();
+                                    // Show success notification
+                                    showNotification('Varietas berhasil diperbarui', 'info');
+                                },
+                                error: function(xhr, status, error) {
+                                    console.error(error);
+                                }
+                            });
+                        });
 
+                        // Function to reload content
+                        function reloadContent() {
+                            $.get("{{ route('reload-content-varietas') }}", function(data) {
+                                var tableBody = $('#daftar-varietas tbody');
+                                tableBody.empty(); // Clear the table body
+
+                                $.each(data.padi, function(index, padi) {
+                                    tableBody.append(
+                                        '<tr id="row-' + padi.id + '">' +
+                                        '<td>' + (index + 1) + '</td>' +
+                                        '<td>' + padi.varietas + '</td>' +
+                                        '<td class="text-justify text-wrap">' + padi.deskripsi + '</td>' +
+                                        '<td class="text-justify text-wrap">' + padi.keunggulan + '</td>' +
+                                        '<td>' + padi.jenis_musim + '</td>' +
+                                        '<td>' + padi.lama_tanam + '</td>' +
+                                        '<td class="text-justify text-wrap">' + padi.ketahanan_hama_penyakit + '</td>' +
+                                        '<td>Foto</td>' +
+                                        '<td>' +
+                                        '<button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" data-id="' + padi.id + '" data-varietas="' + padi.varietas + '" data-deskripsi="' + padi.deskripsi + '" data-keunggulan="' + padi.keunggulan + '" data-jenis-musim="' + padi.jenis_musim + '" data-lama-tanam="' + padi.lama_tanam + '" data-ketahanan-hama-penyakit="' + padi.ketahanan_hama_penyakit + '">Ubah</button>' +
+                                        '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' + padi.id + '">Hapus</button>' +
+                                        '</td>' +
+                                        '</tr>'
+                                    );
+                                });
+                            });
+                        }
+                    });
                 </script>
+
 
 @endsection
