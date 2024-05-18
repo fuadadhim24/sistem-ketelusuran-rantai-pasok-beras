@@ -49,12 +49,11 @@
                     <div class="link-asianagri-logo-white-2-png">
                     </div>
                     <div class="container-19">
-                        @if (Route::has('login'))
-                            @auth
+                        {{-- @if (Route::has('login'))
+                            @auth --}}
                                 <div class="item-6">
                                     <span class="link-hubungi-kami">
                                         <a style="color: white; text-decoration:none" href="{{ url('/dashboard') }}">
-
                                         </a>
                                     </span>
                                 </div>
@@ -66,7 +65,7 @@
                                     </span>
                                 </div>
 
-                                @if (Route::has('register'))
+                                {{-- @if (Route::has('register')) --}}
                                     <div class="item-7">
                                         <span class="link-media-publikasi-3">
                                             <a style="color: white; text-decoration:none" href="{{ route('register') }}">
@@ -74,9 +73,9 @@
                                             </a>
                                         </span>
                                     </div>
-                                @endif
+                                {{-- @endif
                             @endauth
-                        @endif
+                        @endif --}}
                         <div class="item-8">
                             <a href="/pengolahan" class="link-id">
                                 ID
@@ -88,7 +87,7 @@
                 </div>
 
 
-                {{-- <div class="list">
+                 <div class="list">
                 <div class="item-6">
                   <span class="link-hubungi-kami">
                     Masuk
@@ -106,7 +105,7 @@
                 </div>
 
               </div>
-            </div> --}}
+            </div>
 
 
                 <div class="container-30">

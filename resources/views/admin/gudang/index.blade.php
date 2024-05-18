@@ -201,7 +201,7 @@
                               <h2 class="fs-5 fw-bold mb-0">Tambah Gudang</h2>
                               <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
                             </div>
-                            <div class="card-body">    
+                            <div class="card-body">
                                 <div class="mb-4">
                                   <label for="nama_gudang">Nama Gudang</label>
                                   <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" aria-describedby="namaHelp">
@@ -272,7 +272,7 @@
                                                 <button class="btn btn-outline-tertiary" type="button">ubah</button>
                                                 <button class="btn btn-outline-danger" type="button">hapus</button>
                                               </td>
-                                            </tr>  
+                                            </tr>
                                           @endforeach
 
                                         </tbody>
@@ -287,7 +287,7 @@
                         <div class="card border-0 shadow mb-2">
                           <div class="card-header">
                               <h2 class="fs-5 fw-bold mb-0">Lokasi Gudang </h2>
-                          </div>                            
+                          </div>
                         </div>
                         {{-- map lokasi --}}
                         <div class="card border-0 shadow">
@@ -307,7 +307,7 @@
               <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
               <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
                   data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
-                  data-size="large" data-show-count="true"  
+                  data-size="large" data-show-count="true"
                   aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
           </div>
           <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
@@ -362,7 +362,7 @@
       </div>
   </footer>
   {{-- mapbox script --}}
-  {{-- <script>
+   {{-- <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -375,18 +375,18 @@
     {{-- aksi lihat lokasi --}}
     <script>
       const notyf = new Notyf();
-      
+
       function toggleButtons(iteration) {
         var button1 = document.getElementById("btnLihat"+iteration);
         var button2 = document.getElementById("btnLoad"+iteration);
-      
+
         // Tampilkan button 2 dan sembunyikan button 1
         button2.removeAttribute("hidden");
         button2.removeAttribute("disabled");
-      
+
         button1.setAttribute("hidden", "true");
         button1.setAttribute("disabled", "true");
-      
+
         // Set timeout untuk kembali ke keadaan semula setelah 3 detik
         setTimeout(function() {
           // Set timeout untuk menyembunyikan notif
@@ -422,18 +422,18 @@
         }, 3000);
       }
     </script>
-    
+
     {{-- aksi lihat lokasi --}}
     <script>
-      
+
       function toggleButtonVisibleTampilkan(iteration) {
         var button1 = document.getElementById("btnTampilkan"+iteration);
         var button2 = document.getElementById("btnSembunyikan"+iteration);
-      
+
         // Tampilkan button 2 dan sembunyikan button 1
         button2.removeAttribute("hidden");
         button2.removeAttribute("disabled");
-      
+
         button1.setAttribute("hidden", "true");
         button1.setAttribute("disabled", "true");
 
@@ -461,21 +461,21 @@
           duration: 3000,
           icon: false
         });
-        
+
       }
     </script>
-    
+
     {{-- aksi lihat lokasi --}}
     <script>
-      
+
       function toggleButtonVisibleSembunyikan(iteration) {
         var button1 = document.getElementById("btnTampilkan"+iteration);
         var button2 = document.getElementById("btnSembunyikan"+iteration);
-      
+
         // Tampilkan button 2 dan sembunyikan button 1
         button1.removeAttribute("hidden");
         button1.removeAttribute("disabled");
-      
+
         button2.setAttribute("hidden", "true");
         button2.setAttribute("disabled", "true");
 
@@ -503,7 +503,7 @@
           duration: 3000,
           icon: false
         });
-        
+
       }
     </script>
 

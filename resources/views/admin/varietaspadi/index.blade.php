@@ -209,6 +209,7 @@
                                 <!-- Form -->
                                 <div class="form-group mb-4">
                                     <label for="nama">Nama Varietas</label>
+                                    {{-- <input type="text" name="id" class="form-control" placeholder="cth: Ciherang" id="id" hidden> --}}
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
                                         <input type="text" name="varietas" class="form-control" placeholder="cth: Ciherang" id="varietas" required>
@@ -274,6 +275,7 @@
                             <!-- Item -->
                             @foreach ($padi as $item)
                             <tr id="row-{{ $item->id }}">
+                                {{-- <td>{{ $item->id }}</td> --}}
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->varietas }}</td>
                                 <td class="text-justify text-wrap">{{ $item->deskripsi }}</td>
@@ -326,11 +328,13 @@
                                         <p class="mb-3">Informasi lengkap menentukan keputusan anda dalam pemilihan bibit.</p>
                                     </div>
                                     <div class="card-body p-0 pl-lg-3">
-                                      <form id="updateForm" action="{{ isset($item) ? route('update-varietas', ['id' => $item->id]) : '' }}" method="PUT">
+                                        <form id="updateForm" action="{{ isset($item) ? route('update-varietas', ['id' => $item->id ]) : '' }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <!-- Form -->
+                                            <div class="form-group mb-4">
 
-                                             @csrf
-                                          <!-- Form -->
-                                          <div class="form-group mb-4">
+                                                <input type="text" name="id" class="form-control" placeholder="cth: Ciherang" value={{ $item->id }} id="u-id">
                                               <label for="nama">Nama Varietas</label>
                                               <div class="input-group">
                                                   <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
@@ -424,6 +428,7 @@
                             var ketahanan_hama_penyakit = $(this).data('ketahanan-hama-penyakit');
 
                             // Set values to modal fields
+                            $('#u-id').val(id);
                             $('#u-varietas').val(varietas);
                             $('#u-deskripsi').val(deskripsi);
                             $('#u-keunggulan').val(keunggulan);

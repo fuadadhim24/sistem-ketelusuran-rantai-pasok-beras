@@ -20,15 +20,15 @@
                     <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer">
                     </div>
                     <div class="container-19">
-                        @if (Route::has('login'))
-                            @auth
-                                <div class="item-6">
+                        {{-- @if (Route::has('login'))
+                            @auth --}}
+                                {{-- <div class="item-6">
                                     <span class="link-media-publikasi-2">
                                         <a style="color: white; text-decoration:none" href="{{ url('/dashboard') }}">
-                                            
+
                                         </a>
                                     </span>
-                                </div>
+                                </div> --}}
                                 <div class="item-6">
                                     <span class="link-media-publikasi-2">
                                         <a style="color: white; text-decoration:none" href="{{ route('login') }}">
@@ -36,7 +36,7 @@
                                         </a>
                                     </span>
                                 </div>
-                                @if (Route::has('register'))
+                                {{-- @if (Route::has('register')) --}}
                                     <div class="item-7">
                                         <span class="link-media-publikasi-3">
                                             <a style="color: white; text-decoration:none" href="{{ route('register') }}">
@@ -44,9 +44,9 @@
                                             </a>
                                         </span>
                                     </div>
-                                @endif
+                                {{-- @endif
                             @endauth
-                        @endif
+                        @endif --}}
                         <div class="item-8">
                             <a href="/welcome_en" class="link-id">
                                 EN

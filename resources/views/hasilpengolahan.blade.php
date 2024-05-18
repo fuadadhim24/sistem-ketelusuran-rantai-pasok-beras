@@ -21,12 +21,12 @@
                     <div class="link-asianagri-logo-white-2-png">
                     </div>
                     <div class="container-19">
-                        @if (Route::has('login'))
-                            @auth
+                        {{-- @if (Route::has('login'))
+                            @auth --}}
                                 <div class="item-6">
                                     <span class="link-hubungi-kami">
                                         <a style="color:black; text-decoration:none" href="{{ url('/dashboard') }}">
-                                            
+
                                         </a>
                                     </span>
                                 </div>
@@ -37,7 +37,7 @@
                                         </a>
                                     </span>
                                 </div>
-                                @if (Route::has('register'))
+                                {{-- @if (Route::has('register')) --}}
                                     <div class="item-7">
                                         <span class="link-media-publikasi-3">
                                             <a style="color: black; text-decoration:none" href="{{ route('register') }}">
@@ -45,9 +45,9 @@
                                             </a>
                                         </span>
                                     </div>
-                                @endif
+                                {{-- @endif
                             @endauth
-                        @endif
+                        @endif --}}
                         <div class="item-8">
                             <a href="/detailpengolahan_en" class="link-id">
                                 EN
