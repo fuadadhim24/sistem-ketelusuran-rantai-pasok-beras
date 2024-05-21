@@ -170,17 +170,19 @@
                                 Kotak Pencarian
                             </span>
                         </div>
-                        <p class="masukkan-kode-produk-kemudian-klik-cari">
-                            <span class="masukkan-kode-produk-kemudian-klik-cari-sub-0"></span><span></span>
-                        </p>
+
                         <div class="kotak-pencarian-2">
-                            <div>
-                                <input type="text" class="cari" placeholder="Cari" />
+                            <form action="{{ url('pengolahan') }}" method="get">
+                            <div class="search">
+                                {{-- <input type="text" class="cari" placeholder="Cari" /> --}}
+                                <input class="from-control me-1" type="search" name="katakunci" value="{{
+                                Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
                             </div>
                             {{-- <div class="rectangle-213"></div> --}}
                             <div class="epsearch">
                                 <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
                             </div>
+                        </form>
                         </div>
 
 
@@ -279,6 +281,7 @@
                     </div>
                   </div>
                 </div> --}}
+                <div class="tabel-container">
                     <div class="tabel">
                         <table class="product-table">
                             <thead>
@@ -292,13 +295,17 @@
                                 </div>
                             </thead>
                             <tbody>
+                                @foreach ($data as $item)
                                 <tr>
-                                    <td>ABC123F</td>
-                                    <td>BPS Setra Ramos</td>
-                                    <td>27 Agustus 2024</td>
+                                    <td>{{ $item->kode_produk }}</td>
+                                    <td>{{ $item->nama_produk }}</td>
+                                    <td>{{ $item->deleted_at }}</td>
                                     <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
                                 </tr>
-                                <tr>
+
+                                @endforeach
+
+                                {{-- <tr>
                                     <td>DSR23XA</td>
                                     <td>Hariku</td>
                                     <td>27 Agustus 2024</td>
@@ -309,10 +316,12 @@
                                     <td>Pawon Mas</td>
                                     <td>11 Maret 2024</td>
                                     <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
+                        {{ $data->links() }}
                     </div>
+                </div>
 
 
                 </div>

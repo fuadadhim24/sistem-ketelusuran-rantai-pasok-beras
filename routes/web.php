@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
+use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\settingsController;
@@ -25,9 +26,9 @@ Route::get('/', function () {
 Route::get('/welcome_en', function () {
     return view('welcome_en');
 });
-Route::get('/pengolahan', function () {
-    return view('lendingpage2');
-});
+// Route::get('/pengolahan', function () {
+//     return view('lendingpage2');
+// });
 Route::get('/pengolahan_en', function () {
     return view('pengolahan_en');
 });
@@ -37,6 +38,7 @@ Route::get('/detailpengolahan', function () {
 Route::get('/detailpengolahan_en', function () {
     return view('hasilpengolahan_en');
 });
+Route::resource('/pengolahan', pengolahanController::class);
 
 
 Route::middleware([
@@ -81,5 +83,6 @@ Route::middleware([
     Route::get('/settings', [settingsController::class, 'index'])->name('settings');
 
     Route::resource('varietasPadis', VarietasPadiController::class);
+
 });
 

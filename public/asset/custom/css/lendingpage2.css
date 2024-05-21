@@ -302,6 +302,8 @@ body {
     box-sizing: border-box;
 }
 
+
+
 .pengolahan .link-hubungi-kami {
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -984,15 +986,46 @@ body {
 }
 
 .pengolahan .tabel {
+    margin: 0 52px;
+    /* justify-content: center; */
+    /* height: 10vh; */
+    position: relative;
+    display: flow-root;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2.2% 0 0 0;
+    /* width: 100%; */
+    box-sizing: border-box;
+}
+.pengolahan .search {
+    margin: 0 52px;
+    /* justify-content: center; */
+    /* height: 10vh; */
+    position: relative;
+    display: flow-root;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2.2% 0 0 0;
+    /* width: 100%; */
+    box-sizing: border-box;
+}
+.tabel-container {
+    width: 60%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px; /* Optional: adds rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+/* .pengolahan .pagination {
     height: 10vh;
     position: relative;
-    display: flex;
+    display: flow-root;
     flex-direction: row;
     justify-content: center;
     padding: 0.2% 0 0 0;
     width: 65%;
     box-sizing: border-box;
-}
+} */
 .pengolahan .container-15 {
     margin: 0 99px 0 0px;
     margin-top: 0.7px;
