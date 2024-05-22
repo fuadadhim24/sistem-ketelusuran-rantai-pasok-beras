@@ -10,9 +10,22 @@ class pengolahanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        $data=Pengolahan::orderBy('id','desc')->simplePaginate(10);
+        $katakunci=$request->katakunci;
+        $jumlahbaris=10;
+        if (strlen($katakunci)) {
+            $data=Pengolahan::where('kode_produk','like',"%$katakunci%")
+            ->orWhere('nama_produk','like',"%$katakunci%")
+            ->orWhere('deleted_at','like',"%$katakunci%")
+            ->paginate($jumlahbaris);
+
+        }else{
+            
+            $data=Pengolahan::orderBy('id','desc')->simplePaginate($jumlahbaris);
+
+        }
         return view('pengolahan')->with('data',$data);
     }
 

@@ -172,12 +172,11 @@
                         </div>
 
                         <div class="kotak-pencarian-2">
-                            <form action="{{ url('pengolahan') }}" method="get">
-                            <div class="search">
+                            <form class="search" action="{{ url('pengolahan') }}" method="get">
                                 {{-- <input type="text" class="cari" placeholder="Cari" /> --}}
-                                <input class="from-control me-1" type="search" name="katakunci" value="{{
+                                <input class="cari" type="search" name="katakunci" value="{{
                                 Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
-                            </div>
+
                             {{-- <div class="rectangle-213"></div> --}}
                             <div class="epsearch">
                                 <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />

@@ -517,9 +517,7 @@ body {
     border: 1px solid #000000;
     background: #507450;
     position: relative;
-    margin-bottom: 81px;
     padding: 10px 15px;
-    /* width: fit-content; */
     box-sizing: border-box;
 }
 
@@ -572,20 +570,19 @@ body {
 }
 
 .pengolahan .epsearch {
+    margin: 34px 0 0 207px;
     position: relative;
-    margin: 19% 7% 0% 0%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 30px;
-    height: 3vh;
+    width: 10px;
+    height: 12vh;
     box-sizing: border-box;
 }
 
 .pengolahan .cari {
-    width: 80%;
-    margin: 15% 0 0 10%;
-    height: 34px;
+    margin: 22px 0 0 0;
+    height: 51px;
     position: absolute;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -597,10 +594,7 @@ body {
 }
 
 .pengolahan .kotak-pencarian-2 {
-    position: absolute;
-    left: 6%;
-    right: 7%;
-    bottom: 33%;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -999,16 +993,14 @@ body {
 }
 .pengolahan .search {
     margin: 0 52px;
-    /* justify-content: center; */
-    /* height: 10vh; */
     position: relative;
     display: flow-root;
     flex-direction: row;
     justify-content: center;
     padding: 2.2% 0 0 0;
-    /* width: 100%; */
     box-sizing: border-box;
 }
+
 .tabel-container {
     width: 60%;
     background-color: white;
