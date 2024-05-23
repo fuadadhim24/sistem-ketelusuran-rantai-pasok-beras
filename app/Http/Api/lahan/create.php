@@ -3,7 +3,7 @@ try{
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
 
-    include "connectDb.php";
+    include "../connectDb.php";
     $nama_lahan = $POST['nama_lahan'];
     $detail_lokasi = $POST['detail_lokasi'];
     $luas = $POST['luas'];
