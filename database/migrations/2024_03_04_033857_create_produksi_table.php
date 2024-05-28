@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('sumber_benih');
             $table->dateTime('tanggal_produksi')->nullable();
             $table->dateTime('tanggal_kedaluwarsa')->nullable();
-            $table->varchar('tingkat_kemurnian')->nullable();
-            $table->varchar('tingkat_vigor')->nullable();
+            $table->string('tingkat_kemurnian')->nullable();
+            $table->string('tingkat_vigor')->nullable();
             $table->integer('jumlah_benih');
             $table->text('daftar_petani')->nullable();
             $table->text('qr_code_path')->nullable();
