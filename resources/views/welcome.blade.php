@@ -133,7 +133,7 @@
                             <div class="list-item-link-kemitraan-dengan-petani" onclick="showContent('content1', this)">
                                 Kemitraan Dengan Petani
                             </div>
-                            <span class="list-item-link-penelitian-dan-pengembangan"
+                            {{-- <span class="list-item-link-penelitian-dan-pengembangan"
                                 onclick="showContent('content2', this)">
                                 Penelitian dan Pengembangan
                             </span>
@@ -142,7 +142,7 @@
                             </div>
                             <span class="list-item-link-komitmen-keberlanjutan" onclick="showContent('content4', this)">
                                 Komitmen Keberlanjutan
-                            </span>
+                            </span> --}}
                         </div>
                         <div class="container-14">
                             <span class="heading-2-membangun-kemitraan-dengan-petani" id="heading-content">
@@ -150,9 +150,16 @@
                                 menjadi bagian penting dari bisnis kami
                             </span>
                             <div id="content1" class="content" style="display: none;">
-                                UD Tani Rejo bermitra dengan lebih dari 20 petani, membantu<br />
-                                mereka meningkatkan pendapatan dan menerapkan praktik-<br />
+                                UD Tani Rejo merupakan
+salah satu usaha pertanian yang didirikan pada tahun 2009, berlokasi di Jl.
+Tempurejo, Cangkring Baru, Cangkring, Kecamatan Jenggawah, Kabupaten
+Jember. Mitra menunjukkan antusiasnya di bidang pertanian bergerak secara aktif
+turut berperan dalam produksi dan distribusi pangan lokal ekspor berbagai varietas
+pertanian diantaranya beras dan jagung.
+                                UD Tani Rejo bermitra dengan lebih dari 20 petani, membantu
+                                mereka meningkatkan pendapatan dan menerapkan praktik-
                                 praktik berkelanjutan dalam kegiatan bertani.
+
                             </div>
                             <div id="content2" class="content" style="display: none;">
                                 Isi konten untuk Penelitian dan Pengembangan

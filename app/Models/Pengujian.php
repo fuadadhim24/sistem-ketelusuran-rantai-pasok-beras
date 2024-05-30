@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Pengujian extends Model
+{
+    use HasFactory;
+    protected $table='pengujian';
+    protected $fillable = [
+        'id',
+        'tingkat_patah',
+        'kadar_air',
+        'kadar_kerusakan',
+        'benda_asing',
+        'kadar_kapur',
+        'warna_beras',
+        'bau_rasa',
+        'keterangan',
+        'id_produksi',
+        'id_user',
+        'deleted_at',
+        'created_at',
+        'updated_at'
+    ];
+}

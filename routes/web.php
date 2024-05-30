@@ -32,9 +32,11 @@ Route::get('/welcome_en', function () {
 Route::get('/pengolahan_en', function () {
     return view('pengolahan_en');
 });
-Route::get('/detailpengolahan', function () {
-    return view('hasilpengolahan');
-});
+// Route::get('/detailpengolahan', function () {
+//     return view('hasilpengolahan');
+// });
+Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'detail']);
+
 Route::get('/detailpengolahan_en', function () {
     return view('hasilpengolahan_en');
 });

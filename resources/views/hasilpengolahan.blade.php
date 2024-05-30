@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/custom/css/hasilpengolahan.css') }}" />
 </head>
 
@@ -114,27 +115,33 @@
           </div> --}}
             <div class="rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide-1">
                 <div class="group-636">
-                    <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
-                        Detail Ketertelusuran
-                    </span>
+
+
                     <div class="container-14">
                         <div class="frame-632">
                             <div class="group-624">
+                                <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                    PRODUK
+                                </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-                                    Kode Ketertelusuran
+                                    Nama
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
-                                    Tanggal Ketertelusuran
+                                    Kode Produk
                                 </span>
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                    Status
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
+                                    Foto
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-16">
+                                    Harga
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
-                                    Jenis Ketertelusuran
+                                    Deskripsi
                                 </span>
                                 <a href="/pengolahan" class="frame-609">
                                     <div class="group-625">
@@ -157,27 +164,81 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    : Selesai Diolah
+                                    <img alt="Image placeholder"
+                                                src="{{ asset('asset\img\produk\3.png') }}"
+                                                class="avatar-md rounded"
+                                                >
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
+                                    : 20.000
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
+                                    : Padi yang berkualitas tinggi
+                                </span>
+                            </div>
+                            <div class="group-633">
+                                <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                    VARIETAS PADI
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                    Nama Varietas
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                    Karakteristik Beras
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                    Jenis Musim
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                    Kategori
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                    Lama Tanam
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                    Selengkapnya
+                                </span>
+
+                            </div>
+                            <div class="group-634">
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                    : IPR00002313
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                    : 17 November 2023
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19">
+                                    : <span class="badge bg-warning text-dark">kemarau</span>
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                    : 17 November 2023
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                    : 17 November 2023
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13">
-                                    : 1. Pemecahan Kulit<br />
-                                    {{-- <span class="separasi-1">
-                            2.Separasi
-                        </span> --}}
-                                    &nbsp;&nbsp;2. Separasi<br />
-                                    &nbsp;&nbsp;3.Penyosohan<br />
-                                    &nbsp;&nbsp;4.Grading<br />
-                                    &nbsp;&nbsp;5.Pengemasan<br />
-                                    &nbsp;&nbsp;6.Lainnya ( Pengeringan (60°C) - Pecah Kulit - Separasi - Penyosohan -
-                                    Grading - Sortasi - Pengemasan)
+                                    :lainya
                                 </span>
                             </div>
-                            <div class="container-15">
+                            {{-- <div class="container-15">
                                 <div
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6">
                                     Daftar Bahan Ketertelusuran
-                                </div>
+                                </div> --}}
                                 {{-- <div class="tabel-2">
                           <div class="rectangle-2091">
                           </div>
@@ -207,7 +268,7 @@
                           <div class="rectangle-2061">
                           </div>
                         </div> --}}
-                                <div class="tabel-2">
+                                {{-- <div class="tabel-2">
                                     <table class="product-table">
                                         <thead>
                                             <tr>
@@ -225,9 +286,9 @@
                                             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
 
-                            </div>
+                            {{-- </div> --}}
                         </div>
 
                     </div>
@@ -302,6 +363,177 @@
                 </div>
               </div>
             </div> --}}
+            <div class="group-636">
+
+
+                <div class="container-14">
+                    <div class="frame-632">
+                        <div class="group-624">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                PRODUK
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Nama
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Kode Produk
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
+                                Foto
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-16">
+                                Harga
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                Deskripsi
+                            </span>
+                           
+                        </div>
+                        <div class="group-635">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                <img alt="Image placeholder"
+                                            src="{{ asset('asset\img\produk\3.png') }}"
+                                            class="avatar-md rounded"
+                                            >
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
+                                : 20.000
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
+                                : Padi yang berkualitas tinggi
+                            </span>
+                        </div>
+                        <div class="group-633">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                VARIETAS PADI
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Nama Varietas
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Karakteristik Beras
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                Jenis Musim
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                Kategori
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                Lama Tanam
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                Selengkapnya
+                            </span>
+
+                        </div>
+                        <div class="group-634">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19">
+                                : <span class="badge bg-warning text-dark">kemarau</span>
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13">
+                                :lainya
+                            </span>
+                        </div>
+                        {{-- <div class="container-15">
+                            <div
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6">
+                                Daftar Bahan Ketertelusuran
+                            </div> --}}
+                            {{-- <div class="tabel-2">
+                      <div class="rectangle-2091">
+                      </div>
+                      <div class="rectangle-2043">
+                      </div>
+                      <div class="rectangle-2071">
+                      </div>
+                      <span class="no">
+                        No
+                      </span>
+                      <span class="no-1">
+                        1
+                      </span>
+
+                      <span class="ciherang-1">
+                        Ciherang
+                      </span>
+                      <span class="kg-1">
+                        1200 Kg
+                      </span>
+                      <span class="varietas-1">
+                        Varietas
+                      </span>
+                      <span class="kuantitas-1">
+                        Kuantitas
+                      </span>
+                      <div class="rectangle-2061">
+                      </div>
+                    </div> --}}
+                            {{-- <div class="tabel-2">
+                                <table class="product-table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Varietas</th>
+                                            <th>Kuantitas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ciherang</td>
+                                            <td>1200 Kg</td>
+                                        </tr>
+                                        <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+                                    </tbody>
+                                </table>
+                            </div> --}}
+
+                        {{-- </div> --}}
+                    </div>
+
+                </div>
+            </div>
                 <div class="container-1">
                     <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-1">
                         Daftar Hasil Ketertelusuran
@@ -320,17 +552,27 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+                                {{-- @if(is_object($data) && $data->count() > 0) --}}
+                                @foreach ($data as $item)
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{$data->nama_produk}}</td>
+                                        <td>CXBA02D</td>
+                                        <td>High Density Polyethylene (HDPE)</td>
+                                        <td>235 Pcs</td>
+                                        <td>17 November 2023</td>
+                                        <td>
+                                            <a href="#" class="qr-code-link">Lihat QR Code</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            {{-- @else
                                 <tr>
-                                    <td>1</td>
-                                    <td>BPS Setra Ramos</td>
-                                    <td>CXBA02D</td>
-                                    <td>High Density Polyethylene (HDPE)</td>
-                                    <td>235 Pcs</td>
-                                    <td>17 November 2023</td>
-                                    <td>
-                                        <a href="#" class="qr-code-link">Lihat QR Code</a>
-                                    </td>
+                                    <td colspan="7">Tidak ada data</td>
                                 </tr>
+                            @endif --}}
+
                                 <!-- Tambahkan baris lainnya sesuai kebutuhan -->
                             </tbody>
                         </table>
@@ -430,7 +672,7 @@
             </div>
 
         </div>
-       
+
         <div class="divfooter-outer">
             <div class="container-13">
                 <div class="container-11">
