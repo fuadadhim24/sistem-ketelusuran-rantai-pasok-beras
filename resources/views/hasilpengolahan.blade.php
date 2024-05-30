@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('asset/custom/css/hasilpengolahan.css') }}" />
 </head>
 
@@ -370,29 +370,26 @@
                     <div class="frame-632">
                         <div class="group-624">
                             <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
-                                PRODUK
+                                PRODUKSI
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-                                Nama
+                                Kode Produksi
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
-                                Kode Produk
+                                Tanggal Produksi
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
-                                Foto
+                                Detail Produksi
                             </span>
                             <span
-                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-16">
-                                Harga
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                QR Code
                             </span>
-                            <span
-                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
-                                Deskripsi
-                            </span>
-                           
+
+
                         </div>
                         <div class="group-635">
                             <span
@@ -404,40 +401,38 @@
                                 : 17 November 2023
                             </span>
                             <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                : 20.000
+                            </span>
+                            <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
                                 <img alt="Image placeholder"
                                             src="{{ asset('asset\img\produk\3.png') }}"
                                             class="avatar-md rounded"
                                             >
                             </span>
-                            <span
-                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
-                                : 20.000
-                            </span>
-                            <span
-                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
-                                : Padi yang berkualitas tinggi
-                            </span>
+
+
                         </div>
                         <div class="group-633">
                             <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
-                                VARIETAS PADI
+                                PANEN
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-                                Nama Varietas
+                                Kode Panen
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
-                                Karakteristik Beras
+                                Kuantitas
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                Jenis Musim
+                                Metode Panen
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                Kategori
+                                Pasca Panen
                             </span>
                             <span
                                 class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
@@ -853,4 +848,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('volt/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('volt/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 </body>
