@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('quantity');//hasil panen
             $table->string('metode_panen');
-            $table->string('pasca_panen');
+            $table->text('catatan');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('id_produksi')->nullable();

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('jenis_perawatan');
             $table->string('nama_perawatan');
             $table->float('jumlah');
-            $table->float('kebutuhan');
+            $table->string('kebutuhan');
+            $table->dateTime('tanggal_perawatan');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('id_produksi')->nullable();

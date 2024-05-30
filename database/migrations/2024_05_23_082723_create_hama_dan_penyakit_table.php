@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('padi', function (Blueprint $table) {
+        Schema::create('hama_dan_penyakit', function (Blueprint $table) {
             $table->id();
-            $table->string('varietas');
-            $table->string('kategori');
+            $table->string('nama');
             $table->text('deskripsi');
-            $table->string('karakteristik_hasil');
-            $table->string('keunggulan');
-            $table->string('jenis_musim');
-            $table->string('lama_tanam');
-            $table->string('ketahanan_hama_penyakit');
+            $table->string('penanggulangan');
+            $table->string('gambar_path')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('padi');
+        Schema::dropIfExists('hama_dan_penyakit');
     }
 };
