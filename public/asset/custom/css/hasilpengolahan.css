@@ -974,6 +974,7 @@ body {
 }
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5 {
+    white-space: nowrap;
     align-self: flex-start;
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -995,6 +996,7 @@ body {
 }
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8 {
+    margin: 63px 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1011,11 +1013,52 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-self: flex-start;
-    width: 25%;
+    width: 20%;
+    box-sizing: border-box;
+}
+.hasil-pengolahan .group-633 {
+    margin: 0 0 0 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 20%;
     box-sizing: border-box;
 }
 
+
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13 {
+    margin: 13px 0 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.583;
+    color: #3F3F3F;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.583;
+    color: #3F3F3F;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20 {
+    margin: 19px 0 0 0;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 1.583;
+    color: #3F3F3F;
+}
+
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15 {
+    margin: 30px 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1031,6 +1074,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-self: flex-start;
+    box-sizing: border-box;
+    position: relative;
+}
+.hasil-pengolahan .group-634 {
+    gap: 3px;
+    width: 40%;
+    margin: 0 0 0 57px;
+    display: flex;
+    flex-direction: column;
     align-self: flex-start;
     box-sizing: border-box;
     position: relative;
@@ -1109,8 +1162,53 @@ body {
     line-height: 3.167;
     color: #3F3F3F;
 }
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19 {
+
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11 img {
+    width: 200px;
+
+    margin: 30px 0 0 0;
+}
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+}
+
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-16 {
+
+    margin: 173px 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
@@ -1131,8 +1229,8 @@ body {
 }
 
 .hasil-pengolahan .frame-632 {
+    width: 100%;
     position: relative;
-    margin-right: 7%;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
@@ -1289,7 +1387,6 @@ body {
 .hasil-pengolahan .container-14 {
     display: flex;
     flex-direction: row;
-    width: fit-content;
     box-sizing: border-box;
 }
 

@@ -286,9 +286,9 @@
                             <thead>
                                 <div>
                                     <tr>
-                                        <th>Kode Produk</th>
-                                        <th>Nama Produk</th>
-                                        <th>Tanggal Kadaluarsa</th>
+                                        <th>Id Produksi</th>
+                                        {{-- <th>Nama Produk</th> --}}
+                                        <th>Tanggal Produksi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </div>
@@ -296,10 +296,10 @@
                             <tbody>
                                 @foreach ($data as $item)
                                 <tr>
-                                    <td>{{ $item->kode_produk }}</td>
-                                    <td>{{ $item->nama_produk }}</td>
-                                    <td>{{ $item->deleted_at }}</td>
-                                    <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->tanggal_produksi }}</td>
+                                    {{-- <td>{{ $item->produksi ? $item->produksi->tanggal_kedaluwarsa : 'Tidak ada data'}}</td> --}}
+                                    <td><a href="/detailpengolahan/{{ $item->id }}" class="detail-button">Detail</a></td>
                                 </tr>
 
                                 @endforeach
