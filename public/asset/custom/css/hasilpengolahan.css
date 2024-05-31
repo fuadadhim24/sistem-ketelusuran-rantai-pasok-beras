@@ -891,6 +891,19 @@ body {
     width: 94%;
     box-sizing: border-box;
 }
+.hasil-pengolahan .container-18 {
+    height: fit-content;
+    margin: 4% 0 0 0;
+    border-radius: 13px;
+    background: #EEEEEE;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2% 2% 0 2%;
+    width: 94%;
+    box-sizing: border-box;
+}
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-2 {
 
@@ -994,9 +1007,28 @@ body {
     line-height: 3.167;
     color: #1B1B1B;
 }
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+}
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8 {
-    margin: 63px 0 0 0;
+    margin: 55px 0 0 0;
+
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 4.2;
+    color: #3F3F3F;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-24 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
@@ -1025,6 +1057,33 @@ body {
     width: 20%;
     box-sizing: border-box;
 }
+.hasil-pengolahan .group-637 {
+    margin: 0 0 0 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 20%;
+    box-sizing: border-box;
+}
+.hasil-pengolahan .group-640 {
+    margin: 0 0 0 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 20%;
+    box-sizing: border-box;
+}
+.hasil-pengolahan .group-641 {
+    margin: 0 0 0 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 23%;
+    box-sizing: border-box;
+}
 
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13 {
@@ -1047,13 +1106,12 @@ body {
     color: #3F3F3F;
 }
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20 {
-    margin: 19px 0 0 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 18px;
     letter-spacing: -1px;
-    line-height: 1.583;
+    line-height: 4.2;
     color: #3F3F3F;
 }
 
@@ -1132,13 +1190,12 @@ body {
 }
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9 {
-
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 18px;
     letter-spacing: -1px;
-    line-height: 3.167;
+    line-height: 2.5;
     color: #3F3F3F;
 }
 
@@ -1159,7 +1216,18 @@ body {
     font-weight: 400;
     font-size: 18px;
     letter-spacing: -1px;
-    line-height: 3.167;
+    line-height: 2.2;
+    color: #3F3F3F;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26 {
+    margin: 0 0 35px 0;
+
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 2.2;
     color: #3F3F3F;
 }
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19 {
@@ -1172,10 +1240,21 @@ body {
     line-height: 3.167;
     color: #3F3F3F;
 }
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22 {
+
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #3F3F3F;
+}
+
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11 img {
     width: 200px;
 
-    margin: 30px 0 0 0;
+    margin: 2% 0 10% 0;
 }
 
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12 {
@@ -1188,6 +1267,16 @@ body {
     color: #1B1B1B;
 }
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 3.167;
+    color: #1B1B1B;
+}
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-25 {
+    margin: 0 0 18px 0;
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 700;
@@ -1391,6 +1480,42 @@ body {
 }
 
 .hasil-pengolahan .group-636 {
+    width: 94%;
+    border-radius: 13px;
+    background: #EEEEEE;
+    left: 3%;
+    margin-top: 2%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0% 0 1.3%;
+    box-sizing: border-box;
+}
+.hasil-pengolahan .group-642 {
+    width: 94%;
+    border-radius: 13px;
+    background: #EEEEEE;
+    left: 3%;
+    margin-top: 2%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0% 0 1.3%;
+    box-sizing: border-box;
+}
+.hasil-pengolahan .group-644 {
+    width: 94%;
+    border-radius: 13px;
+    background: #EEEEEE;
+    left: 3%;
+    margin-top: 2%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0% 0 1.3%;
+    box-sizing: border-box;
+}
+.hasil-pengolahan .group-643 {
     width: 94%;
     border-radius: 13px;
     background: #EEEEEE;
