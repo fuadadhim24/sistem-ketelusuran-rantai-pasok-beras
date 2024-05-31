@@ -23,29 +23,29 @@
                     <div class="container-19">
                         {{-- @if (Route::has('login'))
                             @auth --}}
-                                <div class="item-6">
-                                    <span class="link-hubungi-kami">
-                                        <a style="color:black; text-decoration:none" href="{{ url('/dashboard') }}">
+                        <div class="item-6">
+                            <span class="link-hubungi-kami">
+                                <a style="color:black; text-decoration:none" href="{{ url('/dashboard') }}">
 
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="item-6">
-                                    <span class="link-media-publikasi-2">
-                                        <a style="color: black; text-decoration:none" href="{{ route('login') }}">
-                                            Login
-                                        </a>
-                                    </span>
-                                </div>
-                                {{-- @if (Route::has('register')) --}}
-                                    <div class="item-7">
-                                        <span class="link-media-publikasi-3">
-                                            <a style="color: black; text-decoration:none" href="{{ route('register') }}">
-                                                Register
-                                            </a>
-                                        </span>
-                                    </div>
-                                {{-- @endif
+                                </a>
+                            </span>
+                        </div>
+                        <div class="item-6">
+                            <span class="link-media-publikasi-2">
+                                <a style="color: black; text-decoration:none" href="{{ route('login') }}">
+                                    Login
+                                </a>
+                            </span>
+                        </div>
+                        {{-- @if (Route::has('register')) --}}
+                        <div class="item-7">
+                            <span class="link-media-publikasi-3">
+                                <a style="color: black; text-decoration:none" href="{{ route('register') }}">
+                                    Register
+                                </a>
+                            </span>
+                        </div>
+                        {{-- @endif
                             @endauth
                         @endif --}}
                         <div class="item-8">
@@ -611,4 +611,9 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Core -->
+    <script src="{{ asset('volt/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('volt/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 </body>
