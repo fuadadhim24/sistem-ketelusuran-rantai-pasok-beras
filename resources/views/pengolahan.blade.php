@@ -172,114 +172,23 @@
                         </div>
 
                         <div class="kotak-pencarian-2">
-                            <form class="search" action="{{ url('pengolahan') }}" method="get">
+                            <div class="epsearch">
+                                <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
+                            </div>
+                            <form  action="{{ url('pengolahan') }}" method="get">
                                 {{-- <input type="text" class="cari" placeholder="Cari" /> --}}
                                 <input class="cari" type="search" name="katakunci" value="{{
                                 Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
 
                             {{-- <div class="rectangle-213"></div> --}}
-                            <div class="epsearch">
-                                <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
-                            </div>
+
                         </form>
                         </div>
 
 
-                        {{-- <div class="kotak-pencarian-2">
-                    <div class="rectangle-212">
-                    </div>
-                    <div class="rectangle-213">
-                    </div>
-                    <div class="epsearch">
-                      <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
-                    </div>
-                    <span class="cari">
-                      Cari
-                    </span>
-                  </div> --}}
-                    </div>
-                    {{-- <div class="tabel">
-                  <div class="container-2">
-                    <div class="container-6">
-                      <div class="rectangle-2131">
-                      </div>
-                    </div>
-                    <div class="rectangle-215">
-                    </div>
-                  </div>
-                  <div class="rectangle-214">
-                  </div>
-                  <div class="rectangle-204">
-                  </div>
-                  <div class="frame-611">
-                    <div class="frame-626">
-                      <span class="kode-produk">
-                        Kode Produk
-                      </span>
-                      <span class="z">
-                        ABC123F
-                      </span>
-                      <span class="z-1">
-                        DSR23XA
-                      </span>
-                      <span class="z-2">
-                        XCA62ZA
-                      </span>
-                    </div>
-                    <div class="group-627">
-                      <span class="bps-setra-ramos">
-                        BPS Setra Ramos
-                      </span>
-                      <span class="hariku">
-                        Hariku
-                      </span>
-                      <span class="pawon-mas">
-                        Pawon Mas
-                      </span>
-                      <span class="nama-produk">
-                        Nama Produk
-                      </span>
-                    </div>
-                    <div class="group-629">
-                      <span class="agustus-2024">
-                        27 Agustus 2024
-                      </span>
-                      <span class="agustus-20241">
-                        27 Agustus 2024
-                      </span>
-                      <span class="maret-2024">
-                        11 Maret 2024
-                      </span>
-                      <span class="tanggal-kadaluasa">
-                        Tanggal Kadaluarsa
-                      </span>
-                    </div>
-                    <div class="group-630">
-                      <a href="/detailpengolahan" class="rectangle-2141">
-                          <!-- Konten di dalam tautan -->
-                      </a>
-                      <a href="/detailpengolahan" class="rectangle-2151">
-                          <!-- Konten di dalam tautan -->
-                      </a>
-                      <a href="/detailpengolahan" class="rectangle-216">
-                          <!-- Konten di dalam tautan -->
-                      </a>
 
-                      <span class="detail">
-                        Detail
-                      </span>
-                      <span class="detail-1">
-                        Detail
-                      </span>
-                      <span class="detail-2">
-                        Detail
-                      </span>
-                      <span class="aksi">
-                        Aksi
-                      </span>
                     </div>
-                  </div>
-                </div> --}}
+
                 <div class="tabel-container">
                     <div class="tabel">
                         <table class="product-table">
@@ -287,7 +196,7 @@
                                 <div>
                                     <tr>
                                         <th>Id Produksi</th>
-                                        {{-- <th>Nama Produk</th> --}}
+
                                         <th>Tanggal Produksi</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -299,23 +208,12 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->tanggal_produksi }}</td>
                                     {{-- <td>{{ $item->produksi ? $item->produksi->tanggal_kedaluwarsa : 'Tidak ada data'}}</td> --}}
-                                    <td><a href="/detailpengolahan/{{ $item->id }}" class="detail-button">Detail</a></td>
+                                    <td><a href="/pengolahan/{{ $item->id }}" class="detail-button">Detail</a></td>
                                 </tr>
 
                                 @endforeach
 
-                                {{-- <tr>
-                                    <td>DSR23XA</td>
-                                    <td>Hariku</td>
-                                    <td>27 Agustus 2024</td>
-                                    <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td>XCA62ZA</td>
-                                    <td>Pawon Mas</td>
-                                    <td>11 Maret 2024</td>
-                                    <td><a href="/detailpengolahan" class="detail-button">Detail</a></td>
-                                </tr> --}}
+
                             </tbody>
                         </table>
                         {{ $data->links() }}

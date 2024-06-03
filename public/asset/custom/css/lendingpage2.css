@@ -513,6 +513,7 @@ body {
 }
 
 .pengolahan .elemen-kotak-pencarian {
+
     border-radius: 10px;
     border: 1px solid #000000;
     background: #507450;
@@ -565,23 +566,22 @@ body {
 }
 
 .pengolahan .vector-12 {
-    width: 300%;
-    height: 3vh;
+    width: 60%;
+
 }
 
 .pengolahan .epsearch {
-    margin: 34px 0 0 207px;
+    margin: 8px 0 0 0;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 10px;
-    height: 12vh;
+
     box-sizing: border-box;
 }
 
 .pengolahan .cari {
-    margin: 22px 0 0 0;
+
     height: 51px;
     position: absolute;
     overflow-wrap: break-word;
@@ -594,10 +594,10 @@ body {
 }
 
 .pengolahan .kotak-pencarian-2 {
+    padding: 33px 0 0 0;
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding-right: 14px;
     box-sizing: border-box;
 }
@@ -992,7 +992,7 @@ body {
     box-sizing: border-box;
 }
 .pengolahan .search {
-    margin: 0 52px;
+    margin: 0 5%;
     position: relative;
     display: flow-root;
     flex-direction: row;

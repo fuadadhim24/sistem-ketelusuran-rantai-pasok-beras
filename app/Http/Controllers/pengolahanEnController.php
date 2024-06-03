@@ -1,19 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Pengolahan;
 use App\Models\Produksi;
-use App\Models\Produk;
+
 use Illuminate\Http\Request;
 
-class pengolahanController extends Controller
+class pengolahanEnController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
-
     {
         $katakunci=$request->get('katakunci');
         // dd($katakunci);
@@ -25,15 +22,17 @@ class pengolahanController extends Controller
             // ->orWhere('deleted_at','like',"%$katakunci%")
             ->paginate($jumlahbaris);
 
+
         }else{
 
             $data=Produksi::query()->simplePaginate($jumlahbaris);
+
             // $data=Produk::with('produksi')->simplePaginate($jumlahbaris);
 
         }
 
 
-        return view('pengolahan',compact('data'));
+        return view('pengolahan_en',compact('data'));
     }
     // public function detail($id){
     //     // $data = Produk::with('produksi')->find($id);
@@ -42,7 +41,7 @@ class pengolahanController extends Controller
     //         return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produk tidak ditemukan']);
     //     }
 
-    //     return view('hasilpengolahan')->with('data', $data);
+    //     return view('hasilpengolahan_en')->with('data', $data);
     // }
 
 
@@ -69,10 +68,10 @@ class pengolahanController extends Controller
     {
         $produksi= Produksi::with('produk')->find($id);
         if (!$produksi) {
-            return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
+            return redirect()->route('pengolahan_en.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
         }
 
-        return view('hasilpengolahan', compact('produksi'));
+        return view('hasilpengolahan_en', compact('produksi'));
     }
 
     /**

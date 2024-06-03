@@ -3,6 +3,7 @@
 use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
 use App\Http\Controllers\pengolahanController;
+use App\Http\Controllers\pengolahanEnController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\settingsController;
@@ -29,18 +30,21 @@ Route::get('/welcome_en', function () {
 // Route::get('/pengolahan', function () {
 //     return view('lendingpage2');
 // });
-Route::get('/pengolahan_en', function () {
-    return view('pengolahan_en');
-});
+// Route::get('/pengolahan_en', function () {
+//     return view('pengolahan_en');
+// });
 // Route::get('/detailpengolahan', function () {
 //     return view('hasilpengolahan');
 // });
 Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'detail']);
+Route::get('/detailpengolahan_en/{id}', [pengolahanEnController::class, 'detail']);
 
-Route::get('/detailpengolahan_en', function () {
-    return view('hasilpengolahan_en');
-});
+// Route::get('/detailpengolahan_en', function () {
+//     return view('hasilpengolahan_en');
+// });
 Route::resource('/pengolahan', pengolahanController::class);
+Route::resource('/pengolahan_en', pengolahanEnController::class);
+
 
 
 Route::middleware([
