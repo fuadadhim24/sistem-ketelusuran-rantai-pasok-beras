@@ -1028,6 +1028,17 @@ body {
     line-height: 4.2;
     color: #3F3F3F;
 }
+.hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27 {
+    margin: -10px 0 0 0;
+
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 4.2;
+    color: #3F3F3F;
+}
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-24 {
     overflow-wrap: break-word;
     font-family: 'Inter';
@@ -1066,15 +1077,7 @@ body {
     width: 20%;
     box-sizing: border-box;
 }
-.hasil-pengolahan .group-640 {
-    margin: 0 0 0 40px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    width: 20%;
-    box-sizing: border-box;
-}
+
 .hasil-pengolahan .group-641 {
     margin: 0 0 0 40px;
     position: relative;
@@ -1138,6 +1141,16 @@ body {
 }
 .hasil-pengolahan .group-634 {
     gap: 3px;
+    width: 40%;
+    margin: 0 0 0 57px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    box-sizing: border-box;
+    position: relative;
+}
+.hasil-pengolahan .group-640 {
+    gap: 1px;
     width: 40%;
     margin: 0 0 0 57px;
     display: flex;
@@ -1504,6 +1517,7 @@ body {
     box-sizing: border-box;
 }
 .hasil-pengolahan .group-644 {
+    margin-bottom: 8%;
     width: 94%;
     border-radius: 13px;
     background: #EEEEEE;
@@ -2263,6 +2277,15 @@ input.cari .hasil-pengolahan .container-5 {
     box-sizing: border-box;
 }
 .hasil-pengolahan .link-media-publikasi-2 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.145;
+    color: #FFFFFF;
+}
+.hasil-pengolahan .link-media-publikasi-3 {
     overflow-wrap: break-word;
     font-family: 'Inter';
     font-weight: 500;

@@ -10,6 +10,19 @@ class Produk extends Model
     use HasFactory;
     // protected $fillable=['id','id_produksi','kode_produk','nama_produk','deleted_at'];
     protected $table='produk';
+    protected $fillable=[
+        'id_produksi',
+        'kode_produk',
+        'nama_produk',
+        'jumlah_unit',
+        'foto',
+        'harga',
+        'deskripsi',
+        'deleted_at',
+        'created_at',
+        'updated_at',
+
+    ];
 
     public function produksi(){
         return $this->belongsTo(Produksi::class,'id_produksi','id');

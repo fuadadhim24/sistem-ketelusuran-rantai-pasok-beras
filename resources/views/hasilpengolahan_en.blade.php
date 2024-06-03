@@ -24,35 +24,35 @@
                     <div class="container-19">
                         {{-- @if (Route::has('login'))
                             @auth --}}
-                        <div class="item-6">
-                            <span class="link-hubungi-kami">
-                                <a style="color:black; text-decoration:none" href="{{ url('/dashboard') }}">
+                                <div class="item-6">
+                                    <span class="link-hubungi-kami">
+                                        <a style="color:black; text-decoration:none" href="{{ url('/dashboard') }}">
 
-                                </a>
-                            </span>
-                        </div>
-                        <div class="item-6">
-                            <span class="link-media-publikasi-2">
-                                <a style="color: black; text-decoration:none" href="{{ route('login') }}">
-                                    Login
-                                </a>
-                            </span>
-                        </div>
-                        {{-- @if (Route::has('register')) --}}
-                        <div class="item-7">
-                            <span class="link-media-publikasi-3">
-                                <a style="color: black; text-decoration:none" href="{{ route('register') }}">
-                                    Register
-                                </a>
-                            </span>
-                        </div>
-                        {{-- @endif
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="item-6">
+                                    <span class="link-media-publikasi-2">
+                                        <a style="color: black; text-decoration:none" href="{{ route('login') }}">
+                                            Masuk
+                                        </a>
+                                    </span>
+                                </div>
+                                {{-- @if (Route::has('register')) --}}
+                                    <div class="item-7">
+                                        <span class="link-media-publikasi-3">
+                                            <a style="color: black; text-decoration:none" href="{{ route('register') }}">
+                                                Daftar
+                                            </a>
+                                        </span>
+                                    </div>
+                                {{-- @endif
                             @endauth
                         @endif --}}
                         <div class="item-8">
-                            <a href="/detailpengolahan"class="link-id">
+                            {{-- <a href="//detailpengolahan/{id}" class="link-id">
                                 ID
-                            </a>
+                            </a> --}}
 
                         </div>
                     </div>
@@ -80,7 +80,7 @@
             </div> --}}
             </div>
             <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup">
-                Rice Product Traceability History
+                Riwayat Ketertelusuran Produk Beras
             </div>
             {{-- <div class="container-2">
             <div class="rectangle-204">
@@ -115,29 +115,33 @@
           </div> --}}
             <div class="rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide-1">
                 <div class="group-636">
-                    <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
-                        Traceability Details
-                    </span>
                     <div class="container-14">
                         <div class="frame-632">
                             <div class="group-624">
+                                <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                    PRODUK
+                                </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-                                    Traceability Code
+                                    Nama
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
-                                    Date of Traceability
+                                    Kode Produk
                                 </span>
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                    Status
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
+                                    Foto
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-16">
+                                    Harga
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
-                                    Type of Traceability
+                                    Deskripsi
                                 </span>
-                                <a href="/pengolahan_en" class="frame-609">
+                                <a href="/pengolahan" class="frame-609">
                                     <div class="group-625">
                                         <div class="back">
                                         </div>
@@ -146,9 +150,71 @@
                                         </div>
                                     </div>
                                 </a>
-
                             </div>
                             <div class="group-635">
+                                @foreach ($produksi ->produk as $produk )
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                    <th width="30px">:</th>
+                                    <th>{{$produk->nama_produk}}</th>
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                    <th width="30px">:</th>
+                                    <th>{{$produk->kode_produk}}</th>
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                    <img alt="Image placeholder"
+                                                src="{{ asset('asset\img\produk\3.png') }}"
+                                                class="avatar-md rounded"
+                                                >
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
+                                    <th width="30px">:</th>
+                                    <th>{{$produk->harga}}</th>
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
+                                    <th width="30px">:</th>
+                                    <th>{{$produk->deskripsi}}</th>
+                                </span>
+
+                                @endforeach
+
+                            </div>
+                            <div class="group-633">
+                                <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                    VARIETAS PADI
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                    Nama Varietas
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                    Karakteristik Beras
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                    Kategori
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                    Jenis Musim
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                    Lama Tanam
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
+                                    Selengkapnya
+                                </span>
+
+                            </div>
+                            <div class="group-634">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     : IPR00002313
@@ -158,28 +224,64 @@
                                     : 17 November 2023
                                 </span>
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    : Selesai Diolah
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19">
+                                    : <span class="badge bg-warning text-dark">kemarau</span>
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                    : 17 November 2023
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                    : 17 November 2023
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13">
-                                    : 1. Pemecahan Kulit<br />
-                                    {{-- <span class="separasi-1">
-                            2.Separasi
-                        </span> --}}
-                                    &nbsp;&nbsp;2. Separasi<br />
-                                    &nbsp;&nbsp;3.Penyosohan<br />
-                                    &nbsp;&nbsp;4.Grading<br />
-                                    &nbsp;&nbsp;5.Pengemasan<br />
-                                    &nbsp;&nbsp;6.Lainnya ( Pengeringan (60°C) - Pecah Kulit - Separasi - Penyosohan -
-                                    Grading - Sortasi - Pengemasan)
+                                    <div class="accordion" id="accordionPricing">
+                                        <div class="accordion-item">
+                                          <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Keunggulan
+                                            </button>
+                                          </h2>
+                                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPricing">
+                                            <div class="accordion-body">
+                                                At Themesberg, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow. We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                          <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Deskripsi
+                                            </button>
+                                          </h2>
+                                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPricing">
+                                            <div class="accordion-body">
+                                                At Themesberg, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow. We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                          <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Ketahanan Haman dan Penyakit
+                                            </button>
+                                          </h2>
+                                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionPricing">
+                                            <div class="accordion-body">
+                                                At Themesberg, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow. We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
                                 </span>
                             </div>
-                            <div class="container-15">
+                            {{-- <div class="container-15">
                                 <div
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6">
-                                    List of Traceability Materials
-                                </div>
+                                    Daftar Bahan Ketertelusuran
+                                </div> --}}
                                 {{-- <div class="tabel-2">
                           <div class="rectangle-2091">
                           </div>
@@ -209,13 +311,13 @@
                           <div class="rectangle-2061">
                           </div>
                         </div> --}}
-                                <div class="tabel-2">
+                                {{-- <div class="tabel-2">
                                     <table class="product-table">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Varieties</th>
-                                                <th>Quantity</th>
+                                                <th>Varietas</th>
+                                                <th>Kuantitas</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -227,9 +329,9 @@
                                             <!-- Tambahkan baris lainnya sesuai kebutuhan -->
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
 
-                            </div>
+                            {{-- </div> --}}
                         </div>
 
                     </div>
@@ -304,134 +406,447 @@
                 </div>
               </div>
             </div> --}}
-                <div class="container-1">
-                    <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-1">
-                        List of Traceability Results
-                    </span>
-                    <div class="tabel">
-                        <table class="product-table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Product Name</th>
-                                    <th>Production Code</th>
-                                    <th>Packaging</th>
-                                    <th>Quantity</th>
-                                    <th>Packaging Date</th>
-                                    <th>QR Code</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>BPS Setra Ramos</td>
-                                    <td>CXBA02D</td>
-                                    <td>High Density Polyethylene (HDPE)</td>
-                                    <td>235 Pcs</td>
-                                    <td>17 November 2023</td>
-                                    <td>
-                                        <a href="#" class="qr-code-link">Lihat QR Code</a>
-                                    </td>
-                                </tr>
-                                <!-- Tambahkan baris lainnya sesuai kebutuhan -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="group-642">
 
-                {{-- <div class="container-16">
-                <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-2">
-                    Daftar Hasil Pengujian
-                  </span>
-              <div class="tabel-1">
-                <div class="rectangle-2111">
+
+                <div class="container-14">
+                    <div class="frame-632">
+                        <div class="group-624">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                PRODUKSI
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Kode Produksi
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Tanggal Produksi
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
+                                Detail Produksi
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                QR Code
+                            </span>
+
+
+                        </div>
+                        <div class="group-635">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                : <button type="button" class="btn btn-block btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Detail</button>
+                                <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="h6 modal-title">Detail Produksi</h2>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            {{-- <div class="modal-body">
+                                                <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                                                <p>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+                                                    soon as possible of high-risk data breaches that could personally affect them.</p>
+                                            </div> --}}
+                                            <div class="frame-632">
+                                                <div class="group-641">
+
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23">
+                                                        Sumber Benih
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                                        Tingkat Kemurnian
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                                        Tingkat Vigor
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                                        Jumlah Benih
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                                        Daftar Petani
+                                                    </span>
+
+
+                                                </div>
+                                                <div class="group-640">
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27">
+                                                        : IPR00002313
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                                        : 17 November 2023
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                                        : 10%
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                                        :15%
+                                                    </span>
+                                                    <span
+                                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                                        : 100
+                                                    </span>
+                                                    <span
+                                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                                    :ini
+                                                </span>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                {{-- <button type="button" class="btn btn-secondary">Accept</button> --}}
+                                                <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                <img alt="Image placeholder"
+                                            src="{{ asset('asset\img\produk\3.png') }}"
+                                            class="avatar-md rounded"
+                                            >
+                            </span>
+
+
+                        </div>
+                        <div class="group-637">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                PANEN
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Kode Panen
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Kuantitas
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                Metode Panen
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
+                                Pasca Panen
+                            </span>
+
+
+                        </div>
+                        <div class="group-634">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
+                                : Dipotong
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+
+                        </div>
+                    </div>
+
                 </div>
-                <div class="rectangle-2042">
-                </div>
-                <div class="frame-6111">
-                  <div class="group-6261">
-                    <span class="no" style="
-                    font-weight:700;
-                    font-size: 16px;
-                    color: white;
-                    margin: 30px 0 0px 0;">
+            </div>
+            <div class="group-643">
+
+
+                <div class="container-14">
+                    <div class="frame-632">
+                        <div class="group-624">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                LAHAN PENANAMAN
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Nama Lahan
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Detail Lokasi
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-25">
+                                Luas
+                            </span>
+
+
+
+                        </div>
+                        <div class="group-635">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                :20 Hektar
+                            </span>
+
+
+
+                        </div>
+                        <div class="group-637">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                MAP
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+
+                            </span>
+
+
+
+                        </div>
+                        <div class="group-634">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                {{-- : IPR00002313 --}}
+                            </span>
+
+
+                        </div>
+                        {{-- <div class="container-15">
+                            <div
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6">
+                                Daftar Bahan Ketertelusuran
+                            </div> --}}
+                            {{-- <div class="tabel-2">
+                      <div class="rectangle-2091">
+                      </div>
+                      <div class="rectangle-2043">
+                      </div>
+                      <div class="rectangle-2071">
+                      </div>
+                      <span class="no">
                         No
                       </span>
-                      <span class="container-3">
+                      <span class="no-1">
                         1
                       </span>
-                  </div>
-                  <div class="group-6271">
-                    <span class="tanggal-pengujian">
-                      Tanggal Pengujian
-                    </span>
-                    <span class="bps-setra-ramos-1">
-                      BPS Setra Ramos
-                    </span>
-                  </div>
-                  <div class="group-6291">
-                    <span class="tanggal-kadaluarsa">
-                      Tanggal Kadaluarsa
-                    </span>
-                    <span class="desember-2023">
-                      11 Desember 2023
-                    </span>
-                  </div>
-                  <div class="group-6301">
-                    <span class="mutu">
-                      Mutu
-                    </span>
-                    <span class="premium">
-                      Premium
-                    </span>
-                  </div>
-                  <div class="frame-631">
-                    <div class="detail">
-                      Detail
-                    </div>
-                    <div class="group-638">
-                      <div class="rectangle-2141">
-                      </div>
-                      <span class="detail-1">
-                        Detail
+
+                      <span class="ciherang-1">
+                        Ciherang
                       </span>
+                      <span class="kg-1">
+                        1200 Kg
+                      </span>
+                      <span class="varietas-1">
+                        Varietas
+                      </span>
+                      <span class="kuantitas-1">
+                        Kuantitas
+                      </span>
+                      <div class="rectangle-2061">
+                      </div>
+                    </div> --}}
+                            {{-- <div class="tabel-2">
+                                <table class="product-table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Varietas</th>
+                                            <th>Kuantitas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ciherang</td>
+                                            <td>1200 Kg</td>
+                                        </tr>
+                                        <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+                                    </tbody>
+                                </table>
+                            </div> --}}
+
+                        {{-- </div> --}}
                     </div>
-                  </div>
+
                 </div>
-              </div>
-            </div> --}}
-                <div class="container-16">
-                    <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-2">
-                        List of Testing Results
-                    </span>
-                    <div class="tabel-1">
-                        <table class="product-table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Product Name</th>
-                                    <th>Expiration Date</th>
-                                    <th>Quality</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>BPS Setra Ramos</td>
-                                    <td>11 Desember 2023</td>
-                                    <td>Premium</td>
-                                    <td><a href="#" class="detail-button">Detail</a></td>
-                                </tr>
-                                <!-- Tambahkan baris lainnya sesuai kebutuhan -->
-                            </tbody>
-                        </table>
+            </div>
+
+            <div class="container-18">
+                <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-2">
+                    PERAWATAN
+                </span>
+                <div class="tabel-1">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Jenis Perawatan</th>
+                                <th>Nama Perwatan</th>
+                                <th>Jumlah</th>
+                                <th>Kebutuhan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>BPS Setra Ramos</td>
+                                <td>11 Desember 2023</td>
+                                <td>3</td>
+                                <td>isi</td>
+                            </tr>
+                            <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="group-644">
+
+
+                <div class="container-14">
+                    <div class="frame-632">
+                        <div class="group-624">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                PENGUJIAN
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Tingkat Patah
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Kadar Air
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
+                                Kadar Kerusakan
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                Benda Asing
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                Benda Kapur
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                Warna Beras
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                Bau Rasa
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                Keterangan
+                            </span>
+
+
+                        </div>
+                        <div class="group-635">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                : 10%
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                :15%
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                : 10%
+                            </span>
+                            <span
+                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                            :15%
+                        </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                : 10%
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
+                                :Dilengkapi
+                            </span>
+
+                        </div>
+                        <div class="group-637">
+                            <span class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                PENGOLAHAN
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
+                                Hasil Penggilingan
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                Kemasan
+                            </span>
+
+
+
+                        </div>
+                        <div class="group-634">
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                : IPR00002313
+                            </span>
+                            <span
+                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                : 17 November 2023
+                            </span>
+
+
+                        </div>
+                       
                     </div>
+
                 </div>
+            </div>
+
+
+
 
             </div>
 
         </div>
+
         <div class="divfooter-outer">
             <div class="container-13">
                 <div class="container-11">
@@ -604,7 +1019,7 @@
             </div>
             <div class="list-1">
                 <span class="item-link-kunjungi-ketelsuruan-produk">
-                    Visit Product Traceability
+                    Kunjungi Ketertelusuran Produk
                 </span>
                 <div class="item-link-5">
                     <img class="vector-10" src="{{ asset('asset/custom/vectorshasilpengolahan/vector6_x2.svg') }}" />
