@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('foto');
             $table->string('harga');
             $table->text('deskripsi');
+            $table->unsignedBigInteger('id_produksi')->nullable();
             $table->foreign('id_produksi')->references('id')->on('produksi')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();

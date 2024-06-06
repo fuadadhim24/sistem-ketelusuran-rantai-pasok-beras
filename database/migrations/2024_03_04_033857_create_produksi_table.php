@@ -16,15 +16,9 @@ return new class extends Migration
             $table->string('sumber_benih');
             $table->dateTime('tanggal_produksi')->nullable();
             $table->dateTime('tanggal_kedaluwarsa')->nullable();
-<<<<<<< Updated upstream
-            $table->string('tingkat_kemurnian')->nullable();
-            $table->string('tingkat_vigor')->nullable();
-            $table->integer('jumlah_benih');
-=======
             $table->integer('tingkat_kemurnian')->nullable();
             $table->integer('tingkat_vigor')->nullable();
             $table->integer('jumlah_benih')->nullable();
->>>>>>> Stashed changes
             $table->text('daftar_petani')->nullable();
             $table->text('qr_code_path')->nullable();
             $table->dateTime('tanggal_penyemaian')->nullable();
