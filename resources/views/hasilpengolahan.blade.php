@@ -461,21 +461,23 @@
 
                             </div>
                             <div class="group-635">
+                                {{-- @foreach ($produksi->lahan as $lahan) --}}
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    : IPR00002313
+                                    <th width="30px">:</th>
+                                    <th>{{ $produksi->lahan->nama_lahan}}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    : 17 November 2023
+                                    <th width="30px">:</th>
+                                    <th>{{ $produksi->lahan->detail_lokasi}}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    :20 Hektar
+                                    <th width="30px">:</th>
+                                    <th>{{ $produksi->lahan->luas}}</th>
                                 </span>
-
-
-
+                                {{-- @endforeach --}}
                             </div>
                             <div class="group-637">
                                 <span
