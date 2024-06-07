@@ -33,5 +33,11 @@ class Produksi extends Model
     public function produk(){
         return $this->hasMany(Produk::class,'id_produksi','id');
     }
+    public function varietasPadi(){
+        return $this->belongsTo(VarietasPadi::class,'id_padi', 'id');
+    }
+    // public function varietasPadi(){
+    //     return $this->hasMany(VarietasPadi::class,'id_produksi','id');
+    // }
 
 }

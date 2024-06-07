@@ -23,4 +23,14 @@ class VarietasPadi extends Model
         'created_at',
         'updated_at'
     ];
+
+    // public function produksi(){
+    //     return $this->belongsTo(Produksi::class,'id_produksi', 'id');
+    // }
+    public function produksi(){
+        return $this->hasOne(Produksi::class,'id_padi', 'id');
+    }
+    public function detailPengolahan($id){
+        return DB::table('produk')->where('id',$id)->first();
+    }
 }
