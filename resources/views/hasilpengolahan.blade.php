@@ -404,22 +404,30 @@
 
                             </div>
                             <div class="group-634">
+                                @foreach ($produksi->panen as $panen)
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    : IPR00002313
+                                    <th width="30px">:</th>
+                                    <th>{{ $panen->id }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    : 17 November 2023
+                                    <th width="30px">:</th>
+                                    <th>{{ $panen->quantity }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
-                                    : Dipotong
+                                    <th width="30px">:</th>
+                                    <th>{{ $panen->metode_panen }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    : 17 November 2023
+                                    <th width="30px">:</th>
+                                    <th>{{ $panen->pasca_panen }}</th>
                                 </span>
+                                @endforeach
+
+
 
                             </div>
                         </div>
