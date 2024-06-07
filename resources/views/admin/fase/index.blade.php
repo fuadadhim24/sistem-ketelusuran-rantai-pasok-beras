@@ -224,21 +224,21 @@
                         </div>
                         <div class="card border-0 shadow">
                             <div class="card-body" id="daftar-fase">
-                                @foreach($fasesku as $fase)
-                                <div id="faseItem{{ $fase->id }}" class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
+                                @foreach($fase as $fase)
+                                <div id="faseItem{{ isset($fase->id) }}" class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
                                     <div>
                                         <div class="h6 mb-0 d-flex align-items-center">
-                                            {{ $fase->nama_fase }}
+                                            {{ isset($fase->nama_fase) }}
                                         </div>
                                     </div>
                                     <div class="d-flex">
                                         <a href="{{ route('perlakuan') }}" class="d-flex align-items-center fw-bold me-2">
                                             <img src="{{ asset('asset/img/admin/view.png') }}" alt="View" class="icon icon-xs text-gray-500">
                                         </a>
-                                        <a class="d-flex align-items-center fw-bold me-2" data-bs-toggle="modal" data-bs-target="#modal-form-signup-{{ $fase->id }}">
+                                        <a class="d-flex align-items-center fw-bold me-2" data-bs-toggle="modal" data-bs-target="#modal-form-signup-{{ isset($fase->id) }}">
                                             <img src="{{ asset('asset/img/admin/note.png') }}" alt="Edit" class="icon icon-xs text-gray-500">
                                         </a>
-                                        <a href="javascript:void(0)" class="d-flex align-items-center fw-bold" onclick="confirmDelete({{ $fase->id }})">
+                                        <a href="javascript:void(0)" class="d-flex align-items-center fw-bold" onclick="confirmDelete({{ isset($fase->id) }})">
                                             <img src="{{ asset('asset/img/admin/delete.png') }}" alt="Delete" class="icon icon-xs text-gray-500">
                                         </a>
                                     </div>
@@ -246,7 +246,7 @@
 
 
                                 <!-- Modal Content -->
-                                <div class="modal fade" id="modal-form-signup-{{ $fase->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+                                <div class="modal fade" id="modal-form-signup-{{ isset($fase->id) }}" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-body p-0">
@@ -256,21 +256,21 @@
                                                         <h2 class="mb-2 h5">Edit Informasi Fase</h2>
                                                     </div>
                                                     <div class="card-body p-0 pl-lg-3">
-                                                        <form method="POST" action="{{ route('update-fase', ['id' => $fase->id]) }}">
+                                                        <form method="POST" action="{{ route('update-fase', ['id' => isset($fase->id)]) }}">
                                                             @csrf
                                                             <!-- Form -->
                                                             <div class="form-group mb-4">
                                                                 <label for="nama">Nama Fase</label>
                                                                 <div class="input-group">
                                                                     <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                                                    <input type="text" class="form-control" placeholder="cth: Berikan pupuk hari ini" name="nama_fase" value="{{ $fase->nama_fase }}" id="nama" required>
+                                                                    <input type="text" class="form-control" placeholder="cth: Berikan pupuk hari ini" name="nama_fase" value="{{ isset($fase->nama_fase) }}" id="nama" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group mb-4">
                                                                 <label for="durasi">Durasi</label>
                                                                 <div class="input-group">
                                                                     <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
-                                                                    <input type="text" class="form-control" placeholder="berlangsungnya perlakuan. cth: 10" name="durasi" id="durasi" value="{{ $fase->durasi }}" required>
+                                                                    <input type="text" class="form-control" placeholder="berlangsungnya perlakuan. cth: 10" name="durasi" id="durasi" value="{{ isset($fase->durasi) }}" required>
                                                                 </div>
                                                             </div>
                                                             <!-- End of Form -->
@@ -394,7 +394,7 @@
                     },
                     success: function(response) {
                         alert('Data berhasil disimpan');
-                        $('#daftar-fase').append('<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' + namaFase + '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => $fase->id]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>');
+                        $('#daftar-fase').append('<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' + namaFase + '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => isset($fase->id)]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => isset($fase->id)]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>');
                         $('#nama_fase').val('');
                         $('#durasi').val('');
                     },

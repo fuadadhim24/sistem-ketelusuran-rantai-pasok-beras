@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +13,9 @@ class VarietasPadi extends Model
     protected $fillable = [
         'id',
         'varietas',
+        'kategori', // Added new column
         'deskripsi',
+        'karakteristik_hasil', // Updated column name
         'keunggulan',
         'jenis_musim',
         'lama_tanam',
