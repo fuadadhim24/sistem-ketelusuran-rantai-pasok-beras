@@ -461,7 +461,6 @@
 
                             </div>
                             <div class="group-635">
-                                {{-- @foreach ($produksi->lahan as $lahan) --}}
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     <th width="30px">:</th>
@@ -477,7 +476,6 @@
                                     <th width="30px">:</th>
                                     <th>{{ $produksi->lahan->luas}}</th>
                                 </span>
-                                {{-- @endforeach --}}
                             </div>
                             <div class="group-637">
                                 <span
@@ -500,61 +498,7 @@
 
 
                             </div>
-                            {{-- <div class="container-15">
-                            <div
-                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6">
-                                Daftar Bahan Ketertelusuran
-                            </div> --}}
-                            {{-- <div class="tabel-2">
-                      <div class="rectangle-2091">
-                      </div>
-                      <div class="rectangle-2043">
-                      </div>
-                      <div class="rectangle-2071">
-                      </div>
-                      <span class="no">
-                        No
-                      </span>
-                      <span class="no-1">
-                        1
-                      </span>
 
-                      <span class="ciherang-1">
-                        Ciherang
-                      </span>
-                      <span class="kg-1">
-                        1200 Kg
-                      </span>
-                      <span class="varietas-1">
-                        Varietas
-                      </span>
-                      <span class="kuantitas-1">
-                        Kuantitas
-                      </span>
-                      <div class="rectangle-2061">
-                      </div>
-                    </div> --}}
-                            {{-- <div class="tabel-2">
-                                <table class="product-table">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Varietas</th>
-                                            <th>Kuantitas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Ciherang</td>
-                                            <td>1200 Kg</td>
-                                        </tr>
-                                        <!-- Tambahkan baris lainnya sesuai kebutuhan -->
-                                    </tbody>
-                                </table>
-                            </div> --}}
-
-                            {{-- </div> --}}
                         </div>
 
                     </div>
@@ -568,6 +512,7 @@
                         <table class="product-table">
                             <thead>
                                 <tr>
+
                                     <th>No</th>
                                     <th>Jenis Perawatan</th>
                                     <th>Nama Perwatan</th>
@@ -577,11 +522,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>BPS Setra Ramos</td>
-                                    <td>11 Desember 2023</td>
-                                    <td>3</td>
-                                    <td>isi</td>
+                                    @foreach ($produksi->perawatan as $perawatan)
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $perawatan->jenis_perawatan}}</td>
+                                    <td>{{ $perawatan->nama_perawatan}}</td>
+                                    <td>{{ $perawatan->jumlah}}</td>
+                                    <td>{{ $perawatan->kebutuhan}}</td>
+                                    @endforeach
+
                                 </tr>
                                 <!-- Tambahkan baris lainnya sesuai kebutuhan -->
                             </tbody>

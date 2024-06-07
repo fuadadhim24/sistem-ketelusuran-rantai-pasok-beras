@@ -42,5 +42,8 @@ class Produksi extends Model
     public function panen(){
         return $this->hasMany(Panen::class,'id_produksi','id');
     }
+    public function perawatan(){
+        return $this->hasMany(Perawatan::class,'id_produksi','id');
+    }
 
 }
