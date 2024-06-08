@@ -650,15 +650,18 @@
 
                             </div>
                             <div class="group-634">
+                                @foreach ($produksi->pengolahan as $pengolahan)
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    : IPR00002313
+                                    <th width="30px">:</th>
+                                    <th>{{$pengolahan->hasil_penggilingan}}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    : 17 November 2023
+                                    <th width="30px">:</th>
+                                    <th>{{$pengolahan->kemasan}}</th>
                                 </span>
-
+                                @endforeach
 
                             </div>
 
