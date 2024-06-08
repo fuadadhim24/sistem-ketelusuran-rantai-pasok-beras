@@ -12,7 +12,7 @@ class Pengujian extends Model
     protected $fillable = [
         'id',
         'tingkat_patah',
-        'kadar_air',
+        'kadar_Air',
         'kadar_kerusakan',
         'benda_asing',
         'kadar_kapur',
@@ -25,4 +25,10 @@ class Pengujian extends Model
         'created_at',
         'updated_at'
     ];
+    public function produksi(){
+        return $this->belongsTo(Produksi::class,'id_produksi','id');
+    }
+    public function detailPengolahan($id){
+        return DB::table('produk')->where('id',$id)->first();
+    }
 }

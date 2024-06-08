@@ -67,7 +67,7 @@ class pengolahanController extends Controller
      */
     public function show(string $id)
     {
-        $produksi= Produksi::with('produk','varietasPadi','panen','lahan','perawatan')->find($id);
+        $produksi= Produksi::with('produk','varietasPadi','panen','lahan','perawatan','pengujian')->find($id);
         if (!$produksi) {
             return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
         }

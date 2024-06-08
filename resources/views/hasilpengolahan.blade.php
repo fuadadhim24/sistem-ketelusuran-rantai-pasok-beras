@@ -564,7 +564,7 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
-                                    Benda Kapur
+                                    Kadar Kapur
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
@@ -582,38 +582,55 @@
 
                             </div>
                             <div class="group-635">
+                                @foreach ($produksi->pengujian as $pengujian)
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    : IPR00002313
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->tingkat_patah}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    : 17 November 2023
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->kadar_Air}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    : 10%
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->kadar_kerusakan}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    :15%
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->benda_asing}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    : 10%
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->kadar_Kapur}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    :15%
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->warna_beras}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    : 10%
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->bau_rasa}}</th>
+                                    <th width="30px">%</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
-                                    :Dilengkapi
+                                    <th width="30px">:</th>
+                                    <th>{{$pengujian->keterangan}}</th>
                                 </span>
+                                @endforeach
 
                             </div>
                             <div class="group-637">
