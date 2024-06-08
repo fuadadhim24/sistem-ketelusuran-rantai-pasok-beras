@@ -6,8 +6,8 @@ class faseController extends Controller
 {
     public function index()
     {
-        $fasesku = Fase::all();
-        return view('admin.fase.index', ['fasesku' => $fasesku]);
+        $fase = Fase::all();
+        return view('admin.fase.index', ['fase' => $fase]);
     }
     function tambahView(){
         return view('admin.fase.perlakuan.index');

@@ -8,18 +8,18 @@ use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\DB;
 
-
 class VarietasPadiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-{
-    $padi = VarietasPadi::all();
-    return view("admin/varietasPadi/index", compact("padi"));
-}
-public function latestData()
+    {
+        $padi = VarietasPadi::all();
+        return view("admin/varietasPadi/index", compact("padi"));
+    }
+
+    public function latestData()
     {
         // Ambil data terbaru dari model Varietas
         $latestData = VarietasPadi::latest()->get();
@@ -33,18 +33,22 @@ public function latestData()
         $varietas = VarietasPadi::findOrFail($id);
         return view('edit-varietas', compact('varietas'));
     }
+
     public function show($id)
-{
-    $item = VarietasPadi::findOrFail($id);
-    return view('update-varietas', compact('item'));
-}
+    {
+        $item = VarietasPadi::findOrFail($id);
+        return view('update-varietas', compact('item'));
+    }
+
     public function update(Request $request, $id)
     {
         $varietas = VarietasPadi::findOrFail($id);
 
         $request->validate([
             'varietas' => 'required|string',
+            'kategori' => 'nullable|string', // New validation rule for kategori
             'deskripsi' => 'nullable|string',
+            'karakteristik_hasil' => 'nullable|string', // New validation rule for karakteristik_hasil
             'keunggulan' => 'nullable|string',
             'jenis_musim' => 'required|string',
             'ketahanan_hama_penyakit' => 'required|string',
@@ -53,7 +57,9 @@ public function latestData()
 
         $varietas->update([
             'varietas' => $request->varietas,
+            'kategori' => $request->kategori, // New column
             'deskripsi' => $request->deskripsi,
+            'karakteristik_hasil' => $request->karakteristik_hasil, // New column
             'keunggulan' => $request->keunggulan,
             'jenis_musim' => $request->jenis_musim,
             'ketahanan_hama_penyakit' => $request->ketahanan_hama_penyakit,
@@ -63,13 +69,14 @@ public function latestData()
         return response()->json(['success' => true, 'message' => 'Varietas Padi berhasil diupdate.']);
     }
 
-
     public function store(Request $request)
     {
         // Lakukan validasi data yang diterima dari form
         $validatedData = $request->validate([
             'varietas' => 'required|string|max:255',
+            'kategori' => 'nullable|string|max:255', // New validation rule for kategori
             'deskripsi' => 'required|string',
+            'karakteristik_hasil' => 'nullable|string', // New validation rule for karakteristik_hasil
             'keunggulan' => 'required|string|max:255',
             'jenis_musim' => 'required|string|max:255',
             'lama_tanam' => 'required|integer',
@@ -100,6 +107,7 @@ public function latestData()
         // Beri respon
         return response()->json(['success' => true, 'message' => 'Varietas Padi berhasil dihapus']);
     }
+
     public function reloadContent(Request $request)
     {
         // Ambil data terbaru dari model VarietasPadi

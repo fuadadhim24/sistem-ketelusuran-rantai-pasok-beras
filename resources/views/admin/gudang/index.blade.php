@@ -191,96 +191,63 @@
 
               <div class="row">
                 <div class="row col-12 col-xl-8">
-                    <div class="mb-4">
-                        <div class="card border-0 shadow components-section">
-                          <!-- Form -->
-                          <form action="{{ route('gudang-store')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                              <h2 class="fs-5 fw-bold mb-0">Tambah Gudang</h2>
-                              <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
-                            </div>
-                            <div class="card-body">
-                                <div class="mb-4">
-                                  <label for="nama_gudang">Nama Gudang</label>
-                                  <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" aria-describedby="namaHelp">
-                                </div>
-                                <div class="row">
-                                    <div class="col mb-4">
-                                        <label for="luas">luas</label>
-                                        <input type="text" class="form-control" id="luas" name="luas" placeholder="cth: 10x50" aria-describedby="luasHelp">
-                                        <small id="luasHepl" class="form-text text-muted">Satuan meter<sup>2</sup>.</small>
-                                    </div>
-                                    <div class="col mb-4">
-                                        <label for="kapasitas">Kapasitas</label>
-                                        <input type="number" class="form-control" id="kapasitas" name="kapasitas" aria-describedby="kapasitasHelp">
-                                        <small id="kapasitasHelp" class="form-text text-muted">Satuan ton.</small>
-                                    </div>
-                                </div>
-                                {{-- <div class="col mb-4">
-                                  <button class="btn btn-secondary w-100">Pilih Lokasi Gudang</button>
-                                </div> --}}
-                            </div>
-                          </form>
-                          <!-- End of Form -->
-                        </div>
-                    </div>
+                    
                     <div>
-                        <div class="card border-0 shadow components-section">
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                <h2 class="fs-5 fw-bold mb-0">Daftar Gudang</h2>
+                    <div class="card border-0 shadow components-section">
+    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+        <h2 class="fs-5 fw-bold mb-0">Daftar Gudang</h2>
+        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah Gudang</button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                <tr>
+                    <th class="border-bottom" scope="col">Nama Gudang</th>
+                    <th class="border-bottom" scope="col">Kapasitas</th>
+                    <th class="border-bottom" scope="col">Luas</th>
+                    <th class="border-bottom" scope="col">Lokasi</th>
+                    <th class="border-bottmom" scope="col">Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach ($gudangRead as $gudangRead )
+                    <tr>
+                        <th class="text-gray-900" scope="row">
+                            {{ $gudangRead->nama_gudang}}
+                        </th>
+                        <td class="fw-bolder text-gray-500">
+                            {{ $gudangRead->kapasitas}}
+                        </td>
+                        <td class="fw-bolder text-gray-500">
+                            {{$gudangRead->luas}}m<sup>2</sup>
+                        </td>
+                        <td class="fw-bolder text-gray-500">
+                            <div hidden>
+                                {{$gudangRead->lokasi}}
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table align-items-center table-flush">
-                                        <thead class="thead-light">
-                                        <tr>
-                                            <th class="border-bottom" scope="col">Nama Gudang</th>
-                                            <th class="border-bottom" scope="col">Kapasitas</th>
-                                            <th class="border-bottom" scope="col">Luas</th>
-                                            <th class="border-bottom" scope="col">Lokasi</th>
-                                            <th class="border-bottmom" scope="col">Aksi</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                          @foreach ($gudangRead as $gudangRead )
-                                            <tr>
-                                              <th class="text-gray-900" scope="row">
-                                                  {{ $gudangRead->nama_gudang}}
-                                              </th>
-                                              <td class="fw-bolder text-gray-500">
-                                                  {{ $gudangRead->kapasitas}}
-                                              </td>
-                                              <td class="fw-bolder text-gray-500">
-                                                  {{$gudangRead->luas}}m<sup>2</sup>
-                                              </td>
-                                              <td class="fw-bolder text-gray-500">
-                                                <div hidden>
-                                                  {{$gudangRead->lokasi}}
-                                                </div>
-                                                <!-- Button Modal -->
-                                                <button id="btnLihat{{ $loop->iteration}}" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons({{ $loop->iteration }})">lihat</button>
-                                                <button id="btnLoad{{ $loop->iteration}}" class="btn btn-outline-success" type="button" hidden disabled>
-                                                  <span class="ms-1">Loading...</span>
-                                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                                </button>
-                                              </td>
-                                              <td>
-                                                <button id="btnTampilkan{{ $loop->iteration }}" class="btn btn-outline-warning" type="button" hidden onClick="toggleButtonVisibleTampilkan({{ $loop->iteration }})">tampilkan</button>
-                                                <button id="btnSembunyikan{{ $loop->iteration }}" class="btn btn-outline-gray-500" type="button" onClick="toggleButtonVisibleSembunyikan({{ $loop->iteration }})">sembunyikan</button>
-                                                <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                                                <button class="btn btn-outline-danger" type="button">hapus</button>
-                                              </td>
-                                            </tr>
-                                          @endforeach
+                            <!-- Button Modal -->
+                            <button id="btnLihat{{ $loop->iteration}}" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons({{ $loop->iteration }})">lihat</button>
+                            <button id="btnLoad{{ $loop->iteration}}" class="btn btn-outline-success" type="button" hidden disabled>
+                                <span class="ms-1">Loading...</span>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button id="btnTampilkan{{ $loop->iteration }}" class="btn btn-outline-warning" type="button" hidden onClick="toggleButtonVisibleTampilkan({{ $loop->iteration }})">tampilkan</button>
+                            <button id="btnSembunyikan{{ $loop->iteration }}" class="btn btn-outline-gray-500" type="button" onClick="toggleButtonVisibleSembunyikan({{ $loop->iteration }})">sembunyikan</button>
+                            <button class="btn btn-outline-tertiary" type="button">ubah</button>
+                            <button class="btn btn-outline-danger" type="button">hapus</button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-12 col-xl-4">
                     <div class="col-12 px-0 mb-4">
@@ -298,6 +265,44 @@
                     </div>
                 </div>
               </div>
+            
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="{{ route('gudang-store')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Tambah Gudang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <label for="nama_gudang">Nama Gudang</label>
+            <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" aria-describedby="namaHelp">
+          </div>
+          <div class="mb-4">
+            <label for="luas">Luas</label>
+            <input type="text" class="form-control" id="luas" name="luas" placeholder="Contoh: 10x50" aria-describedby="luasHelp">
+            <small id="luasHelp" class="form-text text-muted">Satuan meter<sup>2</sup>.</small>
+          </div>
+          <div class="mb-4">
+            <label for="kapasitas">Kapasitas</label>
+            <input type="number" class="form-control" id="kapasitas" name="kapasitas" aria-describedby="kapasitasHelp">
+            <small id="kapasitasHelp" class="form-text text-muted">Satuan ton.</small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
               <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
       <div class="card-body bg-gray-800 text-white pt-4">
