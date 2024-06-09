@@ -37,7 +37,7 @@
                 </div>
                 <div class="list-2">
                     <a href="/" class="item-link-kunjungi-ketelsuruan-produk">
-                    Kembali ke halaman utama
+                        Back to the main page
                 </a>
 
                     <div class="item-link-5">
@@ -65,7 +65,7 @@
                                 <div class="item-6">
                                     <span class="link-media-publikasi-2">
                                         <a style="color: white; text-decoration:none" href="{{ route('login') }}">
-                                            Masuk
+                                            Login
                                         </a>
                                     </span>
                                 </div>
@@ -73,7 +73,7 @@
                                     <div class="item-7">
                                         <span class="link-media-publikasi-3">
                                             <a style="color: white; text-decoration:none" href="{{ route('register') }}">
-                                                Daftar
+                                                Register
                                             </a>
                                         </span>
                                     </div>
@@ -114,14 +114,14 @@
 
                 <div class="container-30">
                     <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup">
-                        Riwayat Ketertelusuran Produk Beras
+                        Rice Product Traceability History
                     </div>
                     <div class="frame-633">
                         <div class="heading-6">
                             <div class="camera" id="camera">
                             </div>
                             <div class="link-tentang-kami" id="link-tentang-kami">
-                                Scan QR Code Produk Beras
+                                Scan QR Code of Rice Products
                             </div>
                         </div>
 
@@ -129,7 +129,7 @@
                             <div class="popup-content">
                                 <span class="close" id="close">&times;</span>
                                 <div class="kamera">
-                                    Upload File
+                                    File Upload
                                 </div>
                                 <div class="camera-image"></div>
                             </div>
@@ -153,7 +153,7 @@
 
                     <div class="container-8">
                         <div class="link-tentang-kami-1">
-                            atau cari berdasarkan katalog produk
+                            or search by product catalog
                         </div>
                         <div class="back-arrow">
                         </div>
@@ -167,7 +167,7 @@
                     <div class="kotak-pencarian">
                         <div class="elemen-kotak-pencarian">
                             <span class="kotak-pencarian-1">
-                                Kotak Pencarian
+                                Search Box
                             </span>
                         </div>
 
@@ -178,7 +178,7 @@
                             <form  action="{{ url('pengolahan') }}" method="get">
                                 {{-- <input type="text" class="cari" placeholder="Cari" /> --}}
                                 <input class="cari" type="search" name="katakunci" value="{{
-                                Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
+                                Request::get('katakunci') }}" placeholder="Enter keywords" aria-label="Search">
 
                             {{-- <div class="rectangle-213"></div> --}}
 
@@ -195,9 +195,9 @@
                             <thead>
                                 <div>
                                     <tr>
-                                        <th>Id Produksi</th>
-                                        <th>Tanggal Produksi</th>
-                                        <th>Aksi</th>
+                                        <th>Production Id</th>
+                                        <th>Production Date</th>
+                                        <th>Action</th>
                                     </tr>
                                 </div>
                             </thead>
@@ -207,7 +207,7 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->tanggal_produksi }}</td>
 
-                                    <td><a href="/pengolahan_en/{{ $item->id }}" class="detail-button">Detail</a></td>
+                                    <td><a href="/pengolahan_en/{{ $item->id }}" class="detail-button">Details</a></td>
                                 </tr>
 
                                 @endforeach
@@ -372,110 +372,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="divfooter-outer">
-                <div class="container-3">
-                    <div class="container-7">
-                        <div class="heading-4-ud-tani-rejo">
-                            UD Tani Rejo
-                        </div>
-                        <span class="list-item-link-visi-dan-misi">
-                            Visi dan Misi
-                        </span>
-                    </div>
-                    <div class="container">
-                        <div class="heading-4-bisnis-kami">
-                            Bisnis Kami
-                        </div>
-                        <span class="list-item-link-perkebunan">
-                            Pertanian
-                        </span>
-                    </div>
-                    <div class="container-11">
-                        <div class="heading-4-keberlanjutan">
-                            Keberlanjutan
-                        </div>
-                        <span class="list-item-link-kebijakan-keberlanjutan">
-                            Kebijakan Keberlanjutan
-                        </span>
-                    </div>
-                    <div class="div-col">
-                        <div class="heading-4-media-publikasi">
-                            Lokasi
-                        </div>
-                        <span class="list-item-link-siaran-pers">
-                            Alamat Lokasi
-                        </span>
-                    </div>
-                </div>
-                <div class="container-9">
-                    <span class="list-item-link-nilai-nilai-kami">
-                        Nilai-nilai Kami
-                    </span>
-                    <span class="list-item-link-pabrik">
-                        Pabrik
-                    </span>
-                    <span class="list-item-link-laporan-keberlanjutan">
-                        Laporan Keberlanjutan
-                    </span>
-                </div>
-                <div class="container-14">
-                    <span class="list-item-link-kemitraan-dengan-petani">
-                        Kemitraan Dengan Petani
-                    </span>
-                    <span class="list-item-link-produk">
-                        Produk
-                    </span>
-                    <span class="list-item-link-standar-sertifikasi">
-                        Standar &amp; Sertifikasi
-                    </span>
-                </div>
-                <div class="container-4">
-                    <span class="list-item-link-tonggak-sejarah">
-                        Tonggak Sejarah
-                    </span>
-                    <span class="list-item-link-penelitian-dan-pengembangan">
-                        Penelitian dan Pengembangan
-                    </span>
-                    <span class="list-item-link-sistem-ketertelusuran">
-                        Sistem Ketertelusuran
-                    </span>
-                </div>
-                <div class="container-1">
-                    <span class="list-item-link-benih-topaz">
-                        Benih Padi
-                    </span>
-                    <span class="list-item-link-program-inisiatif">
-                        Program &amp; Inisiatif
-                    </span>
-                </div>
-                <div class="list-item-link-pengaduan">
-                    Pengaduan
-                </div>
-                <div class="divcopyright">
-                    <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
-                        © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.
-                    </div>
-                    <div class="container-13">
-                        <div class="list-item-link">
-                            <img class="vector" src="{{ asset('asset/custom/vectors2/vector6_x2.svg') }}" />
-                        </div>
-                        <div class="list-item-link-1">
-                            <img class="vector-1" src="{{ asset('asset/custom/vectors2/vector9_x2.svg') }}" />
-                        </div>
-                        <div class="container-10">
-                            <div class="list-item-link-2">
-                                <img class="vector-2" src="{{ asset('asset/custom/vectors2/vector5_x2.svg') }}" />
-                            </div>
-                            <div class="list-item-link-3">
-                                <img class="vector-3" src="{{ asset('asset/custom/vectors2/vector12_x2.svg') }}" />
-                            </div>
-                        </div>
-                        <div class="list-item-link-4">
-                            <img class="vector-4" src="{{ asset('asset/custom/vectors2/vector3_x2.svg') }}" />
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+
 </body>
 
 </html>

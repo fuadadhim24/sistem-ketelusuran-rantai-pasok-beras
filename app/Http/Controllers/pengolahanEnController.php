@@ -66,11 +66,11 @@ class pengolahanEnController extends Controller
      */
     public function show(string $id)
     {
-        $produksi= Produksi::with('produk')->find($id);
+        $produksi= Produksi::with('produk','varietasPadi','panen','lahan','perawatan','pengujian','pengolahan')->find($id);
         if (!$produksi) {
             return redirect()->route('pengolahan_en.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
         }
-
+        // dd($produksi->toArray());
         return view('hasilpengolahan_en', compact('produksi'));
     }
 
