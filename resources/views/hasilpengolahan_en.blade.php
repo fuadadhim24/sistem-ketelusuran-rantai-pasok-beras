@@ -34,7 +34,7 @@
                         <div class="item-6">
                             <span class="link-media-publikasi-2">
                                 <a style="color: black; text-decoration:none" href="{{ route('login') }}">
-                                    Masuk
+                                    Login
                                 </a>
                             </span>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="item-7">
                             <span class="link-media-publikasi-3">
                                 <a style="color: black; text-decoration:none" href="{{ route('register') }}">
-                                    Daftar
+                                    Register
                                 </a>
                             </span>
                         </div>
@@ -443,7 +443,7 @@
 
 
                             </div>
-                            <div class="group-635">
+                            <div class="group-638">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     : IPR00002313
@@ -574,7 +574,7 @@
                                     : 10%
                                 </span>
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
                                     :15%
                                 </span>
                                 <span
@@ -582,7 +582,7 @@
                                     : 10%
                                 </span>
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
                                     :15%
                                 </span>
                                 <span

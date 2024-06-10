@@ -107,34 +107,60 @@
                                 </a>
                             </div>
                             <div class="group-635">
-                                @foreach ($produksi->produk as $produk)
+                                @if ($produksi->produk->count() > 0)
+                                    @foreach ($produksi->produk as $produk)
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                            <th width="30px">:</th>
+                                            <th>{{ $produk->nama_produk }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                            <th width="30px">:</th>
+                                            <th>{{ $produk->kode_produk }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                            <img alt="Image placeholder" src="{{ asset('asset\img\produk'. $produk->foto) }}"
+                                                class="avatar-md rounded">
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
+                                            <th width="30px">:</th>
+                                            <th>{{ $produk->harga }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
+                                            <th width="30px">:</th>
+                                            <th>{{ $produk->deskripsi }}</th>
+                                        </span>
+                                    @endforeach
+                                @else
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                         <th width="30px">:</th>
-                                        <th>{{ $produk->nama_produk }}</th>
+                                        <th>Tidak ada data</th>
                                     </span>
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                         <th width="30px">:</th>
-                                        <th>{{ $produk->kode_produk }}</th>
+                                        <th>Tidak ada data</th>
                                     </span>
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                        <img alt="Image placeholder" src="{{ asset('asset\img\produk\3.png') }}"
-                                            class="avatar-md rounded">
+                                        <img alt="Image placeholder" src="" class="avatar-md rounded">
                                     </span>
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
                                         <th width="30px">:</th>
-                                        <th>{{ $produk->harga }}</th>
+                                        <th>Tidak ada data</th>
                                     </span>
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
                                         <th width="30px">:</th>
-                                        <th>{{ $produk->deskripsi }}</th>
+                                        <th>Tidak ada data</th>
                                     </span>
-                                @endforeach
-
+                                @endif
                             </div>
                             <div class="group-633">
                                 <span
@@ -169,14 +195,16 @@
                             </div>
                             <div class="group-634">
 
+
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->varietas }}</th>
+                                    <th>{{ $produksi->varietasPadi->varietas ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    : 17 November 2023
+                                    <th width="30px">:</th>
+                                    <th>{{ $produksi->varietasPadi->karakteristik_hasil ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19">
@@ -185,12 +213,12 @@
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->jenis_musim }}</th>
+                                    <th>{{ $produksi->varietasPadi->jenis_musim ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->lama_tanam }}</th>
+                                    <th>{{ $produksi->varietasPadi->lama_tanam ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13">
@@ -206,7 +234,8 @@
                                             <div id="collapseOne" class="accordion-collapse collapse show"
                                                 aria-labelledby="headingOne" data-bs-parent="#accordionPricing">
                                                 <div class="accordion-body">
-                                                    <th>{{ $produksi->varietasPadi->keunggulan }}</th>
+                                                    <th>{{ $produksi->varietasPadi->keunggulan ?? 'Tidak ada data' }}
+                                                    </th>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
@@ -220,7 +249,8 @@
                                                 <div id="collapseTwo" class="accordion-collapse collapse"
                                                     aria-labelledby="headingTwo" data-bs-parent="#accordionPricing">
                                                     <div class="accordion-body">
-                                                        <th>{{ $produksi->varietasPadi->deskripsi }}</th>
+                                                        <th>{{ $produksi->varietasPadi->deskripsi ?? 'Tidak ada data' }}
+                                                        </th>
                                                     </div>
                                                 </div>
                                             </div>
@@ -235,7 +265,8 @@
                                                 <div id="collapseThree" class="accordion-collapse collapse"
                                                     aria-labelledby="headingThree" data-bs-parent="#accordionPricing">
                                                     <div class="accordion-body">
-                                                        <th>{{ $produksi->varietasPadi->ketahanan_hama_penyakit }}</th>
+                                                        <th>{{ $produksi->varietasPadi->ketahanan_hama_penyakit ?? 'Tidak ada data' }}
+                                                        </th>
                                                     </div>
                                                 </div>
                                             </div>
@@ -280,6 +311,7 @@
 
                             </div>
                             <div class="group-635">
+
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     <th width="30px">:</th>
@@ -404,28 +436,51 @@
 
                             </div>
                             <div class="group-634">
-                                @foreach ($produksi->panen as $panen)
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    <th width="30px">:</th>
-                                    <th>{{ $panen->id }}</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    <th width="30px">:</th>
-                                    <th>{{ $panen->quantity }}</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
-                                    <th width="30px">:</th>
-                                    <th>{{ $panen->metode_panen }}</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    <th width="30px">:</th>
-                                    <th>{{ $panen->pasca_panen }}</th>
-                                </span>
-                                @endforeach
+                                @if ($produksi->panen->count() > 0)
+                                    @foreach ($produksi->panen as $panen)
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                            <th width="30px">:</th>
+                                            <th>{{ $panen->id }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                            <th width="30px">:</th>
+                                            <th>{{ $panen->quantity }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
+                                            <th width="30px">:</th>
+                                            <th>{{ $panen->metode_panen }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                            <th width="30px">:</th>
+                                            <th>{{ $panen->pasca_panen }}</th>
+                                        </span>
+                                    @endforeach
+                                @else
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                @endif
 
 
 
@@ -460,24 +515,29 @@
 
 
                             </div>
-                            <div class="group-635">
+                            <div class="group-638">
+
+
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->lahan->nama_lahan}}</th>
+                                    <th>{{ $produksi->lahan->nama_lahan ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->lahan->detail_lokasi}}</th>
+                                    <th>{{ $produksi->lahan->detail_lokasi ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->lahan->luas}}</th>
+                                    <th>{{ $produksi->lahan->luas ?? 'Tidak ada data' }}</th>
                                 </span>
+
+
+
                             </div>
-                            <div class="group-637">
+                            <div class="group-639">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
                                     MAP
@@ -522,13 +582,21 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    @foreach ($produksi->perawatan as $perawatan)
+                                    @if ($produksi->perawatan->count() > 0)
+                                        @foreach ($produksi->perawatan as $perawatan)
+                                <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $perawatan->jenis_perawatan}}</td>
-                                    <td>{{ $perawatan->nama_perawatan}}</td>
-                                    <td>{{ $perawatan->jumlah}}</td>
-                                    <td>{{ $perawatan->kebutuhan}}</td>
-                                    @endforeach
+                                    <td>{{ $perawatan->jenis_perawatan }}</td>
+                                    <td>{{ $perawatan->nama_perawatan }}</td>
+                                    <td>{{ $perawatan->jumlah }}</td>
+                                    <td>{{ $perawatan->kebutuhan }}</td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="5">Tidak ada data</td>
+                                </tr>
+                                @endif
 
                                 </tr>
                                 <!-- Tambahkan baris lainnya sesuai kebutuhan -->
@@ -582,55 +650,98 @@
 
                             </div>
                             <div class="group-635">
-                                @foreach ($produksi->pengujian as $pengujian)
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->tingkat_patah}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->kadar_Air}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->kadar_kerusakan}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->benda_asing}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->kadar_Kapur}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->warna_beras}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->bau_rasa}}</th>
-                                    <th width="30px">%</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengujian->keterangan}}</th>
-                                </span>
+                                @if ($produksi->pengujian->count() > 0)
+                                    @foreach ($produksi->pengujian as $pengujian)
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->tingkat_patah }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->kadar_Air }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->kadar_kerusakan }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->benda_asing }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->kadar_Kapur }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->warna_beras }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->bau_rasa }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengujian->keterangan }}</th>
+                                    </span>
                                 @endforeach
+                                @else
+                                <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                @endif
 
                             </div>
                             <div class="group-637">
@@ -650,18 +761,31 @@
 
                             </div>
                             <div class="group-634">
+                                @if ($produksi->pengolahan->count() > 0)
                                 @foreach ($produksi->pengolahan as $pengolahan)
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengolahan->hasil_penggilingan}}</th>
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                    <th width="30px">:</th>
-                                    <th>{{$pengolahan->kemasan}}</th>
-                                </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengolahan->hasil_penggilingan }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>{{ $pengolahan->kemasan }}</th>
+                                    </span>
                                 @endforeach
+                                @else
+                                <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
+                                @endif
 
                             </div>
 
