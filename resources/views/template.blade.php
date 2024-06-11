@@ -132,7 +132,7 @@
                 <li class="nav-item">
                     <a href="{{ asset('volt/index.html') }}" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="{{ asset('volt/assets/img/brand/light.svg') }}" height="20" width="20"
+                            <img src="{{ asset('/asset/custom/img/landingpage/ic_logo_1.png') }}" height="20" width="20"
                                 alt="Volt Logo">
                         </span>
                         <span class="mt-1 ms-1 sidebar-text">UD Tani Rejo</span>
