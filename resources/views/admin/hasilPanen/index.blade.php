@@ -492,9 +492,22 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
+        {{-- mapbox script --}}
+        <script>
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/streets-v12', // style URL
+                center: [{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}], // starting position [lng, lat]
+                zoom: 9, // starting zoom
+            });
+            const marker = new mapboxgl.Marker()
+                .setLngLat([{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}])
+                .addTo(map);
+        </script>
     @empty
         <tr>
             <td colspan="6">Tidak ada data</td>
@@ -713,18 +726,6 @@
 
         {{-- library notify --}}
         <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>
-
-        {{-- mapbox script --}}
-        <script>
-            mapboxgl.accessToken =
-                'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-            const map = new mapboxgl.Map({
-                container: 'map', // container ID
-                style: 'mapbox://styles/mapbox/streets-v12', // style URL
-                center: [-74.5, 40], // starting position [lng, lat]
-                zoom: 9, // starting zoom
-            });
-        </script>
 
     </footer>
 @endsection
