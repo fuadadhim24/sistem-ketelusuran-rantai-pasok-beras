@@ -151,7 +151,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}" class="nav-link">
+                    <a href="{{ route('hasil-panen') }}" class="nav-link">
                         <span class="sidebar-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                 class="bi bi-feather icon icon-xs me-2" viewBox="0 0 20 20">

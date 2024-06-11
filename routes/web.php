@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
+use App\Http\Controllers\HasilPanenController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
 use App\Http\Controllers\pengujianController;
@@ -77,7 +78,6 @@ Route::middleware([
     Route::patch('/update/{id}', [FaseController::class, 'update'])->name('update-fase');
     Route::get('/reload-content', [FaseController::class, 'reloadContent'])->name('reload.content');
 
-
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
 
@@ -89,6 +89,12 @@ Route::middleware([
     Route::get('/settings', [settingsController::class, 'index'])->name('settings');
 
     Route::resource('varietasPadis', VarietasPadiController::class);
+
+    // hasil panen
+    Route::get('/hasil-panen', [HasilPanenController::class, 'index'])->name('hasil-panen');
+    // Route::post('/hasil-panen', [HasilPanenController::class, 'store'])->name('hasil-panen.store');
+    // Route::put('/hasil-panen/{id}', [HasilPanenController::class, 'update'])->name('hasil-panen.update');
+    // Route::delete('/hasil-panen/{id}', [HasilPanenController::class, 'destroy'])->name('hasil-panen.destroy');
 
 });
 

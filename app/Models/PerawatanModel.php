@@ -4,27 +4,31 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Perawatan extends Model
+class PerawatanModel extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
     protected $table = 'perawatan';
 
     protected $fillable = [
-        'id',
         'jenis_perawatan',
         'nama_perawatan',
         'jumlah',
         'kebutuhan',
+        'tanggal_perawatan',
         'id_user',
         'id_produksi',
-        'created_at',
-        'updated_at'
     ];
-    public function produksi(){
-        return $this->belongsTo(Produksi::class,'id_produksi','id');
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
     }
-    public function detailPengolahan($id){
-        return DB::table('produk')->where('id',$id)->first();
+
+    public function produksi()
+    {
+        return $this->belongsTo(ProduksiModel::class, 'id_produksi');
     }
 }
