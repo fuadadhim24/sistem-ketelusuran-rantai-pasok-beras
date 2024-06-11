@@ -1,5 +1,22 @@
 @extends('template')
 @section('main')
+    <style>
+        .text-wrap {
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        td {
+            max-width: 200px;
+            /* Adjust as necessary */
+            height: auto;
+        }
+    </style>
     <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
         <div class="container-fluid px-0">
             <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -242,140 +259,247 @@
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
                 <h1 class="h4">Hasil Panen</h1>
-                <p class="mb-0">Setiap HasilPanen akan memiliki perlakuan utama dan perlakuan khusus.</p>
-            </div>
-            <div>
-                <p class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Panduan Informatif</p>
+                <p class="mb-0">Setiap Hasil Panen merupakan produksi yang telah dilakukan tahap pemanenan.</p>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12 col-xl-8">
-            <div class="card border-0 shadow components-section">
-                <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                    <h2 class="fs-5 fw-bold mb-0">Tambah HasilPanen</h2>
-                    <form id="ajax-form">
-                        @csrf
-                        <button type="submit" class="btn btn-sm btn-primary" id="simpan">Simpan</button>
-                    </form>
-                </div>
+    <!-- Item -->
+    @forelse ($produksis as $index => $item)
+        <div class="col-12 mb-4">
+            <div class="card border-0 shadow">
                 <div class="card-body">
-                    <!-- Form -->
-                    <div class="mb-4">
-                        <label for="nama_fase">Nama Fase</label>
-                        <input type="text" class="form-control" id="nama_fase" aria-describedby="emailHelp">
+                    <!-- End of Modal Content -->
+                    <div class="table-responsive">
+                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
+                            style="width:100%">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="border-0">No</th>
+                                    <th class="border-0">Jumlah Panen</th>
+                                    <th class="border-0">Tanggal Produksi</th>
+                                    <th class="border-0">Tanggal Panen</th>
+                                    <th class="border-0">Nama Padi</th>
+                                    <th class="border-0">Lahan</th>
+                                    <th class="border-0">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="row-{{ $item->id }}">
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ optional($item->panen)->quantity }}</td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ optional($item->panen)->created_at }}</td>
+                                    <td>{{ optional($item->padi)->varietas }}</td>
+                                    <td>{{ optional($item->lahan)->nama_lahan }}</td>
+                                    <td>
+                                        <button id="btnTampilkan-{{ $index }}" class="btn btn-outline-warning"
+                                            type="button"
+                                            onclick="toggleButtonsAndShowDetailPanen({{ $index }})">Tampilkan</button>
+                                        <button id="btnLoad-{{ $index }}" class="btn btn-outline-success"
+                                            type="button" hidden disabled>
+                                            <span class="ms-1">Loading...</span>
+                                            <span class="spinner-border spinner-border-sm" role="status"
+                                                aria-hidden="true"></span>
+                                        </button>
+                                        <button id="btnSembunyikan-{{ $index }}" class="btn btn-outline-gray-500"
+                                            type="button" hidden
+                                            onclick="hideDetailPanen({{ $index }})">Sembunyikan</button>
+
+                                        <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert"
+                                            aria-live="assertive" aria-atomic="true" hidden>
+                                            <div class="toast-header">
+                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
+                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                                                    </path>
+                                                    <path
+                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                                                    </path>
+                                                </svg>
+                                                <strong class="me-auto">UD Tani Rejo</strong>
+                                                <small>sekarang</small>
+                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="toast-body text-white">
+                                                Lokasi berhasil diidentifikasi.
+                                            </div>
+                                        </div>
+                                        <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert"
+                                            aria-live="assertive" aria-atomic="true" hidden>
+                                            <div class="toast-header">
+                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
+                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                                                    </path>
+                                                    <path
+                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                                                    </path>
+                                                </svg>
+                                                <strong class="me-auto">UD Tani Rejo</strong>
+                                                <small>sekarang</small>
+                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="toast-body text-white">
+                                                Lokasi gagal diidentifikasi.
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline-tertiary" type="button">ubah</button>
+                                        <button class="btn btn-outline-danger" type="button">hapus</button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="mb-4">
-                        <label for="durasi">Durasi</label>
-                        <input type="text" class="form-control" id="durasi" aria-describedby="emailHelp">
-                        <small id="emailHelp" class="form-text text-muted">Rentang waktu berlangsung.</small>
-                    </div>
-                    <!-- End of Form -->
+
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-xl-4" id="daftar-fase-container">
-            <div class="col-12 px-0 mb-4">
-                <div class="card border-0 shadow mb-2">
-                    <div class="card-header">
-                        <h2 class="fs-5 fw-bold mb-0">Daftar Fase</h2>
-                    </div>
-                </div>
-                <div class="card border-0 shadow">
-                    <div class="card-body" id="daftar-fase">
-                        @foreach ($produksis as $HasilPanen)
-                            <div id="faseItem{{ isset($HasilPanen->sumber_benih) }}"
-                                class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
-                                <div>
-                                    <div class="h6 mb-0 d-flex align-items-center">
-                                        {{ isset($HasilPanen->tingkat_vigor) }}
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <a href="{{ route('perlakuan') }}" class="d-flex align-items-center fw-bold me-2">
-                                        <img src="{{ asset('asset/img/admin/view.png') }}" alt="View"
-                                            class="icon icon-xs text-gray-500">
-                                    </a>
-                                    <a class="d-flex align-items-center fw-bold me-2" data-bs-toggle="modal"
-                                        data-bs-target="#modal-form-signup-{{ isset($HasilPanen->varietas) }}">
-                                        <img src="{{ asset('asset/img/admin/note.png') }}" alt="Edit"
-                                            class="icon icon-xs text-gray-500">
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center fw-bold"
-                                        onclick="confirmDelete({{ isset($HasilPanen->kategori) }})">
-                                        <img src="{{ asset('asset/img/admin/delete.png') }}" alt="Delete"
-                                            class="icon icon-xs text-gray-500">
-                                    </a>
-                                </div>
+        {{-- detail hasil panen --}}
+        <div id="detailPanenContent-{{ $index }}" class="d-none">
+            <div class="row">
+                <div class="col-12 col-xl-4">
+                    <div class="card border-0 shadow components-section">
+                        <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                            <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- Data -->
+                            <div class="mb-4">
+                                <label for="id_produksi">ID Produksi</label>
+                                <p>{{ $item->id }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="sumber_benih">Sumber Benih</label>
+                                <p>{{ $item->sumber_benih }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tanggal_produksi">Tanggal Produksi</label>
+                                <p>{{ $item->tanggal_produksi }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
+                                <p>{{ $item->tanggal_kedaluwarsa }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
+                                <p>{{ $item->tingkat_kemurnian }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tingkat_vigor">Tingkat Vigor</label>
+                                <p>{{ $item->tingkat_vigor }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="jumlah_benih">Jumlah Benih</label>
+                                <p>{{ $item->jumlah_benih }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
+                                <p>{{ $item->tanggal_penyemaian }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tanggal_penanaman">Tanggal Penanaman</label>
+                                <p>
+                                    @if ($item->tanggal_penanaman)
+                                        {{ $item->tanggal_penanaman }}
+                                    @else
+                                        <span class="badge bg-danger">belum penanaman</span>
+                                    @endif
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="mb-4">
+                                <label for="quantity">Quantity (Hasil Panen)</label>
+                                <p>{{ $item->panen->quantity }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="metode_panen">Metode Panen</label>
+                                <p>{{ $item->panen->metode_panen }}</p>
+                            </div>
+                            <div class="mb-4">
+                                <label for="catatan">Catatan</label>
+                                <p>{{ $item->panen->catatan }}</p>
                             </div>
 
+                            <!-- End of Data -->
+                        </div>
+                    </div>
 
-                            <!-- Modal Content -->
-                            <div class="modal fade" id="modal-form-signup-{{ isset($HasilPanen->deskripsi) }}"
-                                tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-0">
-                                            <div class="card p-3 p-lg-4">
-                                                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                                <div class="card-header border-0 text-center pb-0">
-                                                    <h2 class="mb-2 h5">Edit Informasi Fase</h2>
-                                                </div>
-                                                <div class="card-body p-0 pl-lg-3">
-                                                    <form method="POST"
-                                                        action="{{ route('update-fase', ['id' => isset($HasilPanen->sumber_benih)]) }}">
-                                                        @csrf
-                                                        <!-- Form -->
-                                                        <div class="form-group mb-4">
-                                                            <label for="nama">Nama Fase</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text" id="basic-addon3"><span
-                                                                        class="fas fa-envelope"></span></span>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="cth: Berikan pupuk hari ini"
-                                                                    name="nama_fase"
-                                                                    value="{{ isset($HasilPanen->sumber_benih) }}"
-                                                                    id="nama" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group mb-4">
-                                                            <label for="durasi">Durasi</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text" id="basic-addon3"><span
-                                                                        class="fas fa-envelope"></span></span>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="berlangsungnya perlakuan. cth: 10"
-                                                                    name="durasi" id="durasi"
-                                                                    value="{{ isset($HasilPanen->sumber_benih) }}"
-                                                                    required>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End of Form -->
+                </div>
 
-                                                        <div class="d-grid">
-                                                            <button type="submit"
-                                                                class="btn btn-block btn-primary mb-3 w-100">Simpan</button>
-                                                        </div>
-                                                    </form>
+                <div class="col-12 col-xl-4">
+                    <div class="card border-0 shadow components-section">
+                        <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                            <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- Form -->
+                            @if ($item->perawatan->isNotEmpty())
+                                <div class="accordion" id="accordionPerawatan{{ $item->id }}">
+                                    @foreach ($item->perawatan as $index => $perawatan)
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header"
+                                                id="headingPerawatan{{ $item->id }}{{ $index }}">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapsePerawatan{{ $item->id }}{{ $index }}"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapsePerawatan{{ $item->id }}{{ $index }}">
+                                                    Perawatan ke-{{ $index + 1 }}
+                                                </button>
+                                            </h2>
+                                            <div id="collapsePerawatan{{ $item->id }}{{ $index }}"
+                                                class="accordion-collapse collapse"
+                                                aria-labelledby="headingPerawatan{{ $item->id }}{{ $index }}"
+                                                data-bs-parent="#accordionPerawatan{{ $item->id }}">
+                                                <div class="accordion-body">
+                                                    <p>Jenis Perawatan: {{ $perawatan->jenis_perawatan }}</p>
+                                                    <p>Nama Perawatan: {{ $perawatan->nama_perawatan }}</p>
+                                                    <p>Jumlah: {{ $perawatan->jumlah }}</p>
+                                                    <p>Kebutuhan: {{ $perawatan->kebutuhan }}</p>
+                                                    <p>Tanggal Perawatan: {{ $perawatan->tanggal_perawatan }}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforeach
                                 </div>
-                            </div>
-
-                            <!-- End of Modal Content -->
-                        @endforeach
+                            @else
+                                <p>Tidak ada riwayat perawatan untuk produksi ini.</p>
+                            @endif
+                            <!-- End of Form -->
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-12 col-xl-4">
+                    <div class="col-12 px-0 mb-4">
+                        <div class="card border-0 shadow mb-2">
+                            <div class="card-header">
+                                <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
+                            </div>
+                        </div>
+                        {{-- map lokasi --}}
+                        <div class="card border-0 shadow">
+                            <div class="card-body">
+                                <div id='map' class="w-100" style='height: 300px;'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-    </div>
-    </div>
+    @empty
+        <tr>
+            <td colspan="6">Tidak ada data</td>
+        </tr>
+    @endforelse
 
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
         <div class="card-body bg-gray-800 text-white pt-4">
@@ -429,7 +553,8 @@
         <div class="row">
             <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
                 <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a></p>
+                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+                </p>
             </div>
             <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                 <!-- List -->
@@ -528,8 +653,78 @@
             }
         </script>
 
+        {{-- aksi lihat lokasi --}}
+        <script>
+            const notyf = new Notyf();
+
+            function toggleButtonsAndShowDetailPanen(index) {
+                var button1 = document.getElementById("btnTampilkan-" + index);
+                var button2 = document.getElementById("btnSembunyikan-" + index);
+                var button3 = document.getElementById("btnLoad-" + index);
+                var toast = document.getElementById("toastLokasiBerhasil");
+
+                // Tampilkan button 2 dan sembunyikan button 1
+                button3.removeAttribute("hidden");
+                button3.removeAttribute("disabled");
+
+                button1.setAttribute("hidden", "true");
+                button1.setAttribute("disabled", "true");
+
+                // Tampilkan detail hasil panen
+                $('#detailPanenContent-' + index).removeClass('d-none');
+
+                // Set timeout untuk kembali ke keadaan semula setelah 3 detik
+                setTimeout(function() {
+                    // Set timeout untuk menyembunyikan notif
+                    button2.removeAttribute("hidden");
+                    button2.removeAttribute("disabled");
+                    button3.setAttribute("hidden", "true");
+                    button3.setAttribute("disabled", "true");
+
+                    // notify
+                    notyf.success({
+                        message: 'Lokasi berhasil diidentifikasi',
+                        duration: 3000,
+                        icon: false
+                    });
+                }, 2000);
+            }
+
+            function hideDetailPanen(index) {
+                var button1 = document.getElementById("btnTampilkan-" + index);
+                var button2 = document.getElementById("btnSembunyikan-" + index);
+                var detailPanenContent = document.getElementById("detailPanenContent-" + index);
+
+                // Sembunyikan detail hasil panen
+                detailPanenContent.classList.add('d-none');
+
+                // Tampilkan button 1 dan sembunyikan button 2
+                button1.removeAttribute("hidden");
+                button1.removeAttribute("disabled");
+                button2.setAttribute("hidden", "true");
+                button2.setAttribute("disabled", "true");
+            }
+        </script>
 
 
+
+
+
+
+        {{-- library notify --}}
+        <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>
+
+        {{-- mapbox script --}}
+        <script>
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                style: 'mapbox://styles/mapbox/streets-v12', // style URL
+                center: [-74.5, 40], // starting position [lng, lat]
+                zoom: 9, // starting zoom
+            });
+        </script>
 
     </footer>
 @endsection
