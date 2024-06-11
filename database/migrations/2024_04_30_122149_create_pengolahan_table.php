@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengolahan', function (Blueprint $table) {
             $table->id();
-            $table->float('hasil_penggilingan');
-            $table->string('kemasan');
+            $table->float('metode');
+            $table->string('deskripsi');
+            $table->string('lama');//jam
+            $table->string('hasil');//kw
             $table->unsignedBigInteger('id_gudang')->nullable();
             $table->foreign('id_gudang')->references('id')->on('gudang')->onDelete('cascade');
             $table->unsignedBigInteger('id_produksi')->nullable();
