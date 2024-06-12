@@ -14,7 +14,7 @@ class AdminPengolahanController extends Controller
                         ->doesntHave('pengolahan')
                         ->latest()
                         ->get();
-        // die($hasilPanen);
+        // die($unPengolahan);
         return view('admin.pengolahan.index', compact('pengolahan','unPengolahan'));
     }
     

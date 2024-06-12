@@ -319,7 +319,7 @@
                                         <option selected>Pilih ID Produksi</option>
                                         @forelse ($unPengolahan as $item)
                                             <option value="{{ $item->id }}"
-                                                data-produksi="{{ json_encode($item->produksi) }}">
+                                                data-produksi="{{ json_encode($item) }}">
                                                 PB00{{ $item->id }}</option>
                                         @empty
                                         @endforelse
