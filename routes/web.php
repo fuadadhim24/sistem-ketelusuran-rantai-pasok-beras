@@ -5,6 +5,7 @@ use App\Http\Controllers\gudangController;
 use App\Http\Controllers\HasilPanenController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
+use App\Http\Controllers\lahanController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\settingsController;
@@ -83,8 +84,11 @@ Route::middleware([
 
     Route::get('/lahan', function () {
         return view('admin.lahan.index'); })->name('lahan');
-    Route::get('/lahan/tambah-lahan', function () {
-        return view('admin.lahan.tambah'); })->name('tambah-lahan');
+        Route::post('/tambahlahan', [lahanController::class, 'store'])->name('lahan.store');
+        Route::put('/lahan/{id}/update', [lahanController::class, 'update'])->name('lahan.update');
+        Route::delete('/lahan/{id}/delete', [lahanController::class, 'destroy'])->name('lahan.delete');
+
+
 
     Route::get('/settings', [settingsController::class, 'index'])->name('settings');
 

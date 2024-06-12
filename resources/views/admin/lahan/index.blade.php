@@ -1,5 +1,7 @@
 @extends('template')
 @section('main')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
   <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
   <div class="container-fluid px-0">
     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -192,122 +194,153 @@
               <div class="row">
                 <div class="row col-12 col-xl-8">
                     <div class="mb-4">
-                        <div class="card border-0 shadow components-section">
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                            <h2 class="fs-5 fw-bold mb-0">Tambah Lahan</h2>
-                            <a href="#" class="btn btn-sm btn-primary">Simpan</a>
-                            </div>
-                            <div class="card-body">
-                                <!-- Form -->
-                                <div class="mb-4">
-                                <label for="nama">Nama Lahan</label>
-                                <input type="text" class="form-control" id="nama" aria-describedby="namaHelp">
-                                </div>
-                                <div class="row">
-                                    <div class="col mb-4">
-                                        <label for="luas">luas</label>
-                                        <input type="number" class="form-control" id="luas" placeholder="cth: 10x50" aria-describedby="luasHelp">
-                                        <small id="luasHepl" class="form-text text-muted">Satuan meter<sup>2</sup>.</small>
-                                    </div>
-                                    <div class="col mb-4">
-                                        <label for="Status">Status</label>
-                                        <input type="number" class="form-control" id="Status" aria-describedby="StatusHelp">
-                                        <small id="StatusHelp" class="form-text text-muted">Satuan ton.</small>
-                                    </div>
-                                </div>
-                            <!-- End of Form -->
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card border-0 shadow components-section">
+                    <div class="card border-0 shadow components-section">
                             <div class="card-header border-bottom d-flex align-items-center justify-content-between">
                                 <h2 class="fs-5 fw-bold mb-0">Daftar Lahan</h2>
-                                <a href="#" class="btn btn-sm btn-primary">Simpan</a>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lahanModal">Tambah</button>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table align-items-center table-flush">
-                                        <thead class="thead-light">
-                                        <tr>
-                                            <th class="border-bottom" scope="col">Nama Lahan</th>
-                                            <th class="border-bottom" scope="col">Status</th>
-                                            <th class="border-bottom" scope="col">Luas</th>
-                                            <th class="border-bottom" scope="col">Lokasi</th>
-                                            <th class="border-bottmom" scope="col">Aksi</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th class="text-gray-900" scope="row">
-                                                nama Lahankonten
-                                            </th>
-                                            <td class="fw-bolder text-gray-500">
-                                                terisi
-                                            </td>
-                                            <td class="fw-bolder text-gray-500">
-                                                20x100 m<sup>2</sup>
-                                            </td>
-                                            <td class="fw-bolder text-gray-500">
-                                              <!-- Button Modal -->
-                                              <button id="btnLihat" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons()">lihat</button>
-                                              <button id="btnLoad" class="btn btn-outline-success" type="button" hidden disabled>
-                                                <span class="ms-1">Loading...</span>
-                                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                              </button>
-                                              <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-                                                <div class="toast-header">
-                                                  <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-                                                  <strong class="me-auto">UD Tani Rejo</strong>
-                                                  <small>sekarang</small>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                                </div>
-                                                <div class="toast-body text-white">
-                                                  Lokasi berhasil diidentifikasi.
-                                                </div>
-                                              </div>
-                                              <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert" aria-live="assertive" aria-atomic="true" hidden>
-                                                <div class="toast-header">
-                                                  <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-                                                  <strong class="me-auto">UD Tani Rejo</strong>
-                                                  <small>sekarang</small>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                                </div>
-                                                <div class="toast-body text-white">
-                                                  Lokasi gagal diidentifikasi.
-                                                </div>
-                                              </div>
-                                            </td>
-                                            <td>
-                                              <button class="btn btn-outline-warning" type="button" hidden>tampilkan </button>
-                                              <button class="btn btn-outline-gray-500" type="button">sembunyikan</button>
-                                              <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                                              <button class="btn btn-outline-danger" type="button">hapus</button>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                <table class="table align-items-center table-flush">
+    <thead class="thead-light">
+        <tr>
+            <th class="border-bottom" scope="col">Nama Lahan</th>
+            <th class="border-bottom" scope="col">Luas</th>
+            <th class="border-bottom" scope="col">Lokasi</th>
+            <th class="border-bottmom" scope="col">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if(isset($lahans) && count($lahans) > 0)
+    @foreach($lahans as $lahan)
+        <tr>
+            <td class="text-gray-900" scope="row">
+                {{ $lahan->nama_lahan }}
+            </td>
+            
+            <td class="fw-bolder text-gray-500">
+                {{ $lahan->luas }}
+            </td>
+            <td class="fw-bolder text-gray-500">
+                {{ $lahan->detail_lokasi }}
+            </td>
+        </tr>
+    </tr>
+            <td>
+                <!-- Button Modal -->
+                <button id="btnLihat" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons()">lihat</button>
+                <button id="btnLoad" class="btn btn-outline-success" type="button" hidden disabled>
+                    <span class="ms-1">Loading...</span>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                </button>
+                <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                        <strong class="me-auto">UD Tani Rejo</strong>
+                        <small>sekarang</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body text-white">
+                        Lokasi berhasil diidentifikasi.
+                    </div>
+                </div>
+                <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+                    <div class="toast-header">
+                        <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                        <strong class="me-auto">UD Tani Rejo</strong>
+                        <small>sekarang</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body text-white">
+                        Lokasi gagal diidentifikasi.
+                    </div>
+                </div>
+                <button class="btn btn-outline-warning" type="button" hidden>tampilkan </button>
+                <button class="btn btn-outline-gray-500" type="button">sembunyikan</button>
+                <button class="btn btn-outline-tertiary" type="button">ubah</button>
+                <button class="btn btn-outline-danger" type="button">hapus</button>
+            </td>
+        </tr>
+        @endforeach
+        @else
+    <tr>
+        <td colspan="3">Tidak ada data lahan yang tersedia.</td>
+    </tr>
+@endif
+    </tbody>
+</table>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-xl-4">
-                    <div class="col-12 px-0 mb-4">
-                        <div class="card border-0 shadow mb-2">
-                          <div class="card-header">
-                              <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
-                          </div>
-                        </div>
-                        {{-- map lokasi --}}
-                        <div class="card border-0 shadow">
-                            <div class="card-body">
-                                <div id='map' class="w-100" style='height: 300px;'></div>
-                            </div>
+                    </div>
+                    
+                    <div class="col-12 col-xl-4">
+    <div class="col-12 px-0 mb-4">
+        <div class="card border-0 shadow mb-2">
+            <div class="card-header">
+                <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
+            </div>
+        </div>
+        {{-- map lokasi --}}
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <div id="map" class="w-100" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="lahanModal" tabindex="-1" aria-labelledby="lahanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lahanModalLabel">Tambah Lahan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="lahanForm"action="{{ route('lahan.store') }}" method="POST" class="form-inline">
+                @csrf
+                    <input type="hidden" id="id" name="id">
+                    <div class="form-group">
+                        <label for="nama_lahan">Nama Lahan</label>
+                        <input type="text" class="form-control" id="nama_lahan" name="nama_lahan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="detail_lokasi">Detail Lokasi</label>
+                        <input type="text" class="form-control" id="detail_lokasi" name="detail_lokasi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="luas">Luas</label>
+                        <input type="text" class="form-control" id="luas" name="luas" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="latitude">Latitude</label>
+                        <input type="text" class="form-control" id="latitude" name="latitude" readonly required>
+                    </div>
+                    <div class="form-group">
+                        <label for="longitude">longitude</label>
+                        <input type="text" class="form-control" id="longitude" name="longitude" readonly required>
+                    </div>
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div id="tambahmap" class="w-100" style="height: 300px;"></div>
                         </div>
                     </div>
-                </div>
-              </div>
+                    <div class="form-group">
+                        <label for="jenis_tanah">Jenis Tanah</label>
+                        <input type="text" class="form-control" id="jenis_tanah" name="jenis_tanah" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
               <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
       <div class="card-body bg-gray-800 text-white pt-4">
@@ -371,16 +404,202 @@
           </div>
       </div>
   </footer>
-  {{-- mapbox script --}}
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9, // starting zoom
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+<script>
+   $(document).ready(function() {
+    // Fungsi untuk menampilkan data lahan saat halaman dimuat
+    function loadData() {
+        $.ajax({
+            type: 'GET',
+            url: '/lahan',
+            success: function(response) {
+                if (response.lahans.length > 0) {
+                    var rows = '';
+                    $.each(response.lahans, function(index, lahan) {
+                        rows += '<tr>';
+                        rows += '<td>' + lahan.nama_lahan + '</td>';
+                        rows += '<td>' + lahan.luas + '</td>';
+                        rows += '<td>' + lahan.detail_lokasi + '</td>';
+                        rows += '<td>';
+                        rows += '<button class="btn btn-outline-success btn-sm" onclick="viewLahan(' + lahan.id + ')">Lihat</button>';
+                        rows += '<button class="btn btn-outline-warning btn-sm" onclick="editLahan(' + lahan.id + ')">Ubah</button>';
+                        rows += '<button class="btn btn-outline-danger btn-sm" onclick="deleteLahan(' + lahan.id + ')">Hapus</button>';
+                        rows += '</td>';
+                        rows += '</tr>';
+                    });
+                    $('#lahanTable tbody').html(rows);
+                } else {
+                    $('#lahanTable tbody').html('<tr><td colspan="4">Tidak ada data lahan.</td></tr>');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    }
+
+    // Panggil fungsi loadData saat halaman dimuat
+    loadData();
+
+    // Fungsi untuk menampilkan modal tambah lahan
+    $('#btnTambah').click(function() {
+        $('#lahanModalLabel').text('Tambah Lahan');
+        $('#lahanForm')[0].reset();
+        $('#id').val('');
+        $('#lahanModal').modal('show');
     });
-    </script>
+
+    // Fungsi untuk menampilkan data lahan pada form modal
+    window.viewLahan = function(id) {
+        $.ajax({
+            type: 'GET',
+            url: '/lahan/' + id,
+            success: function(response) {
+                $('#lahanModalLabel').text('Lihat Lahan');
+                $('#id').val(response.lahan.id);
+                $('#nama_lahan').val(response.lahan.nama_lahan);
+                $('#detail_lokasi').val(response.lahan.detail_lokasi);
+                $('#luas').val(response.lahan.luas);
+                $('#latitude').val(response.lahan.latitude);
+                $('#longitude').val(response.lahan.longitude);
+                $('#jenis_tanah').val(response.lahan.jenis_tanah);
+                $('#lahanModal').modal('show');
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    };
+
+    // Fungsi untuk menyimpan atau memperbarui data lahan
+    $('#lahanForm').submit(function(e) {
+        e.preventDefault();
+        var formData = $(this).serialize();
+        var url = 'tambahlahan';
+        var method = 'POST';
+
+        if ($('#id').val() !== '') {
+            url += '/' + $('#id').val();
+            method = 'PUT';
+        }
+
+        $.ajax({
+            type: method,
+            url: url,
+            data: formData,
+            success: function(response) {
+                $('#lahanModal').modal('hide');
+                loadData();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+    // Fungsi untuk menghapus data lahan
+    window.deleteLahan = function(id) {
+        if (confirm('Apakah Anda yakin ingin menghapus data lahan ini?')) {
+            $.ajax({
+                type: 'DELETE',
+                url: '/lahan/' + id+ '/delete',
+                success: function(response) {
+                    loadData();
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+    };
+
+    // Fungsi untuk menampilkan modal ubah lahan
+    window.editLahan = function(id) {
+        $.ajax({
+            type: 'GET',
+            url: '/lahan/' + id,
+            success: function(response) {
+                $('#lahanModalLabel').text('Ubah Lahan');
+                $('#id').val(response.lahan.id);
+                $('#nama_lahan').val(response.lahan.nama_lahan);
+                $('#detail_lokasi').val(response.lahan.detail_lokasi);
+                $('#luas').val(response.lahan.luas);
+                $('#latitude').val(response.lahan.latitude);
+                $('#longitude').val(response.lahan.longitude);
+                $('#jenis_tanah').val(response.lahan.jenis_tanah);
+                $('#lahanModal').modal('show');
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    };
+});
+</script>
+
+
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+
+const map = new mapboxgl.Map({
+  container: 'map', // ID of the container element
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [113.666039, -8.2885468], // Coordinates for the center of the map
+  zoom: 12 // Initial zoom level
+});
+
+const tambahmap = new mapboxgl.Map({
+  container: 'tambahmap', // ID of the container element
+  style: 'mapbox://styles/mapbox/streets-v12',
+  center: [113.666039, -8.2885468], // Coordinates for the center of the map
+  zoom: 12 // Initial zoom level
+});
+
+const geocoder2 = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  mapboxgl: mapboxgl
+});
+
+// Add the geocoder to the modal map
+tambahmap.addControl(geocoder2);
+
+// Handle modal show event to resize map
+$('#lahanModal').on('shown.bs.modal', function () {
+  tambahmap.resize();
+});
+
+var geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  mapboxgl: mapboxgl,
+  marker: false,
+  placeholder: 'Masukan kata kunci...',
+  zoom: 20
+});
+
+tambahmap.addControl(geocoder); // Add geocoder control to tambahmap
+
+let marker = null;
+tambahmap.on('click', function (e) { // Change map to tambahmap
+  if (marker == null) {
+    marker = new mapboxgl.Marker()
+      .setLngLat(e.lngLat)
+      .addTo(tambahmap); // Change map to tambahmap
+  } else {
+    marker.setLngLat(e.lngLat);
+  }
+  lk = e.lngLat;
+  document.getElementById("latitude").value = e.lngLat.lat;
+  document.getElementById("longitude").value =e.lngLat.lng;
+});
+</script>
+
+
 
     {{-- notify example --}}
     {{-- <script>
