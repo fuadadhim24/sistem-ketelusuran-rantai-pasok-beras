@@ -276,6 +276,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th class="border-0">No</th>
+                                    <th class="border-0">ID Produksi</th>
                                     <th class="border-0">Jumlah Panen</th>
                                     <th class="border-0">Tanggal Produksi</th>
                                     <th class="border-0">Tanggal Panen</th>
@@ -287,23 +288,24 @@
                             <tbody>
                                 <tr id="row-{{ $item->id }}">
                                     <td>{{ $loop->iteration }}</td>
+                                    <td>PB00{{ $item->id }}</td>
                                     <td>{{ optional($item->panen)->quantity }}</td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>{{ optional($item->panen)->created_at }}</td>
                                     <td>{{ optional($item->padi)->varietas }}</td>
                                     <td>{{ optional($item->lahan)->nama_lahan }}</td>
                                     <td>
-                                        <button id="btnTampilkan-{{ $index }}" class="btn btn-outline-warning"
-                                            type="button"
+                                        <button id="btnTampilkan-{{ $index }}"
+                                            class="btn btn-sm btn-outline-warning" type="button"
                                             onclick="toggleButtonsAndShowDetailPanen({{ $index }})">Tampilkan</button>
-                                        <button id="btnLoad-{{ $index }}" class="btn btn-outline-success"
+                                        <button id="btnLoad-{{ $index }}" class="btn btn-sm btn-outline-success"
                                             type="button" hidden disabled>
                                             <span class="ms-1">Loading...</span>
                                             <span class="spinner-border spinner-border-sm" role="status"
                                                 aria-hidden="true"></span>
                                         </button>
-                                        <button id="btnSembunyikan-{{ $index }}" class="btn btn-outline-gray-500"
-                                            type="button" hidden
+                                        <button id="btnSembunyikan-{{ $index }}"
+                                            class="btn btn-sm btn-outline-gray-500" type="button" hidden
                                             onclick="hideDetailPanen({{ $index }})">Sembunyikan</button>
 
                                         <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert"
@@ -348,10 +350,8 @@
                                                 Lokasi gagal diidentifikasi.
                                             </div>
                                         </div>
-                                        <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                                        <button class="btn btn-outline-danger" type="button">hapus</button>
+                                        <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
                                     </td>
-
                                 </tr>
                             </tbody>
                         </table>
@@ -509,9 +509,36 @@
                 .addTo(map);
         </script>
     @empty
-        <tr>
-            <td colspan="6">Tidak ada data</td>
-        </tr>
+        <div class="col-12 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <!-- End of Modal Content -->
+                    <div class="table-responsive">
+                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
+                            style="width:100%">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="border-0">No</th>
+                                    <th class="border-0">ID Produksi</th>
+                                    <th class="border-0">Jumlah Panen</th>
+                                    <th class="border-0">Tanggal Produksi</th>
+                                    <th class="border-0">Tanggal Panen</th>
+                                    <th class="border-0">Nama Padi</th>
+                                    <th class="border-0">Lahan</th>
+                                    <th class="border-0">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6">Tidak ada data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     @endforelse
 
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
@@ -565,22 +592,13 @@
     <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
         <div class="row">
             <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+                <p class="mb-0 text-center text-lg-start">© 2023-<span class="current-year"></span> <a
+                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">JejakPadi</a>
                 </p>
             </div>
             <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                 <!-- List -->
                 <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-                    <li class="list-inline-item px-0 px-sm-2">
-                        <a href="https://themesberg.com/about">About</a>
-                    </li>
-                    <li class="list-inline-item px-0 px-sm-2">
-                        <a href="https://themesberg.com/themes">Themes</a>
-                    </li>
-                    <li class="list-inline-item px-0 px-sm-2">
-                        <a href="https://themesberg.com/blog">Blog</a>
-                    </li>
                     <li class="list-inline-item px-0 px-sm-2">
                         <a href="https://themesberg.com/contact">Contact</a>
                     </li>

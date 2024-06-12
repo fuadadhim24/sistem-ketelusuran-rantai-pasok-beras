@@ -25,6 +25,6 @@ class PadiModel extends Model
 
     public function produksi()
     {
-        return $this->hasMany(ProduksiModel::class, 'id_padi');
+        return $this->hasMany(ProduksiModel::class, 'id_produksi');
     }
 }

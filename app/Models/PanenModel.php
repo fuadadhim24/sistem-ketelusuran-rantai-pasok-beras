@@ -29,4 +29,8 @@ class PanenModel extends Model
     {
         return $this->belongsTo(ProduksiModel::class, 'id_produksi');
     }
+    public function pengolahan()
+    {
+        return $this->hasMany(AdminPengolahanModel::class, 'id_pengolahan');
+    }
 }

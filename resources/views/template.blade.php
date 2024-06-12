@@ -163,7 +163,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}" class="nav-link">
+                    <a href="{{ route('pengolahan') }}" class="nav-link">
                         <span class="sidebar-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                 class="bi bi-thunderbolt-fill icon icon-xs me-2" viewBox="0 0 20 20">
@@ -191,7 +191,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('pengujian') }}" class="nav-link d-flex justify-content-between">
+                    <a href="{{ route('pengemasan') }}" class="nav-link d-flex justify-content-between">
                         <span>
                             <span class="sidebar-icon">
                                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"

@@ -31,4 +31,9 @@ class LahanModel extends Model
     {
         return $this->hasMany(ProduksiModel::class, 'id_lahan');
     }
+
+    public function pengolahan()
+    {
+        return $this->hasMany(AdminPengolahanModel::class, 'id_lahan');
+    }
 }

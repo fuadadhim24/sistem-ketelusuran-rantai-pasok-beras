@@ -4,6 +4,23 @@
         <div class="container-fluid px-0">
             <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
                 <div class="d-flex align-items-center">
+                    <!-- Search form -->
+                    <form class="navbar-search form-inline" id="navbar-search-main">
+                        <div class="input-group input-group-merge search-bar">
+                            <span class="input-group-text" id="topbar-addon">
+                                <svg class="icon icon-xs" x-description="Heroicon name: solid/search"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Search"
+                                aria-label="Search" aria-describedby="topbar-addon">
+                        </div>
+                    </form>
+                    <!-- / Search form -->
                 </div>
                 <!-- Navbar links -->
                 <ul class="navbar-nav align-items-center">
@@ -26,8 +43,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <!-- Avatar -->
-                                            <img alt="Image placeholder"
-                                                src="{{ asset('volt/assets/img/team/profile-picture-1.jpg') }}"
+                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg"
                                                 class="avatar-md rounded">
                                         </div>
                                         <div class="col ps-0 ms-2">
@@ -48,8 +64,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <!-- Avatar -->
-                                            <img alt="Image placeholder"
-                                                src="{{ asset('volt/assets/img/team/profile-picture-2.jpg') }}"
+                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-2.jpg"
                                                 class="avatar-md rounded">
                                         </div>
                                         <div class="col ps-0 ms-2">
@@ -70,8 +85,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <!-- Avatar -->
-                                            <img alt="Image placeholder"
-                                                src="{{ asset('volt/assets/img/team/profile-picture-3.jpg') }}"
+                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg"
                                                 class="avatar-md rounded">
                                         </div>
                                         <div class="col ps-0 m-2">
@@ -92,8 +106,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <!-- Avatar -->
-                                            <img alt="Image placeholder"
-                                                src="{{ asset('volt/assets/img/team/profile-picture-4.jpg') }}"
+                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-4.jpg"
                                                 class="avatar-md rounded">
                                         </div>
                                         <div class="col ps-0 ms-2">
@@ -114,8 +127,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <!-- Avatar -->
-                                            <img alt="Image placeholder"
-                                                src="{{ asset('volt/assets/img/team/profile-picture-5.jpg') }}"
+                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-5.jpg"
                                                 class="avatar-md rounded">
                                         </div>
                                         <div class="col ps-0 ms-2">
@@ -150,7 +162,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="media d-flex align-items-center">
                                 <img class="avatar rounded-circle" alt="Image placeholder"
-                                    src="{{ asset('volt/assets/img/team/profile-picture-3.jpg') }}">
+                                    src="../../assets/img/team/profile-picture-3.jpg">
                                 <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                                     <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
                                 </div>
@@ -194,27 +206,24 @@
                                 Support
                             </a>
                             <div role="separator" class="dropdown-divider my-1"></div>
-                            <form method="POST" action="http://127.0.0.1:8000/logout" x-data>
-                                <input type="hidden" name="_token" value="" autocomplete="off">
-                                <a class="dropdown-item d-flex align-items-center" href="http://127.0.0.1:8000/logout"
-                                    @click.prevent="$root.submit();">
-                                    <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                                        </path>
-                                    </svg>
-                                    Logout
-                                </a>
-                            </form>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                                    </path>
+                                </svg>
+                                Logout
+                            </a>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="py-4">
-        <nav arial-label="breadcrumb" class="d-none d-md-inline-block">
+        <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
             <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
                 <li class="breadcrumb-item">
                     <a href="#">
@@ -226,229 +235,47 @@
                         </svg>
                     </a>
                 </li>
-                <li class="breadcrumb-item">
-                    <a href="#">JejakTani</a>
-                </li>
-                <li class="breadcrumb-item" aria-current="page">Pengujian</li>
-                <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+                <li class="breadcrumb-item"><a href="#">JejakPadi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pengolahan</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
-                <h1 class="h4">Pengujian</h1>
+                <h1 class="h4">Pengolahan</h1>
+                <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
             </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-12 col-xl-8">
-            <div class="col-12 px-0 mb">
-                <div class="card border-0 shadow">
-                    <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
-                        <div class="d-block">
-                            <div class="h6 fw-normal text-gray mb-2">Klasifikasi Mutu</div>
-                            <h2 class="h3 fw-extrabold">Tabel Capaian</h2>
-                            <div class="small mt-2">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-2">
-                        <img src="{{ asset('asset/custom/img/admin/tabel_klasifikasi_mutu.png') }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-xl-4">
-            <div class="col-12 px-0">
-                <div class="card border-0 shadow">
-                    <div class="card-body">
-                        <h2 class="fs-5 fw-bold mb-1">Komparasi Produk Hasil Uji</h2>
-                        <p>Perbandingan hasil pengolahan yang belum dan sudah melalui tahap pengujian.</p>
-                        <div class="d-block">
-                            <div class="d-flex align-items-center me-5">
-                                <div class="icon-shape icon-sm icon-shape-danger rounded me-3">
-                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <div class="d-block">
-                                    <label class="mb-0">Belum Diuji</label>
-                                    <h4 class="mb-0">33.50%</h4>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <div class="icon-shape icon-sm icon-shape-purple rounded me-3">
-                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div class="d-block">
-                                    <label class="mb-0">Telah Diuji</label>
-                                    <h4 class="mb-0">76.49%</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-xl-8">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card border-0 shadow">
-                        <div class="card-body">
-                            <div class="card-header mb-4 border-bottom d-flex align-items-center justify-content-between">
-                                <div class="col">
-                                    <h2 class="fs-5 fw-bold mb-0">Tambah Data</h2>
-                                </div>
-                                <div class="col text-end">
-                                    <a href="#" class="btn btn-sm btn-primary">Simpan</a>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Derajat Sosoh (minimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Kadar Air (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Beras Kepala (minimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Butir Patah (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Butir Menir, Merah, Kuning/Rusak, Kapur</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Benda Lain (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Butir Gabah (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                Butir/100g
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label class="my-1 me-2" for="country">Nama Produk</label>
-                                        <select class="form-select" id="country" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label class="my-1 me-2" for="country">Hasil Pengolahan</label>
-                                        <select class="form-select" id="country" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-5">
-                                        <label for="textarea">Keterangan</label>
-                                        <textarea class="form-control" placeholder="Masukkan pesan..." id="textarea" rows="4"></textarea>
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-xl-4 mt-4">
+        <div class="col-12 col-xl-6">
             <div class="card border-0 shadow components-section">
                 <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                    <h2 class="fs-5 fw-bold mb-0">Riwayat Pengujian</h2>
+                    <h2 class="fs-5 fw-bold mb-0">Riwayat Pengolahan</h2>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
                             style="width:100%">
-                            {{-- @forelse ($pengolahan as $item) --}}
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="border-0">No</th>
-                                    <th class="border-0">ID Pengolahan</th>
-                                    <th class="border-0">ID Produksi</th>
-                                    <th class="border-0">Tanggal</th>
-                                    <th class="border-0">Hasil</th>
-                                    <th class="border-0">Gudang Penyimpanan</th>
-                                    <th class="border-0">Metode</th>
-                                    <th class="border-0">Lama Pengolahan</th>
-                                    <th class="border-0">Deskripsi</th>
-                                    <th class="border-0">Aksi</th>
-                                </tr>
-                            </thead>
-                            {{-- <tbody>
+                            @forelse ($pengolahan as $item)
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">No</th>
+                                        <th class="border-0">ID Pengolahan</th>
+                                        <th class="border-0">ID Produksi</th>
+                                        <th class="border-0">Tanggal</th>
+                                        <th class="border-0">Hasil</th>
+                                        <th class="border-0">Gudang Penyimpanan</th>
+                                        <th class="border-0">Metode</th>
+                                        <th class="border-0">Lama Pengolahan</th>
+                                        <th class="border-0">Deskripsi</th>
+                                        <th class="border-0">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     <tr id="row-{{ $item->id }}">
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>PB00{{ $item->id }}</td>
+                                        <td>PG00{{ $item->id }}</td>
                                         <td>PB00{{ optional($item->produksi)->id }}</td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->hasil }}</td>
@@ -466,14 +293,114 @@
                                 <tr>
                                     <td colspan="6">Tidak ada data</td>
                                 </tr>
-                            @endforelse --}}
+                            @endforelse
 
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-12 col-xl-6">
+            <div class="card border-0 shadow components-section">
+                <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                    <h2 class="fs-5 fw-bold mb-0">Tambah Pengolahan</h2>
+                    <button type="submit" class="btn btn-sm btn-primary" id="simpan">Simpan</button>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-lg-6 col-sm-6">
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="idProduksi">ID Produksi</label>
+                                <select class="form-select" id="idProduksi" aria-label="Default select example">
+                                    <option selected>Pilih ID Produksi</option>
+                                    @forelse ($pengolahan as $item)
+                                    <option value="{{ optional($item->produksi)->id }}" data-produksi="{{ json_encode($item->produksi) }}">PB00{{ optional($item->produksi)->id }}</option>
+                                    @empty
+                                    @endforelse
+                                </select>
+                                <small id="Help" class="form-text text-muted">merupakan hasil panen yang belum
+                                    diolah.</small>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="disabledTextInput">Jumlah Panen</label>
+                                <input type="text" id="jumlah_panen" class="form-control"
+                                    placeholder="Disabled input" disabled>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="disabledTextInput">Tanggal Produksi</label>
+                                <input type="text" id="tanggal_produksi" class="form-control"
+                                    placeholder="Disabled input" disabled>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="disabledTextInput">Tanggal Panen</label>
+                                <input type="text" id="tanggal_panen" class="form-control"
+                                    placeholder="Disabled input" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="disabledTextInput">Nama Padi</label>
+                                <input type="text" id="nama_padi" class="form-control" placeholder="Disabled input"
+                                    disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="disabledTextInput">Nama Lahan</label>
+                                <input type="text" id="nama_lahan" class="form-control" placeholder="Disabled input"
+                                    disabled>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="mb-4">
+                                <label for="metode">Metode</label>
+                                <input type="metode" class="form-control" id="metode">
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="birthday">Tanggal Pengolahan</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <input data-datepicker="" class="form-control" id="birthday" type="text"
+                                        placeholder="dd/mm/yyyy" required>
+                                </div>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="textarea">Deskripsi</label>
+                                <textarea class="form-control" placeholder="Enter your message..." id="textarea" rows="4"></textarea>
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="metode">Lama Pengolahan</label>
+                                <input type="metode" class="form-control" placeholder="cth: 10" id="metode">
+                                <small id="emailHelp" class="form-text text-muted">satuan jam.</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="metode">Hasil (ton)</label>
+                                <input type="metode" placeholder="cth: 55,5" class="form-control" id="metode">
+                                <small id="emailHelp" class="form-text text-muted">satuan ton.</small>
+                            </div>
+
+                            <!-- End of Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
         <div class="card-body bg-gray-800 text-white pt-4">
             <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
@@ -499,10 +426,10 @@
             <div class="d-flex justify-content-center">
                 <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
                     target="_blank">
-                    <img src="{{ asset('volt/assets/img/technologies/bootstrap-5-logo.svg') }}" class="image image-xs">
+                    <img src="../../assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
                 </a>
                 <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                    <img src="{{ asset('volt/assets/img/technologies/react-logo.svg') }}" class="image image-xs">
+                    <img src="../../assets/img/technologies/react-logo.svg" class="image image-xs">
                 </a>
             </div>
         </div>
@@ -548,55 +475,20 @@
         </div>
     </footer>
 
+
     <script>
-        const notyf = new Notyf();
+        document.getElementById('idProduksi').addEventListener('change', function() {
+            var selectedIndex = this.selectedIndex;
+            var selectedOption = this.options[selectedIndex];
+            var produksiData = JSON.parse(selectedOption.getAttribute('data-produksi'));
+            console.log(produksiData);
 
-        function toggleButtonsAndShowDetailPanen(index) {
-            var button1 = document.getElementById("btnTampilkan-" + index);
-            var button2 = document.getElementById("btnSembunyikan-" + index);
-            var button3 = document.getElementById("btnLoad-" + index);
-            var toast = document.getElementById("toastLokasiBerhasil");
-
-            // Tampilkan button 2 dan sembunyikan button 1
-            button3.removeAttribute("hidden");
-            button3.removeAttribute("disabled");
-
-            button1.setAttribute("hidden", "true");
-            button1.setAttribute("disabled", "true");
-
-            // Tampilkan detail hasil panen
-            $('#detailPanenContent-' + index).removeClass('d-none');
-
-            // Set timeout untuk kembali ke keadaan semula setelah 3 detik
-            setTimeout(function() {
-                // Set timeout untuk menyembunyikan notif
-                button2.removeAttribute("hidden");
-                button2.removeAttribute("disabled");
-                button3.setAttribute("hidden", "true");
-                button3.setAttribute("disabled", "true");
-
-                // notify
-                notyf.success({
-                    message: 'Lokasi berhasil diidentifikasi',
-                    duration: 3000,
-                    icon: false
-                });
-            }, 2000);
-        }
-
-        function hideDetailPanen(index) {
-            var button1 = document.getElementById("btnTampilkan-" + index);
-            var button2 = document.getElementById("btnSembunyikan-" + index);
-            var detailPanenContent = document.getElementById("detailPanenContent-" + index);
-
-            // Sembunyikan detail hasil panen
-            detailPanenContent.classList.add('d-none');
-
-            // Tampilkan button 1 dan sembunyikan button 2
-            button1.removeAttribute("hidden");
-            button1.removeAttribute("disabled");
-            button2.setAttribute("hidden", "true");
-            button2.setAttribute("disabled", "true");
-        }
+            document.getElementById('jumlah_panen').value = produksiData.jumlah_benih;
+            document.getElementById('tanggal_produksi').value = produksiData.tanggal_produksi;
+            document.getElementById('tanggal_panen').value = produksiData.panen ? produksiData.panen.created_at :
+                '';
+            document.getElementById('nama_padi').value = produksiData.padi ? produksiData.padi.varietas : '';
+            document.getElementById('nama_lahan').value = produksiData.lahan ? produksiData.lahan.nama_lahan : '';
+        });
     </script>
 @endsection

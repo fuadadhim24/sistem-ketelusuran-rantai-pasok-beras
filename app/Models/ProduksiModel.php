@@ -50,4 +50,9 @@ class ProduksiModel extends Model
     {
         return $this->hasMany(PerawatanModel::class, 'id_produksi');
     }
+
+    public function pengolahan()
+    {
+        return $this->hasOne(AdminPengolahanModel::class, 'id_produksi')->with(['padi', 'lahan', 'panen']);
+    }
 }

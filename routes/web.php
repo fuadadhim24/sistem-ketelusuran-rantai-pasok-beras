@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminPengolahanController;
 use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
 use App\Http\Controllers\HasilPanenController;
+use App\Http\Controllers\pengemasanController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
 use App\Http\Controllers\lahanController;
@@ -99,6 +101,12 @@ Route::middleware([
     // Route::post('/hasil-panen', [HasilPanenController::class, 'store'])->name('hasil-panen.store');
     // Route::put('/hasil-panen/{id}', [HasilPanenController::class, 'update'])->name('hasil-panen.update');
     // Route::delete('/hasil-panen/{id}', [HasilPanenController::class, 'destroy'])->name('hasil-panen.destroy');
+    
+    // pengolahan
+    Route::get('/pengolahan', [AdminPengolahanController::class, 'index'])->name('pengolahan');
 
+    // pengemasan
+    Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
+    
 });
 
