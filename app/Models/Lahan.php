@@ -16,7 +16,7 @@ class Lahan extends Model
         'detail_lokasi',
         'luas',
         'latitude',
-        'longlitude',
+        'longitude',
         'jenis_tanah',
         'id_user',
         'deleted_at',
@@ -24,7 +24,10 @@ class Lahan extends Model
         'updated_at'
     ];
 
-
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
     public function produksi(){
         return $this->hasOne(Produksi::class,'id_lahan', 'id');
     }

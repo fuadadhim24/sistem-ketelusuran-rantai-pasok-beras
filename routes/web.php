@@ -86,6 +86,7 @@ Route::middleware([
 
     Route::get('/lahan', function () {
         return view('admin.lahan.index'); })->name('lahan');
+        Route::get('/getlahan', [lahanController::class, 'getlahans'])->name('get.lahan');
         Route::post('/tambahlahan', [lahanController::class, 'store'])->name('lahan.store');
         Route::put('/lahan/{id}/update', [lahanController::class, 'update'])->name('lahan.update');
         Route::delete('/lahan/{id}/delete', [lahanController::class, 'destroy'])->name('lahan.delete');

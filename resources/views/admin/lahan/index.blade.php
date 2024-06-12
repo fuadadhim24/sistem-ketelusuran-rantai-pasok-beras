@@ -201,7 +201,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                <table class="table align-items-center table-flush">
+                                <table class="table align-items-center table-flush" id="lahanTable">
     <thead class="thead-light">
         <tr>
             <th class="border-bottom" scope="col">Nama Lahan</th>
@@ -409,258 +409,191 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-
 <script>
-   $(document).ready(function() {
-    // Fungsi untuk menampilkan data lahan saat halaman dimuat
-    function loadData() {
-        $.ajax({
-            type: 'GET',
-            url: '/lahan',
-            success: function(response) {
-                if (response.lahans.length > 0) {
-                    var rows = '';
-                    $.each(response.lahans, function(index, lahan) {
-                        rows += '<tr>';
-                        rows += '<td>' + lahan.nama_lahan + '</td>';
-                        rows += '<td>' + lahan.luas + '</td>';
-                        rows += '<td>' + lahan.detail_lokasi + '</td>';
-                        rows += '<td>';
-                        rows += '<button class="btn btn-outline-success btn-sm" onclick="viewLahan(' + lahan.id + ')">Lihat</button>';
-                        rows += '<button class="btn btn-outline-warning btn-sm" onclick="editLahan(' + lahan.id + ')">Ubah</button>';
-                        rows += '<button class="btn btn-outline-danger btn-sm" onclick="deleteLahan(' + lahan.id + ')">Hapus</button>';
-                        rows += '</td>';
-                        rows += '</tr>';
-                    });
-                    $('#lahanTable tbody').html(rows);
-                } else {
-                    $('#lahanTable tbody').html('<tr><td colspan="4">Tidak ada data lahan.</td></tr>');
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    }
+    $(document).ready(function () {
+        // Handle form submission for adding a new land
+        $('#lahanForm').submit(function (e) {
+            e.preventDefault(); // Prevent the default form submission
 
-    // Panggil fungsi loadData saat halaman dimuat
-    loadData();
+            // Serialize form data
+            var formData = $(this).serialize();
 
-    // Fungsi untuk menampilkan modal tambah lahan
-    $('#btnTambah').click(function() {
-        $('#lahanModalLabel').text('Tambah Lahan');
-        $('#lahanForm')[0].reset();
-        $('#id').val('');
-        $('#lahanModal').modal('show');
-    });
+            // Mengambil nilai longitude dan latitude secara terpisah
+            var longitude = $('#longitude').val();
+            var latitude = $('#latitude').val();
 
-    // Fungsi untuk menampilkan data lahan pada form modal
-    window.viewLahan = function(id) {
-        $.ajax({
-            type: 'GET',
-            url: '/lahan/' + id,
-            success: function(response) {
-                $('#lahanModalLabel').text('Lihat Lahan');
-                $('#id').val(response.lahan.id);
-                $('#nama_lahan').val(response.lahan.nama_lahan);
-                $('#detail_lokasi').val(response.lahan.detail_lokasi);
-                $('#luas').val(response.lahan.luas);
-                $('#latitude').val(response.lahan.latitude);
-                $('#longitude').val(response.lahan.longitude);
-                $('#jenis_tanah').val(response.lahan.jenis_tanah);
-                $('#lahanModal').modal('show');
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    };
+            // Menambahkan nilai longitude dan latitude ke dalam formData
+            formData += '&longitude=' + longitude + '&latitude=' + latitude;
 
-    // Fungsi untuk menyimpan atau memperbarui data lahan
-    $('#lahanForm').submit(function(e) {
-        e.preventDefault();
-        var formData = $(this).serialize();
-        var url = 'tambahlahan';
-        var method = 'POST';
+            // Menambahkan token CSRF ke dalam formData
+            formData += '&_token=' + $('meta[name="csrf-token"]').attr('content');
 
-        if ($('#id').val() !== '') {
-            url += '/' + $('#id').val();
-            method = 'PUT';
-        }
-
-        $.ajax({
-            type: method,
-            url: url,
-            data: formData,
-            success: function(response) {
-                $('#lahanModal').modal('hide');
-                loadData();
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-        });
-    });
-
-    // Fungsi untuk menghapus data lahan
-    window.deleteLahan = function(id) {
-        if (confirm('Apakah Anda yakin ingin menghapus data lahan ini?')) {
+            // Submit the form data using AJAX
             $.ajax({
-                type: 'DELETE',
-                url: '/lahan/' + id+ '/delete',
-                success: function(response) {
-                    loadData();
+                url: "{{ route('lahan.store') }}",
+                type: "POST",
+                data: formData,
+                success: function (response) {
+                    console.log(response);
+                    // Reset form after successful data submission
+                    $('#lahanForm')[0].reset();
+
+                    // Close modal
+                    $('#lahanModal').modal('hide');
+                    $('#lahanModal').on('hidden.bs.modal', function () {
+                        console.log('Modal tertutup');
+                        reloadContent();
+                    });
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr) {
+                    console.log(xhr.responseText);
+                    // Display error message to user if needed
+                    alert('Error: ' + xhr.responseText);
+                }
+            });
+        });
+
+        function loadLahans() {
+            $.ajax({
+                url: '/getlahan',
+                type: 'GET',
+                success: function(response) {
+                    var lahans = response.lahans;
+                    var tableRows = '';
+                    if (lahans.length > 0) {
+                        $.each(lahans, function(index, lahan) {
+                            tableRows += '<tr>';
+                            tableRows += '<td class="text-gray-900" scope="row">' + lahan.nama_lahan + '</td>';
+                            tableRows += '<td class="fw-bolder text-gray-500">' + lahan.luas + '</td>';
+                            tableRows += '<td class="fw-bolder text-gray-500">' + lahan.detail_lokasi + '</td>';
+                            tableRows += '<td>';
+                            tableRows += '<button class="btn btn-sm btn-outline-success mb-3" onclick="viewLahan(' + lahan.id + ')">lihat</button>';
+                            tableRows += '<button class="btn btn-sm btn-outline-warning mb-3" onclick="editLahan(' + lahan.id + ')">ubah</button>';
+                            tableRows += '<button class="btn btn-sm btn-outline-danger mb-3" onclick="deleteLahan(' + lahan.id + ')">hapus</button>';
+                            tableRows += '</td>';
+                            tableRows += '</tr>';
+                        });
+                    } else {
+                        tableRows = '<tr><td colspan="4">Tidak ada data lahan yang tersedia.</td></tr>';
+                    }
+                    $('#lahanTable tbody').html(tableRows);
+                },
+                error: function(xhr) {
                     console.error(xhr.responseText);
                 }
             });
         }
-    };
 
-    // Fungsi untuk menampilkan modal ubah lahan
-    window.editLahan = function(id) {
-        $.ajax({
-            type: 'GET',
-            url: '/lahan/' + id,
-            success: function(response) {
-                $('#lahanModalLabel').text('Ubah Lahan');
-                $('#id').val(response.lahan.id);
-                $('#nama_lahan').val(response.lahan.nama_lahan);
-                $('#detail_lokasi').val(response.lahan.detail_lokasi);
-                $('#luas').val(response.lahan.luas);
-                $('#latitude').val(response.lahan.latitude);
-                $('#longitude').val(response.lahan.longitude);
-                $('#jenis_tanah').val(response.lahan.jenis_tanah);
-                $('#lahanModal').modal('show');
-            },
-            error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-            }
+        // Panggil fungsi loadLahans saat halaman dimuat
+        loadLahans();
+
+        // Function to reload content
+        function reloadContent() {
+            loadLahans();
+        }
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+
+        const map = new mapboxgl.Map({
+            container: 'map', // ID of the container element
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [113.666039, -8.2885468], // Coordinates for the center of the map
+            zoom: 12 // Initial zoom level
         });
-    };
-});
+
+        const tambahmap = new mapboxgl.Map({
+            container: 'tambahmap', // ID of the container element
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [113.666039, -8.2885468], // Coordinates for the center of the map
+            zoom: 12 // Initial zoom level
+        });
+
+        const geocoder2 = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+        // Add the geocoder to the modal map
+        tambahmap.addControl(geocoder2);
+
+        // Handle modal show event to resize map
+        $('#lahanModal').on('shown.bs.modal', function () {
+            tambahmap.resize();
+        });
+
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: false,
+            placeholder: 'Masukan kata kunci...',
+            zoom: 20
+        });
+
+        tambahmap.addControl(geocoder); // Add geocoder control to tambahmap
+
+        let marker = null;
+        tambahmap.on('click', function (e) { // Change map to tambahmap
+            if (marker == null) {
+                marker = new mapboxgl.Marker()
+                    .setLngLat(e.lngLat)
+                    .addTo(tambahmap); // Change map to tambahmap
+            } else {
+                marker.setLngLat(e.lngLat);
+            }
+            document.getElementById("latitude").value = e.lngLat.lat;
+            document.getElementById("longitude").value = e.lngLat.lng;
+        });
+
+        const notyf = new Notyf();
+
+        function toggleButtons() {
+            var button1 = document.getElementById("btnLihat");
+            var button2 = document.getElementById("btnLoad");
+            var toast = document.getElementById("toastLokasiBerhasil");
+
+            // Tampilkan button 2 dan sembunyikan button 1
+            button2.removeAttribute("hidden");
+            button2.removeAttribute("disabled");
+
+            button1.setAttribute("hidden", "true");
+            button1.setAttribute("disabled", "true");
+
+            // Set timeout untuk kembali ke keadaan semula setelah 3 detik
+            setTimeout(function() {
+                // Set timeout untuk menyembunyikan notif
+                button1.removeAttribute("hidden");
+                button1.removeAttribute("disabled");
+                button2.setAttribute("hidden", "true");
+                button2.setAttribute("disabled", "true");
+
+                // notify
+                const notyf = new Notyf({
+                    position: {
+                        x: 'right',
+                        y: 'top',
+                    },
+                    types: [
+                        {
+                            type: 'info',
+                            background: 'blue',
+                            icon: {
+                                className: 'fas fa-info-circle',
+                                tagName: 'span',
+                                color: '#fff'
+                            },
+                            dismissible: false
+                        }
+                    ]
+                });
+                notyf.success({
+                    message: 'Lokasi berhasil diidentifikasi',
+                    duration: 3000,
+                    icon: false
+                });
+            }, 3000);
+        }
+    });
 </script>
-
-
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-
-const map = new mapboxgl.Map({
-  container: 'map', // ID of the container element
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [113.666039, -8.2885468], // Coordinates for the center of the map
-  zoom: 12 // Initial zoom level
-});
-
-const tambahmap = new mapboxgl.Map({
-  container: 'tambahmap', // ID of the container element
-  style: 'mapbox://styles/mapbox/streets-v12',
-  center: [113.666039, -8.2885468], // Coordinates for the center of the map
-  zoom: 12 // Initial zoom level
-});
-
-const geocoder2 = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  mapboxgl: mapboxgl
-});
-
-// Add the geocoder to the modal map
-tambahmap.addControl(geocoder2);
-
-// Handle modal show event to resize map
-$('#lahanModal').on('shown.bs.modal', function () {
-  tambahmap.resize();
-});
-
-var geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  mapboxgl: mapboxgl,
-  marker: false,
-  placeholder: 'Masukan kata kunci...',
-  zoom: 20
-});
-
-tambahmap.addControl(geocoder); // Add geocoder control to tambahmap
-
-let marker = null;
-tambahmap.on('click', function (e) { // Change map to tambahmap
-  if (marker == null) {
-    marker = new mapboxgl.Marker()
-      .setLngLat(e.lngLat)
-      .addTo(tambahmap); // Change map to tambahmap
-  } else {
-    marker.setLngLat(e.lngLat);
-  }
-  lk = e.lngLat;
-  document.getElementById("latitude").value = e.lngLat.lat;
-  document.getElementById("longitude").value =e.lngLat.lng;
-});
-</script>
-
-
-
-    {{-- notify example --}}
-    {{-- <script>
-      const notyf = new Notyf();
-      const successNotification = notyf.success('Lokasi Lahanberhasil diidentifikasi');
-      const failNotification = notyf.error('Lokasi Lahangagal diidentifikasi');
-      // notyf.dismiss(successNotification);
-      // notyf.dismiss(failNotification);
-    </script> --}}
-
-    {{-- aksi lihat lokasi --}}
-    <script>
-      const notyf = new Notyf();
-
-      function toggleButtons() {
-        var button1 = document.getElementById("btnLihat");
-        var button2 = document.getElementById("btnLoad");
-        var toast = document.getElementById("toastLokasiBerhasil");
-
-        // Tampilkan button 2 dan sembunyikan button 1
-        button2.removeAttribute("hidden");
-        button2.removeAttribute("disabled");
-
-        button1.setAttribute("hidden", "true");
-        button1.setAttribute("disabled", "true");
-
-        // Set timeout untuk kembali ke keadaan semula setelah 3 detik
-        setTimeout(function() {
-          // Set timeout untuk menyembunyikan notif
-          button1.removeAttribute("hidden");
-          button1.removeAttribute("disabled");
-          button2.setAttribute("hidden", "true");
-          button2.setAttribute("disabled", "true");
-
-          // notify
-          const notyf = new Notyf({
-              position: {
-                  x: 'right',
-                  y: 'top',
-              },
-              types: [
-                  {
-                      type: 'info',
-                      background: 'blue',
-                      icon: {
-                          className: 'fas fa-info-circle',
-                          tagName: 'span',
-                          color: '#fff'
-                      },
-                      dismissible: false
-                  }
-              ]
-          });
-          notyf.success({
-            message: 'Lokasi berhasil diidentifikasi',
-            duration: 3000,
-            icon: false
-          });
-        }, 3000);
-      }
-      </script>
 
       {{-- library notify --}}
       <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>

@@ -9,6 +9,11 @@ class lahanController extends Controller
     function index(){
         return view('admin.lahan.index');
     }
+    public function getLahans()
+    {
+        $lahans = Lahan::all();
+        return response()->json(['lahans' => $lahans]);
+    }
     public function store(Request $request)
     {
         // Validasi request
