@@ -49,6 +49,9 @@ class AdminPengolahanModel extends Model
     {
         return $this->hasOne(PengemasanModel::class, 'id_pengemasan');
     }
-    
+    public function scopeNoPengolahan($query)
+    {
+        return $query->whereDoesntHave('pengolahan');
+    }
 
 }

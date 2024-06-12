@@ -68,7 +68,7 @@ Route::middleware([
     Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class, 'tambahView'])->name('tambah-varietas');
     Route::post('/varietasPadi', [VarietasPadiController::class, 'store'])->name('varietasPadi.store');
     Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi.destroy');
-    Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
+Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/varietasPadi/{id}/edit', [VarietasPadiController::class, 'edit'])->name('edit-varietas');
     Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class, 'update'])->name('update-varietas');
     Route::get('/reloadcontentvarietas', [VarietasPadiController::class, 'reloadContent'])->name('reload-content-varietas');
@@ -105,6 +105,8 @@ Route::middleware([
     
     // pengolahan
     Route::get('/pengolahan', [AdminPengolahanController::class, 'index'])->name('pengolahan');
+    Route::post('/pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan.store');
+    Route::get('/reloadcontentpengolahan', [AdminPengolahanController::class, 'reloadContent'])->name('reload-content-pengolahan');
 
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');

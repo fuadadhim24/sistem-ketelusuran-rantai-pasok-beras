@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pengolahan', function (Blueprint $table) {
             $table->id();
-            $table->float('metode');
+            $table->string('metode');
             $table->string('deskripsi');
             $table->string('lama');//jam
             $table->string('hasil');//kw
