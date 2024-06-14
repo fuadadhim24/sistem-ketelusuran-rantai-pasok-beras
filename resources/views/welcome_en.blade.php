@@ -482,7 +482,7 @@
                 <div class="div-divider-small-border-1">
                 </div>
             </div>
-            <div class="divfooter-outer">
+            {{-- <div class="divfooter-outer">
                 <div class="container-28">
                     <div class="container-4">
                         <div class="heading-4-ud-tani-rejo">
@@ -585,60 +585,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="svg">
                 <img class="vector-21" src="{{ asset('asset/custom/vectors/vector5_x2.svg ') }}" />
             </div>
-            {{-- <div class="div-inner-wrap-outer-3">
-                    <div class="div-nectar-fancy-box-3">
-                        <div class="div-box-bg-3">
-                            <div class="before-3">
-                            </div>
-                            <span class="heading-3-pelanggan">
-                                Pelanggan
-                            </span>
-                        </div>
-                    </div>
-                </div> --}}
 
-            {{-- <div class="div-inner-wrap-2">
-                    <div class="div-row-bg-overlay-1">
-                    </div>
-                    <div class="container-17">
-                        <div class="heading-2-kantor">
-                            Toko <br />
-                            UD Tani Rejo
-                        </div>
-                        <div class="container">
-                            <div class="strong-kantor-jakarta">
-                                Toko Jenggawah
-                            </div>
-                            <span
-                                class="jl-tempurejo-cangkring-baru-cangkring-kec-jenggawah-kabupaten-jember-jawa-timur-68171">
-                                Jl. Tempurejo, Cangkring Baru, Cangkring, Kec. Jenggawah, Kabupaten Jember, Jawa Timur
-                                68171
-                            </span>
-                        </div>
-                    </div>
-                    <div class="div-divider-small-border-1">
-                    </div>
-                </div> --}}
-            <span class="container-1">
-
-            </span>
-            {{-- <div class="div-column-bg-overlay-wrap">
-                    <div class="icon-2">
-                        <img class="vector-8" src="{{ asset('asset/custom/vectors/vector1_x2.svg ') }}" />
-                    </div>
-                    <div
-                        class="heading-4-kami-percaya-bahwa-perusahaan-harus-baik-bagi-masyarakat-baik-bagi-negara-baik-bagi">
-                        Kami meyakini bahwa sebuah perusahaan harus memberikan dampak positif bagi masyarakat, negara,
-                        lingkungan, dan konsumen sehingga akan menguntungkan perusahaan itu sendiri.
-                    </div>
-                    <span class="heading-6-emphasis-rge-chairman-founder">
-                        — Founder
-                    </span>
-                </div> --}}
         </div>
         <div class="divheader-secondary-outer">
             <div class="list-1">

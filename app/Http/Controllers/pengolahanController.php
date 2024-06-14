@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pengolahan;
 use App\Models\Produksi;
 use App\Models\Produk;
+use Endroid\QrCode\Builder\Builder;
+use Endroid\QrCode\Writer\PngWriter;
 use Illuminate\Http\Request;
 
 class pengolahanController extends Controller
@@ -35,15 +37,7 @@ class pengolahanController extends Controller
 
         return view('pengolahan',compact('data'));
     }
-    // public function detail($id){
-    //     // $data = Produk::with('produksi')->find($id);
-    //     $data = Produksi::find($id);
-    //     if (!$data) {
-    //         return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produk tidak ditemukan']);
-    //     }
 
-    //     return view('hasilpengolahan')->with('data', $data);
-    // }
 
 
     /**
@@ -71,11 +65,17 @@ class pengolahanController extends Controller
         if (!$produksi) {
             return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
         }
+        $result = Builder::create()
+            ->writer(new PngWriter())
+            ->data($produksi->id)
+            ->build();
+
+        $qrCode = base64_encode($result->getString());
 
         // $varietasPadi= Produksi::with('varietasPadi')->find($id);
         // return $varietasPadi;
         // dd($produksi->toArray());
-        return view('hasilpengolahan', compact('produksi'));
+        return view('hasilpengolahan', compact('produksi','qrCode'));
     }
 
     /**

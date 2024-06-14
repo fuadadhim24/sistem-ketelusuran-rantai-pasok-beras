@@ -220,7 +220,7 @@
 
                 </div>
             </div>
-            <div class="divfooter-outer">
+            {{-- <div class="divfooter-outer">
                 <div class="container-13">
                     <div class="container-11">
                         <div class="heading-4-ud-tani-rejo">
@@ -292,59 +292,6 @@
                         </span>
                     </div>
                 </div>
-                <div class="container-9">
-                    {{-- <span class="list-item-link-nilai-nilai-kami">
-                  Nilai-nilai Kami
-                </span> --}}
-                    {{-- <span class="list-item-link-kemitraan-dengan-petani">
-                    Kemitraan Dengan Petani
-                  </span> --}}
-                    {{-- <span class="list-item-link-produk">
-                    Produk
-                  </span> --}}
-                    {{-- <span class="list-item-link-standar-sertifikasi">
-                    Standar &amp; Sertifikasi
-                  </span> --}}
-                    {{-- <span class="list-item-link-pabrik">
-                  Pabrik
-                </span> --}}
-                    {{-- <span class="list-item-link-laporan-keberlanjutan">
-                  Laporan Keberlanjutan
-                </span> --}}
-                </div>
-                <div class="container-7">
-                    {{-- <span class="list-item-link-kemitraan-dengan-petani">
-                  Kemitraan Dengan Petani
-                </span> --}}
-                    {{-- <span class="list-item-link-produk">
-                  Produk
-                </span>
-                <span class="list-item-link-standar-sertifikasi">
-                  Standar &amp; Sertifikasi
-                </span> --}}
-                </div>
-                <div class="container-10">
-                    {{-- <span class="list-item-link-tonggak-sejarah">
-                  Tonggak Sejarah
-                </span> --}}
-                    {{-- <span class="list-item-link-penelitian-dan-pengembangan">
-                  Penelitian dan Pengembangan
-                </span> --}}
-                    {{-- <span class="list-item-link-sistem-ketertelusuran">
-                  Sistem Ketertelusuran
-                </span> --}}
-                </div>
-                {{-- <div class="container-5"> --}}
-                {{-- <span class="list-item-link-benih-topaz">
-                  Benih Padi
-                </span> --}}
-                {{-- <span class="list-item-link-program-inisiatif">
-                  Program &amp; Inisiatif
-                </span>
-              </div>
-              <div class="list-item-link-pengaduan">
-                Pengaduan
-              </div> --}}
                 <div class="divcopyright">
                     <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
                         © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.
@@ -371,7 +318,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
 </body>
 

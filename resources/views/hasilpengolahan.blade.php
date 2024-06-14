@@ -121,7 +121,8 @@
                                         </span>
                                         <span
                                             class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                            <img alt="Image placeholder" src="{{ asset('asset\img\produk'. $produk->foto) }}"
+                                            <img alt="Image placeholder"
+                                                src="{{ asset('asset/img/produk/' . $produk->foto) }}"
                                                 class="avatar-md rounded">
                                         </span>
                                         <span
@@ -329,7 +330,7 @@
                                     <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
                                         aria-labelledby="modal-default" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
+                                            <div saclass="modal-content">
                                                 <div class="modal-header">
                                                     <h2 class="h6 modal-title">Detail Produksi</h2>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -405,8 +406,7 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                    <img alt="Image placeholder" src="{{ asset('asset\img\produk\3.png') }}"
-                                        class="avatar-md rounded">
+                                    <img src="data:image/png;base64, {{ $qrCode }}" alt="QR Code">
                                 </span>
 
 
@@ -658,50 +658,50 @@
                                             <th>{{ $pengujian->tingkat_patah }}</th>
                                             <th width="30px">%</th>
                                         </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->kadar_Air }}</th>
-                                        <th width="30px">%</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->kadar_kerusakan }}</th>
-                                        <th width="30px">%</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->benda_asing }}</th>
-                                        <th width="30px">%</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->kadar_Kapur }}</th>
-                                        <th width="30px">%</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->warna_beras }}</th>
-                                        <th width="30px">%</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->bau_rasa }}</th>
-                                        <th width="30px">%</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengujian->keterangan }}</th>
-                                    </span>
-                                @endforeach
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->kadar_Air }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->kadar_kerusakan }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->benda_asing }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->kadar_Kapur }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->warna_beras }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->bau_rasa }}</th>
+                                            <th width="30px">%</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengujian->keterangan }}</th>
+                                        </span>
+                                    @endforeach
                                 @else
-                                <span
+                                    <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                         <th width="30px">:</th>
                                         <th>Tidak ada data</th>
@@ -762,20 +762,20 @@
                             </div>
                             <div class="group-634">
                                 @if ($produksi->pengolahan->count() > 0)
-                                @foreach ($produksi->pengolahan as $pengolahan)
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengolahan->hasil_penggilingan }}</th>
-                                    </span>
-                                    <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                        <th width="30px">:</th>
-                                        <th>{{ $pengolahan->kemasan }}</th>
-                                    </span>
-                                @endforeach
+                                    @foreach ($produksi->pengolahan as $pengolahan)
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengolahan->hasil_penggilingan }}</th>
+                                        </span>
+                                        <span
+                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                            <th width="30px">:</th>
+                                            <th>{{ $pengolahan->kemasan }}</th>
+                                        </span>
+                                    @endforeach
                                 @else
-                                <span
+                                    <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                         <th width="30px">:</th>
                                         <th>Tidak ada data</th>
@@ -800,7 +800,7 @@
 
         </div>
 
-        <div class="divfooter-outer">
+        {{-- <div class="divfooter-outer">
             <div class="container-13">
                 <div class="container-11">
                     <div class="heading-4-ud-tani-rejo">
@@ -872,59 +872,10 @@
                     </span>
                 </div>
             </div>
-            <div class="container-9">
-                {{-- <span class="list-item-link-nilai-nilai-kami">
-              Nilai-nilai Kami
-            </span> --}}
-                {{-- <span class="list-item-link-kemitraan-dengan-petani">
-                Kemitraan Dengan Petani
-              </span> --}}
-                {{-- <span class="list-item-link-produk">
-                Produk
-              </span> --}}
-                {{-- <span class="list-item-link-standar-sertifikasi">
-                Standar &amp; Sertifikasi
-              </span> --}}
-                {{-- <span class="list-item-link-pabrik">
-              Pabrik
-            </span> --}}
-                {{-- <span class="list-item-link-laporan-keberlanjutan">
-              Laporan Keberlanjutan
-            </span> --}}
-            </div>
-            <div class="container-7">
-                {{-- <span class="list-item-link-kemitraan-dengan-petani">
-              Kemitraan Dengan Petani
-            </span> --}}
-                {{-- <span class="list-item-link-produk">
-              Produk
-            </span>
-            <span class="list-item-link-standar-sertifikasi">
-              Standar &amp; Sertifikasi
-            </span> --}}
-            </div>
-            <div class="container-10">
-                {{-- <span class="list-item-link-tonggak-sejarah">
-              Tonggak Sejarah
-            </span> --}}
-                {{-- <span class="list-item-link-penelitian-dan-pengembangan">
-              Penelitian dan Pengembangan
-            </span> --}}
-                {{-- <span class="list-item-link-sistem-ketertelusuran">
-              Sistem Ketertelusuran
-            </span> --}}
-            </div>
-            {{-- <div class="container-5"> --}}
-            {{-- <span class="list-item-link-benih-topaz">
-              Benih Padi
-            </span> --}}
-            {{-- <span class="list-item-link-program-inisiatif">
-              Program &amp; Inisiatif
-            </span>
-          </div>
-          <div class="list-item-link-pengaduan">
-            Pengaduan
-          </div> --}}
+
+
+
+
             <div class="divcopyright">
                 <div class="ud-tani-rejo-politeknik-negerri-jember-all-rights-reserved">
                     © 2024 UD Tani Rejo | Politeknik Negerri Jember. All rights reserved.
@@ -952,7 +903,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="divheader-secondary-outer">
             <div class="list">
                 <div class="item-link">
