@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminPengolahanController;
 use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
+use App\Http\Controllers\HasilPanenController;
+use App\Http\Controllers\pengemasanController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
+use App\Http\Controllers\lahanController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\settingsController;
@@ -64,7 +68,7 @@ Route::middleware([
     Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class, 'tambahView'])->name('tambah-varietas');
     Route::post('/varietasPadi', [VarietasPadiController::class, 'store'])->name('varietasPadi.store');
     Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi.destroy');
-    Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
+Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/varietasPadi/{id}/edit', [VarietasPadiController::class, 'edit'])->name('edit-varietas');
     Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class, 'update'])->name('update-varietas');
     Route::get('/reloadcontentvarietas', [VarietasPadiController::class, 'reloadContent'])->name('reload-content-varietas');
@@ -77,18 +81,35 @@ Route::middleware([
     Route::patch('/update/{id}', [FaseController::class, 'update'])->name('update-fase');
     Route::get('/reload-content', [FaseController::class, 'reloadContent'])->name('reload.content');
 
-
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
     Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
 
     Route::get('/lahan', function () {
         return view('admin.lahan.index'); })->name('lahan');
-    Route::get('/lahan/tambah-lahan', function () {
-        return view('admin.lahan.tambah'); })->name('tambah-lahan');
+        Route::get('/getlahan', [lahanController::class, 'getlahans'])->name('get.lahan');
+        Route::post('/tambahlahan', [lahanController::class, 'store'])->name('lahan.store');
+        Route::put('/lahan/{id}/update', [lahanController::class, 'update'])->name('lahan.update');
+        Route::delete('/lahan/{id}/delete', [lahanController::class, 'destroy'])->name('lahan.delete');
+
+
 
     Route::get('/settings', [settingsController::class, 'index'])->name('settings');
 
     Route::resource('varietasPadis', VarietasPadiController::class);
 
+    // hasil panen
+    Route::get('/hasil-panen', [HasilPanenController::class, 'index'])->name('hasil-panen');
+    // Route::post('/hasil-panen', [HasilPanenController::class, 'store'])->name('hasil-panen.store');
+    // Route::put('/hasil-panen/{id}', [HasilPanenController::class, 'update'])->name('hasil-panen.update');
+    // Route::delete('/hasil-panen/{id}', [HasilPanenController::class, 'destroy'])->name('hasil-panen.destroy');
+    
+    // pengolahan
+    Route::get('/pengolahan', [AdminPengolahanController::class, 'index'])->name('pengolahan');
+    Route::post('/pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan.store');
+    Route::get('/reloadcontentpengolahan', [AdminPengolahanController::class, 'reloadContent'])->name('reload-content-pengolahan');
+
+    // pengemasan
+    Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
+    
 });
 

@@ -19,8 +19,6 @@ return new class extends Migration
             $table->integer('tingkat_kemurnian')->nullable();
             $table->integer('tingkat_vigor')->nullable();
             $table->integer('jumlah_benih')->nullable();
-            $table->text('daftar_petani')->nullable();
-            $table->text('qr_code_path')->nullable();
             $table->dateTime('tanggal_penyemaian')->nullable();
             $table->dateTime('tanggal_penanaman')->nullable();
             $table->unsignedBigInteger('id_padi')->nullable();
@@ -29,6 +27,7 @@ return new class extends Migration
             $table->foreign('id_lahan')->references('id')->on('lahan')->onDelete('cascade');
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

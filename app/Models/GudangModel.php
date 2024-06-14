@@ -17,4 +17,9 @@ class GudangModel extends Model
         'kapasitas',
         'luas'
     ];
+
+    public function pengolahan()
+    {
+        return $this->hasMany(AdminPengolahanModel::class, 'id_pengolahan');
+    }
 }
