@@ -31,25 +31,26 @@ class lahanController extends Controller
 
         return response()->json(['success' => 'Data berhasil disimpan']);
     }
+    public function edit($id)
+{
+    $lahan = Lahan::find($id);
+    return response()->json(['lahan' => $lahan]);
+}
+
 
     public function update(Request $request, $id)
-    {
-        // Validasi request
-        $request->validate([
-            'nama_lahan' => 'required',
-            'detail_lokasi' => 'required',
-            'luas' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-            'jenis_tanah' => 'required',
-        ]);
+{
+    $lahan = Lahan::find($id);
+    $lahan->nama_lahan = $request->nama_lahan;
+    $lahan->detail_lokasi = $request->detail_lokasi;
+    $lahan->luas = $request->luas;
+    $lahan->latitude = $request->latitude;
+    $lahan->longitude = $request->longitude;
+    $lahan->jenis_tanah = $request->jenis_tanah;
+    $lahan->save();
 
-        // Temukan data berdasarkan ID dan perbarui
-        $lahan = Lahan::findOrFail($id);
-        $lahan->update($request->all());
-
-        return response()->json(['success' => 'Data berhasil diperbarui']);
-    }
+    return response()->json($lahan);
+}
 
     public function destroy($id)
     {
@@ -59,4 +60,15 @@ class lahanController extends Controller
 
         return response()->json(['success' => 'Data berhasil dihapus']);
     }
+    public function show($id)
+{
+    $lahan = Lahan::find($id);
+
+    if (!$lahan) {
+        return response()->json(['message' => 'Lahan not found'], 404);
+    }
+
+    return response()->json(['lahan' => $lahan], 200);
+}
+
 }

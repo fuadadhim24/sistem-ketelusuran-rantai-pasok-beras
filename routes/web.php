@@ -88,8 +88,11 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
         return view('admin.lahan.index'); })->name('lahan');
         Route::get('/getlahan', [lahanController::class, 'getlahans'])->name('get.lahan');
         Route::post('/tambahlahan', [lahanController::class, 'store'])->name('lahan.store');
-        Route::put('/lahan/{id}/update', [lahanController::class, 'update'])->name('lahan.update');
         Route::delete('/lahan/{id}/delete', [lahanController::class, 'destroy'])->name('lahan.delete');
+        Route::put('/lahan/{id}', [LahanController::class, 'update'])->name('lahan.update');
+        Route::get('/lahan/{id}/edit', [LahanController::class, 'edit'])->name('lahan.edit');
+        Route::get('/lahan/{id}/view', [LahanController::class, 'show']);
+
 
 
 
