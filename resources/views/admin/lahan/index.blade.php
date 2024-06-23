@@ -564,7 +564,25 @@
                 }
             });
         };
-  
+        window.deleteLahan = function(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus lahan ini?')) {
+                $.ajax({
+                    url: '/lahan/' + id + '/delete',
+                    type: 'DELETE',
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        alert('Lahan berhasil dihapus!');
+                        loadLahans(); // Reload the table after deletion
+                    },
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan saat menghapus lahan.');
+                    }
+                });
+            }
+        };
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 

@@ -52,14 +52,19 @@ class lahanController extends Controller
     return response()->json($lahan);
 }
 
-    public function destroy($id)
-    {
-        // Temukan data berdasarkan ID dan hapus
-        $lahan = Lahan::findOrFail($id);
-        $lahan->delete();
+public function destroy($id)
+{
+    $lahan = Lahan::find($id);
 
-        return response()->json(['success' => 'Data berhasil dihapus']);
+    if (!$lahan) {
+        return response()->json(['message' => 'Lahan not found'], 404);
     }
+
+    $lahan->delete();
+
+    return response()->json(['message' => 'Lahan deleted successfully'], 200);
+}
+
     public function show($id)
 {
     $lahan = Lahan::find($id);
