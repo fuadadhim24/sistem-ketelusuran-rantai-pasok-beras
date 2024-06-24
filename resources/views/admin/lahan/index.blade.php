@@ -347,7 +347,9 @@
                         <label for="update_jenis_tanah">Jenis Tanah</label>
                         <input type="text" class="form-control" id="update_jenis_tanah" name="jenis_tanah" required>
                     </div>
+                   
                     <button type="submit" class="btn btn-primary">Perbarui</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </form>
             </div>
         </div>

@@ -15,7 +15,11 @@ class GudangModel extends Model
         'nama_gudang',
         'lokasi',
         'kapasitas',
-        'luas'
+        'luas',
+        'status',
+        'latitude',
+        'longitude'
+
     ];
 
     public function pengolahan()

@@ -82,7 +82,12 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/reload-content', [FaseController::class, 'reloadContent'])->name('reload.content');
 
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
-    Route::post('/gudang/store', [gudangController::class, 'store'])->name('gudang-store');
+        Route::get('/getgudang', [gudangController::class, 'getgudangs'])->name('get.gudang');
+        Route::post('/tambahgudang', [gudangController::class, 'store'])->name('gudang.store');
+        Route::delete('/gudang/{id}/delete', [gudangController::class, 'destroy'])->name('gudang.delete');
+        Route::put('/gudang/{id}', [gudangController::class, 'update'])->name('gudang.update');
+        Route::get('/gudang/{id}/edit', [gudangController::class, 'edit'])->name('gudang.edit');
+        Route::get('/gudang/{id}/view', [gudangController::class, 'show']);
 
     Route::get('/lahan', function () {
         return view('admin.lahan.index'); })->name('lahan');
