@@ -615,7 +615,7 @@ pertanian diantaranya beras dan jagung.
                 </div>
             </div>
             <div class="list-2">
-                <a href="/pengolahan" class="item-link-kunjungi-ketelsuruan-produk">
+                <a href="/pengolahan_in" class="item-link-kunjungi-ketelsuruan-produk">
                     Kunjungi Ketertelusuran Produk
                 </a>
                 <div class="item-link-5">

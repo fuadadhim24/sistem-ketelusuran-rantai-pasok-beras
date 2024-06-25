@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('volt/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/custom/css/lendingpage2.css') }}" />
 </head>
 
@@ -37,8 +38,8 @@
                 </div>
                 <div class="list-2">
                     <a href="/" class="item-link-kunjungi-ketelsuruan-produk">
-                    Kembali ke halaman utama
-                </a>
+                        Kembali ke halaman utama
+                    </a>
 
                     <div class="item-link-5">
                         <img class="vector-11" src="{{ asset('asset/custom/vectors2/vector4_x2.svg') }}" />
@@ -54,36 +55,36 @@
                     <div class="container-19">
                         {{-- @if (Route::has('login'))
                             @auth --}}
-                                <div class="item-6">
-                                    <span class="link-hubungi-kami">
-                                        <a style="color: white; text-decoration:none" href="{{ url('/dashboard') }}">
+                        <div class="item-6">
+                            <span class="link-hubungi-kami">
+                                <a style="color: white; text-decoration:none" href="{{ url('/dashboard') }}">
 
-                                        </a>
-                                    </span>
-                                </div>
+                                </a>
+                            </span>
+                        </div>
 
-                                <div class="item-6">
-                                    <span class="link-media-publikasi-2">
-                                        <a style="color: white; text-decoration:none" href="{{ route('login') }}">
-                                            Masuk
-                                        </a>
-                                    </span>
-                                </div>
-                                {{-- @if (Route::has('register')) --}}
-                                    <div class="item-7">
-                                        <span class="link-media-publikasi-3">
-                                            <a style="color: white; text-decoration:none" href="{{ route('register') }}">
-                                                Daftar
-                                            </a>
-                                        </span>
-                                    </div>
-                                {{-- @endif
+                        <div class="item-6">
+                            <span class="link-media-publikasi-2">
+                                <a style="color: white; text-decoration:none" href="{{ route('login') }}">
+                                    Masuk
+                                </a>
+                            </span>
+                        </div>
+                        {{-- @if (Route::has('register')) --}}
+                        <div class="item-7">
+                            <span class="link-media-publikasi-3">
+                                <a style="color: white; text-decoration:none" href="{{ route('register') }}">
+                                    Daftar
+                                </a>
+                            </span>
+                        </div>
+                        {{-- @endif
                             @endauth
                         @endif --}}
                         <div class="item-8">
                             <a href="/pengolahan_en" class="link-id">
-                            EN
-                        </a>
+                                EN
+                            </a>
 
                         </div>
                     </div>
@@ -120,12 +121,41 @@
                         <div class="heading-6">
                             <div class="camera" id="camera">
                             </div>
-                            <div class="link-tentang-kami" id="link-tentang-kami">
+                            <div class="link-tentang-kami" id="link-tentang-kami" style="cursor: pointer;">
                                 Scan QR Code Produk Beras
                             </div>
+                            <!-- Button Modal -->
+
+                            <!-- Modal Content -->
+                            <div class="modal fade" id="modalNotification" tabindex="-1" role="dialog"
+                            aria-labelledby="modalTitleNotify" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <p class="modal-title" id="modalTitleNotify">Hasil Pemindaian Kode QR</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{-- <div id="qr-result" class="py-3 text-center"></div>
+                                        <!-- Tempat untuk menampilkan pemindai QR -->
+                                        <div id="reader" style="width: 600px;"></div> --}}
+                                        <div id="qr-reader" style="width:500px"></div>
+                                        <div id="qr-reader-results"></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Tutup</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- End of Modal Content -->
+
                         </div>
 
-                        <div class="popup" id="popup">
+
+
+
+                        {{-- <div class="popup" id="popup">
                             <div class="popup-content">
                                 <span class="close" id="close">&times;</span>
                                 <div class="kamera">
@@ -148,7 +178,7 @@
                                     document.getElementById('popup').style.display = 'none';
                                 }
                             });
-                        </script>
+                        </script> --}}
                     </div>
 
                     <div class="container-8">
@@ -175,50 +205,51 @@
                             <div class="epsearch">
                                 <img class="vector-12" src="{{ asset('asset/custom/vectors2/vector10_x2.svg') }}" />
                             </div>
-                            <form  action="{{ url('pengolahan') }}" method="get">
+                            <form action="{{ url('pengolahan') }}" method="get">
                                 {{-- <input type="text" class="cari" placeholder="Cari" /> --}}
-                                <input class="cari" type="search" name="katakunci" value="{{
-                                Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
+                                <input class="cari" type="search" name="katakunci"
+                                    value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci"
+                                    aria-label="Search">
 
-                            {{-- <div class="rectangle-213"></div> --}}
+                                {{-- <div class="rectangle-213"></div> --}}
 
-                        </form>
+                            </form>
                         </div>
 
 
 
                     </div>
 
-                <div class="tabel-container">
-                    <div class="tabel">
-                        <table class="product-table">
-                            <thead>
-                                <div>
-                                    <tr>
-                                        <th>Id Produksi</th>
+                    <div class="tabel-container">
+                        <div class="tabel">
+                            <table class="product-table">
+                                <thead>
+                                    <div>
+                                        <tr>
+                                            <th>Id Produksi</th>
 
-                                        <th>Tanggal Produksi</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </div>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $item)
-                                <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->tanggal_produksi }}</td>
-                                    {{-- <td>{{ $item->produksi ? $item->produksi->tanggal_kedaluwarsa : 'Tidak ada data'}}</td> --}}
-                                    <td><a href="/pengolahan/{{ $item->id }}" class="detail-button">Detail</a></td>
-                                </tr>
+                                            <th>Tanggal Produksi</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </div>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $item)
+                                        <tr>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->tanggal_produksi }}</td>
+                                            {{-- <td>{{ $item->produksi ? $item->produksi->tanggal_kedaluwarsa : 'Tidak ada data'}}</td> --}}
+                                            <td><a href="/pengolahan_in/{{ $item->id }}"
+                                                    class="detail-button">Detail</a></td>
+                                        </tr>
+                                    @endforeach
 
-                                @endforeach
 
-
-                            </tbody>
-                        </table>
-                        {{ $data->links() }}
+                                </tbody>
+                            </table>
+                            {{ $data->links() }}
+                        </div>
                     </div>
-                </div>
 
 
                 </div>
@@ -427,6 +458,49 @@
                     </div>
                 </div>
             </div> --}}
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Custom Script to trigger the modal -->
+            <script>
+                document.getElementById('link-tentang-kami').addEventListener('click', function() {
+                    var modal = new bootstrap.Modal(document.getElementById('modalNotification'));
+                    modal.show();
+                });
+            </script>
+            <script src="{{ asset('volt/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+            <script src="{{ asset('volt/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+            <script src="/html5-qrcode.min.js"></script>
+<script>
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete"
+            || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    docReady(function () {
+        var resultContainer = document.getElementById('qr-reader-results');
+        var lastResult, countResults = 0;
+        function onScanSuccess(decodedText, decodedResult) {
+            if (decodedText !== lastResult) {
+                ++countResults;
+                lastResult = decodedText;
+                // Handle on success condition with the decoded message.
+                console.log(`Scan result ${decodedText}`, decodedResult);
+            }
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    });
+</script>
 </body>
 
 </html>

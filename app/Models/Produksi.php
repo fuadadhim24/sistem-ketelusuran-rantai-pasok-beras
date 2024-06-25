@@ -43,7 +43,7 @@ class Produksi extends Model
         return $this->hasMany(Panen::class,'id_produksi','id');
     }
     public function perawatan(){
-        return $this->hasMany(Perawatan::class,'id_produksi','id');
+        return $this->hasMany(PerawatanModel::class,'id_produksi','id');
     }
     public function pengujian(){
         return $this->hasMany(Pengujian::class,'id_produksi','id');

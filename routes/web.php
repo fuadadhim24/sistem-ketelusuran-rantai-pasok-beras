@@ -46,7 +46,7 @@ Route::get('/detailpengolahan_en/{id}', [pengolahanEnController::class, 'detail'
 // Route::get('/detailpengolahan_en', function () {
 //     return view('hasilpengolahan_en');
 // });
-Route::resource('/pengolahan', pengolahanController::class);
+Route::resource('/pengolahan_in', pengolahanController::class);
 Route::resource('/pengolahan_en', pengolahanEnController::class);
 
 
@@ -102,7 +102,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     // Route::post('/hasil-panen', [HasilPanenController::class, 'store'])->name('hasil-panen.store');
     // Route::put('/hasil-panen/{id}', [HasilPanenController::class, 'update'])->name('hasil-panen.update');
     // Route::delete('/hasil-panen/{id}', [HasilPanenController::class, 'destroy'])->name('hasil-panen.destroy');
-    
+
     // pengolahan
     Route::get('/pengolahan', [AdminPengolahanController::class, 'index'])->name('pengolahan');
     Route::post('/pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan.store');
@@ -110,6 +110,6 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
 
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
-    
+
 });
 
