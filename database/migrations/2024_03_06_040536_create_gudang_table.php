@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('lokasi')->nullable();
             $table->string('kapasitas')->nullable();
             $table->string('luas')->nullable();
-            $table->string('status')->nullable();//digunakan sebagai gudang pengolahan atau penyimpanan
+            $table->string('status')->nullable(); // digunakan sebagai gudang pengolahan atau penyimpanan
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

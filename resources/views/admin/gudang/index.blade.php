@@ -1,5 +1,10 @@
 @extends('template')
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 @section('main')
+<meta name="csrf-token" content="{{ csrf_token() }}">
   <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
   <div class="container-fluid px-0">
     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -196,53 +201,25 @@
                     <div class="card border-0 shadow components-section">
     <div class="card-header border-bottom d-flex align-items-center justify-content-between">
         <h2 class="fs-5 fw-bold mb-0">Daftar Gudang</h2>
-        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah Gudang</button>
+        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addGudangModal">Tambah Gudang</button>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table align-items-center table-flush">
-                <thead class="thead-light">
+        <table class="table align-items-center table-flush">
+            <thead class="thead-light">
                 <tr>
                     <th class="border-bottom" scope="col">Nama Gudang</th>
                     <th class="border-bottom" scope="col">Kapasitas</th>
                     <th class="border-bottom" scope="col">Luas</th>
                     <th class="border-bottom" scope="col">Lokasi</th>
-                    <th class="border-bottmom" scope="col">Aksi</th>
+                    <th class="border-bottom" scope="col">Status</th>
+                    <th class="border-bottom" scope="col">Aksi</th>
                 </tr>
-                </thead>
-                <tbody>
-                    @foreach ($gudangRead as $gudangRead )
-                    <tr>
-                        <th class="text-gray-900" scope="row">
-                            {{ $gudangRead->nama_gudang}}
-                        </th>
-                        <td class="fw-bolder text-gray-500">
-                            {{ $gudangRead->kapasitas}}
-                        </td>
-                        <td class="fw-bolder text-gray-500">
-                            {{$gudangRead->luas}}m<sup>2</sup>
-                        </td>
-                        <td class="fw-bolder text-gray-500">
-                            <div hidden>
-                                {{$gudangRead->lokasi}}
-                            </div>
-                            <!-- Button Modal -->
-                            <button id="btnLihat{{ $loop->iteration}}" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons({{ $loop->iteration }})">lihat</button>
-                            <button id="btnLoad{{ $loop->iteration}}" class="btn btn-outline-success" type="button" hidden disabled>
-                                <span class="ms-1">Loading...</span>
-                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            </button>
-                        </td>
-                        <td>
-                            <button id="btnTampilkan{{ $loop->iteration }}" class="btn btn-outline-warning" type="button" hidden onClick="toggleButtonVisibleTampilkan({{ $loop->iteration }})">tampilkan</button>
-                            <button id="btnSembunyikan{{ $loop->iteration }}" class="btn btn-outline-gray-500" type="button" onClick="toggleButtonVisibleSembunyikan({{ $loop->iteration }})">sembunyikan</button>
-                            <button class="btn btn-outline-tertiary" type="button">ubah</button>
-                            <button class="btn btn-outline-danger" type="button">hapus</button>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            </thead>
+            <tbody id="gudang-tbody">
+                <!-- Data will be populated here by AJAX -->
+            </tbody>
+        </table>
         </div>
     </div>
 </div>
@@ -258,24 +235,23 @@
                         </div>
                         {{-- map lokasi --}}
                         <div class="card border-0 shadow">
-                            <div class="card-body">
-                                <div id='map' class="w-100" style='height: 300px;'></div>
-                            </div>
-                        </div>
+                <div class="card-body">
+                <div id="mapgudang" class="w-100" style="height: 300px;"></div>
+                </div>
+            </div>
                     </div>
                 </div>
               </div>
             
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addGudangModal" tabindex="-1" aria-labelledby="addGudangModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form action="{{ route('gudang-store')}}" method="POST" enctype="multipart/form-data">
+      <form id="addGudangForm" enctype="multipart/form-data">
         @csrf
-
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Gudang</h5>
+          <h5 class="modal-title" id="addGudangModalLabel">Tambah Gudang</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -284,14 +260,37 @@
             <input type="text" class="form-control" id="nama_gudang" name="nama_gudang" aria-describedby="namaHelp">
           </div>
           <div class="mb-4">
+            <label for="kapasitas">Kapasitas</label>
+            <input type="number" class="form-control" id="kapasitas" name="kapasitas" aria-describedby="kapasitasHelp">
+            <small id="kapasitasHelp" class="form-text text-muted">Satuan ton.</small>
+          </div>
+          <div class="mb-4">
             <label for="luas">Luas</label>
             <input type="text" class="form-control" id="luas" name="luas" placeholder="Contoh: 10x50" aria-describedby="luasHelp">
             <small id="luasHelp" class="form-text text-muted">Satuan meter<sup>2</sup>.</small>
           </div>
           <div class="mb-4">
-            <label for="kapasitas">Kapasitas</label>
-            <input type="number" class="form-control" id="kapasitas" name="kapasitas" aria-describedby="kapasitasHelp">
-            <small id="kapasitasHelp" class="form-text text-muted">Satuan ton.</small>
+            <label for="lokasi">Lokasi</label>
+            <input type="text" class="form-control" id="lokasi" name="lokasi" aria-describedby="lokasiHelp">
+          </div>
+          <div class="mb-4">
+            <label for="status">Status</label>
+            <input type="text" class="form-control" id="status" name="status">
+          </div>
+          <div class="mb-4">
+            <label for="latitude">Latitude</label>
+            <input type="text" class="form-control" id="latitude" name="latitude" readonly>
+          </div>
+          <div class="mb-4">
+            <label for="longitude">Longitude</label>
+            <input type="text" class="form-control" id="longitude" name="longitude" readonly>
+          </div>
+          <div class="mb-4">
+          <div class="card border-0 shadow">
+                <div class="card-body">
+                <div id="tambahmap" class="w-100" style="height: 300px;"></div>
+                </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -302,6 +301,8 @@
     </div>
   </div>
 </div>
+
+
 
 
               <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
@@ -366,16 +367,213 @@
           </div>
       </div>
   </footer>
-  {{-- mapbox script --}}
-   {{-- <script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+
+  <script>
+        $(document).ready(function() {
+          $('#addGudangForm').on('submit', function(event) {
+            event.preventDefault();
+
+            var formData = {
+                _token: $('input[name="_token"]').val(),
+                nama_gudang: $('#nama_gudang').val(),
+                kapasitas: $('#kapasitas').val(),
+                luas: $('#luas').val(),
+                lokasi: $('#lokasi').val(),
+                status: $('#status').val(),
+                latitude: $('#latitude').val(),
+                longitude: $('#longitude').val()
+            };
+
+            $.ajax({
+                url: '{{ route('gudang.store') }}',
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        $('#addGudangModal').modal('hide');
+                        alert('Data berhasil ditambahkan');
+                        reloadTableContents();
+                    } else {
+                        alert('Gagal menambahkan data');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    if (xhr.status === 422) {
+                        var errors = xhr.responseJSON.errors;
+                        var errorMessage = '';
+                        $.each(errors, function(key, value) {
+                            errorMessage += value + '\n';
+                        });
+                        alert('Validation errors:\n' + errorMessage);
+                    } else {
+                        console.error('AJAX Error: ' + error);
+                        alert('Terjadi kesalahan saat menambahkan data');
+                    }
+                }
+            });
+        });
+
+        // Fetch Gudang Data
+        function reloadTableContents() {
+        $.ajax({
+            url: '{{ route('get.gudang') }}',
+            method: 'GET',
+            success: function(data) {
+                var tbody = $('#gudang-tbody');
+                tbody.empty();
+                data.forEach(function(gudang, index) {
+                    var row = `
+                        <tr>
+                            <th class="text-gray-900" scope="row">
+                                ${gudang.nama_gudang}
+                            </th>
+                            <td class="fw-bolder text-gray-500">
+                                ${gudang.kapasitas}
+                            </td>
+                            <td class="fw-bolder text-gray-500">
+                                ${gudang.luas}m<sup>2</sup>
+                            </td>
+                            <td class="fw-bolder text-gray-500">
+                                ${gudang.lokasi}
+                            </td>
+                            <td class="fw-bolder text-gray-500">
+                                ${gudang.status}
+                            </td>
+                            
+                            <td>
+                                <button id="btnLihat${index+1}" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons(${index+1})">lihat</button>
+                                <button id="btnLoad${index+1}" class="btn btn-outline-success" type="button" hidden disabled>
+                                    <span class="ms-1">Loading...</span>
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                </button>
+                                <button class="btn btn-outline-warning" type="button" onClick="showLocation(${index+1}, '${gudang.lokasi}')">tampilkan</button>
+                                <button class="btn btn-outline-tertiary" type="button" onClick="editGudang(${gudang.id})">ubah</button>
+                                <button class="btn btn-outline-danger" type="button" onClick="deleteGudang(${gudang.id})">hapus</button>
+                            </td>
+                        </tr>
+                    `;
+                    tbody.append(row);
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + error);
+            }
+        });
+      }
+
+// Call reloadTableContents when the document is ready
+reloadTableContents();
+
+        function toggleButtons(index) {
+            $('#btnLihat' + index).toggle();
+            $('#btnLoad' + index).toggle();
+        }
+
+        function showLocation(index, lokasi) {
+            alert('Lokasi: ' + lokasi);
+        }
+
+        function editGudang(id) {
+            // Implement the edit functionality
+        }
+
+        function deleteGudang(id) {
+            if (confirm('Are you sure you want to delete this gudang?')) {
+                $.ajax({
+                    url: '/gudang/' + id,
+                    method: 'DELETE',
+                    data: {
+                        _token: $('input[name="_token"]').val()
+                    },
+                    success: function(response) {
+                        alert('Gudang deleted successfully');
+                        location.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error: ' + error);
+                        alert('Terjadi kesalahan saat menghapus gudang');
+                    }
+                });
+            }
+        }
+        });
+    </script>
+ <script>
+    
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v12', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9, // starting zoom
-    });
-  </script> --}}
+
+const map = new mapboxgl.Map({
+    container: 'mapgudang', // ID of the container element
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [113.666039, -8.2885468], // Coordinates for the center of the map
+    zoom: 12 // Initial zoom level
+});
+
+const tambahmap = new mapboxgl.Map({
+    container: 'tambahmap', // ID of the container element
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [113.666039, -8.2885468], // Coordinates for the center of the map
+    zoom: 12 // Initial zoom level
+});
+
+const geocoder2 = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+});
+
+// Add the geocoder to the modal map
+tambahmap.addControl(geocoder2);
+
+// Handle modal show event to resize map
+$('#lahanTambah').on('shown.bs.modal', function () {
+    tambahmap.resize();
+});
+
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    marker: false,
+    placeholder: 'Masukan kata kunci...',
+    zoom: 20
+});
+
+tambahmap.addControl(geocoder); // Add geocoder control to tambahmap
+
+let marker = null;
+tambahmap.on('click', function (e) { // Change map to tambahmap
+    if (marker == null) {
+        marker = new mapboxgl.Marker()
+            .setLngLat(e.lngLat)
+            .addTo(tambahmap); // Change map to tambahmap
+    } else {
+        marker.setLngLat(e.lngLat);
+    }
+    document.getElementById("latitude").value = e.lngLat.lat;
+    document.getElementById("longitude").value = e.lngLat.lng;
+});
+
+// Initialize the map for updating
+const updateMap = new mapboxgl.Map({
+    container: 'updatemap', // ID of the container element
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [113.666039, -8.2885468], // Coordinates for the center of the map
+    zoom: 12 // Initial zoom level
+});
+
+const geocoderUpdate = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+});
+
+// Add the geocoder to the update modal map
+updateMap.addControl(geocoderUpdate);
+
+  </script> 
 
     {{-- aksi lihat lokasi --}}
     <script>
