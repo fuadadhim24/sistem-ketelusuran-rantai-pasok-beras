@@ -81,6 +81,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::patch('/update/{id}', [FaseController::class, 'update'])->name('update-fase');
     Route::get('/reload-content', [FaseController::class, 'reloadContent'])->name('reload.content');
 
+    Route::resource('gudang', GudangController::class);
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
         Route::get('/getgudang', [gudangController::class, 'getgudangs'])->name('get.gudang');
         Route::post('/tambahgudang', [gudangController::class, 'store'])->name('gudang.store');

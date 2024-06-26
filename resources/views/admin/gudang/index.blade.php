@@ -244,7 +244,7 @@
               </div>
             
 
-<!-- Modal -->
+<!-- Modal Tambah-->
 <div class="modal fade" id="addGudangModal" tabindex="-1" aria-labelledby="addGudangModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -296,6 +296,66 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
           <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Update-->
+<!-- Modal -->
+<div class="modal fade" id="updateGudangModal" tabindex="-1" aria-labelledby="updateGudangModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="updateGudangForm" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateGudangModalLabel">Update Gudang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <label for="update_nama_gudang">Nama Gudang</label>
+            <input type="text" class="form-control" id="update_nama_gudang" name="nama_gudang" aria-describedby="namaHelp">
+          </div>
+          <div class="mb-4">
+            <label for="update_kapasitas">Kapasitas</label>
+            <input type="number" class="form-control" id="update_kapasitas" name="kapasitas" aria-describedby="kapasitasHelp">
+            <small id="kapasitasHelp" class="form-text text-muted">Satuan ton.</small>
+          </div>
+          <div class="mb-4">
+            <label for="update_luas">Luas</label>
+            <input type="text" class="form-control" id="update_luas" name="luas" placeholder="Contoh: 10x50" aria-describedby="luasHelp">
+            <small id="luasHelp" class="form-text text-muted">Satuan meter<sup>2</sup>.</small>
+          </div>
+          <div class="mb-4">
+            <label for="update_lokasi">Lokasi</label>
+            <input type="text" class="form-control" id="update_lokasi" name="lokasi" aria-describedby="lokasiHelp">
+          </div>
+          <div class="mb-4">
+            <label for="update_status">Status</label>
+            <input type="text" class="form-control" id="update_status" name="status">
+          </div>
+          <div class="mb-4">
+            <label for="update_latitude">Latitude</label>
+            <input type="text" class="form-control" id="update_latitude" name="latitude" readonly>
+          </div>
+          <div class="mb-4">
+            <label for="update_longitude">Longitude</label>
+            <input type="text" class="form-control" id="update_longitude" name="longitude" readonly>
+          </div>
+          <div class="mb-4">
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <div id="updatemap" class="w-100" style="height: 300px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Update</button>
         </div>
       </form>
     </div>
@@ -372,10 +432,18 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<script>
+    $(document).ready(function() {
+        const notyf = new Notyf({
+            duration: 3000,
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
 
-  <script>
-        $(document).ready(function() {
-          $('#addGudangForm').on('submit', function(event) {
+        // Form submission for adding Gudang
+        $('#addGudangForm').on('submit', function(event) {
             event.preventDefault();
 
             var formData = {
@@ -396,10 +464,10 @@
                 success: function(response) {
                     if (response.success) {
                         $('#addGudangModal').modal('hide');
-                        alert('Data berhasil ditambahkan');
+                        notyf.success('Data berhasil ditambahkan');
                         reloadTableContents();
                     } else {
-                        alert('Gagal menambahkan data');
+                        notyf.error('Gagal menambahkan data');
                     }
                 },
                 error: function(xhr, status, error) {
@@ -409,80 +477,116 @@
                         $.each(errors, function(key, value) {
                             errorMessage += value + '\n';
                         });
-                        alert('Validation errors:\n' + errorMessage);
+                        notyf.error('Validation errors:\n' + errorMessage);
                     } else {
                         console.error('AJAX Error: ' + error);
-                        alert('Terjadi kesalahan saat menambahkan data');
+                        notyf.error('Terjadi kesalahan saat menambahkan data');
                     }
                 }
             });
         });
 
-        // Fetch Gudang Data
-        function reloadTableContents() {
-        $.ajax({
-            url: '{{ route('get.gudang') }}',
-            method: 'GET',
-            success: function(data) {
-                var tbody = $('#gudang-tbody');
-                tbody.empty();
-                data.forEach(function(gudang, index) {
-                    var row = `
-                        <tr>
-                            <th class="text-gray-900" scope="row">
-                                ${gudang.nama_gudang}
-                            </th>
-                            <td class="fw-bolder text-gray-500">
-                                ${gudang.kapasitas}
-                            </td>
-                            <td class="fw-bolder text-gray-500">
-                                ${gudang.luas}m<sup>2</sup>
-                            </td>
-                            <td class="fw-bolder text-gray-500">
-                                ${gudang.lokasi}
-                            </td>
-                            <td class="fw-bolder text-gray-500">
-                                ${gudang.status}
-                            </td>
-                            
-                            <td>
-                                <button id="btnLihat${index+1}" type="button" class="btn btn-sm btn-outline-success mb-3" onclick="toggleButtons(${index+1})">lihat</button>
-                                <button id="btnLoad${index+1}" class="btn btn-outline-success" type="button" hidden disabled>
-                                    <span class="ms-1">Loading...</span>
-                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                </button>
-                                <button class="btn btn-outline-warning" type="button" onClick="showLocation(${index+1}, '${gudang.lokasi}')">tampilkan</button>
-                                <button class="btn btn-outline-tertiary" type="button" onClick="editGudang(${gudang.id})">ubah</button>
-                                <button class="btn btn-outline-danger" type="button" onClick="deleteGudang(${gudang.id})">hapus</button>
-                            </td>
-                        </tr>
-                    `;
-                    tbody.append(row);
-                });
-            },
-            error: function(xhr, status, error) {
-                console.error('AJAX Error: ' + error);
-            }
+        // Form submission for updating Gudang
+        $('#updateGudangForm').on('submit', function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+            let id = $('#updateGudangModal').data('id');
+
+            $.ajax({
+                url: `/gudang/${id}`,
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    $('#updateGudangModal').modal('hide');
+                    notyf.success('Data gudang berhasil diperbarui');
+                    reloadTableContents();
+                },
+                error: function(response) {
+                    notyf.error('Gagal memperbarui data gudang');
+                }
+            });
         });
-      }
 
-// Call reloadTableContents when the document is ready
-reloadTableContents();
-
-        function toggleButtons(index) {
-            $('#btnLihat' + index).toggle();
-            $('#btnLoad' + index).toggle();
+        // Function to reload table contents
+        function reloadTableContents() {
+            $.ajax({
+                url: '{{ route('get.gudang') }}',
+                method: 'GET',
+                success: function(data) {
+                    var tbody = $('#gudang-tbody');
+                    tbody.empty();
+                    data.forEach(function(gudang, index) {
+                        var row = `
+                            <tr>
+                                <th class="text-gray-900" scope="row">
+                                    ${gudang.nama_gudang}
+                                </th>
+                                <td class="fw-bolder text-gray-500">
+                                    ${gudang.kapasitas}
+                                </td>
+                                <td class="fw-bolder text-gray-500">
+                                    ${gudang.luas}m<sup>2</sup>
+                                </td>
+                                <td class="fw-bolder text-gray-500">
+                                    ${gudang.lokasi}
+                                </td>
+                                <td class="fw-bolder text-gray-500">
+                                    ${gudang.status}
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-warning" type="button" onClick="showLocation(${index+1}, '${gudang.lokasi}')">tampilkan</button>
+                                    <button class="btn btn-outline-tertiary" type="button" onClick="editGudang(${gudang.id})">ubah</button>
+                                    <button class="btn btn-outline-danger" type="button" onClick="deleteGudang(${gudang.id})">hapus</button>
+                                </td>
+                            </tr>
+                        `;
+                        tbody.append(row);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error: ' + error);
+                    notyf.error('Terjadi kesalahan saat mengambil data');
+                }
+            });
         }
 
-        function showLocation(index, lokasi) {
+        // Call reloadTableContents when the document is ready
+        reloadTableContents();
+
+        // Function to show location
+        window.showLocation = function(index, lokasi) {
             alert('Lokasi: ' + lokasi);
         }
 
-        function editGudang(id) {
-            // Implement the edit functionality
-        }
+        // Function to edit Gudang
+        window.editGudang = function(id) {
+            $.ajax({
+                url: `/gudang/${id}/edit`,
+                type: 'GET',
+                success: function(response) {
+                    let gudang = response.data;
+                    $('#updateGudangModal').data('id', gudang.id);
+                    $('#update_nama_gudang').val(gudang.nama_gudang);
+                    $('#update_kapasitas').val(gudang.kapasitas);
+                    $('#update_luas').val(gudang.luas);
+                    $('#update_lokasi').val(gudang.lokasi);
+                    $('#update_status').val(gudang.status);
+                    $('#update_latitude').val(gudang.latitude);
+                    $('#update_longitude').val(gudang.longitude);
+                    
+                    $('#updateGudangModal').modal('show');
+                },
+                error: function(response) {
+                    notyf.error('Gagal mengambil data gudang');
+                }
+            });
+        };
 
-        function deleteGudang(id) {
+        // Function to delete Gudang
+        window.deleteGudang = function(id) {
             if (confirm('Are you sure you want to delete this gudang?')) {
                 $.ajax({
                     url: '/gudang/' + id,
@@ -491,224 +595,149 @@ reloadTableContents();
                         _token: $('input[name="_token"]').val()
                     },
                     success: function(response) {
-                        alert('Gudang deleted successfully');
-                        location.reload();
+                        notyf.success('Gudang berhasil dihapus');
+                        reloadTableContents();
                     },
                     error: function(xhr, status, error) {
                         console.error('AJAX Error: ' + error);
-                        alert('Terjadi kesalahan saat menghapus gudang');
+                        notyf.error('Terjadi kesalahan saat menghapus gudang');
                     }
                 });
             }
         }
-        });
-    </script>
- <script>
-    
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 
-const map = new mapboxgl.Map({
-    container: 'mapgudang', // ID of the container element
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [113.666039, -8.2885468], // Coordinates for the center of the map
-    zoom: 12 // Initial zoom level
-});
+        // Mapbox and Geocoder Initialization
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 
-const tambahmap = new mapboxgl.Map({
-    container: 'tambahmap', // ID of the container element
-    style: 'mapbox://styles/mapbox/streets-v12',
-    center: [113.666039, -8.2885468], // Coordinates for the center of the map
-    zoom: 12 // Initial zoom level
-});
-
-const geocoder2 = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
-});
-
-// Add the geocoder to the modal map
-tambahmap.addControl(geocoder2);
-
-// Handle modal show event to resize map
-$('#lahanTambah').on('shown.bs.modal', function () {
-    tambahmap.resize();
-});
-
-var geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl,
-    marker: false,
-    placeholder: 'Masukan kata kunci...',
-    zoom: 20
-});
-
-tambahmap.addControl(geocoder); // Add geocoder control to tambahmap
-
-let marker = null;
-tambahmap.on('click', function (e) { // Change map to tambahmap
-    if (marker == null) {
-        marker = new mapboxgl.Marker()
-            .setLngLat(e.lngLat)
-            .addTo(tambahmap); // Change map to tambahmap
-    } else {
-        marker.setLngLat(e.lngLat);
-    }
-    document.getElementById("latitude").value = e.lngLat.lat;
-    document.getElementById("longitude").value = e.lngLat.lng;
-});
-
-// Initialize the map for updating
-const updateMap = new mapboxgl.Map({
-    container: 'updatemap', // ID of the container element
-    style: 'mapbox://styles/mapbox/streets-v12',
-    center: [113.666039, -8.2885468], // Coordinates for the center of the map
-    zoom: 12 // Initial zoom level
-});
-
-const geocoderUpdate = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
-});
-
-// Add the geocoder to the update modal map
-updateMap.addControl(geocoderUpdate);
-
-  </script> 
-
-    {{-- aksi lihat lokasi --}}
-    <script>
-      const notyf = new Notyf();
-
-      function toggleButtons(iteration) {
-        var button1 = document.getElementById("btnLihat"+iteration);
-        var button2 = document.getElementById("btnLoad"+iteration);
-
-        // Tampilkan button 2 dan sembunyikan button 1
-        button2.removeAttribute("hidden");
-        button2.removeAttribute("disabled");
-
-        button1.setAttribute("hidden", "true");
-        button1.setAttribute("disabled", "true");
-
-        // Set timeout untuk kembali ke keadaan semula setelah 3 detik
-        setTimeout(function() {
-          // Set timeout untuk menyembunyikan notif
-          button1.removeAttribute("hidden");
-          button1.removeAttribute("disabled");
-          button2.setAttribute("hidden", "true");
-          button2.setAttribute("disabled", "true");
-
-          // notify
-          const notyf = new Notyf({
-              position: {
-                  x: 'right',
-                  y: 'top',
-              },
-              types: [
-                  {
-                      type: 'info',
-                      background: 'blue',
-                      icon: {
-                          className: 'fas fa-info-circle',
-                          tagName: 'span',
-                          color: '#fff'
-                      },
-                      dismissible: false
-                  }
-              ]
-          });
-          notyf.success({
-            message: 'Lokasi berhasil diidentifikasi',
-            duration: 3000,
-            icon: false
-          });
-        }, 3000);
-      }
-    </script>
-
-    {{-- aksi lihat lokasi --}}
-    <script>
-
-      function toggleButtonVisibleTampilkan(iteration) {
-        var button1 = document.getElementById("btnTampilkan"+iteration);
-        var button2 = document.getElementById("btnSembunyikan"+iteration);
-
-        // Tampilkan button 2 dan sembunyikan button 1
-        button2.removeAttribute("hidden");
-        button2.removeAttribute("disabled");
-
-        button1.setAttribute("hidden", "true");
-        button1.setAttribute("disabled", "true");
-
-        // notify
-        const notyf = new Notyf({
-            position: {
-                x: 'right',
-                y: 'top',
-            },
-            types: [
-                {
-                    type: 'info',
-                    background: 'blue',
-                    icon: {
-                        className: 'fas fa-info-circle',
-                        tagName: 'span',
-                        color: '#fff'
-                    },
-                    dismissible: false
-                }
-            ]
-        });
-        notyf.success({
-          message: 'Lokasi berhasil diidentifikasi',
-          duration: 3000,
-          icon: false
+        const map = new mapboxgl.Map({
+            container: 'mapgudang',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [113.666039, -8.2885468],
+            zoom: 12
         });
 
-      }
-    </script>
-
-    {{-- aksi lihat lokasi --}}
-    <script>
-
-      function toggleButtonVisibleSembunyikan(iteration) {
-        var button1 = document.getElementById("btnTampilkan"+iteration);
-        var button2 = document.getElementById("btnSembunyikan"+iteration);
-
-        // Tampilkan button 2 dan sembunyikan button 1
-        button1.removeAttribute("hidden");
-        button1.removeAttribute("disabled");
-
-        button2.setAttribute("hidden", "true");
-        button2.setAttribute("disabled", "true");
-
-        // notify
-        const notyf = new Notyf({
-            position: {
-                x: 'right',
-                y: 'top',
-            },
-            types: [
-                {
-                    type: 'info',
-                    background: 'blue',
-                    icon: {
-                        className: 'fas fa-info-circle',
-                        tagName: 'span',
-                        color: '#fff'
-                    },
-                    dismissible: false
-                }
-            ]
-        });
-        notyf.success({
-          message: 'Lokasi berhasil diidentifikasi',
-          duration: 3000,
-          icon: false
+        const tambahmap = new mapboxgl.Map({
+            container: 'tambahmap',
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [113.666039, -8.2885468],
+            zoom: 12
         });
 
-      }
-    </script>
+        const geocoder2 = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+        // Add the geocoder to the modal map
+        tambahmap.addControl(geocoder2);
+
+        // Handle modal show event to resize map
+        $('#lahanTambah').on('shown.bs.modal', function () {
+            tambahmap.resize();
+        });
+
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: false,
+            placeholder: 'Masukan kata kunci...',
+            zoom: 20
+        });
+
+        tambahmap.addControl(geocoder);
+
+        let marker = null;
+        tambahmap.on('click', function (e) {
+            if (marker == null) {
+                marker = new mapboxgl.Marker()
+                    .setLngLat(e.lngLat)
+                    .addTo(tambahmap);
+            } else {
+                marker.setLngLat(e.lngLat);
+            }
+            document.getElementById("latitude").value = e.lngLat.lat;
+            document.getElementById("longitude").value = e.lngLat.lng;
+        });
+
+        const updateMap = new mapboxgl.Map({
+            container: 'updatemap',
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [113.666039, -8.2885468],
+            zoom: 12
+        });
+
+        const geocoderUpdate = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+        updateMap.addControl(geocoderUpdate);
+
+        $('#lahanUpdateModal').on('shown.bs.modal', function () {
+            updateMap.resize();
+        });
+
+        let updateMarker = null;
+        updateMap.on('click', function (e) {
+            if (updateMarker == null) {
+                updateMarker = new mapboxgl.Marker()
+                    .setLngLat(e.lngLat)
+                    .addTo(updateMap);
+            } else {
+                updateMarker.setLngLat(e.lngLat);
+            }
+            $('#update_latitude').val(e.lngLat.lat);
+            $('#update_longitude').val(e.lngLat.lng);
+        });
+
+        // Notification functions
+        window.toggleButtons = function(index) {
+            var button1 = document.getElementById("btnLihat" + index);
+            var button2 = document.getElementById("btnLoad" + index);
+
+            button2.removeAttribute("hidden");
+            button2.removeAttribute("disabled");
+
+            button1.setAttribute("hidden", "true");
+            button1.setAttribute("disabled", "true");
+
+            setTimeout(function() {
+                button1.removeAttribute("hidden");
+                button1.removeAttribute("disabled");
+                button2.setAttribute("hidden", "true");
+                button2.setAttribute("disabled", "true");
+
+                notyf.success('Lokasi berhasil diidentifikasi');
+            }, 3000);
+        }
+
+        window.toggleButtonVisibleTampilkan = function(iteration) {
+            var button1 = document.getElementById("btnTampilkan" + iteration);
+            var button2 = document.getElementById("btnSembunyikan" + iteration);
+
+            button2.removeAttribute("hidden");
+            button2.removeAttribute("disabled");
+
+            button1.setAttribute("hidden", "true");
+            button1.setAttribute("disabled", "true");
+
+            notyf.success('Lokasi berhasil diidentifikasi');
+        }
+
+        window.toggleButtonVisibleSembunyikan = function(iteration) {
+            var button1 = document.getElementById("btnTampilkan" + iteration);
+            var button2 = document.getElementById("btnSembunyikan" + iteration);
+
+            button1.removeAttribute("hidden");
+            button1.removeAttribute("disabled");
+
+            button2.setAttribute("hidden", "true");
+            button2.setAttribute("disabled", "true");
+
+            notyf.success('Lokasi berhasil diidentifikasi');
+        }
+    });
+</script>
 
       {{-- library notify --}}
       <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>

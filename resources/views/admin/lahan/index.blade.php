@@ -387,9 +387,16 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css">
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-
 <script>
    $(document).ready(function () {
+    const notyf = new Notyf({
+        duration: 3000,
+        position: {
+            x: 'right',
+            y: 'top'
+        }
+    });
+
     // Handle form submission for adding a new land
     $('#lahanForm').submit(function (e) {
         e.preventDefault(); // Prevent the default form submission
@@ -418,14 +425,14 @@
                 $('#lahanForm')[0].reset();
 
                 // Display success notification
-                alert('Data lahan berhasil disimpan!');
+                notyf.success('Data lahan berhasil disimpan!');
 
                 reloadContent();
             },
             error: function (xhr) {
                 console.log(xhr.responseText);
                 // Display error message to user if needed
-                alert('Error: ' + xhr.responseText);
+                notyf.error('Error: ' + xhr.responseText);
             }
         });
     });
@@ -458,6 +465,7 @@
             },
             error: function(xhr) {
                 console.error(xhr.responseText);
+                notyf.error('Terjadi kesalahan saat mengambil data lahan.');
             }
         });
     }
@@ -488,7 +496,7 @@
     }
 
     // Fungsi untuk mengedit lahan (memanggil data lahan dan membuka modal update)
-    window.editLahan = function(id) {  // Mendefinisikan fungsi di global scope
+    window.editLahan = function(id) {
         $.ajax({
             url: '/lahan/' + id + '/edit',
             type: 'GET',
@@ -497,6 +505,7 @@
             },
             error: function(xhr) {
                 console.error(xhr.responseText);
+                notyf.error('Terjadi kesalahan saat mengambil data lahan.');
             }
         });
     };
@@ -523,68 +532,67 @@
             data: formData,
             success: function(response) {
                 $('#lahanUpdateModal').modal('hide');
-                $('#lahan-' + id + ' td:nth-child(1)').text(response.nama_lahan);
-                $('#lahan-' + id + ' td:nth-child(2)').text(response.luas);
-                $('#lahan-' + id + ' td:nth-child(3)').text(response.detail_lokasi);
-                alert('Lahan berhasil diperbarui!');
+                notyf.success('Lahan berhasil diperbarui!');
                 loadLahans(); // Memuat ulang data setelah pembaruan
             },
             error: function(response) {
                 console.log(response);
-                alert('Terjadi kesalahan saat memperbarui lahan.');
+                notyf.error('Terjadi kesalahan saat memperbarui lahan.');
             }
         });
     });
+
     window.viewLahan = function(id) {
+        $.ajax({
+            url: '/lahan/' + id +'/view',
+            type: 'GET',
+            success: function(response) {
+                const lahan = response.lahan;
+                const coordinates = [lahan.longitude, lahan.latitude];
+
+                // Move the map to the new location
+                map.flyTo({
+                    center: coordinates,
+                    essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+                    zoom: 14
+                });
+
+                // If a marker exists, update its position
+                if (marker) {
+                    marker.setLngLat(coordinates);
+                } else {
+                    // Create a new marker if it doesn't exist
+                    marker = new mapboxgl.Marker()
+                        .setLngLat(coordinates)
+                        .addTo(map);
+                }
+            },
+            error: function(xhr) {
+                console.error(xhr.responseText);
+                notyf.error('Terjadi kesalahan saat mengambil data lahan.');
+            }
+        });
+    };
+
+    window.deleteLahan = function(id) {
+        if (confirm('Apakah Anda yakin ingin menghapus lahan ini?')) {
             $.ajax({
-                url: '/lahan/' + id +'/view' ,
-                type: 'GET',
+                url: '/lahan/' + id + '/delete',
+                type: 'DELETE',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(response) {
-                    const lahan = response.lahan;
-                    const coordinates = [lahan.longitude, lahan.latitude];
-
-                    // Move the map to the new location
-                    map.flyTo({
-                        center: coordinates,
-                        essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-                        zoom: 14
-                    });
-
-                    // If a marker exists, update its position
-                    if (marker) {
-                        marker.setLngLat(coordinates);
-                    } else {
-                        // Create a new marker if it doesn't exist
-                        marker = new mapboxgl.Marker()
-                            .setLngLat(coordinates)
-                            .addTo(map);
-                    }
+                    notyf.success('Lahan berhasil dihapus!');
+                    loadLahans(); // Reload the table after deletion
                 },
                 error: function(xhr) {
                     console.error(xhr.responseText);
-                    alert('Terjadi kesalahan saat mengambil data lahan.');
+                    notyf.error('Terjadi kesalahan saat menghapus lahan.');
                 }
             });
-        };
-        window.deleteLahan = function(id) {
-            if (confirm('Apakah Anda yakin ingin menghapus lahan ini?')) {
-                $.ajax({
-                    url: '/lahan/' + id + '/delete',
-                    type: 'DELETE',
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        alert('Lahan berhasil dihapus!');
-                        loadLahans(); // Reload the table after deletion
-                    },
-                    error: function(xhr) {
-                        console.error(xhr.responseText);
-                        alert('Terjadi kesalahan saat menghapus lahan.');
-                    }
-                });
-            }
-        };
+        }
+    };
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 
@@ -623,14 +631,14 @@
         zoom: 20
     });
 
-    tambahmap.addControl(geocoder); // Add geocoder control to tambahmap
+    tambahmap.addControl(geocoder);
 
     let marker = null;
-    tambahmap.on('click', function (e) { // Change map to tambahmap
+    tambahmap.on('click', function (e) {
         if (marker == null) {
             marker = new mapboxgl.Marker()
                 .setLngLat(e.lngLat)
-                .addTo(tambahmap); // Change map to tambahmap
+                .addTo(tambahmap);
         } else {
             marker.setLngLat(e.lngLat);
         }
@@ -672,12 +680,9 @@
         $('#update_longitude').val(e.lngLat.lng);
     });
 
-    const notyf = new Notyf();
-
     function toggleButtons() {
         var button1 = document.getElementById("btnLihat");
         var button2 = document.getElementById("btnLoad");
-        var toast = document.getElementById("toastLokasiBerhasil");
 
         // Tampilkan button 2 dan sembunyikan button 1
         button2.removeAttribute("hidden");
@@ -694,25 +699,6 @@
             button2.setAttribute("hidden", "true");
             button2.setAttribute("disabled", "true");
 
-            // notify
-            const notyf = new Notyf({
-                position: {
-                    x: 'right',
-                    y: 'top',
-                },
-                types: [
-                    {
-                        type: 'info',
-                        background: 'blue',
-                        icon: {
-                            className: 'fas fa-info-circle',
-                            tagName: 'span',
-                            color: '#fff'
-                        },
-                        dismissible: false
-                    }
-                ]
-            });
             notyf.success({
                 message: 'Lokasi berhasil diidentifikasi',
                 duration: 3000,
@@ -721,7 +707,6 @@
         }, 3000);
     }
 });
-
 </script>
 
 {{-- library notify --}}

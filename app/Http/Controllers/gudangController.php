@@ -44,25 +44,27 @@ class GudangController extends Controller
 
     public function edit($id)
     {
-        $gudang = GudangModel::find($id);
-        return response()->json(['gudang' => $gudang]);
+        $gudang = GudangModel::findOrFail($id);
+        return response()->json(['data' => $gudang]);
     }
 
     public function update(Request $request, $id)
     {
-        $gudang = GudangModel::find($id);
-        $gudang->nama_gudang = $request->nama_gudang;
-        $gudang->lokasi = $request->lokasi;
-        $gudang->kapasitas = $request->kapasitas;
-        $gudang->luas = $request->luas;
-        $gudang->status = $request->status;
-        $gudang->latitude = $request->latitude;
-        $gudang->longitude = $request->longitude;
-        $gudang->save();
+        $request->validate([
+            'nama_gudang' => 'required|string|max:255',
+            'kapasitas' => 'required|numeric',
+            'luas' => 'required|string',
+            'lokasi' => 'required|string',
+            'status' => 'required|string',
+            'latitude' => 'required|string',
+            'longitude' => 'required|string',
+        ]);
 
-        return response()->json($gudang);
+        $gudang = GudangModel::findOrFail($id);
+        $gudang->update($request->all());
+
+        return response()->json(['message' => 'Gudang updated successfully']);
     }
-
     public function destroy($id)
     {
         $gudang = GudangModel::find($id);
