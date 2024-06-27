@@ -114,8 +114,12 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
 
     // pengolahan
     Route::get('/pengolahan', [AdminPengolahanController::class, 'index'])->name('pengolahan');
-    Route::post('/pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan.store');
-    Route::get('/reloadcontentpengolahan', [AdminPengolahanController::class, 'reloadContent'])->name('reload-content-pengolahan');
+    Route::get('/fetch-pengolahan', [AdminPengolahanController::class, 'fetchPengolahan'])->name('pengolahan.fetch');
+    Route::get('/fetch-unpengolahan', [AdminPengolahanController::class, 'fetchUnPengolahan'])->name('unpengolahan.fetch');
+    Route::post('pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan.store');
+    Route::delete('/pengolahan/{id}/delete', [AdminPengolahanController::class, 'destroy'])->name('pengolahan.destroy');
+    Route::get('/pengolahan/{id}/edit', [AdminPengolahanController::class, 'edit'])->name('pengolahan.edit');
+    Route::put('/pengolahan/{id}/update', [AdminPengolahanController::class, 'update'])->name('pengolahan.update');
 
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');

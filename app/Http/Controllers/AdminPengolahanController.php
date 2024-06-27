@@ -15,12 +15,31 @@ class AdminPengolahanController extends Controller
                         ->latest()
                         ->get();
         // die($unPengolahan);
-        return view('admin.pengolahan.index', compact('pengolahan','unPengolahan'));
+        // return view('admin.pengolahan.index', compact('pengolahan','unPengolahan'));
+        return view('admin.pengolahan.index');
     }
     
+    public function fetchPengolahan()
+    {
+        $pengolahan = AdminPengolahanModel::with(['produksi', 'gudang'])
+                        ->latest()
+                        ->get();
+
+        return response()->json($pengolahan);
+    }
+
+    public function fetchUnPengolahan()
+    {
+        $unPengolahan = ProduksiModel::with(['padi', 'lahan', 'panen', 'perawatan'])
+                        ->doesntHave('pengolahan')
+                        ->latest()
+                        ->get();
+
+        return response()->json($unPengolahan);
+    }
+
     public function store(Request $request)
     {
-        // Lakukan validasi data yang diterima dari form
         $validatedData = $request->validate([
             'id_produksi' => 'required',
             'metode' => 'required|string', 
@@ -30,21 +49,49 @@ class AdminPengolahanController extends Controller
             'hasil' => 'required|string',
         ]);
 
-        $pengolahan = new AdminPengolahanModel($validatedData);
-
+        $tanggalPengolahan = $validatedData['tanggal_pengolahan'];
+        
+        $pengolahan = new AdminPengolahanModel();
+        $pengolahan->id_produksi = $validatedData['id_produksi'];
+        $pengolahan->metode = $validatedData['metode'];
+        $pengolahan->created_at = $tanggalPengolahan; 
+        $pengolahan->deskripsi = $validatedData['deskripsi'];
+        $pengolahan->lama = $validatedData['lama'];
+        $pengolahan->hasil = $validatedData['hasil'];
         $pengolahan->save();
 
-        $pengolahan = AdminPengolahanModel::all();
+        $latestPengolahan = AdminPengolahanModel::with(['produksi', 'gudang'])
+                            ->latest()
+                            ->get();
 
-        return response()->json(['pengolahan' => $pengolahan]);
+        return response()->json(['pengolahan' => $latestPengolahan]);
     }
 
-    public function reloadContent(Request $request)
+    public function destroy($id)
     {
-        // Ambil data terbaru dari model VarietasPadi
-        $pengolahan = AdminPengolahanModel::all();
+        $pengolahan = AdminPengolahanModel::findOrFail($id);
 
-        // Kembalikan data dalam bentuk JSON
-        return response()->json(['pengolahan' => $pengolahan]);
+        $pengolahan->delete();
+
+        return response()->json(['message' => 'Data berhasil dihapus']);
+    }
+    public function edit($id)
+    {
+        $pengolahan = AdminPengolahanModel::findOrFail($id);
+        return response()->json($pengolahan);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $pengolahan = AdminPengolahanModel::findOrFail($id);
+        
+        $validatedData = $request->validate([
+            'metode' => 'required|string',
+            'deskripsi' => 'nullable|string',
+        ]);
+
+        $pengolahan->update($validatedData);
+
+        return response()->json(['message' => 'Data berhasil diperbarui']);
     }
 }

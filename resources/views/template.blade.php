@@ -22,6 +22,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Primary Meta Tags -->
     <title>UD Tani Rejo</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="Volt - Free Bootstrap 5 Dashboard">
     <meta name="author" content="Themesberg">
@@ -326,7 +327,7 @@
     <script src="{{ asset('volt/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
 
     <!-- Slider -->
-    <script src="{{ asset('volt/vendor/nouislider/distribute/nouislider.min.js') }}"></script>
+    <script src="{{ asset('volt/vendor/nouislider/dist/nouislider.min.js') }}"></script>
 
     <!-- Smooth scroll -->
     <script src="{{ asset('volt/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
@@ -342,7 +343,7 @@
     <script src="{{ asset('volt/vendor/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
 
     <!-- Moment JS -->
-    <script src="{{ asset('volt/https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
     <!-- Vanilla JS Datepicker -->
     <script src="{{ asset('volt/vendor/vanillajs-datepicker/dist/js/datepicker.min.js') }}"></script>
@@ -354,7 +355,7 @@
     <script src="{{ asset('volt/vendor/simplebar/dist/simplebar.min.js') }}"></script>
 
     <!-- Github buttons -->
-    <script async defer src="{{ asset('volt/https://buttons.github.io/buttons.js') }}"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <!-- Volt JS -->
     <script src="{{ asset('volt/assets/js/volt.js') }}"></script>

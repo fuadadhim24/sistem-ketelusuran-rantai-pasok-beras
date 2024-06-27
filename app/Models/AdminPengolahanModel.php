@@ -16,10 +16,14 @@ class AdminPengolahanModel extends Model
         'deskripsi',
         'lama',
         'hasil',
+        'created_at',
         'id_gudang',
         'id_produksi',
         'id_user',
     ];
+
+    protected $dates = ['created_at'];
+    protected $dateFormat = 'Y-m-d H:i:s';
 
     public function produksi()
     {

@@ -41,11 +41,6 @@
                                     class="text-center text-primary fw-bold border-bottom border-light py-3">Notifications</a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -62,11 +57,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-2.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -83,11 +73,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 m-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -104,11 +89,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-4.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -125,11 +105,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-5.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -161,8 +136,6 @@
                         <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="media d-flex align-items-center">
-                                <img class="avatar rounded-circle" alt="Image placeholder"
-                                    src="../../assets/img/team/profile-picture-3.jpg">
                                 <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                                     <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
                                 </div>
@@ -257,44 +230,23 @@
                     <div class="table-responsive">
                         <table id="daftar-pengolahan" class="table table-centered table-nowrap mb-0 rounded"
                             style="width:100%">
-                            @forelse ($pengolahan as $item)
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th class="border-0">No</th>
-                                        <th class="border-0">ID Pengolahan</th>
-                                        <th class="border-0">ID Produksi</th>
-                                        <th class="border-0">Tanggal</th>
-                                        <th class="border-0">Hasil</th>
-                                        <th class="border-0">Gudang Penyimpanan</th>
-                                        <th class="border-0">Metode</th>
-                                        <th class="border-0">Lama Pengolahan</th>
-                                        <th class="border-0">Deskripsi</th>
-                                        <th class="border-0">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr id="row-{{ $item->id }}">
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>PG00{{ $item->id }}</td>
-                                        <td>PB00{{ optional($item->produksi)->id }}</td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td>{{ $item->hasil }}</td>
-                                        <td>{{ optional($item->gudang)->nama_gudang }}</td>
-                                        <td>{{ $item->metode }}</td>
-                                        <td>{{ $item->lama }}</td>
-                                        <td>{{ $item->deskripsi }}</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-tertiary" type="button">ubah</button>
-                                            <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            @empty
+                            <thead class="thead-light">
                                 <tr>
-                                    <td colspan="6">Tidak ada data</td>
+                                    <th class="border-0">No</th>
+                                    <th class="border-0">ID Pengolahan</th>
+                                    <th class="border-0">ID Produksi</th>
+                                    <th class="border-0">Tanggal</th>
+                                    <th class="border-0">Hasil</th>
+                                    <th class="border-0">Gudang Penyimpanan</th>
+                                    <th class="border-0">Metode</th>
+                                    <th class="border-0">Lama Pengolahan</th>
+                                    <th class="border-0">Deskripsi</th>
+                                    <th class="border-0">Aksi</th>
                                 </tr>
-                            @endforelse
-
+                            </thead>
+                            <tbody id="pengolahan-table-body">
+                                <!-- Data will be populated dynamically -->
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -317,12 +269,7 @@
                                     <select class="form-select" name="id_produksi" id="idProduksi"
                                         aria-label="Default select example">
                                         <option selected>Pilih ID Produksi</option>
-                                        @forelse ($unPengolahan as $item)
-                                            <option value="{{ $item->id }}"
-                                                data-produksi="{{ json_encode($item) }}">
-                                                PB00{{ $item->id }}</option>
-                                        @empty
-                                        @endforelse
+                                        <!-- Options will be populated dynamically -->
                                     </select>
                                     <small id="Help" class="form-text text-muted">merupakan hasil panen yang belum
                                         diolah.</small>
@@ -355,8 +302,6 @@
                                     <input type="text" id="nama_lahan" class="form-control"
                                         placeholder="Disabled input" disabled>
                                 </div>
-
-
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <div class="mb-4">
@@ -380,8 +325,8 @@
                                 </div>
                                 <!-- Form -->
                                 <div class="mb-4">
-                                    <label for="textarea">Deskripsi</label>
-                                    <textarea class="form-control" name="deskripsi" placeholder="Enter your message..." id="deskripsi" rows="4"></textarea>
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Enter your message..." rows="4"></textarea>
                                 </div>
                                 <!-- End of Form -->
                                 <!-- Form -->
@@ -397,12 +342,123 @@
                                         name="hasil">
                                     <small id="emailHelp" class="form-text text-muted">satuan ton.</small>
                                 </div>
-
                                 <!-- End of Form -->
                             </div>
                         </div>
                     </div>
                 </form>
+
+            </div>
+        </div>
+        <!-- Modal Edit -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Pengolahan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editPengolahanForm" action="#" method="POST">
+                            @csrf
+                            <input type="hidden" name="_method" id="editMethod" value="PUT">
+                            <input type="hidden" id="edit_id" name="edit_id" value="">
+                            <div class="card-body">
+                                <div class="row mb-4">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <!-- Form -->
+                                        <div class="mb-4">
+                                            <label class="my-1 me-2" for="editIdProduksi">ID Produksi</label>
+                                            <select class="form-select" name="id_produksi" id="editIdProduksi"
+                                                aria-label="Default select example">
+                                                <option selected>Pilih ID Produksi</option>
+                                                <!-- Options will be populated dynamically -->
+                                            </select>
+                                            <small id="editHelp" class="form-text text-muted">merupakan hasil panen yang
+                                                sudah
+                                                diolah.</small>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label for="editJumlahPanen">Jumlah Panen</label>
+                                            <input type="text" id="editJumlahPanen" class="form-control"
+                                                placeholder="Jumlah Panen" disabled>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label for="editTanggalProduksi">Tanggal Produksi</label>
+                                            <input type="text" id="editTanggalProduksi" class="form-control"
+                                                placeholder="Tanggal Produksi" disabled>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label for="editTanggalPanen">Tanggal Panen</label>
+                                            <input type="text" id="editTanggalPanen" class="form-control"
+                                                placeholder="Tanggal Panen" disabled>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editNamaPadi">Nama Padi</label>
+                                            <input type="text" id="editNamaPadi" class="form-control"
+                                                placeholder="Nama Padi" disabled>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editNamaLahan">Nama Lahan</label>
+                                            <input type="text" id="editNamaLahan" class="form-control"
+                                                placeholder="Nama Lahan" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="mb-4">
+                                            <label for="editMetode">Metode</label>
+                                            <input type="text" class="form-control" name="metode" id="editMetode"
+                                                placeholder="Metode">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editTanggalPengolahan">Tanggal Pengolahan</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <svg class="icon icon-xs text-gray-600" fill="currentColor"
+                                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </span>
+                                                <input data-datepicker="" class="form-control" name="tanggal_pengolahan"
+                                                    id="editTanggalPengolahan" type="text" placeholder="dd/mm/yyyy"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-4">
+                                            <label for="editDeskripsi">Deskripsi</label>
+                                            <textarea class="form-control" name="deskripsi" id="editDeskripsi" placeholder="Deskripsi" rows="4"></textarea>
+                                        </div>
+                                        <!-- End of Form -->
+                                        <!-- Form -->
+                                        <div class="mb-4">
+                                            <label for="editLama">Lama Pengolahan</label>
+                                            <input type="text" class="form-control" placeholder="cth: 10"
+                                                id="editLama" name="lama">
+                                            <small id="editEmailHelp" class="form-text text-muted">satuan jam.</small>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="editHasil">Hasil (ton)</label>
+                                            <input type="text" placeholder="cth: 55,5" class="form-control"
+                                                id="editHasil" name="hasil">
+                                            <small id="editEmailHelp" class="form-text text-muted">satuan ton.</small>
+                                        </div>
+                                        <!-- End of Form -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Card Body -->
+                            <div class="card-footer border-top d-flex align-items-center justify-content-end">
+                                <button type="submit" class="btn btn-sm btn-primary" id="simpan">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -430,13 +486,7 @@
             </a>
             <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
             <div class="d-flex justify-content-center">
-                <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
-                    target="_blank">
-                    <img src="../../assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
-                </a>
-                <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                    <img src="../../assets/img/technologies/react-logo.svg" class="image image-xs">
-                </a>
+
             </div>
         </div>
     </div>
@@ -501,198 +551,190 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-
-            function showNotification(message, type) {
-                const notyf = new Notyf({
-                    position: {
-                        x: 'right',
-                        y: 'top',
+            // Fetch pengolahan data pertama kali saat halaman dimuat
+            function fetchPengolahan() {
+                $.ajax({
+                    url: "{{ route('pengolahan.fetch') }}",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.length > 0) {
+                            let html = '';
+                            $.each(response, function(index, item) {
+                                html += '<tr id="row-' + item.id + '">';
+                                html += '<td>' + (index + 1) + '</td>';
+                                html += '<td>PG00' + item.id + '</td>';
+                                html += '<td>PB00' + (item.produksi ? item.produksi.id : '-') +
+                                    '</td>';
+                                html += '<td>' + item.created_at + '</td>';
+                                html += '<td>' + item.hasil + '</td>';
+                                html += '<td>' + (item.gudang ? item.gudang.nama_gudang : '-') +
+                                    '</td>';
+                                html += '<td>' + item.metode + '</td>';
+                                html += '<td>' + item.lama + '</td>';
+                                html += '<td>' + item.deskripsi + '</td>';
+                                html += '<td>';
+                                html +=
+                                    '<button class="btn btn-sm btn-outline-tertiary btn-edit" type="button" data-toggle="modal" data-target="#editModal" data-id="' +
+                                    item.id + '">Ubah</button>';
+                                html +=
+                                    '<button class="btn btn-sm btn-outline-danger btn-delete" type="button" data-id="' +
+                                    item.id + '">Hapus</button>';
+                                html += '</td>';
+                                html += '</tr>';
+                            });
+                            $('#pengolahan-table-body').html(html);
+                        } else {
+                            $('#pengolahan-table-body').html(
+                                '<tr><td colspan="10">Tidak ada data</td></tr>');
+                        }
                     },
-                    types: [{
-                        type: type,
-                        background: 'blue',
-                        icon: {
-                            className: 'fas fa-info-circle',
-                            tagName: 'span',
-                            color: '#fff'
-                        },
-                        dismissible: false
-                    }]
-                });
-                notyf.success({
-                    message: message,
-                    duration: 3000,
-                    icon: false
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $('#pengolahan-table-body').html(
+                            '<tr><td colspan="10">Error fetching data</td></tr>');
+                    }
                 });
             }
 
-            function resetForm(form) {
-                form[0].reset();
+            // Fetch unPengolahan data untuk dropdown saat halaman dimuat
+            function fetchUnPengolahan() {
+                $.ajax({
+                    url: "{{ route('unpengolahan.fetch') }}",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.length > 0) {
+                            let html = '<option selected>Pilih ID Produksi</option>';
+                            $.each(response, function(index, item) {
+                                html += '<option value="' + item.id + '" data-produksi=\'' +
+                                    JSON.stringify(item) + '\'>PB00' + item.id + '</option>';
+                            });
+                            $('#idProduksi').html(html);
+                        } else {
+                            $('#idProduksi').html('<option selected>Tidak ada data</option>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $('#idProduksi').html('<option selected>Error fetching data</option>');
+                    }
+                });
             }
-
-            $(document).on('click', '.btn-ubah-varietas', function() {
-                var id = $(this).data('id');
-                var varietas = $(this).data('varietas');
-                var deskripsi = $(this).data('deskripsi');
-                var keunggulan = $(this).data('keunggulan');
-                var jenis_musim = $(this).data('jenis-musim');
-                var lama_tanam = $(this).data('lama-tanam');
-                var ketahanan_hama_penyakit = $(this).data('ketahanan-hama-penyakit');
-                var kategori = $(this).data('kategori'); // New data attribute for category
-                var karakteristik_hasil = $(this).data(
-                    'karakteristik-hasil'); // New data attribute for characteristic results
-
-                // Set values to modal fields
-                $('#u-id').val(id);
-                $('#u-varietas').val(varietas);
-                $('#u-deskripsi').val(deskripsi);
-                $('#u-keunggulan').val(keunggulan);
-                $('#u-country').val(jenis_musim);
-                $('#u-ketahanan_hama_penyakit').val(ketahanan_hama_penyakit);
-                $('#u-lama_tanam').val(lama_tanam);
-                $('#u-kategori').val(kategori); // Set value for category field in update modal
-                $('#u-karakteristik_hasil').val(
-                    karakteristik_hasil); // Set value for characteristic results field in update modal
-
-                // Show modal
-                var modal = new bootstrap.Modal(document.getElementById('modal-update'));
-                modal.show();
+            $('#pengolahanForm').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: '{{ route('pengolahan.store') }}',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Handle success response
+                        console.log(response);
+                        alert('Data berhasil disimpan!');
+                        $('#pengolahanForm')[0].reset();
+                        fetchPengolahan(); // Refresh tabel setelah berhasil menyimpan
+                        fetchUnPengolahan(); // Refresh dropdown setelah berhasil menyimpan
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error response
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
+                });
             });
 
+            // Event listener untuk tombol "Ubah" pada setiap baris tabel
+            $(document).on('click', '.btn-edit', function() {
+                var id = $(this).data('id');
+                console.log(id);
+                $.ajax({
+                    url: '/pengolahan/' + id + '/edit',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#editIdProduksi').empty();
+                        $('#editIdProduksi').append('<option value="' + response.id_produksi +
+                            '">' + 'PB00' + response.id_produksi + '</option>');
+                        $('#editMetode').val(response.metode);
+                        var tanggalPengolahan = response.updated_at ? response.updated_at :
+                            response.created_at;
+                        $('#editTanggalPengolahan').val(tanggalPengolahan);
+                        $('#editDeskripsi').val(response.deskripsi);
+                        $('#editLama').val(response.lama);
+                        $('#editHasil').val(response.hasil);
 
-            $(document).on('click', '.btn-hapus-varietas', function() {
-                var varietasId = $(this).data('id'); // Get the variety ID from data-id attribute
-                if (confirm('Apakah Anda yakin ingin menghapus varietas ini?')) {
-                    var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Get CSRF token
+                        $('#edit_id').val(id); // Set nilai edit_id untuk form edit
+
+                        $('#editPengolahanForm').attr('action', '/pengolahan/' + id + '/update');
+                        $('#editMethod').val('PUT');
+                        $('#editModal').modal('show');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
+                });
+            });
+
+            // Event listener untuk submit form edit melalui AJAX
+            $('#editPengolahanForm').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                var id = $('#edit_id').val();
+                var csrfToken = $('meta[name="csrf-token"]').attr(
+                    'content');
+                $.ajax({
+                    url: '/pengolahan/' + id + '/update',
+                    type: 'PUT',
+                    data: formData,
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    success: function(response) {
+                        $('#editModal').modal('hide');
+                        alert('Data berhasil diperbarui!');
+                        fetchPengolahan();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
+                });
+            });
+
+            // Event listener untuk tombol "Hapus"
+            $(document).on('click', '.btn-delete', function() {
+                var id = $(this).data('id');
+                deleteData(id); // Panggil fungsi deleteData untuk menghapus data
+            });
+
+            function deleteData(id) {
+                if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                    var csrfToken = $('meta[name="csrf-token"]').attr('content');
                     $.ajax({
+                        url: '/pengolahan/' + id + '/delete',
                         type: 'DELETE',
-                        url: '/hapusvarietas/' + varietasId,
+                        dataType: 'json',
                         headers: {
                             'X-CSRF-TOKEN': csrfToken
                         },
                         success: function(response) {
-                            console.log(response);
-                            $('#row-' + varietasId).remove(); // Remove the row from the table
-                            // Show success notification
-                            showNotification('Varietas berhasil dihapus', 'info');
+                            $('#row-' + id).remove();
+                            fetchUnPengolahan();
+                            alert('Data berhasil dihapus!');
                         },
                         error: function(xhr, status, error) {
-                            console.error(error);
+                            console.error(xhr.responseText);
+                            alert('Terjadi kesalahan! Silakan coba lagi.');
                         }
                     });
                 }
-            });
-
-            $('#pengolahanForm').submit(function(e) {
-                e.preventDefault(); // Prevent the default form submission
-                var form = $(this);
-                var url = form.attr('action');
-                var method = form.attr('method');
-                var formData = form.serialize(); // Serialize the form data
-
-                $.ajax({
-                    type: method,
-                    url: url,
-                    data: formData,
-                    success: function(response) {
-                        console.log(response);
-                        // $('#modal-form-signup').modal('hide');
-                        resetForm(form); // Reset form fields
-                        reloadContent();
-                        showNotification('Pengolahan berhasil ditambahkan', 'info');
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
-                    }
-                });
-            });
-
-            // Handle submit form for update
-            $('#updateForm').submit(function(e) {
-                e.preventDefault(); // Prevent the default form submission
-                var form = $(this);
-                var url = form.attr('action');
-                var method = form.attr('method');
-                var formData = form.serialize(); // Serialize the form data
-
-                $.ajax({
-                    type: method,
-                    url: url,
-                    data: formData,
-                    success: function(response) {
-                        console.log(response);
-                        $('#modal-update').modal(
-                            'hide'); // Hide the modal after successful submission
-                        resetForm(form); // Reset form fields
-                        // Reload the content if needed
-                        reloadContent();
-                        // Show success notification
-                        showNotification('Varietas berhasil diperbarui', 'info');
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(error);
-                    }
-                });
-            });
-
-            // Function to reload content
-            function reloadContent() {
-                $.get("{{ route('reload-content-pengolahan') }}", function(data) {
-                    var tableBody = $('#daftar-pengolahan tbody');
-                    tableBody.empty(); // Clear the table body
-
-                    $.each(data.pengolahan, function(index, pengolahan) {
-                        tableBody.append(
-                            '<tr id="row-' + padi.id + '">' +
-                            '<td>' + (index + 1) + '</td>' +
-                            '<td>' + padi.varietas + '</td>' +
-                            '<td>' + padi.kategori + '</td>' +
-                            '<td class="text-justify text-wrap">' + padi.deskripsi + '</td>' +
-                            '<td class="text-justify text-wrap">' + padi.karakteristik_hasil +
-                            '</td>' +
-                            '<td class="text-justify text-wrap">' + padi.keunggulan + '</td>' +
-                            '<td>' + padi.jenis_musim + '</td>' +
-                            '<td>' + padi.lama_tanam + '</td>' +
-                            '<td class="text-justify text-wrap">' + padi
-                            .ketahanan_hama_penyakit + '</td>' +
-                            '<td>Foto</td>' +
-                            '<td>' +
-                            '<button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" ' +
-                            'data-id="' + padi.id + '" ' +
-                            'data-varietas="' + padi.varietas + '" ' +
-                            'data-kategori="' + padi.kategori + '" ' +
-                            'data-deskripsi="' + padi.deskripsi + '" ' +
-                            'data-karakteristik-hasil="' + padi.karakteristik_hasil + '" ' +
-                            'data-keunggulan="' + padi.keunggulan + '" ' +
-                            'data-jenis-musim="' + padi.jenis_musim + '" ' +
-                            'data-lama-tanam="' + padi.lama_tanam + '" ' +
-                            'data-ketahanan-hama-penyakit="' + padi.ketahanan_hama_penyakit +
-                            '">' +
-                            'Ubah</button>' +
-                            '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' +
-                            padi.id + '">Hapus</button>' +
-                            '</td>' +
-                            '</tr>'
-                            '<tr id="row-' + pengolahan.id + '">' +
-                            '<td>' + (index + 1) + '</td>' +
-                            '<td>PG00' + pengolahan.id + '</td>' +
-                            '<td>PB00' + pengolahan.produksi.id + '</td>' +
-                            '<td>' + pengolahan.created_at + '</td>' +
-                            '<td>' + pengolahan.hasil + '</td>' +
-                            '<td>' + (pengolahan.gudang ? pengolahan.gudang.nama_gudang : '') +
-                            '</td>' +
-                            '<td>' + pengolahan.metode + '</td>' +
-                            '<td>' + pengolahan.lama + '</td>' +
-                            '<td>' + pengolahan.deskripsi + '</td>' +
-                            '<td>' +
-                            '<button class="btn btn-sm btn-outline-tertiary" type="button">ubah</button>' +
-                            '<button class="btn btn-sm btn-outline-danger" type="button">hapus</button>' +
-                            '</td>' +
-                            '</tr>';
-                        );
-                    });
-                });
             }
+
+            fetchPengolahan();
+            fetchUnPengolahan();
         });
     </script>
 @endsection
