@@ -258,53 +258,56 @@
 </div>
 
 <div class="modal fade" id="lahanTambah" tabindex="-1" aria-labelledby="lahanTambahLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="lahanTambahLabel">Tambah Lahan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="lahanForm" action="{{ route('lahan.store') }}" method="POST" class="form-inline">
-                    @csrf
-                    <input type="hidden" id="id" name="id">
-                    <div class="form-group">
-                        <label for="nama_lahan">Nama Lahan</label>
-                        <input type="text" class="form-control" id="nama_lahan" name="nama_lahan" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="detail_lokasi">Detail Lokasi</label>
-                        <input type="text" class="form-control" id="detail_lokasi" name="detail_lokasi" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="luas">Luas</label>
-                        <input type="text" class="form-control" id="luas" name="luas" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="latitude">Latitude</label>
-                        <input type="text" class="form-control" id="latitude" name="latitude" readonly required>
-                    </div>
-                    <div class="form-group">
-                        <label for="longitude">longitude</label>
-                        <input type="text" class="form-control" id="longitude" name="longitude" readonly required>
-                    </div>
-                    <div class="card border-0 shadow">
-                        <div class="card-body">
-                            <div id="tambahmap" class="w-100" style="height: 300px;"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="jenis_tanah">Jenis Tanah</label>
-                        <input type="text" class="form-control" id="jenis_tanah" name="jenis_tanah" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </form>
-            </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <form id="lahanForm" enctype="multipart/form-data">
+        @csrf
+        <div class="modal-header">
+          <h5 class="modal-title" id="lahanTambahLabel">Tambah Lahan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <label for="nama_lahan">Nama Lahan</label>
+            <input type="text" class="form-control" id="nama_lahan" name="nama_lahan" required>
+          </div>
+          <div class="mb-4">
+            <label for="detail_lokasi">Detail Lokasi</label>
+            <input type="text" class="form-control" id="detail_lokasi" name="detail_lokasi" required>
+          </div>
+          <div class="mb-4">
+            <label for="luas">Luas</label>
+            <input type="text" class="form-control" id="luas" name="luas" required>
+          </div>
+          <div class="mb-4">
+            <label for="latitude">Latitude</label>
+            <input type="text" class="form-control" id="latitude" name="latitude" readonly required>
+          </div>
+          <div class="mb-4">
+            <label for="longitude">Longitude</label>
+            <input type="text" class="form-control" id="longitude" name="longitude" readonly required>
+          </div>
+          <div class="mb-4">
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <div id="tambahmap" class="w-100" style="height: 300px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="jenis_tanah">Jenis Tanah</label>
+            <input type="text" class="form-control" id="jenis_tanah" name="jenis_tanah" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
+
 
 <div class="modal fade" id="lahanUpdateModal" tabindex="-1" aria-labelledby="lahanUpdateModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -355,6 +358,23 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus lahan ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
@@ -398,44 +418,49 @@
     });
 
     // Handle form submission for adding a new land
-    $('#lahanForm').submit(function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        $('#lahanTambah').modal('hide');
-        // Serialize form data
-        var formData = $(this).serialize();
+    $('#lahanForm').on('submit', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form default
 
-        // Mengambil nilai longitude dan latitude secara terpisah
-        var longitude = $('#longitude').val();
-        var latitude = $('#latitude').val();
+    var formData = {
+        _token: $('input[name="_token"]').val(),
+        nama_lahan: $('#nama_lahan').val(),
+        detail_lokasi: $('#detail_lokasi').val(),
+        luas: $('#luas').val(),
+        latitude: $('#latitude').val(),
+        longitude: $('#longitude').val(),
+        jenis_tanah: $('#jenis_tanah').val()
+    };
 
-        // Menambahkan nilai longitude dan latitude ke dalam formData
-        formData += '&longitude=' + longitude + '&latitude=' + latitude;
-
-        // Menambahkan token CSRF ke dalam formData
-        formData += '&_token=' + $('meta[name="csrf-token"]').attr('content');
-
-        // Submit the form data using AJAX
-        $.ajax({
-            url: "{{ route('lahan.store') }}",
-            type: "POST",
-            data: formData,
-            success: function (response) {
-                console.log(response);
-                // Reset form after successful data submission
-                $('#lahanForm')[0].reset();
-
-                // Display success notification
+    $.ajax({
+        url: '{{ route('lahan.store') }}',
+        method: 'POST',
+        data: formData,
+        success: function(response) {
+            if (response.success) {
+                $('#lahanTambah').modal('hide');
                 notyf.success('Data lahan berhasil disimpan!');
-
+                $('#lahanForm')[0].reset();
                 reloadContent();
-            },
-            error: function (xhr) {
-                console.log(xhr.responseText);
-                // Display error message to user if needed
-                notyf.error('Error: ' + xhr.responseText);
+            } else {
+                notyf.error('Gagal menyimpan data lahan');
             }
-        });
+        },
+        error: function(xhr, status, error) {
+            if (xhr.status === 422) {
+                var errors = xhr.responseJSON.errors;
+                var errorMessage = '';
+                $.each(errors, function(key, value) {
+                    errorMessage += value + '\n';
+                });
+                notyf.error('Kesalahan validasi:\n' + errorMessage);
+            } else {
+                console.error('AJAX Error: ' + error);
+                notyf.error('Terjadi kesalahan saat menyimpan data lahan');
+            }
+        }
     });
+});
+
 
     function loadLahans() {
         $.ajax({
@@ -573,26 +598,35 @@
             }
         });
     };
+// Simpan ID Lahan yang akan dihapus
+let lahanIdToDelete;
 
-    window.deleteLahan = function(id) {
-        if (confirm('Apakah Anda yakin ingin menghapus lahan ini?')) {
-            $.ajax({
-                url: '/lahan/' + id + '/delete',
-                type: 'DELETE',
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(response) {
-                    notyf.success('Lahan berhasil dihapus!');
-                    loadLahans(); // Reload the table after deletion
-                },
-                error: function(xhr) {
-                    console.error(xhr.responseText);
-                    notyf.error('Terjadi kesalahan saat menghapus lahan.');
-                }
-            });
+// Fungsi untuk menampilkan modal konfirmasi penghapusan
+window.deleteLahan = function(id) {
+    lahanIdToDelete = id;
+    $('#confirmDeleteModal').modal('show');
+}
+
+// Tangani klik tombol konfirmasi penghapusan
+$('#confirmDeleteBtn').on('click', function() {
+    $.ajax({
+        url: '/lahan/' + lahanIdToDelete + '/delete',
+        type: 'DELETE',
+        data: {
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(response) {
+            $('#confirmDeleteModal').modal('hide');
+            notyf.success('Lahan berhasil dihapus!');
+            loadLahans(); // Muat ulang tabel setelah penghapusan
+        },
+        error: function(xhr) {
+            console.error(xhr.responseText);
+            notyf.error('Terjadi kesalahan saat menghapus lahan.');
         }
-    };
+    });
+});
+
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 

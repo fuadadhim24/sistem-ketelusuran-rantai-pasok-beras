@@ -280,7 +280,6 @@
                 <th class="border-0">Jenis Musim</th>
                 <th class="border-0">Lama Tanam</th>
                 <th class="border-0" style="width:20%">Ketahanan Hama Penyakit</th>
-                <th class="border-0">Foto</th>
                 <th class="border-0">Aksi</th>
             </tr>
         </thead>
@@ -297,7 +296,6 @@
                 <td>{{ $item->jenis_musim }}</td>
                 <td>{{ $item->lama_tanam }}</td>
                 <td class="text-justify text-wrap">{{ $item->ketahanan_hama_penyakit }}</td>
-                <td>Foto</td>
                 <td>
                     <button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" 
                         data-id="{{ $item->id }}" 
@@ -418,188 +416,204 @@
 </div>
 
                   <!-- End of Modal Content -->
+                  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus varietas ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script>
-                    $(document).ready(function() {
-                        // Function to show notification
-                        function showNotification(message, type) {
-                            const notyf = new Notyf({
-                                position: {
-                                    x: 'right',
-                                    y: 'top',
-                                },
-                                types: [
-                                    {
-                                        type: type,
-                                        background: 'blue',
-                                        icon: {
-                                            className: 'fas fa-info-circle',
-                                            tagName: 'span',
-                                            color: '#fff'
-                                        },
-                                        dismissible: false
-                                    }
-                                ]
-                            });
-                            notyf.success({
-                                message: message,
-                                duration: 3000,
-                                icon: false
-                            });
-                        }
+$(document).ready(function() {
+    // Function to show notification
+    function showNotification(message, type) {
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top',
+            },
+            types: [
+                {
+                    type: type,
+                    background: 'blue',
+                    icon: {
+                        className: 'fas fa-info-circle',
+                        tagName: 'span',
+                        color: '#fff'
+                    },
+                    dismissible: false
+                }
+            ]
+        });
+        notyf.success({
+            message: message,
+            duration: 3000,
+            icon: false
+        });
+    }
 
-                        // Function to reset form fields
-                        function resetForm(form) {
-    form[0].reset(); // Reset the form using the built-in reset() method
-  }
+    // Function to reset form fields
+    function resetForm(form) {
+        form[0].reset(); // Reset the form using the built-in reset() method
+    }
 
-  // Handle click event for "Ubah" button using event delegation
-  $(document).on('click', '.btn-ubah-varietas', function() {
-    var id = $(this).data('id');
-    var varietas = $(this).data('varietas');
-    var deskripsi = $(this).data('deskripsi');
-    var keunggulan = $(this).data('keunggulan');
-    var jenis_musim = $(this).data('jenis-musim');
-    var lama_tanam = $(this).data('lama-tanam');
-    var ketahanan_hama_penyakit = $(this).data('ketahanan-hama-penyakit');
-    var kategori = $(this).data('kategori'); // New data attribute for category
-    var karakteristik_hasil = $(this).data('karakteristik-hasil'); // New data attribute for characteristic results
+    // Handle click event for "Ubah" button using event delegation
+    $(document).on('click', '.btn-ubah-varietas', function() {
+        var id = $(this).data('id');
+        var varietas = $(this).data('varietas');
+        var deskripsi = $(this).data('deskripsi');
+        var keunggulan = $(this).data('keunggulan');
+        var jenis_musim = $(this).data('jenis-musim');
+        var lama_tanam = $(this).data('lama-tanam');
+        var ketahanan_hama_penyakit = $(this).data('ketahanan-hama-penyakit');
+        var kategori = $(this).data('kategori'); 
+        var karakteristik_hasil = $(this).data('karakteristik-hasil'); 
 
-    // Set values to modal fields
-    $('#u-id').val(id);
-    $('#u-varietas').val(varietas);
-    $('#u-deskripsi').val(deskripsi);
-    $('#u-keunggulan').val(keunggulan);
-    $('#u-country').val(jenis_musim);
-    $('#u-ketahanan_hama_penyakit').val(ketahanan_hama_penyakit);
-    $('#u-lama_tanam').val(lama_tanam);
-    $('#u-kategori').val(kategori); // Set value for category field in update modal
-    $('#u-karakteristik_hasil').val(karakteristik_hasil); // Set value for characteristic results field in update modal
+        // Set values to modal fields
+        $('#u-id').val(id);
+        $('#u-varietas').val(varietas);
+        $('#u-deskripsi').val(deskripsi);
+        $('#u-keunggulan').val(keunggulan);
+        $('#u-country').val(jenis_musim);
+        $('#u-ketahanan_hama_penyakit').val(ketahanan_hama_penyakit);
+        $('#u-lama_tanam').val(lama_tanam);
+        $('#u-kategori').val(kategori);
+        $('#u-karakteristik_hasil').val(karakteristik_hasil);
 
-    // Show modal
-    var modal = new bootstrap.Modal(document.getElementById('modal-update'));
-    modal.show();
-  });
+        // Show modal
+        var modal = new bootstrap.Modal(document.getElementById('modal-update'));
+        modal.show();
+    });
 
+    // Handle click event for "Hapus" button using event delegation
+    $(document).on('click', '.btn-hapus-varietas', function() {
+        var varietasId = $(this).data('id'); 
+        $('#confirmDeleteModal').data('id', varietasId).modal('show'); 
+    });
 
-                        // Handle click event for "Hapus" button using event delegation
-                        $(document).on('click', '.btn-hapus-varietas', function() {
-                            var varietasId = $(this).data('id'); // Get the variety ID from data-id attribute
-                            if (confirm('Apakah Anda yakin ingin menghapus varietas ini?')) {
-                                var csrfToken = $('meta[name="csrf-token"]').attr('content'); // Get CSRF token
-                                $.ajax({
-                                    type: 'DELETE',
-                                    url: '/hapusvarietas/' + varietasId,
-                                    headers: {
-                                        'X-CSRF-TOKEN': csrfToken
-                                    },
-                                    success: function(response) {
-                                        console.log(response);
-                                        $('#row-' + varietasId).remove(); // Remove the row from the table
-                                        // Show success notification
-                                        showNotification('Varietas berhasil dihapus', 'info');
-                                    },
-                                    error: function(xhr, status, error) {
-                                        console.error(error);
-                                    }
-                                });
-                            }
-                        });
+    $('#confirmDeleteBtn').on('click', function() {
+        var varietasId = $('#confirmDeleteModal').data('id'); 
+        var csrfToken = $('meta[name="csrf-token"]').attr('content'); 
 
-                        // Handle submit form untuk penambahan varietas
-                        $('#varietasForm').submit(function(e) {
-                            e.preventDefault(); // Prevent the default form submission
-                            var form = $(this);
-                            var url = form.attr('action');
-                            var method = form.attr('method');
-                            var formData = form.serialize(); // Serialize the form data
-
-                            $.ajax({
-                                type: method,
-                                url: url,
-                                data: formData,
-                                success: function(response) {
-                                    console.log(response);
-                                    $('#modal-form-signup').modal('hide');
-                                    resetForm(form); // Reset form fields
-                                    // Reload the content after successful submission
-                                    reloadContent();
-                                    // Show success notification
-                                    showNotification('Varietas berhasil ditambahkan', 'info');
-                                },
-                                error: function(xhr, status, error) {
-                                    console.error(xhr.responseText);
-                                }
-                            });
-                        });
-
-                        // Handle submit form for update
-                        $('#updateForm').submit(function(e) {
-                            e.preventDefault(); // Prevent the default form submission
-                            var form = $(this);
-                            var url = form.attr('action');
-                            var method = form.attr('method');
-                            var formData = form.serialize(); // Serialize the form data
-
-                            $.ajax({
-                                type: method,
-                                url: url,
-                                data: formData,
-                                success: function(response) {
-                                    console.log(response);
-                                    $('#modal-update').modal('hide'); // Hide the modal after successful submission
-                                    resetForm(form); // Reset form fields
-                                    // Reload the content if needed
-                                    reloadContent();
-                                    // Show success notification
-                                    showNotification('Varietas berhasil diperbarui', 'info');
-                                },
-                                error: function(xhr, status, error) {
-                                    console.error(error);
-                                }
-                            });
-                        });
-
-                        // Function to reload content
-                        function reloadContent() {
-    $.get("{{ route('reload-content-varietas') }}", function(data) {
-        var tableBody = $('#daftar-varietas tbody');
-        tableBody.empty(); // Clear the table body
-
-        $.each(data.padi, function(index, padi) {
-            tableBody.append(
-                '<tr id="row-' + padi.id + '">' +
-                '<td>' + (index + 1) + '</td>' +
-                '<td>' + padi.varietas + '</td>' +
-                '<td>' + padi.kategori + '</td>' +
-                '<td class="text-justify text-wrap">' + padi.deskripsi + '</td>' +
-                '<td class="text-justify text-wrap">' + padi.karakteristik_hasil + '</td>' +
-                '<td class="text-justify text-wrap">' + padi.keunggulan + '</td>' +
-                '<td>' + padi.jenis_musim + '</td>' +
-                '<td>' + padi.lama_tanam + '</td>' +
-                '<td class="text-justify text-wrap">' + padi.ketahanan_hama_penyakit + '</td>' +
-                '<td>Foto</td>' +
-                '<td>' +
-                '<button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" ' +
-                'data-id="' + padi.id + '" ' +
-                'data-varietas="' + padi.varietas + '" ' +
-                'data-kategori="' + padi.kategori + '" ' +
-                'data-deskripsi="' + padi.deskripsi + '" ' +
-                'data-karakteristik-hasil="' + padi.karakteristik_hasil + '" ' +
-                'data-keunggulan="' + padi.keunggulan + '" ' +
-                'data-jenis-musim="' + padi.jenis_musim + '" ' +
-                'data-lama-tanam="' + padi.lama_tanam + '" ' +
-                'data-ketahanan-hama-penyakit="' + padi.ketahanan_hama_penyakit + '">' +
-                'Ubah</button>' +
-                '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' + padi.id + '">Hapus</button>' +
-                '</td>' +
-                '</tr>'
-            );
+        $.ajax({
+            type: 'DELETE',
+            url: '/hapusvarietas/' + varietasId,
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            success: function(response) {
+                console.log(response);
+                $('#row-' + varietasId).remove(); 
+                showNotification('Varietas berhasil dihapus', 'info');
+                $('#confirmDeleteModal').modal('hide'); 
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
         });
     });
-}
-                    });
-                </script>
+
+    // Handle submit form untuk penambahan varietas
+    $('#varietasForm').submit(function(e) {
+        e.preventDefault(); 
+        var form = $(this);
+        var url = form.attr('action');
+        var method = form.attr('method');
+        var formData = form.serialize(); 
+
+        $.ajax({
+            type: method,
+            url: url,
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                $('#modal-form-signup').modal('hide');
+                resetForm(form); 
+                reloadContent();
+                showNotification('Varietas berhasil ditambahkan', 'info');
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+
+    // Handle submit form for update
+    $('#updateForm').submit(function(e) {
+        e.preventDefault(); 
+        var form = $(this);
+        var url = form.attr('action');
+        var method = form.attr('method');
+        var formData = form.serialize(); 
+
+        $.ajax({
+            type: method,
+            url: url,
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                $('#modal-update').modal('hide'); 
+                resetForm(form); 
+                reloadContent();
+                showNotification('Varietas berhasil diperbarui', 'info');
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+
+    // Function to reload content
+    function reloadContent() {
+        $.get("{{ route('reload-content-varietas') }}", function(data) {
+            var tableBody = $('#daftar-varietas tbody');
+            tableBody.empty(); 
+
+            $.each(data.padi, function(index, padi) {
+                tableBody.append(
+                    '<tr id="row-' + padi.id + '">' +
+                    '<td>' + (index + 1) + '</td>' +
+                    '<td>' + padi.varietas + '</td>' +
+                    '<td>' + padi.kategori + '</td>' +
+                    '<td class="text-justify text-wrap">' + padi.deskripsi + '</td>' +
+                    '<td class="text-justify text-wrap">' + padi.karakteristik_hasil + '</td>' +
+                    '<td class="text-justify text-wrap">' + padi.keunggulan + '</td>' +
+                    '<td>' + padi.jenis_musim + '</td>' +
+                    '<td>' + padi.lama_tanam + '</td>' +
+                    '<td class="text-justify text-wrap">' + padi.ketahanan_hama_penyakit + '</td>' +
+                    '<td>' +
+                    '<button class="btn btn-outline-tertiary btn-ubah-varietas" type="button" ' +
+                    'data-id="' + padi.id + '" ' +
+                    'data-varietas="' + padi.varietas + '" ' +
+                    'data-kategori="' + padi.kategori + '" ' +
+                    'data-deskripsi="' + padi.deskripsi + '" ' +
+                    'data-karakteristik-hasil="' + padi.karakteristik_hasil + '" ' +
+                    'data-keunggulan="' + padi.keunggulan + '" ' +
+                    'data-jenis-musim="' + padi.jenis_musim + '" ' +
+                    'data-lama-tanam="' + padi.lama_tanam + '" ' +
+                    'data-ketahanan-hama-penyakit="' + padi.ketahanan_hama_penyakit + '">' +
+                    'Ubah</button>' +
+                    '<button class="btn btn-outline-danger btn-hapus-varietas" type="button" data-id="' + padi.id + '">Hapus</button>' +
+                    '</td>' +
+                    '</tr>'
+                );
+            });
+        });
+    }
+});
+</script>
+
 
 @endsection

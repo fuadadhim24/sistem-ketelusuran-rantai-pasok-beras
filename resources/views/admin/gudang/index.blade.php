@@ -426,6 +426,25 @@
               </ul>
           </div>
       </div>
+
+      <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus fase ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
   </footer>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -584,28 +603,34 @@
                 }
             });
         };
+       // Simpan ID Gudang yang akan dihapus
+        let gudangIdToDelete;
 
-        // Function to delete Gudang
+        // Fungsi untuk menampilkan Modal Bootstrap untuk konfirmasi
         window.deleteGudang = function(id) {
-            if (confirm('Are you sure you want to delete this gudang?')) {
-                $.ajax({
-                    url: '/gudang/' + id,
-                    method: 'DELETE',
-                    data: {
-                        _token: $('input[name="_token"]').val()
-                    },
-                    success: function(response) {
-                        notyf.success('Gudang berhasil dihapus');
-                        reloadTableContents();
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('AJAX Error: ' + error);
-                        notyf.error('Terjadi kesalahan saat menghapus gudang');
-                    }
-                });
-            }
+            gudangIdToDelete = id;
+            $('#confirmDeleteModal').modal('show');
         }
 
+        // Tangani klik tombol konfirmasi
+        $('#confirmDeleteButton').on('click', function() {
+            $.ajax({
+                url: '/gudang/' + gudangIdToDelete +'/delete',
+                method: 'DELETE',
+                data: {
+                    _token: $('input[name="_token"]').val()
+                },
+                success: function(response) {
+                    notyf.success('Gudang berhasil dihapus');
+                    reloadTableContents();
+                    $('#deleteGudangModal').modal('hide');
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error: ' + error);
+                    notyf.error('Terjadi kesalahan saat menghapus gudang');
+                }
+            });
+        });
         // Mapbox and Geocoder Initialization
         mapboxgl.accessToken = 'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 

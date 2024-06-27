@@ -74,12 +74,14 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/reloadcontentvarietas', [VarietasPadiController::class, 'reloadContent'])->name('reload-content-varietas');
 
     Route::get('/fase', [faseController::class, 'index'])->name('fase');
-    Route::get('/fase/perlakuan', [perlakuanController::class, 'index'])->name('perlakuan');
-    Route::post('/fase/store', [FaseController::class, 'store'])->name('fase.store');
-    Route::get('/fase/{id}/edit', [FaseController::class, 'edit'])->name('edit-fase');
-    Route::delete('/fase/{id}/delete', [FaseController::class, 'destroy'])->name('hapus-fase');
-    Route::patch('/update/{id}', [FaseController::class, 'update'])->name('update-fase');
-    Route::get('/reload-content', [FaseController::class, 'reloadContent'])->name('reload.content');
+    Route::get('/get-fase', [faseController::class, 'getfase'])->name('getfase');
+    Route::get('/fase/perlakuan', [faseController::class, 'tambahView'])->name('perlakuan');
+    Route::get('/fase/perlakuan/{id}', [faseController::class, 'tambahView']); // Add this route
+    Route::get('/fases/{id}', [faseController::class, 'show']);
+    Route::post('/fase/store', [faseController::class, 'store'])->name('fase.store');
+    Route::get('/fase/{id}/edit', [faseController::class, 'edit'])->name('edit-fase');
+    Route::delete('/fase/{id}/delete', [faseController::class, 'destroy'])->name('hapus-fase');
+    Route::patch('/update/{id}', [faseController::class, 'update'])->name('update-fase');
 
     Route::resource('gudang', GudangController::class);
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
