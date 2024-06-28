@@ -265,27 +265,27 @@
     </div>
 
     <!-- Item -->
-    @forelse ($produksis as $index => $item)
-        <div class="col-12 mb-4">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <!-- End of Modal Content -->
-                    <div class="table-responsive">
-                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
-                            style="width:100%">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="border-0">No</th>
-                                    <th class="border-0">ID Produksi</th>
-                                    <th class="border-0">Jumlah Panen</th>
-                                    <th class="border-0">Tanggal Produksi</th>
-                                    <th class="border-0">Tanggal Panen</th>
-                                    <th class="border-0">Nama Padi</th>
-                                    <th class="border-0">Lahan</th>
-                                    <th class="border-0">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+    <div class="col-12 mb-4">
+        <div class="card border-0 shadow">
+            <div class="card-body">
+                <!-- End of Modal Content -->
+                <div class="table-responsive">
+                    <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
+                        style="width:100%">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="border-0">No</th>
+                                <th class="border-0">ID Produksi</th>
+                                <th class="border-0">Jumlah Panen</th>
+                                <th class="border-0">Tanggal Produksi</th>
+                                <th class="border-0">Tanggal Panen</th>
+                                <th class="border-0">Nama Padi</th>
+                                <th class="border-0">Lahan</th>
+                                <th class="border-0">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($produksis as $index => $item)
                                 <tr id="row-{{ $item->id }}">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>PB00{{ $item->id }}</td>
@@ -352,194 +352,178 @@
                                         </div>
                                         <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
                                     </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                    {{-- detail hasil panen --}}
+                                    <div id="detailPanenContent-{{ $index }}" class="d-none">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-4">
+                                                <div class="card border-0 shadow components-section">
+                                                    <div
+                                                        class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                                        <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <!-- Data -->
+                                                        <div class="mb-4">
+                                                            <label for="id_produksi">ID Produksi</label>
+                                                            <p>{{ $item->id }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="sumber_benih">Sumber Benih</label>
+                                                            <p>{{ $item->sumber_benih }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="tanggal_produksi">Tanggal Produksi</label>
+                                                            <p>{{ $item->tanggal_produksi }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
+                                                            <p>{{ $item->tanggal_kedaluwarsa }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
+                                                            <p>{{ $item->tingkat_kemurnian }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="tingkat_vigor">Tingkat Vigor</label>
+                                                            <p>{{ $item->tingkat_vigor }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="jumlah_benih">Jumlah Benih</label>
+                                                            <p>{{ $item->jumlah_benih }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
+                                                            <p>{{ $item->tanggal_penyemaian }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="tanggal_penanaman">Tanggal Penanaman</label>
+                                                            <p>
+                                                                @if ($item->tanggal_penanaman)
+                                                                    {{ $item->tanggal_penanaman }}
+                                                                @else
+                                                                    <span class="badge bg-danger">belum penanaman</span>
+                                                                @endif
+                                                            </p>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="mb-4">
+                                                            <label for="quantity">Quantity (Hasil Panen)</label>
+                                                            <p>{{ $item->panen->quantity }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="metode_panen">Metode Panen</label>
+                                                            <p>{{ $item->panen->metode_panen }}</p>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="catatan">Catatan</label>
+                                                            <p>{{ $item->panen->catatan }}</p>
+                                                        </div>
 
-                </div>
-            </div>
-        </div>
+                                                        <!-- End of Data -->
+                                                    </div>
+                                                </div>
 
-        {{-- detail hasil panen --}}
-        <div id="detailPanenContent-{{ $index }}" class="d-none">
-            <div class="row">
-                <div class="col-12 col-xl-4">
-                    <div class="card border-0 shadow components-section">
-                        <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                            <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
-                        </div>
-                        <div class="card-body">
-                            <!-- Data -->
-                            <div class="mb-4">
-                                <label for="id_produksi">ID Produksi</label>
-                                <p>{{ $item->id }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="sumber_benih">Sumber Benih</label>
-                                <p>{{ $item->sumber_benih }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="tanggal_produksi">Tanggal Produksi</label>
-                                <p>{{ $item->tanggal_produksi }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
-                                <p>{{ $item->tanggal_kedaluwarsa }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
-                                <p>{{ $item->tingkat_kemurnian }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="tingkat_vigor">Tingkat Vigor</label>
-                                <p>{{ $item->tingkat_vigor }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="jumlah_benih">Jumlah Benih</label>
-                                <p>{{ $item->jumlah_benih }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
-                                <p>{{ $item->tanggal_penyemaian }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="tanggal_penanaman">Tanggal Penanaman</label>
-                                <p>
-                                    @if ($item->tanggal_penanaman)
-                                        {{ $item->tanggal_penanaman }}
-                                    @else
-                                        <span class="badge bg-danger">belum penanaman</span>
-                                    @endif
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="mb-4">
-                                <label for="quantity">Quantity (Hasil Panen)</label>
-                                <p>{{ $item->panen->quantity }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="metode_panen">Metode Panen</label>
-                                <p>{{ $item->panen->metode_panen }}</p>
-                            </div>
-                            <div class="mb-4">
-                                <label for="catatan">Catatan</label>
-                                <p>{{ $item->panen->catatan }}</p>
-                            </div>
+                                            </div>
 
-                            <!-- End of Data -->
-                        </div>
-                    </div>
+                                            <div class="col-12 col-xl-4">
+                                                <div class="card border-0 shadow components-section">
+                                                    <div
+                                                        class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                                        <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <!-- Form -->
+                                                        @if ($item->perawatan->isNotEmpty())
+                                                            <div class="accordion"
+                                                                id="accordionPerawatan{{ $item->id }}">
+                                                                @foreach ($item->perawatan as $index => $perawatan)
+                                                                    <div class="accordion-item">
+                                                                        <h2 class="accordion-header"
+                                                                            id="headingPerawatan{{ $item->id }}{{ $index }}">
+                                                                            <button class="accordion-button collapsed"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#collapsePerawatan{{ $item->id }}{{ $index }}"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="collapsePerawatan{{ $item->id }}{{ $index }}">
+                                                                                Perawatan ke-{{ $index + 1 }}
+                                                                            </button>
+                                                                        </h2>
+                                                                        <div id="collapsePerawatan{{ $item->id }}{{ $index }}"
+                                                                            class="accordion-collapse collapse"
+                                                                            aria-labelledby="headingPerawatan{{ $item->id }}{{ $index }}"
+                                                                            data-bs-parent="#accordionPerawatan{{ $item->id }}">
+                                                                            <div class="accordion-body">
+                                                                                <p>Jenis Perawatan:
+                                                                                    {{ $perawatan->jenis_perawatan }}</p>
+                                                                                <p>Nama Perawatan:
+                                                                                    {{ $perawatan->nama_perawatan }}</p>
+                                                                                <p>Jumlah: {{ $perawatan->jumlah }}</p>
+                                                                                <p>Kebutuhan: {{ $perawatan->kebutuhan }}
+                                                                                </p>
+                                                                                <p>Tanggal Perawatan:
+                                                                                    {{ $perawatan->tanggal_perawatan }}</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
+                                                        @else
+                                                            <p>Tidak ada riwayat perawatan untuk produksi ini.</p>
+                                                        @endif
+                                                        <!-- End of Form -->
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                </div>
-
-                <div class="col-12 col-xl-4">
-                    <div class="card border-0 shadow components-section">
-                        <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                            <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
-                        </div>
-                        <div class="card-body">
-                            <!-- Form -->
-                            @if ($item->perawatan->isNotEmpty())
-                                <div class="accordion" id="accordionPerawatan{{ $item->id }}">
-                                    @foreach ($item->perawatan as $index => $perawatan)
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header"
-                                                id="headingPerawatan{{ $item->id }}{{ $index }}">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse"
-                                                    data-bs-target="#collapsePerawatan{{ $item->id }}{{ $index }}"
-                                                    aria-expanded="false"
-                                                    aria-controls="collapsePerawatan{{ $item->id }}{{ $index }}">
-                                                    Perawatan ke-{{ $index + 1 }}
-                                                </button>
-                                            </h2>
-                                            <div id="collapsePerawatan{{ $item->id }}{{ $index }}"
-                                                class="accordion-collapse collapse"
-                                                aria-labelledby="headingPerawatan{{ $item->id }}{{ $index }}"
-                                                data-bs-parent="#accordionPerawatan{{ $item->id }}">
-                                                <div class="accordion-body">
-                                                    <p>Jenis Perawatan: {{ $perawatan->jenis_perawatan }}</p>
-                                                    <p>Nama Perawatan: {{ $perawatan->nama_perawatan }}</p>
-                                                    <p>Jumlah: {{ $perawatan->jumlah }}</p>
-                                                    <p>Kebutuhan: {{ $perawatan->kebutuhan }}</p>
-                                                    <p>Tanggal Perawatan: {{ $perawatan->tanggal_perawatan }}</p>
+                                            <div class="col-12 col-xl-4">
+                                                <div class="col-12 px-0 mb-4">
+                                                    <div class="card border-0 shadow mb-2">
+                                                        <div class="card-header">
+                                                            <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
+                                                        </div>
+                                                    </div>
+                                                    {{-- map lokasi --}}
+                                                    <div class="card border-0 shadow">
+                                                        <div class="card-body">
+                                                            <div id='map' class="w-100" style='height: 300px;'>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach
-                                </div>
-                            @else
-                                <p>Tidak ada riwayat perawatan untuk produksi ini.</p>
-                            @endif
-                            <!-- End of Form -->
-                        </div>
-                    </div>
+                                    </div>
+                                    {{-- mapbox script --}}
+                                    <script>
+                                        mapboxgl.accessToken =
+                                            'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+                                        const map = new mapboxgl.Map({
+                                            container: 'map', // container ID
+                                            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+                                            center: [{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}], // starting position [lng, lat]
+                                            zoom: 9, // starting zoom
+                                        });
+                                        const marker = new mapboxgl.Marker()
+                                            .setLngLat([{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}])
+                                            .addTo(map);
+                                    </script>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="10">Tidak ada data</td>
+                                </tr>
+                            @endforelse
+
+
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="col-12 col-xl-4">
-                    <div class="col-12 px-0 mb-4">
-                        <div class="card border-0 shadow mb-2">
-                            <div class="card-header">
-                                <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
-                            </div>
-                        </div>
-                        {{-- map lokasi --}}
-                        <div class="card border-0 shadow">
-                            <div class="card-body">
-                                <div id='map' class="w-100" style='height: 300px;'></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        {{-- mapbox script --}}
-        <script>
-            mapboxgl.accessToken =
-                'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-            const map = new mapboxgl.Map({
-                container: 'map', // container ID
-                style: 'mapbox://styles/mapbox/streets-v12', // style URL
-                center: [{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}], // starting position [lng, lat]
-                zoom: 9, // starting zoom
-            });
-            const marker = new mapboxgl.Marker()
-                .setLngLat([{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}])
-                .addTo(map);
-        </script>
-    @empty
-        <div class="col-12 mb-4">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <!-- End of Modal Content -->
-                    <div class="table-responsive">
-                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
-                            style="width:100%">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="border-0">No</th>
-                                    <th class="border-0">ID Produksi</th>
-                                    <th class="border-0">Jumlah Panen</th>
-                                    <th class="border-0">Tanggal Produksi</th>
-                                    <th class="border-0">Tanggal Panen</th>
-                                    <th class="border-0">Nama Padi</th>
-                                    <th class="border-0">Lahan</th>
-                                    <th class="border-0">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="6">Tidak ada data</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+    </div>
 
-                </div>
-            </div>
-        </div>
-    @endforelse
+
 
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
         <div class="card-body bg-gray-800 text-white pt-4">
