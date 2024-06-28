@@ -13,6 +13,7 @@ use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\varietasPadiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +59,18 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard'); })->name('dashboard');
-    Route::get('/produk', function () {
-        return view('admin.produk.index'); })->name('produk');
+
+        Route::get('/produk', function () {
+            return view('admin.produk.index');
+        })->name('produk');
+        
+        Route::resource('Produk', ProdukController::class);
+        Route::get('/Produk', [ProdukController::class, 'index'])->name('Produk.index');
+        Route::post('/Produk/store', [ProdukController::class, 'store'])->name('Produk.store');
+        Route::get('/Produks/{id}/edit', [ProdukController::class, 'edit'])->name('edit-produk');
+        Route::post('/Produks/{id}', [ProdukController::class, 'update'])->name('Produk.update'); // Using POST with _method trick for form-data
+        Route::delete('/Produks/{id}', [ProdukController::class, 'destroy'])->name('Produk.destroy');
+        Route::get('/reload-content-Produk', [ProdukController::class, 'reloadContent'])->name('Produk.reload');
 
     Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
     Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');

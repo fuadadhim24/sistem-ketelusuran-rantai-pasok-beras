@@ -437,10 +437,12 @@
         data: formData,
         success: function(response) {
             if (response.success) {
-                $('#lahanTambah').modal('hide');
                 notyf.success('Data lahan berhasil disimpan!');
                 $('#lahanForm')[0].reset();
                 reloadContent();
+                $('#lahanTambah').modal('hide');
+                // $('#lahanUpdateModal').modal('hide');
+                
             } else {
                 notyf.error('Gagal menyimpan data lahan');
             }
