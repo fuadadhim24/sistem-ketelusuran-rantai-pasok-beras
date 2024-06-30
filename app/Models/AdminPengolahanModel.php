@@ -74,4 +74,9 @@ class AdminPengolahanModel extends Model
             ->get()
             ->toArray();
     }
+
+    public static function getProduksiHasPengujian()
+    {
+        return static::whereHas('pengujian')->with(['produksi','pengujian'])->get();
+    }
 }

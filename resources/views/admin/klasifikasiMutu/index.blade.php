@@ -290,7 +290,6 @@
                         <div class="table-responsive">
                             <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
                                 style="width:100%">
-                                {{-- @forelse ($pengolahan as $item) --}}
                                 <thead class="thead-light">
                                     <tr>
                                         <th class="border-0">No</th>
@@ -304,24 +303,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr id="row-1">
-                                        <td>1</td>
-                                        <td>PJ001</td>
-                                        <td>PG001</td>
-                                        <td>PB001</td>
-                                        <td>11/12/2024</td>
-                                        <td>cek hasil</td>
-                                        <td>cek keterangan</td>
-                                        <td>
-                                            {{-- <button class="btn btn-sm btn-outline-tertiary" type="button">ubah</button> --}}
-                                            <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
-                                        </td>
-                                    </tr>
+                                    <!-- Data akan dimasukkan di sini menggunakan Ajax -->
                                 </tbody>
-                                {{-- <tr>
-                                    <td colspan="6">Tidak ada data</td>
-                                </tr> --}}
-
                             </table>
                         </div>
                     </div>
@@ -584,9 +567,9 @@
                 btnShow.classList.remove('d-none');
             });
 
-            function fetchPengujian() {
+            function fetchPengolahan() {
                 $.ajax({
-                    url: "{{ route('pengujian.fetch') }}",
+                    url: "{{ route('pengolahan.fetch') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -610,7 +593,55 @@
                 });
             }
 
+            function fetchPengujian() {
+                $.ajax({
+                    url: "{{ route('pengujian.fetch') }}", // Sesuaikan dengan route di Laravel Anda
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.length > 0) {
+                            var html = '';
+                            $.each(response, function(index, item) {
+                                html += '<tr>';
+                                html += '<td>' + (index + 1) + '</td>';
+                                html += '<td>PJ00' + item.pengujian.id + '</td>';
+                                html += '<td>PG00' + item.id + '</td>';
+                                html += '<td>PB00' + item.produksi.id + '</td>';
+                                html += '<td>' + item.pengujian.created_at + '</td>';
+                                html += '<td>' + item.pengujian.hasil_pengujian + '</td>';
+                                html += '<td>' + item.pengujian.keterangan + '</td>';
+                                html += '<td>';
+                                // Tombol untuk aksi hapus (contoh)
+                                html +=
+                                    '<button class="btn btn-sm btn-outline-danger" type="button">hapus</button>';
+                                html += '</td>';
+                                html += '</tr>';
+                            });
+                            $('#daftar-varietas tbody').html(
+                                html); // Masukkan HTML yang sudah dibuat ke dalam tbody
+                        } else {
+                            $('#daftar-varietas tbody').html(
+                                '<tr><td colspan="8">Tidak ada data</td></tr>'); // Jika tidak ada data
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $('#daftar-varietas tbody').html(
+                            '<tr><td colspan="8">Error fetching data</td></tr>'
+                        ); // Jika terjadi kesalahan
+                    }
+                });
+            }
+
+            $('#daftar-varietas').on('click', '.btn-outline-danger', function() {
+                var rowIndex = $(this).closest('tr').index() + 1;
+                console.log('Hapus item ke-' + rowIndex);
+                // Tambahkan logika hapus item atau tampilkan modal konfirmasi
+            });
+
             fetchPengujian();
+
+            fetchPengolahan();
 
             $('#btnTambah').click(function(e) {
                 e.preventDefault();
@@ -628,6 +659,7 @@
                         console.log(response);
                         alert('Data berhasil disimpan!');
                         $('#pengujianForm')[0].reset();
+                        fetchPengolahan();
                         fetchPengujian();
                         $('#tambahModal').hide();
                     },

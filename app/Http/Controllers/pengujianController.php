@@ -61,6 +61,16 @@ class pengujianController extends Controller
         return response()->json(['message' => 'Data berhasil disimpan']);
     }
 
+    function fetchPengujian(){
+        // $pengujian = Pengujian::all()
+        $pengujian = AdminPengolahanModel::getProduksiHasPengujian();
+        // ->with('produksi')
+        // ->with('pengolahan')
+        // ->get();
+        // $pengujian = Pengujian::with(['produksi']);
+        return response()->json($pengujian);
+    }
+
     function countMutuClass($input){
         $parameterMedium = array(
             "Derajat Sosoh" => 95,
