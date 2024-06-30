@@ -55,4 +55,23 @@ class ProduksiModel extends Model
     {
         return $this->hasOne(AdminPengolahanModel::class, 'id_produksi')->with(['padi', 'lahan', 'panen']);
     }
+    public function pengujian()
+    {
+        return $this->hasOne(Pengujian::class, 'id_produksi');
+    }
+
+    public static function getProduksiWithoutPengujian()
+    {
+        return static::whereDoesntHave('pengujian')
+            ->with(['pengolahan'])
+            ->get()
+            ->toArray();
+    }
+
+    public static function getProduksiHasPengujian()
+    {
+        return static::whereHas('pengujian')
+            ->with(['pengujian','pengolahan'])
+            ->get();
+    }
 }

@@ -68,15 +68,4 @@ class AdminPengolahanModel extends Model
         return $query->whereDoesntHave('pengujian');
     }
 
-    public static function getProduksiWithoutPengujian()
-    {
-        return static::whereDoesntHave('pengujian')
-            ->get()
-            ->toArray();
-    }
-
-    public static function getProduksiHasPengujian()
-    {
-        return static::whereHas('pengujian')->with(['produksi','pengujian'])->get();
-    }
 }

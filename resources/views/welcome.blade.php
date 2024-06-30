@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
     <link rel="stylesheet" href="{{ asset('asset/custom/css/landingpage.css') }}" />
 </head>
 
@@ -22,29 +24,29 @@
                     <div class="container-19">
                         {{-- @if (Route::has('login'))
                             @auth --}}
-                                {{-- <div class="item-6">
+                        {{-- <div class="item-6">
                                     <span class="link-media-publikasi-2">
                                         <a style="color: white; text-decoration:none" href="{{ url('/dashboard') }}">
 
                                         </a>
                                     </span>
                                 </div> --}}
-                                <div class="item-6">
-                                    <span class="link-media-publikasi-2">
-                                        <a style="color: white; text-decoration:none" href="{{ route('login') }}">
-                                            Masuk
-                                        </a>
-                                    </span>
-                                </div>
-                                {{-- @if (Route::has('register')) --}}
-                                    <div class="item-7">
-                                        <span class="link-media-publikasi-3">
-                                            <a style="color: white; text-decoration:none" href="{{ route('register') }}">
-                                                Daftar
-                                            </a>
-                                        </span>
-                                    </div>
-                                {{-- @endif
+                        <div class="item-6">
+                            <span class="link-media-publikasi-2">
+                                <a style="color: white; text-decoration:none" href="{{ route('login') }}">
+                                    Masuk
+                                </a>
+                            </span>
+                        </div>
+                        {{-- @if (Route::has('register')) --}}
+                        <div class="item-7">
+                            <span class="link-media-publikasi-3">
+                                <a style="color: white; text-decoration:none" href="{{ route('register') }}">
+                                    Daftar
+                                </a>
+                            </span>
+                        </div>
+                        {{-- @endif
                             @endauth
                         @endif --}}
                         <div class="item-8">
@@ -151,11 +153,11 @@
                             </span>
                             <div id="content1" class="content" style="display: none;">
                                 UD Tani Rejo merupakan
-salah satu usaha pertanian yang didirikan pada tahun 2009, berlokasi di Jl.
-Tempurejo, Cangkring Baru, Cangkring, Kecamatan Jenggawah, Kabupaten
-Jember. Mitra menunjukkan antusiasnya di bidang pertanian bergerak secara aktif
-turut berperan dalam produksi dan distribusi pangan lokal ekspor berbagai varietas
-pertanian diantaranya beras dan jagung.
+                                salah satu usaha pertanian yang didirikan pada tahun 2009, berlokasi di Jl.
+                                Tempurejo, Cangkring Baru, Cangkring, Kecamatan Jenggawah, Kabupaten
+                                Jember. Mitra menunjukkan antusiasnya di bidang pertanian bergerak secara aktif
+                                turut berperan dalam produksi dan distribusi pangan lokal ekspor berbagai varietas
+                                pertanian diantaranya beras dan jagung.
                                 UD Tani Rejo bermitra dengan lebih dari 20 petani, membantu
                                 mereka meningkatkan pendapatan dan menerapkan praktik-
                                 praktik berkelanjutan dalam kegiatan bertani.
@@ -187,7 +189,7 @@ pertanian diantaranya beras dan jagung.
                             var headingContent = document.getElementById('heading-content');
                             if (contentId === 'content1') {
                                 headingContent.innerHTML =
-                                'Membangun kemitraan dengan petani<br /> menjadi bagian penting dari bisnis kami';
+                                    'Membangun kemitraan dengan petani<br /> menjadi bagian penting dari bisnis kami';
                             } else if (contentId === 'content2') {
                                 headingContent.innerHTML = 'Isi konten untuk Penelitian dan Pengembangan';
                             } else if (contentId === 'content3') {
@@ -198,7 +200,7 @@ pertanian diantaranya beras dan jagung.
 
                             var links = document.querySelectorAll(
                                 '.list-item-link-kemitraan-dengan-petani, .list-item-link-penelitian-dan-pengembangan, .list-item-link-benih-topaz, .list-item-link-komitmen-keberlanjutan'
-                                );
+                            );
                             for (var i = 0; i < links.length; i++) {
                                 links[i].classList.remove('active');
                             }
@@ -432,7 +434,9 @@ pertanian diantaranya beras dan jagung.
             <div class="heading-2-berita">
                 Lokasi
             </div>
+
             <div class="div-divider-small-border">
+                <div id="lokasiMap" class="w-100" style="height: 300px;"></div>
             </div>
 
             <div class="heading-6">
@@ -596,39 +600,53 @@ pertanian diantaranya beras dan jagung.
                 <img class="vector-21" src="{{ asset('asset/custom/vectors/vector5_x2.svg ') }}" />
             </div>
 
-        <div class="divheader-secondary-outer">
-            <div class="list-1">
-                <div class="item-link">
-                    <img class="vector-15" src="{{ asset('asset/custom/vectors/vector21_x2.svg ') }} " />
+            <div class="divheader-secondary-outer">
+                <div class="list-1">
+                    <div class="item-link">
+                        <img class="vector-15" src="{{ asset('asset/custom/vectors/vector21_x2.svg ') }} " />
+                    </div>
+                    <div class="item-link-1">
+                        <img class="vector-16" src="{{ asset('asset/custom/vectors/vector14_x2.svg ') }} " />
+                    </div>
+                    <div class="item-link-2">
+                        <img class="vector-17" src="{{ asset('asset/custom/vectors/vector3_x2.svg ') }}" />
+                    </div>
+                    <div class="item-link-3">
+                        <img class="vector-18" src="{{ asset('asset/custom/vectors/vector8_x2.svg ') }} " />
+                    </div>
+                    <div class="item-link-4">
+                        <img class="vector-19" src="{{ asset('asset/custom/vectors/vector18_x2.svg ') }}" />
+                    </div>
                 </div>
-                <div class="item-link-1">
-                    <img class="vector-16" src="{{ asset('asset/custom/vectors/vector14_x2.svg ') }} " />
-                </div>
-                <div class="item-link-2">
-                    <img class="vector-17" src="{{ asset('asset/custom/vectors/vector3_x2.svg ') }}" />
-                </div>
-                <div class="item-link-3">
-                    <img class="vector-18" src="{{ asset('asset/custom/vectors/vector8_x2.svg ') }} " />
-                </div>
-                <div class="item-link-4">
-                    <img class="vector-19" src="{{ asset('asset/custom/vectors/vector18_x2.svg ') }}" />
-                </div>
-            </div>
-            <div class="list-2">
-                <a href="/pengolahan_in" class="item-link-kunjungi-ketelsuruan-produk">
-                    Kunjungi Ketertelusuran Produk
-                </a>
-                <div class="item-link-5">
-                    <img class="vector-20" src="{{ asset('asset/custom/vectors/vector9_x2.svg ') }}" />
+                <div class="list-2">
+                    <a href="/pengolahan_in" class="item-link-kunjungi-ketelsuruan-produk">
+                        Kunjungi Ketertelusuran Produk
+                    </a>
+                    <div class="item-link-5">
+                        <img class="vector-20" src="{{ asset('asset/custom/vectors/vector9_x2.svg ') }}" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    </div>
-</body>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <script>
+        // Mapbox and Geocoder Initialization
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
 
-</html>
+        const map = new mapboxgl.Map({
+            container: 'lokasiMap',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [113.666039, -8.2885468],
+            zoom: 12
+        });
+    </script>
 
 </body>
 

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AdminPengolahanModel;
+use App\Models\Produksi;
 use App\Models\Pengujian;
+use App\Models\ProduksiModel;
 use Illuminate\Http\Request;
 
 class pengujianController extends Controller
@@ -16,7 +17,7 @@ class pengujianController extends Controller
     }
 
     function getProduksiWithoutPengujian(){
-        $produksiWithoutPengujian = AdminPengolahanModel::getProduksiWithoutPengujian();
+    $produksiWithoutPengujian = ProduksiModel::getProduksiWithoutPengujian();
         return response()->json($produksiWithoutPengujian);
     }
 
@@ -63,7 +64,7 @@ class pengujianController extends Controller
 
     function fetchPengujian(){
         // $pengujian = Pengujian::all()
-        $pengujian = AdminPengolahanModel::getProduksiHasPengujian();
+        $pengujian = ProduksiModel::getProduksiHasPengujian();
         // ->with('produksi')
         // ->with('pengolahan')
         // ->get();

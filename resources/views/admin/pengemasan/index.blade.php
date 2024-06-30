@@ -1,22 +1,5 @@
 @extends('template')
 @section('main')
-    <style>
-        .text-wrap {
-            white-space: normal;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .text-justify {
-            text-align: justify;
-        }
-
-        td {
-            max-width: 200px;
-            /* Adjust as necessary */
-            height: auto;
-        }
-    </style>
     <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
         <div class="container-fluid px-0">
             <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -58,11 +41,6 @@
                                     class="text-center text-primary fw-bold border-bottom border-light py-3">Notifications</a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -79,11 +57,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-2.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -100,11 +73,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 m-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -121,11 +89,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-4.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -142,11 +105,6 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action border-bottom">
                                     <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <!-- Avatar -->
-                                            <img alt="Image placeholder" src="../../assets/img/team/profile-picture-5.jpg"
-                                                class="avatar-md rounded">
-                                        </div>
                                         <div class="col ps-0 ms-2">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
@@ -178,8 +136,6 @@
                         <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="media d-flex align-items-center">
-                                <img class="avatar rounded-circle" alt="Image placeholder"
-                                    src="../../assets/img/team/profile-picture-3.jpg">
                                 <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                                     <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
                                 </div>
@@ -252,198 +208,233 @@
                         </svg>
                     </a>
                 </li>
-                <li class="breadcrumb-item"><a href="#">UD Tani Rejo</a></li>
+                <li class="breadcrumb-item"><a href="#">JejakPadi</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Pengemasan</li>
             </ol>
         </nav>
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
                 <h1 class="h4">Pengemasan</h1>
-                <p class="mb-0">Setiap Pengemasan merupakan pengolahan yang telah dilakukan.</p>
+                <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
             </div>
         </div>
     </div>
 
-    <!-- Item -->
-    @forelse ($pengemasans as $index => $item)
-        <div class="col-12 mb-4">
-            <div class="card border-0 shadow">
+    <div class="row">
+        <div class="col-12 col-xl-8">
+            <div class="card border-0 shadow components-section">
+                <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                    <h2 class="fs-5 fw-bold mb-0">Riwayat Pengemasan</h2>
+                </div>
                 <div class="card-body">
-                    <!-- End of Modal Content -->
                     <div class="table-responsive">
-                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
+                        <table id="daftar-pengolahan" class="table table-centered table-nowrap mb-0 rounded"
                             style="width:100%">
                             <thead class="thead-light">
                                 <tr>
                                     <th class="border-0">No</th>
                                     <th class="border-0">ID Pengemasan</th>
-                                    <th class="border-0">Jenis Kemasan</th>
-                                    <th class="border-0">Berat Kemasan</th>
-                                    <th class="border-0">jumlah Kemasan</th>
-                                    <th class="border-0">QR Code</th>
+                                    <th class="border-0">ID Produksi</th>
+                                    <th class="border-0">Tanggal</th>
+                                    <th class="border-0">Hasil</th>
+                                    <th class="border-0">Gudang Penyimpanan</th>
+                                    <th class="border-0">Metode</th>
+                                    <th class="border-0">Lama Pengemasan</th>
+                                    <th class="border-0">Deskripsi</th>
                                     <th class="border-0">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr id="row-{{ $item->id }}">
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>PS00{{ $item->id }}</td>
-                                    <td>{{ $item->jenis_kemasan }}</td>
-                                    <td>{{ $item->berat_kemasan }}</td>
-                                    <td>{{ $item->jumlah_kemasan }}</td>
-                                    <td>
-                                        <button id="btnCetak-{{ $item->qr_code }}" type="button"
-                                            class="btn btn-sm btn-info" onclick="toggleButtons()">Cetak</button>
-                                    </td>
-                                    <td>
-                                        <button id="btnLihat-{{ $item->qr_code }}" type="button"
-                                            class="btn btn-sm btn-outline-success"
-                                            onclick="toggleButtons()">lihat</button>
-                                        <button id="btnLoad" class="btn btn-sm btn-outline-success" type="button"
-                                            hidden disabled>
-                                            <span class="ms-1">Loading...</span>
-                                            <span class="spinner-border spinner-border-sm" role="status"
-                                                aria-hidden="true"></span>
-                                        </button>
-                                        <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert"
-                                            aria-live="assertive" aria-atomic="true">
-                                            <div class="toast-header">
-                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                                    </path>
-                                                    <path
-                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                                    </path>
-                                                </svg>
-                                                <strong class="me-auto">UD Tani Rejo</strong>
-                                                <small>sekarang</small>
-                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="toast-body text-white">
-                                                Lokasi berhasil diidentifikasi.
-                                            </div>
-                                        </div>
-                                        <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert"
-                                            aria-live="assertive" aria-atomic="true" hidden>
-                                            <div class="toast-header">
-                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                                    </path>
-                                                    <path
-                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                                    </path>
-                                                </svg>
-                                                <strong class="me-auto">UD Tani Rejo</strong>
-                                                <small>sekarang</small>
-                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="toast-body text-white">
-                                                Lokasi gagal diidentifikasi.
-                                            </div>
-                                        </div>
-                                        <button id="btnTampilkan-{{ $index }}"
-                                            class="btn btn-sm btn-outline-warning" type="button"
-                                            onclick="toggleButtonsAndShowDetailPanen({{ $index }})">Tampilkan</button>
-                                        <button id="btnLoad-{{ $index }}" class="btn btn-sm btn-outline-success"
-                                            type="button" hidden disabled>
-                                            <span class="ms-1">Loading...</span>
-                                            <span class="spinner-border spinner-border-sm" role="status"
-                                                aria-hidden="true"></span>
-                                        </button>
-                                        <button id="btnSembunyikan-{{ $index }}"
-                                            class="btn btn-sm btn-outline-gray-500" type="button" hidden
-                                            onclick="hideDetailPanen({{ $index }})">Sembunyikan</button>
-
-                                        <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert"
-                                            aria-live="assertive" aria-atomic="true" hidden>
-                                            <div class="toast-header">
-                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                                    </path>
-                                                    <path
-                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                                    </path>
-                                                </svg>
-                                                <strong class="me-auto">UD Tani Rejo</strong>
-                                                <small>sekarang</small>
-                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="toast-body text-white">
-                                                Lokasi berhasil diidentifikasi.
-                                            </div>
-                                        </div>
-                                        <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert"
-                                            aria-live="assertive" aria-atomic="true" hidden>
-                                            <div class="toast-header">
-                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                                    </path>
-                                                    <path
-                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                                    </path>
-                                                </svg>
-                                                <strong class="me-auto">UD Tani Rejo</strong>
-                                                <small>sekarang</small>
-                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="toast-body text-white">
-                                                Lokasi gagal diidentifikasi.
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
-                                    </td>
-                                </tr>
+                            <tbody id="pengolahan-table-body">
+                                <!-- Data will be populated dynamically -->
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>
-
-    @empty
-        <div class="col-12 mb-4">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <!-- End of Modal Content -->
-                    <div class="table-responsive">
-                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
-                            style="width:100%">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="border-0">No</th>
-                                    <th class="border-0">ID Pengemasan</th>
-                                    <th class="border-0">Jenis Kemasan</th>
-                                    <th class="border-0">Berat Kemasan</th>
-                                    <th class="border-0">jumlah Kemasan</th>
-                                    <th class="border-0">QR Code</th>
-                                    <th class="border-0">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Belum ada riwayat pengemasan.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div class="col-12 col-xl-4">
+            <div class="card border-0 shadow components-section">
+                <form id="pengolahanForm" action="{{ route('pengolahan.store') }}" method="POST">
+                    @csrf
+                    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                        <h2 class="fs-5 fw-bold mb-0">Tambah Pengemasan</h2>
+                        <button type="submit" class="btn btn-sm btn-primary" id="simpan">Simpan</button>
                     </div>
+                    <div class="card-body">
+                        <div class="col-lg-12 col-sm-6">
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="idProduksi">ID Pengolahan</label>
+                                <select class="form-select" name="id_pengolahan" id="idPengolahan"
+                                    aria-label="Default select example">
+                                    <option selected>Pilih ID Pengolahan</option>
+                                    <!-- Options will be populated dynamically -->
+                                </select>
+                                <small id="Help" class="form-text text-muted">merupakan hasil panen yang belum
+                                    diolah.</small>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-3">
+                                <label for="disabledTextInput">Jumlah Panen</label>
+                                <input type="text" id="jumlah_panen" class="form-control"
+                                    placeholder="Disabled input" disabled>
+                            </div>
+                            <div class="mb-4">
+                                <label for="metode">Metode</label>
+                                <input type="metode" class="form-control" name="metode" id="metode">
+                            </div>
+                            <div class="mb-3">
+                                <label for="birthday">Tanggal Pengemasan</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <input data-datepicker="" class="form-control" name="tanggal_pengolahan"
+                                        id="tanggal_pengolahan" type="text" placeholder="dd/mm/yyyy" required>
+                                </div>
+                            </div>
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="deskripsi">Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Enter your message..." rows="4"></textarea>
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="lama">Lama Pengemasan</label>
+                                <input type="text" class="form-control" placeholder="cth: 10" id="lama"
+                                    name="lama">
+                                <small id="emailHelp" class="form-text text-muted">satuan jam.</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="hasil">Hasil (ton)</label>
+                                <input type="text" placeholder="cth: 55,5" class="form-control" id="hasil"
+                                    name="hasil">
+                                <small id="emailHelp" class="form-text text-muted">satuan ton.</small>
+                            </div>
+                            <!-- End of Form -->
+                        </div>
+                    </div>
+                </form>
 
+            </div>
+        </div>
+        <!-- Modal Edit -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Pengemasan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editPengemasanForm" action="#" method="POST">
+                            @csrf
+                            <input type="hidden" name="_method" id="editMethod" value="PUT">
+                            <input type="hidden" id="edit_id" name="edit_id" value="">
+                            <div class="card-body">
+                                <div class="row mb-4">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <!-- Form -->
+                                        <div class="mb-4">
+                                            <label class="my-1 me-2" for="editIdProduksi">ID Produksi</label>
+                                            <select class="form-select" name="id_produksi" id="editIdProduksi"
+                                                aria-label="Default select example">
+                                                <option selected>Pilih ID Produksi</option>
+                                                <!-- Options will be populated dynamically -->
+                                            </select>
+                                            <small id="editHelp" class="form-text text-muted">merupakan hasil panen yang
+                                                sudah
+                                                diolah.</small>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label for="editJumlahPanen">Jumlah Panen</label>
+                                            <input type="text" id="editJumlahPanen" class="form-control"
+                                                placeholder="Jumlah Panen" disabled>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label for="editTanggalProduksi">Tanggal Produksi</label>
+                                            <input type="text" id="editTanggalProduksi" class="form-control"
+                                                placeholder="Tanggal Produksi" disabled>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-3">
+                                            <label for="editTanggalPanen">Tanggal Panen</label>
+                                            <input type="text" id="editTanggalPanen" class="form-control"
+                                                placeholder="Tanggal Panen" disabled>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editNamaPadi">Nama Padi</label>
+                                            <input type="text" id="editNamaPadi" class="form-control"
+                                                placeholder="Nama Padi" disabled>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editNamaLahan">Nama Lahan</label>
+                                            <input type="text" id="editNamaLahan" class="form-control"
+                                                placeholder="Nama Lahan" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div class="mb-4">
+                                            <label for="editMetode">Metode</label>
+                                            <input type="text" class="form-control" name="metode" id="editMetode"
+                                                placeholder="Metode">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editTanggalPengemasan">Tanggal Pengemasan</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <svg class="icon icon-xs text-gray-600" fill="currentColor"
+                                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </span>
+                                                <input data-datepicker="" class="form-control" name="tanggal_pengolahan"
+                                                    id="editTanggalPengemasan" type="text" placeholder="dd/mm/yyyy"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="mb-4">
+                                            <label for="editDeskripsi">Deskripsi</label>
+                                            <textarea class="form-control" name="deskripsi" id="editDeskripsi" placeholder="Deskripsi" rows="4"></textarea>
+                                        </div>
+                                        <!-- End of Form -->
+                                        <!-- Form -->
+                                        <div class="mb-4">
+                                            <label for="editLama">Lama Pengemasan</label>
+                                            <input type="text" class="form-control" placeholder="cth: 10"
+                                                id="editLama" name="lama">
+                                            <small id="editEmailHelp" class="form-text text-muted">satuan jam.</small>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="editHasil">Hasil (ton)</label>
+                                            <input type="text" placeholder="cth: 55,5" class="form-control"
+                                                id="editHasil" name="hasil">
+                                            <small id="editEmailHelp" class="form-text text-muted">satuan ton.</small>
+                                        </div>
+                                        <!-- End of Form -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Card Body -->
+                            <div class="card-footer border-top d-flex align-items-center justify-content-end">
+                                <button type="submit" class="btn btn-sm btn-primary" id="simpan">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    @endforelse
+    </div>
 
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
         <div class="card-body bg-gray-800 text-white pt-4">
@@ -468,13 +459,7 @@
             </a>
             <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
             <div class="d-flex justify-content-center">
-                <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
-                    target="_blank">
-                    <img src="../../assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
-                </a>
-                <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                    <img src="../../assets/img/technologies/react-logo.svg" class="image image-xs">
-                </a>
+
             </div>
         </div>
     </div>
@@ -496,157 +481,234 @@
     <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
         <div class="row">
             <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                <p class="mb-0 text-center text-lg-start">© 2023-<span class="current-year"></span> <a
-                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">JejakPadi</a>
-                </p>
+                <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
+                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a></p>
             </div>
             <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                 <!-- List -->
                 <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
+                    <li class="list-inline-item px-0 px-sm-2">
+                        <a href="https://themesberg.com/about">About</a>
+                    </li>
+                    <li class="list-inline-item px-0 px-sm-2">
+                        <a href="https://themesberg.com/themes">Themes</a>
+                    </li>
+                    <li class="list-inline-item px-0 px-sm-2">
+                        <a href="https://themesberg.com/blog">Blog</a>
+                    </li>
                     <li class="list-inline-item px-0 px-sm-2">
                         <a href="https://themesberg.com/contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
+    </footer>
 
-        <!-- Modal konfirmasi penghapusan -->
-        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Apakah Anda yakin ingin menghapus fase ini?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#ajax-form').submit(function(e) {
-                    e.preventDefault();
-                    var namaFase = $('#nama_fase').val();
-                    var durasi = $('#durasi').val();
-                    $.ajax({
-                        url: '/fase/store',
-                        method: 'POST',
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            nama_fase: namaFase,
-                            durasi: durasi
-                        },
-                        success: function(response) {
-                            alert('Data berhasil disimpan');
-                            $('#daftar-fase').append(
-                                '<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' +
-                                namaFase +
-                                '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => isset($HasilPanen->id)]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => isset($HasilPanen->id)]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>'
-                            );
-                            $('#nama_fase').val('');
-                            $('#durasi').val('');
-                        },
-                        error: function(xhr, status, error) {
-                            alert('Terjadi kesalahan: ' + error);
+    <script>
+        document.getElementById('idProduksi').addEventListener('change', function() {
+            var selectedIndex = this.selectedIndex;
+            var selectedOption = this.options[selectedIndex];
+            var produksiData = JSON.parse(selectedOption.getAttribute('data-produksi'));
+            console.log(produksiData);
+
+            document.getElementById('jumlah_panen').value = produksiData.jumlah_benih;
+            document.getElementById('tanggal_produksi').value = produksiData.tanggal_produksi;
+            document.getElementById('tanggal_panen').value = produksiData.panen ? produksiData.panen.created_at :
+                '';
+            document.getElementById('nama_padi').value = produksiData.padi ? produksiData.padi.varietas : '';
+            document.getElementById('nama_lahan').value = produksiData.lahan ? produksiData.lahan.nama_lahan : '';
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch pengolahan data pertama kali saat halaman dimuat
+            function fetchPengemasan() {
+                $.ajax({
+                    url: "{{ route('pengolahan.fetch') }}",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.length > 0) {
+                            let html = '';
+                            $.each(response, function(index, item) {
+                                html += '<tr id="row-' + item.id + '">';
+                                html += '<td>' + (index + 1) + '</td>';
+                                html += '<td>PG00' + item.id + '</td>';
+                                html += '<td>PB00' + (item.produksi ? item.produksi.id : '-') +
+                                    '</td>';
+                                html += '<td>' + item.created_at + '</td>';
+                                html += '<td>' + item.hasil + '</td>';
+                                html += '<td>' + (item.gudang ? item.gudang.nama_gudang : '-') +
+                                    '</td>';
+                                html += '<td>' + item.metode + '</td>';
+                                html += '<td>' + item.lama + '</td>';
+                                html += '<td>' + item.deskripsi + '</td>';
+                                html += '<td>';
+                                html +=
+                                    '<button class="btn btn-sm btn-outline-tertiary btn-edit" type="button" data-toggle="modal" data-target="#editModal" data-id="' +
+                                    item.id + '">Ubah</button>';
+                                html +=
+                                    '<button class="btn btn-sm btn-outline-danger btn-delete" type="button" data-id="' +
+                                    item.id + '">Hapus</button>';
+                                html += '</td>';
+                                html += '</tr>';
+                            });
+                            $('#pengolahan-table-body').html(html);
+                        } else {
+                            $('#pengolahan-table-body').html(
+                                '<tr><td colspan="10">Tidak ada data</td></tr>');
                         }
-                    });
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $('#pengolahan-table-body').html(
+                            '<tr><td colspan="10">Error fetching data</td></tr>');
+                    }
+                });
+            }
+
+            // Fetch unPengemasan data untuk dropdown saat halaman dimuat
+            function fetchUnPengemasan() {
+                $.ajax({
+                    url: "{{ route('unpengolahan.fetch') }}",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.length > 0) {
+                            let html = '<option selected>Pilih ID Produksi</option>';
+                            $.each(response, function(index, item) {
+                                html += '<option value="' + item.id + '" data-produksi=\'' +
+                                    JSON.stringify(item) + '\'>PB00' + item.id + '</option>';
+                            });
+                            $('#idProduksi').html(html);
+                        } else {
+                            $('#idProduksi').html('<option selected>Tidak ada data</option>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $('#idProduksi').html('<option selected>Error fetching data</option>');
+                    }
+                });
+            }
+            $('#pengolahanForm').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: '{{ route('pengolahan.store') }}',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Handle success response
+                        console.log(response);
+                        alert('Data berhasil disimpan!');
+                        $('#pengolahanForm')[0].reset();
+                        fetchPengemasan(); // Refresh tabel setelah berhasil menyimpan
+                        fetchUnPengemasan(); // Refresh dropdown setelah berhasil menyimpan
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error response
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
                 });
             });
-        </script>
-        <script>
-            function confirmDelete(id) {
-                if (confirm("Anda yakin ingin menghapus item ini?")) {
+
+            // Event listener untuk tombol "Ubah" pada setiap baris tabel
+            $(document).on('click', '.btn-edit', function() {
+                var id = $(this).data('id');
+                console.log(id);
+                $.ajax({
+                    url: '/pengolahan/' + id + '/edit',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#editIdProduksi').empty();
+                        $('#editIdProduksi').append('<option value="' + response.id_produksi +
+                            '">' + 'PB00' + response.id_produksi + '</option>');
+                        $('#editMetode').val(response.metode);
+                        var tanggalPengemasan = response.updated_at ? response.updated_at :
+                            response.created_at;
+                        $('#editTanggalPengemasan').val(tanggalPengemasan);
+                        $('#editDeskripsi').val(response.deskripsi);
+                        $('#editLama').val(response.lama);
+                        $('#editHasil').val(response.hasil);
+
+                        $('#edit_id').val(id); // Set nilai edit_id untuk form edit
+
+                        $('#editPengemasanForm').attr('action', '/pengolahan/' + id +
+                            '/update');
+                        $('#editMethod').val('PUT');
+                        $('#editModal').modal('show');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
+                });
+            });
+
+            // Event listener untuk submit form edit melalui AJAX
+            $('#editPengemasanForm').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                var id = $('#edit_id').val();
+                var csrfToken = $('meta[name="csrf-token"]').attr(
+                    'content');
+                $.ajax({
+                    url: '/pengolahan/' + id + '/update',
+                    type: 'PUT',
+                    data: formData,
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    success: function(response) {
+                        $('#editModal').modal('hide');
+                        alert('Data berhasil diperbarui!');
+                        fetchPengemasan();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
+                });
+            });
+
+            // Event listener untuk tombol "Hapus"
+            $(document).on('click', '.btn-delete', function() {
+                var id = $(this).data('id');
+                deleteData(id); // Panggil fungsi deleteData untuk menghapus data
+            });
+
+            function deleteData(id) {
+                if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                    var csrfToken = $('meta[name="csrf-token"]').attr('content');
                     $.ajax({
-                        url: '/fase/' + id + '/delete',
+                        url: '/pengolahan/' + id + '/delete',
                         type: 'DELETE',
+                        dataType: 'json',
                         headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            'X-CSRF-TOKEN': csrfToken
                         },
-                        success: function(result) {
-                            updateElement(id);
-                            alert('Item berhasil dihapus!');
+                        success: function(response) {
+                            $('#row-' + id).remove();
+                            fetchUnPengemasan();
+                            alert('Data berhasil dihapus!');
                         },
                         error: function(xhr, status, error) {
-                            alert('Terjadi kesalahan saat menghapus item.');
                             console.error(xhr.responseText);
+                            alert('Terjadi kesalahan! Silakan coba lagi.');
                         }
                     });
                 }
             }
 
-            function updateElement(id) {
-                $('#faseItem' + id).remove();
-            }
-        </script>
-
-
-
-
-
-
-        {{-- library notify --}}
-        <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>
-
-    </footer>
-    {{-- aksi lihat lihat detail pengolahan --}}
-    <script>
-        const notyf = new Notyf();
-
-        function toggleButtonsAndShowDetailPanen(index) {
-            var button1 = document.getElementById("btnTampilkan-" + index);
-            var button2 = document.getElementById("btnSembunyikan-" + index);
-            var button3 = document.getElementById("btnLoad-" + index);
-            var toast = document.getElementById("toastLokasiBerhasil");
-
-            // Tampilkan button 2 dan sembunyikan button 1
-            button3.removeAttribute("hidden");
-            button3.removeAttribute("disabled");
-
-            button1.setAttribute("hidden", "true");
-            button1.setAttribute("disabled", "true");
-
-            // Tampilkan detail hasil panen
-            $('#detailPanenContent-' + index).removeClass('d-none');
-
-            // Set timeout untuk kembali ke keadaan semula setelah 3 detik
-            setTimeout(function() {
-                // Set timeout untuk menyembunyikan notif
-                button2.removeAttribute("hidden");
-                button2.removeAttribute("disabled");
-                button3.setAttribute("hidden", "true");
-                button3.setAttribute("disabled", "true");
-
-                // notify
-                notyf.success({
-                    message: 'Lokasi berhasil diidentifikasi',
-                    duration: 3000,
-                    icon: false
-                });
-            }, 2000);
-        }
-
-        function hideDetailPanen(index) {
-            var button1 = document.getElementById("btnTampilkan-" + index);
-            var button2 = document.getElementById("btnSembunyikan-" + index);
-            var detailPanenContent = document.getElementById("detailPanenContent-" + index);
-
-            // Sembunyikan detail hasil panen
-            // detailPanenContent.classList.add('d-none');
-
-            // Tampilkan button 1 dan sembunyikan button 2
-            button1.removeAttribute("hidden");
-            button1.removeAttribute("disabled");
-            button2.setAttribute("hidden", "true");
-            button2.setAttribute("disabled", "true");
-        }
+            fetchPengemasan();
+            fetchUnPengemasan();
+        });
     </script>
 @endsection

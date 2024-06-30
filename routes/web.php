@@ -134,7 +134,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     //pengujian
     Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
     Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');
-    Route::get('/fetch-pengolahan', [pengujianController::class, 'getProduksiWithoutPengujian'])->name('pengolahan.fetch');
+    Route::get('/fetch-pengolahan', [pengujianController::class, 'getProduksiWithoutPengujian'])->name('fetch.pengolahan');
     Route::get('/fetch-pengujian', [pengujianController::class, 'fetchPengujian'])->name('pengujian.fetch');
     Route::post('/pengujian/store', [pengujianController::class, 'store'])->name('pengujian.store');
     

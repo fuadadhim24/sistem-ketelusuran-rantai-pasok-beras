@@ -569,7 +569,7 @@
 
             function fetchPengolahan() {
                 $.ajax({
-                    url: "{{ route('pengolahan.fetch') }}",
+                    url: "{{ route('fetch.pengolahan') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -595,7 +595,7 @@
 
             function fetchPengujian() {
                 $.ajax({
-                    url: "{{ route('pengujian.fetch') }}", // Sesuaikan dengan route di Laravel Anda
+                    url: "{{ route('pengujian.fetch') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -606,7 +606,7 @@
                                 html += '<td>' + (index + 1) + '</td>';
                                 html += '<td>PJ00' + item.pengujian.id + '</td>';
                                 html += '<td>PG00' + item.id + '</td>';
-                                html += '<td>PB00' + item.produksi.id + '</td>';
+                                html += '<td>PB00' + item.id + '</td>';
                                 html += '<td>' + item.pengujian.created_at + '</td>';
                                 html += '<td>' + item.pengujian.hasil_pengujian + '</td>';
                                 html += '<td>' + item.pengujian.keterangan + '</td>';
