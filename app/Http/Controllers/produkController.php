@@ -3,14 +3,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
-use Illuminate\Support\Facades\File;
+use App\Models\Produksi; // Ensure you have this model
 
 class ProdukController extends Controller
 {
     public function index()
     {
-        $Produk = Produk::all();
-        return response()->json(['Produk' => $Produk]);
+        $Produks = Produk::all();
+        $Produks = Produk::all();
+        return response()->json(['Produk' => $Produks]);
+    }
+
+    public function create()
+    {
+        $Produksis = Produksi::all(); // Fetch all produksi data
+        return view('produk.create', compact('Produksis')); // Ensure you pass the data to the view
     }
 
     public function store(Request $request)
@@ -41,17 +48,11 @@ class ProdukController extends Controller
         return response()->json(['Produk' => $Produk]);
     }
 
-    public function show($id)
-    {
-        $Produk = Produk::findOrFail($id);
-        return response()->json(['Produk' => $Produk]);
-    }
-
-    
     public function edit($id)
     {
         $Produk = Produk::findOrFail($id);
-        return response()->json(['Produk' => $Produk]);
+        $Produksis = Produksi::all(); // Fetch all produksi data
+        return response()->json(['Produk' => $Produk, 'Produksis' => $Produksis]); // Pass both Produk and Produksi data
     }
 
     public function update(Request $request, $id)
@@ -68,7 +69,6 @@ class ProdukController extends Controller
         $Produk = Produk::findOrFail($id);
 
         if ($request->hasFile('foto')) {
-            // Delete the old image
             if (File::exists(public_path($Produk->foto))) {
                 File::delete(public_path($Produk->foto));
             }
