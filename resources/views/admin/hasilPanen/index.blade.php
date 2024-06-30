@@ -268,7 +268,27 @@
     <div class="col-12 mb-4">
         <div class="card border-0 shadow">
             <div class="card-body">
-                <!-- End of Modal Content -->
+                <!-- Modal untuk Detail Produksi -->
+                <div class="modal fade" id="modalDetailProduksi" tabindex="-1"
+                    aria-labelledby="modalDetailProduksiLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalDetailProduksiLabel">Detail Produksi</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Container untuk menampilkan detail produksi -->
+                                <div id="detailProduksiContainer">
+                                    <!-- Tempat untuk menampilkan detail produksi secara dinamis -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabel Data Produksi -->
                 <div class="table-responsive">
                     <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
                         style="width:100%">
@@ -296,229 +316,19 @@
                                     <td>{{ optional($item->lahan)->nama_lahan }}</td>
                                     <td>
                                         <button id="btnTampilkan-{{ $index }}"
-                                            class="btn btn-sm btn-outline-warning" type="button"
-                                            onclick="toggleButtonsAndShowDetailPanen({{ $index }})">Tampilkan</button>
-                                        <button id="btnLoad-{{ $index }}" class="btn btn-sm btn-outline-success"
-                                            type="button" hidden disabled>
-                                            <span class="ms-1">Loading...</span>
-                                            <span class="spinner-border spinner-border-sm" role="status"
-                                                aria-hidden="true"></span>
-                                        </button>
-                                        <button id="btnSembunyikan-{{ $index }}"
-                                            class="btn btn-sm btn-outline-gray-500" type="button" hidden
-                                            onclick="hideDetailPanen({{ $index }})">Sembunyikan</button>
-
-                                        <div id="toastLokasiBerhasil" class="toast bg-primary mb-3" role="alert"
-                                            aria-live="assertive" aria-atomic="true" hidden>
-                                            <div class="toast-header">
-                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                                    </path>
-                                                    <path
-                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                                    </path>
-                                                </svg>
-                                                <strong class="me-auto">UD Tani Rejo</strong>
-                                                <small>sekarang</small>
-                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="toast-body text-white">
-                                                Lokasi berhasil diidentifikasi.
-                                            </div>
-                                        </div>
-                                        <div id="toastLokasiGagal" class="toast bg-primary mb-3" role="alert"
-                                            aria-live="assertive" aria-atomic="true" hidden>
-                                            <div class="toast-header">
-                                                <svg class="icon icon-xs text-gray-500 me-2" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
-                                                    </path>
-                                                    <path
-                                                        d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
-                                                    </path>
-                                                </svg>
-                                                <strong class="me-auto">UD Tani Rejo</strong>
-                                                <small>sekarang</small>
-                                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="toast-body text-white">
-                                                Lokasi gagal diidentifikasi.
-                                            </div>
-                                        </div>
+                                            class="btn btn-sm btn-outline-warning btnTampilkanDetail" type="button"
+                                            data-index="{{ $index }}">Tampilkan</button>
                                         <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
                                     </td>
-                                    {{-- detail hasil panen --}}
-                                    <div id="detailPanenContent-{{ $index }}" class="d-none">
-                                        <div class="row">
-                                            <div class="col-12 col-xl-4">
-                                                <div class="card border-0 shadow components-section">
-                                                    <div
-                                                        class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                                        <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <!-- Data -->
-                                                        <div class="mb-4">
-                                                            <label for="id_produksi">ID Produksi</label>
-                                                            <p>{{ $item->id }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="sumber_benih">Sumber Benih</label>
-                                                            <p>{{ $item->sumber_benih }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="tanggal_produksi">Tanggal Produksi</label>
-                                                            <p>{{ $item->tanggal_produksi }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
-                                                            <p>{{ $item->tanggal_kedaluwarsa }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
-                                                            <p>{{ $item->tingkat_kemurnian }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="tingkat_vigor">Tingkat Vigor</label>
-                                                            <p>{{ $item->tingkat_vigor }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="jumlah_benih">Jumlah Benih</label>
-                                                            <p>{{ $item->jumlah_benih }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
-                                                            <p>{{ $item->tanggal_penyemaian }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="tanggal_penanaman">Tanggal Penanaman</label>
-                                                            <p>
-                                                                @if ($item->tanggal_penanaman)
-                                                                    {{ $item->tanggal_penanaman }}
-                                                                @else
-                                                                    <span class="badge bg-danger">belum penanaman</span>
-                                                                @endif
-                                                            </p>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="mb-4">
-                                                            <label for="quantity">Quantity (Hasil Panen)</label>
-                                                            <p>{{ $item->panen->quantity }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="metode_panen">Metode Panen</label>
-                                                            <p>{{ $item->panen->metode_panen }}</p>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="catatan">Catatan</label>
-                                                            <p>{{ $item->panen->catatan }}</p>
-                                                        </div>
-
-                                                        <!-- End of Data -->
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="col-12 col-xl-4">
-                                                <div class="card border-0 shadow components-section">
-                                                    <div
-                                                        class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                                        <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <!-- Form -->
-                                                        @if ($item->perawatan->isNotEmpty())
-                                                            <div class="accordion"
-                                                                id="accordionPerawatan{{ $item->id }}">
-                                                                @foreach ($item->perawatan as $index => $perawatan)
-                                                                    <div class="accordion-item">
-                                                                        <h2 class="accordion-header"
-                                                                            id="headingPerawatan{{ $item->id }}{{ $index }}">
-                                                                            <button class="accordion-button collapsed"
-                                                                                type="button" data-bs-toggle="collapse"
-                                                                                data-bs-target="#collapsePerawatan{{ $item->id }}{{ $index }}"
-                                                                                aria-expanded="false"
-                                                                                aria-controls="collapsePerawatan{{ $item->id }}{{ $index }}">
-                                                                                Perawatan ke-{{ $index + 1 }}
-                                                                            </button>
-                                                                        </h2>
-                                                                        <div id="collapsePerawatan{{ $item->id }}{{ $index }}"
-                                                                            class="accordion-collapse collapse"
-                                                                            aria-labelledby="headingPerawatan{{ $item->id }}{{ $index }}"
-                                                                            data-bs-parent="#accordionPerawatan{{ $item->id }}">
-                                                                            <div class="accordion-body">
-                                                                                <p>Jenis Perawatan:
-                                                                                    {{ $perawatan->jenis_perawatan }}</p>
-                                                                                <p>Nama Perawatan:
-                                                                                    {{ $perawatan->nama_perawatan }}</p>
-                                                                                <p>Jumlah: {{ $perawatan->jumlah }}</p>
-                                                                                <p>Kebutuhan: {{ $perawatan->kebutuhan }}
-                                                                                </p>
-                                                                                <p>Tanggal Perawatan:
-                                                                                    {{ $perawatan->tanggal_perawatan }}</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
-                                                        @else
-                                                            <p>Tidak ada riwayat perawatan untuk produksi ini.</p>
-                                                        @endif
-                                                        <!-- End of Form -->
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 col-xl-4">
-                                                <div class="col-12 px-0 mb-4">
-                                                    <div class="card border-0 shadow mb-2">
-                                                        <div class="card-header">
-                                                            <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
-                                                        </div>
-                                                    </div>
-                                                    {{-- map lokasi --}}
-                                                    <div class="card border-0 shadow">
-                                                        <div class="card-body">
-                                                            <div id='map' class="w-100" style='height: 300px;'>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- mapbox script --}}
-                                    <script>
-                                        mapboxgl.accessToken =
-                                            'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-                                        const map = new mapboxgl.Map({
-                                            container: 'map', // container ID
-                                            style: 'mapbox://styles/mapbox/streets-v12', // style URL
-                                            center: [{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}], // starting position [lng, lat]
-                                            zoom: 9, // starting zoom
-                                        });
-                                        const marker = new mapboxgl.Marker()
-                                            .setLngLat([{{ $item->lahan->latitude }}, {{ $item->lahan->longitude }}])
-                                            .addTo(map);
-                                    </script>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="10">Tidak ada data</td>
+                                    <td colspan="8">Tidak ada data</td>
                                 </tr>
                             @endforelse
-
-
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>
@@ -718,6 +528,155 @@
                 button1.removeAttribute("disabled");
                 button2.setAttribute("hidden", "true");
                 button2.setAttribute("disabled", "true");
+            }
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('.btnTampilkanDetail').click(function() {
+                    var index = $(this).data('index');
+
+                    var produksi = @json($produksis);
+                    var detailProduksi = `
+                <div class="row">
+                    <div class="col-12 col-xl-4">
+                        <div class="card border-0 shadow components-section">
+                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <label for="id_produksi">ID Produksi</label>
+                                    <p>${produksi[index].id}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="sumber_benih">Sumber Benih</label>
+                                    <p>${produksi[index].sumber_benih}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="tanggal_produksi">Tanggal Produksi</label>
+                                    <p>${produksi[index].tanggal_produksi}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
+                                    <p>${produksi[index].tanggal_kedaluwarsa}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
+                                    <p>${produksi[index].tingkat_kemurnian}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="tingkat_vigor">Tingkat Vigor</label>
+                                    <p>${produksi[index].tingkat_vigor}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="jumlah_benih">Jumlah Benih</label>
+                                    <p>${produksi[index].jumlah_benih}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
+                                    <p>${produksi[index].tanggal_penyemaian}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="tanggal_penanaman">Tanggal Penanaman</label>
+                                    <p>${produksi[index].tanggal_penanaman ? produksi[index].tanggal_penanaman : '<span class="badge bg-danger">belum penanaman</span>'}</p>
+                                </div>
+                                <hr>
+                                <div class="mb-4">
+                                    <label for="quantity">Quantity (Hasil Panen)</label>
+                                    <p>${produksi[index].panen ? produksi[index].panen.quantity : ''}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="metode_panen">Metode Panen</label>
+                                    <p>${produksi[index].panen ? produksi[index].panen.metode_panen : ''}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="catatan">Catatan</label>
+                                    <p>${produksi[index].panen ? produksi[index].panen.catatan : ''}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xl-4">
+                        <div class="card border-0 shadow components-section">
+                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
+                            </div>
+                            <div class="card-body">
+                                ${renderPerawatan(produksi[index].perawatan)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xl-4">
+                        <div class="card border-0 shadow components-section">
+                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                                <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
+                            </div>
+                            <div class="card-body">
+                                <div id='map-${index}' class="w-100" style='height: 300px;'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                    // Masukkan detailProduksi ke dalam modal
+                    $('#detailProduksiContainer').html(detailProduksi);
+
+                    // Tampilkan modal
+                    $('#modalDetailProduksi').modal('show');
+
+                    // Inisialisasi Mapbox untuk lokasi lahan
+                    mapboxgl.accessToken =
+                        'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+                    var map = new mapboxgl.Map({
+                        container: `map-${index}`,
+                        style: 'mapbox://styles/mapbox/streets-v12',
+                        center: [produksi[index].lahan.longitude, produksi[index].lahan.latitude],
+                        zoom: 9
+                    });
+
+                    // Tambahkan marker untuk lokasi lahan
+                    var marker = new mapboxgl.Marker()
+                        .setLngLat([produksi[index].lahan.longitude, produksi[index].lahan.latitude])
+                        .addTo(map);
+                });
+            });
+
+            // Fungsi untuk merender riwayat perawatan
+            function renderPerawatan(perawatan) {
+                if (perawatan.length > 0) {
+                    var result = '<div class="accordion" id="accordionPerawatan">';
+                    perawatan.forEach((item, index) => {
+                        result += `
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPerawatan${index}">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapsePerawatan${index}"
+                                aria-expanded="false" aria-controls="collapsePerawatan${index}">
+                                Perawatan ke-${index + 1}
+                            </button>
+                        </h2>
+                        <div id="collapsePerawatan${index}" class="accordion-collapse collapse"
+                            aria-labelledby="headingPerawatan${index}" data-bs-parent="#accordionPerawatan">
+                            <div class="accordion-body">
+                                <p>Jenis Perawatan: ${item.jenis_perawatan}</p>
+                                <p>Nama Perawatan: ${item.nama_perawatan}</p>
+                                <p>Jumlah: ${item.jumlah}</p>
+                                <p>Kebutuhan: ${item.kebutuhan}</p>
+                                <p>Tanggal Perawatan: ${item.tanggal_perawatan}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    });
+                    result += '</div>';
+                    return result;
+                } else {
+                    return '<p>Tidak ada riwayat perawatan untuk produksi ini.</p>';
+                }
             }
         </script>
 

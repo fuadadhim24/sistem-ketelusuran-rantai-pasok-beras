@@ -28,7 +28,4 @@ class Pengujian extends Model
     public function produksi(){
         return $this->belongsTo(Produksi::class,'id_produksi','id');
     }
-    public function detailPengolahan($id){
-        return DB::table('produk')->where('id',$id)->first();
-    }
 }

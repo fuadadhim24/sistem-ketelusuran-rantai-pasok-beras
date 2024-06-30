@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('sumber_benih');
             $table->dateTime('tanggal_produksi')->nullable();
             $table->dateTime('tanggal_kedaluwarsa')->nullable();
-            $table->integer('tingkat_kemurnian')->nullable();
-            $table->integer('tingkat_vigor')->nullable();
-            $table->integer('jumlah_benih')->nullable();
+            $table->double('tingkat_kemurnian')->nullable();
+            $table->double('tingkat_vigor')->nullable();
+            $table->double('jumlah_benih')->nullable();
             $table->dateTime('tanggal_penyemaian')->nullable();
             $table->dateTime('tanggal_penanaman')->nullable();
             $table->unsignedBigInteger('id_padi')->nullable();

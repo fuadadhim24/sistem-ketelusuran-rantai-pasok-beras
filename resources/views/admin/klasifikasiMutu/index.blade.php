@@ -239,30 +239,233 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-xl-8">
-            <div class="col-12 px-0 mb">
-                <div class="card border-0 shadow">
+    <div class="py-4">
+        <div class="col-12 col-xl-12">
+            <div class="card border-0 shadow">
+                <button id="btn-show" type="button" class="btn btn-block btn-primary mb-3 w-100">Lihat Indikator
+                    Klasifikasi Mutu</button>
+                <button id="btn-hide" type="button" class="btn btn-block btn-primary mb-3 w-100 d-none">Tutup Indikator
+                    Klasifikasi Mutu</button>
+                <div id="content" class="d-none">
                     <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
                         <div class="d-block">
-                            <div class="h6 fw-normal text-gray mb-2">Klasifikasi Mutu</div>
-                            <h2 class="h3 fw-extrabold">Tabel Capaian</h2>
-                            <div class="small mt-2">
-                            </div>
+                            <h2 class="h3 fw-extrabold">Tabel Capaian Klasifikasi Mutu</h2>
+                            <div class="small mt-2"></div>
                         </div>
                     </div>
-                    <div class="card-body p-2">
-                        <img src="{{ asset('asset/custom/img/admin/tabel_klasifikasi_mutu.png') }}" alt="">
+                    <div class="card-body d-flex justify-content-center align-items-center p-2">
+                        <img src="{{ asset('asset/custom/img/admin/tabel_klasifikasi_mutu.png') }}" alt=""
+                            class="centered-image">
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .centered-image {
+                    max-width: 100%;
+                    /* Optional: Adjust max-width as needed */
+                    max-height: 100%;
+                    /* Optional: Adjust max-height as needed */
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            </style>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-xl-10">
+            <div class="col-12 px-0 mb">
+                <div class="card border-0 shadow components-section">
+                    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                        <h2 class="fs-5 fw-bold mb-0">Riwayat Pengujian</h2>
+                        <div class="col text-end">
+                            <a href="#" id="btnTambah" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#tambahModal">Tambah</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
+                                style="width:100%">
+                                {{-- @forelse ($pengolahan as $item) --}}
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th class="border-0">No</th>
+                                        <th class="border-0">ID Pengujian</th>
+                                        <th class="border-0">ID Pengolahan</th>
+                                        <th class="border-0">ID Produksi</th>
+                                        <th class="border-0">Tanggal</th>
+                                        <th class="border-0">Hasil Pengujian</th>
+                                        <th class="border-0">Keterangan</th>
+                                        <th class="border-0">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="row-1">
+                                        <td>1</td>
+                                        <td>PJ001</td>
+                                        <td>PG001</td>
+                                        <td>PB001</td>
+                                        <td>11/12/2024</td>
+                                        <td>cek hasil</td>
+                                        <td>cek keterangan</td>
+                                        <td>
+                                            {{-- <button class="btn btn-sm btn-outline-tertiary" type="button">ubah</button> --}}
+                                            <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                {{-- <tr>
+                                    <td colspan="6">Tidak ada data</td>
+                                </tr> --}}
+
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-xl-4">
+        <!-- Modal Tambah -->
+        <div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tambahModalLabel">Tambah Pengujian</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <div class="card border-0 shadow">
+                                    <div class="card-body">
+                                        <form id="pengujianForm" action="{{ route('pengujian.store') }}" method="POST">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <!-- Form -->
+                                                    <div class="mb-3">
+                                                        <label class="my-1 me-2" for="idPengolahan">Hasil
+                                                            Pengolahan</label>
+                                                        <select class="form-select" name="id_pengolahan"
+                                                            id="idPengolahan" aria-label="Default select example">
+                                                            <option selected>Pilih ID Pengolahan</option>
+                                                            {{-- Ajax content will be here --}}
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-5">
+                                                        <label for="textarea">Keterangan</label>
+                                                        <textarea class="form-control" name="keterangan" placeholder="Masukkan pesan..." id="textarea" rows="4"></textarea>
+                                                    </div>
+                                                    <!-- End of Form -->
+                                                </div>
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <!-- Form -->
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Derajat Sosoh (minimal)</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                name="derajat_sosoh" id="exampleInputIconRight"
+                                                                placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                %
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Kadar Air (maksimal)</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="kadar_air"
+                                                                id="exampleInputIconRight" placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                %
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Beras Kepala (minimal)</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                name="beras_kepala" id="exampleInputIconRight"
+                                                                placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                %
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Butir Patah (maksimal)</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="butir_patah"
+                                                                id="exampleInputIconRight" placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                %
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End of Form -->
+                                                </div>
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <!-- Form -->
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Butir Menir, Merah,
+                                                            Kuning/Rusak,
+                                                            Kapur</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                name="butir_menir_dsb" id="exampleInputIconRight"
+                                                                placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                %
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Butir Gabah (maksimal)</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="butir_gabah"
+                                                                id="exampleInputIconRight" placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                Butir/100g
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputIconRight">Benda Lain (maksimal)</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="butir_lain"
+                                                                id="exampleInputIconRight" placeholder="" aria-label="">
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                %
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" id="idProduksi" name="id_produksi" />
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="card-footer border-top d-flex align-items-center justify-content-end">
+                                                <button type="submit" class="btn btn-sm btn-primary"
+                                                    id="simpan">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-xl-2">
             <div class="col-12 px-0">
                 <div class="card border-0 shadow">
                     <div class="card-body">
-                        <h2 class="fs-5 fw-bold mb-1">Komparasi Produk Hasil Uji</h2>
-                        <p>Perbandingan hasil pengolahan yang belum dan sudah melalui tahap pengujian.</p>
+                        <h2 class="fs-5 fw-bold mb-1">Komparasi Hasil Uji</h2>
+                        <p>Hasil pengolahan yang sudah dan belum diuji.</p>
                         <div class="d-block">
                             <div class="d-flex align-items-center me-5">
                                 <div class="icon-shape icon-sm icon-shape-danger rounded me-3">
@@ -296,184 +499,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-xl-8">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card border-0 shadow">
-                        <div class="card-body">
-                            <div class="card-header mb-4 border-bottom d-flex align-items-center justify-content-between">
-                                <div class="col">
-                                    <h2 class="fs-5 fw-bold mb-0">Tambah Data</h2>
-                                </div>
-                                <div class="col text-end">
-                                    <a href="#" class="btn btn-sm btn-primary">Simpan</a>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Derajat Sosoh (minimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Kadar Air (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Beras Kepala (minimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Butir Patah (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Butir Menir, Merah, Kuning/Rusak, Kapur</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Benda Lain (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                %
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputIconRight">Butir Gabah (maksimal)</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputIconRight"
-                                                placeholder="" aria-label="">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                Butir/100g
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label class="my-1 me-2" for="country">Nama Produk</label>
-                                        <select class="form-select" id="country" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Form -->
-                                    <div class="mb-3">
-                                        <label class="my-1 me-2" for="country">Hasil Pengolahan</label>
-                                        <select class="form-select" id="country" aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-5">
-                                        <label for="textarea">Keterangan</label>
-                                        <textarea class="form-control" placeholder="Masukkan pesan..." id="textarea" rows="4"></textarea>
-                                    </div>
-                                    <!-- End of Form -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-xl-4 mt-4">
-            <div class="card border-0 shadow components-section">
-                <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                    <h2 class="fs-5 fw-bold mb-0">Riwayat Pengujian</h2>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="daftar-varietas" class="table table-centered table-nowrap mb-0 rounded"
-                            style="width:100%">
-                            {{-- @forelse ($pengolahan as $item) --}}
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="border-0">No</th>
-                                    <th class="border-0">ID Pengolahan</th>
-                                    <th class="border-0">ID Produksi</th>
-                                    <th class="border-0">Tanggal</th>
-                                    <th class="border-0">Hasil</th>
-                                    <th class="border-0">Gudang Penyimpanan</th>
-                                    <th class="border-0">Metode</th>
-                                    <th class="border-0">Lama Pengolahan</th>
-                                    <th class="border-0">Deskripsi</th>
-                                    <th class="border-0">Aksi</th>
-                                </tr>
-                            </thead>
-                            {{-- <tbody>
-                                    <tr id="row-{{ $item->id }}">
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>PB00{{ $item->id }}</td>
-                                        <td>PB00{{ optional($item->produksi)->id }}</td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td>{{ $item->hasil }}</td>
-                                        <td>{{ optional($item->gudang)->nama_gudang }}</td>
-                                        <td>{{ $item->metode }}</td>
-                                        <td>{{ $item->lama }}</td>
-                                        <td>{{ $item->deskripsi }}</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-tertiary" type="button">ubah</button>
-                                            <button class="btn btn-sm btn-outline-danger" type="button">hapus</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            @empty
-                                <tr>
-                                    <td colspan="6">Tidak ada data</td>
-                                </tr>
-                            @endforelse --}}
 
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
         <div class="card-body bg-gray-800 text-white pt-4">
             <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
@@ -526,7 +552,8 @@
         <div class="row">
             <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
                 <p class="mb-0 text-center text-lg-start">© 2023-<span class="current-year"></span> <a
-                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">JejakPadi</a></p>
+                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">JejakPadi</a>
+                </p>
             </div>
             <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                 <!-- List -->
@@ -538,6 +565,82 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var btnShow = document.getElementById('btn-show');
+            var btnHide = document.getElementById('btn-hide');
+            var content = document.getElementById('content');
+
+            btnShow.addEventListener('click', function() {
+                content.classList.remove('d-none');
+                btnHide.classList.remove('d-none');
+                btnShow.classList.add('d-none');
+            });
+
+            btnHide.addEventListener('click', function() {
+                content.classList.add('d-none');
+                btnHide.classList.add('d-none');
+                btnShow.classList.remove('d-none');
+            });
+
+            function fetchPengujian() {
+                $.ajax({
+                    url: "{{ route('pengujian.fetch') }}",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.length > 0) {
+                            let html = '<option selected>Pilih ID Pengolahan</option>';
+                            $.each(response, function(index, item) {
+                                html += '<option value="' + item.id + '" data-pengolahan=\'' +
+                                    JSON.stringify(item) + '\'>PG00' + item.id + '</option>';
+                            });
+                            $('#idPengolahan').html(html);
+                        } else {
+                            $('#idPengolahan').html(
+                                '<option selected>Tidak ada data</option>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        $('#pengolahan-table-body').html(
+                            '<tr><td colspan="10">Error fetching data</td></tr>');
+                    }
+                });
+            }
+
+            fetchPengujian();
+
+            $('#btnTambah').click(function(e) {
+                e.preventDefault();
+                $('#tambahModal').show();
+            });
+
+            $('#pengujianForm').submit(function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: '{{ route('pengujian.store') }}',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        console.log(response);
+                        alert('Data berhasil disimpan!');
+                        $('#pengujianForm')[0].reset();
+                        fetchPengujian();
+                        $('#tambahModal').hide();
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        alert('Terjadi kesalahan! Silakan coba lagi.');
+                    }
+                });
+            });
+
+
+        });
+    </script>
 
     <script>
         const notyf = new Notyf();
@@ -589,5 +692,16 @@
             button2.setAttribute("hidden", "true");
             button2.setAttribute("disabled", "true");
         }
+    </script>
+
+    <script>
+        document.getElementById('idPengolahan').addEventListener('change', function() {
+            var selectedIndex = this.selectedIndex;
+            var selectedOption = this.options[selectedIndex];
+            var produksiData = JSON.parse(selectedOption.getAttribute('data-pengolahan'));
+            console.log(produksiData);
+
+            document.getElementById('idProduksi').value = produksiData.id_produksi;
+        });
     </script>
 @endsection

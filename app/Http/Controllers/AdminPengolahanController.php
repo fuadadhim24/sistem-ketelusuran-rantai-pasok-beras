@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class AdminPengolahanController extends Controller
 {
     function index(){
-        $pengolahan = AdminPengolahanModel::with(['produksi', 'gudang'])->latest()->get();
-        $unPengolahan = ProduksiModel::with(['padi', 'lahan', 'panen', 'perawatan'])
-                        ->doesntHave('pengolahan')
-                        ->latest()
-                        ->get();
+        // $pengolahan = AdminPengolahanModel::with(['produksi', 'gudang'])->latest()->get();
+        // $unPengolahan = ProduksiModel::with(['padi', 'lahan', 'panen', 'perawatan'])
+        //                 ->doesntHave('pengolahan')
+        //                 ->latest()
+        //                 ->get();
         // die($unPengolahan);
         // return view('admin.pengolahan.index', compact('pengolahan','unPengolahan'));
         return view('admin.pengolahan.index');

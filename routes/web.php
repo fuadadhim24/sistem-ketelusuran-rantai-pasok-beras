@@ -72,9 +72,6 @@ Route::middleware([
         Route::delete('/Produks/{id}', [ProdukController::class, 'destroy'])->name('Produk.destroy');
         Route::get('/reload-content-Produk', [ProdukController::class, 'reloadContent'])->name('Produk.reload');
 
-    Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
-    Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');
-
     Route::get('/varietas-padi', [varietasPadiController::class, 'index'])->name('varietas-padi');
     Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class, 'tambahView'])->name('tambah-varietas');
     Route::post('/varietasPadi', [VarietasPadiController::class, 'store'])->name('varietasPadi.store');
@@ -133,7 +130,13 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::delete('/pengolahan/{id}/delete', [AdminPengolahanController::class, 'destroy'])->name('pengolahan.destroy');
     Route::get('/pengolahan/{id}/edit', [AdminPengolahanController::class, 'edit'])->name('pengolahan.edit');
     Route::put('/pengolahan/{id}/update', [AdminPengolahanController::class, 'update'])->name('pengolahan.update');
-
+    
+    //pengujian
+    Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
+    Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');
+    Route::get('/fetch-pengujian', [pengujianController::class, 'getProduksiWithoutPengujian'])->name('pengujian.fetch');
+    Route::post('/pengujian/store', [pengujianController::class, 'store'])->name('pengujian.store');
+    
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
 

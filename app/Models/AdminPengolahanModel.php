@@ -58,4 +58,20 @@ class AdminPengolahanModel extends Model
         return $query->whereDoesntHave('pengolahan');
     }
 
+    public function pengujian()
+    {
+        return $this->hasOne(Pengujian::class, 'id_produksi');
+    }
+
+    public function scopeNoPengujian($query)
+    {
+        return $query->whereDoesntHave('pengujian');
+    }
+
+    public static function getProduksiWithoutPengujian()
+    {
+        return static::whereDoesntHave('pengujian')
+            ->get()
+            ->toArray();
+    }
 }

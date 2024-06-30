@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('pengujian', function (Blueprint $table) {
             $table->id();
-            $table->float('tingkat_patah');
+            $table->float('derajat_sosoh');
             $table->float('kadar_Air');
-            $table->float('kadar_kerusakan');
-            $table->float('benda_asing');
-            $table->float('kadar_Kapur');
-            $table->float('warna_beras');
-            $table->float('bau_rasa');
+            $table->float('beras_kepala');
+            $table->float('butir_patah');
+            $table->float('butir_menir_dsb');
+            $table->float('butir_gabah');
+            $table->float('butir_lain');
             $table->string('keterangan');
+            $table->string('hasil_pengujian');
             $table->unsignedBigInteger('id_produksi')->nullable();
             $table->foreign('id_produksi')->references('id')->on('produksi')->onDelete('cascade');
             $table->unsignedBigInteger('id_user')->nullable();
