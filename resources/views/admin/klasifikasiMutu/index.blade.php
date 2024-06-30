@@ -733,7 +733,7 @@
             var produksiData = JSON.parse(selectedOption.getAttribute('data-pengolahan'));
             console.log(produksiData);
 
-            document.getElementById('idProduksi').value = produksiData.id_produksi;
+            document.getElementById('idProduksi').value = produksiData.id;
         });
     </script>
 @endsection
