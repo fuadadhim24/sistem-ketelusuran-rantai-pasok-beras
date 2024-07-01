@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengujian;
+use App\Models\ProduksiModel;
 use Illuminate\Http\Request;
 
 class HasilPengolahanController extends Controller
@@ -10,10 +11,25 @@ class HasilPengolahanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $id)
     {
-        $hasilPengolahan=Pengujian::all();
-        return view('hasilpengolahan');
+        $produksi= ProduksiModel::with('produk','padi','panen','lahan','perawatan','pengujian','pengolahan')->find($id);
+        if (!$produksi) {
+            return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
+        }
+        // die($produksi);
+
+        // $result = Builder::create()
+        //     ->writer(new PngWriter())
+        //     ->data($produksi->id)
+        //     ->build();
+
+        // $qrCode = base64_encode($result->getString());
+
+        // $varietasPadi= Produksi::with('varietasPadi')->find($id);
+        // return $varietasPadi;
+        // dd($produksi->toArray());
+        return view('hasilpengolahan', compact('produksi'));
     }
 
     /**

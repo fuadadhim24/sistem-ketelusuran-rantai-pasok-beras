@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminPengolahanController;
 use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
 use App\Http\Controllers\HasilPanenController;
+use App\Http\Controllers\HasilPengolahanController;
 use App\Http\Controllers\pengemasanController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
@@ -41,11 +42,11 @@ Route::get('/welcome_en', function () {
 // Route::get('/detailpengolahan', function () {
 //     return view('hasilpengolahan');
 // });
-Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'show']);
-Route::get('/detailpengolahan_en/{id}', [pengolahanEnController::class, 'show']);
+// Route::get('/detailpengolahan_en/{id}', [pengolahanEnController::class, 'detail']);
+// Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'detail']);
 
-Route::get('/pengolahan_in/{id}', [pengolahanController::class, 'show']);
-Route::get('/pengolahan_en/{id}', [pengolahanEnController::class, 'show']);
+Route::get('/hasil-pengolahan-in/{id}', [HasilPengolahanController::class, 'index']);
+Route::get('/hasil-pengolahan-en/{id}', [HasilPengolahanController::class, 'index']);
 
 // Route::get('/detailpengolahan_en', function () {
 //     return view('hasilpengolahan_en');
@@ -111,9 +112,6 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
         Route::put('/lahan/{id}', [LahanController::class, 'update'])->name('lahan.update');
         Route::get('/lahan/{id}/edit', [LahanController::class, 'edit'])->name('lahan.edit');
         Route::get('/lahan/{id}/view', [LahanController::class, 'show']);
-
-
-
 
     Route::get('/settings', [settingsController::class, 'index'])->name('settings');
 

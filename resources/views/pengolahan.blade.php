@@ -129,26 +129,28 @@
 
                             <!-- Modal Content -->
                             <div class="modal fade" id="modalNotification" tabindex="-1" role="dialog"
-                            aria-labelledby="modalTitleNotify" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <p class="modal-title" id="modalTitleNotify">Hasil Pemindaian Kode QR</p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        {{-- <div id="qr-result" class="py-3 text-center"></div>
+                                aria-labelledby="modalTitleNotify" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <p class="modal-title" id="modalTitleNotify">Hasil Pemindaian Kode QR</p>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{-- <div id="qr-result" class="py-3 text-center"></div>
                                         <!-- Tempat untuk menampilkan pemindai QR -->
                                         <div id="reader" style="width: 600px;"></div> --}}
-                                        <div id="qr-reader" style="width:500px"></div>
-                                        <div id="qr-reader-results"></div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Tutup</button>
+                                            <div id="qr-reader" style="width:500px"></div>
+                                            <div id="qr-reader-results"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-sm btn-primary"
+                                                data-bs-dismiss="modal">Tutup</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                             <!-- End of Modal Content -->
 
                         </div>
@@ -240,7 +242,7 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->tanggal_produksi }}</td>
                                             {{-- <td>{{ $item->produksi ? $item->produksi->tanggal_kedaluwarsa : 'Tidak ada data'}}</td> --}}
-                                            <td><a href="/pengolahan_in/{{ $item->id }}"
+                                            <td><a href="/hasil-pengolahan-in/{{ $item->id }}"
                                                     class="detail-button">Detail</a></td>
                                         </tr>
                                     @endforeach
@@ -472,35 +474,39 @@
             <script src="{{ asset('volt/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
             <script src="{{ asset('volt/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
             <script src="/html5-qrcode.min.js"></script>
-<script>
-    function docReady(fn) {
-        // see if DOM is already available
-        if (document.readyState === "complete"
-            || document.readyState === "interactive") {
-            // call on next available tick
-            setTimeout(fn, 1);
-        } else {
-            document.addEventListener("DOMContentLoaded", fn);
-        }
-    }
+            <script>
+                function docReady(fn) {
+                    // see if DOM is already available
+                    if (document.readyState === "complete" ||
+                        document.readyState === "interactive") {
+                        // call on next available tick
+                        setTimeout(fn, 1);
+                    } else {
+                        document.addEventListener("DOMContentLoaded", fn);
+                    }
+                }
 
-    docReady(function () {
-        var resultContainer = document.getElementById('qr-reader-results');
-        var lastResult, countResults = 0;
-        function onScanSuccess(decodedText, decodedResult) {
-            if (decodedText !== lastResult) {
-                ++countResults;
-                lastResult = decodedText;
-                // Handle on success condition with the decoded message.
-                console.log(`Scan result ${decodedText}`, decodedResult);
-            }
-        }
+                docReady(function() {
+                    var resultContainer = document.getElementById('qr-reader-results');
+                    var lastResult, countResults = 0;
 
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-            "qr-reader", { fps: 10, qrbox: 250 });
-        html5QrcodeScanner.render(onScanSuccess);
-    });
-</script>
+                    function onScanSuccess(decodedText, decodedResult) {
+                        if (decodedText !== lastResult) {
+                            ++countResults;
+                            lastResult = decodedText;
+                            // Handle on success condition with the decoded message.
+                            console.log(`Scan result ${decodedText}`, decodedResult);
+                        }
+                    }
+
+                    var html5QrcodeScanner = new Html5QrcodeScanner(
+                        "qr-reader", {
+                            fps: 10,
+                            qrbox: 250
+                        });
+                    html5QrcodeScanner.render(onScanSuccess);
+                });
+            </script>
 </body>
 
 </html>

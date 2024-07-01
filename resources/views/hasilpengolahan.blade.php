@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('volt/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/custom/css/hasilpengolahan.css') }}" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 
 <body>
@@ -107,36 +110,36 @@
                                 </a>
                             </div>
                             <div class="group-635">
-                                @if ($produksi->produk->count() > 0)
-                                    @foreach ($produksi->produk as $produk)
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                            <th width="30px">:</th>
-                                            <th>{{ $produk->nama_produk }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                            <th width="30px">:</th>
-                                            <th>{{ $produk->kode_produk }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
-                                            <img alt="Image placeholder"
-                                                src="{{ asset('asset/img/produk/' . $produk->foto) }}"
-                                                class="avatar-md rounded">
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
-                                            <th width="30px">:</th>
-                                            <th>{{ $produk->harga }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
-                                            <th width="30px">:</th>
-                                            <th>{{ $produk->deskripsi }}</th>
-                                        </span>
-                                    @endforeach
+                                @if ($produksi->produk)
+                                    <!-- Check if $produksi->produk exists -->
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->produk->nama_produk }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->produk->kode_produk }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
+                                        <img alt="Image placeholder"
+                                            src="{{ asset('asset/img/produk/' . $produksi->produk->foto) }}"
+                                            class="avatar-md rounded">
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-18">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->produk->harga }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->produk->deskripsi }}</th>
+                                    </span>
                                 @else
+                                    <!-- Handle case where $produksi->produk does not exist -->
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                         <th width="30px">:</th>
@@ -162,6 +165,7 @@
                                         <th>Tidak ada data</th>
                                     </span>
                                 @endif
+
                             </div>
                             <div class="group-633">
                                 <span
@@ -195,17 +199,15 @@
 
                             </div>
                             <div class="group-634">
-
-
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->varietas ?? 'Tidak ada data' }}</th>
+                                    <th>{{ $produksi->padi->varietas ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->karakteristik_hasil ?? 'Tidak ada data' }}</th>
+                                    <th>{{ $produksi->padi->karakteristik_hasil ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-19">
@@ -214,12 +216,12 @@
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->jenis_musim ?? 'Tidak ada data' }}</th>
+                                    <th>{{ $produksi->padi->jenis_musim ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
                                     <th width="30px">:</th>
-                                    <th>{{ $produksi->varietasPadi->lama_tanam ?? 'Tidak ada data' }}</th>
+                                    <th>{{ $produksi->padi->lama_tanam ?? 'Tidak ada data' }}</th>
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-13">
@@ -235,7 +237,7 @@
                                             <div id="collapseOne" class="accordion-collapse collapse show"
                                                 aria-labelledby="headingOne" data-bs-parent="#accordionPricing">
                                                 <div class="accordion-body">
-                                                    <th>{{ $produksi->varietasPadi->keunggulan ?? 'Tidak ada data' }}
+                                                    <th>{{ $produksi->padi->keunggulan ?? 'Tidak ada data' }}
                                                     </th>
                                                 </div>
                                             </div>
@@ -250,7 +252,7 @@
                                                 <div id="collapseTwo" class="accordion-collapse collapse"
                                                     aria-labelledby="headingTwo" data-bs-parent="#accordionPricing">
                                                     <div class="accordion-body">
-                                                        <th>{{ $produksi->varietasPadi->deskripsi ?? 'Tidak ada data' }}
+                                                        <th>{{ $produksi->padi->deskripsi ?? 'Tidak ada data' }}
                                                         </th>
                                                     </div>
                                                 </div>
@@ -266,7 +268,7 @@
                                                 <div id="collapseThree" class="accordion-collapse collapse"
                                                     aria-labelledby="headingThree" data-bs-parent="#accordionPricing">
                                                     <div class="accordion-body">
-                                                        <th>{{ $produksi->varietasPadi->ketahanan_hama_penyakit ?? 'Tidak ada data' }}
+                                                        <th>{{ $produksi->padi->ketahanan_hama_penyakit ?? 'Tidak ada data' }}
                                                         </th>
                                                     </div>
                                                 </div>
@@ -330,73 +332,59 @@
                                     <div class="modal fade" id="modal-default" tabindex="-1" role="dialog"
                                         aria-labelledby="modal-default" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div saclass="modal-content">
+                                            <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h2 class="h6 modal-title">Detail Produksi</h2>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
 
-                                                <div class="frame-632">
-                                                    <div class="group-641">
-
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23">
-                                                            Sumber Benih
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
-                                                            Tingkat Kemurnian
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                                            Tingkat Vigor
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                                            Jumlah Benih
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                                            Daftar Petani
-                                                        </span>
-
-
-                                                    </div>
-                                                    <div class="group-640">
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27">
-                                                            <th width="30px">:</th>
-                                                            <th>{{ $produksi->sumber_benih }}</th>
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-28">
-                                                            <th width="30px">:</th>
-                                                            <th>{{ $produksi->tingkat_kemurnian }}</th>
-
-                                                        </span>
-
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-29">
-                                                            <th width="30px">:</th>
-                                                            <th>{{ $produksi->tingkat_vigor }}</th>
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-30">
-                                                            <th width="30px">:</th>
-                                                            <th>{{ $produksi->jumlah_benih }}</th>
-                                                        </span>
-                                                        <span
-                                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-31">
-                                                            <th width="30px">:</th>
-                                                            <th>{{ $produksi->daftar_petani }}</th>
-                                                        </span>
-
-
+                                                <div class="modal-body">
+                                                    <div class="frame-632">
+                                                        <div class="group-641">
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23">
+                                                                Sumber Benih
+                                                            </span>
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23">
+                                                                Tingkat Kemurnian
+                                                            </span>
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23">
+                                                                Tingkat Vigor
+                                                            </span>
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-23">
+                                                                Jumlah Benih
+                                                            </span>
+                                                        </div>
+                                                        <div class="group-640">
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27">
+                                                                <th width="30px">:</th>
+                                                                <th>{{ $produksi->sumber_benih }}</th>
+                                                            </span>
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27">
+                                                                <th width="30px">:</th>
+                                                                <th>{{ $produksi->tingkat_kemurnian }}</th>
+                                                            </span>
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27">
+                                                                <th width="30px">:</th>
+                                                                <th>{{ $produksi->tingkat_vigor }}</th>
+                                                            </span>
+                                                            <span
+                                                                class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-27">
+                                                                <th width="30px">:</th>
+                                                                <th>{{ $produksi->jumlah_benih }}</th>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="modal-footer">
-                                                    {{-- <button type="button" class="btn btn-secondary">Accept</button> --}}
                                                     <button type="button" class="btn btn-link text-gray ms-auto"
                                                         data-bs-dismiss="modal">Close</button>
                                                 </div>
@@ -404,10 +392,10 @@
                                         </div>
                                     </div>
                                 </span>
-                                <span
+                                {{-- <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
                                     <img src="data:image/png;base64, {{ $qrCode }}" alt="QR Code">
-                                </span>
+                                </span> --}}
 
 
                             </div>
@@ -426,39 +414,36 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                    Metode Panen
+                                    Metode
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-12">
-                                    Pasca Panen
+                                    Catatan
                                 </span>
-
 
                             </div>
                             <div class="group-634">
-                                @if ($produksi->panen->count() > 0)
-                                    @foreach ($produksi->panen as $panen)
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                            <th width="30px">:</th>
-                                            <th>{{ $panen->id }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                            <th width="30px">:</th>
-                                            <th>{{ $panen->quantity }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
-                                            <th width="30px">:</th>
-                                            <th>{{ $panen->metode_panen }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                            <th width="30px">:</th>
-                                            <th>{{ $panen->pasca_panen }}</th>
-                                        </span>
-                                    @endforeach
+                                @if ($produksi->panen)
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->panen->id }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->panen->quantity }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-22">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->panen->metode_panen }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-222">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->panen->catatan }}</th>
+                                    </span>
                                 @else
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
@@ -480,7 +465,13 @@
                                         <th width="30px">:</th>
                                         <th>Tidak ada data</th>
                                     </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>Tidak ada data</th>
+                                    </span>
                                 @endif
+
 
 
 
@@ -544,11 +535,36 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-
+                                    <div id='map-lokasi' class="w-100" style='height: 300px; margin-bottom:20px'>
+                                    </div>
                                 </span>
+                                <script>
+                                    mapboxgl.accessToken =
+                                        'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+                                    // var latitude = {!! json_encode($produksi->lahan->latitude) !!};
+                                    // var map = new mapboxgl.Map({
+                                    //     container: `map-lokasi`,
+                                    //     style: 'mapbox://styles/mapbox/streets-v12',
+                                    //     center: [{{ $produksi->lahan->latitude }}, {{ $produksi->lahan->longitude }}],
+                                    //     zoom: 9
+                                    // });
 
+                                    // // Tambahkan marker untuk lokasi lahan
+                                    // var marker = new mapboxgl.Marker()
+                                    //     .setLngLat([{{ $produksi->lahan->latitude }}, {{ $produksi->lahan->longitude }}])
+                                    //     .addTo(map);
+                                    var map = new mapboxgl.Map({
+                                        container: `map-lokasi`,
+                                        style: 'mapbox://styles/mapbox/streets-v12',
+                                        center: [{{ $produksi->lahan->latitude }}, {{ $produksi->lahan->longitude }}],
+                                        zoom: 9
+                                    });
 
-
+                                    // Tambahkan marker untuk lokasi lahan
+                                    var marker = new mapboxgl.Marker()
+                                        .setLngLat([{{ $produksi->lahan->latitude }}, {{ $produksi->lahan->longitude }}])
+                                        .addTo(map);
+                                </script>
                             </div>
                             <div class="group-634">
                                 <span
@@ -616,7 +632,7 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-                                    Tingkat Patah
+                                    Derajat Sosoh
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
@@ -624,23 +640,24 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
-                                    Kadar Kerusakan
+                                    Beras Kepala
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
-                                    Benda Asing
+                                    Butir Patah
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
-                                    Kadar Kapur
+                                    total butir lainnya
+                                </span>
+
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
+                                    Butir Gabah
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
-                                    Warna Beras
-                                </span>
-                                <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
-                                    Bau Rasa
+                                    Benda Lain
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-21">
@@ -650,57 +667,60 @@
 
                             </div>
                             <div class="group-635">
-                                @if ($produksi->pengujian->count() > 0)
-                                    @foreach ($produksi->pengujian as $pengujian)
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->tingkat_patah }}</th>
-                                            <th width="30px">%</th>
+                                @if ($produksi->pengujian)
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->derajat_sosoh }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->kadar_Air }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->beras_kepala }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->butir_patah }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->butir_menir_dsb }}</th>
+                                        <th width="30px">%</th>
+                                        <span class="popover-trigger">info</span>
+                                        <span class="popover-content">
+                                            <p>total maksimal butir menir, merah,kuning/rusak, kapur</p>
                                         </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->kadar_Air }}</th>
-                                            <th width="30px">%</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->kadar_kerusakan }}</th>
-                                            <th width="30px">%</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->benda_asing }}</th>
-                                            <th width="30px">%</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->kadar_Kapur }}</th>
-                                            <th width="30px">%</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->warna_beras }}</th>
-                                            <th width="30px">%</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->bau_rasa }}</th>
-                                            <th width="30px">%</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-26">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengujian->keterangan }}</th>
-                                        </span>
-                                    @endforeach
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-33">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->butir_gabah }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->butir_lain }}</th>
+                                        <th width="30px">%</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-222">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengujian->keterangan }}</th>
+                                    </span>
                                 @else
+                                    {{-- If $produksi->pengujian is empty or doesn't exist --}}
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                         <th width="30px">:</th>
@@ -742,8 +762,11 @@
                                         <th>Tidak ada data</th>
                                     </span>
                                 @endif
-
                             </div>
+
+
+
+
                             <div class="group-637">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
@@ -751,29 +774,45 @@
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-7">
-                                    Hasil Penggilingan
+                                    Hasil
                                 </span>
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
-                                    Kemasan
+                                    Metode
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                    Lama
+                                </span>
+                                <span
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-10">
+                                    Deskripsi
                                 </span>
 
 
                             </div>
                             <div class="group-634">
-                                @if ($produksi->pengolahan->count() > 0)
-                                    @foreach ($produksi->pengolahan as $pengolahan)
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengolahan->hasil_penggilingan }}</th>
-                                        </span>
-                                        <span
-                                            class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
-                                            <th width="30px">:</th>
-                                            <th>{{ $pengolahan->kemasan }}</th>
-                                        </span>
-                                    @endforeach
+                                @if ($produksi->pengolahan)
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengolahan->hasil }} Ton</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengolahan->metode }}</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-91">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengolahan->lama }} Hari</th>
+                                    </span>
+                                    <span
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-222">
+                                        <th width="30px">:</th>
+                                        <th>{{ $produksi->pengolahan->deskripsi }}</th>
+                                    </span>
                                 @else
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
@@ -933,7 +972,20 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var popoverTrigger = document.querySelector(".popover-trigger");
+            var popoverContent = popoverTrigger.nextElementSibling;
 
+            popoverTrigger.addEventListener("mouseover", function() {
+                popoverContent.style.display = "block";
+            });
+
+            popoverTrigger.addEventListener("mouseout", function() {
+                popoverContent.style.display = "none";
+            });
+        });
+    </script>
     <!-- Core -->
     <script src="{{ asset('volt/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('volt/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
