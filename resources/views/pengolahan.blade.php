@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <div class="pengolahan">
         <div class="rs-fullwidth-wrap-rs-module-wrap-rs-module-rs-slides-rs-slide">
             <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer">
@@ -470,7 +471,6 @@
             </script>
             <script src="{{ asset('volt/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
             <script src="{{ asset('volt/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-            <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
             <script src="/html5-qrcode.min.js"></script>
 <script>
     function docReady(fn) {

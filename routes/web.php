@@ -41,8 +41,11 @@ Route::get('/welcome_en', function () {
 // Route::get('/detailpengolahan', function () {
 //     return view('hasilpengolahan');
 // });
-Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'detail']);
-Route::get('/detailpengolahan_en/{id}', [pengolahanEnController::class, 'detail']);
+Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'show']);
+Route::get('/detailpengolahan_en/{id}', [pengolahanEnController::class, 'show']);
+
+Route::get('/pengolahan_in/{id}', [pengolahanController::class, 'show']);
+Route::get('/pengolahan_en/{id}', [pengolahanEnController::class, 'show']);
 
 // Route::get('/detailpengolahan_en', function () {
 //     return view('hasilpengolahan_en');

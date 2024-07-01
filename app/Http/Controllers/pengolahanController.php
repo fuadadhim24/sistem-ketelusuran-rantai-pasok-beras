@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengolahan;
-use App\Models\Produksi;
 use App\Models\Produk;
+use App\Models\ProduksiModel;
 use Endroid\QrCode\Builder\Builder;
 use Endroid\QrCode\Writer\PngWriter;
 use Illuminate\Http\Request;
@@ -22,14 +22,14 @@ class pengolahanController extends Controller
         $jumlahbaris=10;
 
         if (strlen($katakunci)) {
-            $data=Produksi::where('id','like',"%$katakunci%")
+            $data=ProduksiModel::where('id','like',"%$katakunci%")
             ->orWhere('tanggal_produksi','like',"%$katakunci%")
             // ->orWhere('deleted_at','like',"%$katakunci%")
             ->paginate($jumlahbaris);
 
         }else{
 
-            $data=Produksi::query()->simplePaginate($jumlahbaris);
+            $data=ProduksiModel::query()->simplePaginate($jumlahbaris);
             // $data=Produk::with('produksi')->simplePaginate($jumlahbaris);
 
         }
@@ -61,21 +61,22 @@ class pengolahanController extends Controller
      */
     public function show(string $id)
     {
-        $produksi= Produksi::with('produk','varietasPadi','panen','lahan','perawatan','pengujian','pengolahan')->find($id);
+        $produksi= ProduksiModel::with('produk','padi','panen','lahan','perawatan','pengujian','pengolahan')->find($id);
         if (!$produksi) {
             return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
         }
-        $result = Builder::create()
-            ->writer(new PngWriter())
-            ->data($produksi->id)
-            ->build();
 
-        $qrCode = base64_encode($result->getString());
+        // $result = Builder::create()
+        //     ->writer(new PngWriter())
+        //     ->data($produksi->id)
+        //     ->build();
+
+        // $qrCode = base64_encode($result->getString());
 
         // $varietasPadi= Produksi::with('varietasPadi')->find($id);
         // return $varietasPadi;
         // dd($produksi->toArray());
-        return view('hasilpengolahan', compact('produksi','qrCode'));
+        return view('hasilpengolahan', compact('produksi'));
     }
 
     /**
