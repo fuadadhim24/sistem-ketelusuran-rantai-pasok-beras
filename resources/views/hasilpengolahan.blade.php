@@ -76,7 +76,7 @@
                         <div class="frame-632">
                             <div class="group-624">
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-6">
                                     PRODUK
                                 </span>
                                 <span
@@ -88,7 +88,7 @@
                                     Kode Produk
                                 </span>
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17">
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-17 ">
                                     Foto
                                 </span>
                                 <span
@@ -99,15 +99,7 @@
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-14">
                                     Deskripsi
                                 </span>
-                                <a href="/pengolahan" class="frame-609">
-                                    <div class="group-625">
-                                        <div class="back">
-                                        </div>
-                                        <div class="link-tentang-kami">
-                                            Back
-                                        </div>
-                                    </div>
-                                </a>
+
                             </div>
                             <div class="group-635">
                                 @if ($produksi->produk)
@@ -167,6 +159,10 @@
                                 @endif
 
                             </div>
+
+
+                        </div>
+                        <div class="frame-633">
                             <div class="group-633">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
@@ -198,7 +194,7 @@
                                 </span>
 
                             </div>
-                            <div class="group-634">
+                            <div class="group-649">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
                                     <th width="30px">:</th>
@@ -277,17 +273,28 @@
                                 </span>
 
 
+                                {{-- <a href="/pengolahan" class="frame-609">
+                                    <div class="group-625">
+                                        <div class="back">
+                                        </div>
+                                        <div class="link-tentang-kami">
+                                            Back
+                                        </div>
+                                    </div>
+                                </a> --}}
                             </div>
-
                         </div>
 
+
                     </div>
+
                 </div>
+
 
                 <div class="group-642">
 
 
-                    <div class="container-14">
+                    <div class="container-20">
                         <div class="frame-632">
                             <div class="group-624">
                                 <span
@@ -313,7 +320,7 @@
 
 
                             </div>
-                            <div class="group-635">
+                            <div class="group-647">
 
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
@@ -399,6 +406,9 @@
 
 
                             </div>
+
+                        </div>
+                        <div class="frame-634">
                             <div class="group-637">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
@@ -422,7 +432,7 @@
                                 </span>
 
                             </div>
-                            <div class="group-634">
+                            <div class="group-650">
                                 @if ($produksi->panen)
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
@@ -477,13 +487,12 @@
 
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="group-643">
 
 
-                    <div class="container-14">
+                    <div class="container-21">
                         <div class="frame-632">
                             <div class="group-624">
                                 <span
@@ -528,9 +537,13 @@
 
 
                             </div>
+
+
+                        </div>
+                        <div class="frame-635">
                             <div class="group-639">
                                 <span
-                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
+                                    class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-34">
                                     MAP
                                 </span>
                                 <span
@@ -574,7 +587,6 @@
 
 
                             </div>
-
                         </div>
 
                     </div>
@@ -623,7 +635,7 @@
                 <div class="group-644">
 
 
-                    <div class="container-14">
+                    <div class="container-26">
                         <div class="frame-632">
                             <div class="group-624">
                                 <span
@@ -666,7 +678,7 @@
 
 
                             </div>
-                            <div class="group-635">
+                            <div class="group-646">
                                 @if ($produksi->pengujian)
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
@@ -767,6 +779,11 @@
 
 
 
+
+
+
+                        </div>
+                        <div class="frame-636">
                             <div class="group-637">
                                 <span
                                     class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-5">
@@ -791,7 +808,7 @@
 
 
                             </div>
-                            <div class="group-634">
+                            <div class="group-648">
                                 @if ($produksi->pengolahan)
                                     <span
                                         class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-8">
@@ -799,7 +816,7 @@
                                         <th>{{ $produksi->pengolahan->hasil }} Ton</th>
                                     </span>
                                     <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-9">
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-35">
                                         <th width="30px">:</th>
                                         <th>{{ $produksi->pengolahan->metode }}</th>
                                     </span>
@@ -809,7 +826,7 @@
                                         <th>{{ $produksi->pengolahan->lama }} Hari</th>
                                     </span>
                                     <span
-                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-222">
+                                        class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-223">
                                         <th width="30px">:</th>
                                         <th>{{ $produksi->pengolahan->deskripsi }}</th>
                                     </span>
@@ -827,8 +844,6 @@
                                 @endif
 
                             </div>
-
-
                         </div>
 
                     </div>

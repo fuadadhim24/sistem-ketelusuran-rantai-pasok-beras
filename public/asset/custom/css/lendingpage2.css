@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 
@@ -158,11 +158,11 @@ body {
 }
 
 .pengolahan .list-2 {
-    margin: 0 43% 0 0;
-    ;
+    margin: 0 649px 0 0;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
+    white-space: nowrap;
 }
 
 .pengolahan .divheader-secondary-outer {
@@ -497,7 +497,7 @@ body {
     display: flow-root;
     background: url(../img/landingpage2/rsSbgPxRsSbgWrapRsSbgImage.jpeg);
     position: relative;
-    width: 100%;
+    width: 100%;;
     height: 100vh;
     background-size: cover;
 }
@@ -1599,7 +1599,7 @@ white-space: nowrap;
 
 .pengolahan .container-19 {
     position: relative;
-    margin: 0 0 0 72%;
+    margin: 0 0 0 53%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1643,3 +1643,41 @@ white-space: nowrap;
     align-items: center;
     box-sizing: border-box;
 }
+
+@media screen and (max-width : 576px) {
+    .item-link-kunjungi-ketelsuruan-produk{
+        padding:  0 0 0 93px;
+    }
+    .container-19{
+        margin: 0 0 0 0;
+    }
+    .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup {
+        margin: -94px 0 0 56px !important;
+        font-size: 43px !important;
+    }
+    .frame-633{
+        margin: 8% 0 0 12%!important;
+        width: 65%!important;
+    }
+    .container-8 {
+        margin: 164px 0 0 0!important;
+    }
+    .container-12{
+        flex-direction: column!important;
+    }
+    .container-15 {
+        flex-direction: column!important;
+    }
+    .kotak-pencarian{
+        width: 90.7%!important;
+        margin: -8% 5% 0 22px!important;
+    }
+    .tabel-container{
+        width: 92% !important;
+        margin: 9% 0 0 18px !important;
+    }
+    .tabel{
+        margin: 0 0 0 0!important;
+    }
+}
+

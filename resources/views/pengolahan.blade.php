@@ -20,7 +20,7 @@
             <div class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-rs-layer">
             </div>
             <div class="divheader-secondary-outer">
-                <div class="list-1">
+                <div class="list-1 col-sm-6 mr-20">
                     <div class="item-link">
                         <img class="vector-6" src="{{ asset('asset/custom/vectors2/vector2_x2.svg') }}" />
                     </div>
@@ -37,12 +37,12 @@
                         <img class="vector-10" src="{{ asset('asset/custom/vectors2/vector1_x2.svg') }}" />
                     </div>
                 </div>
-                <div class="list-2">
-                    <a href="/" class="item-link-kunjungi-ketelsuruan-produk">
+                <div class="list-2 ">
+                    <a href="/" class="item-link-kunjungi-ketelsuruan-produk col-lg-12  ">
                         Kembali ke halaman utama
                     </a>
 
-                    <div class="item-link-5">
+                    <div class="item-link-5 col-sm-5">
                         <img class="vector-11" src="{{ asset('asset/custom/vectors2/vector4_x2.svg') }}" />
                     </div>
                 </div>
