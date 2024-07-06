@@ -28,7 +28,7 @@ use App\Http\Controllers\ProdukController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingPage.index');
 });
 Route::get('/welcome_en', function () {
     return view('welcome_en');
