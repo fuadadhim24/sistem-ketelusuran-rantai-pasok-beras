@@ -164,7 +164,7 @@
             <div class="row g-2">
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
+                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
                         <h4 class="mb-3">Upload QR Code</h4>
                         <p class="mb-4">Have a QR code on your UD Tani Rejo rice packaging? Upload it here to learn
                             more about its origin and journey.</p>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
+                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt="">
                         <h4 class="mb-3">Scan QR Code</h4>
                         <p class="mb-4">Prefer scanning? Use your smartphone to scan the QR code on your UD Tani Rejo
                             rice packaging for instant access to its traceability details.</p>
@@ -268,8 +268,10 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
+                    <a href="/" class="navbar-brand ms-4 ms-lg-0">
                     <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
                         alt="logo_ud" />
+                    </a>
                     <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
                         sed
                         stet lorem sit clita</p>

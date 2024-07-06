@@ -142,5 +142,9 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
 
+
+    // landing page
+    Route::get('/about-us', function() {return view('landingPage.about');})->name('about');
+
 });
 

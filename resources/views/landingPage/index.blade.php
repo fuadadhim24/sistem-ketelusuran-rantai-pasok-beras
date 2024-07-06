@@ -58,8 +58,9 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-                <img src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}" alt="logo_ud" />
+            <a href="/" class="navbar-brand ms-4 ms-lg-0">
+                <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
+                        alt="logo_ud" />
                 {{-- <h1 class="fw-bold text-primary m-0">J<span class="text-secondary">ejak</span>Padi</h1> --}}
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
@@ -68,8 +69,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
                     <a href="product.html" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -167,7 +168,7 @@
                     <h1 class="display-5 mb-4">Discover Premium and Medium Quality Indonesian Rice</h1>
                     <p class="mb-4">We are dedicated to bringing you the finest quality rice from Indonesia. Our
                         commitment to excellence ensures that each grain meets stringent standards, offering you a
-                        delightful culinary experience.</p>
+                        delightful culinary experience</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Selected from the best fields in Indonesia</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Processed under strict quality controls</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Available in both premium and medium grades</p>
