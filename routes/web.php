@@ -52,7 +52,7 @@ Route::get('/hasil-pengolahan-en/{id}', [HasilPengolahanController::class, 'inde
 //     return view('hasilpengolahan_en');
 // });
 Route::resource('/pengolahan_in', pengolahanController::class);
-Route::resource('/pengolahan_en', pengolahanEnController::class);
+Route::resource('/traceability', pengolahanEnController::class)->names('pengolahan_en');
 
 
 

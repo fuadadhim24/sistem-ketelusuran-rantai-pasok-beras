@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('landing_page') }}/img/favicon.ico" rel="icon">
+    <link href="{{ asset('asset/custom/img/landingpage/ic_logo_1.png') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,7 +77,7 @@
                             <a href="blog.html" class="dropdown-item">Blog Grid</a>
                             <a href="feature.html" class="dropdown-item">Our Features</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="/pengolahan_in" class="dropdown-item">Traceability</a>
+                            <a href="{{ route('pengolahan_en.index') }}" class="dropdown-item">Traceability</a>
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -86,10 +86,11 @@
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
                         <small class="fa fa-search text-body"></small>
                     </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
+                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('login') }}">
                         <small class="fa fa-user text-body"></small>
                     </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="https://wa.me/6287840199095" target="_blank">
+                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="https://wa.me/6287840199095"
+                        target="_blank">
                         <small class="bi-whatsapp text-body"></small>
                     </a>
                 </div>
@@ -1045,7 +1046,8 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="fw-bold text-primary mb-4">J<span class="text-secondary">ejak</span>Padi</h1>
+                    <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
+                        alt="logo_ud" />
                     <p>Discover the finest produce straight from our farms to your table. We're committed to quality and
                         sustainability.</p>
                     <div class="d-flex pt-2">

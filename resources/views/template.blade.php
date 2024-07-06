@@ -54,10 +54,8 @@
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('volt/assets/img/favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32"
         href="{{ asset('volt/assets/img/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('volt/assets/img/favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('volt/assets/img/favicon/favicon-16x16.png') }}">
-    <link rel="mask-icon" href="{{ asset('volt/assets/img/favicon/favicon-16x16.png') }}" color="#ffffff">
+
+    <link href="{{ asset('asset/custom/img/landingpage/ic_logo_1.png') }}" rel="icon">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 

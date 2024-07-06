@@ -35,7 +35,7 @@ class pengolahanController extends Controller
         }
 
 
-        return view('pengolahan',compact('data'));
+        return view('landingPage.pengolahan_in',compact('data'));
     }
 
 

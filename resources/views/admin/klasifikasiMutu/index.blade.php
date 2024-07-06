@@ -227,7 +227,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">JejakTani</a>
+                    <a href="#">JejakPadi</a>
                 </li>
                 <li class="breadcrumb-item" aria-current="page">Pengujian</li>
                 <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
