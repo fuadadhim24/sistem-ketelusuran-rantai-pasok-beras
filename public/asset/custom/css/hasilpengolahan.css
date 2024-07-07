@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 .container {
     max-width: 1200px;
@@ -1212,8 +1212,8 @@ body {
     position: relative;
 }
 .hasil-pengolahan .group-638 {
+    margin: 0px 0 0 57px;
     width: 40%;
-    margin: 0px 0 0 -40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1558,6 +1558,7 @@ body {
     box-sizing: border-box;
 }
 .hasil-pengolahan .frame-636 {
+    margin-bottom: 7%;
     width: 100%;
     position: relative;
     display: flex;
@@ -1741,7 +1742,7 @@ body {
 }
 .hasil-pengolahan .container-26 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     box-sizing: border-box;
 }
 .hasil-pengolahan .container-21 {
@@ -2712,7 +2713,7 @@ input.cari .hasil-pengolahan .container-5 {
     }
     .group-638{
         width: 54%!important;
-        margin: 7px 0 0 0!important;
+        margin: 9px 0 0 3px!important
     }
     .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-34 {
         font-size: 18px!important;
@@ -2761,5 +2762,9 @@ input.cari .hasil-pengolahan .container-5 {
         margin: 5% 0 5% 0!important;
 
     }
+    .container-26{
+        flex-direction: column!important;
+    }
+
 
 }
