@@ -143,8 +143,12 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
 
 
-    // landing page
-    Route::get('/about-us', function() {return view('landingPage.about');})->name('about');
-
 });
 
+// landing page
+Route::get('/products', function() {return view('landingPage.product');})->name('products');
+Route::get('/about-us', function() {return view('landingPage.about');})->name('about');
+Route::get('/blog', function() {return view('landingPage.blog');})->name('blog');
+Route::get('/contact', function() {return view('landingPage.contact');})->name('contact');
+Route::get('/feature', function() {return view('landingPage.feature');})->name('feature');
+Route::get('/testimonial', function() {return view('landingPage.testimonial');})->name('testimonial');

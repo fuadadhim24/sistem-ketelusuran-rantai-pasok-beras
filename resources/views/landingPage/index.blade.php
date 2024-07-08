@@ -59,8 +59,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="/" class="navbar-brand ms-4 ms-lg-0">
-                <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
-                        alt="logo_ud" />
+                <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}" alt="logo_ud" />
                 {{-- <h1 class="fw-bold text-primary m-0">J<span class="text-secondary">ejak</span>Padi</h1> --}}
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
@@ -71,17 +70,17 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="/" class="nav-item nav-link active">Home</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
-                    <a href="product.html" class="nav-item nav-link">Products</a>
+                    <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="feature.html" class="dropdown-item">Our Features</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="{{ route('blog') }}" class="dropdown-item">Blog Grid</a>
+                            <a href="{{ route('feature') }}" class="dropdown-item">Our Features</a>
+                            <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
                             <a href="{{ route('pengolahan_en.index') }}" class="dropdown-item">Traceability</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
@@ -113,9 +112,10 @@
                                 <div class="col-lg-7">
                                     <h1 class="display-2 mb-5 animated slideInDown">Discover Premium Indonesian Rice
                                     </h1>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Explore
+                                    <a href="{{ route('products') }}"
+                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Explore
                                         Product</a>
-                                    <a href=""
+                                    <a href="{{ route('about') }}"
                                         class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Learn About Us</a>
                                 </div>
                             </div>
@@ -130,9 +130,10 @@
                                 <div class="col-lg-7">
                                     <h1 class="display-2 mb-5 animated slideInDown">Experience the Excellence of
                                         Indonesian Rice</h1>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Explore
+                                    <a href="{{ route('products') }}"
+                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Explore
                                         Product</a>
-                                    <a href=""
+                                    <a href="{{ route('about') }}"
                                         class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Learn About Us</a>
                                 </div>
                             </div>

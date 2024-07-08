@@ -69,12 +69,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="/" class="nav-item nav-link">Home</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link active">About Us</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
                     <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="{{ route('blog') }}" class="dropdown-item">Blog Grid</a>
+                            <a href="{{ route('blog') }}" class="dropdown-item active">Blog Grid</a>
                             <a href="{{ route('feature') }}" class="dropdown-item">Our Features</a>
                             <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
                             <a href="{{ route('pengolahan_en.index') }}" class="dropdown-item">Traceability</a>
@@ -101,14 +101,14 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">About Us</h1>
+            <h1 class="display-3 mb-3 animated slideInDown">Blog Grid</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
                     <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-dark active" aria-current="page">About Us</li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Blog Grid</li>
                 </ol>
             </nav>
         </div>
@@ -116,96 +116,52 @@
     <!-- Page Header End -->
 
 
-    <!-- About Start -->
+    <!-- Blog Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="img/about.jpg">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-5 mb-4">Discover Premium and Medium Quality Indonesian Rice</h1>
-                    <p class="mb-4">We are dedicated to bringing you the finest quality rice from Indonesia. Our
-                        commitment to excellence ensures that each grain meets stringent standards, offering you a
-                        delightful culinary experience</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Selected from the best fields in Indonesia</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Processed under strict quality controls</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Available in both premium and medium grades</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Firm Visit Start -->
-    <div class="container-fluid bg-primary bg-icon mt-5 py-6">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="display-5 text-white mb-3">Explore Our Farm</h1>
-                    <p class="text-white mb-0">Based on the interview results conducted on February 17, 2024, UD Tani
-                        Rejo plays a strategic role in ensuring the quality of rice exported through management in
-                        accordance with the operational procedures standards it possesses. Every stage of rice
-                        production and distribution is recorded transparently and documented. Information about the
-                        origin of the rice, processing process, and storage conditions can be accessed through orally
-                        delivered records.</p>
-                </div>
-                <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="">Visit Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Firm Visit End -->
-
-
-    <!-- Feature Start -->
-    <div class="container-fluid bg-light bg-icon py-6">
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Our Features</h1>
-                <p>Discover why our Indonesian rice stands out among the rest.</p>
+                <h1 class="display-5 mb-3">Latest Blog</h1>
+                <p>Explore our latest insights and tips on agriculture and organic farming.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
-                        <h4 class="mb-3">Natural Processing</h4>
-                        <p class="mb-4">Our rice undergoes natural processing techniques to preserve its quality and
-                            nutritional value.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
-                            More</a>
+                    <img class="img-fluid" src="{{ asset('landing_page') }}/img/blog-1.jpg" alt="">
+                    <div class="bg-light p-4">
+                        <a class="d-block h5 lh-base mb-4" href="">Tips for Cultivating Organic Fruits and
+                            Vegetables on Your Farm</a>
+                        <div class="text-muted border-top pt-4">
+                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
+                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>12 Jan, 2024</small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt="">
-                        <h4 class="mb-3">High-Quality Standards</h4>
-                        <p class="mb-4">We uphold strict quality standards to ensure that our rice meets premium
-                            quality expectations.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
-                            More</a>
+                    <img class="img-fluid" src="{{ asset('landing_page') }}/img/blog-2.jpg" alt="">
+                    <div class="bg-light p-4">
+                        <a class="d-block h5 lh-base mb-4" href="">Understanding Soil Health for Sustainable
+                            Agriculture Practices</a>
+                        <div class="text-muted border-top pt-4">
+                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
+                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>05 Jan, 2024</small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-3.png" alt="">
-                        <h4 class="mb-3">Traceability and Safety</h4>
-                        <p class="mb-4">Our rice is biologically safe and traceable, ensuring transparency and
-                            consumer trust.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
-                            More</a>
+                    <img class="img-fluid" src="{{ asset('landing_page') }}/img/blog-3.jpg" alt="">
+                    <div class="bg-light p-4">
+                        <a class="d-block h5 lh-base mb-4" href="">Benefits of Using Organic Fertilizers in
+                            Agricultural Practices</a>
+                        <div class="text-muted border-top pt-4">
+                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
+                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2024</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Feature End -->
+    <!-- Blog End -->
 
 
     <!-- Footer Start -->
