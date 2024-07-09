@@ -116,4 +116,10 @@ class pengujianController extends Controller
         return $kelasMutu;
     }
 
+    public function destroy($id){
+        $pengujian = Pengujian::findOrFail($id);
+        $pengujian->delete();
+        return response()->json($pengujian);
+    }
+
 }

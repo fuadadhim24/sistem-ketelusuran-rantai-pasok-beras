@@ -602,7 +602,7 @@
                         if (response.length > 0) {
                             var html = '';
                             $.each(response, function(index, item) {
-                                html += '<tr>';
+                                html += '<tr id="row-' + item.pengujian.id + '">';
                                 html += '<td>' + (index + 1) + '</td>';
                                 html += '<td>PJ00' + item.pengujian.id + '</td>';
                                 html += '<td>PG00' + item.id + '</td>';
@@ -613,7 +613,7 @@
                                 html += '<td>';
                                 // Tombol untuk aksi hapus (contoh)
                                 html +=
-                                    '<button class="btn btn-sm btn-outline-danger" type="button">hapus</button>';
+                                    '<button class="btn btn-sm btn-outline-danger btn-delete" type="button" data-id="'+item.pengujian.id+'">hapus</button>';
                                 html += '</td>';
                                 html += '</tr>';
                             });
@@ -669,6 +669,37 @@
                     }
                 });
             });
+
+            $(document).on('click', '.btn-delete', function() {
+                var id = $(this).data('id');
+                deleteData(id);
+            });
+
+            function deleteData(id) {
+                if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+                    $.ajax({
+                        url: '/pengujian/' + id + '/delete',
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken
+                        },
+                        success: function(response) {
+                            $('#row-' + id).remove();
+                            fetchPengujian();
+                            fetchPengolahan();
+                            alert('Data berhasil dihapus!');
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            alert('Terjadi kesalahan! Silakan coba lagi.');
+                        }
+                    });
+                }
+            }
+
+
 
 
         });

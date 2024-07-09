@@ -24,7 +24,7 @@ class AdminPengolahanController extends Controller
         $pengolahan = AdminPengolahanModel::with(['produksi', 'gudang'])
                         ->latest()
                         ->get();
-                        dd($pengolahan);
+                        // dd($pengolahan);
 
         return response()->json($pengolahan);
     }
