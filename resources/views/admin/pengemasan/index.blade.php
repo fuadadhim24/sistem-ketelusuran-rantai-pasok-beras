@@ -220,6 +220,22 @@
         </div>
     </div>
 
+    {{-- start modal qr code --}}
+    <div class="modal fade" id="modalQrCode" tabindex="-1" aria-labelledby="modalQrCodeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalQrCodeLabel">QR Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="qrCodeText"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end modal qr code --}}
+
     <div class="row">
         <div class="col-12 col-xl-8">
             <div class="card border-0 shadow components-section">
@@ -234,13 +250,11 @@
                                 <tr>
                                     <th class="border-0">No</th>
                                     <th class="border-0">ID Pengemasan</th>
-                                    <th class="border-0">ID Produksi</th>
+                                    <th class="border-0">ID Pengolahan</th>
                                     <th class="border-0">Tanggal</th>
-                                    <th class="border-0">Hasil</th>
-                                    <th class="border-0">Gudang Penyimpanan</th>
-                                    <th class="border-0">Metode</th>
-                                    <th class="border-0">Lama Pengemasan</th>
-                                    <th class="border-0">Deskripsi</th>
+                                    <th class="border-0">Jenis Kemasan</th>
+                                    <th class="border-0">Jumlah Kemasan</th>
+                                    <th class="border-0">Berat Kemasan</th>
                                     <th class="border-0">Aksi</th>
                                 </tr>
                             </thead>
@@ -263,7 +277,7 @@
                     <div class="card-body">
                         <div class="col-lg-12 col-sm-6">
                             <div class="mb-4">
-                                <label class="my-1 me-2" for="idProduksi">ID Pengolahan</label>
+                                <label class="my-1 me-2" for="idPengolahan">ID Pengolahan</label>
                                 <select class="form-select" name="id_pengolahan" id="idPengolahan"
                                     aria-label="Default select example">
                                     <option selected>Pilih ID Pengolahan</option>
@@ -341,8 +355,8 @@
                                     <div class="col-lg-6 col-sm-6">
                                         <!-- Form -->
                                         <div class="mb-4">
-                                            <label class="my-1 me-2" for="editIdProduksi">ID Produksi</label>
-                                            <select class="form-select" name="id_produksi" id="editIdProduksi"
+                                            <label class="my-1 me-2" for="editidPengolahan">ID Produksi</label>
+                                            <select class="form-select" name="id_produksi" id="editidPengolahan"
                                                 aria-label="Default select example">
                                                 <option selected>Pilih ID Produksi</option>
                                                 <!-- Options will be populated dynamically -->
@@ -506,7 +520,7 @@
 
 
     <script>
-        document.getElementById('idProduksi').addEventListener('change', function() {
+        document.getElementById('idPengolahan').addEventListener('change', function() {
             var selectedIndex = this.selectedIndex;
             var selectedOption = this.options[selectedIndex];
             var produksiData = JSON.parse(selectedOption.getAttribute('data-produksi'));
@@ -527,26 +541,26 @@
             // Fetch pengolahan data pertama kali saat halaman dimuat
             function fetchPengemasan() {
                 $.ajax({
-                    url: "{{ route('pengolahan.fetch') }}",
+                    url: "{{ route('pengemasan.fetch') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
                         if (response.length > 0) {
+                            // alert('berhasil');
                             let html = '';
                             $.each(response, function(index, item) {
                                 html += '<tr id="row-' + item.id + '">';
                                 html += '<td>' + (index + 1) + '</td>';
-                                html += '<td>PG00' + item.id + '</td>';
-                                html += '<td>PB00' + (item.produksi ? item.produksi.id : '-') +
-                                    '</td>';
+                                html += '<td>PS00' + item.id + '</td>';
+                                html += '<td>PG00' + item.id_pengolahan + '</td>';
                                 html += '<td>' + item.created_at + '</td>';
-                                html += '<td>' + item.hasil + '</td>';
-                                html += '<td>' + (item.gudang ? item.gudang.nama_gudang : '-') +
-                                    '</td>';
-                                html += '<td>' + item.metode + '</td>';
-                                html += '<td>' + item.lama + '</td>';
-                                html += '<td>' + item.deskripsi + '</td>';
+                                html += '<td>' + item.jenis_kemasan + '</td>';
+                                html += '<td>' + item.jumlah_kemasan + '</td>';
+                                html += '<td>' + item.berat_kemasan + '</td>';
                                 html += '<td>';
+                                html +=
+                                    '<button class="btn btn-sm btn-outline-warning btn-show" type="button" data-toggle="modal" data-target="#modalQrCode" data-qrcode="' + item.qr_code + '" data-id="' +
+                                    item.id + '">Lihat Qr Code</button>';
                                 html +=
                                     '<button class="btn btn-sm btn-outline-tertiary btn-edit" type="button" data-toggle="modal" data-target="#editModal" data-id="' +
                                     item.id + '">Ubah</button>';
@@ -557,6 +571,7 @@
                                 html += '</tr>';
                             });
                             $('#pengolahan-table-body').html(html);
+
                         } else {
                             $('#pengolahan-table-body').html(
                                 '<tr><td colspan="10">Tidak ada data</td></tr>');
@@ -567,6 +582,12 @@
                         $('#pengolahan-table-body').html(
                             '<tr><td colspan="10">Error fetching data</td></tr>');
                     }
+                });
+                $(document).on('click', '.btn-show', function() {
+                    var itemId = $(this).data('id');
+                    var qrCodeText = $(this).data('qrcode');
+                    $('#qrCodeText').text(qrCodeText);
+                    $('#modalQrCode').modal('show'); 
                 });
             }
 
@@ -583,14 +604,14 @@
                                 html += '<option value="' + item.id + '" data-produksi=\'' +
                                     JSON.stringify(item) + '\'>PB00' + item.id + '</option>';
                             });
-                            $('#idProduksi').html(html);
+                            $('#idPengolahan').html(html);
                         } else {
-                            $('#idProduksi').html('<option selected>Tidak ada data</option>');
+                            $('#idPengolahan').html('<option selected>Tidak ada data</option>');
                         }
                     },
                     error: function(xhr, status, error) {
                         console.error(error);
-                        $('#idProduksi').html('<option selected>Error fetching data</option>');
+                        $('#idPengolahan').html('<option selected>Error fetching data</option>');
                     }
                 });
             }
@@ -606,8 +627,8 @@
                         console.log(response);
                         alert('Data berhasil disimpan!');
                         $('#pengolahanForm')[0].reset();
-                        fetchPengemasan(); // Refresh tabel setelah berhasil menyimpan
-                        fetchUnPengemasan(); // Refresh dropdown setelah berhasil menyimpan
+                        fetchPengemasan();
+                        fetchUnPengemasan();
                     },
                     error: function(xhr, status, error) {
                         // Handle error response
@@ -626,8 +647,8 @@
                     type: 'GET',
                     dataType: 'json',
                     success: function(response) {
-                        $('#editIdProduksi').empty();
-                        $('#editIdProduksi').append('<option value="' + response.id_produksi +
+                        $('#editidPengolahan').empty();
+                        $('#editidPengolahan').append('<option value="' + response.id_produksi +
                             '">' + 'PB00' + response.id_produksi + '</option>');
                         $('#editMetode').val(response.metode);
                         var tanggalPengemasan = response.updated_at ? response.updated_at :
@@ -697,6 +718,7 @@
                         success: function(response) {
                             $('#row-' + id).remove();
                             fetchUnPengemasan();
+                            fetchPengemasan();
                             alert('Data berhasil dihapus!');
                         },
                         error: function(xhr, status, error) {

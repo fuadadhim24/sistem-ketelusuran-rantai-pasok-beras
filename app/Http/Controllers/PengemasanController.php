@@ -13,4 +13,15 @@ class PengemasanController extends Controller
         // return view('admin.pengolahan.index', compact('pengolahan'));
         return view('admin.pengemasan.index', compact('pengemasans'));
     }
+
+    public function store(){
+        
+    }
+
+    public function fetchPengemasan(){
+        $pengemasan = PengemasanModel::latest()->get();
+        return response()->json($pengemasan);
+    }
+
+
 }
