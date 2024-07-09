@@ -176,7 +176,7 @@
                     <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 </a>
             </li>
-            <li class="breadcrumb-item"><a href="#">jejakPadi</a></li>
+            <li class="breadcrumb-item"><a href="#">JejakTani</a></li>
             <li class="breadcrumb-item active" aria-current="page">Produk</li>
         </ol>
     </nav>
@@ -187,7 +187,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12 col-xl-12">
+    <div class="col-12 col-xl-8">
         <div class="row">
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
@@ -209,7 +209,6 @@
                                         <th scope="col">Jumlah Unit</th>
                                         <th scope="col">Harga</th>
                                         <th scope="col">Deskripsi</th>
-                                        <th scope="col">Kode Produksi</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -256,17 +255,7 @@
                         <label for="deskripsi">Deskripsi</label>
                         <textarea class="form-control" id="deskripsi" name="deskripsi" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="kodeProduksi">Kode Produksi</label>
-                        <select class="form-control" id="kodeProduksi" name="kode_produksi" required>
-                            <option value="" disabled selected>Pilih Kode Produksi</option>
-                            @isset($Produksis)
-                                @foreach($Produksis as $produksi)
-                                    <option value="{{ $produksi->kode_produksi }}">{{ $produksi->kode_produksi }}</option>
-                                @endforeach
-                            @endisset
-                        </select>
-                    </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -310,17 +299,6 @@
                         <label for="u-deskripsi">Deskripsi</label>
                         <textarea class="form-control" id="u-deskripsi" name="deskripsi" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="u-kodeProduksi">Kode Produksi</label>
-                        <select class="form-control" id="u-kodeProduksi" name="kode_produksi" required>
-                            <option value="" disabled selected>Pilih Kode Produksi</option>
-                            @isset($Produksis)
-                                @foreach($Produksis as $produksi)
-                                    <option value="{{ $produksi->kode_produksi }}">{{ $produksi->kode_produksi }}</option>
-                                @endforeach
-                            @endisset
-                        </select>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -343,6 +321,25 @@
             </div>
             <div class="modal-body text-center">
                 <img id="productPhoto" src="" alt="Foto Produk" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus lahan ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
             </div>
         </div>
     </div>
@@ -372,7 +369,6 @@ $(document).ready(function() {
                             <td>${Produk.jumlah_unit}</td>
                             <td>${Produk.harga}</td>
                             <td>${Produk.deskripsi}</td>
-                            <td>${Produk.kode_produksi}</td>
                             <td>
                                 <button class="btn btn-sm btn-outline-primary btn-update" data-id="${Produk.id}">Ubah</button>
                                 <button class="btn btn-sm btn-outline-danger btn-delete" data-id="${Produk.id}">Hapus</button>
@@ -425,7 +421,6 @@ $(document).ready(function() {
                 $('#u-jumlahUnit').val(data.Produk.jumlah_unit);
                 $('#u-harga').val(data.Produk.harga);
                 $('#u-deskripsi').val(data.Produk.deskripsi);
-                $('#u-kodeProduksi').val(data.Produksi.kode_produksi);
                 $('#updateProdukModal').modal('show');
             },
             error: function(xhr, status, error) {
@@ -440,7 +435,7 @@ $(document).ready(function() {
         var id = $('#u-id').val();
         formData.append('_method', 'PUT');
         $.ajax({
-            url: `/Produks/${id}`,
+            url: `/Produks/${id}/update`,
             method: 'POST', // Using POST with _method trick for PUT request
             data: formData,
             processData: false,
@@ -456,20 +451,24 @@ $(document).ready(function() {
         });
     });
 
+    var deleteProdukId;
     $(document).on('click', '.btn-delete', function() {
-        var id = $(this).data('id');
-        if (confirm('Are you sure you want to delete this Produk?')) {
-            $.ajax({
-                url: `/Produks/${id}`,
-                method: 'DELETE',
-                success: function(data) {
-                    loadProduks();
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
-        }
+        deleteProdukId = $(this).data('id');
+        $('#confirmDeleteModal').modal('show');
+    });
+
+    $('#confirmDeleteBtn').click(function() {
+        $.ajax({
+            url: `/Produks/${deleteProdukId}`,
+            method: 'DELETE',
+            success: function(data) {
+                $('#confirmDeleteModal').modal('hide');
+                loadProduks();
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
     });
 
     $(document).on('click', '.btn-show-photo', function() {

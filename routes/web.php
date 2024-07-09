@@ -72,9 +72,10 @@ Route::middleware([
         Route::get('/Produk', [ProdukController::class, 'index'])->name('Produk.index');
         Route::post('/Produk/store', [ProdukController::class, 'store'])->name('Produk.store');
         Route::get('/Produks/{id}/edit', [ProdukController::class, 'edit'])->name('edit-produk');
-        Route::post('/Produks/{id}', [ProdukController::class, 'update'])->name('Produk.update'); // Using POST with _method trick for form-data
+        Route::put('/Produks/{id}/update', [ProdukController::class, 'update'])->name('Produk.update'); // Using POST with _method trick for form-data
         Route::delete('/Produks/{id}', [ProdukController::class, 'destroy'])->name('Produk.destroy');
         Route::get('/reload-content-Produk', [ProdukController::class, 'reloadContent'])->name('Produk.reload');
+        Route::get('/produksi/data', [ProdukController::class, 'getProduksiData']);
 
     Route::get('/varietas-padi', [varietasPadiController::class, 'index'])->name('varietas-padi');
     Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class, 'tambahView'])->name('tambah-varietas');

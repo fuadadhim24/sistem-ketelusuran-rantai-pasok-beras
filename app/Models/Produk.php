@@ -11,8 +11,6 @@ class Produk extends Model
     // protected $fillable=['id','id_produksi','kode_produk','nama_produk','deleted_at'];
     protected $table='produk';
     protected $fillable=[
-        'id_produksi',
-        'kode_produk',
         'nama_produk',
         'jumlah_unit',
         'foto',
