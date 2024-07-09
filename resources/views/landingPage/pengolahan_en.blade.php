@@ -207,7 +207,6 @@
                                 if (result) {
                                     window.location.href = result.text;
                                 }
-
                                 if (err) {
                                     if (err instanceof ZXing.NotFoundException) {
                                         console.log('No QR code found.');

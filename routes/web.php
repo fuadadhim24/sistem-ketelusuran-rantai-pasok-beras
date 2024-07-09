@@ -144,6 +144,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
     Route::get('/fetch-pengemasan', [PengemasanController::class, 'fetchPengemasan'])->name('pengemasan.fetch');
+    Route::get('/fetch-un-pengemasan', [PengemasanController::class, 'fetchUnPengemasan'])->name('un-pengemasan.fetch');
     Route::post('/pengemasan/store', [PengemasanController::class, 'store'])->name('pengemasan.store');
 });
 

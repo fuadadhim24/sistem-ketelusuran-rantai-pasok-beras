@@ -42,7 +42,7 @@ class AdminPengolahanModel extends Model
 
     public function panen()
     {
-        return $this->belongsTo(PanenModel::class, 'id_panen');
+        return $this->belongsTo(PanenModel::class, 'id');
     }
 
     public function gudang()
@@ -51,7 +51,7 @@ class AdminPengolahanModel extends Model
     }
     public function pengemasan()
     {
-        return $this->hasOne(PengemasanModel::class, 'id_pengemasan');
+        return $this->hasOne(PengemasanModel::class, 'id');
     }
     public function scopeNoPengolahan($query)
     {
@@ -66,6 +66,9 @@ class AdminPengolahanModel extends Model
     public function scopeNoPengujian($query)
     {
         return $query->whereDoesntHave('pengujian');
+    }
+    public static function pengolahanWithoutPengemasan(){
+        return static::whereDoesntHave('pengemasan')->with(['produksi'])->latest()->get();
     }
 
 }

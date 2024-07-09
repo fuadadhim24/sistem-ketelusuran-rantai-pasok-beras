@@ -21,6 +21,7 @@ class PengolahanSeeder extends Seeder
             'hasil' => '300',
             'id_gudang' => null,
             'id_produksi' => 1,
+            'created_at' => 1,
         ],];
 
         DB::table('pengolahan')->insert($data);
