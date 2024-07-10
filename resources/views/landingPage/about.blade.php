@@ -152,7 +152,8 @@
                         delivered records.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Visit Now</a>
+                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"
+                        href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Visit Now</a>
                 </div>
             </div>
         </div>
@@ -475,6 +476,22 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('landing_page') }}/js/main.js"></script>
+
+    {{-- popup image --}}
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.popup-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
