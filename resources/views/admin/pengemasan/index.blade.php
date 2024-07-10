@@ -215,7 +215,7 @@
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
                 <h1 class="h4">Pengemasan</h1>
-                <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+                <p class="mb-0">Menghasilkan QR Code sebagai media akses ketertelusuran hasil produksi beras.</p>
             </div>
         </div>
     </div>
