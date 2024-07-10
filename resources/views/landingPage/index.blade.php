@@ -268,7 +268,7 @@
             <div class="row g-2">
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
+                        {{-- <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt=""> --}}
                         <h4 class="mb-3">Upload QR Code</h4>
                         <p class="mb-4">Have a QR code on your UD Tani Rejo rice packaging? Upload it here to learn
                             more about its origin and journey.</p>
@@ -279,7 +279,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt="">
+                        {{-- <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt=""> --}}
                         <h4 class="mb-3">Scan QR Code</h4>
                         <p class="mb-4">Prefer scanning? Use your smartphone to scan the QR code on your UD Tani Rejo
                             rice packaging for instant access to its traceability details.</p>
@@ -438,214 +438,52 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-1.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type A</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-2.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type B</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
+                        @forelse ($produkPremium as $index => $product)
+                            @php
+                                // Hitung ulang index untuk mengatur delay
+                                $delay = ($index % 4) * 0.2 + 0.1;
+                            @endphp
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
+                                data-wow-delay="{{ $delay }}s">
+                                <div class="product-item">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid w-100"
+                                            src="{{ asset('landing_page') }}/img/{{ $product->foto }}"
+                                            alt="">
+                                        <div
+                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="">{{ $product->nama_produk }}</a>
+                                        <span class="text-primary me-1">Rp. {{ $product->harga }}</span>
+                                        {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="w-50 text-center border-end py-2">
+                                            <a class="text-body" href=""><i
+                                                    class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                        </small>
+                                        <small class="w-50 text-center py-2">
+                                            <a class="text-body" href=""><i
+                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-3.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type C</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
+
+                        @empty
+                            <div class="col-xl-12 col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item">
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="/">Try to Refresh</a>
+                                        <span class="text-primary me-1">No Data Entry</span>
+                                        {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-4.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type D</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-5.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type E</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-6.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type F</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-7.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type G</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-8.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Premium Rice Type H</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
+
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                             <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
                         </div>
@@ -653,221 +491,60 @@
                 </div>
                 <div id="tab-2" class="tab-pane fade show p-0">
                     <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-1.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Medium Rice Type A</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-2.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Medium Rice Type B</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
+                        @forelse ($produkMedium as $index => $product)
+                            @php
+                                // Hitung ulang index untuk mengatur delay
+                                $delay = ($index % 4) * 0.2 + 0.1;
+                            @endphp
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp"
+                                data-wow-delay="{{ $delay }}s">
+                                <div class="product-item">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid w-100"
+                                            src="{{ asset('landing_page') }}/img/{{ $product->foto }}"
+                                            alt="">
+                                        <div
+                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="">{{ $product->nama_produk }}</a>
+                                        <span class="text-primary me-1">Rp. {{ $product->harga }}</span>
+                                        {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="w-50 text-center border-end py-2">
+                                            <a class="text-body" href=""><i
+                                                    class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                        </small>
+                                        <small class="w-50 text-center py-2">
+                                            <a class="text-body" href=""><i
+                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-3.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Medium Rice Type C</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
+
+                        @empty
+                            <div class="col-xl-12 col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item">
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="/">Try to Refresh</a>
+                                        <span class="text-primary me-1">No Data Entry</span>
+                                        {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-4.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Medium Rice Type D</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-5.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Medium Rice Type E</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-6.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Medum Rice Type F</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-7.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type A</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-8.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type B</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 text-center">
+                        @endforelse
+
+                        <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                             <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Product End -->
 

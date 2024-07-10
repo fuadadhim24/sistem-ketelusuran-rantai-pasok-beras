@@ -8,11 +8,24 @@ use Illuminate\Http\Request;
 class landingPageController extends Controller
 {
     public function index(){
-        return view('landingPage.index');
+        $produkPremium = Produk::byCategory('premium')->get();
+        $produkMedium = Produk::byCategory('medium')->get();
+        // dd(compact('produkPremium','produkMedium'));
+
+        return view('landingPage.index', compact('produkPremium','produkMedium'));
+        // return view('landingPage.index');
     }
 
-    public function show(){
-        $landingPage = Produk::latest()->get();
-        return response()->json($landingPage);
+    public function show()
+    {
+        $produkPremium = Produk::byCategory('premium')->get();
+        $produkMedium = Produk::byCategory('medium')->get();
+
+        return view('landingPage.index', compact('produkPremium','produkMedium'));
+        
+        // return response()->json([
+        //     'produkPremium' => $produkPremium,
+        //     'produkMedium' => $produkMedium,
+        // ]);
     }
 }

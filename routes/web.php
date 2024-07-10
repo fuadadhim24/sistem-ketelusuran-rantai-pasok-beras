@@ -12,6 +12,7 @@ use App\Http\Controllers\lahanController;
 use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\varietasPadiController;
 use Illuminate\Support\Facades\Route;
@@ -149,7 +150,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
 });
 
 // landing page
-Route::get('/products', function() {return view('landingPage.product');})->name('products');
+Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/about-us', function() {return view('landingPage.about');})->name('about');
 Route::get('/blog', function() {return view('landingPage.blog');})->name('blog');
 Route::get('/contact', function() {return view('landingPage.contact');})->name('contact');
