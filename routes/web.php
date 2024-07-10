@@ -97,6 +97,12 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::delete('/fase/{id}/delete', [faseController::class, 'destroy'])->name('hapus-fase');
     Route::patch('/update/{id}', [faseController::class, 'update'])->name('update-fase');
 
+    Route::get('/perlakuan', [perlakuanController::class, 'index']);
+    Route::get('/perlakuan/{id}', [perlakuanController::class, 'show']);
+    Route::post('/perlakuan', [perlakuanController::class, 'store']);
+    Route::put('/perlakuan/{id}', [perlakuanController::class, 'update']);
+    Route::delete('/perlakuan/{id}', [perlakuanController::class, 'destroy']);
+
     Route::resource('gudang', GudangController::class);
     Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
         Route::get('/getgudang', [gudangController::class, 'getgudangs'])->name('get.gudang');
