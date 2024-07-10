@@ -9,6 +9,7 @@ use App\Http\Controllers\pengemasanController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
 use App\Http\Controllers\lahanController;
+use App\Http\Controllers\landingPageController;
 use App\Http\Controllers\pengujianController;
 use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\settingsController;
@@ -27,9 +28,8 @@ use App\Http\Controllers\ProdukController;
 |
 */
 
-Route::get('/', function () {
-    return view('landingPage.index');
-});
+Route::get('/', [landingPageController::class,'index']);
+Route::get('/index-show', [landingPageController::class,'show']);
 Route::get('/welcome_en', function () {
     return view('welcome_en');
 });

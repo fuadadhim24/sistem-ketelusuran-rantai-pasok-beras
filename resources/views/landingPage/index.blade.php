@@ -30,6 +30,11 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('landing_page') }}/css/style.css" rel="stylesheet">
+
+    {{-- traceability --}}
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+    <script src="https://unpkg.com/quagga"></script>
 </head>
 
 <body>
@@ -71,15 +76,7 @@
                     <a href="/" class="nav-item nav-link active">Home</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
                     <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="{{ route('blog') }}" class="dropdown-item">Blog Grid</a>
-                            <a href="{{ route('feature') }}" class="dropdown-item">Our Features</a>
-                            <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
-                            <a href="{{ route('pengolahan_en.index') }}" class="dropdown-item">Traceability</a>
-                        </div>
-                    </div>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
@@ -157,7 +154,7 @@
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-6">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
@@ -180,9 +177,197 @@
     </div>
     <!-- About End -->
 
+    <!-- Traceability Start -->
+    <style>
+        .modal-dialog {
+            max-width: 50%;
+            height: 90vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5vh;
+        }
+
+        .modal-body {
+            height: 80%;
+        }
+
+        .modal-content {
+            width: 80%;
+            height: 80%;
+            margin: auto;
+        }
+
+        #cameraPreview,
+        #scanner-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        #webcam-preview {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .modal-dialog {
+                max-width: 100%;
+                max-height: 50%;
+                margin-top: 0;
+            }
+
+            .modal-body {
+                height: 50%;
+            }
+
+            .modal-content {
+                width: 80%;
+                height: 50%;
+                margin: auto;
+            }
+        }
+    </style>
+    <!-- HTML structure -->
+    <div class="container-fluid bg-light bg-icon py-6">
+        <div class="container">
+            <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+                style="max-width: 1000px;">
+                <h1 class="display-5 mb-3">Rice Traceability</h1>
+                <div class="row g-5 justify-content-center">
+                    <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <a href="{{ asset('asset/custom/img/landingpage2/traceability.jpg') }}"
+                                class="popup-link">
+                                <img class="img-fluid w-100"
+                                    src="{{ asset('asset/custom/img/landingpage2/traceability.jpg') }}"
+                                    alt="Traceability Image" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
+                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">We adhere to the traceability
+                                standards set forth by <span
+                                    style="background-color: #f1c40f; color: #333; padding: 2px 5px; border-radius: 3px;">Permentan
+                                    No. 31 Tahun 2017</span>, ensuring transparency and accountability throughout our
+                                supply chain. Our traceability system allows us to track each batch of rice from its
+                                origin in Indonesia through cultivation, processing, and packaging stages. This ensures
+                                that our rice meets the export quality classification standards mandated by Indonesian
+                                agricultural regulations.</p>
+                            <p style="font-size: 14px; font-style: italic;">Experience the excellence of Indonesian
+                                rice with us, where each grain reflects our commitment to quality, integrity, and a
+                                superior culinary experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
+                        <h4 class="mb-3">Upload QR Code</h4>
+                        <p class="mb-4">Have a QR code on your UD Tani Rejo rice packaging? Upload it here to learn
+                            more about its origin and journey.</p>
+                        <input type="file" id="uploadFileInput" class="mb-4" accept="image/*">
+                        <button id="scanButton" class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill"
+                            onclick="handleFileUpload()">Scan File</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt="">
+                        <h4 class="mb-3">Scan QR Code</h4>
+                        <p class="mb-4">Prefer scanning? Use your smartphone to scan the QR code on your UD Tani Rejo
+                            rice packaging for instant access to its traceability details.</p>
+                        <button class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" onclick="openCameraModal()">Open Camera</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="closeCameraModal()"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video id="webcam-preview" class="embed-responsive-item"></video>
+                    </div>
+                    <p id="result"></p>
+                    <script>
+                        let codeReader = null;
+
+                        function openCameraModal() {
+                            codeReader = new ZXing.BrowserQRCodeReader();
+                            codeReader.decodeFromVideoDevice(null, 'webcam-preview', (result, err) => {
+                                if (result) {
+                                    window.location.href = result.text;
+                                }
+                                if (err) {
+                                    if (err instanceof ZXing.NotFoundException) {
+                                        console.log('No QR code found.');
+                                    } else if (err instanceof ZXing.ChecksumException) {
+                                        console.log('A code was found, but its read value was not valid.');
+                                    } else if (err instanceof ZXing.FormatException) {
+                                        console.log('A code was found, but it was in an invalid format.');
+                                    } else {
+                                        console.error('Error:', err);
+                                    }
+                                }
+                            });
+                        }
+
+                        function closeCameraModal() {
+                            if (codeReader) {
+                                codeReader.reset();
+                                codeReader.stopStreams();
+                                codeReader = null;
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript for QR Code functionalities -->
+    <script>
+        function handleScanResult(resultText) {
+            // Assuming resultText is a valid URL
+            window.location.href = resultText;
+        }
+
+        function handleFileUpload() {
+            var fileInput = document.getElementById('uploadFileInput');
+            var file = fileInput.files[0];
+
+            if (file) {
+                document.getElementById('scanButton').textContent = 'To Destination Page';
+                const codeReader = new ZXing.BrowserQRCodeReader();
+                const imgUrl = URL.createObjectURL(file);
+                codeReader
+                    .decodeFromImage(undefined, imgUrl)
+                    .then(result => {
+                        handleScanResult(result.text);
+                    })
+                    .catch(err => console.error(err));
+            }
+        }
+    </script>
+    {{-- end-javascript --}}
+    <!-- Traceability End -->
 
     <!-- Feature Start -->
-    <div class="container-fluid bg-light bg-icon my-5 py-6">
+    <div class="container-fluid bg-light bg-icon py-6">
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
@@ -247,14 +432,10 @@
                             <a class="btn btn-outline-primary border-2" data-bs-toggle="pill"
                                 href="#tab-2">Medium</a>
                         </li>
-                        <li class="nav-item me-0">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill"
-                                href="#tab-3">Specialty</a>
-                        </li>
                     </ul>
                 </div>
             </div>
-            {{-- <div class="tab-content">
+            <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -685,222 +866,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="tab-3" class="tab-pane fade show p-0">
-                    <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-1.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type C</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-2.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type D</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-3.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type E</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-4.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type F</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-5.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type G</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-6.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type H</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-7.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type I</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset('landing_page') }}/img/product-8.jpg"
-                                        alt="">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Specialty Type J</a>
-                                    <span class="text-primary me-1">$19.00</span>
-                                    <span class="text-body text-decoration-line-through">$29.00</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+            </div>
         </div>
     </div>
     <!-- Product End -->
@@ -920,7 +886,8 @@
                         delivered records.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="">Visit Now</a>
+                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"
+                        href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Visit Now</a>
                 </div>
             </div>
         </div>
@@ -1005,35 +972,41 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="{{ asset('landing_page') }}/img/blog-1.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('asset/custom/img/landingpage2/konten-1.jpg') }}"
+                        alt="" style="object-fit: cover; width: 100%; height: 215.25px;">
                     <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Tips for Cultivating Organic Fruits and
-                            Vegetables on Your Farm</a>
+                        <a class="d-block h5 lh-base mb-4"
+                            href="https://berkatgroup.com/2020/12/07/9-beras-produksi-jember-berkualitas-terbaik/"
+                            target="_blank">Best Quality Rice Produced in Jember</a>
                         <div class="text-muted border-top pt-4">
                             <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>12 Jan, 2024</small>
+                            {{-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>12 Jan, 2024</small> --}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="{{ asset('landing_page') }}/img/blog-2.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('asset/custom/img/landingpage2/konten-2.jpg') }}"
+                        alt="" style="object-fit: cover; width: 100%; height: 215.25px;">
                     <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Understanding Soil Health for Sustainable
-                            Agriculture Practices</a>
+                        <a class="d-block h5 lh-base mb-4"
+                            href="https://www.facebook.com/SyngentaIndonesia/videos/kabupaten-jember-terkenal-sebagai-salah-satu-lumbung-padi-nasional-menurut-data-/994014561749720/"
+                            target="_blank">Jember Farmers Successfully Develop New Featured Rice Varieties</a>
                         <div class="text-muted border-top pt-4">
                             <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>05 Jan, 2024</small>
+                            {{-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>05 Jan, 2024</small> --}}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid" src="{{ asset('landing_page') }}/img/blog-3.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('asset/custom/img/landingpage2/konten-3.jpg') }}"
+                        alt="" style="object-fit: cover; width: 100%; height: 215.25px;">
                     <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">Benefits of Using Organic Fertilizers in
-                            Agricultural Practices</a>
+                        <a class="d-block h5 lh-base mb-4"
+                            href="https://javara.co.id/javaras-heritage-rice-unique-heirloom-rice-from-indonesia/"
+                            target="_blank">Javara’s Heritage Rice : Unique Heirloom Rice From Indonesia</a>
                         <div class="text-muted border-top pt-4">
                             <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2024</small>
+                            {{-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2024</small> --}}
                         </div>
                     </div>
                 </div>
@@ -1122,6 +1095,22 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('landing_page') }}/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.popup-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

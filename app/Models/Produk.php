@@ -19,7 +19,6 @@ class Produk extends Model
         'deleted_at',
         'created_at',
         'updated_at',
-
     ];
 
     public function produksi(){
@@ -27,5 +26,9 @@ class Produk extends Model
     }
     public function detailPengolahan($id){
         return DB::table('produk')->where('id',$id)->first();
+    }
+    public function scopeByCategory($query, $category)
+    {
+        return $query->where('nama_produk', 'like', '%' . $category . '%');
     }
 }

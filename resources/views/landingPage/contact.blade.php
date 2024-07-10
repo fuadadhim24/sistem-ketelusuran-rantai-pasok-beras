@@ -74,15 +74,7 @@
                     <a href="/" class="nav-item nav-link">Home</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
                     <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="{{ route('blog') }}" class="dropdown-item">Blog Grid</a>
-                            <a href="{{ route('feature') }}" class="dropdown-item">Our Features</a>
-                            <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
-                            <a href="{{ route('pengolahan_en.index') }}" class="dropdown-item">Traceability</a>
-                        </div>
-                    </div>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link active">Contact Us</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">

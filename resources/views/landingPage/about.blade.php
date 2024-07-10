@@ -30,6 +30,11 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('landing_page') }}/css/style.css" rel="stylesheet">
+
+    {{-- traceability --}}
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+    <script src="https://unpkg.com/quagga"></script>
 </head>
 
 <body>
@@ -71,15 +76,7 @@
                     <a href="/" class="nav-item nav-link">Home</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link active">About Us</a>
                     <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="{{ route('blog') }}" class="dropdown-item">Blog Grid</a>
-                            <a href="{{ route('feature') }}" class="dropdown-item">Our Features</a>
-                            <a href="{{ route('testimonial') }}" class="dropdown-item">Testimonial</a>
-                            <a href="{{ route('pengolahan_en.index') }}" class="dropdown-item">Traceability</a>
-                        </div>
-                    </div>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
@@ -155,12 +152,203 @@
                         delivered records.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="">Visit Now</a>
+                    <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Visit Now</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Firm Visit End -->
+
+    <!-- Traceability Start -->
+    <style>
+        .modal-dialog {
+            max-width: 50%;
+            height: 90vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5vh;
+        }
+
+        .modal-body {
+            height: 80%;
+        }
+
+        .modal-content {
+            width: 80%;
+            height: 80%;
+            margin: auto;
+        }
+
+        #cameraPreview,
+        #scanner-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        #webcam-preview {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .modal-dialog {
+                max-width: 100%;
+                max-height: 50%;
+                margin-top: 0;
+            }
+
+            .modal-body {
+                height: 50%;
+            }
+
+            .modal-content {
+                width: 80%;
+                height: 50%;
+                margin: auto;
+            }
+        }
+    </style>
+    <!-- HTML structure -->
+    <div class="container-fluid bg-light bg-icon py-6">
+        <div class="container">
+            <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+                style="max-width: 1000px;">
+                <h1 class="display-5 mb-3">Rice Traceability</h1>
+                <div class="row g-5 justify-content-center">
+                    <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <a href="{{ asset('asset/custom/img/landingpage2/traceability.jpg') }}"
+                                class="popup-link">
+                                <img class="img-fluid w-100"
+                                    src="{{ asset('asset/custom/img/landingpage2/traceability.jpg') }}"
+                                    alt="Traceability Image" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
+                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">We adhere to the traceability
+                                standards set forth by <span
+                                    style="background-color: #f1c40f; color: #333; padding: 2px 5px; border-radius: 3px;">Permentan
+                                    No. 31 Tahun 2017</span>, ensuring transparency and accountability throughout our
+                                supply chain. Our traceability system allows us to track each batch of rice from its
+                                origin in Indonesia through cultivation, processing, and packaging stages. This ensures
+                                that our rice meets the export quality classification standards mandated by Indonesian
+                                agricultural regulations.</p>
+                            <p style="font-size: 14px; font-style: italic;">Experience the excellence of Indonesian
+                                rice with us, where each grain reflects our commitment to quality, integrity, and a
+                                superior culinary experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="row g-2">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
+                        <h4 class="mb-3">Upload QR Code</h4>
+                        <p class="mb-4">Have a QR code on your UD Tani Rejo rice packaging? Upload it here to learn
+                            more about its origin and journey.</p>
+                        <input type="file" id="uploadFileInput" class="mb-4" accept="image/*">
+                        <button id="scanButton" class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill"
+                            onclick="handleFileUpload()">Scan File</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt="">
+                        <h4 class="mb-3">Scan QR Code</h4>
+                        <p class="mb-4">Prefer scanning? Use your smartphone to scan the QR code on your UD Tani Rejo
+                            rice packaging for instant access to its traceability details.</p>
+                        <button class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" onclick="openCameraModal()">Open Camera</button>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="closeCameraModal()"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video id="webcam-preview" class="embed-responsive-item"></video>
+                    </div>
+                    <p id="result"></p>
+                    <script>
+                        let codeReader = null;
+
+                        function openCameraModal() {
+                            codeReader = new ZXing.BrowserQRCodeReader();
+                            codeReader.decodeFromVideoDevice(null, 'webcam-preview', (result, err) => {
+                                if (result) {
+                                    window.location.href = result.text;
+                                }
+                                if (err) {
+                                    if (err instanceof ZXing.NotFoundException) {
+                                        console.log('No QR code found.');
+                                    } else if (err instanceof ZXing.ChecksumException) {
+                                        console.log('A code was found, but its read value was not valid.');
+                                    } else if (err instanceof ZXing.FormatException) {
+                                        console.log('A code was found, but it was in an invalid format.');
+                                    } else {
+                                        console.error('Error:', err);
+                                    }
+                                }
+                            });
+                        }
+
+                        function closeCameraModal() {
+                            if (codeReader) {
+                                codeReader.reset();
+                                codeReader.stopStreams();
+                                codeReader = null;
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
+    <!-- JavaScript for QR Code functionalities -->
+    <script>
+        function handleScanResult(resultText) {
+            // Assuming resultText is a valid URL
+            window.location.href = resultText;
+        }
+
+        function handleFileUpload() {
+            var fileInput = document.getElementById('uploadFileInput');
+            var file = fileInput.files[0];
+
+            if (file) {
+                document.getElementById('scanButton').textContent = 'To Destination Page';
+                const codeReader = new ZXing.BrowserQRCodeReader();
+                const imgUrl = URL.createObjectURL(file);
+                codeReader
+                    .decodeFromImage(undefined, imgUrl)
+                    .then(result => {
+                        handleScanResult(result.text);
+                    })
+                    .catch(err => console.error(err));
+            }
+        }
+    </script>
+    {{-- end-javascript --}}
+    <!-- Traceability End -->
 
 
     <!-- Feature Start -->
