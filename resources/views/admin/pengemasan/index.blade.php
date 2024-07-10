@@ -229,11 +229,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p id="qrCodeText"></p>
+                    <div class="row mb-4">
+                        <div class="col-lg-6 col-sm-6">
+                            <div id="qrcode"></div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <button class="btn btn-sm btn-primary" id="printBtn">Cetak QR Code</button>
+                            <button class="btn btn-sm btn-warning" id="downloadBtn" hidden>Download QR Code</button>
+                            <p id="qrCodeText" hidden></p>
+                            <p id="idPs" hidden></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
     {{-- end modal qr code --}}
 
     <div class="row">
@@ -369,7 +381,8 @@
                                                 <option selected>Pilih ID Pengolahan</option>
                                                 <!-- Options will be populated dynamically -->
                                             </select>
-                                            <small id="editHelp" class="form-text text-muted">merupakan hasil panen yang
+                                            <small id="editHelp" class="form-text text-muted">merupakan hasil panen
+                                                yang
                                                 sudah
                                                 diolah.</small>
                                         </div>
@@ -504,7 +517,8 @@
         <div class="row">
             <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
                 <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a></p>
+                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+                </p>
             </div>
             <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
                 <!-- List -->
@@ -541,6 +555,7 @@
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script>
         $(document).ready(function() {
             // Fetch pengemasan data pertama kali saat halaman dimuat
@@ -593,6 +608,7 @@
                     var itemId = $(this).data('id');
                     var qrCodeText = $(this).data('qrcode');
                     $('#qrCodeText').text(qrCodeText);
+                    $('#idPs').text(itemId);
                     $('#modalQrCode').modal('show');
                 });
             }
@@ -738,6 +754,54 @@
 
             fetchPengemasan();
             fetchUnPengemasan();
+
+
+
+
+            $('#printBtn').click(function(e) {
+                e.preventDefault();
+                // alert('berhasil');
+                $('#printBtn').attr('hidden', true);
+                $('#downloadBtn').removeAttr('hidden');
+                generateQRCode();
+            });
+            $('#downloadBtn').click(function(e) {
+                e.preventDefault();
+                downloadQRCode();
+                $('#qrcode').empty();
+                $('#printBtn').removeAttr('hidden');
+                $('#downloadBtn').attr('hidden', true);
+            });
+            //qr code
+            function generateQRCode() {
+                // new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+                var qrCodeText = $('#qrCodeText').text();
+                // alert(qrCodeText);
+                new QRCode(document.getElementById("qrcode"), qrCodeText);
+            };
+
+            function downloadQRCode() {
+                // Mendapatkan elemen canvas dari QR code
+                var canvas = document.querySelector('#qrcode canvas');
+                var idPengemasan = $('#idPs').text();
+
+                if (!canvas) {
+                    console.error('Canvas element not found.');
+                    return;
+                }
+
+                // Mendapatkan URL gambar dari canvas
+                var url = canvas.toDataURL('image/png');
+
+                // Membuat elemen <a> untuk mengunduh gambar
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'PS00' + idPengemasan + '.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+
         });
     </script>
 @endsection

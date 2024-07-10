@@ -147,6 +147,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/fetch-pengemasan', [PengemasanController::class, 'fetchPengemasan'])->name('pengemasan.fetch');
     Route::get('/fetch-un-pengemasan', [PengemasanController::class, 'fetchUnPengemasan'])->name('un-pengemasan.fetch');
     Route::post('/pengemasan/store', [PengemasanController::class, 'store'])->name('pengemasan.store');
+    Route::delete('/pengemasan/{id}/delete', [PengemasanController::class, 'destroy'])->name('pengemasan.destroy');
 });
 
 // landing page

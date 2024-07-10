@@ -50,5 +50,12 @@ class PengemasanController extends Controller
         return response()->json($pengemasan);
     }
 
+    public function destroy($id){
+        $pengemasan = PengemasanModel::findOrFail($id);
+        $pengemasan->delete();
+
+        return response()->json($pengemasan);
+    }
+
 
 }
