@@ -3,19 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\PerlakuanModel;
 
 class perlakuanController extends Controller
 {
-    function index(){
-        return view('admin.fase.perlakuan.index');
+    public function index()
+    {
+        $perlakuan = PerlakuanModel::all();
+        return response()->json($perlakuan);
     }
-    function tambah(){
-        
+
+    public function show($id)
+    {
+        $perlakuan = PerlakuanModel::find($id);
+        return response()->json($perlakuan);
     }
-    function edit(){
-        
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'nama_perlakuan_utama' => 'required|string|max:255',
+            'hari' => 'required|integer',
+            'durasi' => 'required|integer',
+            'id_fase' => 'required|integer',
+        ]);
+
+        $perlakuan = PerlakuanModel::create($validated);
+        return response()->json($perlakuan);
     }
-    function hapus(){
-        
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'nama_perlakuan_utama' => 'required|string|max:255',
+            'hari' => 'required|integer',
+            'durasi' => 'required|integer',
+        ]);
+
+        $perlakuan = PerlakuanModel::find($id);
+        $perlakuan->update($validated);
+        return response()->json($perlakuan);
+    }
+
+    public function destroy($id)
+    {
+        $perlakuan = PerlakuanModel::find($id);
+        $perlakuan->delete();
+        return response()->json(['message' => 'Deleted successfully']);
     }
 }
