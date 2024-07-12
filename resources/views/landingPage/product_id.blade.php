@@ -68,15 +68,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link">Home</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link active">Products</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
+                    <a href="/" class="nav-item nav-link">Beranda</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
+                    <a href="{{ route('products') }}" class="nav-item nav-link active">Produk</a>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link">Hubungi Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('products_in') }}">
-                        ID
+                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('products') }}">
+                        EN
                     </a>
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('login') }}">
                         <small class="fa fa-user text-body"></small>
@@ -95,12 +95,12 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Products</h1>
+            <h1 class="display-3 mb-3 animated slideInDown">Produk</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-dark active" aria-current="page">Products</li>
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Beranda</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Halaman</a></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Produk</li>
                 </ol>
             </nav>
         </div>
@@ -115,8 +115,8 @@
                 <div class="col-lg-6">
                     <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s"
                         style="max-width: 500px;">
-                        <h1 class="display-5 mb-3">Our Rice Varieties</h1>
-                        <p>Explore our selection of premium and medium-grade Indonesian rice.</p>
+                        <h1 class="display-5 mb-3">Varietas beras Kami</h1>
+                        <p>Jelajahi pilihan beras premium dan beras Indonesia kelas menengah kami.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
@@ -149,7 +149,7 @@
                                             alt="">
                                         <div
                                             class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
+                                            Baru</div>
                                     </div>
                                     <div class="text-center p-4">
                                         <a class="d-block h5 mb-2" href="">{{ $product->nama_produk }}</a>
@@ -159,11 +159,11 @@
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                                    class="fa fa-eye text-primary me-2"></i>Lihat detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                                    class="fa fa-shopping-bag text-primary me-2"></i>Pesan Sekarang</a>
                                         </small>
                                     </div>
                                 </div>
@@ -173,8 +173,8 @@
                             <div class="col-xl-12 col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="product-item">
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="/">Try to Refresh</a>
-                                        <span class="text-primary me-1">No Data Entry</span>
+                                        <a class="d-block h5 mb-2" href="/">Cobalah untuk Menyegarkan</a>
+                                        <span class="text-primary me-1">Tidak Ada Entri Data</span>
                                         {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                                             alt="">
                                         <div
                                             class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
+                                            Baru</div>
                                     </div>
                                     <div class="text-center p-4">
                                         <a class="d-block h5 mb-2" href="">{{ $product->nama_produk }}</a>
@@ -212,11 +212,11 @@
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                                    class="fa fa-eye text-primary me-2"></i>Lihat Detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                                    class="fa fa-shopping-bag text-primary me-2"></i>Pesan Sekarang</a>
                                         </small>
                                     </div>
                                 </div>
@@ -226,8 +226,8 @@
                             <div class="col-xl-12 col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="product-item">
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="/">Try to Refresh</a>
-                                        <span class="text-primary me-1">No Data Entry</span>
+                                        <a class="d-block h5 mb-2" href="/">Cobalah untuk Menyegarkan</a>
+                                        <span class="text-primary me-1">Tidak Ada Entri Data</span>
                                         {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
                                     </div>
                                 </div>
@@ -235,7 +235,7 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
                         </div>
                     </div>
                 </div>
@@ -250,17 +250,17 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="display-5 text-white mb-3">Explore Our Farm</h1>
-                    <p class="text-white mb-0">Based on the interview results conducted on February 17, 2024, UD Tani
-                        Rejo plays a strategic role in ensuring the quality of rice exported through management in
-                        accordance with the operational procedures standards it possesses. Every stage of rice
-                        production and distribution is recorded transparently and documented. Information about the
-                        origin of the rice, processing process, and storage conditions can be accessed through orally
-                        delivered records.</p>
+                    <h1 class="display-5 text-white mb-3">Jelajahi Pertanian Kami</h1>
+                    <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada tanggal 17 Februari 2024,
+                        UD Tani Rejo memiliki peran strategis dalam memastikan kualitas beras yang diekspor
+                        melalui pengelolaan yang sesuai dengan standar prosedur operasional yang dimilikinya.
+                        Setiap tahapan produksi dan distribusi beras dicatat secara transparan dan terdokumentasi.
+                         Informasi mengenai asal usul beras, proses pengolahan, dan kondisi penyimpanan
+                         dapat diakses melalui catatan yang disampaikan secara lisan.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"
-                        href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Visit Now</a>
+                        href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Kunjungi Sekarang</a>
                 </div>
             </div>
         </div>
@@ -272,7 +272,7 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Customer Review</h1>
+                <h1 class="display-5 mb-3">Ulasan Pelanggan</h1>
                 <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -284,8 +284,8 @@
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-1.jpg" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Nama Klien</h5>
+                            <span>Profesi</span>
                         </div>
                     </div>
                 </div>
@@ -297,8 +297,8 @@
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-2.jpg" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Nama Klien</h5>
+                            <span>Profesi</span>
                         </div>
                     </div>
                 </div>
@@ -310,8 +310,8 @@
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-3.jpg" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Nama Klien</h5>
+                            <span>Profesi</span>
                         </div>
                     </div>
                 </div>
@@ -323,8 +323,8 @@
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-4.jpg" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Nama Kient</h5>
+                            <span>Profesi</span>
                         </div>
                     </div>
                 </div>
@@ -354,27 +354,27 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
+                    <h4 class="text-light mb-4">Alamat</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                     <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <h4 class="text-light mb-4">Tautan Cepat</h4>
+                    <a class="btn btn-link" href="">Tentang Kami</a>
+                    <a class="btn btn-link" href="">Kontak Kami</a>
+                    <a class="btn btn-link" href="">Layanan Kami</a>
+                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
+                    <a class="btn btn-link" href="">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <h4 class="text-light mb-4">Buletin</h4>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
                         <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
                     </div>
                 </div>
             </div>
@@ -383,12 +383,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a href="#">Nama Situs Anda</a>, Semua Hak Cipta Dilindungi Undang-Undang.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        Didesain Oleh <a href="https://htmlcodex.com">HTML Codex</a>
+                        <br>Didistribusikan oleh: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
                     </div>
                 </div>
             </div>

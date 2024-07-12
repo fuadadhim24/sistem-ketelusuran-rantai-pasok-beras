@@ -14,4 +14,11 @@ class ProductController extends Controller
 
         return view('landingPage.product', compact('produkPremium','produkMedium'));
     }
+    public function index_id(){
+        $produkPremium = Produk::byCategory('premium')->get();
+        $produkMedium = Produk::byCategory('medium')->get();
+        // dd(compact('produkPremium','produkMedium'));
+
+        return view('landingPage.product_id', compact('produkPremium','produkMedium'));
+    }
 }

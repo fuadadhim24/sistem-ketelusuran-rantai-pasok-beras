@@ -30,6 +30,7 @@ use App\Http\Controllers\ProdukController;
 */
 
 Route::get('/', [landingPageController::class,'index']);
+Route::get('/in', [landingPageController::class,'index_in']);
 Route::get('/index-show', [landingPageController::class,'show']);
 Route::get('/welcome_en', function () {
     return view('welcome_en');
@@ -54,6 +55,8 @@ Route::get('/hasil-pengolahan-en/{id}', [HasilPengolahanController::class, 'inde
 // });
 Route::resource('/pengolahan_in', pengolahanController::class);
 Route::resource('/traceability', pengolahanEnController::class)->names('pengolahan_en');
+Route::get('/traceability_in', function() {return view('landingPage.pengolahan_id');})->name('pengolahan_in');
+// Route::resource('/traceability_in', pengolahanEnController::class)->names('pengolahan_in');
 
 
 
@@ -68,7 +71,7 @@ Route::middleware([
         Route::get('/produk', function () {
             return view('admin.produk.index');
         })->name('produk');
-        
+
         Route::resource('Produk', ProdukController::class);
         Route::get('/Produk', [ProdukController::class, 'index'])->name('Produk.index');
         Route::post('/Produk/store', [ProdukController::class, 'store'])->name('Produk.store');
@@ -139,7 +142,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::delete('/pengolahan/{id}/delete', [AdminPengolahanController::class, 'destroy'])->name('pengolahan.destroy');
     Route::get('/pengolahan/{id}/edit', [AdminPengolahanController::class, 'edit'])->name('pengolahan.edit');
     Route::put('/pengolahan/{id}/update', [AdminPengolahanController::class, 'update'])->name('pengolahan.update');
-    
+
     //pengujian
     Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
     Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');
@@ -147,7 +150,7 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/fetch-pengujian', [pengujianController::class, 'fetchPengujian'])->name('pengujian.fetch');
     Route::post('/pengujian/store', [pengujianController::class, 'store'])->name('pengujian.store');
     Route::delete('/pengujian/{id}/delete', [pengujianController::class, 'destroy'])->name('pengujian.destroy');
-    
+
     // pengemasan
     Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
     Route::get('/fetch-pengemasan', [PengemasanController::class, 'fetchPengemasan'])->name('pengemasan.fetch');
@@ -158,8 +161,11 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
 
 // landing page
 Route::get('/products', [ProductController::class,'index'])->name('products');
+Route::get('/products/in', [ProductController::class,'index_id'])->name('products_in');
 Route::get('/about-us', function() {return view('landingPage.about');})->name('about');
+Route::get('/about_id', function() {return view('landingPage.about_id');})->name('about_id');
 Route::get('/blog', function() {return view('landingPage.blog');})->name('blog');
 Route::get('/contact', function() {return view('landingPage.contact');})->name('contact');
+Route::get('/contact_in', function() {return view('landingPage.contact_in');})->name('contact_in');
 Route::get('/feature', function() {return view('landingPage.feature');})->name('feature');
 Route::get('/testimonial', function() {return view('landingPage.testimonial');})->name('testimonial');
