@@ -73,15 +73,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
+                    <a href="/" class="nav-item nav-link active">Beranda</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
+                    <a href="{{ route('products') }}" class="nav-item nav-link">Produk</a>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="/in">
-                        IN
+                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="/">
+                        EN
                     </a>
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('login') }}">
                         <small class="fa fa-user text-body"></small>
@@ -107,13 +107,13 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">Discover Premium Indonesian Rice
+                                    <h1 class="display-2 mb-5 animated slideInDown">Temukan Beras Premium Indonesia
                                     </h1>
                                     <a href="{{ route('products') }}"
-                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Explore
-                                        Product</a>
+                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Jelajahi
+                                        Produk</a>
                                     <a href="{{ route('about') }}"
-                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Learn About Us</a>
+                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Pelajari Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -125,13 +125,12 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">Experience the Excellence of
-                                        Indonesian Rice</h1>
+                                    <h1 class="display-2 mb-5 animated slideInDown">Rasakan Keunggulan Beras Indonesia</h1>
                                     <a href="{{ route('products') }}"
-                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Explore
-                                        Product</a>
+                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Jelajahi
+                                        Produk</a>
                                     <a href="{{ route('about') }}"
-                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Learn About Us</a>
+                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Pelajari Tentang Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -141,12 +140,12 @@
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Sebelumnya</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Selanjutnya</span>
             </button>
         </div>
     </div>
@@ -163,14 +162,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-5 mb-4">Discover Premium and Medium Quality Indonesian Rice</h1>
-                    <p class="mb-4">We are dedicated to bringing you the finest quality rice from Indonesia. Our
-                        commitment to excellence ensures that each grain meets stringent standards, offering you a
-                        delightful culinary experience</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Selected from the best fields in Indonesia</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Processed under strict quality controls</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Available in both premium and medium grades</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Learn More</a>
+                    <h1 class="display-5 mb-4">Temukan Beras Indonesia Kualitas Premium dan Medium</h1>
+                    <p class="mb-4">Kami berdedikasi untuk memberikan Anda beras dengan kualitas terbaik dari Indonesia.
+                         Komitmen kami terhadap kesempurnaan memastikan bahwa setiap butir beras memenuhi standar
+                          yang ketat, sehingga memberikan Anda pengalaman kuliner yang menyenangkan</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Dipilih dari lahan-lahan terbaik di Indonesia</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Diproses di bawah kontrol kualitas yang ketat</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Tersedia dalam kelas premium dan menengah</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Pelajari Lebih Lanjut</a>
                 </div>
             </div>
         </div>
@@ -236,7 +235,7 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 1000px;">
-                <h1 class="display-5 mb-3">Rice Traceability</h1>
+                <h1 class="display-5 mb-3">Ketertelusuran Beras</h1>
                 <div class="row g-5 justify-content-center">
                     <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="about-img position-relative overflow-hidden p-5 pe-0">
@@ -250,17 +249,16 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
-                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">We adhere to the traceability
-                                standards set forth by <span
+                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">Kami mematuhi standar Ketertulusuran yang ditetapkan oleh <span
                                     style="background-color: #f1c40f; color: #333; padding: 2px 5px; border-radius: 3px;">Permentan
-                                    No. 31 Tahun 2017</span>, ensuring transparency and accountability throughout our
-                                supply chain. Our traceability system allows us to track each batch of rice from its
-                                origin in Indonesia through cultivation, processing, and packaging stages. This ensures
-                                that our rice meets the export quality classification standards mandated by Indonesian
-                                agricultural regulations.</p>
-                            <p style="font-size: 14px; font-style: italic;">Experience the excellence of Indonesian
-                                rice with us, where each grain reflects our commitment to quality, integrity, and a
-                                superior culinary experience.</p>
+                                    No. 31 Tahun 2017</span>, memastikan transparansi dan akuntabilitas di seluruh rantai pasokan kami.
+                                    Sistem penelusuran kami memungkinkan kami untuk melacak setiap batch beras dari asalnya
+                                     di Indonesia melalui tahap budidaya, pemrosesan, dan pengemasan. Hal ini memastikan
+                                     bahwa beras kami memenuhi standar klasifikasi kualitas ekspor yang diamanatkan oleh
+                                     peraturan pertanian Indonesia.</p>
+                            <p style="font-size: 14px; font-style: italic;">Rasakan keunggulan beras Indonesia bersama kami,
+                                di mana setiap butirnya mencerminkan komitmen kami terhadap kualitas, integritas, dan
+                                pengalaman kuliner yang unggul.</p>
                         </div>
                     </div>
                 </div>
@@ -269,22 +267,22 @@
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         {{-- <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt=""> --}}
-                        <h4 class="mb-3">Upload QR Code</h4>
-                        <p class="mb-4">Have a QR code on your UD Tani Rejo rice packaging? Upload it here to learn
-                            more about its origin and journey.</p>
+                        <h4 class="mb-3">Unggah Kode QR</h4>
+                        <p class="mb-4">Punya kode QR pada kemasan beras UD Tani Rejo Anda? Unggah di
+                             sini untuk mengetahui lebih lanjut tentang asal usul dan perjalanannya.</p>
                         <input type="file" id="uploadFileInput" class="mb-4" accept="image/*">
                         <button id="scanButton" class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill"
-                            onclick="handleFileUpload()">Scan File</button>
+                            onclick="handleFileUpload()">Memindai File</button>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         {{-- <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt=""> --}}
-                        <h4 class="mb-3">Scan QR Code</h4>
-                        <p class="mb-4">Prefer scanning? Use your smartphone to scan the QR code on your UD Tani Rejo
-                            rice packaging for instant access to its traceability details.</p>
+                        <h4 class="mb-3">Pindai Kode QR</h4>
+                        <p class="mb-4">Lebih suka memindai? Gunakan ponsel cerdas Anda untuk memindai kode QR pada kemasan
+                             beras UD Tani Rejo untuk mendapatkan akses cepat ke detail penelusuran.</p>
                         <button class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" onclick="openCameraModal()">Open Camera</button>
+                            data-bs-target="#exampleModal" onclick="openCameraModal()">Buka Kamera</button>
                     </div>
                 </div>
             </div>
@@ -295,7 +293,7 @@
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Judul Modal</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                         onclick="closeCameraModal()"></button>
                 </div>
@@ -371,38 +369,38 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Our Features</h1>
-                <p>Discover why our Indonesian rice stands out among the rest.</p>
+                <h1 class="display-5 mb-3">Fitur Kami</h1>
+                <p>Temukan mengapa beras Indonesia kami menonjol di antara yang lain</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}/img/icon-1.png" alt="">
-                        <h4 class="mb-3">Natural Processing</h4>
-                        <p class="mb-4">Our rice undergoes natural processing techniques to preserve its quality and
-                            nutritional value.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
-                            More</a>
+                        <h4 class="mb-3">Pemrosesan Alami</h4>
+                        <p class="mb-4">Beras kami menggunakan teknik pengolahan
+                             alami untuk menjaga kualitas dan nilai gizinya.</p>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca
+                            Selengkapnya</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}/img/icon-2.png" alt="">
-                        <h4 class="mb-3">High-Quality Standards</h4>
-                        <p class="mb-4">We uphold strict quality standards to ensure that our rice meets premium
-                            quality expectations.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
-                            More</a>
+                        <h4 class="mb-3">Standar Kualitas Tinggi</h4>
+                        <p class="mb-4">Kami menjunjung tinggi standar kualitas yang ketat untuk memastikan
+                            bahwa beras kami memenuhi ekspektasi kualitas premium.</p>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca
+                            Selengkapnya</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}/img/icon-3.png" alt="">
-                        <h4 class="mb-3">Traceability and Safety</h4>
-                        <p class="mb-4">Our rice is biologically safe and traceable, ensuring transparency and
-                            consumer trust.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
-                            More</a>
+                        <h4 class="mb-3">Ketertelusuran dan Keamanan</h4>
+                        <p class="mb-4">Beras kami aman secara biologis dan dapat
+                            dilacak, memastikan transparansi dan kepercayaan konsumen.</p>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca
+                            Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -418,8 +416,8 @@
                 <div class="col-lg-6">
                     <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s"
                         style="max-width: 500px;">
-                        <h1 class="display-5 mb-3">Our Rice Varieties</h1>
-                        <p>Explore our selection of premium and medium-grade Indonesian rice.</p>
+                        <h1 class="display-5 mb-3">Varietas Padi Kami</h1>
+                        <p>Jelajahi pilihan beras premium dan beras Indonesia kelas menengah kami.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
@@ -452,7 +450,7 @@
                                             alt="">
                                         <div
                                             class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
+                                            Baru</div>
                                     </div>
                                     <div class="text-center p-4">
                                         <a class="d-block h5 mb-2" href="">{{ $product->nama_produk }}</a>
@@ -462,11 +460,11 @@
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                                    class="fa fa-eye text-primary me-2"></i>Lihat Detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                                    class="fa fa-shopping-bag text-primary me-2"></i>Pesan Sekarang</a>
                                         </small>
                                     </div>
                                 </div>
@@ -476,8 +474,8 @@
                             <div class="col-xl-12 col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="product-item">
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="/">Try to Refresh</a>
-                                        <span class="text-primary me-1">No Data Entry</span>
+                                        <a class="d-block h5 mb-2" href="/">Cobalah untuk Menyegarkan</a>
+                                        <span class="text-primary me-1">Tidak Ada Entri Data</span>
                                         {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
                                     </div>
                                 </div>
@@ -485,7 +483,7 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
                         </div>
                     </div>
                 </div>
@@ -505,7 +503,7 @@
                                             alt="">
                                         <div
                                             class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
+                                            Baru</div>
                                     </div>
                                     <div class="text-center p-4">
                                         <a class="d-block h5 mb-2" href="">{{ $product->nama_produk }}</a>
@@ -515,11 +513,11 @@
                                     <div class="d-flex border-top">
                                         <small class="w-50 text-center border-end py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                                    class="fa fa-eye text-primary me-2"></i>Lihat Detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
                                             <a class="text-body" href=""><i
-                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                                    class="fa fa-shopping-bag text-primary me-2"></i>Pesan Sekarang</a>
                                         </small>
                                     </div>
                                 </div>
@@ -529,8 +527,8 @@
                             <div class="col-xl-12 col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="product-item">
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="/">Try to Refresh</a>
-                                        <span class="text-primary me-1">No Data Entry</span>
+                                        <a class="d-block h5 mb-2" href="/">Cobalah untuk Menyegarkan</a>
+                                        <span class="text-primary me-1">Tidak Ada Entri Data</span>
                                         {{-- <span class="text-body text-decoration-line-through">$29.00</span> --}}
                                     </div>
                                 </div>
@@ -538,7 +536,7 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
                         </div>
                     </div>
                 </div>
@@ -554,17 +552,19 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="display-5 text-white mb-3">Explore Our Farm</h1>
-                    <p class="text-white mb-0">Based on the interview results conducted on February 17, 2024, UD Tani
-                        Rejo plays a strategic role in ensuring the quality of rice exported through management in
-                        accordance with the operational procedures standards it possesses. Every stage of rice
-                        production and distribution is recorded transparently and documented. Information about the
-                        origin of the rice, processing process, and storage conditions can be accessed through orally
-                        delivered records.</p>
+                    <h1 class="display-5 text-white mb-3">Jelajahi Pertanian Kami</h1>
+                    <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada
+                         tanggal 17 Februari 2024, UD Tani Rejo memiliki peran strategis dalam
+                          menjamin kualitas beras yang diekspor melalui manajemen yang sesuai
+                          dengan standar prosedur operasional yang dimiliki. Setiap tahapan
+                          produksi dan distribusi beras dicatat secara transparan dan
+                          terdokumentasi. Informasi mengenai asal usul beras, proses pengolahan, dan
+                           kondisi penyimpanan dapat diakses melalui catatan yang disampaikan secara
+                            lisan.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"
-                        href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Visit Now</a>
+                        href="https://maps.app.goo.gl/5SaVWbzJNhodxAJ28" target="_blank">Kunjungi Sekarang</a>
                 </div>
             </div>
         </div>
@@ -577,14 +577,14 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Customer Testimonials</h1>
-                <p>Our customers love our products and services. Here's what they have to say about us:</p>
+                <h1 class="display-5 mb-3">Testimoni Pelanggan</h1>
+                <p>Pelanggan kami menyukai produk dan layanan kami. Inilah yang mereka katakan tentang kami:</p>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">"Great experience with UD Tani Rejo! Their commitment to quality and transparency
-                        in their products is commendable. I highly recommend them!"</p>
+                    <p class="mb-4">"Pengalaman yang luar biasa dengan UD Tani Rejo! Komitmen mereka terhadap kualitas dan
+                        transparansi dalam produk mereka patut dipuji. Saya sangat merekomendasikan mereka!"</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-1.jpg" alt="">
@@ -596,8 +596,8 @@
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">"UD Tani Rejo provides excellent service and their products are top-notch. We are
-                        delighted with their professionalism and would definitely choose them again!"</p>
+                    <p class="mb-4">"UD Tani Rejo menyediakan layanan yang sangat baik dan produk mereka adalah yang terbaik
+                        . Kami   senang dengan profesionalisme mereka dan pasti akan memilih mereka lagi!"</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-2.jpg" alt="">
@@ -609,8 +609,8 @@
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">"I'm impressed by the quality and taste of the products from UD Tani Rejo. Their
-                        dedication to freshness and sustainability is truly remarkable."</p>
+                    <p class="mb-4">"Saya terkesan dengan kualitas dan rasa produk dari UD Tani Rejo. Dedikasi
+                         mereka  dedikasi mereka terhadap kesegaran dan keberlanjutan benar-benar luar biasa."</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-3.jpg" alt="">
@@ -622,8 +622,8 @@
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">"UD Tani Rejo's products have exceeded our expectations. Their commitment to
-                        quality and customer satisfaction is unmatched."</p>
+                    <p class="mb-4">"Produk UD Tani Rejo telah melampaui harapan kami.
+                         Komitmen mereka terhadap kualitas dan kepuasan pelanggan tidak tertandingi."</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-4.jpg" alt="">
@@ -644,8 +644,8 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Latest Blog</h1>
-                <p>Explore our latest insights and tips on agriculture and organic farming.</p>
+                <h1 class="display-5 mb-3">Blog Terbaru</h1>
+                <p>Jelajahi wawasan dan tips terbaru kami tentang pertanian dan pertanian organik.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -654,7 +654,7 @@
                     <div class="bg-light p-4">
                         <a class="d-block h5 lh-base mb-4"
                             href="https://berkatgroup.com/2020/12/07/9-beras-produksi-jember-berkualitas-terbaik/"
-                            target="_blank">Best Quality Rice Produced in Jember</a>
+                            target="_blank">Beras Kualitas Terbaik Diproduksi di Jember</a>
                         <div class="text-muted border-top pt-4">
                             <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
                             {{-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>12 Jan, 2024</small> --}}
@@ -667,7 +667,7 @@
                     <div class="bg-light p-4">
                         <a class="d-block h5 lh-base mb-4"
                             href="https://www.facebook.com/SyngentaIndonesia/videos/kabupaten-jember-terkenal-sebagai-salah-satu-lumbung-padi-nasional-menurut-data-/994014561749720/"
-                            target="_blank">Jember Farmers Successfully Develop New Featured Rice Varieties</a>
+                            target="_blank">Petani Jember Berhasil Kembangkan Varietas Padi Unggul Baru</a>
                         <div class="text-muted border-top pt-4">
                             <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
                             {{-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>05 Jan, 2024</small> --}}
@@ -680,7 +680,7 @@
                     <div class="bg-light p-4">
                         <a class="d-block h5 lh-base mb-4"
                             href="https://javara.co.id/javaras-heritage-rice-unique-heirloom-rice-from-indonesia/"
-                            target="_blank">Javara’s Heritage Rice : Unique Heirloom Rice From Indonesia</a>
+                            target="_blank">Beras Pusaka Javara : Beras Pusaka Unik dari Indonesia</a>
                         <div class="text-muted border-top pt-4">
                             <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
                             {{-- <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2024</small> --}}
@@ -700,8 +700,8 @@
                 <div class="col-lg-3 col-md-6">
                     <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
                         alt="logo_ud" />
-                    <p>Discover the finest produce straight from our farms to your table. We're committed to quality and
-                        sustainability.</p>
+                    <p>Temukan hasil bumi terbaik langsung dari perkebunan kami ke meja Anda.
+                        Kami berkomitmen terhadap kualitas dan keberlanjutan.</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -714,27 +714,27 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
+                    <h4 class="text-light mb-4">Alamat</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>Jenggawah Village, Jember, Indonesia</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+087 840 19095</p>
                     <p><i class="fa fa-envelope me-3"></i>jejakpadi@gmail.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <h4 class="text-light mb-4">Tautan Cepat</h4>
+                    <a class="btn btn-link" href="">Tentang Kami</a>
+                    <a class="btn btn-link" href="">Kontak Kami</a>
+                    <a class="btn btn-link" href="">Layanan Kami</a>
+                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
+                    <a class="btn btn-link" href="">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Subscribe to our newsletter for updates on fresh produce and farming tips.</p>
+                    <h4 class="text-light mb-4">Buletin</h4>
+                    <p>Berlangganan buletin kami untuk mendapatkan informasi terbaru mengenai produk segar dan kiat-kiat pertanian.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
                         <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
                     </div>
                 </div>
             </div>
@@ -743,12 +743,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">JejakPadi</a>, All Right Reserved.
+                        &copy; <a href="#">JejakPadi</a>, Semua Hak Cipta Dilindungi Undang-Undang.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
-                        <br>Distributed By: <a href="#" target="_blank">UD Tani Rejo</a>
+                        Dirancang oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
+                        <br>Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
                     </div>
                 </div>
             </div>
