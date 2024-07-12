@@ -37,6 +37,29 @@ class pengolahanEnController extends Controller
 
         return view('landingPage.pengolahan_en',compact('data'));
     }
+    public function index_in(Request $request)
+
+    {
+        $katakunci=$request->get('katakunci');
+        // dd($katakunci);
+        $jumlahbaris=10;
+
+        if (strlen($katakunci)) {
+            $data=ProduksiModel::where('id','like',"%$katakunci%")
+            ->orWhere('tanggal_produksi','like',"%$katakunci%")
+            // ->orWhere('deleted_at','like',"%$katakunci%")
+            ->paginate($jumlahbaris);
+
+        }else{
+
+            $data=ProduksiModel::query()->simplePaginate($jumlahbaris);
+            // $data=Produk::with('produksi')->simplePaginate($jumlahbaris);
+
+        }
+
+
+        return view('landingPage.pengolahan_en',compact('data'));
+    }
 
 
 

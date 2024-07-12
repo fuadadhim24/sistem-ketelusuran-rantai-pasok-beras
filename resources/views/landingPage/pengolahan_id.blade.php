@@ -52,7 +52,7 @@
                 <small class="ms-4"><i class="fa fa-envelope me-2"></i>jejakpadi@gmail.com</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
-                <small>Follow us:</small>
+                <small>Ikuti kami:</small>
                 <a class="text-body ms-3" href=""><i class="fab fa-facebook-f"></i></a>
                 <a class="text-body ms-3" href=""><i class="fab fa-twitter"></i></a>
                 <a class="text-body ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
@@ -71,15 +71,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
+                    <a href="/" class="nav-item nav-link active">Beranda</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">Tetang Kami</a>
+                    <a href="{{ route('products') }}" class="nav-item nav-link">Produk</a>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('pengolahan_in') }}">
-                        EN
+                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('pengolahan_en.index') }}">
+                        IN
                     </a>
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('login') }}">
                         <small class="fa fa-user text-body"></small>
@@ -98,12 +98,12 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Traceability</h1>
+            <h1 class="display-3 mb-3 animated slideInDown">Ketertelusuran</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-dark active" aria-current="page">Traceability</li>
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Beranda</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Halaman</a></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Ketertelusuran</li>
                 </ol>
             </nav>
         </div>
@@ -170,29 +170,29 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Rice Traceability</h1>
-                <p>Explore grade and traceability for UD Tani Rejo rice products from source to market.</p>
+                <h1 class="display-5 mb-3">Ketertelusuran Beras</h1>
+                <p>Jelajahi kelas dan ketertelusuran untuk produk beras UD Tani Rejo dari sumber hingga ke pasar.</p>
             </div>
             <div class="row g-2">
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
-                        <h4 class="mb-3">Upload QR Code</h4>
-                        <p class="mb-4">Have a QR code on your UD Tani Rejo rice packaging? Upload it here to learn
-                            more about its origin and journey.</p>
+                        <h4 class="mb-3">Unggah Kode QR</h4>
+                        <p class="mb-4">Punya kode QR pada kemasan beras UD Tani Rejo Anda? Unggah di sini
+                            untuk mempelajari lebih lanjut tentang asal usul dan perjalanannya.</p>
                         <input type="file" id="uploadFileInput" class="mb-4" accept="image/*">
                         <button id="scanButton" class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill"
-                            onclick="handleFileUpload()">Scan File</button>
+                            onclick="handleFileUpload()">Memindai File</button>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt="">
-                        <h4 class="mb-3">Scan QR Code</h4>
-                        <p class="mb-4">Prefer scanning? Use your smartphone to scan the QR code on your UD Tani Rejo
-                            rice packaging for instant access to its traceability details.</p>
+                        <h4 class="mb-3">Memindai Kode QR</h4>
+                        <p class="mb-4">Lebih suka memindai? Gunakan ponsel cerdas Anda untuk memindai kode QR
+                             pada kemasan beras UD Tani Rejo untuk mendapatkan akses cepat ke detail penelusurannya.</p>
                         <button class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" onclick="openCameraModal()">Open Camera</button>
+                            data-bs-target="#exampleModal" onclick="openCameraModal()">Buka Kamera</button>
                     </div>
                 </div>
             </div>
@@ -203,7 +203,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Judul modal</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                         onclick="closeCameraModal()"></button>
                 </div>
@@ -298,27 +298,27 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
+                    <h4 class="text-light mb-4">Alamat</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                     <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <h4 class="text-light mb-4">Tautan Cepat</h4>
+                    <a class="btn btn-link" href="">Tentang Kami</a>
+                    <a class="btn btn-link" href="">Kontak Kami</a>
+                    <a class="btn btn-link" href="">Layanan kami</a>
+                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
+                    <a class="btn btn-link" href="">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <h4 class="text-light mb-4">Buletin</h4>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
                         <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftra</button>
                     </div>
                 </div>
             </div>
@@ -327,12 +327,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a href="#">Nama Situs Anda</a>, Semua Hak Cipta Dilindungi Undang-Undang.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        Didesain Oleh <a href="https://htmlcodex.com">HTML Codex</a>
+                        <br>Didistribusikan oleh: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
                     </div>
                 </div>
             </div>
