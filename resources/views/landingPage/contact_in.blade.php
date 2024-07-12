@@ -71,15 +71,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link">Home</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link">Products</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link active">Contact Us</a>
+                    <a href="/" class="nav-item nav-link">Beranda</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
+                    <a href="{{ route('products') }}" class="nav-item nav-link">Produk</a>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link active">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('contact_in') }}">
-                        IN
+                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('contact') }}">
+                        EN
                     </a>
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('login') }}">
                         <small class="fa fa-user text-body"></small>
@@ -98,12 +98,12 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Contact Us</h1>
+            <h1 class="display-3 mb-3 animated slideInDown">Kontak Kami</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-dark active" aria-current="page">Contact Us</li>
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Beranda</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Halaman</a></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Kontak Kami</li>
                 </ol>
             </nav>
         </div>
@@ -115,20 +115,20 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Contact Us</h1>
-                <p>If you have any questions, feedback, or concerns, we're here to assist you.</p>
+                <h1 class="display-5 mb-3">Kontak Kami</h1>
+                <p>Jika Anda memiliki pertanyaan, masukan, atau masalah, kami siap membantu Anda.</p>
             </div>
             <div class="row g-5 justify-content-center">
                 <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
-                        <h5 class="text-white">Call Us</h5>
+                        <h5 class="text-white">Hubungi Kami</h5>
                         <p class="mb-5"><i class="fa fa-phone-alt me-3"></i>+087 840 19095</p>
-                        <h5 class="text-white">Email Us</h5>
+                        <h5 class="text-white">Email kami</h5>
                         <p class="mb-5"><i class="fa fa-envelope me-3"></i>jejakpadi@gmail.com</p>
-                        <h5 class="text-white">Office Address</h5>
+                        <h5 class="text-white">Alamat Kantor</h5>
                         <p class="mb-5"><i class="fa fa-map-marker-alt me-3"></i>Jenggawah Village, Jember,
                             Indonesia</p>
-                        <h5 class="text-white">Follow Us</h5>
+                        <h5 class="text-white">Ikuti kami</h5>
                         <div class="d-flex pt-2">
                             <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
                                     class="fab fa-twitter"></i></a>
@@ -142,21 +142,21 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">Lets Connect! we excited to see you.</p>
+                    <p class="mb-4">Mari Terhubung! kami sangat senang bertemu dengan Anda.</p>
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name"
                                         placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <label for="name">Nama Kamu</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" class="form-control" id="email"
                                         placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <label for="email">Email Kamu</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -168,12 +168,11 @@
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
-                                    <label for="message">Message</label>
+                                    <label for="message">Pesan</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send
-                                    Message</button>
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Kirim Pesan</button>
                             </div>
                         </div>
                     </form>
@@ -198,8 +197,8 @@
                 <div class="col-lg-3 col-md-6">
                     <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
                         alt="logo_ud" />
-                    <p>Discover the finest produce straight from our farms to your table. We're committed to quality and
-                        sustainability.</p>
+                    <p>Temukan hasil bumi terbaik langsung dari pertanian kami.
+                         Kami berkomitmen terhadap kualitas dan keberlanjutan.</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -212,27 +211,27 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
+                    <h4 class="text-light mb-4">Alamat</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>Jenggawah Village, Jember, Indonesia</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+087 840 19095</p>
                     <p><i class="fa fa-envelope me-3"></i>jejakpadi@gmail.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <h4 class="text-light mb-4">Tautan Cepat</h4>
+                    <a class="btn btn-link" href="">Tentang Kami</a>
+                    <a class="btn btn-link" href="">Kontak Kami</a>
+                    <a class="btn btn-link" href="">Layanan Kami</a>
+                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
+                    <a class="btn btn-link" href="">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Subscribe to our newsletter for updates on fresh produce and farming tips.</p>
+                    <h4 class="text-light mb-4">Buletin</h4>
+                    <p>Berlangganan buletin kami untuk mendapatkan informasi terbaru tentang produk segar dan kiat-kiat pertanian.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
                         <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
                     </div>
                 </div>
             </div>
@@ -241,12 +240,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">JejakPadi</a>, All Right Reserved.
+                        &copy; <a href="#">JejakPadi</a>, Semua Hak Cipta Dilindungi Undang-Undang.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
-                        <br>Distributed By: <a href="#" target="_blank">UD Tani Rejo</a>
+                        Didesain Oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
+                        <br>Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
                     </div>
                 </div>
             </div>
