@@ -63,6 +63,10 @@ class ProduksiModel extends Model
     {
         return $this->hasOne(Pengujian::class, 'id_produksi');
     }
+    public function pengemasan()
+    {
+        return $this->hasOne(PengemasanModel::class, 'id_pengolahan');
+    }
 
     public static function getProduksiWithoutPengujian()
     {

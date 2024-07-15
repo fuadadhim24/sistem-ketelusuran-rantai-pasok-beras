@@ -48,7 +48,7 @@ Route::get('/welcome_en', function () {
 // Route::get('/detailpengolahan/{id}', [pengolahanController::class, 'detail']);
 
 Route::get('/hasil-pengolahan-in/{id}', [HasilPengolahanController::class, 'index']);
-Route::get('/hasil-pengolahan-en/{id}', [HasilPengolahanController::class, 'index']);
+Route::get('/hasil-pengolahan-en/{id}', [HasilPengolahanController::class, 'indexEn']);
 
 // Route::get('/detailpengolahan_en', function () {
 //     return view('hasilpengolahan_en');

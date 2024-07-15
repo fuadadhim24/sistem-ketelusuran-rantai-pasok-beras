@@ -13,7 +13,7 @@ class HasilPengolahanController extends Controller
      */
     public function index(string $id)
     {
-        $produksi= ProduksiModel::with('produk','padi','panen','lahan','perawatan','pengujian','pengolahan')->find($id);
+        $produksi= ProduksiModel::with('produk','padi','panen','lahan','perawatan','pengujian','pengolahan','pengemasan')->find($id);
         if (!$produksi) {
             return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
         }
@@ -30,6 +30,15 @@ class HasilPengolahanController extends Controller
         // return $varietasPadi;
         // dd($produksi->toArray());
         return view('hasilpengolahan', compact('produksi'));
+    }
+    public function indexEn(string $id)
+    {
+        $produksi= ProduksiModel::with('produk','padi','panen','lahan','perawatan','pengujian','pengolahan','pengemasan')->find($id);
+        if (!$produksi) {
+            return redirect()->route('pengolahan.index')->withErrors(['message' => 'Produksi tidak ditemukan']);
+        }
+        // dd($produksi->toArray());
+        return view('hasilpengolahan_en', compact('produksi'));
     }
 
     /**
