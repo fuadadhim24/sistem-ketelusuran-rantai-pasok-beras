@@ -18,7 +18,7 @@ class PengemasanSeeder extends Seeder
             'jenis_kemasan' => 'Karung',
             'berat_kemasan' => 30,
             'jumlah_kemasan' => 120,
-            'qr_code' => 'http://127.0.0.1:8000/hasil-pengolahan-in/1',
+            'qr_code' => 'jejakpadi.com/hasil-pengolahan-in/1',
             'id_pengolahan' => 1,
             'created_at' => now(),
             'updated_at' => null,

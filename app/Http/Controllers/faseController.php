@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fase;
+use App\Models\PerlakuanModel;
 
 class faseController extends Controller
 {
@@ -18,9 +19,42 @@ class faseController extends Controller
         return response()->json($fases);
     }
 
-    public function tambahView()
+    public function indexPerlakuan()
     {
         return view('admin.fase.perlakuan.index');
+        // return response()->json($perlakuan);
+    }
+    public function showPerlakuan($id)
+    {
+        $perlakuan = PerlakuanModel::where('id_fase', $id)->with('fase')->get();
+        // return view('admin.fase.perlakuan.index');
+        return response()->json($perlakuan);
+    }
+    public function storePerlakuan(Request $request)
+    {
+        $perlakuan = new PerlakuanModel();
+        $perlakuan->nama_perlakuan_utama = $request->input('nama_perlakuan_utama');
+        $perlakuan->durasi = $request->input('durasi');
+        $perlakuan->hari = $request->input('hari');
+        $perlakuan->id_fase = $request->input('id_fase');
+        $perlakuan->save();
+        return response()->json('Perlakuan berhasil ditambahkan');
+    }
+    public function updatePerlakuan(Request $request, $id)
+    {
+        $perlakuan = PerlakuanModel::find($id);
+        $perlakuan->nama_perlakuan_utama = $request->input('nama_perlakuan_utama');
+        $perlakuan->durasi = $request->input('durasi');
+        $perlakuan->hari = $request->input('hari');
+        $perlakuan->id_fase = $request->input('id_fase');
+        $perlakuan->save();
+        return response()->json('Perlakuan berhasil diperbarui');
+    }
+    public function destroyPerlakuan($id)
+    {
+        $perlakuan = PerlakuanModel::find($id);
+        $perlakuan->delete();
+        return response()->json('Perlakuan berhasil dihapus');
     }
 
     public function show($id)
@@ -38,6 +72,7 @@ class faseController extends Controller
         return response()->json('Fase created successfully');
     }
 
+    
     public function update(Request $request, $id)
     {
         $fase = Fase::find($id);

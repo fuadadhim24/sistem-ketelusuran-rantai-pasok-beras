@@ -93,7 +93,11 @@ Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
     Route::get('/fase', [faseController::class, 'index'])->name('fase');
     Route::get('/get-fase', [faseController::class, 'getfase'])->name('getfase');
     Route::get('/fase/perlakuan', [faseController::class, 'tambahView'])->name('perlakuan');
-    Route::get('/fase/perlakuan/{id}', [faseController::class, 'tambahView']); // Add this route
+    Route::get('/fase/perlakuan/{id}', [faseController::class, 'indexPerlakuan']); 
+    Route::get('/fase/perlakuan/{id}/show', [faseController::class, 'showPerlakuan']); 
+    Route::post('/fase/perlakuan/{id}/store', [faseController::class, 'storePerlakuan']); 
+    Route::put('/fase/perlakuan/{id}/update', [faseController::class, 'updatePerlakuan']); 
+    Route::delete('/fase/perlakuan/{id}/delete', [faseController::class, 'destroyPerlakuan']); 
     Route::get('/fases/{id}', [faseController::class, 'show']);
     Route::post('/fase/store', [faseController::class, 'store'])->name('fase.store');
     Route::get('/fase/{id}/edit', [faseController::class, 'edit'])->name('edit-fase');
