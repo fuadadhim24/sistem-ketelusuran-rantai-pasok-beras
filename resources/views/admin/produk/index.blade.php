@@ -194,7 +194,7 @@
                     <div class="card-header row border-bottom d-flex align-items-center justify-content-between">
                         <div class="col">
                             <h2 class="fs-5 fw-bold mb-0">Daftar Produk</h2>
-                            <p class="mb-0">dihasilkan setelah melalui tahap pengujian dan pengemasan<span style="color: red">*</span></p>
+                            <p class="mb-0">Ditampilkan pada halaman utama<span style="color: red">*</span></p>
                         </div>
                         <div class="col text-end">
                             <button id="addProdukBtn" class="btn btn-sm btn-primary">Tambah Produk</button>

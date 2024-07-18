@@ -382,311 +382,291 @@
             </span>
         </div>
     </div>
+    <!-- Modal konfirmasi penghapusan -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Apakah Anda yakin ingin menghapus fase ini?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#ajax-form').submit(function(e) {
+                e.preventDefault();
+                var namaFase = $('#nama_fase').val();
+                var durasi = $('#durasi').val();
+                $.ajax({
+                    url: '/fase/store',
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        nama_fase: namaFase,
+                        durasi: durasi
+                    },
+                    success: function(response) {
+                        alert('Data berhasil disimpan');
+                        $('#daftar-fase').append(
+                            '<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' +
+                            namaFase +
+                            '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => isset($HasilPanen->id)]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => isset($HasilPanen->id)]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>'
+                        );
+                        $('#nama_fase').val('');
+                        $('#durasi').val('');
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Terjadi kesalahan: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        function confirmDelete(id) {
+            if (confirm("Anda yakin ingin menghapus item ini?")) {
+                $.ajax({
+                    url: '/fase/' + id + '/delete',
+                    type: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    success: function(result) {
+                        updateElement(id);
+                        alert('Item berhasil dihapus!');
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Terjadi kesalahan saat menghapus item.');
+                        console.error(xhr.responseText);
+                    }
+                });
+            }
+        }
+
+        function updateElement(id) {
+            $('#faseItem' + id).remove();
+        }
+    </script>
+
+    {{-- aksi lihat lokasi --}}
+    <script>
+        const notyf = new Notyf();
+
+        function toggleButtonsAndShowDetailPanen(index) {
+            var button1 = document.getElementById("btnTampilkan-" + index);
+            var button2 = document.getElementById("btnSembunyikan-" + index);
+            var button3 = document.getElementById("btnLoad-" + index);
+            var toast = document.getElementById("toastLokasiBerhasil");
+
+            // Tampilkan button 2 dan sembunyikan button 1
+            button3.removeAttribute("hidden");
+            button3.removeAttribute("disabled");
+
+            button1.setAttribute("hidden", "true");
+            button1.setAttribute("disabled", "true");
+
+            // Tampilkan detail hasil panen
+            $('#detailPanenContent-' + index).removeClass('d-none');
+
+            // Set timeout untuk kembali ke keadaan semula setelah 3 detik
+            setTimeout(function() {
+                // Set timeout untuk menyembunyikan notif
+                button2.removeAttribute("hidden");
+                button2.removeAttribute("disabled");
+                button3.setAttribute("hidden", "true");
+                button3.setAttribute("disabled", "true");
+
+                // notify
+                notyf.success({
+                    message: 'Lokasi berhasil diidentifikasi',
+                    duration: 3000,
+                    icon: false
+                });
+            }, 2000);
+        }
+
+        function hideDetailPanen(index) {
+            var button1 = document.getElementById("btnTampilkan-" + index);
+            var button2 = document.getElementById("btnSembunyikan-" + index);
+            var detailPanenContent = document.getElementById("detailPanenContent-" + index);
+
+            // Sembunyikan detail hasil panen
+            detailPanenContent.classList.add('d-none');
+
+            // Tampilkan button 1 dan sembunyikan button 2
+            button1.removeAttribute("hidden");
+            button1.removeAttribute("disabled");
+            button2.setAttribute("hidden", "true");
+            button2.setAttribute("disabled", "true");
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.btnTampilkanDetail').click(function() {
+                var index = $(this).data('index');
+
+                var produksi = @json($produksis);
+                var detailProduksi = `
         <div class="row">
-            <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                <p class="mb-0 text-center text-lg-start">© 2023-<span class="current-year"></span> <a
-                        class="text-primary fw-normal" href="https://themesberg.com" target="_blank">JejakPadi</a>
-                </p>
+            <div class="col-12 col-xl-4">
+                <div class="card border-0 shadow components-section">
+                    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                        <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label for="id_produksi">ID Produksi</label>
+                            <p>${produksi[index].id}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="sumber_benih">Sumber Benih</label>
+                            <p>${produksi[index].sumber_benih}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tanggal_produksi">Tanggal Produksi</label>
+                            <p>${produksi[index].tanggal_produksi}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
+                            <p>${produksi[index].tanggal_kedaluwarsa}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
+                            <p>${produksi[index].tingkat_kemurnian}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tingkat_vigor">Tingkat Vigor</label>
+                            <p>${produksi[index].tingkat_vigor}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="jumlah_benih">Jumlah Benih</label>
+                            <p>${produksi[index].jumlah_benih}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
+                            <p>${produksi[index].tanggal_penyemaian}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tanggal_penanaman">Tanggal Penanaman</label>
+                            <p>${produksi[index].tanggal_penanaman ? produksi[index].tanggal_penanaman : '<span class="badge bg-danger">belum penanaman</span>'}</p>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <label for="quantity">Quantity (Hasil Panen)</label>
+                            <p>${produksi[index].panen ? produksi[index].panen.quantity : ''}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="metode_panen">Metode Panen</label>
+                            <p>${produksi[index].panen ? produksi[index].panen.metode_panen : ''}</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="catatan">Catatan</label>
+                            <p>${produksi[index].panen ? produksi[index].panen.catatan : ''}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-                <!-- List -->
-                <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-                    <li class="list-inline-item px-0 px-sm-2">
-                        <a href="https://themesberg.com/contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- Modal konfirmasi penghapusan -->
-        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="col-12 col-xl-4">
+                <div class="card border-0 shadow components-section">
+                    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                        <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
                     </div>
-                    <div class="modal-body">
-                        Apakah Anda yakin ingin menghapus fase ini?
+                    <div class="card-body">
+                        ${renderPerawatan(produksi[index].perawatan)}
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Hapus</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4">
+                <div class="card border-0 shadow components-section">
+                    <div class="card-header border-bottom d-flex align-items-center justify-content-between">
+                        <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id='map-${index}' class="w-100" style='height: 300px;'></div>
                     </div>
                 </div>
             </div>
         </div>
+    `;
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#ajax-form').submit(function(e) {
-                    e.preventDefault();
-                    var namaFase = $('#nama_fase').val();
-                    var durasi = $('#durasi').val();
-                    $.ajax({
-                        url: '/fase/store',
-                        method: 'POST',
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            nama_fase: namaFase,
-                            durasi: durasi
-                        },
-                        success: function(response) {
-                            alert('Data berhasil disimpan');
-                            $('#daftar-fase').append(
-                                '<div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3"><div><div class="h6 mb-0 d-flex align-items-center">' +
-                                namaFase +
-                                '</div></div><div class="d-flex"><a href="#" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/view.png" alt="View" class="icon icon-xs"></a><a href="{{ route('edit-fase', ['id' => isset($HasilPanen->id)]) }}" class="d-flex align-items-center fw-bold me-2"><img src="/asset/img/admin/note.png" alt="Edit" class="icon icon-xs"></a><a href="{{ route('hapus-fase', ['id' => isset($HasilPanen->id)]) }}" class="d-flex align-items-center fw-bold"><img src="/asset/img/admin/delete.png" alt="Delete" class="icon icon-xs"></a></div></div>'
-                            );
-                            $('#nama_fase').val('');
-                            $('#durasi').val('');
-                        },
-                        error: function(xhr, status, error) {
-                            alert('Terjadi kesalahan: ' + error);
-                        }
-                    });
+                // Masukkan detailProduksi ke dalam modal
+                $('#detailProduksiContainer').html(detailProduksi);
+
+                // Tampilkan modal
+                $('#modalDetailProduksi').modal('show');
+
+                // Inisialisasi Mapbox untuk lokasi lahan
+                mapboxgl.accessToken =
+                    'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
+                var map = new mapboxgl.Map({
+                    container: `map-${index}`,
+                    style: 'mapbox://styles/mapbox/streets-v12',
+                    center: [produksi[index].lahan.longitude, produksi[index].lahan.latitude],
+                    zoom: 9
                 });
+
+                // Tambahkan marker untuk lokasi lahan
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([produksi[index].lahan.longitude, produksi[index].lahan.latitude])
+                    .addTo(map);
             });
-        </script>
-        <script>
-            function confirmDelete(id) {
-                if (confirm("Anda yakin ingin menghapus item ini?")) {
-                    $.ajax({
-                        url: '/fase/' + id + '/delete',
-                        type: 'DELETE',
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                        },
-                        success: function(result) {
-                            updateElement(id);
-                            alert('Item berhasil dihapus!');
-                        },
-                        error: function(xhr, status, error) {
-                            alert('Terjadi kesalahan saat menghapus item.');
-                            console.error(xhr.responseText);
-                        }
-                    });
-                }
-            }
+        });
 
-            function updateElement(id) {
-                $('#faseItem' + id).remove();
-            }
-        </script>
-
-        {{-- aksi lihat lokasi --}}
-        <script>
-            const notyf = new Notyf();
-
-            function toggleButtonsAndShowDetailPanen(index) {
-                var button1 = document.getElementById("btnTampilkan-" + index);
-                var button2 = document.getElementById("btnSembunyikan-" + index);
-                var button3 = document.getElementById("btnLoad-" + index);
-                var toast = document.getElementById("toastLokasiBerhasil");
-
-                // Tampilkan button 2 dan sembunyikan button 1
-                button3.removeAttribute("hidden");
-                button3.removeAttribute("disabled");
-
-                button1.setAttribute("hidden", "true");
-                button1.setAttribute("disabled", "true");
-
-                // Tampilkan detail hasil panen
-                $('#detailPanenContent-' + index).removeClass('d-none');
-
-                // Set timeout untuk kembali ke keadaan semula setelah 3 detik
-                setTimeout(function() {
-                    // Set timeout untuk menyembunyikan notif
-                    button2.removeAttribute("hidden");
-                    button2.removeAttribute("disabled");
-                    button3.setAttribute("hidden", "true");
-                    button3.setAttribute("disabled", "true");
-
-                    // notify
-                    notyf.success({
-                        message: 'Lokasi berhasil diidentifikasi',
-                        duration: 3000,
-                        icon: false
-                    });
-                }, 2000);
-            }
-
-            function hideDetailPanen(index) {
-                var button1 = document.getElementById("btnTampilkan-" + index);
-                var button2 = document.getElementById("btnSembunyikan-" + index);
-                var detailPanenContent = document.getElementById("detailPanenContent-" + index);
-
-                // Sembunyikan detail hasil panen
-                detailPanenContent.classList.add('d-none');
-
-                // Tampilkan button 1 dan sembunyikan button 2
-                button1.removeAttribute("hidden");
-                button1.removeAttribute("disabled");
-                button2.setAttribute("hidden", "true");
-                button2.setAttribute("disabled", "true");
-            }
-        </script>
-
-        <script>
-            $(document).ready(function() {
-                $('.btnTampilkanDetail').click(function() {
-                    var index = $(this).data('index');
-
-                    var produksi = @json($produksis);
-                    var detailProduksi = `
-                <div class="row">
-                    <div class="col-12 col-xl-4">
-                        <div class="card border-0 shadow components-section">
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                <h2 class="fs-5 fw-bold mb-0">Riwayat Produksi</h2>
-                            </div>
-                            <div class="card-body">
-                                <div class="mb-4">
-                                    <label for="id_produksi">ID Produksi</label>
-                                    <p>${produksi[index].id}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="sumber_benih">Sumber Benih</label>
-                                    <p>${produksi[index].sumber_benih}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="tanggal_produksi">Tanggal Produksi</label>
-                                    <p>${produksi[index].tanggal_produksi}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="tanggal_kedaluwarsa">Tanggal Kedaluwarsa</label>
-                                    <p>${produksi[index].tanggal_kedaluwarsa}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="tingkat_kemurnian">Tingkat Kemurnian</label>
-                                    <p>${produksi[index].tingkat_kemurnian}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="tingkat_vigor">Tingkat Vigor</label>
-                                    <p>${produksi[index].tingkat_vigor}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="jumlah_benih">Jumlah Benih</label>
-                                    <p>${produksi[index].jumlah_benih}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="tanggal_penyemaian">Tanggal Penyemaian</label>
-                                    <p>${produksi[index].tanggal_penyemaian}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="tanggal_penanaman">Tanggal Penanaman</label>
-                                    <p>${produksi[index].tanggal_penanaman ? produksi[index].tanggal_penanaman : '<span class="badge bg-danger">belum penanaman</span>'}</p>
-                                </div>
-                                <hr>
-                                <div class="mb-4">
-                                    <label for="quantity">Quantity (Hasil Panen)</label>
-                                    <p>${produksi[index].panen ? produksi[index].panen.quantity : ''}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="metode_panen">Metode Panen</label>
-                                    <p>${produksi[index].panen ? produksi[index].panen.metode_panen : ''}</p>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="catatan">Catatan</label>
-                                    <p>${produksi[index].panen ? produksi[index].panen.catatan : ''}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-xl-4">
-                        <div class="card border-0 shadow components-section">
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                <h2 class="fs-5 fw-bold mb-0">Riwayat Perawatan</h2>
-                            </div>
-                            <div class="card-body">
-                                ${renderPerawatan(produksi[index].perawatan)}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-xl-4">
-                        <div class="card border-0 shadow components-section">
-                            <div class="card-header border-bottom d-flex align-items-center justify-content-between">
-                                <h2 class="fs-5 fw-bold mb-0">Lokasi Lahan</h2>
-                            </div>
-                            <div class="card-body">
-                                <div id='map-${index}' class="w-100" style='height: 300px;'></div>
-                            </div>
-                        </div>
+        // Fungsi untuk merender riwayat perawatan
+        function renderPerawatan(perawatan) {
+            if (perawatan.length > 0) {
+                var result = '<div class="accordion" id="accordionPerawatan">';
+                perawatan.forEach((item, index) => {
+                    result += `
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPerawatan${index}">
+                    <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapsePerawatan${index}"
+                        aria-expanded="false" aria-controls="collapsePerawatan${index}">
+                        Perawatan ke-${index + 1}
+                    </button>
+                </h2>
+                <div id="collapsePerawatan${index}" class="accordion-collapse collapse"
+                    aria-labelledby="headingPerawatan${index}" data-bs-parent="#accordionPerawatan">
+                    <div class="accordion-body">
+                        <p>Jenis Perawatan: ${item.jenis_perawatan}</p>
+                        <p>Nama Perawatan: ${item.nama_perawatan}</p>
+                        <p>Jumlah: ${item.jumlah}</p>
+                        <p>Kebutuhan: ${item.kebutuhan}</p>
+                        <p>Tanggal Perawatan: ${item.tanggal_perawatan}</p>
                     </div>
                 </div>
-            `;
-
-                    // Masukkan detailProduksi ke dalam modal
-                    $('#detailProduksiContainer').html(detailProduksi);
-
-                    // Tampilkan modal
-                    $('#modalDetailProduksi').modal('show');
-
-                    // Inisialisasi Mapbox untuk lokasi lahan
-                    mapboxgl.accessToken =
-                        'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
-                    var map = new mapboxgl.Map({
-                        container: `map-${index}`,
-                        style: 'mapbox://styles/mapbox/streets-v12',
-                        center: [produksi[index].lahan.longitude, produksi[index].lahan.latitude],
-                        zoom: 9
-                    });
-
-                    // Tambahkan marker untuk lokasi lahan
-                    var marker = new mapboxgl.Marker()
-                        .setLngLat([produksi[index].lahan.longitude, produksi[index].lahan.latitude])
-                        .addTo(map);
+            </div>
+        `;
                 });
-            });
-
-            // Fungsi untuk merender riwayat perawatan
-            function renderPerawatan(perawatan) {
-                if (perawatan.length > 0) {
-                    var result = '<div class="accordion" id="accordionPerawatan">';
-                    perawatan.forEach((item, index) => {
-                        result += `
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingPerawatan${index}">
-                            <button class="accordion-button collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapsePerawatan${index}"
-                                aria-expanded="false" aria-controls="collapsePerawatan${index}">
-                                Perawatan ke-${index + 1}
-                            </button>
-                        </h2>
-                        <div id="collapsePerawatan${index}" class="accordion-collapse collapse"
-                            aria-labelledby="headingPerawatan${index}" data-bs-parent="#accordionPerawatan">
-                            <div class="accordion-body">
-                                <p>Jenis Perawatan: ${item.jenis_perawatan}</p>
-                                <p>Nama Perawatan: ${item.nama_perawatan}</p>
-                                <p>Jumlah: ${item.jumlah}</p>
-                                <p>Kebutuhan: ${item.kebutuhan}</p>
-                                <p>Tanggal Perawatan: ${item.tanggal_perawatan}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                    });
-                    result += '</div>';
-                    return result;
-                } else {
-                    return '<p>Tidak ada riwayat perawatan untuk produksi ini.</p>';
-                }
+                result += '</div>';
+                return result;
+            } else {
+                return '<p>Tidak ada riwayat perawatan untuk produksi ini.</p>';
             }
-        </script>
+        }
+    </script>
 
 
 
 
 
 
-        {{-- library notify --}}
-        <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>
-
-    </footer>
+    {{-- library notify --}}
+    <script src="@@path/vendor/bootstrap4-notify/bootstrap-notify.min.js"></script>
 @endsection
