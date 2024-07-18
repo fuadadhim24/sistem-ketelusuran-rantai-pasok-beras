@@ -73,11 +73,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link">Beranda</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link active">Tentang Kami</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link">Produk</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Hubungi Kami</a>
+                    <a href="./in" class="nav-item nav-link">Beranda</a>
+                    <a href="{{ route('about_id') }}" class="nav-item nav-link active">Tentang Kami</a>
+                    <a href="{{ route('products_in') }}" class="nav-item nav-link">Produk</a>
+                    <a href="{{ route('pengolahan_in') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact_in') }}" class="nav-item nav-link">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('about') }}">
@@ -124,9 +124,10 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <h1 class="display-5 mb-4">Temukan Beras Indonesia Kualitas Premium dan Medium.</h1>
-                    <p class="mb-4">Kami berdedikasi untuk memberikan Anda beras dengan kualitas terbaik dari Indonesia. Komitmen kami terhadap
+                    <p class="mb-4">Kami berdedikasi untuk memberikan Anda beras dengan kualitas terbaik dari
+                        Indonesia. Komitmen kami terhadap
                         kesempurnaan memastikan bahwa setiap butir beras memenuhi standar yang ketat, sehingga
-                         memberikan Anda pengalaman kuliner yang menyenangkan</p>
+                        memberikan Anda pengalaman kuliner yang menyenangkan</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Dipilih dari ladang-ladang terbaik di Indonesia</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Diproses di bawah kendali mutu yang ketat</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Tersedia dalam kelas premium dan medium</p>
@@ -144,12 +145,13 @@
             <div class="row g-5 align-items-center">
                 <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
                     <h1 class="display-5 text-white mb-3">Jelajahi Pertanian Kami</h1>
-                    <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada tanggal 17 Februari 2024,
+                    <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada tanggal 17 Februari
+                        2024,
                         UD Tani Rejo memiliki peran strategis dalam memastikan kualitas beras yang diekspor
                         melalui pengelolaan yang sesuai dengan standar prosedur operasional yang dimilikinya.
                         Setiap tahapan produksi dan distribusi beras dicatat secara transparan dan terdokumentasi.
-                         Informasi mengenai asal usul beras, proses pengolahan, dan kondisi penyimpanan
-                         dapat diakses melalui catatan yang disampaikan secara lisan.</p>
+                        Informasi mengenai asal usul beras, proses pengolahan, dan kondisi penyimpanan
+                        dapat diakses melalui catatan yang disampaikan secara lisan.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"
@@ -233,15 +235,20 @@
                     </div>
                     <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
-                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">Kami mematuhi standar ketertelusuran yang ditetapkan oleh <span
+                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">Kami mematuhi standar
+                                ketertelusuran yang ditetapkan oleh <span
                                     style="background-color: #f1c40f; color: #333; padding: 2px 5px; border-radius: 3px;">Permentan
-                                    No. 31 Tahun 2017</span>, memastikan transparansi dan akuntabilitas di seluruh rantai pasokan kami. Sistem ketertelusuran
-                                     kami memungkinkan kami untuk melacak setiap batch beras dari asalnya di Indonesia melalui
-                                      tahap budidaya, pemrosesan, dan pengemasan. Hal ini memastikan bahwa beras kami memenuhi
-                                       standar klasifikasi kualitas ekspor yang diamanatkan oleh peraturan pertanian Indonesia.</p>
-                            <p style="font-size: 14px; font-style: italic;">Rasakan keunggulan beras Indonesia bersama kami, di mana
+                                    No. 31 Tahun 2017</span>, memastikan transparansi dan akuntabilitas di seluruh
+                                rantai pasokan kami. Sistem ketertelusuran
+                                kami memungkinkan kami untuk melacak setiap batch beras dari asalnya di Indonesia
+                                melalui
+                                tahap budidaya, pemrosesan, dan pengemasan. Hal ini memastikan bahwa beras kami memenuhi
+                                standar klasifikasi kualitas ekspor yang diamanatkan oleh peraturan pertanian Indonesia.
+                            </p>
+                            <p style="font-size: 14px; font-style: italic;">Rasakan keunggulan beras Indonesia bersama
+                                kami, di mana
                                 setiap butirnya mencerminkan komitmen kami terhadap kualitas, integritas, dan pengalaman
-                                 kuliner yang unggul.</p>
+                                kuliner yang unggul.</p>
                         </div>
                     </div>
                 </div>
@@ -364,8 +371,9 @@
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt="">
                         <h4 class="mb-3">Pengolahan Alami</h4>
                         <p class="mb-4">Beras kami menggunakan teknik pengolahan alami untuk menjaga
-                             kualitas dan nilai gizinya.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Lebih Lanjut</a>
+                            kualitas dan nilai gizinya.</p>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Lebih
+                            Lanjut</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -374,7 +382,8 @@
                         <h4 class="mb-3">Standar Kualitas Tinggi</h4>
                         <p class="mb-4">Kami menjunjung tinggi standar kualitas yang ketat untuk
                             memastikan bahwa beras kami memenuhi ekspektasi kualitas premium.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Lebih Lanjut</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Lebih
+                            Lanjut</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -383,7 +392,8 @@
                         <h4 class="mb-3">Ketertelusuran dan Keamanan</h4>
                         <p class="mb-4">Beras kami aman
                             secara biologis dan dapat dilacak, memastikan transparansi dan kepercayaan konsumen.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Lebih Lanjut</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca Lebih
+                            Lanjut</a>
                     </div>
                 </div>
             </div>
@@ -399,8 +409,8 @@
                 <div class="col-lg-3 col-md-6">
                     <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
                         alt="logo_ud" />
-                    <p>Temukan hasil bumi terbaik langsung dari pertanian kami .
-                         Kami berkomitmen terhadap kualitas dan keberlanjutan.</p>
+                    <p>Temukan hasil bumi terbaik langsung dari perkebunan kami ke meja Anda.
+                        Kami berkomitmen terhadap kualitas dan keberlanjutan.</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -420,21 +430,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Tautan Cepat</h4>
-                    <a class="btn btn-link" href="">Tentang Kami</a>
-                    <a class="btn btn-link" href="">Kontak Kami</a>
-                    <a class="btn btn-link" href="">Layanan kami</a>
-                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
-                    <a class="btn btn-link" href="">Bantuan</a>
+                    <a class="btn btn-link" href="{{ route('about_id') }}">Tentang Kami</a>
+                    <a class="btn btn-link" href="{{ route('products_in') }}">Produk</a>
+                    <a class="btn btn-link" href="{{ route('pengolahan_in') }}">Ketertelusuran</a>
+                    <a class="btn btn-link" href="{{ route('contact_in') }}">Kontak Kami</a>
+                    <a class="btn btn-link" href="mailto:jejakpadi@gmail.com">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Buletin</h4>
-                    <p>Berlangganan buletin kami untuk mendapatkan informasi
-                        terbaru tentang produk segar dan kiat-kiat pertanian.</p>
+                    <h4 class="text-light mb-4">Kontak Kami</h4>
+                    <p>Akses tercepat terhubung dengan JejakPadi.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
+                        <a href="mailto:jejakpadi@gmail.com" class="btn btn-primary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">Email</a>
+                        <a href="https://wa.me/6287840199095" class="btn btn-secondary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -447,8 +456,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Didesain Oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
-                        <br>Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
+                        Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
+                        <br>Dirancang oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
                     </div>
                 </div>
             </div>

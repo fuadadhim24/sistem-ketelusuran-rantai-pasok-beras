@@ -56,7 +56,7 @@ Route::get('/hasil-pengolahan-en/{id}', [HasilPengolahanController::class, 'inde
 // });
 Route::resource('/pengolahan_in', pengolahanController::class);
 Route::resource('/traceability', pengolahanEnController::class)->names('pengolahan_en');
-Route::get('/traceability_in', function() {return view('landingPage.pengolahan_id');})->name('pengolahan_in');
+Route::get('/ketertelusuran', function() {return view('landingPage.pengolahan_id');})->name('pengolahan_in');
 // Route::resource('/traceability_in', pengolahanEnController::class)->names('pengolahan_in');
 
 

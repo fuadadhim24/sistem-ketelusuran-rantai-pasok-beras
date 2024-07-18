@@ -73,11 +73,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link active">Beranda</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link">Produk</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Kontak Kami</a>
+                    <a href="./in" class="nav-item nav-link active">Beranda</a>
+                    <a href="{{ route('about_id') }}" class="nav-item nav-link">Tentang Kami</a>
+                    <a href="{{ route('products_in') }}" class="nav-item nav-link">Produk</a>
+                    <a href="{{ route('pengolahan_in') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact_in') }}" class="nav-item nav-link">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="/">
@@ -113,7 +113,8 @@
                                         class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Jelajahi
                                         Produk</a>
                                     <a href="{{ route('about') }}"
-                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Pelajari Tentang Kami</a>
+                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Pelajari Tentang
+                                        Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -125,12 +126,14 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">Rasakan Keunggulan Beras Indonesia</h1>
+                                    <h1 class="display-2 mb-5 animated slideInDown">Rasakan Keunggulan Beras Indonesia
+                                    </h1>
                                     <a href="{{ route('products') }}"
                                         class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Jelajahi
                                         Produk</a>
                                     <a href="{{ route('about') }}"
-                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Pelajari Tentang Kami</a>
+                                        class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Pelajari Tentang
+                                        Kami</a>
                                 </div>
                             </div>
                         </div>
@@ -163,9 +166,10 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <h1 class="display-5 mb-4">Temukan Beras Indonesia Kualitas Premium dan Medium</h1>
-                    <p class="mb-4">Kami berdedikasi untuk memberikan Anda beras dengan kualitas terbaik dari Indonesia.
-                         Komitmen kami terhadap kesempurnaan memastikan bahwa setiap butir beras memenuhi standar
-                          yang ketat, sehingga memberikan Anda pengalaman kuliner yang menyenangkan</p>
+                    <p class="mb-4">Kami berdedikasi untuk memberikan Anda beras dengan kualitas terbaik dari
+                        Indonesia.
+                        Komitmen kami terhadap kesempurnaan memastikan bahwa setiap butir beras memenuhi standar
+                        yang ketat, sehingga memberikan Anda pengalaman kuliner yang menyenangkan</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Dipilih dari lahan-lahan terbaik di Indonesia</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Diproses di bawah kontrol kualitas yang ketat</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Tersedia dalam kelas premium dan menengah</p>
@@ -242,21 +246,24 @@
                             <a href="{{ asset('asset/custom/img/landingpage2/traceability.jpg') }}"
                                 class="popup-link">
                                 <img class="img-fluid w-100"
-                                    src="{{ asset('asset/custom/img/landingpage2/traceability.jpg') }}"
+                                    src="{{ asset('asset/custom/img/landingpage2/ketertelusuran.jpg') }}"
                                     alt="Traceability Image" />
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="bg-primary text-white d-flex flex-column justify-content-center h-100 p-5">
-                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">Kami mematuhi standar Ketertulusuran yang ditetapkan oleh <span
+                            <p class="mb-4" style="font-size: 16px; line-height: 1.6;">Kami mematuhi standar
+                                Ketertulusuran yang ditetapkan oleh <span
                                     style="background-color: #f1c40f; color: #333; padding: 2px 5px; border-radius: 3px;">Permentan
-                                    No. 31 Tahun 2017</span>, memastikan transparansi dan akuntabilitas di seluruh rantai pasokan kami.
-                                    Sistem penelusuran kami memungkinkan kami untuk melacak setiap batch beras dari asalnya
-                                     di Indonesia melalui tahap budidaya, pemrosesan, dan pengemasan. Hal ini memastikan
-                                     bahwa beras kami memenuhi standar klasifikasi kualitas ekspor yang diamanatkan oleh
-                                     peraturan pertanian Indonesia.</p>
-                            <p style="font-size: 14px; font-style: italic;">Rasakan keunggulan beras Indonesia bersama kami,
+                                    No. 31 Tahun 2017</span>, memastikan transparansi dan akuntabilitas di seluruh
+                                rantai pasokan kami.
+                                Sistem penelusuran kami memungkinkan kami untuk melacak setiap batch beras dari asalnya
+                                di Indonesia melalui tahap budidaya, pemrosesan, dan pengemasan. Hal ini memastikan
+                                bahwa beras kami memenuhi standar klasifikasi kualitas ekspor yang diamanatkan oleh
+                                peraturan pertanian Indonesia.</p>
+                            <p style="font-size: 14px; font-style: italic;">Rasakan keunggulan beras Indonesia bersama
+                                kami,
                                 di mana setiap butirnya mencerminkan komitmen kami terhadap kualitas, integritas, dan
                                 pengalaman kuliner yang unggul.</p>
                         </div>
@@ -269,7 +276,7 @@
                         {{-- <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-1.png" alt=""> --}}
                         <h4 class="mb-3">Unggah Kode QR</h4>
                         <p class="mb-4">Punya kode QR pada kemasan beras UD Tani Rejo Anda? Unggah di
-                             sini untuk mengetahui lebih lanjut tentang asal usul dan perjalanannya.</p>
+                            sini untuk mengetahui lebih lanjut tentang asal usul dan perjalanannya.</p>
                         <input type="file" id="uploadFileInput" class="mb-4" accept="image/*">
                         <button id="scanButton" class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill"
                             onclick="handleFileUpload()">Memindai File</button>
@@ -279,8 +286,9 @@
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         {{-- <img class="img-fluid mb-4" src="{{ asset('landing_page') }}img/icon-2.png" alt=""> --}}
                         <h4 class="mb-3">Pindai Kode QR</h4>
-                        <p class="mb-4">Lebih suka memindai? Gunakan ponsel cerdas Anda untuk memindai kode QR pada kemasan
-                             beras UD Tani Rejo untuk mendapatkan akses cepat ke detail penelusuran.</p>
+                        <p class="mb-4">Lebih suka memindai? Gunakan ponsel cerdas Anda untuk memindai kode QR pada
+                            kemasan
+                            beras UD Tani Rejo untuk mendapatkan akses cepat ke detail penelusuran.</p>
                         <button class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" onclick="openCameraModal()">Buka Kamera</button>
                     </div>
@@ -378,7 +386,7 @@
                         <img class="img-fluid mb-4" src="{{ asset('landing_page') }}/img/icon-1.png" alt="">
                         <h4 class="mb-3">Pemrosesan Alami</h4>
                         <p class="mb-4">Beras kami menggunakan teknik pengolahan
-                             alami untuk menjaga kualitas dan nilai gizinya.</p>
+                            alami untuk menjaga kualitas dan nilai gizinya.</p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Baca
                             Selengkapnya</a>
                     </div>
@@ -483,7 +491,8 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak
+                                Produk</a>
                         </div>
                     </div>
                 </div>
@@ -536,7 +545,8 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak
+                                Produk</a>
                         </div>
                     </div>
                 </div>
@@ -554,13 +564,13 @@
                 <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
                     <h1 class="display-5 text-white mb-3">Jelajahi Pertanian Kami</h1>
                     <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada
-                         tanggal 17 Februari 2024, UD Tani Rejo memiliki peran strategis dalam
-                          menjamin kualitas beras yang diekspor melalui manajemen yang sesuai
-                          dengan standar prosedur operasional yang dimiliki. Setiap tahapan
-                          produksi dan distribusi beras dicatat secara transparan dan
-                          terdokumentasi. Informasi mengenai asal usul beras, proses pengolahan, dan
-                           kondisi penyimpanan dapat diakses melalui catatan yang disampaikan secara
-                            lisan.</p>
+                        tanggal 17 Februari 2024, UD Tani Rejo memiliki peran strategis dalam
+                        menjamin kualitas beras yang diekspor melalui manajemen yang sesuai
+                        dengan standar prosedur operasional yang dimiliki. Setiap tahapan
+                        produksi dan distribusi beras dicatat secara transparan dan
+                        terdokumentasi. Informasi mengenai asal usul beras, proses pengolahan, dan
+                        kondisi penyimpanan dapat diakses melalui catatan yang disampaikan secara
+                        lisan.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"
@@ -583,7 +593,8 @@
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">"Pengalaman yang luar biasa dengan UD Tani Rejo! Komitmen mereka terhadap kualitas dan
+                    <p class="mb-4">"Pengalaman yang luar biasa dengan UD Tani Rejo! Komitmen mereka terhadap
+                        kualitas dan
                         transparansi dalam produk mereka patut dipuji. Saya sangat merekomendasikan mereka!"</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
@@ -596,8 +607,9 @@
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">"UD Tani Rejo menyediakan layanan yang sangat baik dan produk mereka adalah yang terbaik
-                        . Kami   senang dengan profesionalisme mereka dan pasti akan memilih mereka lagi!"</p>
+                    <p class="mb-4">"UD Tani Rejo menyediakan layanan yang sangat baik dan produk mereka adalah yang
+                        terbaik
+                        . Kami senang dengan profesionalisme mereka dan pasti akan memilih mereka lagi!"</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-2.jpg" alt="">
@@ -610,7 +622,7 @@
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
                     <p class="mb-4">"Saya terkesan dengan kualitas dan rasa produk dari UD Tani Rejo. Dedikasi
-                         mereka  dedikasi mereka terhadap kesegaran dan keberlanjutan benar-benar luar biasa."</p>
+                        mereka dedikasi mereka terhadap kesegaran dan keberlanjutan benar-benar luar biasa."</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-3.jpg" alt="">
@@ -623,7 +635,7 @@
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
                     <p class="mb-4">"Produk UD Tani Rejo telah melampaui harapan kami.
-                         Komitmen mereka terhadap kualitas dan kepuasan pelanggan tidak tertandingi."</p>
+                        Komitmen mereka terhadap kualitas dan kepuasan pelanggan tidak tertandingi."</p>
                     <div class="d-flex align-items-center">
                         <img class="flex-shrink-0 rounded-circle"
                             src="{{ asset('landing_page') }}/img/testimonial-4.jpg" alt="">
@@ -721,20 +733,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Tautan Cepat</h4>
-                    <a class="btn btn-link" href="">Tentang Kami</a>
-                    <a class="btn btn-link" href="">Kontak Kami</a>
-                    <a class="btn btn-link" href="">Layanan Kami</a>
-                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
-                    <a class="btn btn-link" href="">Bantuan</a>
+                    <a class="btn btn-link" href="{{ route('about_id') }}">Tentang Kami</a>
+                    <a class="btn btn-link" href="{{ route('products_in') }}">Produk</a>
+                    <a class="btn btn-link" href="{{ route('pengolahan_in') }}">Ketertelusuran</a>
+                    <a class="btn btn-link" href="{{ route('contact_in') }}">Kontak Kami</a>
+                    <a class="btn btn-link" href="mailto:jejakpadi@gmail.com">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Buletin</h4>
-                    <p>Berlangganan buletin kami untuk mendapatkan informasi terbaru mengenai produk segar dan kiat-kiat pertanian.</p>
+                    <h4 class="text-light mb-4">Kontak Kami</h4>
+                    <p>Akses tercepat terhubung dengan JejakPadi.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
+                        <a href="mailto:jejakpadi@gmail.com" class="btn btn-primary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">Email</a>
+                        <a href="https://wa.me/6287840199095" class="btn btn-secondary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -747,8 +759,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Dirancang oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
-                        <br>Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
+                        Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
+                        <br>Dirancang oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
                     </div>
                 </div>
             </div>

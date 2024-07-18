@@ -700,7 +700,7 @@
                 <div class="col-lg-3 col-md-6">
                     <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
                         alt="logo_ud" />
-                    <p>Discover the finest produce straight from our farms to your table. We're committed to quality and
+                    <p>Find the best produce straight from our farms to your table. We are committed to quality and
                         sustainability.</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
@@ -721,20 +721,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ route('products') }}">Product</a>
+                    <a class="btn btn-link" href="{{ route('pengolahan') }}">Traceability</a>
+                    <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
+                    <a class="btn btn-link" href="mailto:jejakpadi@gmail.com">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Subscribe to our newsletter for updates on fresh produce and farming tips.</p>
+                    <h4 class="text-light mb-4">Contact Us</h4>
+                    <p>Fastest access to connect with JejakPadi.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <a href="mailto:jejakpadi@gmail.com" class="btn btn-primary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">Email</a>
+                        <a href="https://wa.me/6287840199095" class="btn btn-secondary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -746,9 +746,8 @@
                         &copy; <a href="#">JejakPadi</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
-                        <br>Distributed By: <a href="#" target="_blank">UD Tani Rejo</a>
+                        Distributed By: <a href="#" target="_blank">UD Tani Rejo</a>
+                        <br>Supported By <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
                     </div>
                 </div>
             </div>

@@ -71,11 +71,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link">Beranda</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link">Produk</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link active">Kontak Kami</a>
+                    <a href="./in" class="nav-item nav-link">Beranda</a>
+                    <a href="{{ route('about_id') }}" class="nav-item nav-link">Tentang Kami</a>
+                    <a href="{{ route('products_in') }}" class="nav-item nav-link">Produk</a>
+                    <a href="{{ route('pengolahan_in') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact_in') }}" class="nav-item nav-link active">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('contact') }}">
@@ -172,7 +172,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Kirim Pesan</button>
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Kirim
+                                    Pesan</button>
                             </div>
                         </div>
                     </form>
@@ -197,8 +198,8 @@
                 <div class="col-lg-3 col-md-6">
                     <img class="mb-4" src="{{ asset('asset/custom/img/landingpage/ic_logo_2.png') }}"
                         alt="logo_ud" />
-                    <p>Temukan hasil bumi terbaik langsung dari pertanian kami.
-                         Kami berkomitmen terhadap kualitas dan keberlanjutan.</p>
+                    <p>Temukan hasil bumi terbaik langsung dari perkebunan kami ke meja Anda.
+                        Kami berkomitmen terhadap kualitas dan keberlanjutan.</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -218,20 +219,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Tautan Cepat</h4>
-                    <a class="btn btn-link" href="">Tentang Kami</a>
-                    <a class="btn btn-link" href="">Kontak Kami</a>
-                    <a class="btn btn-link" href="">Layanan Kami</a>
-                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
-                    <a class="btn btn-link" href="">Bantuan</a>
+                    <a class="btn btn-link" href="{{ route('about_id') }}">Tentang Kami</a>
+                    <a class="btn btn-link" href="{{ route('products_in') }}">Produk</a>
+                    <a class="btn btn-link" href="{{ route('pengolahan_in') }}">Ketertelusuran</a>
+                    <a class="btn btn-link" href="{{ route('contact_in') }}">Kontak Kami</a>
+                    <a class="btn btn-link" href="mailto:jejakpadi@gmail.com">Bantuan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Buletin</h4>
-                    <p>Berlangganan buletin kami untuk mendapatkan informasi terbaru tentang produk segar dan kiat-kiat pertanian.</p>
+                    <h4 class="text-light mb-4">Kontak Kami</h4>
+                    <p>Akses tercepat terhubung dengan JejakPadi.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
+                        <a href="mailto:jejakpadi@gmail.com" class="btn btn-primary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">Email</a>
+                        <a href="https://wa.me/6287840199095" class="btn btn-secondary rounded-pill px-sm-4 ms-3"
+                            target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -244,8 +245,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Didesain Oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
-                        <br>Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
+                        Didistribusikan oleh: <a href="#" target="_blank">UD Tani Rejo</a>
+                        <br>Dirancang oleh <a href="https://www.instagram.com/pkmpi.jejakpadi/">PKM-PI JejakPadi</a>
                     </div>
                 </div>
             </div>

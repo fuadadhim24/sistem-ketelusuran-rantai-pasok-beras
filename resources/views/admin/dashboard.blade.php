@@ -395,15 +395,16 @@
             <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
                 href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
-                <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
+                <p class="m-0 mb-1 me-4 fs-7">PKM-PI JejakPadi<span role="img" aria-label="gratitude">💛</span></p>
+                <a href="https://www.instagram.com/reel/C9T6HPASyYc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                     data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
                     data-size="large" data-show-count="true"
-                    aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
+                    aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">2024</a>
             </div>
-            <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
+            <a href="https://www.instagram.com/reel/C9T6HPASyYc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                target="_blank"
                 class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
-                Download
+                Sosial Media
                 <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -411,16 +412,12 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </a>
-            <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
-            <div class="d-flex justify-content-center">
-                <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
-                    target="_blank">
-                    <img src="{{ asset('volt/assets/img/technologies/bootstrap-5-logo.svg') }}" class="image image-xs">
-                </a>
-                <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                    <img src="{{ asset('volt/assets/img/technologies/react-logo.svg') }}" class="image image-xs">
-                </a>
-            </div>
+            <div role="separator" class="dropdown-divider my-1 mb-3"></div>
+            <a href="{{ route('settings') }}" target="_blank"
+                class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
+                Settings
+            </a>
+            
         </div>
     </div>
 

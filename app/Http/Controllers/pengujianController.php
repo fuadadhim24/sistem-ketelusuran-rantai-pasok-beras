@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class pengujianController extends Controller
 {
     function index(){
-        return view('admin.klasifikasiMutu.index');
+        $pengujian = ProduksiModel::getProduksiHasPengujian()->count();
+        return view('admin.klasifikasiMutu.index', compact('pengujian'));
     }
     function tambahView(){
         return view('admin.klasifikasiMutu.tambah');
