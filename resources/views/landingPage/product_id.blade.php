@@ -69,10 +69,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="/" class="nav-item nav-link">Beranda</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="{{ route('products') }}" class="nav-item nav-link active">Produk</a>
-                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Ketertelusuran</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link">Hubungi Kami</a>
+                    <a href="{{ route('about_id') }}" class="nav-item nav-link">Tentang Kami</a>
+                    <a href="{{ route('products_in') }}" class="nav-item nav-link active">Produk</a>
+                    <a href="{{ route('pengolahan_in') }}" class="nav-item nav-link">Ketertelusuran</a>
+                    <a href="{{ route('contact_in') }}" class="nav-item nav-link">Kontak Kami</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('products') }}">
@@ -182,7 +182,8 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak
+                                Produk</a>
                         </div>
                     </div>
                 </div>
@@ -235,7 +236,8 @@
                         @endforelse
 
                         <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak Produk</a>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Jelajahi Lebih Banyak
+                                Produk</a>
                         </div>
                     </div>
                 </div>
@@ -251,12 +253,13 @@
             <div class="row g-5 align-items-center">
                 <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
                     <h1 class="display-5 text-white mb-3">Jelajahi Pertanian Kami</h1>
-                    <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada tanggal 17 Februari 2024,
+                    <p class="text-white mb-0">Berdasarkan hasil wawancara yang dilakukan pada tanggal 17 Februari
+                        2024,
                         UD Tani Rejo memiliki peran strategis dalam memastikan kualitas beras yang diekspor
                         melalui pengelolaan yang sesuai dengan standar prosedur operasional yang dimilikinya.
                         Setiap tahapan produksi dan distribusi beras dicatat secara transparan dan terdokumentasi.
-                         Informasi mengenai asal usul beras, proses pengolahan, dan kondisi penyimpanan
-                         dapat diakses melalui catatan yang disampaikan secara lisan.</p>
+                        Informasi mengenai asal usul beras, proses pengolahan, dan kondisi penyimpanan
+                        dapat diakses melalui catatan yang disampaikan secara lisan.</p>
                 </div>
                 <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5"

@@ -68,11 +68,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="./in" class="nav-item nav-link">Beranda</a>
-                    <a href="{{ route('about_id') }}" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="{{ route('products_in') }}" class="nav-item nav-link active">Produk</a>
-                    <a href="{{ route('pengolahan_in') }}" class="nav-item nav-link">Ketertelusuran</a>
-                    <a href="{{ route('contact_in') }}" class="nav-item nav-link">Kontak Kami</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link">About Us</a>
+                    <a href="{{ route('products') }}" class="nav-item nav-link active">Products</a>
+                    <a href="{{ route('pengolahan_en.index') }}" class="nav-item nav-link">Traceability</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link">Contact Us</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="{{ route('products_in') }}">

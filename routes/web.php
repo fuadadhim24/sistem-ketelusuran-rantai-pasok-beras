@@ -16,6 +16,7 @@ use App\Http\Controllers\perlakuanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\varietasPadiController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 
@@ -167,3 +168,4 @@ Route::get('/contact', function() {return view('landingPage.contact');})->name('
 Route::get('/contact_in', function() {return view('landingPage.contact_in');})->name('contact_in');
 Route::get('/feature', function() {return view('landingPage.feature');})->name('feature');
 Route::get('/testimonial', function() {return view('landingPage.testimonial');})->name('testimonial');
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
