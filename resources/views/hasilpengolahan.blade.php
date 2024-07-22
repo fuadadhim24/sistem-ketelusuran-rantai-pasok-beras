@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Beranda</title>
+    <title>Riwayat Ketertelusuran | JejakPadi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
@@ -364,7 +364,7 @@
                                         <span
                                             class="rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11">
                                             <img alt="Image placeholder"
-                                                src="{{ asset('asset/img/produk/' . $produksi->produk->foto) }}"
+                                                src="{{ asset('assets/img/produk/' . $product->foto) }}"
                                                 class="avatar-md rounded">
                                         </span>
                                         <span
@@ -601,6 +601,8 @@
                                             style='height: 300px; margin-bottom:20px'>
                                         </div>
                                     </span>
+                                    {{-- <p>{{$produksi->lahan->latitude}}</p>
+                                    <p>{{$produksi->lahan->longitude}}</p> --}}
                                     <script>
                                         mapboxgl.accessToken =
                                             'pk.eyJ1IjoiZnVhZGFkaGltMjQiLCJhIjoiY2x0ZHNzbDdtMDZyaDJrcDczMnV3emdxaSJ9.ECFyjfuYWvVLH6ya-_P1Vw';
@@ -619,13 +621,13 @@
                                         var map = new mapboxgl.Map({
                                             container: `map-lokasi`,
                                             style: 'mapbox://styles/mapbox/streets-v12',
-                                            center: [{{ $produksi->lahan->latitude }}, {{ $produksi->lahan->longitude }}],
+                                            center: [{{ $produksi->lahan->longitude }}, {{ $produksi->lahan->latitude }}],
                                             zoom: 9
                                         });
 
                                         // Tambahkan marker untuk lokasi lahan
                                         var marker = new mapboxgl.Marker()
-                                            .setLngLat([{{ $produksi->lahan->latitude }}, {{ $produksi->lahan->longitude }}])
+                                            .setLngLat([{{ $produksi->lahan->longitude }}, {{ $produksi->lahan->latitude }}])
                                             .addTo(map);
                                     </script>
                                 </div>

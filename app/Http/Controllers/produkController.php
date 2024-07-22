@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -11,8 +12,8 @@ class ProdukController extends Controller
     public function index()
     {
         try {
-            $Produks = Produk::all();
-            return response()->json(['Produk' => $Produks]);
+            $produks = Produk::all();
+            return response()->json(['Produk' => $produks]);
         } catch (\Exception $e) {
             Log::error("Error fetching products: " . $e->getMessage());
             return response()->json(['error' => 'Internal Server Error'], 500);
@@ -21,39 +22,41 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'nama_produk' => 'required|string|max:255',
-            'jumlah_unit' => 'required|integer',
-            'foto' => 'required|image|max:2048',
-            'harga' => 'required|integer',
-            'deskripsi' => 'required|string',
-        ]);
-
         try {
+            $validated = $request->validate([
+                'nama_produk' => 'required|string|max:255',
+                'jumlah_unit' => 'required|integer',
+                'foto' => 'required|image|max:2048', // ensure it's an image and maximum 2MB
+                'harga' => 'required|integer',
+                'deskripsi' => 'required|string',
+            ]);
+
             $file = $request->file('foto');
-            $path = 'assets/img/produk';
-            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = 'assets/img/produk/';
+            $filename = $file->getClientOriginalName();
             $file->move(public_path($path), $filename);
 
-            $Produk = Produk::create([
+            $produk = Produk::create([  
                 'nama_produk' => $validated['nama_produk'],
                 'jumlah_unit' => $validated['jumlah_unit'],
-                'foto' => $path . '/' . $filename,
+                'foto' => $filename,
                 'harga' => $validated['harga'],
                 'deskripsi' => $validated['deskripsi'],
             ]);
 
-            return response()->json(['Produk' => $Produk]);
+            return response()->json(['Produk' => $produk]);
         } catch (\Exception $e) {
             Log::error("Error storing product: " . $e->getMessage());
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
+
+
     public function edit($id)
     {
         try {
-            $Produk = Produk::findOrFail($id);
-            return response()->json(['Produk' => $Produk]);
+            $produk = Produk::findOrFail($id);
+            return response()->json(['Produk' => $produk]);
         } catch (\Exception $e) {
             Log::error("Error fetching product: " . $e->getMessage());
             return response()->json(['error' => 'Internal Server Error'], 500);
@@ -62,32 +65,38 @@ class ProdukController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
-            'nama_produk' => 'required|string|max:255',
-            'jumlah_unit' => 'required|integer',
-            'foto' => 'sometimes|image|max:2048',
-            'harga' => 'required|integer',
-            'deskripsi' => 'required|string',
-        ]);
-
         try {
-            $Produk = Produk::findOrFail($id);
+            $validated = $request->validate([
+                'nama_produk' => 'required|string|max:255',
+                'jumlah_unit' => 'required|integer',
+                'foto' => 'sometimes|image|max:2048',
+                'harga' => 'required|integer',
+                'deskripsi' => 'required|string',
+            ]);
+
+            $produk = Produk::findOrFail($id);
 
             if ($request->hasFile('foto')) {
-                if (File::exists(public_path($Produk->foto))) {
-                    File::delete(public_path($Produk->foto));
-                }
+                // Delete old foto if exists
+                $this->deleteFoto($produk);
 
+                // Upload new foto
                 $file = $request->file('foto');
                 $path = 'assets/img/produk';
-                $filename = time() . '_' . $file->getClientOriginalName();
+                $filename = $file->getClientOriginalName();
                 $file->move(public_path($path), $filename);
-                $Produk->foto = $path . '/' . $filename;
+                $produk->foto = $filename;
             }
 
-            $Produk->update($validated);
+            // Update other fields
+            $produk->nama_produk = $validated['nama_produk'];
+            $produk->jumlah_unit = $validated['jumlah_unit'];
+            $produk->harga = $validated['harga'];
+            $produk->deskripsi = $validated['deskripsi'];
 
-            return response()->json(['Produk' => $Produk]);
+            $produk->save();
+
+            return response()->json(['Produk' => $produk]);
         } catch (\Exception $e) {
             Log::error("Error updating product: " . $e->getMessage());
             return response()->json(['error' => 'Internal Server Error'], 500);
@@ -97,16 +106,26 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         try {
-            $Produk = Produk::findOrFail($id);
-            if (File::exists(public_path($Produk->foto))) {
-                File::delete(public_path($Produk->foto));
-            }
-            $Produk->delete();
+            $produk = Produk::findOrFail($id);
+
+            // Delete foto
+            $this->deleteFoto($produk);
+
+            // Delete produk
+            $produk->delete();
 
             return response()->json(['message' => 'Produk deleted successfully']);
         } catch (\Exception $e) {
             Log::error("Error deleting product: " . $e->getMessage());
             return response()->json(['error' => 'Internal Server Error'], 500);
+        }
+    }
+
+    // Helper method to delete foto
+    private function deleteFoto($produk)
+    {
+        if (File::exists(public_path($produk->foto))) {
+            File::delete(public_path($produk->foto));
         }
     }
 }

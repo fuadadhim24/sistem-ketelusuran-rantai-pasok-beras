@@ -1163,6 +1163,7 @@ body {
     letter-spacing: -1px;
     line-height: 1.583;
     color: #3F3F3F;
+    margin-top: 165px;
 }
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-20 {
     overflow-wrap: break-word;
@@ -1422,7 +1423,7 @@ body {
 .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-222 {
 
     overflow-wrap: break-word;
-    margin-top: 14px;
+    margin-top: 5px;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 18px;
@@ -2551,13 +2552,16 @@ input.cari .hasil-pengolahan .container-5 {
 .accordion-item {
     margin-bottom: 20px;
 }
-@media screen and (max-width : 576px) {
+@media screen and (max-width : 651px) {
     .header{
         margin-top: 5%!important;
     }
+    .hasil-pengolahan .group-639{
+        margin: 0 0 0 40px!important;
+    }
     .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup{
         align-self: center!important;
-        margin: 0 0 0 0!important;
+        margin: 40px 0 0 0!important;
         font-size: 20px!important;
     }
     .group-645{
@@ -2605,7 +2609,9 @@ input.cari .hasil-pengolahan .container-5 {
     }
     .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-15{
         margin: 27px 0 0 0!important;
-
+    }
+    .hasil-pengolahan .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-11 img{
+        margin: 10px 0 173px 0!important;
     }
     .group-635{
         margin: 0 0 0 0!important;
@@ -2667,7 +2673,7 @@ input.cari .hasil-pengolahan .container-5 {
     }
     .group-635{
         width: 41%!important;
-        margin: 8% 0 0 0 !important;
+        margin: 38px 0 0 0 !important;
     }
     .group-637 {
         width: 22%!important;
@@ -2675,10 +2681,10 @@ input.cari .hasil-pengolahan .container-5 {
     }
     .group-647 {
         width: 43%!important;
-        margin: 13px 0 0 0!important;
+        margin: 35px 0 0 20px!important;
     }
     .group-649{
-        margin: -4px 0 0 57px!important;
+        margin: 8px 0 0 57px!important;
         gap: 0px!important;
     }
     .group-650{
@@ -2694,7 +2700,7 @@ input.cari .hasil-pengolahan .container-5 {
     }
     .group-638{
         width: 54%!important;
-        margin: 9px 0 0 3px!important
+        margin: 30px 0 0 3px!important;
     }
     .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-34 {
         font-size: 18px!important;
@@ -2710,7 +2716,7 @@ input.cari .hasil-pengolahan .container-5 {
         margin: 1% 0 7% 0!important;
     }
     .group-646{
-        margin: 5% 0 0 0!important;
+        margin: 38px 0 0 0!important;
     }
     .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-32{
         font-size: 16px!important;
@@ -2725,7 +2731,7 @@ input.cari .hasil-pengolahan .container-5 {
 
     }
     .group-648{
-        margin: -3px 0 0 69px!important;
+        margin: 20px 0 0 69px!important;
     }
     .rs-layer-wrap-rs-loop-wrap-rs-mask-wrap-heading-1-meningkatkan-kualitas-hidup-35 {
         margin: -10px 0 0 0!important;

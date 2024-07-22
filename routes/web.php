@@ -6,7 +6,7 @@ use App\Http\Controllers\faseController;
 use App\Http\Controllers\gudangController;
 use App\Http\Controllers\HasilPanenController;
 use App\Http\Controllers\HasilPengolahanController;
-use App\Http\Controllers\pengemasanController;
+use App\Http\Controllers\PengemasanController;
 use App\Http\Controllers\pengolahanController;
 use App\Http\Controllers\pengolahanEnController;
 use App\Http\Controllers\lahanController;
@@ -18,7 +18,7 @@ use App\Http\Controllers\settingsController;
 use App\Http\Controllers\varietasPadiController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\produkController;
 
 /*
 |--------------------------------------------------------------------------

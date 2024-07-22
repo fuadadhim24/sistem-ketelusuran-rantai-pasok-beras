@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use App\Models\ProduksiModel;
 
 class Produk extends Model
 {
@@ -15,14 +17,11 @@ class Produk extends Model
         'jumlah_unit',
         'foto',
         'harga',
-        'deskripsi',
-        'deleted_at',
-        'created_at',
-        'updated_at',
+        'deskripsi'
     ];
 
     public function produksi(){
-        return $this->belongsTo(Produksi::class,'id_produksi','id');
+        return $this->belongsTo(ProduksiModel::class,'id_produksi','id');
     }
     public function detailPengolahan($id){
         return DB::table('produk')->where('id',$id)->first();
