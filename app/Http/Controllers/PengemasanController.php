@@ -26,7 +26,7 @@ class PengemasanController extends Controller
         ]);
         // return response('Bisa');
         $tanggalPengemasan = $validateData['tanggal_pengemasan'];
-        $qrCode = 'jejakpadi.com/hasil-pengolahan-in/'.$validateData['id_produksi'];
+        $qrCode = 'https://jejakpadi.com/hasil-pengolahan-in/'.$validateData['id_produksi'];
 
         $pengemasan = new PengemasanModel();
         $pengemasan->id_pengolahan = $validateData['id_pengolahan'];

@@ -324,7 +324,7 @@
                             <div class="col-12 mb-4">
                                 <div class="card border-0 shadow">
                                     <div class="card-body">
-                                        <form id="pengujianForm" action="{{ route('pengujian.store') }}" method="POST">
+                                        <form id="pengujianForm" action="{{ route('pengujian-store') }}" method="POST">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-lg-4 col-sm-6">
@@ -491,7 +491,7 @@
 
             function fetchPengolahan() {
                 $.ajax({
-                    url: "{{ route('fetch.pengolahan') }}",
+                    url: "{{ route('fetch-pengolahan') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -517,7 +517,7 @@
 
             function fetchPengujian() {
                 $.ajax({
-                    url: "{{ route('pengujian.fetch') }}",
+                    url: "{{ route('pengujian-fetch') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -575,7 +575,7 @@
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: '{{ route('pengujian.store') }}',
+                    url: '{{ route('pengujian-store') }}',
                     type: 'POST',
                     data: formData,
                     success: function(response) {

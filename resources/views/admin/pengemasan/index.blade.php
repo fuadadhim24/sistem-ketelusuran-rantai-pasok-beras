@@ -251,7 +251,7 @@
     <div class="row">
         <div class="col-12 col-xl-4">
             <div class="card border-0 shadow components-section">
-                <form id="pengemasanForm" action="{{ route('pengemasan.store') }}" method="POST">
+                <form id="pengemasanForm" action="{{ route('pengemasan-store') }}" method="POST">
                     @csrf
                     <div class="card-header border-bottom d-flex align-items-center justify-content-between">
                         <h2 class="fs-5 fw-bold mb-0">Tambah Pengemasan</h2>
@@ -533,7 +533,7 @@
             // Fetch pengemasan data pertama kali saat halaman dimuat
             function fetchPengemasan() {
                 $.ajax({
-                    url: "{{ route('pengemasan.fetch') }}",
+                    url: "{{ route('pengemasan-fetch') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -588,7 +588,7 @@
             // Fetch unPengemasan data untuk dropdown saat halaman dimuat
             function fetchUnPengemasan() {
                 $.ajax({
-                    url: "{{ route('un-pengemasan.fetch') }}",
+                    url: "{{ route('un-pengemasan-fetch') }}",
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
@@ -613,7 +613,7 @@
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: '{{ route('pengemasan.store') }}',
+                    url: '{{ route('pengemasan-store') }}',
                     type: 'POST',
                     data: formData,
                     success: function(response) {

@@ -406,7 +406,7 @@
     };
 
     $.ajax({
-        url: '{{ route('lahan.store') }}',
+        url: '{{ route('lahan-store') }}',
         method: 'POST',
         data: formData,
         success: function(response) {

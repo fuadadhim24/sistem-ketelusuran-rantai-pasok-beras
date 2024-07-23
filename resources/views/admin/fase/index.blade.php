@@ -215,7 +215,7 @@ $(document).ready(function() {
     $('#addFaseForm').on('submit', function(e) {
         e.preventDefault();
         $.ajax({
-            url: '{{ route('fase.store') }}',
+            url: '{{ route('fase-store') }}',
             method: 'POST',
             data: $(this).serialize(),
             success: function(response) {

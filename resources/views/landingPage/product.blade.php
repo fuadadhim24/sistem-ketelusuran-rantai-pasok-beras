@@ -145,8 +145,7 @@
                                 <div class="product-item">
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid w-100"
-                                            src="{{ asset('landing_page') }}/img/{{ $product->foto }}"
-                                            alt="">
+                                            src="{{ asset('assets/img/produk/' . $product->foto) }}" alt="">
                                         <div
                                             class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                             New</div>
@@ -162,8 +161,9 @@
                                                     class="fa fa-eye text-primary me-2"></i>View detail</a>
                                         </small>
                                         <small class="w-50 text-center py-2">
-                                            <a class="text-body" href=""><i
-                                                    class="fa fa-shopping-bag text-primary me-2"></i>Order Now</a>
+                                            <a class="text-body" href="https://wa.me/6287840199095" target="_blank">
+                                                <i class="fa fa-shopping-bag text-primary me-2"></i>Order Now
+                                            </a>                                            
                                         </small>
                                     </div>
                                 </div>
@@ -198,8 +198,7 @@
                                 <div class="product-item">
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid w-100"
-                                            src="{{ asset('landing_page') }}/img/{{ $product->foto }}"
-                                            alt="">
+                                            src="{{ asset('assets/img/produk/' . $product->foto) }}" alt="">
                                         <div
                                             class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                             New</div>

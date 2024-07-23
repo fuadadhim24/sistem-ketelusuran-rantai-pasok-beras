@@ -254,7 +254,7 @@
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    url: '{{ route('Produk.store') }}',
+                    url: '{{ route('produk-store') }}',
                     method: 'POST',
                     data: formData,
                     processData: false,

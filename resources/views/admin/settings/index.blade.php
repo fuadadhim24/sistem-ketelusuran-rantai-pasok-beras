@@ -340,7 +340,7 @@
             <div class="card card-body border-0 shadow mb-4">
                 <h2 class="h5">Informasi Biodata Anda</h2>
                 <p class="mb-4">Anda dapat mengubah informasi data diri anda.</p>
-                <form method="POST" action="{{ route('user.update.password', ['id' => $user->id]) }}">
+                <form method="POST" action="{{ route('user-update-password', ['id' => $user->id]) }}">
                     @csrf
                     @method('PUT')
                     <div class="row">

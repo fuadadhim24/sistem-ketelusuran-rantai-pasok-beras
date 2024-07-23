@@ -68,18 +68,18 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
         Route::get('/produk', function () {return view('admin.produk.index');})->name('produk');
 
         Route::resource('Produk', ProdukController::class);
-        Route::get('/Produk', [ProdukController::class, 'index'])->name('Produk.index');
-        Route::post('/Produk/store', [ProdukController::class, 'store'])->name('Produk.store');
+        Route::get('/Produk', [ProdukController::class, 'index'])->name('Produk-index');
+        Route::post('/Produk/store', [ProdukController::class, 'store'])->name('produk-store');
         Route::get('/Produks/{id}/edit', [ProdukController::class, 'edit'])->name('edit-produk');
-        Route::put('/Produks/{id}/update', [ProdukController::class, 'update'])->name('Produk.update'); // Using POST with _method trick for form-data
-        Route::delete('/Produks/{id}', [ProdukController::class, 'destroy'])->name('Produk.destroy');
-        Route::get('/reload-content-Produk', [ProdukController::class, 'reloadContent'])->name('Produk.reload');
+        Route::put('/Produks/{id}/update', [ProdukController::class, 'update'])->name('produk-update'); // Using POST with _method trick for form-data
+        Route::delete('/Produks/{id}', [ProdukController::class, 'destroy'])->name('produk-destroy');
+        Route::get('/reload-content-Produk', [ProdukController::class, 'reloadContent'])->name('produk-reload');
         Route::get('/produksi/data', [ProdukController::class, 'getProduksiData']);
 
         Route::get('/varietas-padi', [varietasPadiController::class, 'index'])->name('varietas-padi');
         Route::get('/varietas-padi/tambah-varietas', [varietasPadiController::class, 'tambahView'])->name('tambah-varietas');
         Route::post('/varietasPadi', [VarietasPadiController::class, 'store'])->name('varietasPadi.store');
-        Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi.destroy');
+        Route::delete('/hapusvarietas/{varietasPadi}', [VarietasPadiController::class, 'destroy'])->name('varietasPadi-destroy');
         Route::get('/latest-data', [VarietasPadiController::class, 'latestData']);
         Route::get('/varietasPadi/{id}/edit', [VarietasPadiController::class, 'edit'])->name('edit-varietas');
         Route::put('/varietasPadi/{id}/update', [VarietasPadiController::class, 'update'])->name('update-varietas');
@@ -94,7 +94,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
         Route::put('/fase/perlakuan/{id}/update', [faseController::class, 'updatePerlakuan']); 
         Route::delete('/fase/perlakuan/{id}/delete', [faseController::class, 'destroyPerlakuan']); 
         Route::get('/fases/{id}', [faseController::class, 'show']);
-        Route::post('/fase/store', [faseController::class, 'store'])->name('fase.store');
+        Route::post('/fase/store', [faseController::class, 'store'])->name('fase-store');
         Route::get('/fase/{id}/edit', [faseController::class, 'edit'])->name('edit-fase');
         Route::delete('/fase/{id}/delete', [faseController::class, 'destroy'])->name('hapus-fase');
         Route::patch('/update/{id}', [faseController::class, 'update'])->name('update-fase');
@@ -107,23 +107,23 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
 
         Route::resource('gudang', GudangController::class);
         Route::get('/gudang', [gudangController::class, 'index'])->name('gudang');
-        Route::get('/getgudang', [gudangController::class, 'getgudangs'])->name('get.gudang');
-        Route::post('/tambahgudang', [gudangController::class, 'store'])->name('gudang.store');
-        Route::delete('/gudang/{id}/delete', [gudangController::class, 'destroy'])->name('gudang.delete');
-        Route::put('/gudang/{id}', [gudangController::class, 'update'])->name('gudang.update');
-        Route::get('/gudang/{id}/edit', [gudangController::class, 'edit'])->name('gudang.edit');
+        Route::get('/getgudang', [gudangController::class, 'getgudangs'])->name('get-gudang');
+        Route::post('/tambahgudang', [gudangController::class, 'store'])->name('gudang-store');
+        Route::delete('/gudang/{id}/delete', [gudangController::class, 'destroy'])->name('gudang-delete');
+        Route::put('/gudang/{id}', [gudangController::class, 'update'])->name('gudang-update');
+        Route::get('/gudang/{id}/edit', [gudangController::class, 'edit'])->name('gudang-edit');
         Route::get('/gudang/{id}/view', [gudangController::class, 'show']);
 
         Route::get('/lahan', function () {return view('admin.lahan.index'); })->name('lahan');
-        Route::get('/getlahan', [lahanController::class, 'getlahans'])->name('get.lahan');
-        Route::post('/tambahlahan', [lahanController::class, 'store'])->name('lahan.store');
-        Route::delete('/lahan/{id}/delete', [lahanController::class, 'destroy'])->name('lahan.delete');
-        Route::put('/lahan/{id}', [LahanController::class, 'update'])->name('lahan.update');
-        Route::get('/lahan/{id}/edit', [LahanController::class, 'edit'])->name('lahan.edit');
+        Route::get('/getlahan', [lahanController::class, 'getlahans'])->name('get-lahan');
+        Route::post('/tambahlahan', [lahanController::class, 'store'])->name('lahan-store');
+        Route::delete('/lahan/{id}/delete', [lahanController::class, 'destroy'])->name('lahan-delete');
+        Route::put('/lahan/{id}', [LahanController::class, 'update'])->name('lahan-update');
+        Route::get('/lahan/{id}/edit', [LahanController::class, 'edit'])->name('lahan-edit');
         Route::get('/lahan/{id}/view', [LahanController::class, 'show']);
 
         Route::get('/settings', [settingsController::class, 'index'])->name('settings');
-        Route::put('/settings/update-password/{id}', [SettingsController::class, 'updatePassword'])->name('user.update.password');
+        Route::put('/settings/update-password/{id}', [SettingsController::class, 'updatePassword'])->name('user-update-password');
 
         Route::resource('varietasPadis', VarietasPadiController::class);
 
@@ -135,27 +135,27 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
 
         // pengolahan
         Route::get('/pengolahan', [AdminPengolahanController::class, 'index'])->name('pengolahan');
-        Route::get('/pengolahan-fetch', [AdminPengolahanController::class, 'fetchPengolahan'])->name('pengolahan.fetch');
-        Route::get('/fetch-unpengolahan', [AdminPengolahanController::class, 'fetchUnPengolahan'])->name('unpengolahan.fetch');
-        Route::post('pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan.store');
-        Route::delete('/pengolahan/{id}/delete', [AdminPengolahanController::class, 'destroy'])->name('pengolahan.destroy');
-        Route::get('/pengolahan/{id}/edit', [AdminPengolahanController::class, 'edit'])->name('pengolahan.edit');
-        Route::put('/pengolahan/{id}/update', [AdminPengolahanController::class, 'update'])->name('pengolahan.update');
+        Route::get('/pengolahan-fetch', [AdminPengolahanController::class, 'fetchPengolahan'])->name('pengolahan-fetch');
+        Route::get('/fetch-unpengolahan', [AdminPengolahanController::class, 'fetchUnPengolahan'])->name('unpengolahan-fetch');
+        Route::post('pengolahan/store', [AdminPengolahanController::class, 'store'])->name('pengolahan-store');
+        Route::delete('/pengolahan/{id}/delete', [AdminPengolahanController::class, 'destroy'])->name('pengolahan-destroy');
+        Route::get('/pengolahan/{id}/edit', [AdminPengolahanController::class, 'edit'])->name('pengolahan-edit');
+        Route::put('/pengolahan/{id}/update', [AdminPengolahanController::class, 'update'])->name('pengolahan-update');
 
         //pengujian
         Route::get('/pengujian', [pengujianController::class, 'index'])->name('pengujian');
         Route::get('/pengujian/tambah-pengujian', [pengujianController::class, 'tambahView'])->name('tambah-pengujian');
-        Route::get('/fetch-pengolahan', [pengujianController::class, 'getProduksiWithoutPengujian'])->name('fetch.pengolahan');
-        Route::get('/fetch-pengujian', [pengujianController::class, 'fetchPengujian'])->name('pengujian.fetch');
-        Route::post('/pengujian/store', [pengujianController::class, 'store'])->name('pengujian.store');
-        Route::delete('/pengujian/{id}/delete', [pengujianController::class, 'destroy'])->name('pengujian.destroy');
+        Route::get('/fetch-pengolahan', [pengujianController::class, 'getProduksiWithoutPengujian'])->name('fetch-pengolahan');
+        Route::get('/fetch-pengujian', [pengujianController::class, 'fetchPengujian'])->name('pengujian-fetch');
+        Route::post('/pengujian/store', [pengujianController::class, 'store'])->name('pengujian-store');
+        Route::delete('/pengujian/{id}/delete', [pengujianController::class, 'destroy'])->name('pengujian-destroy');
 
         // pengemasan
         Route::get('/pengemasan', [PengemasanController::class, 'index'])->name('pengemasan');
-        Route::get('/fetch-pengemasan', [PengemasanController::class, 'fetchPengemasan'])->name('pengemasan.fetch');
-        Route::get('/fetch-un-pengemasan', [PengemasanController::class, 'fetchUnPengemasan'])->name('un-pengemasan.fetch');
-        Route::post('/pengemasan/store', [PengemasanController::class, 'store'])->name('pengemasan.store');
-        Route::delete('/pengemasan/{id}/delete', [PengemasanController::class, 'destroy'])->name('pengemasan.destroy');
+        Route::get('/fetch-pengemasan', [PengemasanController::class, 'fetchPengemasan'])->name('pengemasan-fetch');
+        Route::get('/fetch-un-pengemasan', [PengemasanController::class, 'fetchUnPengemasan'])->name('un-pengemasan-fetch');
+        Route::post('/pengemasan/store', [PengemasanController::class, 'store'])->name('pengemasan-store');
+        Route::delete('/pengemasan/{id}/delete', [PengemasanController::class, 'destroy'])->name('pengemasan-destroy');
 });
 
 // landing page
@@ -168,4 +168,4 @@ Route::get('/contact', function() {return view('landingPage.contact');})->name('
 Route::get('/contact_in', function() {return view('landingPage.contact_in');})->name('contact_in');
 Route::get('/feature', function() {return view('landingPage.feature');})->name('feature');
 Route::get('/testimonial', function() {return view('landingPage.testimonial');})->name('testimonial');
-Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send-email');

@@ -535,7 +535,7 @@
                 };
 
                 $.ajax({
-                    url: '{{ route('gudang.store') }}',
+                    url: '{{ route('gudang-store') }}',
                     method: 'POST',
                     data: formData,
                     success: function(response) {
@@ -590,7 +590,7 @@
             // Function to reload table contents
             function reloadTableContents() {
                 $.ajax({
-                    url: '{{ route('get.gudang') }}',
+                    url: '{{ route('get-gudang') }}',
                     method: 'GET',
                     success: function(data) {
                         var tbody = $('#gudang-tbody');
